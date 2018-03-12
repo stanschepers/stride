@@ -27,6 +27,7 @@ set(SWIG_IFACE
     swig/contactpooltype.i
 	swig/health.i
 	swig/population.i
+	swig/pycontroller.i
 	swig/simulator.i
 	swig/simulatorobserver.i
 	swig/striderunner.i
