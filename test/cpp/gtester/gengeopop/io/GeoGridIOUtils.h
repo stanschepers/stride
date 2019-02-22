@@ -15,12 +15,12 @@
 
 #pragma once
 
-#include "gengeopop/ContactCenter.h"
-#include "gengeopop/GeoGrid.h"
-#include "gengeopop/Location.h"
-#include "gengeopop/io/proto/geogrid.pb.h"
+#include "geopop/ContactCenter.h"
+#include "geopop/GeoGrid.h"
+#include "geopop/Location.h"
+#include "geopop/io/proto/geogrid.pb.h"
 
-using namespace gengeopop;
+using namespace geopop;
 
 void CompareContactPool(stride::ContactPool*                                     contactPool,
                         const proto::GeoGrid_Location_ContactCenter_ContactPool& protoContactPool);

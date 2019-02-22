@@ -13,18 +13,18 @@
  *  Copyright 2018, Jan Broeckhove and Bistromatics group.
  */
 
-#include "gengeopop/io/ReaderFactory.h"
-#include "gengeopop/GeoGridConfig.h"
-#include "gengeopop/io/CitiesCSVReader.h"
-#include "gengeopop/io/CommutesCSVReader.h"
-#include "gengeopop/io/HouseholdCSVReader.h"
+#include "geopop/io/ReaderFactory.h"
+#include "geopop/GeoGridConfig.h"
+#include "geopop/io/CitiesCSVReader.h"
+#include "geopop/io/CommutesCSVReader.h"
+#include "geopop/io/HouseholdCSVReader.h"
 #include "util/FileSys.h"
 
 #include <gtest/gtest.h>
 #include <memory>
 
 using namespace std;
-using namespace gengeopop;
+using namespace geopop;
 using namespace stride;
 using namespace util;
 

@@ -13,17 +13,17 @@
  *  Copyright 2018, Jan Broeckhove and Bistromatics group.
  */
 
-#include "gengeopop/generators/WorkplaceGenerator.h"
+#include "geopop/generators/WorkplaceGenerator.h"
 #include "../../createlogger.h"
-#include "gengeopop/GeoGridConfig.h"
-#include "gengeopop/Location.h"
+#include "geopop/GeoGridConfig.h"
+#include "geopop/Location.h"
 #include "util/RnMan.h"
 
 #include <gtest/gtest.h>
 #include <tuple>
 
 using namespace std;
-using namespace gengeopop;
+using namespace geopop;
 using namespace stride;
 using namespace stride::util;
 

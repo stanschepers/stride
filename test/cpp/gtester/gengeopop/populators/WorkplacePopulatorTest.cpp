@@ -13,25 +13,25 @@
  *  Copyright 2018, 2019, Jan Broeckhove and Bistromatics group.
  */
 
-#include "gengeopop/populators/WorkplacePopulator.h"
+#include "geopop/populators/WorkplacePopulator.h"
+#include "contact/AgeBrackets.h"
 #include "createGeogrid.h"
-#include "gengeopop/College.h"
-#include "gengeopop/GeoGridConfig.h"
-#include "gengeopop/Household.h"
-#include "gengeopop/K12School.h"
-#include "gengeopop/Location.h"
-#include "gengeopop/Workplace.h"
-#include "gengeopop/populators/CollegePopulator.h"
-#include "pool/AgeBrackets.h"
+#include "geopop/College.h"
+#include "geopop/GeoGridConfig.h"
+#include "geopop/Household.h"
+#include "geopop/K12School.h"
+#include "geopop/Location.h"
+#include "geopop/Workplace.h"
+#include "geopop/populators/CollegePopulator.h"
 #include "util/LogUtils.h"
 #include "util/RnMan.h"
 
 #include <gtest/gtest.h>
 
 using namespace std;
-using namespace gengeopop;
+using namespace geopop;
 using namespace stride;
-using namespace stride::ContactPoolType;
+using namespace stride::ContactType;
 using namespace stride::util;
 
 namespace {

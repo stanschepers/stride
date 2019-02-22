@@ -20,20 +20,24 @@
 
 #pragma once
 
-#include "pool/ContactPoolSys.h"
+#include "contact/ContactPoolSys.h"
 #include "pop/Person.h"
-#include "util/RnMan.h"
 #include "util/SegmentedVector.h"
 
 #include <boost/property_tree/ptree_fwd.hpp>
 #include <memory>
 #include <spdlog/spdlog.h>
 
-namespace gengeopop {
+namespace geopop {
 class GeoGrid;
 }
 
 namespace stride {
+
+namespace util {
+class RnMan;
+}
+
 
 /**
  * Key Data structure: container for
@@ -57,7 +61,7 @@ public:
 
 public:
         /// Add a new contact pool of a given type
-        ContactPool* CreateContactPool(ContactPoolType::Id typeId);
+        ContactPool* CreateContactPool(ContactType::Id typeId);
 
         /// Create Person in the population.
         Person* CreatePerson(unsigned int id, double age, unsigned int householdId, unsigned int k12SchoolId,
@@ -76,7 +80,7 @@ public:
         const ContactPoolSys& GetContactPoolSys() const { return m_pool_sys; }
 
         /// Get the GeoGrid associated with this population (may be a nullptr).
-        std::shared_ptr<gengeopop::GeoGrid> GetGeoGrid() const { return m_geoGrid; }
+        std::shared_ptr<geopop::GeoGrid> GetGeoGrid() const { return m_geoGrid; }
 
 private:
         ///
@@ -87,9 +91,9 @@ private:
         friend class ImportPopBuilder;
 
 private:
-        ContactPoolSys                      m_pool_sys;       ///< Holds vector of ContactPools of different types.
-        std::shared_ptr<spdlog::logger>     m_contact_logger; ///< Logger for contact/transmission.
-        std::shared_ptr<gengeopop::GeoGrid> m_geoGrid;        ///< Associated geoGrid may be nullptr.
+        ContactPoolSys                   m_pool_sys;       ///< Holds vector of ContactPools of different types.
+        std::shared_ptr<spdlog::logger>  m_contact_logger; ///< Logger for contact/transmission.
+        std::shared_ptr<geopop::GeoGrid> m_geoGrid;        ///< Associated geoGrid may be nullptr.
 
 private:
         std::size_t m_currentContactPoolId = 1; ///< The contact pool counter for assigning pool IDs.

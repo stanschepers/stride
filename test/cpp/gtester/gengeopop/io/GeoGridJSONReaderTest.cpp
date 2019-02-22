@@ -13,10 +13,10 @@
  *  Copyright 2018, Jan Broeckhove and Bistromatics group.
  */
 
-#include "gengeopop/io/GeoGridJSONReader.h"
-#include "gengeopop/ContactCenter.h"
-#include "gengeopop/GeoGrid.h"
-#include "pool/ContactPoolType.h"
+#include "geopop/io/GeoGridJSONReader.h"
+#include "contact/ContactType.h"
+#include "geopop/ContactCenter.h"
+#include "geopop/GeoGrid.h"
 #include "pop/Population.h"
 #include "util/FileSys.h"
 
@@ -27,9 +27,9 @@
 #include <stdexcept>
 
 using namespace std;
-using namespace gengeopop;
+using namespace geopop;
 using namespace stride;
-using namespace stride::ContactPoolType;
+using namespace stride::ContactType;
 using namespace stride::util;
 
 using boost::geometry::get;
@@ -150,7 +150,7 @@ TEST(GeoGridJSONReaderTest, contactCentersTest)
         auto location       = geoGrid->Get(0);
         auto contactCenters = location->GetContactCenters();
 
-        using namespace stride::ContactPoolType;
+        using namespace stride::ContactType;
 
         map<Id, bool> found = {{Id::K12School, false},
                                {Id::PrimaryCommunity, false},
@@ -173,10 +173,10 @@ void runPeopleTest(const string& filename)
         auto geoGrid  = getGeoGridForFile(filename, pop.get());
         auto location = geoGrid->Get(0);
 
-        using namespace stride::ContactPoolType;
+        using namespace stride::ContactType;
 
         map<int, string> ids = {{0, "K12School"}, {1, "PrimaryCommunity"}, {2, "SecondaryCommunity"},
-                                {3, "College"},   {4, "Household"},         {5, "Workplace"}};
+                                {3, "College"},   {4, "Household"},        {5, "Workplace"}};
 
         EXPECT_EQ(location->GetID(), 1);
         EXPECT_EQ(location->GetName(), "Bavikhove");

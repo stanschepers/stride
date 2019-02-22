@@ -20,6 +20,7 @@
 
 #include "PublicHealthAgency.h"
 
+#include "pop/Population.h"
 #include "util/RnMan.h"
 
 #include <trng/uniform01_dist.hpp>
@@ -51,7 +52,7 @@ void PublicHealthAgency::PerformCaseFinding(std::shared_ptr<Population> pop, uti
         // perform case finding, if the probability is > 0.0
         if (m_case_detection_probability > 0.0) {
 
-                using namespace ContactPoolType;
+                using namespace ContactType;
                 auto& population         = *pop;
                 auto& poolSys            = population.GetContactPoolSys();
                 auto  uniform01Generator = rnManager[0].variate_generator(trng::uniform01_dist<double>());

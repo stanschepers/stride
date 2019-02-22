@@ -20,9 +20,9 @@
 
 #include "GenPopController.h"
 
-#include "gengeopop/GeoGrid.h"
-#include "gengeopop/io/GeoGridWriter.h"
-#include "gengeopop/io/GeoGridWriterFactory.h"
+#include "geopop/GeoGrid.h"
+#include "geopop/io/GeoGridWriter.h"
+#include "geopop/io/GeoGridWriterFactory.h"
 
 #include "pop/GeoPopBuilder.h"
 #include "pop/Population.h"
@@ -44,7 +44,7 @@ namespace filesys = std::filesystem;
 
 using namespace std;
 using namespace stride::util;
-using namespace gengeopop;
+using namespace geopop;
 using namespace boost::property_tree;
 
 namespace stride {

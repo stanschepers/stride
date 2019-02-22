@@ -15,24 +15,24 @@
 
 #include "GeoGridIOUtils.h"
 
-#include "gengeopop/College.h"
-#include "gengeopop/GeoGridConfig.h"
-#include "gengeopop/Household.h"
-#include "gengeopop/K12School.h"
-#include "gengeopop/PrimaryCommunity.h"
-#include "gengeopop/SecondaryCommunity.h"
-#include "gengeopop/Workplace.h"
-#include "gengeopop/io/GeoGridProtoReader.h"
-#include "gengeopop/io/GeoGridProtoWriter.h"
-#include "pool/ContactPoolType.h"
+#include "contact/ContactType.h"
+#include "geopop/College.h"
+#include "geopop/GeoGridConfig.h"
+#include "geopop/Household.h"
+#include "geopop/K12School.h"
+#include "geopop/PrimaryCommunity.h"
+#include "geopop/SecondaryCommunity.h"
+#include "geopop/Workplace.h"
+#include "geopop/io/GeoGridProtoReader.h"
+#include "geopop/io/GeoGridProtoWriter.h"
 
 #include <gtest/gtest.h>
 #include <map>
 
 using namespace std;
-using namespace gengeopop;
+using namespace geopop;
 using namespace stride;
-using namespace stride::ContactPoolType;
+using namespace stride::ContactType;
 using namespace util;
 
 map<int, Person*>       persons_found;
@@ -137,7 +137,7 @@ void CompareLocation(shared_ptr<Location> location, const proto::GeoGrid_Locatio
 
 void ComparePerson(const proto::GeoGrid_Person& protoPerson)
 {
-        using namespace ContactPoolType;
+        using namespace ContactType;
 
         const auto person = persons_found[protoPerson.id()];
         EXPECT_EQ(person->GetAge(), protoPerson.age());

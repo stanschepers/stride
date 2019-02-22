@@ -14,19 +14,19 @@
  */
 
 #include "GeoGridIOUtils.h"
-#include "gengeopop/College.h"
-#include "gengeopop/GeoGridConfig.h"
-#include "gengeopop/Household.h"
-#include "gengeopop/K12School.h"
-#include "gengeopop/PrimaryCommunity.h"
-#include "gengeopop/SecondaryCommunity.h"
-#include "gengeopop/Workplace.h"
-#include "gengeopop/io/proto/geogrid.pb.h"
+#include "geopop/College.h"
+#include "geopop/GeoGridConfig.h"
+#include "geopop/Household.h"
+#include "geopop/K12School.h"
+#include "geopop/PrimaryCommunity.h"
+#include "geopop/SecondaryCommunity.h"
+#include "geopop/Workplace.h"
+#include "geopop/io/proto/geogrid.pb.h"
 
 #include <gtest/gtest.h>
 
 using namespace std;
-using namespace gengeopop;
+using namespace geopop;
 using boost::geometry::get;
 
 namespace {
@@ -47,7 +47,7 @@ void fillLocation(int id, unsigned int province, unsigned int population, Coordi
 void fillContactCenter(const shared_ptr<ContactCenter>&       contactCenter,
                        proto::GeoGrid_Location_ContactCenter* protoContactCenter)
 {
-        using namespace stride::ContactPoolType;
+        using namespace stride::ContactType;
 
         map<Id, proto::GeoGrid_Location_ContactCenter_Type> types = {
             {Id::K12School, proto::GeoGrid_Location_ContactCenter_Type_K12School},

@@ -22,8 +22,9 @@
 #include "DefaultPopBuilder.h"
 
 #include "contact/ContactLogMode.h"
-#include "pool/ContactPoolType.h"
-#include "pool/IdSubscriptArray.h"
+#include "contact/ContactType.h"
+#include "contact/IdSubscriptArray.h"
+#include "pop/Population.h"
 #include "pop/SurveySeeder.h"
 #include "util/FileSys.h"
 #include "util/RnMan.h"
@@ -34,7 +35,7 @@
 
 namespace stride {
 
-using namespace ContactPoolType;
+using namespace ContactType;
 
 using namespace util;
 using namespace boost::property_tree;

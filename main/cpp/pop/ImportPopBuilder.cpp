@@ -20,9 +20,9 @@
 
 #include "ImportPopBuilder.h"
 
-#include "gengeopop/GeoGrid.h"
-#include "gengeopop/io/GeoGridReader.h"
-#include "gengeopop/io/GeoGridReaderFactory.h"
+#include "geopop/GeoGrid.h"
+#include "geopop/io/GeoGridReader.h"
+#include "geopop/io/GeoGridReaderFactory.h"
 #include "util/LogUtils.h"
 
 #include <boost/property_tree/ptree.hpp>
@@ -33,7 +33,7 @@ namespace stride {
 
 using namespace std;
 using namespace boost::property_tree;
-using namespace gengeopop;
+using namespace geopop;
 
 shared_ptr<Population> ImportPopBuilder::Build(shared_ptr<Population> pop)
 {

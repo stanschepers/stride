@@ -18,7 +18,7 @@
 #============================================================================
 # Subdirectories.
 #============================================================================
-add_subdirectory(gengeopop)
+add_subdirectory(geopop)
 
 #============================================================================
 # Sources.
@@ -35,6 +35,7 @@ set(LIB_SRC
     disease/DiseaseSeeder.cpp
 	disease/Health.cpp
     disease/HealthSeeder.cpp
+	disease/Immunizer.cpp
     disease/PublicHealthAgency.cpp
 #---
 	execs/ControlHelper.cpp
@@ -42,12 +43,12 @@ set(LIB_SRC
 	execs/SimController.cpp
 	execs/StanController.cpp
 #---
-    output/InfectedFile.cpp
-    output/PersonsFile.cpp
-	output/SummaryFile.cpp
+	viewers/InfectedFile.cpp
+	viewers/PersonsFile.cpp
+	viewers/SummaryFile.cpp
 #---
-	pool/ContactPool.cpp
-	pool/ContactPoolType.cpp
+	contact/ContactPool.cpp
+	contact/ContactType.cpp
 #---
     pop/Person.cpp
     pop/Population.cpp

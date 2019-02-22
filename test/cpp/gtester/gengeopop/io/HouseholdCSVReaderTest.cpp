@@ -10,40 +10,40 @@
  *  You should have received a copy of the GNU General Public License
  *  along with the software. If not, see <http://www.gnu.org/licenses/>.
  *
- *  Copyright 2018, Jan Broeckhove and Bistromatics group.
+ *  Copyright 2018, 2019, Jan Broeckhove and Bistromatics group.
  */
 
-#include "gengeopop/io/HouseholdCSVReader.h"
-#include "gengeopop/GeoGridConfig.h"
-#include "gengeopop/Household.h"
+#include "geopop/io/HouseholdCSVReader.h"
+#include "geopop/GeoGridConfig.h"
+#include "geopop/Household.h"
 
 #include <gtest/gtest.h>
 #include <memory>
 #include <vector>
 
 using namespace std;
-using namespace gengeopop;
+using namespace geopop;
 using namespace stride;
 
 namespace {
 
-shared_ptr<gengeopop::Household> createCP(const vector<unsigned int>& ages)
+shared_ptr<geopop::Household> createCP(const vector<unsigned int>& ages)
 {
-        auto cp = new ContactPool(0, ContactPoolType::Id::Household);
+        auto cp = new ContactPool(0, ContactType::Id::Household);
         for (unsigned int age : ages) {
                 auto p = new Person();
                 p->SetAge(age);
                 cp->AddMember(p);
         }
 
-        auto hh = make_shared<gengeopop::Household>();
+        auto hh = make_shared<geopop::Household>();
         hh->RegisterPool(cp);
         return hh;
 }
 
-vector<shared_ptr<gengeopop::Household>> getExpectedHouseHolds()
+vector<shared_ptr<geopop::Household>> getExpectedHouseHolds()
 {
-        vector<shared_ptr<gengeopop::Household>> households;
+        vector<shared_ptr<geopop::Household>> households;
 
         households.push_back(createCP({42, 38, 15}));
         households.push_back(createCP({70, 68}));
@@ -77,8 +77,8 @@ TEST(HouseholdCSVReader, test1)
 
         reader.SetReferenceHouseholds(geoConfig.refHH.households, geoConfig.refHH.persons, geoConfig.refHH.pools);
 
-        const vector<shared_ptr<gengeopop::Household>>& HHs         = geoConfig.refHH.households;
-        const vector<shared_ptr<gengeopop::Household>>& expectedHHS = getExpectedHouseHolds();
+        const vector<shared_ptr<geopop::Household>>& HHs         = geoConfig.refHH.households;
+        const vector<shared_ptr<geopop::Household>>& expectedHHS = getExpectedHouseHolds();
 
         EXPECT_EQ(HHs.size(), (unsigned int)8);
 

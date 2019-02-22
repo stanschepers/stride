@@ -20,9 +20,9 @@
 
 #include "GeoPopBuilder.h"
 
-#include "gengeopop/GeoGridBuilder.h"
-#include "gengeopop/GeoGridConfig.h"
-#include "gengeopop/GeoGridConfigBuilder.h"
+#include "geopop/GeoGridBuilder.h"
+#include "geopop/GeoGridConfig.h"
+#include "geopop/GeoGridConfigBuilder.h"
 #include "pop/Population.h"
 #include "pop/SurveySeeder.h"
 #include "util/FileSys.h"
@@ -39,7 +39,7 @@ namespace stride {
 using namespace std;
 using namespace util;
 using namespace boost::property_tree;
-using namespace gengeopop;
+using namespace geopop;
 
 shared_ptr<Population> GeoPopBuilder::Build(shared_ptr<Population> pop)
 {
