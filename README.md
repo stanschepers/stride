@@ -1,5 +1,12 @@
 # Stride project 
 
+This repository is a fork for the bachelor capstone project of the student group [**Striders**](https://striders.ga).
+The original repository can be found [here](https://github.com/broeckho/stride.git) and the original README below.
+
+The current status of this fork is : [![Build Status](https://travis-ci.org/stanschepers/stride.svg?branch=master)](https://travis-ci.org/stanschepers/stride)
+
+---
+
 The Stride acronym stands for **S**imulate **tr**ansmission of **i**nfectious **d**is**e**ases.
  
 The project is hosted in a GitHub [code repository](https://github.com/broeckho/stride.git) and has a continous integration  
