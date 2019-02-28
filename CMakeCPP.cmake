@@ -37,7 +37,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 #
 include(ProcessorCount)
 ProcessorCount(PROCCOUNT)
-set(CMAKE_CXX_FLAGS         "${CMAKE_CXX_FLAGS} -DPROCCOUNT=${PROCCOUNT}")
 #
 # Required to avoid ld problems on Mac
 set(CMAKE_CXX_FLAGS         "${CMAKE_CXX_FLAGS} -fvisibility=hidden")
@@ -95,8 +94,9 @@ include_directories(SYSTEM ${CMAKE_HOME_DIRECTORY}/main/resources/lib/spdlog/inc
 include_directories(SYSTEM ${CMAKE_HOME_DIRECTORY}/main/resources/lib/tclap/include)
 
 #----------------------------------------------------------------------------
-# ProtoBuf
+# ProtoBuf (FindThreads required after eliminating boost thread lib)
 #----------------------------------------------------------------------------
+find_package(Threads)
 include_directories(SYSTEM ${CMAKE_HOME_DIRECTORY}/main/cpp/gengeopop/io/proto)
 include_directories(SYSTEM ${CMAKE_HOME_DIRECTORY}/main/resources/lib/protobuf)
 
@@ -107,10 +107,15 @@ include_directories(SYSTEM ${CMAKE_HOME_DIRECTORY}/main/resources/lib/sha1/inclu
 set(LIBS ${LIBS} sha1)
 
 #----------------------------------------------------------------------------
+# Required by proto.
+#----------------------------------------------------------------------------
+
+
+#----------------------------------------------------------------------------
 # Boost
 #----------------------------------------------------------------------------
 if (NOT STRIDE_FORCE_NO_BOOST)
-    find_package(Boost COMPONENTS filesystem thread date_time system)
+    find_package(Boost COMPONENTS filesystem date_time)
 endif()
 if (Boost_FOUND)
     include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
