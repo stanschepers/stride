@@ -1,9 +1,9 @@
 var namespaces =
 [
-    [ "gengeopop", "d7/dfc/a00349.html", "d7/dfc/a00349" ],
-    [ "geoaggregator_detail", "db/ddc/a00353.html", null ],
-    [ "google", "d0/dc3/a00354.html", "d0/dc3/a00354" ],
-    [ "proto", "d6/de1/a00356.html", null ],
-    [ "protobuf_geogrid_2eproto", "df/df1/a00357.html", null ],
-    [ "stride", "d9/d9b/a00363.html", "d9/d9b/a00363" ]
+    [ "geoaggregator_detail", "d6/d9c/a00352.html", null ],
+    [ "geopop", "db/ddc/a00353.html", "db/ddc/a00353" ],
+    [ "google", "df/df1/a00357.html", "df/df1/a00357" ],
+    [ "proto", "d4/def/a00359.html", null ],
+    [ "protobuf_geogrid_2eproto", "d0/d65/a00360.html", null ],
+    [ "stride", "d2/d3e/a00366.html", "d2/d3e/a00366" ]
 ];

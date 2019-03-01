@@ -1,6 +1,4 @@
-<map id="GeoGridProtoWriter.h" name="GeoGridProtoWriter.h">
-<area shape="rect" id="node2" href="$dc/d28/a00223.html" title="GeoGridWriter.h" alt="" coords="83,80,204,107"/>
-<area shape="rect" id="node5" href="$dd/d86/a00271.html" title="gengeopop/Location.h" alt="" coords="409,80,573,107"/>
-<area shape="rect" id="node16" href="$db/d53/a00202.html" title="proto/geogrid.pb.h" alt="" coords="2141,80,2281,107"/>
-<area shape="rect" id="node6" href="$d9/d90/a00178.html" title="gengeopop/Coordinate.h" alt="" coords="605,162,785,189"/>
+<map id="GeoGridProtoReader.h" name="GeoGridProtoReader.h">
+<area shape="rect" id="node2" href="$d6/d43/a00216.html" title="GeoGridProtoReader.cpp" alt="" coords="5,80,184,107"/>
+<area shape="rect" id="node3" href="$d0/d24/a00222.html" title="GeoGridReaderFactory.cpp" alt="" coords="208,80,397,107"/>
 </map>

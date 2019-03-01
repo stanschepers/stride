@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: College.h File Reference</title>
+<title>Stride Reference Manual: CliViewer.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 66e2960</span>
+   &#160;<span id="projectnumber">- generated for commit f598989</span>
    </div>
   </td>
  </tr>
@@ -108,33 +108,29 @@ $(document).ready(function(){initNavTree('d3/d65/a00154.html','../../');});
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">College.h File Reference</div>  </div>
+<div class="title">CliViewer.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../dc/de6/a00167_source.html">ContactCenter.h</a>&quot;</code><br />
-<code>#include &lt;string&gt;</code><br />
+
+<p>Observer for SimEvents for commandline interface usage.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d6/d82/a00243_source.html">sim/event/Id.h</a>&quot;</code><br />
+<code>#include &lt;spdlog/spdlog.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for College.h:</div>
+Include dependency graph for CliViewer.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d0/da0/a00403.gif" border="0" usemap="#College_8h" alt=""/></div>
-<map name="College_8h" id="College_8h">
-<area shape="rect" id="node2" href="../../dc/de6/a00167.html" title="ContactCenter.h" alt="" coords="378,80,505,107"/>
-<area shape="rect" id="node3" href="../../d6/dfb/a00172.html" title="Header for the core ContactPool class. " alt="" coords="370,155,513,181"/>
-<area shape="rect" id="node6" href="../../de/d45/a00175.html" title="Definition of ContactPoolType. " alt="" coords="240,229,411,256"/>
-<area shape="rect" id="node4" href="../../d5/dcb/a00170.html" title="Header for the ContactLogMode class. " alt="" coords="21,229,216,256"/>
+<div class="center"><img src="../../d9/de6/a00404.gif" border="0" usemap="#CliViewer_8h" alt=""/></div>
+<map name="CliViewer_8h" id="CliViewer_8h">
+<area shape="rect" id="node2" href="../../d6/d82/a00243.html" title="Definition of EventId. " alt="" coords="28,80,140,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d9/de6/a00404.gif" border="0" usemap="#College_8hdep" alt=""/></div>
-<map name="College_8hdep" id="College_8hdep">
-<area shape="rect" id="node2" href="../../da/d01/a00153.html" title="College.cpp" alt="" coords="5,80,101,107"/>
-<area shape="rect" id="node3" href="../../d3/df8/a00155.html" title="CollegeGenerator.cpp" alt="" coords="125,80,285,107"/>
-<area shape="rect" id="node4" href="../../d3/de5/a00209.html" title="GeoGridJSONReader.cpp" alt="" coords="309,80,485,107"/>
-<area shape="rect" id="node5" href="../../d3/dd5/a00215.html" title="GeoGridProtoReader.cpp" alt="" coords="509,80,688,107"/>
-<area shape="rect" id="node6" href="../../d1/db7/a00157.html" title="CollegePopulator.cpp" alt="" coords="713,80,869,107"/>
-<area shape="rect" id="node7" href="../../d3/d58/a00285.html" title="Populator.cpp" alt="" coords="893,80,1003,107"/>
+<div class="center"><img src="../../de/de8/a00405.gif" border="0" usemap="#CliViewer_8hdep" alt=""/></div>
+<map name="CliViewer_8hdep" id="CliViewer_8hdep">
+<area shape="rect" id="node2" href="../../d9/d90/a00178.html" title="Header for the command line controller. " alt="" coords="5,80,141,107"/>
+<area shape="rect" id="node3" href="../../da/d01/a00153.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="165,80,270,107"/>
 </map>
 </div>
 </div>
@@ -142,22 +138,30 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dee/a00008.html">gengeopop::College</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Models a <a class="el" href="../../d4/dee/a00008.html" title="Models a College (institution of higher education). ">College</a> (institution of higher education).  <a href="../../d4/dee/a00008.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d76/a00134.html">stride::viewers::CliViewer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Viewer of Simulator for commandline interface.  <a href="../../de/d76/a00134.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:d7/dfc/a00349"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dfc/a00349.html">gengeopop</a></td></tr>
+<tr class="memitem:d2/d3e/a00366"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d3e/a00366.html">stride</a></td></tr>
+<tr class="memdesc:d2/d3e/a00366"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:d6/db8/a00376"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/db8/a00376.html">stride::viewers</a></td></tr>
+<tr class="memdesc:d6/db8/a00376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for MVC-viewers that may be registered with <a class="el" href="../../d1/dd6/a00108.html" title="The simulation runner drive simulator throufgh time steps. ">SimRunner</a>. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Observer for SimEvents for commandline interface usage. </p>
+
+<p>Definition in file <a class="el" href="../../d3/d65/a00154_source.html">CliViewer.h</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_179761493184668a345a1ae0c0ebebb4.html">gengeopop</a></li><li class="navelem"><a class="el" href="../../d3/d65/a00154.html">College.h</a></li>
-    <li class="footer">Generated on Sat Feb 16 2019 13:10:36 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_2ae6c1d5e4b832eb120eff875630c108.html">viewers</a></li><li class="navelem"><a class="el" href="../../d3/d65/a00154.html">CliViewer.h</a></li>
+    <li class="footer">Generated on Fri Mar 1 2019 16:46:26 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

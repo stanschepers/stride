@@ -12,7 +12,7 @@ var a00105 =
     [ "GetConfigValue", "d3/d32/a00105.html#a1b5ec0fca8e7496868ca067afe83f560", null ],
     [ "GetTransmissionRate", "d3/d32/a00105.html#a484ffc98b4b45673cf1533a0571f38fd", null ],
     [ "SimBuilder", "d3/d32/a00105.html#a9a439036c5f4a413765b48764c0b1741", null ],
-    [ "m_config_pt", "d3/d32/a00105.html#ac0f1837c346b11b4cea734b6769b8d1d", null ],
+    [ "m_config", "d3/d32/a00105.html#a6862a358332922c825f15bd9e770ccf0", null ],
     [ "m_contact_log_mode", "d3/d32/a00105.html#af58f9eda3c97affca6acbfde33bc68c0", null ],
     [ "m_num_threads", "d3/d32/a00105.html#a6ea31f057cd8b04a29439301a786790f", null ],
     [ "m_track_index_case", "d3/d32/a00105.html#a4d51a48a2354c6c138552edbfaf57870", null ],
@@ -23,7 +23,7 @@ var a00105 =
     [ "m_infector", "d3/d32/a00105.html#a36d96f3112de535bd8a48b8694545212", null ],
     [ "m_population", "d3/d32/a00105.html#ab558b35470a8f91f051a32f374e54e00", null ],
     [ "m_rn_manager", "d3/d32/a00105.html#acec00fb79fb58700e4eef6f0a20209ac", null ],
-    [ "m_rn_manager_ptr", "d3/d32/a00105.html#a88a205a5cfbd78547c63e7643f19de5a", null ],
     [ "m_transmission_profile", "d3/d32/a00105.html#a07c55a625ad780341af4eef33ad3d5cf", null ],
-    [ "m_public_health_agency", "d3/d32/a00105.html#a30f793306aa22a3f1623d0ceb4e8a252", null ]
+    [ "m_public_health_agency", "d3/d32/a00105.html#a30f793306aa22a3f1623d0ceb4e8a252", null ],
+    [ "m_rn_manager_ptr", "d3/d32/a00105.html#a88a205a5cfbd78547c63e7643f19de5a", null ]
 ];

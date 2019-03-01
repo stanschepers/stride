@@ -1,7 +1,4 @@
-<map id="GeoGridKdTree.h" name="GeoGridKdTree.h">
-<area shape="rect" id="node2" href="$d5/d35/a00266.html" title="gengeopop/geo/KdTree.h" alt="" coords="691,80,871,107"/>
-<area shape="rect" id="node10" href="$db/d12/a00268.html" title="gengeopop/geo/KdTree2DPoint.h" alt="" coords="288,80,519,107"/>
-<area shape="rect" id="node3" href="$d4/ddd/a00138.html" title="gengeopop/geo/AABBox.h" alt="" coords="441,162,630,189"/>
-<area shape="rect" id="node4" href="$da/d53/a00265.html" title="gengeopop/geo/KdNode.h" alt="" coords="844,162,1032,189"/>
-<area shape="rect" id="node11" href="$d9/d90/a00178.html" title="gengeopop/Coordinate.h" alt="" coords="185,162,365,189"/>
+<map id="GeoGridJSONWriter.h" name="GeoGridJSONWriter.h">
+<area shape="rect" id="node2" href="$dd/dc1/a00212.html" title="GeoGridJSONWriter.cpp" alt="" coords="5,80,173,107"/>
+<area shape="rect" id="node3" href="$dc/d98/a00225.html" title="GeoGridWriterFactory.cpp" alt="" coords="197,80,379,107"/>
 </map>
