@@ -1,8 +1,6 @@
-<map id="geopop::Populator" name="geopop::Populator">
-<area shape="rect" id="node2" href="$d7/dec/a00010.html" title="Populate the colleges. " alt="" coords="5,351,192,428"/>
-<area shape="rect" id="node3" href="$de/d8c/a00036.html" title="Populate the households. " alt="" coords="217,351,423,428"/>
-<area shape="rect" id="node4" href="$db/d3a/a00040.html" title="Populate the K12Schools. " alt="" coords="447,351,654,428"/>
-<area shape="rect" id="node5" href="$d6/d2d/a00047.html" title="Populate the primary communities. " alt="" coords="678,343,879,435"/>
-<area shape="rect" id="node6" href="$d2/d79/a00051.html" title="Populate the secondary communities. " alt="" coords="903,343,1123,435"/>
-<area shape="rect" id="node7" href="$d1/d22/a00057.html" title="Populate the workplaces. " alt="" coords="1147,219,1383,560"/>
+<map id="geopop::KdTree&lt; P &gt;" name="geopop::KdTree&lt; P &gt;">
+<area shape="rect" id="node4" href="$dd/d32/a00041.html" title="{geopop::kd::Node\&lt; P, 0 \&gt;\n||+ Node()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="319,616,508,767"/>
+<area shape="rect" id="node5" href="$d7/d46/a00002.html" title="A base class for all instantiations of a Node with D. " alt="" coords="455,5,660,156"/>
+<area shape="rect" id="node7" href="$dd/d32/a00041.html" title="A node in the KdTree (parameter P: the type of point, parameter D: dimension this node splits on)..." alt="" coords="382,219,573,369"/>
+<area shape="rect" id="node9" title="STL class. " alt="" coords="8,255,163,333"/>
 </map>

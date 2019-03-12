@@ -7,7 +7,7 @@ var searchData=
   ['location_2ecpp',['Location.cpp',['../dd/d86/a00271.html',1,'']]],
   ['location_2eh',['Location.h',['../d9/dd6/a00272.html',1,'']]],
   ['locations',['locations',['../d4/de8/a00061.html#a3b5d0b66ec5382518acb9fc346d600a7',1,'proto::GeoGrid::locations(int index) const '],['../d4/de8/a00061.html#ac03281d346ea7ad3bf9cad98116e3bd4',1,'proto::GeoGrid::locations() const ']]],
-  ['locations_5f',['locations_',['../d4/de8/a00061.html#a768389a4509580563b241a0d4a190519',1,'proto::GeoGrid']]],
+  ['locations_5f',['locations_',['../d4/de8/a00061.html#aef45db26c3ceb9df2afcc1195be76b9f',1,'proto::GeoGrid']]],
   ['locations_5fsize',['locations_size',['../d4/de8/a00061.html#aa4e4cc38da711b133be850b95d4cf2cb',1,'proto::GeoGrid']]],
   ['locationsinbox',['LocationsInBox',['../dd/da2/a00019.html#adc48580d46163e472dd13c63a67ecbfb',1,'geopop::GeoGrid::LocationsInBox(double long1, double lat1, double long2, double lat2) const '],['../dd/da2/a00019.html#af17305dce838a30c6409a109129cffa5',1,'geopop::GeoGrid::LocationsInBox(const std::shared_ptr&lt; Location &gt; &amp;loc1, const std::shared_ptr&lt; Location &gt; &amp;loc2) const ']]],
   ['locationsinradius',['LocationsInRadius',['../dd/da2/a00019.html#aea3d09864e24556e07082bda09cc1f4c',1,'geopop::GeoGrid']]],

@@ -1,8 +1,6 @@
-<map id="SecondaryCommunity.h" name="SecondaryCommunity.h">
-<area shape="rect" id="node2" href="$d6/d7d/a00161.html" title="CommunityGenerator.cpp" alt="" coords="5,80,192,107"/>
-<area shape="rect" id="node3" href="$da/de7/a00210.html" title="GeoGridJSONReader.cpp" alt="" coords="216,80,392,107"/>
-<area shape="rect" id="node4" href="$d6/d43/a00216.html" title="GeoGridProtoReader.cpp" alt="" coords="416,80,595,107"/>
-<area shape="rect" id="node5" href="$d5/d7b/a00286.html" title="Populator.cpp" alt="" coords="619,80,728,107"/>
-<area shape="rect" id="node6" href="$d8/d17/a00304.html" title="SecondaryCommunityPopulator.cpp" alt="" coords="752,80,1003,107"/>
-<area shape="rect" id="node7" href="$d0/d61/a00302.html" title="SecondaryCommunity.cpp" alt="" coords="1027,80,1216,107"/>
+<map id="RunConfigManager.h" name="RunConfigManager.h">
+<area shape="rect" id="node2" href="$db/d53/a00321.html" title="Main program: command line handling. " alt="" coords="5,80,91,107"/>
+<area shape="rect" id="node3" href="$db/dc3/a00284.html" title="Core Population class. " alt="" coords="115,80,231,107"/>
+<area shape="rect" id="node4" href="$d2/d71/a00309.html" title="Implementation for the Simulator class. " alt="" coords="256,80,331,107"/>
+<area shape="rect" id="node5" href="$d0/d61/a00302.html" title="Implementation of ptree utils. " alt="" coords="354,80,521,107"/>
 </map>

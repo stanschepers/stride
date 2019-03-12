@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['secondarycommunity',['SecondaryCommunity',['../df/dee/a00369.html#a4e4309e1cddddec8f12b981ab3fbc4fbad2006cfdd93c83f8b174ad02e71eb1d9',1,'stride::ContactType']]],
+  ['secondarycommunity',['SecondaryCommunity',['../df/dee/a00369.html#a61a32e88a50c57e6f5c49f0996b6b462ad2006cfdd93c83f8b174ad02e71eb1d9',1,'stride::ContactType']]],
   ['setupbegin',['SetupBegin',['../db/d7e/a00372.html#ab046b05654e26ef19fd5e4e46c16e836ac5be476a42d4abe754e94797ccc012ac',1,'stride::sim_event']]],
   ['setupend',['SetupEnd',['../db/d7e/a00372.html#ab046b05654e26ef19fd5e4e46c16e836a6e3d315343f8cb5b914a65acb273e7fe',1,'stride::sim_event']]],
   ['stepped',['Stepped',['../db/d7e/a00372.html#ab046b05654e26ef19fd5e4e46c16e836a5ea38ba255e963326e6dbe47d8be6568',1,'stride::sim_event']]],
