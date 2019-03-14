@@ -39,17 +39,17 @@ void InfluenzaBench()
                 return [s, configPt]() {
                         return Test([s, configPt]() {
                                 RnMan rn_manager;
-                                rn_manager.Initialize(RnMan::Info(configPt->get<std::string>("run.rng_seed", "1,2,3,4"),
-                                                                  configPt->get<string>("run.rng_state", ""),
-                                                                  configPt->get<unsigned int>("run.num_threads")));
+                                rn_manager.Initialize(RnInfo(configPt->get<std::string>("run.rng_seed", "1,2,3,4"),
+                                                             configPt->get<string>("run.rng_state", ""),
+                                                             configPt->get<unsigned int>("run.num_threads")));
                                 SimRunner(*configPt, Population::Create(*configPt, rn_manager), rn_manager).Run();
                         });
                 };
         };
 
-        const vector<string> levels{"None", "Transmissions", "Susceptibles"};
+        const vector<string> levels{"None", "Transmissions"};
         for (const auto& s : levels) {
                 auto info = [s]() { return ptree().put("contact_log_level", s); };
-                BenchmarkRunner::RegisterTest("Influenza", "ContactLog." + s, 7, builder(s), info);
+                BenchmarkRunner::RegisterTest("Influenza", "ContactLog." + s, 5, builder(s), info);
         }
 }
