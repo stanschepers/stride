@@ -20,6 +20,7 @@
 
 #include <boost/property_tree/ptree.hpp>
 #include <set>
+#include <H5Cpp.h>
 
 namespace stride {
 class ContactPool;

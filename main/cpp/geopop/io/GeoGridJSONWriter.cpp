@@ -32,8 +32,11 @@ GeoGridJSONWriter::GeoGridJSONWriter() : m_persons_found() {}
 
 void GeoGridJSONWriter::Write(shared_ptr<GeoGrid> geoGrid, ostream& stream)
 {
+
+        const H5std_string  FILE_NAME( "SDS.h5" );
         boost::property_tree::ptree root;
         boost::property_tree::ptree locations;
+        H5::H5File fileTest(FILE_NAME, H5F_ACC_TRUNC);
 
 #pragma omp parallel
 #pragma omp single
