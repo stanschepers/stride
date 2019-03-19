@@ -148,9 +148,10 @@ endif()
 if(HDF5_FOUND)
     include_directories(SYSTEM ${HDF5_CXX_INCLUDE_DIRS})
 else()
-    include_directories(SYSTEM ${CMAKE_HOME_DIRECTORY}/main/resources/lib/hdf5/c++/src)
     include_directories(SYSTEM ${CMAKE_HOME_DIRECTORY}/main/resources/lib/hdf5/src)
-    include_directories(SYSTEM ${CMAKE_BINARY_DIR}/main/resources/lib/hdf5)
+    include_directories(SYSTEM ${CMAKE_HOME_DIRECTORY}/main/resources/lib/hdf5/c++/src)
+    include_directories(SYSTEM ${CMAKE_HOME_DIRECTORY}/main/resources/lib/hdf5/hl/src)
+    include_directories(SYSTEM ${CMAKE_HOME_DIRECTORY}/main/resources/lib/hdf5/hl/c++/src)
 endif()
 
 #----------------------------------------------------------------------------
