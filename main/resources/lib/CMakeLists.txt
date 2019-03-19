@@ -23,7 +23,20 @@ if(NOT Protobuf_FOUND)
 endif()
 
 if(NOT HDF5_FOUND)
-    include(hdf5/hdf5.cmake)
+       # Tell hdf5 that we are manually overriding certain settings
+       set (HDF5_EXTERNALLY_CONFIGURED 1)
+       set (HDF5_EXPORTED_TARGETS "libstride")
+       # Add the sub project
+       set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -w")
+       set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -w")
+       # To avoid tho "has no symbol warnings for empty .o's in static libs
+       if(CMAKE_HOST_APPLE)
+              SET(CMAKE_C_ARCHIVE_CREATE   "<CMAKE_AR> Scr <TARGET> <LINK_FLAGS> <OBJECTS>")
+              SET(CMAKE_CXX_ARCHIVE_CREATE "<CMAKE_AR> Scr <TARGET> <LINK_FLAGS> <OBJECTS>")
+              SET(CMAKE_C_ARCHIVE_FINISH   "<CMAKE_RANLIB> -no_warning_for_no_symbols -c <TARGET>")
+              SET(CMAKE_CXX_ARCHIVE_FINISH "<CMAKE_RANLIB> -no_warning_for_no_symbols -c <TARGET>")
+       endif()
+       add_subdirectory (hdf5)
 endif()
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -w")
