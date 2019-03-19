@@ -130,7 +130,7 @@ private:
         std::string  m_name;         ///< Name.
         unsigned int m_province;     ///< Province id.
         unsigned int m_pop_count;    ///< Population count (number of individuals) at this Location.
-        double       m_pop_fraction; ///< Fraction of whole population at thois Location.
+        double       m_pop_fraction; ///< Fraction of whole population at this Location.
         Coordinate   m_coordinate;   ///< Coordinate of the Location.
 
         ///< All contactCenters at this Location.
