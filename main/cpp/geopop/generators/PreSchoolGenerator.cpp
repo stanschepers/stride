@@ -17,47 +17,44 @@
 
 #include "geopop/GeoGrid.h"
 #include "geopop/GeoGridConfig.h"
-#include "geopop/PreSchool.h"
+#include "geopop/PreSchoolCenter.h"
 #include "geopop/Location.h"
 #include "util/RnMan.h"
 
-#include <trng/discrete_dist.hpp>
-
 namespace geopop {
 
-    using namespace std;
+using namespace std;
 
-    void PreSchoolGenerator::Apply(shared_ptr<GeoGrid> geoGrid, const GeoGridConfig& geoGridConfig,
-                                 unsigned int& contactCenterCounter)
-    {
-        // 1. given the number of persons of preschool age, calculate number of preschools; preschools
-        //    have 50 pupils on average
-        // 2. assign preschools to a location by using a discrete distribution which reflects the
+void PreSchoolGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig, unsigned int& contactCenterCounter)
+{
+        // 1. given the number of persons of school age, calculate number of schools; schools
+        //    have 500 pupils on average
+        // 2. assign schools to a location by using a discrete distribution which reflects the
         //    relative number of pupils for that location; the relative number of pupils is set
         //    to the relative population w.r.t the total population.
 
         const auto pupilCount = geoGridConfig.popInfo.popcount_preschool;
-        const auto preschoolCount =
-                static_cast<unsigned int>(ceil(pupilCount / static_cast<double>(geoGridConfig.pools.preschool_size)));
+        const auto schoolCount =
+            static_cast<unsigned int>(ceil(pupilCount / static_cast<double>(geoGridConfig.pools.preschool_size)));
 
         vector<double> weights;
-        for (const auto& loc : *geoGrid) {
-            weights.push_back(loc->GetRelativePopulationSize());
+        for (const auto& loc : geoGrid) {
+                weights.push_back(loc->GetRelativePop());
         }
 
         if (weights.empty()) {
-            // trng can't handle empty vectors
-            return;
+                // trng can't handle empty vectors
+                return;
         }
 
-        const auto dist = m_rnManager[0].variate_generator(trng::discrete_dist(weights.begin(), weights.end()));
+        const auto dist = m_rn_man.GetDiscreteGenerator(weights, 0U);
 
-        for (auto i = 0U; i < preschoolCount; i++) {
-            const auto loc = (*geoGrid)[dist()];
-            const auto preschool = make_shared<PreSchool>(contactCenterCounter++);
-            preschool->Fill(geoGridConfig, geoGrid);
-            loc->AddContactCenter(preschool);
+        for (auto i = 0U; i < schoolCount; i++) {
+                const auto loc = geoGrid[dist()];
+                const auto pre = make_shared<PreSchoolCenter>(contactCenterCounter++);
+                pre->SetupPools(geoGridConfig, geoGrid.GetPopulation());
+                loc->AddCenter(pre);
         }
-    }
+}
 
 } // namespace geopop

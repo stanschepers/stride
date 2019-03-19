@@ -74,8 +74,8 @@ set(STRIDE_SRC
     geopop/PrimaryCommunityCenter.cpp
     geopop/SecondaryCommunityCenter.cpp
     geopop/WorkplaceCenter.cpp
-    geopop/PreSchool.cpp
-    geopop/Daycare.cpp
+        geopop/PreSchoolCenter.cpp
+        geopop/DaycareCenter.cpp
     #---
     geopop/geo/GeoGridKdTree.cpp
     geopop/geo/KdTree2DPoint.cpp

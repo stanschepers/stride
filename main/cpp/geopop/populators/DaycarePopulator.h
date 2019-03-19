@@ -20,16 +20,16 @@
 namespace geopop {
 
 /**
- * Populate the K12Schools.
+ * Populate the Daycare's.
  */
-    class DaycarePopulator : public Populator
-    {
-    public:
-        /// Using base class constructors.
-        using Populator::Populator;
+class DaycarePopulator : public Populator
+{
+public:
+    /// Using base class constructors.
+    using Populator::Populator;
 
-        /// Core method implementation.
-        void Apply(std::shared_ptr<GeoGrid> geogrid, const GeoGridConfig&) override;
-    };
+    /// Core method implementation.
+    void Apply(GeoGrid& geogrid, const GeoGridConfig&) override;
+};
 
 } // namespace geopop

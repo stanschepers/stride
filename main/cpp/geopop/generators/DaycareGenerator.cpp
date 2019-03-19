@@ -17,47 +17,44 @@
 
 #include "geopop/GeoGrid.h"
 #include "geopop/GeoGridConfig.h"
-#include "geopop/Daycare.h"
+#include "geopop/DaycareCenter.h"
 #include "geopop/Location.h"
 #include "util/RnMan.h"
 
-#include <trng/discrete_dist.hpp>
-
 namespace geopop {
 
-    using namespace std;
+using namespace std;
 
-    void DaycareGenerator::Apply(shared_ptr<GeoGrid> geoGrid, const GeoGridConfig& geoGridConfig,
-                                   unsigned int& contactCenterCounter)
-    {
+void DaycareGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig, unsigned int& contactCenterCounter)
+{
         // 1. given the number of persons of daycare age, calculate number of daycare's; daycare's
-        //    have 10 baby's on average
-        // 2. assign daycare's to a location by using a discrete distribution which reflects the
+        //    have 500 pupils on average
+        // 2. assign schools to a location by using a discrete distribution which reflects the
         //    relative number of pupils for that location; the relative number of pupils is set
         //    to the relative population w.r.t the total population.
 
         const auto pupilCount = geoGridConfig.popInfo.popcount_daycare;
-        const auto daycareCount =
-                static_cast<unsigned int>(ceil(pupilCount / static_cast<double>(geoGridConfig.pools.daycare_size)));
+        const auto schoolCount =
+            static_cast<unsigned int>(ceil(pupilCount / static_cast<double>(geoGridConfig.pools.daycare_size)));
 
         vector<double> weights;
-        for (const auto& loc : *geoGrid) {
-            weights.push_back(loc->GetRelativePopulationSize());
+        for (const auto& loc : geoGrid) {
+                weights.push_back(loc->GetRelativePop());
         }
 
         if (weights.empty()) {
-            // trng can't handle empty vectors
-            return;
+                // trng can't handle empty vectors
+                return;
         }
 
-        const auto dist = m_rnManager[0].variate_generator(trng::discrete_dist(weights.begin(), weights.end()));
+        const auto dist = m_rn_man.GetDiscreteGenerator(weights, 0U);
 
-        for (auto i = 0U; i < daycareCount; i++) {
-            const auto loc = (*geoGrid)[dist()];
-            const auto daycare = make_shared<Daycare>(contactCenterCounter++);
-            daycare->Fill(geoGridConfig, geoGrid);
-            loc->AddContactCenter(daycare);
+        for (auto i = 0U; i < schoolCount; i++) {
+                const auto loc = geoGrid[dist()];
+                const auto day = make_shared<DaycareCenter>(contactCenterCounter++);
+                day->SetupPools(geoGridConfig, geoGrid.GetPopulation());
+                loc->AddCenter(day);
         }
-    }
+}
 
 } // namespace geopop

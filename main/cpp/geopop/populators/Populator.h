@@ -31,8 +31,8 @@ class GeoGrid;
 class GeoGridConfig;
 class Location;
 
-class Daycare;
-class PreSchool;
+class DaycareCenter;
+class PreSchoolCenter;
 class CollegeCenter;
 class HouseholdCenter;
 class K12SchoolCenter;

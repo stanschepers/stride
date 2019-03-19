@@ -62,8 +62,8 @@ void SetupGeoGrid(int locCount, int locPop, int schoolCount, int houseHoldCount,
 
                         for (int i = 0; i < personCount; i++) {
                                 auto sample = populationSample[sampleId % populationSize];
-                                auto p      = geoGrid->CreatePerson(personId, sample, hCenter->GetId(), 0, 0, 0, 0, 0,
-                                                                    0, 0);
+                                auto p      = geoGrid.GetPopulation()->CreatePerson(personId, sample, hCenter->GetId(),
+                                                                                    0, 0, 0, 0, 0, 0, 0);
                                 contactPool->AddMember(p);
                                 sampleId++;
                                 personId++;

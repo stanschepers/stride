@@ -41,7 +41,7 @@ public:
         Person(unsigned int id, float age, unsigned int householdId, unsigned int daycareId, unsigned int preSchoolId,
                 unsigned int k12SchoolId, unsigned int collegeId, unsigned int workId, unsigned int primaryCommunityId,
                 unsigned int secondaryCommunityId)
-            : m_age(age), m_id(id), m_pool_ids{householdId, k12SchoolId,        collegeId,
+            : m_age(age), m_id(id), m_pool_ids{householdId, daycareId, preSchoolId, k12SchoolId,        collegeId,
                                                workId,      primaryCommunityId, secondaryCommunityId},
               m_health(), m_in_pools(true), m_is_participant(false)
         {

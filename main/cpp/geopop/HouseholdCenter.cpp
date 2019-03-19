@@ -27,7 +27,7 @@ void HouseholdCenter::SetupPools(const GeoGridConfig& geoGridConfig, stride::Pop
 {
         auto& poolSys = pop->RefPoolSys();
 
-        for (auto i = 0U; i < geoGridConfig.pools.pools_per_houselhold; ++i) {
+        for (auto i = 0U; i < geoGridConfig.pools.pools_per_household; ++i) {
                 const auto p = poolSys.CreateContactPool(stride::ContactType::Id::Household);
                 RegisterPool(p);
         }
