@@ -31,7 +31,7 @@ namespace geopop {
 
 void PreSchoolPopulator::Apply(geopop::GeoGrid &geoGrid, const geopop::GeoGridConfig&)
 {
-        m_logger->trace("Starting to populate Daycare's");
+        m_logger->trace("Starting to populate PreSchools");
 
         set<ContactPool*> found;
         unsigned int      pupils = 0;
