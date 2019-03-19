@@ -13,21 +13,28 @@
  *  Copyright 2018, 2019, Jan Broeckhove and Bistromatics group.
  */
 
-#include "Household.h"
+#pragma once
 
-#include "GeoGrid.h"
-#include "GeoGridConfig.h"
-
-using namespace stride::ContactType;
+#include "ContactCenter.h"
 
 namespace geopop {
 
-void Household::Fill(const GeoGridConfig& geoGridConfig, const std::shared_ptr<GeoGrid>& geoGrid)
-{
-        for (std::size_t i = 0; i < geoGridConfig.pools.pools_per_household; ++i) {
-                const auto p = geoGrid->CreateContactPool(stride::ContactType::Id::Household);
-                RegisterPool(p);
-        }
-}
+    class GeoGrid;
+
+/**
+ * Models a K12School as ContactCenter.
+ */
+    class Daycare : public ContactCenter
+    {
+    public:
+        /// Construct K12school with assigned ID.
+        explicit Daycare(unsigned int id) : ContactCenter(id) {}
+
+        /// See ContactCenter::Fill.
+        void Fill(const GeoGridConfig& geoGridConfig, const std::shared_ptr<GeoGrid>& geoGrid) override;
+
+        /// See ContactCenter::GetContactPoolType.
+        stride::ContactType::Id GetContactPoolType() const override { return stride::ContactType::Id::Daycare; }
+    };
 
 } // namespace geopop

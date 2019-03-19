@@ -35,6 +35,8 @@ namespace ContactType {
 enum class Id : std::size_t
 {
         Household = static_cast<size_t>(0), // Needs to be zero.
+        Daycare,
+        PreSchool,
         K12School,
         College,
         Workplace,
@@ -43,7 +45,7 @@ enum class Id : std::size_t
 };
 
 /// Number of ContactPool types.
-inline constexpr unsigned int NumOfTypes() { return 6U; }
+inline constexpr unsigned int NumOfTypes() { return 8U; }
 
 /// Check whether string is name of a ContactPoolType::Id.
 bool IsId(const std::string& s);
@@ -67,7 +69,8 @@ struct IDPack
 
 /// Placed separately to please swig and avoid syntax errors there
 using IdPack_t =
-    IDPack<Id::Household, Id::K12School, Id::College, Id::Workplace, Id::PrimaryCommunity, Id::SecondaryCommunity>;
+    IDPack<Id::Household, Id::Daycare, Id::PreSchool, Id::K12School, Id::College, Id::Workplace, Id::PrimaryCommunity,
+           Id::SecondaryCommunity>;
 
 /// A constexpr global variable that gives access to the available Ids
 constexpr IdPack_t IdPack;

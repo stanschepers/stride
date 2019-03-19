@@ -217,6 +217,8 @@ Person* GeoGridJSONReader::ParsePerson(boost::property_tree::ptree& person)
         const auto id                   = boost::lexical_cast<unsigned int>(person.get<string>("id"));
         const auto age                  = boost::lexical_cast<unsigned int>(person.get<string>("age"));
         const auto gender               = person.get<string>("gender");
+        const auto daycareId            = boost::lexical_cast<unsigned int>(person.get<string>("Daycare"));
+        const auto preschoolId          = boost::lexical_cast<unsigned int>(person.get<string>("PreSchool"));
         const auto schoolId             = boost::lexical_cast<unsigned int>(person.get<string>("K12School"));
         const auto collegeId            = boost::lexical_cast<unsigned int>(person.get<string>("College"));
         const auto householdId          = boost::lexical_cast<unsigned int>(person.get<string>("Household"));
@@ -224,8 +226,8 @@ Person* GeoGridJSONReader::ParsePerson(boost::property_tree::ptree& person)
         const auto primaryCommunityId   = boost::lexical_cast<unsigned int>(person.get<string>("PrimaryCommunity"));
         const auto secondaryCommunityId = boost::lexical_cast<unsigned int>(person.get<string>("SecondaryCommunity"));
 
-        return m_geoGrid->CreatePerson(id, age, householdId, schoolId, collegeId, workplaceId, primaryCommunityId,
-                                       secondaryCommunityId);
+        return m_geoGrid->CreatePerson(id, age, daycareId, preschoolId, householdId, schoolId, collegeId, workplaceId,
+                                       primaryCommunityId, secondaryCommunityId);
 }
 
 } // namespace geopop

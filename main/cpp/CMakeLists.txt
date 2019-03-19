@@ -77,6 +77,8 @@ set(STRIDE_SRC
     geopop/PrimaryCommunity.cpp
     geopop/SecondaryCommunity.cpp
     geopop/Workplace.cpp
+    geopop/PreSchool.cpp
+    geopop/Daycare.cpp
     #---
     geopop/geo/GeoGridKdTree.cpp
     geopop/geo/KdTree2DPoint.cpp
@@ -86,7 +88,9 @@ set(STRIDE_SRC
     geopop/generators/HouseholdGenerator.cpp
     geopop/generators/K12SchoolGenerator.cpp
     geopop/generators/WorkplaceGenerator.cpp
-    #---
+    geopop/generators/DaycareGenerator.cpp
+    geopop/generators/PreSchoolGenerator.cpp
+#---
     geopop/io/CitiesCSVReader.cpp
     geopop/io/CommutesCSVReader.cpp
     geopop/io/GeoGridJSONReader.cpp
@@ -105,6 +109,8 @@ set(STRIDE_SRC
     geopop/populators/PrimaryCommunityPopulator.cpp
     geopop/populators/SecondaryCommunityPopulator.cpp
     geopop/populators/WorkplacePopulator.cpp
+    geopop/populators/DaycarePopulator.cpp
+    geopop/populators/PreSchoolPopulator.cpp
     #---
     ${PROTO_HEADER}
     ${PROTO_SRC}
@@ -141,8 +147,7 @@ set(STRIDE_SRC
     viewers/CliViewer.cpp
     viewers/PersonsFileViewer.cpp
     viewers/SummaryFileViewer.cpp
-)
-
+        )
 #============================================================================
 # MACROS to inject in ConfigInfo.cpp
 #============================================================================

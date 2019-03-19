@@ -162,7 +162,6 @@ shared_ptr<ContactCenter> GeoGridProtoReader::ParseContactCenter(
                 result = make_shared<Workplace>(id);
                 typeId = stride::ContactType::Id::Workplace;
                 break;
-                break;
         default: throw runtime_error("No such ContactCenter type");
         }
 
@@ -218,7 +217,7 @@ stride::ContactPool* GeoGridProtoReader::ParseContactPool(
 
 stride::Person* GeoGridProtoReader::ParsePerson(const proto::GeoGrid_Person& protoPerson)
 {
-        return m_geoGrid->CreatePerson(protoPerson.id(), protoPerson.age(), 0, 0, 0, 0, 0, 0);
+        return m_geoGrid->CreatePerson(protoPerson.id(), protoPerson.age(), 0, 0, 0, 0, 0, 0, 0, 0);
 }
 
 } // namespace geopop

@@ -62,7 +62,8 @@ shared_ptr<GeoGrid> CreateGeoGrid(int locCount, int locPop, int k12SchoolCount, 
 
                         for (int i = 0; i < personCount; i++) {
                                 auto sample = populationSample[sampleId % populationSize];
-                                auto p = geoGrid->CreatePerson(personId, sample, household->GetId(), 0, 0, 0, 0, 0);
+                                auto p = geoGrid->CreatePerson(personId, sample, household->GetId(), 0, 0, 0, 0, 0, 0,
+                                                               0);
                                 contactPool->AddMember(p);
                                 sampleId++;
                                 personId++;

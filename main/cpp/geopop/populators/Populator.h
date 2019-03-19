@@ -30,6 +30,8 @@ class GeoGrid;
 class GeoGridConfig;
 class Location;
 
+class Daycare;
+class PreSchool;
 class College;
 class Household;
 class K12School;
@@ -69,6 +71,12 @@ protected:
         stride::util::RnMan&            m_rnManager; ///< RnManager used by populators.
         std::shared_ptr<spdlog::logger> m_logger;    ///< Logger used by populators.
 };
+
+extern template std::vector<stride::ContactPool*> Populator::GetNearbyPools<Daycare>(
+    const std::shared_ptr<GeoGrid>& geoGrid, const std::shared_ptr<Location>& start, double startRadius) const;
+
+extern template std::vector<stride::ContactPool*> Populator::GetNearbyPools<PreSchool>(
+    const std::shared_ptr<GeoGrid>& geoGrid, const std::shared_ptr<Location>& start, double startRadius) const;
 
 extern template std::vector<stride::ContactPool*> Populator::GetNearbyPools<College>(
     const std::shared_ptr<GeoGrid>& geoGrid, const std::shared_ptr<Location>& start, double startRadius) const;

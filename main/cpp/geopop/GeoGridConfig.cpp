@@ -32,10 +32,13 @@ GeoGridConfig::GeoGridConfig() : input{}, refHH{}, popInfo{}, pools{} {}
 GeoGridConfig::GeoGridConfig(const ptree& configPt) : GeoGridConfig()
 {
         input.pop_size                     = configPt.get<unsigned int>("run.geopop_gen.population_size");
-        input.participation_college        = configPt.get<double>("run.geopop_gen.participation_college");
-        input.fraction_workplace_commuters = configPt.get<double>("run.geopop_gen.fraction_workplace_commuters");
         input.fraction_college_commuters   = configPt.get<double>("run.geopop_gen.fraction_college_commuters");
-        input.particpation_workplace       = configPt.get<double>("run.geopop_gen.particpation_workplace");
+        input.fraction_workplace_commuters = configPt.get<double>("run.geopop_gen.fraction_workplace_commuters");
+
+        input.participation_daycare        = configPt.get<double>("run.geopop_gen.participation_daycare");
+        input.participation_preschool      = configPt.get<double>("run.geopop_gen.participation_preschool");
+        input.participation_college        = configPt.get<double>("run.geopop_gen.participation_college");
+        input.participation_workplace      = configPt.get<double>("run.geopop_gen.participation_workplace");
 }
 
 ostream& operator<<(ostream& out, const GeoGridConfig& config)
@@ -48,7 +51,7 @@ ostream& operator<<(ostream& out, const GeoGridConfig& config)
 
         out << left << setw(width) << "Participation fraction of college:" << config.input.participation_college
             << endl;
-        out << left << setw(width) << "Participation fraaction of workplace:" << config.input.particpation_workplace
+        out << left << setw(width) << "Participation fraction of workplace:" << config.input.participation_workplace
             << endl;
 
         out << left << setw(width) << "Target population size" << intToDottedString(config.input.pop_size) << endl;

@@ -75,7 +75,7 @@ void WorkplacePopulator::Apply(shared_ptr<GeoGrid> geoGrid, const GeoGridConfig&
                         for (auto p : *contactPool) {
                                 if (AgeBrackets::Workplace::HasAge((p->GetAge()))) {
                                         bool isStudent      = MakeChoice(geoGridConfig.input.participation_college);
-                                        bool isActiveWorker = MakeChoice(geoGridConfig.input.particpation_workplace);
+                                        bool isActiveWorker = MakeChoice(geoGridConfig.input.participation_workplace);
 
                                         if ((AgeBrackets::College::HasAge(p->GetAge()) && !isStudent) ||
                                             isActiveWorker) {

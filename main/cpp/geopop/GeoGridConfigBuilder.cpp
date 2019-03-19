@@ -36,17 +36,25 @@ void GeoGridConfigBuilder::SetData(GeoGridConfig& geoGridConfig, const string& h
         const auto popSize = geoGridConfig.input.pop_size;
 
         //----------------------------------------------------------------
-        // Determine age makeup of reference houshold population.
+        // Determine age makeup of reference household population.
         //----------------------------------------------------------------
         const auto ref_hh_count  = geoGridConfig.refHH.households.size();
         const auto ref_pop_count = geoGridConfig.refHH.persons.size();
         const auto averageHhSize = static_cast<double>(ref_pop_count) / ref_hh_count;
 
+        auto ref_daycare_age   = 0U;
+        auto ref_preschool_age = 0U;
         auto ref_k12school_age = 0U;
         auto ref_college_age   = 0U;
         auto ref_workplace_age = 0U;
         for (const auto& p : geoGridConfig.refHH.persons) {
                 const auto age = p.GetAge();
+                if (Daycare::HasAge(age)) {
+                        ref_daycare_age++;
+                }
+                if (PreSchool::HasAge(age)) {
+                        ref_preschool_age++;
+                }
                 if (K12School::HasAge(age)) {
                         ref_k12school_age++;
                 }
@@ -61,13 +69,23 @@ void GeoGridConfigBuilder::SetData(GeoGridConfig& geoGridConfig, const string& h
         //----------------------------------------------------------------
         // Scale up to the generated population size.
         //----------------------------------------------------------------
+        const auto fraction_daycare_age   = static_cast<double>(ref_daycare_age) / static_cast<double>(ref_pop_count);
+        const auto fraction_preschool_age = static_cast<double>(ref_preschool_age) / static_cast<double>(ref_pop_count);
         const auto fraction_k12school_age = static_cast<double>(ref_k12school_age) / static_cast<double>(ref_pop_count);
         const auto fraction_college_age   = static_cast<double>(ref_college_age) / static_cast<double>(ref_pop_count);
         const auto fraction_workplace_age = static_cast<double>(ref_workplace_age) / static_cast<double>(ref_pop_count);
 
+        const auto age_count_daycare   = static_cast<unsigned int>(floor(popSize * fraction_daycare_age));
+        const auto age_count_preschool = static_cast<unsigned int>(floor(popSize * fraction_preschool_age));
         const auto age_count_k12school = static_cast<unsigned int>(floor(popSize * fraction_k12school_age));
         const auto age_count_college   = static_cast<unsigned int>(floor(popSize * fraction_college_age));
         const auto age_count_workplace = static_cast<unsigned int>(floor(popSize * fraction_workplace_age));
+
+        geoGridConfig.popInfo.popcount_daycare =
+                static_cast<unsigned int>(floor(geoGridConfig.input.participation_daycare * age_count_daycare));
+
+        geoGridConfig.popInfo.popcount_preschool =
+                static_cast<unsigned int>(floor(geoGridConfig.input.participation_preschool * age_count_preschool));
 
         geoGridConfig.popInfo.popcount_k12school = age_count_k12school;
 
@@ -75,7 +93,7 @@ void GeoGridConfigBuilder::SetData(GeoGridConfig& geoGridConfig, const string& h
             static_cast<unsigned int>(floor(geoGridConfig.input.participation_college * age_count_college));
 
         geoGridConfig.popInfo.popcount_workplace =
-            static_cast<unsigned int>(floor(geoGridConfig.input.particpation_workplace *
+            static_cast<unsigned int>(floor(geoGridConfig.input.participation_workplace *
                                             (age_count_workplace - geoGridConfig.popInfo.popcount_college)));
 
         geoGridConfig.popInfo.count_households =

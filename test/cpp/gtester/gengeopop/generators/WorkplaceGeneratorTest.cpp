@@ -56,7 +56,7 @@ TEST(WorkplaceGeneratorTest, NoCommuting)
         auto               contactCenterCounter   = 1U;
         config.input.pop_size                     = 5 * 1000 * 1000;
         config.popInfo.popcount_workplace         = static_cast<unsigned int>(0.20 * 5 * 1000 * 1000);
-        config.input.particpation_workplace       = 0.20;
+        config.input.participation_workplace       = 0.20;
         config.input.fraction_workplace_commuters = 0;
 
         auto pop     = Population::Create();
@@ -91,7 +91,7 @@ TEST(WorkplaceGeneratorTest, AbsNullCommuting)
         auto               contactCenterCounter   = 1U;
         config.input.pop_size                     = 5 * 1000 * 1000;
         config.popInfo.popcount_workplace         = static_cast<unsigned int>(0.20 * 5 * 1000 * 1000);
-        config.input.particpation_workplace       = 0.20;
+        config.input.participation_workplace       = 0.20;
         config.input.fraction_workplace_commuters = 0.10;
 
         auto pop     = Population::Create();
@@ -140,7 +140,7 @@ TEST(WorkplaceGeneratorTest, TenCommuting)
         auto               contactCenterCounter   = 1U;
         config.input.pop_size                     = 5 * 1000 * 1000;
         config.popInfo.popcount_workplace         = static_cast<unsigned int>(0.20 * 5 * 1000 * 1000);
-        config.input.particpation_workplace       = 0.20;
+        config.input.participation_workplace       = 0.20;
         config.input.fraction_workplace_commuters = 0.10;
 
         auto pop     = Population::Create();

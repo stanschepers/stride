@@ -94,13 +94,15 @@ namespace proto {
 
 enum GeoGrid_Location_ContactCenter_Type
 {
-        GeoGrid_Location_ContactCenter_Type_K12School          = 0,
-        GeoGrid_Location_ContactCenter_Type_Community          = 1,
-        GeoGrid_Location_ContactCenter_Type_PrimaryCommunity   = 2,
-        GeoGrid_Location_ContactCenter_Type_SecondaryCommunity = 3,
-        GeoGrid_Location_ContactCenter_Type_College            = 4,
-        GeoGrid_Location_ContactCenter_Type_Household          = 5,
-        GeoGrid_Location_ContactCenter_Type_Workplace          = 6
+        GeoGrid_Location_ContactCenter_Type_Daycare            = 0,
+        GeoGrid_Location_ContactCenter_Type_PreSchool          = 1,
+        GeoGrid_Location_ContactCenter_Type_K12School          = 2,
+        GeoGrid_Location_ContactCenter_Type_Community          = 3,
+        GeoGrid_Location_ContactCenter_Type_PrimaryCommunity   = 4,
+        GeoGrid_Location_ContactCenter_Type_SecondaryCommunity = 5,
+        GeoGrid_Location_ContactCenter_Type_College            = 6,
+        GeoGrid_Location_ContactCenter_Type_Household          = 7,
+        GeoGrid_Location_ContactCenter_Type_Workplace          = 8
 };
 bool                                      GeoGrid_Location_ContactCenter_Type_IsValid(int value);
 const GeoGrid_Location_ContactCenter_Type GeoGrid_Location_ContactCenter_Type_Type_MIN =
@@ -487,8 +489,10 @@ public:
         typedef GeoGrid_Location_ContactCenter_ContactPool ContactPool;
 
         typedef GeoGrid_Location_ContactCenter_Type Type;
-        static const Type                           K12School = GeoGrid_Location_ContactCenter_Type_K12School;
-        static const Type                           Community = GeoGrid_Location_ContactCenter_Type_Community;
+        static const Type  Daycare                            = GeoGrid_Location_ContactCenter_Type_Daycare;
+        static const Type  PreSchool                          = GeoGrid_Location_ContactCenter_Type_PreSchool;
+        static const Type  K12School                          = GeoGrid_Location_ContactCenter_Type_K12School;
+        static const Type  Community                          = GeoGrid_Location_ContactCenter_Type_Community;
         static const Type  PrimaryCommunity                   = GeoGrid_Location_ContactCenter_Type_PrimaryCommunity;
         static const Type  SecondaryCommunity                 = GeoGrid_Location_ContactCenter_Type_SecondaryCommunity;
         static const Type  College                            = GeoGrid_Location_ContactCenter_Type_College;

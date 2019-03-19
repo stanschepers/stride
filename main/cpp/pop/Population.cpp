@@ -110,12 +110,14 @@ unsigned int Population::GetInfectedCount() const
         return total;
 }
 
-Person* Population::CreatePerson(unsigned int id, double age, unsigned int householdId, unsigned int k12SchoolId,
-                                 unsigned int college, unsigned int workId, unsigned int primaryCommunityId,
+Person* Population::CreatePerson(unsigned int id, double age, unsigned int householdId, unsigned int DaycareId,
+                                 unsigned int PreSchoolId, unsigned int k12SchoolId, unsigned int college,
+                                 unsigned int workId, unsigned int primaryCommunityId,
                                  unsigned int secondaryCommunityId)
+
 {
-        return emplace_back(id, age, householdId, k12SchoolId, college, workId, primaryCommunityId,
-                            secondaryCommunityId);
+        return emplace_back(id, age, DaycareId, PreSchoolId, householdId, k12SchoolId, college, workId,
+                            primaryCommunityId, secondaryCommunityId);
 }
 
 ContactPool* Population::CreateContactPool(ContactType::Id typeId)
