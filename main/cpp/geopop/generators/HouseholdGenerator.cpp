@@ -17,20 +17,17 @@
 
 #include "geopop/GeoGrid.h"
 #include "geopop/GeoGridConfig.h"
-#include "geopop/Household.h"
+#include "geopop/HouseholdCenter.h"
 #include "geopop/Location.h"
 #include "util/RnMan.h"
 
-#include <trng/discrete_dist.hpp>
-
 namespace geopop {
 
-void HouseholdGenerator::Apply(std::shared_ptr<GeoGrid> geoGrid, const GeoGridConfig& geoGridConfig,
-                               unsigned int& contactCenterCounter)
+void HouseholdGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig, unsigned int& contactCenterCounter)
 {
         std::vector<double> weights;
-        for (const auto& loc : *geoGrid) {
-                weights.push_back(loc->GetRelativePopulationSize());
+        for (const auto& loc : geoGrid) {
+                weights.push_back(loc->GetRelativePop());
         }
 
         if (weights.empty()) {
@@ -38,13 +35,13 @@ void HouseholdGenerator::Apply(std::shared_ptr<GeoGrid> geoGrid, const GeoGridCo
                 return;
         }
 
-        const auto dist = m_rnManager[0].variate_generator(trng::discrete_dist(weights.begin(), weights.end()));
+        const auto dist = m_rn_man.GetDiscreteGenerator(weights, 0U);
 
         for (auto i = 0U; i < geoGridConfig.popInfo.count_households; i++) {
-                const auto loc = (*geoGrid)[dist()];
-                const auto h   = std::make_shared<Household>(contactCenterCounter++);
-                h->Fill(geoGridConfig, geoGrid);
-                loc->AddContactCenter(h);
+                const auto loc = geoGrid[dist()];
+                const auto h   = std::make_shared<HouseholdCenter>(contactCenterCounter++);
+                h->SetupPools(geoGridConfig, geoGrid.GetPopulation());
+                loc->AddCenter(h);
         }
 }
 
