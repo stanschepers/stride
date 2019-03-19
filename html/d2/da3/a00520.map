@@ -1,5 +1,4 @@
-<map id="GeoPopBuilder.h" name="GeoPopBuilder.h">
-<area shape="rect" id="node2" href="$d7/da0/a00198.html" title="Header for the command line controller. " alt="" coords="5,80,165,107"/>
-<area shape="rect" id="node3" href="$d9/d01/a00227.html" title="Initialize populations: implementation. " alt="" coords="190,80,333,107"/>
-<area shape="rect" id="node4" href="$db/dc3/a00284.html" title="Core Population class. " alt="" coords="357,80,473,107"/>
+<map id="HouseholdCenter.h" name="HouseholdCenter.h">
+<area shape="rect" id="node2" href="$de/d53/a00169.html" title="ContactCenter.h" alt="" coords="329,80,456,107"/>
+<area shape="rect" id="node3" href="$d9/d90/a00178.html" title="Definition of ContactPool Id Type. " alt="" coords="164,155,328,181"/>
 </map>

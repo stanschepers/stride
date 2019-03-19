@@ -1,10 +1,13 @@
 var a00078 =
 [
-    [ "ContactHandler", "d9/da4/a00078.html#acd8b09e759ed6049412de25662d1301d", null ],
-    [ "operator()", "d9/da4/a00078.html#ac03cd0d69d17bb0a97189c24ed537fdf", null ],
-    [ "HasContactAndTransmission", "d9/da4/a00078.html#a65ae0c571176ea267cf980ce31408f35", null ],
-    [ "HasContact", "d9/da4/a00078.html#a4a6ef10cff06328c9bc5b7f6337339ad", null ],
-    [ "HasTransmission", "d9/da4/a00078.html#a94d8f2bdeff1e99b1e6380060e8fb622", null ],
-    [ "RateToProbability", "d9/da4/a00078.html#a51fd44b433163a1bd2a9fb424a003344", null ],
-    [ "m_uniform01_generator", "d9/da4/a00078.html#ad89329d01eda188d96ac8fea0386cdc4", null ]
+    [ "ContactPoolSys", "d9/da4/a00078.html#a3234f77279a728449333679b51d72498", null ],
+    [ "CreateContactPool", "d9/da4/a00078.html#a673d59a562614a82ce1c3adeb28d9dfd", null ],
+    [ "CreateContactPool", "d9/da4/a00078.html#a976a718b023257fb4c47028f860e58e6", null ],
+    [ "CRefPools", "d9/da4/a00078.html#abec2451157774964a5008679b66b8b48", null ],
+    [ "CRefPools", "d9/da4/a00078.html#a016fd427c95b26c2fe8b542b6a7d6963", null ],
+    [ "RefPools", "d9/da4/a00078.html#ad484960db6d8795971580e635f6da030", null ],
+    [ "DefaultPopBuilder", "d9/da4/a00078.html#aa79c86f4bdecaefcfc763c2b2f5bee37", null ],
+    [ "Sim", "d9/da4/a00078.html#a9ee783cf11d4fb4f556c985020efd7db", null ],
+    [ "m_currentContactPoolId", "d9/da4/a00078.html#ab59431e05f466c3828738407e37660b4", null ],
+    [ "m_sys", "d9/da4/a00078.html#a3c592b3099ba8d56ae60edf74497d814", null ]
 ];

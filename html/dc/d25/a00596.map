@@ -1,5 +1,4 @@
-<map id="Person.h" name="Person.h">
-<area shape="rect" id="node2" href="$dd/d4c/a00177.html" title="Definition of ContactPool Id Type. " alt="" coords="92,155,256,181"/>
-<area shape="rect" id="node8" href="$d6/d08/a00244.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="294,80,483,107"/>
-<area shape="rect" id="node13" href="$d1/da8/a00230.html" title="Header for the Health class. " alt="" coords="508,80,637,107"/>
+<map id="PersonsFileViewer.h" name="PersonsFileViewer.h">
+<area shape="rect" id="node2" href="$db/dd9/a00179.html" title="Header for the command line controller. " alt="" coords="5,80,141,107"/>
+<area shape="rect" id="node3" href="$d2/d82/a00279.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="166,80,327,107"/>
 </map>

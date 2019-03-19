@@ -1,5 +1,4 @@
-<map id="GeoGridProtoWriter.h" name="GeoGridProtoWriter.h">
-<area shape="rect" id="node2" href="$d5/ddf/a00224.html" title="GeoGridWriter.h" alt="" coords="813,80,934,107"/>
-<area shape="rect" id="node5" href="$d9/dd6/a00272.html" title="geopop/Location.h" alt="" coords="458,80,598,107"/>
-<area shape="rect" id="node6" href="$d0/d81/a00180.html" title="Coordinate.h" alt="" coords="529,155,633,181"/>
+<map id="GeoGridReaderFactory.h" name="GeoGridReaderFactory.h">
+<area shape="rect" id="node2" href="$dd/df3/a00219.html" title="GeoGridReaderFactory.cpp" alt="" coords="5,80,195,107"/>
+<area shape="rect" id="node3" href="$d6/d08/a00244.html" title="Initialize populations: implementation. " alt="" coords="219,80,378,107"/>
 </map>

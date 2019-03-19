@@ -1,4 +1,4 @@
-<map id="PublicHealthAgency.h" name="PublicHealthAgency.h">
-<area shape="rect" id="node2" href="$da/d50/a00301.html" title="Interface of RnMan. " alt="" coords="196,80,296,107"/>
-<area shape="rect" id="node3" href="$df/d95/a00299.html" title="Interface of RnPcg. " alt="" coords="55,155,128,181"/>
+<map id="Rn.h" name="Rn.h">
+<area shape="rect" id="node2" href="$d4/d5b/a00294.html" title="Implementation of RnPcg. " alt="" coords="5,80,71,107"/>
+<area shape="rect" id="node3" href="$d3/d4a/a00297.html" title="Implementation of RnPcg. " alt="" coords="95,80,187,107"/>
 </map>

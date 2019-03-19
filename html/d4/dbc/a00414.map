@@ -1,4 +1,5 @@
-<map id="CollegePopulator.h" name="CollegePopulator.h">
-<area shape="rect" id="node2" href="$d1/d72/a00204.html" title="GeoGridBuilder.cpp" alt="" coords="5,80,149,107"/>
-<area shape="rect" id="node3" href="$de/db9/a00159.html" title="CollegePopulator.cpp" alt="" coords="174,80,330,107"/>
+<map id="CommunityGenerator.h" name="CommunityGenerator.h">
+<area shape="rect" id="node2" href="$d7/da0/a00198.html" title="Generator.h" alt="" coords="263,80,362,107"/>
+<area shape="rect" id="node3" href="$d9/d0d/a00298.html" title="Interface of RnMan. " alt="" coords="196,155,296,181"/>
+<area shape="rect" id="node4" href="$db/d7b/a00296.html" title="Interface of RnPcg. " alt="" coords="55,229,128,256"/>
 </map>
