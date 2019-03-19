@@ -26,6 +26,11 @@
 
 #include <memory>
 
+namespace geopop {
+class GeoGrid;
+class GeoGridConfig;
+} // namespace geopop
+
 namespace stride {
 
 class Population;
@@ -41,6 +46,22 @@ public:
 
         /// Generates a synthetic population.
         std::shared_ptr<Population> Build(std::shared_ptr<Population> pop) override;
+
+private:
+        /// Reads the data files.
+        void MakeLocations(geopop::GeoGrid& geoGrid, const geopop::GeoGridConfig& geoGridConfig,
+                           const std::string& citiesFileName, const std::string& commutingFileName);
+
+        /// Build and store the Geo part of the GeoGrid.
+        void MakeCenters(geopop::GeoGrid& geoGrid, const geopop::GeoGridConfig& geoGridConfig);
+
+        /// Build and store the Pop part of the GeoGrid.
+        void MakePersons(geopop::GeoGrid& geoGrid, const geopop::GeoGridConfig& geoGridConfig);
+
+private:
+        /// The current number of ContactCenters, used to obtain an Id for a new contactCenter.
+        /// ! 0 has special meaning (not assigned)!
+        unsigned int m_ccCounter = 1;
 };
 
 } // namespace stride
