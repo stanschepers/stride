@@ -41,8 +41,8 @@ shared_ptr<Population> SurveySeeder::Seed(shared_ptr<Population> pop)
         const string logLevel = m_config.get<string>("run.contact_log_level", "None");
         if (logLevel != "None") {
                 Population& population  = *pop;
-                auto&       poolSys     = population.GetContactPoolSys();
-                auto&       logger      = population.GetContactLogger();
+                auto&       poolSys     = population.CRefPoolSys();
+                auto&       logger      = population.RefContactLogger();
                 const auto  popCount    = static_cast<unsigned int>(population.size() - 1);
                 const auto  numSurveyed = m_config.get<unsigned int>("run.num_participants_survey");
 
@@ -61,19 +61,23 @@ shared_ptr<Population> SurveySeeder::Seed(shared_ptr<Population> pop)
                         }
                         p.ParticipateInSurvey();
 
-                        const auto h = p.GetHealth();
+                        const auto h    = p.GetHealth();
+                        const auto pHH  = p.GetPoolId(Id::Household);
+                        const auto pK12 = p.GetPoolId(Id::K12School);
+                        const auto pC   = p.GetPoolId(Id::College);
+                        const auto pW   = p.GetPoolId(Id::Workplace);
+                        const auto pPC  = p.GetPoolId(Id::PrimaryCommunity);
+                        const auto pSC  = p.GetPoolId(Id::SecondaryCommunity);
                         logger->info("[PART] {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {}", p.GetId(),
-                                     p.GetAge(), p.GetPoolId(Id::Household), p.GetPoolId(Id::K12School),
-                                     p.GetPoolId(Id::College), p.GetPoolId(Id::Workplace), h.IsSusceptible(),
-                                     h.IsInfected(), h.IsInfectious(), h.IsRecovered(), h.IsImmune(),
-                                     h.GetStartInfectiousness(), h.GetStartSymptomatic(), h.GetEndInfectiousness(),
-                                     h.GetEndSymptomatic(),
-                                     poolSys[Id::Household][p.GetPoolId(Id::Household)].GetSize(),
-                                     poolSys[Id::K12School][p.GetPoolId(Id::K12School)].GetSize(),
-                                     poolSys[Id::College][p.GetPoolId(Id::College)].GetSize(),
-                                     poolSys[Id::Workplace][p.GetPoolId(Id::Workplace)].GetSize(),
-                                     poolSys[Id::PrimaryCommunity][p.GetPoolId(Id::PrimaryCommunity)].GetSize(),
-                                     poolSys[Id::SecondaryCommunity][p.GetPoolId(Id::SecondaryCommunity)].GetSize());
+                                     p.GetAge(), pHH, pK12, pC, pW, h.IsSusceptible(), h.IsInfected(), h.IsInfectious(),
+                                     h.IsRecovered(), h.IsImmune(), h.GetStartInfectiousness(), h.GetStartSymptomatic(),
+                                     h.GetEndInfectiousness(), h.GetEndSymptomatic(),
+                                     poolSys.CRefPools<Id::Household>()[pHH].GetPool().size(),
+                                     poolSys.CRefPools<Id::K12School>()[pK12].GetPool().size(),
+                                     poolSys.CRefPools<Id::College>()[pC].GetPool().size(),
+                                     poolSys.CRefPools<Id::Workplace>()[pW].GetPool().size(),
+                                     poolSys.CRefPools<Id::PrimaryCommunity>()[pPC].GetPool().size(),
+                                     poolSys.CRefPools<Id::SecondaryCommunity>()[pSC].GetPool().size());
 
                         numSamples++;
                 }
