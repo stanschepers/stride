@@ -17,10 +17,10 @@
 
 #include "contact/AgeBrackets.h"
 #include "contact/ContactPool.h"
-#include "geopop/College.h"
+#include "geopop/CollegeCenter.h"
 #include "geopop/GeoGrid.h"
 #include "geopop/GeoGridConfig.h"
-#include "geopop/Household.h"
+#include "geopop/HouseholdCenter.h"
 #include "geopop/Location.h"
 #include "pop/Person.h"
 #include "util/Assert.h"
@@ -31,21 +31,21 @@ using namespace std;
 using namespace stride;
 using namespace stride::ContactType;
 
-void CollegePopulator::Apply(shared_ptr<GeoGrid> geoGrid, const GeoGridConfig& geoGridConfig)
+void CollegePopulator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig)
 {
-        m_logger->info("Starting to populate Colleges");
+        m_logger->trace("Starting to populate Colleges");
 
         set<ContactPool*> found;
         auto              students  = 0U;
         auto              commuting = 0U;
 
         // for every location
-        for (const auto& loc : *geoGrid) {
+        for (const auto& loc : geoGrid) {
                 if (loc->GetPopCount() == 0) {
                         continue;
                 }
                 // 1. find all highschools in an area of 10-k*10 km
-                const auto& nearByColleges = GetNearbyPools<College>(geoGrid, loc);
+                const auto& nearByColleges = GetNearbyPools(Id::College, geoGrid, *loc);
 
                 AssertThrow(!nearByColleges.empty(), "No HighSchool found!", m_logger);
 
@@ -55,8 +55,8 @@ void CollegePopulator::Apply(shared_ptr<GeoGrid> geoGrid, const GeoGridConfig& g
                 // 2. find all colleges where students from this location commute to
                 vector<Location*> commutingCollege;
                 vector<double>    commutingWeights;
-                for (const auto& commute : loc->GetOutgoingCommutingCities()) {
-                        const auto& highSchools = commute.first->GetContactCentersOfType<College>();
+                for (const auto& commute : loc->CRefOutgoingCommutes()) {
+                        const auto& highSchools = commute.first->RefCenters(Id::College);
                         if (!highSchools.empty()) {
                                 commutingCollege.push_back(commute.first);
                                 commutingWeights.push_back(commute.second);
@@ -70,8 +70,8 @@ void CollegePopulator::Apply(shared_ptr<GeoGrid> geoGrid, const GeoGridConfig& g
                 }
 
                 // 2. for every student assign a class
-                for (const auto& household : loc->GetContactCentersOfType<Household>()) {
-                        ContactPool* contactPool = household->GetPools()[0];
+                for (const auto& hhCenter : loc->RefCenters(Id::Household)) {
+                        ContactPool* const contactPool = (*hhCenter)[0];
                         found.insert(contactPool);
                         for (Person* p : *contactPool) {
                                 if (AgeBrackets::College::HasAge(p->GetAge()) &&
@@ -87,7 +87,7 @@ void CollegePopulator::Apply(shared_ptr<GeoGrid> geoGrid, const GeoGridConfig& g
                                                 auto locationId = disCommuting();
                                                 // create list of classes for each highschool at this location
                                                 const auto& highSchools =
-                                                    commutingCollege[locationId]->GetContactCentersOfType<College>();
+                                                    commutingCollege[locationId]->RefCenters(Id::College);
 
                                                 vector<ContactPool*> contactPools;
                                                 for (const auto& hs : highSchools) {
@@ -109,9 +109,10 @@ void CollegePopulator::Apply(shared_ptr<GeoGrid> geoGrid, const GeoGridConfig& g
                         }
                 }
         }
-        m_logger->info("Number of students in Colleges: {}", students);
-        m_logger->info("Number of classes:  {}", found.size());
-        m_logger->info("Number students that commute: ", commuting);
+        m_logger->debug("Number of students in Colleges: {}", students);
+        m_logger->debug("Number of classes:  {}", found.size());
+        m_logger->debug("Number students that commute: ", commuting);
+        m_logger->trace("Done populating Colleges");
 }
 
 } // namespace geopop
