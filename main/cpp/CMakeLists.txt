@@ -154,6 +154,11 @@ if(Protobuf_FOUND)
 else()
     target_link_libraries(libstride PRIVATE libprotobuf)
 endif()
+if(HDF5_FOUND)
+    target_link_libraries(libstride PRIVATE ${HDF5_CXX_LIBRARIES} ${HDF5_CXX_HL_LIBRARIES})
+else()
+    target_link_libraries(libstride PRIVATE libhdf5 libhdf5-hl libhdf5-cpp libhdf5-hl-cpp)
+endif()
 set_target_properties(libstride
     PROPERTIES
         POSITION_INDEPENDENT_CODE ON
