@@ -36,7 +36,7 @@ if(NOT HDF5_FOUND)
               SET(CMAKE_C_ARCHIVE_FINISH   "<CMAKE_RANLIB> -no_warning_for_no_symbols -c <TARGET>")
               SET(CMAKE_CXX_ARCHIVE_FINISH "<CMAKE_RANLIB> -no_warning_for_no_symbols -c <TARGET>")
        endif()
-       add_subdirectory (hdf5)
+       add_subdirectory (hdf5 EXCLUDE_FROM_ALL)
 endif()
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -w")

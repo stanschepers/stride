@@ -29,7 +29,7 @@ set(SWIG_WRAPPER
     swig/cpp/create_sim.cpp
     )
 set_source_files_properties( ${SWIG_WRAPPER} PROPERTIES COMPILE_FLAGS "-fPIC")
-add_library(swigwrapper ${SWIG_WRAPPER})
+add_library(swigwrapper STATIC ${SWIG_WRAPPER})
 
 #============================================================================
 # Build & install the Swig files for python environment.
