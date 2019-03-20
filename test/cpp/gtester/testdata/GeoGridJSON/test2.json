@@ -113,14 +113,14 @@
         {
             "id": "1",
             "age": "18",
+            "Daycare": "8",
+            "PreSchool": "9",
             "K12School": "2",
             "College": "4",
             "Household": "5",
             "Workplace": "6",
             "PrimaryCommunity": "3",
-            "SecondaryCommunity": "7",
-            "Daycare": "8",
-            "PreSchool": "9"
+            "SecondaryCommunity": "7"
         }
     ]
 }

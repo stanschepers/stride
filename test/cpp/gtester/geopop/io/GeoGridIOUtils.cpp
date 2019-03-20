@@ -246,16 +246,6 @@ shared_ptr<GeoGrid> GetPopulatedGeoGrid(Population* pop)
         daycarePool->AddMember(person);
         preschoolPool->AddMember(person);
 
-        cout << (*schoolPool)[0]->GetId() << endl;
-        cout << (*collegePool)[0]->GetId() << endl;
-        cout << (*householdPool)[0]->GetId() << endl;
-        cout << (*workplacePool)[0]->GetId() << endl;
-        cout << (*communityPool)[0]->GetId() << endl;
-        cout << (*secondaryCommunityPool)[0]->GetId() << endl;
-        cout << (*daycarePool)[0]->GetId() << endl;
-        cout << (*preschoolPool)[0]->GetId() << endl;
-
-
         return geoGrid;
 }
 
