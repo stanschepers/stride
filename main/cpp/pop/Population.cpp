@@ -119,7 +119,7 @@ Person* Population::CreatePerson(unsigned int id, double age, unsigned int house
                                  unsigned int secondaryCommunityId)
 
 {
-        return emplace_back(id, age, DaycareId, PreSchoolId, householdId, k12SchoolId, college, workId,
+        return emplace_back(id, age, householdId, DaycareId, PreSchoolId, k12SchoolId, college, workId,
                             primaryCommunityId, secondaryCommunityId);
 }
 

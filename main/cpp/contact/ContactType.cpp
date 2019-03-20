@@ -68,8 +68,8 @@ string ToString(Id c)
 {
         static map<Id, string> names{
             make_pair(Id::Household, "Household"),
-            make_pair(Id::Daycare, "DaycareCenter"),
-            make_pair(Id::PreSchool, "PreSchoolCenter"),
+            make_pair(Id::Daycare, "Daycare"),
+            make_pair(Id::PreSchool, "PreSchool"),
             make_pair(Id::K12School, "K12School"),
             make_pair(Id::College, "College"),
             make_pair(Id::Workplace, "Workplace"),

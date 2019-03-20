@@ -19,6 +19,8 @@
 #include "geopop/CollegeCenter.h"
 #include "geopop/GeoGrid.h"
 #include "geopop/HouseholdCenter.h"
+#include "geopop/DaycareCenter.h"
+#include "geopop/PreSchoolCenter.h"
 #include "geopop/K12SchoolCenter.h"
 #include "geopop/PrimaryCommunityCenter.h"
 #include "geopop/SecondaryCommunityCenter.h"
@@ -149,7 +151,13 @@ shared_ptr<ContactCenter> GeoGridJSONReader::ParseContactCenter(boost::property_
 
         shared_ptr<ContactCenter> result;
         ContactType::Id           typeId;
-        if (type == ToString(Id::K12School)) {
+        if (type == ToString(Id::Daycare)) {
+                result = make_shared<DaycareCenter>(id);
+                typeId = Id::Daycare;
+        } else if (type == ToString(Id::PreSchool)) {
+                result = make_shared<PreSchoolCenter>(id);
+                typeId = Id::PreSchool;
+        } else if (type == ToString(Id::K12School)) {
                 result = make_shared<K12SchoolCenter>(id);
                 typeId = Id::K12School;
         } else if (type == ToString(Id::College)) {
@@ -219,8 +227,8 @@ Person* GeoGridJSONReader::ParsePerson(boost::property_tree::ptree& person)
         const auto id   = boost::lexical_cast<unsigned int>(person.get<string>("id"));
         const auto age  = boost::lexical_cast<unsigned int>(person.get<string>("age"));
         const auto hhId = boost::lexical_cast<unsigned int>(person.get<string>("Household"));
-        const auto dcId = boost::lexical_cast<unsigned int>(person.get<string>("DaycareCenter"));
-        const auto psId = boost::lexical_cast<unsigned int>(person.get<string>("PreSchoolCenter"));
+        const auto dcId = boost::lexical_cast<unsigned int>(person.get<string>("Daycare"));
+        const auto psId = boost::lexical_cast<unsigned int>(person.get<string>("PreSchool"));
         const auto ksId = boost::lexical_cast<unsigned int>(person.get<string>("K12School"));
         const auto coId = boost::lexical_cast<unsigned int>(person.get<string>("College"));
         const auto wpId = boost::lexical_cast<unsigned int>(person.get<string>("Workplace"));
