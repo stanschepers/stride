@@ -125,6 +125,7 @@ install:
     #			STRIDE_BOOST_ROOT: specify where the correct version of boost can be found
     #			STRIDE_BOOST_NO_SYSTEM_PATHS: should be ON to prevent mixing different versions of boost
     if [[ "$TRAVIS_OS_NAME" == "osx" ]] && [[ "$CXX_ID" == "gcc" ]]; then
+      export STRIDE_FORCE_NO_HDF5=ON
       export STRIDE_FORCE_NO_BOOST=ON
       export STRIDE_BOOST_NO_SYSTEM_PATHS=ON
     else
