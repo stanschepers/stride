@@ -69,14 +69,12 @@ shared_ptr<Population> DefaultPopBuilder::MakePersons(shared_ptr<Population> pop
                 const auto values               = Split(line, ",");
                 const auto age                  = FromString<unsigned int>(values[0]);
                 const auto householdId          = FromString<unsigned int>(values[1]);
-                const auto daycareId            = FromString<unsigned int>(values[2]);
-                const auto preschoolId          = FromString<unsigned int>(values[3]);
-                const auto schoolId             = FromString<unsigned int>(values[4]);
-                const auto workId               = FromString<unsigned int>(values[5]);
-                const auto primaryCommunityId   = FromString<unsigned int>(values[6]);
-                const auto secondaryCommunityId = FromString<unsigned int>(values[7]);
+                const auto schoolId             = FromString<unsigned int>(values[2]);
+                const auto workId               = FromString<unsigned int>(values[3]);
+                const auto primaryCommunityId   = FromString<unsigned int>(values[4]);
+                const auto secondaryCommunityId = FromString<unsigned int>(values[5]);
 
-                pop->CreatePerson(person_id, age, householdId, daycareId, preschoolId, schoolId, 0, workId,
+                pop->CreatePerson(person_id, age, householdId, 0, 0, schoolId, 0, workId,
                                   primaryCommunityId, secondaryCommunityId);
                 ++person_id;
         }
