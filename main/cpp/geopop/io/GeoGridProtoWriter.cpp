@@ -58,6 +58,8 @@ void GeoGridProtoWriter::WriteContactCenter(shared_ptr<ContactCenter>           
                                             proto::GeoGrid_Location_ContactCenter* protoContactCenter)
 {
         map<Id, proto::GeoGrid_Location_ContactCenter_Type> types = {
+            {Id::Daycare, proto::GeoGrid_Location_ContactCenter_Type_Daycare},
+            {Id::PreSchool, proto::GeoGrid_Location_ContactCenter_Type_PreSchool},
             {Id::K12School, proto::GeoGrid_Location_ContactCenter_Type_K12School},
             {Id::PrimaryCommunity, proto::GeoGrid_Location_ContactCenter_Type_PrimaryCommunity},
             {Id::SecondaryCommunity, proto::GeoGrid_Location_ContactCenter_Type_SecondaryCommunity},

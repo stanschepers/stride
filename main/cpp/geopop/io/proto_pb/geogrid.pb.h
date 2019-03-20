@@ -455,6 +455,10 @@ class GeoGrid_Location_ContactCenter final :
   typedef GeoGrid_Location_ContactCenter_ContactPool ContactPool;
 
   typedef GeoGrid_Location_ContactCenter_Type Type;
+  static const Type Daycare =
+    GeoGrid_Location_ContactCenter_Type_Daycare;
+  static const Type PreSchool =
+    GeoGrid_Location_ContactCenter_Type_PreSchool;
   static const Type K12School =
     GeoGrid_Location_ContactCenter_Type_K12School;
   static const Type PrimaryCommunity =

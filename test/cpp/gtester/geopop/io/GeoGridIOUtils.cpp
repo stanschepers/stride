@@ -20,6 +20,8 @@
 #include "geopop/CollegeCenter.h"
 #include "geopop/GeoGridConfig.h"
 #include "geopop/HouseholdCenter.h"
+#include "geopop/DaycareCenter.h"
+#include "geopop/PreSchoolCenter.h"
 #include "geopop/K12SchoolCenter.h"
 #include "geopop/PrimaryCommunityCenter.h"
 #include "geopop/SecondaryCommunityCenter.h"
@@ -154,6 +156,8 @@ void ComparePerson(const proto::GeoGrid_Person& protoPerson)
 
         const auto person = persons_found[protoPerson.id()];
         EXPECT_EQ(person->GetAge(), protoPerson.age());
+        EXPECT_EQ(persons_pools[make_pair(protoPerson.id(), Id::Daycare)], person->GetPoolId(Id::Daycare));
+        EXPECT_EQ(persons_pools[make_pair(protoPerson.id(), Id::PreSchool)], person->GetPoolId(Id::PreSchool));
         EXPECT_EQ(persons_pools[make_pair(protoPerson.id(), Id::College)], person->GetPoolId(Id::College));
         EXPECT_EQ(persons_pools[make_pair(protoPerson.id(), Id::K12School)], person->GetPoolId(Id::K12School));
         EXPECT_EQ(persons_pools[make_pair(protoPerson.id(), Id::Household)], person->GetPoolId(Id::Household));
@@ -220,8 +224,20 @@ shared_ptr<GeoGrid> GetPopulatedGeoGrid(Population* pop)
         const auto workplacePool = new ContactPool(6, Id::Workplace);
         workplace->RegisterPool(workplacePool);
 
+        const auto daycare = make_shared<DaycareCenter>(6);
+        location->AddCenter(daycare);
+        const auto daycarePool = new ContactPool(8, Id::Daycare);
+        daycare->RegisterPool(daycarePool);
+
+        const auto preschool = make_shared<PreSchoolCenter>(7);
+        location->AddCenter(preschool);
+        const auto preschoolPool = new ContactPool(9, Id::PreSchool);
+        preschool->RegisterPool(preschoolPool);
+
         geoGrid->AddLocation(location);
-        const auto person = geoGrid->GetPopulation()->CreatePerson(1, 18, 5, 0, 0, 2, 4, 6, 3, 7);
+        const auto person = geoGrid->GetPopulation()->CreatePerson(1, 18, 5, 8, 9, 2, 4, 6, 3, 7);
+        daycarePool->AddMember(person);
+        preschoolPool->AddMember(person);
         communityPool->AddMember(person);
         schoolPool->AddMember(person);
         secondaryCommunityPool->AddMember(person);

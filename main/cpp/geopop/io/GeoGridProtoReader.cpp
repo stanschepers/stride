@@ -20,6 +20,8 @@
 #include "geopop/CollegeCenter.h"
 #include "geopop/GeoGrid.h"
 #include "geopop/HouseholdCenter.h"
+#include "geopop/DaycareCenter.h"
+#include "geopop/PreSchoolCenter.h"
 #include "geopop/K12SchoolCenter.h"
 #include "geopop/PrimaryCommunityCenter.h"
 #include "geopop/SecondaryCommunityCenter.h"
@@ -96,6 +98,14 @@ shared_ptr<ContactCenter> GeoGridProtoReader::ParseContactCenter(
         shared_ptr<ContactCenter> result;
         stride::ContactType::Id   typeId;
         switch (type) {
+        case proto::GeoGrid_Location_ContactCenter_Type_Daycare:
+                result = make_shared<DaycareCenter>(id);
+                typeId = stride::ContactType::Id::Daycare;
+                break;
+        case proto::GeoGrid_Location_ContactCenter_Type_PreSchool:
+                result = make_shared<PreSchoolCenter>(id);
+                typeId = stride::ContactType::Id::PreSchool;
+                break;
         case proto::GeoGrid_Location_ContactCenter_Type_K12School:
                 result = make_shared<K12SchoolCenter>(id);
                 typeId = stride::ContactType::Id::K12School;

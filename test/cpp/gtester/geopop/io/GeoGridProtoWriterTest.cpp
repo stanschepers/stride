@@ -18,6 +18,8 @@
 #include "geopop/CollegeCenter.h"
 #include "geopop/GeoGridConfig.h"
 #include "geopop/HouseholdCenter.h"
+#include "geopop/DaycareCenter.h"
+#include "geopop/PreSchoolCenter.h"
 #include "geopop/K12SchoolCenter.h"
 #include "geopop/PrimaryCommunityCenter.h"
 #include "geopop/SecondaryCommunityCenter.h"
@@ -48,11 +50,13 @@ TEST(GeoGridProtoWriterTest, contactCentersTest)
         const auto pop      = Population::Create();
         auto&      geoGrid  = pop->RefGeoGrid();
         const auto location = make_shared<Location>(1, 4, Coordinate(0, 0), "Bavikhove", 2500);
-        location->AddCenter(make_shared<K12SchoolCenter>(0));
-        location->AddCenter(make_shared<PrimaryCommunityCenter>(1));
-        location->AddCenter(make_shared<CollegeCenter>(2));
-        location->AddCenter(make_shared<HouseholdCenter>(3));
-        location->AddCenter(make_shared<WorkplaceCenter>(4));
+        location->AddCenter(make_shared<DaycareCenter>(0));
+        location->AddCenter(make_shared<PreSchoolCenter>(1));
+        location->AddCenter(make_shared<K12SchoolCenter>(2));
+        location->AddCenter(make_shared<PrimaryCommunityCenter>(3));
+        location->AddCenter(make_shared<CollegeCenter>(4));
+        location->AddCenter(make_shared<HouseholdCenter>(5));
+        location->AddCenter(make_shared<WorkplaceCenter>(6));
         geoGrid.AddLocation(location);
 
         CompareGeoGrid(geoGrid);
