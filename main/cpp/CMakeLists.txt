@@ -144,6 +144,9 @@ set(STRIDE_SRC
     viewers/InfectedViewer.cpp
     viewers/PersonsFileViewer.cpp
     viewers/SummaryFileViewer.cpp
+    #--
+    demo/hdf5_proto.cpp
+    demo/json_proto.cpp
 )
 
 #============================================================================

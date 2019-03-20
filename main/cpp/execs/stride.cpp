@@ -25,6 +25,8 @@
 #include "util/RunConfigManager.h"
 #include "util/StringUtils.h"
 #include "util/TimeStamp.h"
+#include "demo/hdf5_proto.cpp"
+#include "demo/json_proto.cpp"
 
 #include <boost/property_tree/ptree.hpp>
 #include <tclap/CmdLine.h>
@@ -69,13 +71,15 @@ int main(int argc, char** argv)
                             "\nDefaults to -c file=run_default.xml";
                 ValueArg<string> configArg("c", "config", sc, false, "run_default.xml", "CONFIGURATION", cmd);
 
-                vector<string>           execs{"clean", "dump", "sim", "genpop"};
+                vector<string>           execs{"clean", "dump", "sim", "genpop", "hdf5demo", "jsondemo"};
                 ValuesConstraint<string> vc(execs);
                 string                   se = "Execute the corresponding function:"
                             "  \n\t clean:  cleans configuration and writes it to a new file."
                             "  \n\t dump:   takes built-in configuration writes it to a file."
                             "  \n\t sim:    runs the simulator and is the default."
                             "  \n\t genpop: generates geo-based population to file (no sim)"
+                            "  \n\t hdf5demo: showcase hdf5 lib integration"
+                            "  \n\t jsondemo: showcase json lib integration"
                             "\nDefaults to --exec sim.";
                 ValueArg<string> execArg("e", "exec", se, false, "sim", &vc, cmd);
 
@@ -130,6 +134,14 @@ int main(int argc, char** argv)
                 // -----------------------------------------------------------------------------------------
                 else if (execArg.getValue() == "clean" || execArg.getValue() == "dump") {
                         RunConfigManager::CleanConfigFile(configPt);
+                }
+                else if (execArg.getValue() == "hdf5demo") {
+                        hdf5demo::run();
+//                        RunConfigManager::CleanConfigFile(configPt);
+                }
+                else if (execArg.getValue() == "jsondemo") {
+                        jsondemo::run();
+//                        RunConfigManager::CleanConfigFile(configPt);
                 }
         } catch (exception& e) {
                 exitStatus = EXIT_FAILURE;
