@@ -13,19 +13,23 @@
  *  Copyright 2018, 2019, Jan Broeckhove and Bistromatics group.
  */
 
+#include <geopop/GeoGridConfig.h>
 #include "PreSchoolGenerator.h"
 
+#include "geopop/ContactCenter.h"
 #include "geopop/GeoGrid.h"
 #include "geopop/GeoGridConfig.h"
-#include "geopop/PreSchoolCenter.h"
 #include "geopop/Location.h"
+#include "pop/Population.h"
 #include "util/RnMan.h"
 
 namespace geopop {
 
 using namespace std;
+using namespace stride::ContactType;
 
-void PreSchoolGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig, unsigned int& contactCenterCounter)
+
+void PreSchoolGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig, unsigned int& ccCounter)
 {
         // 1. given the number of persons of school age, calculate number of schools; schools
         //    have 500 pupils on average
@@ -39,7 +43,7 @@ void PreSchoolGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridCon
 
         vector<double> weights;
         for (const auto& loc : geoGrid) {
-                weights.push_back(loc->GetRelativePop());
+                weights.push_back(loc->GetPopFraction());
         }
 
         if (weights.empty()) {
@@ -48,13 +52,32 @@ void PreSchoolGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridCon
         }
 
         const auto dist = m_rn_man.GetDiscreteGenerator(weights, 0U);
+        auto& poolSys = geoGrid.GetPopulation()->RefPoolSys();
 
         for (auto i = 0U; i < schoolCount; i++) {
                 const auto loc = geoGrid[dist()];
-                const auto pre = make_shared<PreSchoolCenter>(contactCenterCounter++);
-                pre->SetupPools(geoGridConfig, geoGrid.GetPopulation());
+                const auto pre = make_shared<ContactCenter>(ccCounter++, Id::PreSchool);
+
+                for (auto j = 0U; j < geoGridConfig.pools.pools_per_preschool; ++j) {
+                        const auto p = poolSys.CreateContactPool(Id::PreSchool);
+                        pre->RegisterPool(p);
+                        loc->RegisterPool<Id::PreSchool>(p);
+                }
+
                 loc->AddCenter(pre);
         }
+}
+
+void PreSchoolGenerator::SetupPools(Location& loc, ContactCenter& center, const GeoGridConfig& geoGridConfig,
+                                stride::Population* pop)
+{
+    auto& poolSys = pop->RefPoolSys();
+
+    for (auto i = 0U; i < geoGridConfig.pools.pools_per_preschool; ++i) {
+            const auto p = poolSys.CreateContactPool(stride::ContactType::Id::PreSchool);
+            center.RegisterPool(p);
+            loc.RegisterPool<Id::PreSchool>(p);
+    }
 }
 
 } // namespace geopop

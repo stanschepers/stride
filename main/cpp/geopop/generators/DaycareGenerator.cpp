@@ -13,19 +13,22 @@
  *  Copyright 2018, 2019, Jan Broeckhove and Bistromatics group.
  */
 
+#include <geopop/GeoGridConfig.h>
 #include "DaycareGenerator.h"
 
+#include "geopop/ContactCenter.h"
 #include "geopop/GeoGrid.h"
 #include "geopop/GeoGridConfig.h"
-#include "geopop/DaycareCenter.h"
 #include "geopop/Location.h"
+#include "pop/Population.h"
 #include "util/RnMan.h"
 
 namespace geopop {
 
 using namespace std;
+using namespace stride::ContactType;
 
-void DaycareGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig, unsigned int& contactCenterCounter)
+void DaycareGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig, unsigned int& ccCounter)
 {
         // 1. given the number of persons of daycare age, calculate number of daycare's; daycare's
         //    have 500 pupils on average
@@ -39,7 +42,7 @@ void DaycareGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfi
 
         vector<double> weights;
         for (const auto& loc : geoGrid) {
-                weights.push_back(loc->GetRelativePop());
+                weights.push_back(loc->GetPopFraction());
         }
 
         if (weights.empty()) {
@@ -48,13 +51,32 @@ void DaycareGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfi
         }
 
         const auto dist = m_rn_man.GetDiscreteGenerator(weights, 0U);
+        auto& poolSys = geoGrid.GetPopulation()->RefPoolSys();
 
         for (auto i = 0U; i < schoolCount; i++) {
                 const auto loc = geoGrid[dist()];
-                const auto day = make_shared<DaycareCenter>(contactCenterCounter++);
-                day->SetupPools(geoGridConfig, geoGrid.GetPopulation());
+                const auto day = make_shared<ContactCenter>(ccCounter++, Id::Daycare);
+
+                for (auto j = 0U; j < geoGridConfig.pools.pools_per_daycare; ++j) {
+                        const auto p = poolSys.CreateContactPool(Id::Daycare);
+                        day->RegisterPool(p);
+                        loc->RegisterPool<Id::Daycare>(p);
+                }
+
                 loc->AddCenter(day);
         }
+}
+
+void DaycareGenerator::SetupPools(Location& loc, ContactCenter& center, const GeoGridConfig& geoGridConfig,
+                                stride::Population* pop)
+{
+    auto& poolSys = pop->RefPoolSys();
+
+    for (auto i = 0U; i < geoGridConfig.pools.pools_per_daycare; ++i) {
+            const auto p = poolSys.CreateContactPool(stride::ContactType::Id::Daycare);
+            center.RegisterPool(p);
+            loc.RegisterPool<Id::Daycare>(p);
+    }
 }
 
 } // namespace geopop

@@ -18,8 +18,6 @@
 #include "contact/AgeBrackets.h"
 #include "contact/ContactPool.h"
 #include "geopop/GeoGrid.h"
-#include "geopop/HouseholdCenter.h"
-#include "geopop/DaycareCenter.h"
 #include "geopop/Location.h"
 #include "pop/Person.h"
 

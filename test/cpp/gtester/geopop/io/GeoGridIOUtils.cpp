@@ -216,12 +216,12 @@ shared_ptr<GeoGrid> GetPopulatedGeoGrid(Population* pop)
         const auto workplacePool = new ContactPool(6, Id::Workplace);
         workplace->RegisterPool(workplacePool);
 
-        const auto daycare = make_shared<ContactCenter>(6);
+        const auto daycare = make_shared<ContactCenter>(6, Id::Daycare);
         location->AddCenter(daycare);
         const auto daycarePool = new ContactPool(8, Id::Daycare);
         daycare->RegisterPool(daycarePool);
 
-        const auto preschool = make_shared<ContactCenter>(7);
+        const auto preschool = make_shared<ContactCenter>(7, Id::PreSchool);
         location->AddCenter(preschool);
         const auto preschoolPool = new ContactPool(9, Id::PreSchool);
         preschool->RegisterPool(preschoolPool);
