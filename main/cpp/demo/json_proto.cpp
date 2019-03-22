@@ -3,6 +3,7 @@
 //
 
 #include "util/FileSys.h"
+#include <boost/property_tree/ptree.hpp>
 #include <nlohmann/json.hpp>
 #include <boost/filesystem/fstream.hpp>
 #include <iomanip>
