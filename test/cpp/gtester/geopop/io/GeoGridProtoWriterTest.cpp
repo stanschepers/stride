@@ -15,15 +15,8 @@
 
 #include "geopop/io/GeoGridProtoWriter.h"
 #include "GeoGridIOUtils.h"
-#include "geopop/CollegeCenter.h"
+#include "geopop/ContactCenter.h"
 #include "geopop/GeoGridConfig.h"
-#include "geopop/HouseholdCenter.h"
-#include "geopop/DaycareCenter.h"
-#include "geopop/PreSchoolCenter.h"
-#include "geopop/K12SchoolCenter.h"
-#include "geopop/PrimaryCommunityCenter.h"
-#include "geopop/SecondaryCommunityCenter.h"
-#include "geopop/WorkplaceCenter.h"
 #include "pop/Population.h"
 #include "util/FileSys.h"
 
@@ -32,6 +25,7 @@
 using namespace std;
 using namespace geopop;
 using namespace stride;
+using namespace stride::ContactType;
 
 namespace {
 
@@ -50,13 +44,13 @@ TEST(GeoGridProtoWriterTest, contactCentersTest)
         const auto pop      = Population::Create();
         auto&      geoGrid  = pop->RefGeoGrid();
         const auto location = make_shared<Location>(1, 4, Coordinate(0, 0), "Bavikhove", 2500);
-        location->AddCenter(make_shared<DaycareCenter>(0));
-        location->AddCenter(make_shared<PreSchoolCenter>(1));
-        location->AddCenter(make_shared<K12SchoolCenter>(2));
-        location->AddCenter(make_shared<PrimaryCommunityCenter>(3));
-        location->AddCenter(make_shared<CollegeCenter>(4));
-        location->AddCenter(make_shared<HouseholdCenter>(5));
-        location->AddCenter(make_shared<WorkplaceCenter>(6));
+        location->AddCenter(make_shared<ContactCenter>(0, Id::Daycare));
+        location->AddCenter(make_shared<ContactCenter>(1, Id::PreSchool));
+        location->AddCenter(make_shared<ContactCenter>(2, Id::K12School));
+        location->AddCenter(make_shared<ContactCenter>(3, Id::PrimaryCommunity));
+        location->AddCenter(make_shared<ContactCenter>(4, Id::College));
+        location->AddCenter(make_shared<ContactCenter>(5, Id::Household));
+        location->AddCenter(make_shared<ContactCenter>(6, Id::Workplace));
         geoGrid.AddLocation(location);
 
         CompareGeoGrid(geoGrid);

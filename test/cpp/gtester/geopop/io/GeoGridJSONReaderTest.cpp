@@ -206,7 +206,7 @@ void runPeopleTest(const string& filename)
                 auto pool   = (*center)[0];
                 auto person = *(pool->begin());
                 EXPECT_EQ(ids[center->GetId()], ToString(center->GetContactPoolType()));
-                EXPECT_EQ(person->GetId(), 1);
+                EXPECT_EQ(person->GetId(), 0);
                 EXPECT_EQ(person->GetAge(), 18);
                 EXPECT_EQ(person->GetPoolId(Id::Daycare), 8);
                 EXPECT_EQ(person->GetPoolId(Id::PreSchool), 9);

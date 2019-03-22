@@ -23,9 +23,10 @@
 #include "geopop/GeoGrid.h"
 #include "geopop/GeoGridConfig.h"
 #include "geopop/generators/CollegeGenerator.h"
-#include "geopop/generators/CommunityGenerator.h"
 #include "geopop/generators/HouseholdGenerator.h"
 #include "geopop/generators/K12SchoolGenerator.h"
+#include "geopop/generators/PrimaryCommunityGenerator.h"
+#include "geopop/generators/SecondaryCommunityGenerator.h"
 #include "geopop/generators/WorkplaceGenerator.h"
 #include "geopop/generators/DaycareGenerator.h"
 #include "geopop/generators/PreSchoolGenerator.h"
@@ -47,13 +48,20 @@
 
 #include <boost/property_tree/ptree.hpp>
 #include <spdlog/logger.h>
+#include <contact/ContactType.h>
 
 namespace stride {
 
 using namespace std;
 using namespace util;
+using namespace ContactType;
 using namespace boost::property_tree;
 using namespace geopop;
+
+GeoPopBuilder::GeoPopBuilder(const ptree& config, RnMan& rnMan, shared_ptr<spdlog::logger> strideLogger)
+    : AbstractPopBuilder(config, rnMan, move(strideLogger))
+{
+}
 
 shared_ptr<Population> GeoPopBuilder::Build(shared_ptr<Population> pop)
 {
@@ -129,11 +137,13 @@ void GeoPopBuilder::MakeCenters(GeoGrid& geoGrid, const GeoGridConfig& geoGridCo
                                                  make_shared<K12SchoolGenerator>(m_rn_man, m_stride_logger),
                                                  make_shared<CollegeGenerator>(m_rn_man, m_stride_logger),
                                                  make_shared<WorkplaceGenerator>(m_rn_man, m_stride_logger),
-                                                 make_shared<CommunityGenerator>(m_rn_man, m_stride_logger),
+                                                 make_shared<PrimaryCommunityGenerator>(m_rn_man, m_stride_logger),
+                                                 make_shared<SecondaryCommunityGenerator>(m_rn_man, m_stride_logger),
                                                  make_shared<HouseholdGenerator>(m_rn_man, m_stride_logger)};
 
         for (const auto& g : generators) {
-                g->Apply(geoGrid, geoGridConfig, m_ccCounter);
+                auto ccCounter = 1U;
+                g->Apply(geoGrid, geoGridConfig, ccCounter);
         }
 }
 
