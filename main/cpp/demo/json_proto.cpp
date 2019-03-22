@@ -2,11 +2,8 @@
 // Created by Andrei Bondarenko on 2019-03-20.
 //
 
-#if defined(__linux__) && defined(__clang__)
-#include <experimental/string_view>
-#endif
 
-#include "json.hpp"
+#include <nlohmann/json.hpp>
 #include <iostream>
 #include <fstream>
 #include <iomanip>
