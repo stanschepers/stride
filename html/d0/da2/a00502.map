@@ -1,9 +1,6 @@
-<map id="GeoGridReader.h" name="GeoGridReader.h">
-<area shape="rect" id="node2" href="$dc/d31/a00208.html" title="GeoGridJSONReader.h" alt="" coords="101,80,262,107"/>
-<area shape="rect" id="node4" href="$dd/df3/a00219.html" title="GeoGridReaderFactory.cpp" alt="" coords="205,155,395,181"/>
-<area shape="rect" id="node5" href="$d3/dd1/a00214.html" title="GeoGridProtoReader.h" alt="" coords="337,80,500,107"/>
-<area shape="rect" id="node7" href="$df/d24/a00217.html" title="GeoGridReader.cpp" alt="" coords="524,80,668,107"/>
-<area shape="rect" id="node8" href="$d6/d08/a00244.html" title="Initialize populations: implementation. " alt="" coords="693,80,851,107"/>
-<area shape="rect" id="node3" href="$de/dd2/a00207.html" title="GeoGridJSONReader.cpp" alt="" coords="5,155,181,181"/>
-<area shape="rect" id="node6" href="$d1/de1/a00213.html" title="GeoGridProtoReader.cpp" alt="" coords="419,155,597,181"/>
+<map id="HouseholdPopulator.h" name="HouseholdPopulator.h">
+<area shape="rect" id="node2" href="$d9/dd6/a00272.html" title="Populator.h" alt="" coords="367,80,462,107"/>
+<area shape="rect" id="node3" href="$d9/d38/a00166.html" title="Definition of ContactPool Id Type. " alt="" coords="135,155,299,181"/>
+<area shape="rect" id="node9" href="$d5/d7b/a00286.html" title="Interface of RnMan. " alt="" coords="365,155,465,181"/>
+<area shape="rect" id="node10" href="$db/dc3/a00284.html" title="Interface of RnPcg. " alt="" coords="378,229,451,256"/>
 </map>

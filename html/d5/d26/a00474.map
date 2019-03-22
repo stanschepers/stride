@@ -1,4 +1,10 @@
-<map id="GenPopController.h" name="GenPopController.h">
-<area shape="rect" id="node2" href="$d8/d72/a00199.html" title="Header for the command line controller. " alt="" coords="5,80,165,107"/>
-<area shape="rect" id="node3" href="$d2/d41/a00318.html" title="Main program: command line handling. " alt="" coords="189,80,275,107"/>
+<map id="GeoGridProtoWriter.h" name="GeoGridProtoWriter.h">
+<area shape="rect" id="node2" href="$da/de7/a00210.html" title="GeoGridWriter.h" alt="" coords="5,80,127,107"/>
+<area shape="rect" id="node5" href="$d7/d03/a00254.html" title="geopop/Location.h" alt="" coords="648,80,788,107"/>
+<area shape="rect" id="node6" href="$d9/d38/a00166.html" title="Definition of ContactPool Id Type. " alt="" coords="281,237,445,263"/>
+<area shape="rect" id="node12" href="$de/dc2/a00228.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="623,155,813,181"/>
+<area shape="rect" id="node17" href="$d1/db7/a00157.html" title="geopop/ContactCenter.h" alt="" coords="331,155,510,181"/>
+<area shape="rect" id="node18" href="$de/d53/a00169.html" title="geopop/Coordinate.h" alt="" coords="1021,155,1177,181"/>
+<area shape="rect" id="node21" href="$d6/d82/a00293.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="1277,155,1449,181"/>
+<area shape="rect" id="node22" href="$da/de0/a00317.html" title="Interface/Implementation for SVIterator. " alt="" coords="1630,237,1729,263"/>
 </map>
