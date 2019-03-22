@@ -1,13 +1,11 @@
 #pragma once
 
-#include <cassert> // assert
 #include <cstddef>
-#include <string> // string
-#include <utility> // move
-#include <vector> // vector
+#include <string>
+#include <vector>
 
+#include <nlohmann/detail/input/parser.hpp>
 #include <nlohmann/detail/exceptions.hpp>
-#include <nlohmann/detail/macro_scope.hpp>
 
 namespace nlohmann
 {
@@ -159,13 +157,6 @@ class json_sax_dom_parser
         : root(r), allow_exceptions(allow_exceptions_)
     {}
 
-    // make class move-only
-    json_sax_dom_parser(const json_sax_dom_parser&) = delete;
-    json_sax_dom_parser(json_sax_dom_parser&&) = default;
-    json_sax_dom_parser& operator=(const json_sax_dom_parser&) = delete;
-    json_sax_dom_parser& operator=(json_sax_dom_parser&&) = default;
-    ~json_sax_dom_parser() = default;
-
     bool null()
     {
         handle_value(nullptr);
@@ -257,16 +248,16 @@ class json_sax_dom_parser
             switch ((ex.id / 100) % 100)
             {
                 case 1:
-                    JSON_THROW(*static_cast<const detail::parse_error*>(&ex));
+                    JSON_THROW(*reinterpret_cast<const detail::parse_error*>(&ex));
                 case 4:
-                    JSON_THROW(*static_cast<const detail::out_of_range*>(&ex));
+                    JSON_THROW(*reinterpret_cast<const detail::out_of_range*>(&ex));
                 // LCOV_EXCL_START
                 case 2:
-                    JSON_THROW(*static_cast<const detail::invalid_iterator*>(&ex));
+                    JSON_THROW(*reinterpret_cast<const detail::invalid_iterator*>(&ex));
                 case 3:
-                    JSON_THROW(*static_cast<const detail::type_error*>(&ex));
+                    JSON_THROW(*reinterpret_cast<const detail::type_error*>(&ex));
                 case 5:
-                    JSON_THROW(*static_cast<const detail::other_error*>(&ex));
+                    JSON_THROW(*reinterpret_cast<const detail::other_error*>(&ex));
                 default:
                     assert(false);
                     // LCOV_EXCL_STOP
@@ -303,17 +294,18 @@ class json_sax_dom_parser
             ref_stack.back()->m_value.array->emplace_back(std::forward<Value>(v));
             return &(ref_stack.back()->m_value.array->back());
         }
-
-        assert(ref_stack.back()->is_object());
-        assert(object_element);
-        *object_element = BasicJsonType(std::forward<Value>(v));
-        return object_element;
+        else
+        {
+            assert(object_element);
+            *object_element = BasicJsonType(std::forward<Value>(v));
+            return object_element;
+        }
     }
 
     /// the parsed JSON value
     BasicJsonType& root;
     /// stack to model hierarchy of values
-    std::vector<BasicJsonType*> ref_stack {};
+    std::vector<BasicJsonType*> ref_stack;
     /// helper to hold the reference for the next object element
     BasicJsonType* object_element = nullptr;
     /// whether a syntax error occurred
@@ -340,13 +332,6 @@ class json_sax_dom_callback_parser
     {
         keep_stack.push_back(true);
     }
-
-    // make class move-only
-    json_sax_dom_callback_parser(const json_sax_dom_callback_parser&) = delete;
-    json_sax_dom_callback_parser(json_sax_dom_callback_parser&&) = default;
-    json_sax_dom_callback_parser& operator=(const json_sax_dom_callback_parser&) = delete;
-    json_sax_dom_callback_parser& operator=(json_sax_dom_callback_parser&&) = default;
-    ~json_sax_dom_callback_parser() = default;
 
     bool null()
     {
@@ -394,9 +379,13 @@ class json_sax_dom_callback_parser
         ref_stack.push_back(val.second);
 
         // check object limit
-        if (ref_stack.back() and JSON_UNLIKELY(len != std::size_t(-1) and len > ref_stack.back()->max_size()))
+        if (ref_stack.back())
         {
-            JSON_THROW(out_of_range::create(408, "excessive object size: " + std::to_string(len)));
+            if (JSON_UNLIKELY(len != std::size_t(-1) and len > ref_stack.back()->max_size()))
+            {
+                JSON_THROW(out_of_range::create(408,
+                                                "excessive object size: " + std::to_string(len)));
+            }
         }
 
         return true;
@@ -421,10 +410,13 @@ class json_sax_dom_callback_parser
 
     bool end_object()
     {
-        if (ref_stack.back() and not callback(static_cast<int>(ref_stack.size()) - 1, parse_event_t::object_end, *ref_stack.back()))
+        if (ref_stack.back())
         {
-            // discard object
-            *ref_stack.back() = discarded;
+            if (not callback(static_cast<int>(ref_stack.size()) - 1, parse_event_t::object_end, *ref_stack.back()))
+            {
+                // discard object
+                *ref_stack.back() = discarded;
+            }
         }
 
         assert(not ref_stack.empty());
@@ -432,15 +424,18 @@ class json_sax_dom_callback_parser
         ref_stack.pop_back();
         keep_stack.pop_back();
 
-        if (not ref_stack.empty() and ref_stack.back() and ref_stack.back()->is_object())
+        if (not ref_stack.empty() and ref_stack.back())
         {
             // remove discarded value
-            for (auto it = ref_stack.back()->begin(); it != ref_stack.back()->end(); ++it)
+            if (ref_stack.back()->is_object())
             {
-                if (it->is_discarded())
+                for (auto it = ref_stack.back()->begin(); it != ref_stack.back()->end(); ++it)
                 {
-                    ref_stack.back()->erase(it);
-                    break;
+                    if (it->is_discarded())
+                    {
+                        ref_stack.back()->erase(it);
+                        break;
+                    }
                 }
             }
         }
@@ -457,9 +452,13 @@ class json_sax_dom_callback_parser
         ref_stack.push_back(val.second);
 
         // check array limit
-        if (ref_stack.back() and JSON_UNLIKELY(len != std::size_t(-1) and len > ref_stack.back()->max_size()))
+        if (ref_stack.back())
         {
-            JSON_THROW(out_of_range::create(408, "excessive array size: " + std::to_string(len)));
+            if (JSON_UNLIKELY(len != std::size_t(-1) and len > ref_stack.back()->max_size()))
+            {
+                JSON_THROW(out_of_range::create(408,
+                                                "excessive array size: " + std::to_string(len)));
+            }
         }
 
         return true;
@@ -485,9 +484,12 @@ class json_sax_dom_callback_parser
         keep_stack.pop_back();
 
         // remove discarded value
-        if (not keep and not ref_stack.empty() and ref_stack.back()->is_array())
+        if (not keep and not ref_stack.empty())
         {
-            ref_stack.back()->m_value.array->pop_back();
+            if (ref_stack.back()->is_array())
+            {
+                ref_stack.back()->m_value.array->pop_back();
+            }
         }
 
         return true;
@@ -503,16 +505,16 @@ class json_sax_dom_callback_parser
             switch ((ex.id / 100) % 100)
             {
                 case 1:
-                    JSON_THROW(*static_cast<const detail::parse_error*>(&ex));
+                    JSON_THROW(*reinterpret_cast<const detail::parse_error*>(&ex));
                 case 4:
-                    JSON_THROW(*static_cast<const detail::out_of_range*>(&ex));
+                    JSON_THROW(*reinterpret_cast<const detail::out_of_range*>(&ex));
                 // LCOV_EXCL_START
                 case 2:
-                    JSON_THROW(*static_cast<const detail::invalid_iterator*>(&ex));
+                    JSON_THROW(*reinterpret_cast<const detail::invalid_iterator*>(&ex));
                 case 3:
-                    JSON_THROW(*static_cast<const detail::type_error*>(&ex));
+                    JSON_THROW(*reinterpret_cast<const detail::type_error*>(&ex));
                 case 5:
-                    JSON_THROW(*static_cast<const detail::other_error*>(&ex));
+                    JSON_THROW(*reinterpret_cast<const detail::other_error*>(&ex));
                 default:
                     assert(false);
                     // LCOV_EXCL_STOP
@@ -582,38 +584,37 @@ class json_sax_dom_callback_parser
         // we now only expect arrays and objects
         assert(ref_stack.back()->is_array() or ref_stack.back()->is_object());
 
-        // array
         if (ref_stack.back()->is_array())
         {
             ref_stack.back()->m_value.array->push_back(std::move(value));
             return {true, &(ref_stack.back()->m_value.array->back())};
         }
-
-        // object
-        assert(ref_stack.back()->is_object());
-        // check if we should store an element for the current key
-        assert(not key_keep_stack.empty());
-        const bool store_element = key_keep_stack.back();
-        key_keep_stack.pop_back();
-
-        if (not store_element)
+        else
         {
-            return {false, nullptr};
-        }
+            // check if we should store an element for the current key
+            assert(not key_keep_stack.empty());
+            const bool store_element = key_keep_stack.back();
+            key_keep_stack.pop_back();
 
-        assert(object_element);
-        *object_element = std::move(value);
-        return {true, object_element};
+            if (not store_element)
+            {
+                return {false, nullptr};
+            }
+
+            assert(object_element);
+            *object_element = std::move(value);
+            return {true, object_element};
+        }
     }
 
     /// the parsed JSON value
     BasicJsonType& root;
     /// stack to model hierarchy of values
-    std::vector<BasicJsonType*> ref_stack {};
+    std::vector<BasicJsonType*> ref_stack;
     /// stack to manage which values to keep
-    std::vector<bool> keep_stack {};
+    std::vector<bool> keep_stack;
     /// stack to manage which object keys to keep
-    std::vector<bool> key_keep_stack {};
+    std::vector<bool> key_keep_stack;
     /// helper to hold the reference for the next object element
     BasicJsonType* object_element = nullptr;
     /// whether a syntax error occurred
