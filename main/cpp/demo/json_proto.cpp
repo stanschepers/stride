@@ -2,10 +2,9 @@
 // Created by Andrei Bondarenko on 2019-03-20.
 //
 
-
+#include "util/FileSys.h"
 #include <nlohmann/json.hpp>
-#include <iostream>
-#include <fstream>
+#include <boost/filesystem/fstream.hpp>
 #include <iomanip>
 
 
@@ -58,7 +57,7 @@ namespace jsondemo {
         // add another object (using an initializer list of pairs)
                 j["object"] = { {"currency", "USD"}, {"value", 42.99} };
 
-        std::ofstream file("demo.json");
+        boost::filesystem::ofstream file("demo.json");
         file << std::setw(4) << j << std::endl;
         file.close();
     }
