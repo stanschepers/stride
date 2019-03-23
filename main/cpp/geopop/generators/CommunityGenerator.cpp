@@ -18,8 +18,8 @@
 #include "geopop/GeoGrid.h"
 #include "geopop/GeoGridConfig.h"
 #include "geopop/Location.h"
-#include "geopop/PrimaryCommunity.h"
-#include "geopop/SecondaryCommunity.h"
+#include "geopop/PrimaryCommunityCenter.h"
+#include "geopop/SecondaryCommunityCenter.h"
 #include "util/Assert.h"
 #include "util/RnMan.h"
 
@@ -31,8 +31,7 @@ namespace geopop {
 
 using namespace std;
 
-void CommunityGenerator::Apply(shared_ptr<GeoGrid> geoGrid, const GeoGridConfig& geoGridConfig,
-                               unsigned int& contactCenterCounter)
+void CommunityGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig, unsigned int& contactCenterCounter)
 {
         // 1. calculate number of communities, each community has average 2000 persons
         // 2. assign communities to a location using a discrete distribution reflecting the relative number of
@@ -43,7 +42,7 @@ void CommunityGenerator::Apply(shared_ptr<GeoGrid> geoGrid, const GeoGridConfig&
             static_cast<unsigned int>(ceil(popCount / static_cast<double>(geoGridConfig.pools.community_size)));
 
         vector<double> weights;
-        for (const auto& loc : *geoGrid) {
+        for (const auto& loc : geoGrid) {
                 const auto weight = static_cast<double>(loc->GetPopCount()) / static_cast<double>(popCount);
                 AssertThrow(weight >= 0 && weight <= 1 && !std::isnan(weight),
                             "CommunityGenerator> Invalid weight: " + to_string(weight), m_logger);
@@ -58,16 +57,16 @@ void CommunityGenerator::Apply(shared_ptr<GeoGrid> geoGrid, const GeoGridConfig&
         const auto dist = m_rn_man.GetDiscreteGenerator(weights, 0U);
 
         for (auto i = 0U; i < communityCount; i++) {
-                const auto loc = (*geoGrid)[dist()];
-                const auto pc  = make_shared<PrimaryCommunity>(contactCenterCounter++);
-                pc->Fill(geoGridConfig, geoGrid);
-                loc->AddContactCenter(pc);
+                const auto loc = geoGrid[dist()];
+                const auto pc  = make_shared<PrimaryCommunityCenter>(contactCenterCounter++);
+                pc->SetupPools(geoGridConfig, geoGrid.GetPopulation());
+                loc->AddCenter(pc);
         }
         for (auto i = 0U; i < communityCount; i++) {
-                const auto loc = (*geoGrid)[dist()];
-                const auto sc  = make_shared<SecondaryCommunity>(contactCenterCounter++);
-                sc->Fill(geoGridConfig, geoGrid);
-                loc->AddContactCenter(sc);
+                const auto loc = geoGrid[dist()];
+                const auto sc  = make_shared<SecondaryCommunityCenter>(contactCenterCounter++);
+                sc->SetupPools(geoGridConfig, geoGrid.GetPopulation());
+                loc->AddCenter(sc);
         }
 }
 

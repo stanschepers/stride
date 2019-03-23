@@ -43,10 +43,10 @@ void DiseaseSeeder::Seed(std::shared_ptr<Population> pop)
         // Population immunity (natural immunity & vaccination).
         // --------------------------------------------------------------
         const auto immunityProfile = m_config.get<std::string>("run.immunity_profile");
-        Vaccinate("immunity", immunityProfile, pop->GetContactPoolSys()[Id::Household]);
+        Vaccinate("immunity", immunityProfile, pop->CRefPoolSys().CRefPools<Id::Household>());
 
         const auto vaccinationProfile = m_config.get<std::string>("run.vaccine_profile");
-        Vaccinate("vaccine", vaccinationProfile, pop->GetContactPoolSys()[Id::Household]);
+        Vaccinate("vaccine", vaccinationProfile, pop->CRefPoolSys().CRefPools<Id::Household>());
 
         // --------------------------------------------------------------
         // Seed infected persons.
@@ -57,7 +57,7 @@ void DiseaseSeeder::Seed(std::shared_ptr<Population> pop)
         const auto   popSize     = pop->size();
         const auto   maxPopIndex = static_cast<int>(popSize - 1);
         auto         generator   = m_rn_man.GetUniformIntGenerator(0, maxPopIndex, 0U);
-        auto&        logger      = pop->GetContactLogger();
+        auto&        logger      = pop->RefContactLogger();
         const string log_level   = m_config.get<string>("run.contact_log_level", "None");
 
         auto numInfected = static_cast<unsigned int>(floor(static_cast<double>(popSize) * sRate));
