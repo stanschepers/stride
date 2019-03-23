@@ -39,7 +39,6 @@ namespace {
 void getGeoGridFromFile(const string& filename, Population* pop)
 {
         auto file = make_unique<ifstream>();
-        cout << FileSys::GetTestsDir().string() + "/testdata/GeoGridJSON/" + filename << endl;
         file->open(FileSys::GetTestsDir().string() + "/testdata/GeoGridJSON/" + filename);
         GeoGridJSONReader geoGridJSONReader(move(file), pop);
         geoGridJSONReader.Read();
@@ -179,7 +178,6 @@ TEST(GeoGridJSONReaderTest, contactCentersTest)
 
 void runPeopleTest(const string& filename)
 {
-        cout << filename << endl;
         auto pop = Population::Create();
         getGeoGridFromFile(filename, pop.get());
         auto& geoGrid  = pop->RefGeoGrid();
