@@ -27,14 +27,10 @@ namespace geopop {
     using namespace stride;
     using namespace stride::ContactType;
 
-void DaycarePopulator::Apply(geopop::GeoGrid &geoGrid, const geopop::GeoGridConfig&)
+void DaycarePopulator::Apply(GeoGrid &geoGrid, const GeoGridConfig&)
 {
         m_logger->trace("Starting to populate Daycare's");
 
-        set<ContactPool*> found;
-        unsigned int      pupils = 0;
-
-        // for every location
         for (const auto& loc : geoGrid) {
                 if (loc->GetPopCount() == 0) {
                         continue;
@@ -48,20 +44,16 @@ void DaycarePopulator::Apply(geopop::GeoGrid &geoGrid, const geopop::GeoGridConf
                 // 2. for every student assign a class
                 for (const auto& hhCenter : loc->RefCenters(Id::Household)) {
                         ContactPool* const contactPool = (*hhCenter)[0];
-                        found.insert(contactPool);
                         for (Person* p : *contactPool) {
                                 if (AgeBrackets::Daycare::HasAge(p->GetAge())) {
                                         auto& c = classes[dist()];
                                         c->AddMember(p);
                                         p->SetPoolId(Id::Daycare, c->GetId());
-                                        pupils++;
                                 }
                         }
                 }
         }
 
-        m_logger->debug("Number of babies in daycare's: {}", pupils);
-        m_logger->debug("Number of different classes: {}", found.size());
         m_logger->trace("Done populating Daycare's");
 }
 

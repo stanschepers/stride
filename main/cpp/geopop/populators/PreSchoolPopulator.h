@@ -22,14 +22,14 @@ namespace geopop {
 /**
  * Populate the PreSchools.
  */
-    class PreSchoolPopulator : public Populator
-    {
-    public:
+class PreSchoolPopulator : public Populator
+{
+public:
         /// Using base class constructors.
         using Populator::Populator;
 
         /// Core method implementation.
         void Apply(GeoGrid& geogrid, const GeoGridConfig&) override;
-    };
+};
 
 } // namespace geopop

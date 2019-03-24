@@ -53,7 +53,7 @@ TEST(K12SchoolPopulatorTest, NoPopulation)
 TEST(K12SchoolPopulatorTest, OneLocationTest)
 {
         auto pop = Population::Create();
-        SetupGeoGrid(1, 300, 5, 100, 3, pop.get());
+        SetupK12SchoolGeoGrid(1, 300, 5, 100, 3, pop.get());
         auto& geoGrid = pop->RefGeoGrid();
         geoGrid.Finalize();
 
@@ -138,7 +138,7 @@ TEST(K12SchoolPopulatorTest, OneLocationTest)
 TEST(K12SchoolPopulatorTest, TwoLocationTest)
 {
         auto pop = Population::Create();
-        SetupGeoGrid(3, 100, 3, 33, 3, pop.get());
+        SetupK12SchoolGeoGrid(3, 100, 3, 33, 3, pop.get());
         auto& geoGrid = pop->RefGeoGrid();
 
         RnMan              rnMan{RnInfo{}};

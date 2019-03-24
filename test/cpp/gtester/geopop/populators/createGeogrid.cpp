@@ -18,6 +18,8 @@
 #include "geopop/ContactCenter.h"
 #include "geopop/Location.h"
 #include "geopop/generators/HouseholdGenerator.h"
+#include "geopop/generators/DaycareGenerator.h"
+#include "geopop/generators/PreSchoolGenerator.h"
 #include "geopop/generators/K12SchoolGenerator.h"
 #include "pop/Population.h"
 #include "util/RnMan.h"
@@ -28,7 +30,9 @@ using namespace stride::util;
 using namespace stride::ContactType;
 using namespace geopop;
 
-void SetupGeoGrid(int locCount, int locPop, int schoolCount, int houseHoldCount, int personCount, Population* pop)
+template <typename Generator>
+void SetupGeoGrid(int locCount, int locPop, int schoolCount, int houseHoldCount, int personCount, Population* pop,
+                  stride::ContactType::Id id)
 {
         vector<unsigned int> populationSample = {
             17, 27, 65, 40, 29, 76, 27, 50, 28, 62, 50, 14, 30, 36, 12, 31, 25, 72, 62, 4,  40, 52, 55, 50, 62,
@@ -48,7 +52,7 @@ void SetupGeoGrid(int locCount, int locPop, int schoolCount, int houseHoldCount,
         GeoGridConfig                  config{};
         auto&                          geoGrid = pop->RefGeoGrid();
         RnMan                          rnMan(RnInfo{});
-        K12SchoolGenerator             k12Gen(rnMan);
+        Generator                      generator(rnMan);
         HouseholdGenerator             hhGen(rnMan);
 
         size_t sampleId = 0;
@@ -57,10 +61,10 @@ void SetupGeoGrid(int locCount, int locPop, int schoolCount, int houseHoldCount,
                 auto loc = make_shared<Location>(locI, 1, Coordinate(0.0, 0.0), "", locPop);
 
                 for (int schI = 0; schI < schoolCount; schI++) {
-                        auto k12School =
-                            make_shared<ContactCenter>(stoi(to_string(locI) + to_string(schI)), Id::K12School);
-                        k12Gen.SetupPools(*loc, *k12School, config, pop);
-                        loc->AddCenter(k12School);
+                        auto school =
+                            make_shared<ContactCenter>(stoi(to_string(locI) + to_string(schI)), id);
+                        generator.SetupPools(*loc, *school, config, pop);
+                        loc->AddCenter(school);
                 }
 
                 for (int hI = 0; hI < houseHoldCount; hI++) {
@@ -80,4 +84,25 @@ void SetupGeoGrid(int locCount, int locPop, int schoolCount, int houseHoldCount,
                 }
                 geoGrid.AddLocation(loc);
         }
+}
+
+void SetupK12SchoolGeoGrid(int locCount, int locPop, int k12SchoolCount, int houseHoldCount, int personCount,
+                           stride::Population* pop)
+{
+        SetupGeoGrid<K12SchoolGenerator>(locCount, locPop, k12SchoolCount, houseHoldCount, personCount, pop,
+                                         Id::K12School);
+}
+
+void SetupDaycareGeoGrid(int locCount, int locPop, int daycareCount, int houseHoldCount, int personCount,
+                         stride::Population* pop)
+{
+        SetupGeoGrid<DaycareGenerator>(locCount, locPop, daycareCount, houseHoldCount, personCount, pop,
+                                       Id::Daycare);
+}
+
+void SetupPreSchoolGeoGrid(int locCount, int locPop, int preSchoolCount, int houseHoldCount, int personCount,
+                           stride::Population* pop)
+{
+        SetupGeoGrid<PreSchoolGenerator>(locCount, locPop, preSchoolCount, houseHoldCount, personCount, pop,
+                                         Id::PreSchool);
 }

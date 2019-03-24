@@ -19,5 +19,18 @@
 #include "geopop/GeoGridConfig.h"
 
 /// Setup of the GeoGrid in the population.
+template <typename Generator>
 void SetupGeoGrid(int locCount, int locPop, int schoolCount, int houseHoldCount, int personCount,
-                  stride::Population* pop);
+                  stride::Population* pop, stride::ContactType::Id id);
+
+/// Setup of the GeoGrid in the population with K12Schools.
+void SetupK12SchoolGeoGrid(int locCount, int locPop, int k12SchoolCount, int houseHoldCount, int personCount,
+                           stride::Population* pop);
+
+/// Setup of the GeoGrid in the population with Daycares.
+void SetupDaycareGeoGrid(int locCount, int locPop, int daycareCount, int houseHoldCount, int personCount,
+                         stride::Population* pop);
+
+/// Setup of the GeoGrid in the population with PreSchools.
+void SetupPreSchoolGeoGrid(int locCount, int locPop, int preSchoolCount, int houseHoldCount, int personCount,
+                           stride::Population* pop);
