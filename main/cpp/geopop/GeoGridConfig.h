@@ -141,13 +141,18 @@ public:
                 unsigned int pools_per_workplace = 1U;
                 unsigned int workplace_pool_size  = 20U;
 
-                /// Used to calculate the number of Daycare's.
-                unsigned int daycare_size      = 10U; // NOG TE BEPALEN
-                unsigned int pools_per_daycare = 1U; // NOG TE BEPALEN
+                /// Used to calculate the number of Daycare's. (numbers based on Kind&Gezin:
+                /// https://www.kindengezin.be/cijfers-en-rapporten/cijfers/kinderopvang-baby-peuter/)
+                unsigned int daycare_size      = 13U;
+                unsigned int pools_per_daycare = 1U;
+                unsigned int daycare_pool_size = 13U;
 
-                /// Used to calculate the number of PreSchools.
-                unsigned int preschool_size      = 50U; // NOG TE BEPALEN
-                unsigned int pools_per_preschool = 5U; // NOG TE BEPALEN
+                /// Used to calculate the number of PreSchools. (numbers based on Vlaanderen in cijfers:
+                /// https://www.vlaanderen.be/publicaties/vlaams-onderwijs-in-cijfers-2017-2018?section=5)
+                unsigned int preschool_size      = 200U;
+                unsigned int pools_per_preschool = 10U;
+                unsigned int preschool_pool_size = 20U;
+
         } pools;
 
         /// Read the househould data file, parse it and set data.
