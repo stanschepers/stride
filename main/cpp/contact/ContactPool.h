@@ -25,6 +25,7 @@
 
 #include <tuple>
 #include <vector>
+#include <map>
 
 namespace stride {
 
@@ -55,6 +56,9 @@ public:
 
         /// Get the entire pool of members.
         const std::vector<Person*>& GetPool() const { return m_members; }
+
+        /// Get the amount of people per healthcategory.(met map maken: key = string met naam, value = number of)
+//        const std::map<std::string, int>
 
         /// Get the type of ContactPool, used for logging and tests
         ContactType::Id GetType() const { return m_pool_type; }

@@ -35,6 +35,7 @@ bool Location::operator==(const Location& other) const
 {
         using boost::geometry::get;
 
+
         auto temp = true;
         for (Id typ : IdList) {
                 temp = temp && (CRefCenters(typ) == other.CRefCenters(typ));
