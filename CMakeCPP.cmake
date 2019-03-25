@@ -183,7 +183,7 @@ if (NOT STRIDE_FORCE_NO_QT5)
     if(APPLE)
         set(CMAKE_PREFIX_PATH /usr/local/opt/qt5)
     else()
-        set(CMAKE_PREFIX_PATH $ENV{HOME}/Qt/5.12.2/gcc_64)  # /usr/local/opt/qt5 for mac
+        set(CMAKE_PREFIX_PATH $ENV{HOME}/Qt/5.12.2/gcc_64)
     find_package(Qt5Core REQUIRED)
     find_package(Qt5Widgets REQUIRED)
     find_package(Qt5Quick REQUIRED)
