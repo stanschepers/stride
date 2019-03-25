@@ -112,9 +112,9 @@ install:
         echo "Already have swig cache"
       fi
       export CMAKE_PREFIX_PATH=$SWIGHOME:$CMAKE_PREFIX_PATH 
-      #--------- Linux - qt 5.10.1 (trusty) from Stephan Binner's ppa
+      #--------- Linux - qt 5.12.1 (xenial) from Stephan Binner's ppa
       if [[ "$CC" == "clang" ]]; then
-        Sudo apt install libomp-dev
+        sudo apt install libomp-dev
       else
         sudo apt-get install libgl-dev
       fi
