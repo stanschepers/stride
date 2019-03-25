@@ -71,6 +71,9 @@ endif
 ifneq ($(BOOST_NO_SYSTEM_PATHS),)
 	CMAKE_ARGS += -DBOOST_NO_SYSTEM_PATHS:BOOL=$(BOOST_NO_SYSTEM_PATHS)
 endif
+ifneq ($(STRIDE_FORCE_NO_QT5),)
+	CMAKE_ARGS += -DSTRIDE_FORCE_NO_QT5:BOOL=$(STRIDE_FORCE_NO_QT5)
+endif
 #============================================================================
 #   Build directory.
 #============================================================================
@@ -102,6 +105,7 @@ help:
 	@ $(CMAKE) -E echo "   STRIDE_FORCE_NO_HDF5          : " $(STRIDE_FORCE_NO_HDF5)
 	@ $(CMAKE) -E echo "   STRIDE_FORCE_NO_BOOST         : " $(STRIDE_FORCE_NO_BOOST)
 	@ $(CMAKE) -E echo "   BOOST_NO_SYSTEM_PATHS         : " $(BOOST_NO_SYSTEM_PATHS)
+	@ $(CMAKE) -E echo "   STRIDE_FORCE_NO_QT5         : " $(STRIDE_FORCE_NO_QT5)
 	@ $(CMAKE) -E echo " "
 
 cores:

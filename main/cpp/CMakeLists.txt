@@ -173,6 +173,10 @@ include(CheckIPOSupported)
 #endif()
 #message( STATUS "CheckIPOSupported: ${ipo_result}" )
 
+if(NOT STRIDE_FORCE_NO_QT5)
+    add_subdirectory(visualization)
+endif()
+
 #============================================================================
 # Build the stride binary.
 #============================================================================
