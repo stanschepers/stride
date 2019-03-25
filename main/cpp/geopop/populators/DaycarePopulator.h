@@ -29,7 +29,7 @@ public:
         using Populator::Populator;
 
         /// Core method implementation.
-        void Apply(GeoGrid& geogrid, const GeoGridConfig&) override;
+        void Apply(GeoGrid& geogrid, const GeoGridConfig& geoGridConfig) override;
 };
 
 } // namespace geopop

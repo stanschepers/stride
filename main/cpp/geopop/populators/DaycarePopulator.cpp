@@ -13,6 +13,7 @@
  *  Copyright 2018, 2019, Jan Broeckhove and Bistromatics group.
  */
 
+#include <geopop/GeoGridConfig.h>
 #include "DaycarePopulator.h"
 
 #include "contact/AgeBrackets.h"
@@ -27,7 +28,7 @@ namespace geopop {
     using namespace stride;
     using namespace stride::ContactType;
 
-void DaycarePopulator::Apply(GeoGrid &geoGrid, const GeoGridConfig&)
+void DaycarePopulator::Apply(GeoGrid &geoGrid, const GeoGridConfig& geoGridConfig)
 {
         m_logger->trace("Starting to populate Daycare's");
 
@@ -45,7 +46,8 @@ void DaycarePopulator::Apply(GeoGrid &geoGrid, const GeoGridConfig&)
                 for (const auto& hhCenter : loc->RefCenters(Id::Household)) {
                         ContactPool* const contactPool = (*hhCenter)[0];
                         for (Person* p : *contactPool) {
-                                if (AgeBrackets::Daycare::HasAge(p->GetAge())) {
+                                if (AgeBrackets::Daycare::HasAge(p->GetAge()) &&
+                                    MakeChoice(geoGridConfig.input.participation_daycare)) {
                                         auto& c = classes[dist()];
                                         c->AddMember(p);
                                         p->SetPoolId(Id::Daycare, c->GetId());

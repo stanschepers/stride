@@ -13,6 +13,7 @@
  *  Copyright 2018, 2019, Jan Broeckhove and Bistromatics group.
  */
 
+#include <geopop/GeoGridConfig.h>
 #include "PreSchoolPopulator.h"
 
 #include "contact/AgeBrackets.h"
@@ -27,7 +28,7 @@ namespace geopop {
     using namespace stride;
     using namespace stride::ContactType;
 
-void PreSchoolPopulator::Apply(GeoGrid &geoGrid, const GeoGridConfig&)
+void PreSchoolPopulator::Apply(GeoGrid &geoGrid, const GeoGridConfig& geoGridConfig)
 {
         m_logger->trace("Starting to populate PreSchools");
 
@@ -45,7 +46,8 @@ void PreSchoolPopulator::Apply(GeoGrid &geoGrid, const GeoGridConfig&)
                 for (const auto& hhCenter : loc->RefCenters(Id::Household)) {
                         ContactPool* const contactPool = (*hhCenter)[0];
                         for (Person* p : *contactPool) {
-                                if (AgeBrackets::PreSchool::HasAge(p->GetAge())) {
+                                if (AgeBrackets::PreSchool::HasAge(p->GetAge()) &&
+                                    MakeChoice(geoGridConfig.input.participation_preschool)) {
                                         auto& c = classes[dist()];
                                         c->AddMember(p);
                                         p->SetPoolId(Id::PreSchool, c->GetId());
