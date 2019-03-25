@@ -113,7 +113,11 @@ install:
       fi
       export CMAKE_PREFIX_PATH=$SWIGHOME:$CMAKE_PREFIX_PATH 
       #--------- Linux - qt 5.10.1 (trusty) from Stephan Binner's ppa
-      sudo apt-get install libgl-dev
+      if [[ "$CC" == "clang" ]]; then
+        Sudo apt install libomp-dev
+      else
+        sudo apt-get install libgl-dev
+      fi
       sudo add-apt-repository ppa:beineri/opt-qt-5.12.1-xenial -y
       sudo apt-get update -qq
       sudo apt-get install -y -q qt512base qt512charts-no-lgpl qt512svg qt512declarative qt512qbs
