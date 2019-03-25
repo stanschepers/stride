@@ -61,10 +61,10 @@ TEST_F(DaycareGeneratorTest, OneLocationTest)
         m_daycare_generator.Apply(m_geo_grid, m_geogrid_config, ccCounter);
 
         const auto& centersOfLoc1 = loc1->CRefCenters(Id::Daycare);
-        EXPECT_EQ(centersOfLoc1.size(), 154);
+        EXPECT_EQ(centersOfLoc1.size(), 223);
 
         const auto& poolsOfLoc1 = loc1->CRefPools(Id::Daycare);
-        EXPECT_EQ(poolsOfLoc1.size(), 154 * m_geogrid_config.pools.pools_per_daycare);
+        EXPECT_EQ(poolsOfLoc1.size(), 223 * m_geogrid_config.pools.pools_per_daycare);
 }
 
 // Check that generator can handle empty GeoGrid.
@@ -106,7 +106,7 @@ TEST_F(DaycareGeneratorTest, FiveLocationsTest)
         unsigned int       ccCounter{1U};
         m_daycare_generator.Apply(m_geo_grid, m_geogrid_config, ccCounter);
 
-        vector<unsigned int> sizes{16866, 16437, 12213, 5403, 6838};
+        vector<unsigned int> sizes{24254, 23844, 17652, 7778, 9899};
         for (size_t i = 0; i < sizes.size(); i++) {
                 EXPECT_EQ(sizes[i], m_geo_grid[i]->CRefCenters(Id::Daycare).size());
                 EXPECT_EQ(sizes[i] * m_geogrid_config.pools.pools_per_daycare,

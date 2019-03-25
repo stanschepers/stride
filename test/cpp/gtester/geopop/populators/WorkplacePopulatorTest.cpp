@@ -265,7 +265,7 @@ TEST(WorkplacePopulatorTest, OnlyCommutingButNoCommutingAvaiable)
         config.input.fraction_workplace_commuters = 1;
         config.input.fraction_college_commuters   = 0;
         config.popInfo.popcount_workplace         = 1;
-        config.input.participation_workplace       = 1;
+        config.input.participation_workplace      = 1;
         config.input.participation_college        = 0.5;
 
         WorkplaceGenerator wpGen(rnMan);
