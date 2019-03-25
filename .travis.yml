@@ -42,7 +42,7 @@ matrix:
     - os: linux
       compiler: clang
       env: MATRIX_EVAL="CC=clang && CXX=clang++ && MAKE_TEST=true"
-      addons: {apt: { packages: [*default_packages], sources: [*default_sources]}}
+      addons: {apt: { packages: [*default_packages], sources: [*default_sources, llvm-toolchain-trusty-6.0]}}
 
     #- os: osx
     #  osx_image: xcode10.1
