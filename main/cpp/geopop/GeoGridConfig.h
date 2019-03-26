@@ -22,6 +22,7 @@
 
 #include <memory>
 #include <ostream>
+#include <map>
 
 namespace geopop {
 
@@ -131,6 +132,9 @@ public:
 
         /// Read the househould data file, parse it and set data.
         void SetData(const std::string& householdsFileName);
+
+        void SetData(const std::map<unsigned int, std::string> &householdsFileNamePerId)
+
 };
 
 } // namespace geopop
