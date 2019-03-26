@@ -131,7 +131,7 @@ install:
     if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
       brew upgrade python cmake
       brew install ccache swig qt
-#      brew link --force qt
+      brew link --force qt
       sudo ln -s /usr/local/Cellar/qt/5.12.1/plugins /usr/local/plugins
       sudo ln -s /usr/local/Cellar/qt/5.12.1/mkspecs/ /usr/local/mkspecs
       export LDFLAGS="-L/usr/local/opt/qt5/lib"
