@@ -88,6 +88,7 @@ TEST(GeoGridJSONWriterTest, locationTest)
 
         EXPECT_TRUE(compareGeoGrid(geoGrid, "test0.json"));
 }
+
 TEST(GeoGridJSONWriterTest, contactCentersTest)
 {
         auto pop      = Population::Create();
