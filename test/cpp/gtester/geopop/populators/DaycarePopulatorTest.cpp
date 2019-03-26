@@ -35,6 +35,7 @@ using namespace stride::util;
 
 namespace {
 
+// Check that populator can handle empty GeoGrid
 TEST(DaycarePopulatorTest, NoPopulation)
 {
         RnMan rnMan{RnInfo{}};
@@ -50,6 +51,7 @@ TEST(DaycarePopulatorTest, NoPopulation)
         EXPECT_NO_THROW(daycarePopulator.Apply(geoGrid, config));
 }
 
+// Check that populator can handle one Location
 TEST(DaycarePopulatorTest, OneLocationTest)
 {
         auto pop = Population::Create();
@@ -69,6 +71,7 @@ TEST(DaycarePopulatorTest, OneLocationTest)
 
         EXPECT_EQ(5, daycares.size());
 
+        ///{poolId, poolSize}
         map<int, int> usedCapacity{
             {1, 1},   {2, 2},   {3, 2},   {4, 1},   {5, 1},   {6, 0},   {7, 1},   {8, 1},   {9, 2},   {10, 1},
             {11, 1},  {12, 1},  {13, 0},  {14, 1},  {15, 0},  {16, 0},  {17, 0},  {18, 0},  {19, 0},  {20, 0},
@@ -137,6 +140,7 @@ TEST(DaycarePopulatorTest, OneLocationTest)
         }
 }
 
+// Check that populator can handle two Locations
 TEST(DaycarePopulatorTest, TwoLocationTest)
 {
         auto pop = Population::Create();
