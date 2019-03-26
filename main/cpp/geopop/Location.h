@@ -43,7 +43,7 @@ class Location
 public:
         /// Parametrized constructor with population count.
         Location(unsigned int id, unsigned int province, Coordinate coordinate = Coordinate(0.0, 0.0),
-                 std::string name = "", unsigned int popCount = 0U);
+                 std::string name = "", unsigned int popCount = 0U, unsigned int popId = 0U);
 
         /// Perform a full comparison with the other location.
         bool operator==(const Location& other) const;
@@ -83,6 +83,9 @@ public:
         /// Get Location's population fraction (of the total populaion count).
         double GetPopFraction() const;
 
+        /// Get Population id for Households references.
+        unsigned int GetPopulationId() const { return m_population_id;}
+
         /// Sets the Coordinate of this Location.
         void SetCoordinate(const Coordinate& coordinate) { m_coordinate = coordinate; }
 
@@ -91,6 +94,9 @@ public:
 
         /// Set Location's population fraction (of the total populaion count).
         void SetPopFraction(double relativePopulation);
+
+        /// Set Population id for Households references.
+        void SetPopulationId(unsigned int populationId) {m_population_id = populationId;}
 
 public:
         /// Access through const reference to ContactPools of type 'id'.
@@ -149,12 +155,13 @@ public:
         const std::vector<std::pair<Location*, double>>& CRefOutgoingCommutes() const { return m_outCommutes; }
 
 private:
-        Coordinate   m_coordinate;   ///< Coordinate of the Location.
-        unsigned int m_id = 0U;      ///< Id.
-        std::string  m_name;         ///< Name.
-        unsigned int m_pop_count;    ///< Population count (number of individuals) at this Location.
-        double       m_pop_fraction; ///< Fraction of whole population at this Location.
-        unsigned int m_province;     ///< Province id.
+        Coordinate   m_coordinate;       ///< Coordinate of the Location.
+        unsigned int m_id = 0U;          ///< Id.
+        std::string  m_name;             ///< Name.
+        unsigned int m_pop_count;        ///< Population count (number of individuals) at this Location.
+        double       m_pop_fraction;     ///< Fraction of whole population at this Location.
+        unsigned int m_province;         ///< Province id.
+        unsigned int m_population_id;    ///< Population id.
 
         /// Incomming commutes stored as pair of Location and fraction of population at that Location.
         std::vector<std::pair<Location*, double>> m_inCommutes;
