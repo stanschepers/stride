@@ -93,6 +93,73 @@ void GeoGridConfig::SetData(const string& householdsFileName)
         popInfo.count_households = static_cast<unsigned int>(floor(static_cast<double>(popSize) / averageHhSize));
 }
 
+void GeoGridConfig::SetData(const std::map<unsigned int, std::string> &householdsFileNamePerId)
+{
+        
+
+        
+        ReaderFactory                   readerFactory;
+        unsigned int                    personCountTotal = 0;
+        vector<vector<unsigned int>>    agesTotal = {};
+        
+        for(const auto& idHhFile:householdsFileNamePerId){
+                unsigned int                    personCount = 0;
+                vector<vector<unsigned int>>    ages = {};
+                const auto id                   = idHhFile.first;
+                const auto householdFileName    = idHhFile.second;
+                auto householdsReader = readerFactory.CreateHouseholdReader(householdFileName);
+                householdsReader->SetReferenceHouseholds(personCount, ages);
+                personCountTotal += personCount;
+        }
+        const auto popSize = input.pop_size;
+
+        //----------------------------------------------------------------
+        // Determine age makeup of reference houshold population.
+        //----------------------------------------------------------------
+        const auto ref_p_count = refHH.person_count;
+        const auto averageHhSize = static_cast<double>(ref_p_count) / static_cast<double>(refHH.ages.size());
+
+        auto ref_k12school = 0U;
+        auto ref_college = 0U;
+        auto ref_workplace = 0U;
+        for (const auto &hhAgeProfile : refHH.ages) {
+                for (const auto &age : hhAgeProfile) {
+                        if (K12School::HasAge(age)) {
+                                ref_k12school++;
+                        }
+                        if (College::HasAge(age)) {
+                                ref_college++;
+                        }
+                        if (Workplace::HasAge(age)) {
+                                ref_workplace++;
+                        }
+                }
+        }
+        //----------------------------------------------------------------
+        // Scale up to the generated population size.
+        //----------------------------------------------------------------
+        const auto fraction_k12school_age =
+                static_cast<double>(ref_k12school) / static_cast<double>(ref_p_count);
+        const auto fraction_college_age = static_cast<double>(ref_college) / static_cast<double>(ref_p_count);
+        const auto fraction_workplace_age =
+                static_cast<double>(ref_workplace) / static_cast<double>(ref_p_count);
+
+        const auto age_count_k12school = static_cast<unsigned int>(floor(popSize * fraction_k12school_age));
+        const auto age_count_college = static_cast<unsigned int>(floor(popSize * fraction_college_age));
+        const auto age_count_workplace = static_cast<unsigned int>(floor(popSize * fraction_workplace_age));
+
+        popInfo.popcount_k12school = age_count_k12school;
+
+        popInfo.popcount_college = static_cast<unsigned int>(floor(
+                input.participation_college * age_count_college));
+
+        popInfo.popcount_workplace = static_cast<unsigned int>(
+                floor(input.particpation_workplace * (age_count_workplace - popInfo.popcount_college)));
+
+        popInfo.count_households = static_cast<unsigned int>(floor(
+                static_cast<double>(popSize) / averageHhSize));
+}
+
 ostream& operator<<(ostream& out, const GeoGridConfig& config)
 {
         const int w = 53;
