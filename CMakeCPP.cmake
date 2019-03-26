@@ -94,6 +94,11 @@ include_directories(SYSTEM ${CMAKE_HOME_DIRECTORY}/main/resources/lib/spdlog/inc
 include_directories(SYSTEM ${CMAKE_HOME_DIRECTORY}/main/resources/lib/tclap/include)
 
 #----------------------------------------------------------------------------
+# JSON for Modern C++
+#----------------------------------------------------------------------------
+include_directories(SYSTEM ${CMAKE_HOME_DIRECTORY}/main/resources/lib/nlohmann-json/include)
+
+#----------------------------------------------------------------------------
 # System threads required by protobuf anf gtest
 #----------------------------------------------------------------------------
 find_package(Threads)
