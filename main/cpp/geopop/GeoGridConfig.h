@@ -133,7 +133,7 @@ public:
         /// Read the househould data file, parse it and set data.
         void SetData(const std::string& householdsFileName);
 
-        void SetData(const std::map<unsigned int, std::string> &householdsFileNamePerId)
+        void SetData(const std::map<unsigned int, std::string> &householdsFileNamePerId);
 
 };
 
