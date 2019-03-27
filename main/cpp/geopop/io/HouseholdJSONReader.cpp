@@ -34,22 +34,22 @@ void HouseholdJSONReader::SetReferenceHouseholds(unsigned int&                  
 
         try {
 
-            *(m_input_stream.get()) >> data;
-            unsigned int p_count = 0U;
+                *(m_input_stream.get()) >> data;
+                unsigned int p_count = 0U;
 
-            /*
-             * std::vector<unsigned int> instead of auto to eliminate ambiguity when using GCC8 compiler
-             * // NOLINT to suppress Clion (clang-tidy) code inspection
-             */
-            for (const std::vector<unsigned int>& household : data["householdsList"]) { // NOLINT
-                p_count += household.size();
-                ref_ages.emplace_back(household);
-            }
-            ref_person_count = p_count;
-        } catch (const json::parse_error &error) {
-            throw runtime_error("An error occured while parsing JSON. Please make sure valid JSON is provided.");
-        } catch (const json::type_error &error) {
-            throw runtime_error("Incorrect type encoutered while parsing households.");
+                /*
+                 * std::vector<unsigned int> instead of auto to eliminate ambiguity when using GCC8 compiler
+                 * // NOLINT to suppress Clion (clang-tidy) code inspection
+                 */
+                for (const std::vector<unsigned int>& household : data["householdsList"]) { // NOLINT
+                        p_count += household.size();
+                        ref_ages.emplace_back(household);
+                }
+                ref_person_count = p_count;
+        } catch (const json::parse_error& error) {
+                throw runtime_error("An error occured while parsing JSON. Please make sure valid JSON is provided.");
+        } catch (const json::type_error& error) {
+                throw runtime_error("Incorrect type encoutered while parsing households.");
         }
 }
 
