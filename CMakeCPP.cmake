@@ -180,13 +180,15 @@ endif()
 #----------------------------------------------------------------------------
 if (NOT STRIDE_FORCE_NO_QT5)
 #    message(STATUS "TEST: ${CMAKE_PREFIX_PATH}")
+    set(TEMP CMAKE_PREFIX_PATH)
     if(APPLE)
-        set(CMAKE_PREFIX_PATH /usr/local/opt/qt5)
+        set(CMAKE_PREFIX_PATH /usr/local/opt/qt)
     else()
-        set(CMAKE_PREFIX_PATH $ENV{HOME}/Qt/5.12.2/gcc_64)  # /usr/local/opt/qt5 for mac
+        set(CMAKE_PREFIX_PATH $ENV{HOME}/Qt/5.12.2/gcc_64)
     find_package(Qt5Core REQUIRED)
     find_package(Qt5Widgets REQUIRED)
     find_package(Qt5Quick REQUIRED)
+    set(CMAKE_PREFIX_PATH TEMP)
 
     if(Qt5Core_FOUND AND Qt5Widgets_FOUND AND Qt5Quick_FOUND)
         set(QT5_FOUND TRUE)
