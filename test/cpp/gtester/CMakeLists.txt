@@ -57,6 +57,9 @@ set(SRC
     #---
     geopop/io/CitiesCSVReaderTest.cpp
     geopop/io/CommutesCSVReaderTest.cpp
+    geopop/io/EpiOutputHDF5WriterTest.cpp   # New
+    geopop/io/EpiOutputJSONWriterTest.cpp   # New
+    geopop/io/EpiOutputProtoWriterTest.cpp  # New
     geopop/io/GeoGridIOUtils.cpp
     geopop/io/GeoGridJSONReaderTest.cpp
     geopop/io/GeoGridJSONWriterTest.cpp
@@ -81,6 +84,14 @@ set(SRC
     #---
     main.cpp
 )
+
+
+if ((NOT STRIDE_FORCE_NO_QT) AND QT_FOUND)  # New
+    set(SRC ${SRC}
+            visualization/EpiOutputHDF5ReaderTest.cpp
+            visualization/EpiOutputJSONReaderTest.cpp
+            visualization/EpiOutputProtoReaderTest.cpp)
+endif()
 
 #if (OPENMP_FOUND)
 #        set(SRC ${SRC} ParallelRuns.cpp)
