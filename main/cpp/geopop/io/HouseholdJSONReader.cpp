@@ -33,11 +33,17 @@ void HouseholdJSONReader::SetReferenceHouseholds(unsigned int&                  
         json data;
 
         try {
+
             *(m_input_stream.get()) >> data;
             unsigned int p_count = 0U;
-            for (const auto& household : data["householdsList"]) {
+
+            /*
+             * std::vector<unsigned int> instead of auto to eliminate ambiguity when using GCC8 compiler
+             * // NOLINT to suppress Clion (clang-tidy) code inspection
+             */
+            for (const std::vector<unsigned int>& household : data["householdsList"]) { // NOLINT
                 p_count += household.size();
-                ref_ages.emplace_back(household); // throws type error if string formatted numbers
+                ref_ages.emplace_back(household);
             }
             ref_person_count = p_count;
         } catch (const json::parse_error &error) {
