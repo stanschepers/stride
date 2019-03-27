@@ -1,3 +1,5 @@
-<map id="stride::DiseaseSeeder" name="stride::DiseaseSeeder">
-<area shape="rect" id="node2" href="$d4/d3e/a00116.html" title="{stride::util::RnMan\n||+ RnMan()\l+ RnMan()\l+ operator==()\l+ GetInfo()\l+ GetUniform01Generator()\l+ GetUniformIntGenerator()\l+ GetDiscreteGenerator()\l+ Initialize()\l+ IsEmpty()\l+ Shuffle()\l}" alt="" coords="5,145,208,355"/>
+<map id="stride::AbstractPopBuilder" name="stride::AbstractPopBuilder">
+<area shape="rect" id="node2" href="$d2/d1f/a00083.html" title="Initializes Population objects. " alt="" coords="5,211,185,303"/>
+<area shape="rect" id="node3" href="$da/d2a/a00086.html" title="Builds poulation of a geographic grid. " alt="" coords="210,189,370,325"/>
+<area shape="rect" id="node4" href="$d9/dec/a00090.html" title="Initializes Population objects. " alt="" coords="394,219,570,296"/>
 </map>

@@ -1,5 +1,6 @@
 var a00066 =
 [
-    [ "AgeContactProfile", "d9/db3/a00066.html#abcac910ea28f2cefae9efd6f462aa34d", null ],
-    [ "AgeContactProfile", "d9/db3/a00066.html#a664eb15ad31c205050674e663f94129b", null ]
+    [ "HasAge", "d9/db3/a00066.html#aae7b39ea5c158966fca3a8e19dd79826", null ],
+    [ "m_lower", "d9/db3/a00066.html#a982138542099fc588659dd7d9ed11d37", null ],
+    [ "m_upper", "d9/db3/a00066.html#aecbb22709a02f81d71c807ba5af572c7", null ]
 ];

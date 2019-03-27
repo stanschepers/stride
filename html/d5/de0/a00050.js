@@ -1,11 +1,5 @@
 var a00050 =
 [
-    [ "IdSubscriptArray", "d5/de0/a00050.html#a06f503487bdf21110eaa9bf891b693a1", null ],
-    [ "IdSubscriptArray", "d5/de0/a00050.html#a5cf042ea9a0c772713085f848291d127", null ],
-    [ "IdSubscriptArray", "d5/de0/a00050.html#a8e3b70655e02504ac0aeb521e6c4b395", null ],
-    [ "IdSubscriptArray", "d5/de0/a00050.html#a87638bd236f4e63ae8ce1eecef072c57", null ],
-    [ "operator[]", "d5/de0/a00050.html#a7f56c8edf0ee529ef125c23f3f2e988c", null ],
-    [ "operator[]", "d5/de0/a00050.html#aea2f4d04ddfcdf800cb3bd145b0e6d6c", null ],
-    [ "at", "d5/de0/a00050.html#a8ee6b212dbeaccfd66b23d18244391a9", null ],
-    [ "at", "d5/de0/a00050.html#a245c64837deb376500d341752bb31683", null ]
+    [ "Apply", "d5/de0/a00050.html#afee876de43bafdc378a264305bd0f231", null ],
+    [ "AddPools", "d5/de0/a00050.html#a55c16a3aa5962b6b57f668b76dfff5a9", null ]
 ];

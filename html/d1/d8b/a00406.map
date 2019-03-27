@@ -1,9 +1,10 @@
-<map id="ContactPoolSys.cpp" name="ContactPoolSys.cpp">
-<area shape="rect" id="node2" href="$d6/d7d/a00161.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="483,80,618,107"/>
-<area shape="rect" id="node3" href="$dd/dae/a00163.html" title="Definition of ContactPool Id Type. " alt="" coords="355,229,467,256"/>
-<area shape="rect" id="node9" href="$dc/d98/a00225.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="557,155,694,181"/>
-<area shape="rect" id="node14" href="$de/db9/a00159.html" title="Header for the core ContactPool class. " alt="" coords="236,155,399,181"/>
-<area shape="rect" id="node17" href="$de/d25/a00290.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="970,155,1142,181"/>
-<area shape="rect" id="node15" href="$d1/db7/a00157.html" title="Header for the ContactLogMode class. " alt="" coords="5,229,200,256"/>
-<area shape="rect" id="node18" href="$d0/d39/a00314.html" title="Interface/Implementation for SVIterator. " alt="" coords="1304,229,1403,256"/>
+<map id="ConfigInfo.h" name="ConfigInfo.h">
+<area shape="rect" id="node2" href="$dd/da7/a00168.html" title="Header for the command line controller. " alt="" coords="5,80,141,107"/>
+<area shape="rect" id="node3" href="$d7/df2/a00312.html" title="Header for the command line controller. " alt="" coords="166,80,306,107"/>
+<area shape="rect" id="node4" href="$d3/df8/a00155.html" title="Info on configuration. " alt="" coords="331,80,443,107"/>
+<area shape="rect" id="node5" href="$d3/d4a/a00297.html" title="Produce run config ptree. " alt="" coords="467,80,619,107"/>
+<area shape="rect" id="node9" href="$db/d7b/a00296.html" title="Implementation of ptree utils. " alt="" coords="603,155,770,181"/>
+<area shape="rect" id="node6" href="$d4/d6f/a00315.html" title="Main program: command line handling. " alt="" coords="255,155,340,181"/>
+<area shape="rect" id="node7" href="$dd/d56/a00274.html" title="Core Population class. " alt="" coords="365,155,481,181"/>
+<area shape="rect" id="node8" href="$dc/d0f/a00303.html" title="Implementation for the Simulator class. " alt="" coords="505,155,580,181"/>
 </map>

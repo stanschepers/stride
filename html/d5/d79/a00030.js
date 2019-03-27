@@ -1,6 +1,5 @@
 var a00030 =
 [
-    [ "HouseholdReader", "d5/d79/a00030.html#a176ab97c6e6fecf6f866a3acc173c82d", null ],
-    [ "~HouseholdReader", "d5/d79/a00030.html#a1a0b479e10e4bbcaa57bc0a4955df946", null ],
-    [ "SetReferenceHouseholds", "d5/d79/a00030.html#ae8f72e3d2cf0cda493fdb3fe17f90da7", null ]
+    [ "Apply", "d5/d79/a00030.html#a6331c0c9b3c62931305cbe8c11b0c781", null ],
+    [ "AddPools", "d5/d79/a00030.html#a411d099ecd5b5a295b3f055b097e65df", null ]
 ];

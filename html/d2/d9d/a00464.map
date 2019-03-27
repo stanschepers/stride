@@ -1,7 +1,4 @@
-<map id="GeoGridKdTree.h" name="GeoGridKdTree.h">
-<area shape="rect" id="node2" href="$d4/d9a/a00246.html" title="KdTree.h" alt="" coords="615,80,691,107"/>
-<area shape="rect" id="node10" href="$dd/dd7/a00248.html" title="KdTree2DPoint.h" alt="" coords="316,80,443,107"/>
-<area shape="rect" id="node3" href="$d6/db3/a00130.html" title="AABBox.h" alt="" coords="417,162,502,189"/>
-<area shape="rect" id="node4" href="$d6/d22/a00245.html" title="KdNode.h" alt="" coords="716,162,800,189"/>
-<area shape="rect" id="node11" href="$d9/d38/a00166.html" title="geopop/Coordinate.h" alt="" coords="185,162,341,189"/>
+<map id="GenPopController.h" name="GenPopController.h">
+<area shape="rect" id="node2" href="$dd/df4/a00193.html" title="Header for the command line controller. " alt="" coords="5,80,165,107"/>
+<area shape="rect" id="node3" href="$d4/d6f/a00315.html" title="Main program: command line handling. " alt="" coords="189,80,275,107"/>
 </map>

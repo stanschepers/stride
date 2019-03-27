@@ -1,6 +1,5 @@
-<map id="PrimaryCommunityPopulator.h" name="PrimaryCommunityPopulator.h">
-<area shape="rect" id="node2" href="$d5/d42/a00269.html" title="Populator.h" alt="" coords="367,80,462,107"/>
-<area shape="rect" id="node3" href="$dd/dae/a00163.html" title="Definition of ContactPool Id Type. " alt="" coords="135,155,299,181"/>
-<area shape="rect" id="node9" href="$dd/dfe/a00283.html" title="Interface of RnMan. " alt="" coords="365,155,465,181"/>
-<area shape="rect" id="node10" href="$d2/d04/a00281.html" title="Interface of RnPcg. " alt="" coords="378,229,451,256"/>
+<map id="Person.h" name="Person.h">
+<area shape="rect" id="node2" href="$dc/de6/a00167.html" title="Definition of ContactPool Id Type. " alt="" coords="92,155,256,181"/>
+<area shape="rect" id="node8" href="$d6/de1/a00233.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="294,80,483,107"/>
+<area shape="rect" id="node13" href="$dd/d52/a00221.html" title="Header for the Health class. " alt="" coords="508,80,637,107"/>
 </map>

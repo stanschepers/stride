@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['none',['None',['../d1/dc6/a00347.html#a8f1467c1f622638893d3a1c12eead2baa6adf97f83acf6453d4a6a4b1070f3754',1,'stride::ContactLogMode']]]
+  ['k12school',['K12School',['../d0/d65/a00360.html#a61a32e88a50c57e6f5c49f0996b6b462ab055a361403830ea4fa7bd1c8519b38e',1,'stride::ContactType']]]
 ];

@@ -1,4 +1,4 @@
-<map id="proto::GeoGrid_Location_Coordinate" name="proto::GeoGrid_Location_Coordinate">
-<area shape="rect" id="node2" href="$d2/dee/a00049.html" title="{Message\n||}" alt="" coords="5,5,84,83"/>
-<area shape="rect" id="node4" href="$df/d73/a00358.html" title="{double\n||}" alt="" coords="328,5,393,83"/>
+<map id="geopop::SecondaryCommunityPopulator" name="geopop::SecondaryCommunityPopulator">
+<area shape="rect" id="node2" href="$dd/d32/a00041.html" title="Interface for populators. " alt="" coords="80,417,231,553"/>
+<area shape="rect" id="node4" href="$d4/d98/a00120.html" title="{stride::util::RnMan\n||+ RnMan()\l+ RnMan()\l+ operator==()\l+ GetInfo()\l+ GetUniform01Generator()\l+ GetUniformIntGenerator()\l+ GetDiscreteGenerator()\l+ Initialize()\l+ IsEmpty()\l+ Shuffle()\l}" alt="" coords="178,145,381,355"/>
 </map>

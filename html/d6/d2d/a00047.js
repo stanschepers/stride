@@ -1,14 +1,10 @@
 var a00047 =
 [
-    [ "WorkplacePopulator", "d6/d2d/a00047.html#a0f46a889a7162b41220deea210ffdf76", null ],
-    [ "Apply", "d6/d2d/a00047.html#a237dee7e694e3e6a693efd00afe46286", null ],
-    [ "AssignActive", "d6/d2d/a00047.html#a230e7343ac24afda7bb007f8e820da5a", null ],
-    [ "CommutingLocations", "d6/d2d/a00047.html#aea8fef2442d7d2911444b8424bee402f", null ],
-    [ "FractionCommutingStudents", "d6/d2d/a00047.html#a003fe52d3c225edd395f365ddf287275", null ],
-    [ "NearbyWorkspacePools", "d6/d2d/a00047.html#ae0011ab21239f9faadf566a976d7d0fb", null ],
-    [ "m_geogrid_config", "d6/d2d/a00047.html#aaf823c3ec7db75560ddb7a4271f87513", null ],
-    [ "m_nearby_wp", "d6/d2d/a00047.html#ab4e1335920c045028d08fbda4b87c542", null ],
-    [ "m_gen_non_commute", "d6/d2d/a00047.html#a1407ce0c553ddf402829e2c3b4a9262a", null ],
-    [ "m_commuting_locations", "d6/d2d/a00047.html#aa77acd77398ff8232f8008f1add8b6d5", null ],
-    [ "m_gen_commute", "d6/d2d/a00047.html#a976fc7070f6b52528a4bff0155323667", null ]
+    [ "CreateCitiesReader", "d6/d2d/a00047.html#a6d2ed9033fa50940b6fcb601a18d127c", null ],
+    [ "CreateCitiesReader", "d6/d2d/a00047.html#a96d99430054cee1c24fd7e2d81a842c2", null ],
+    [ "CreateCommutesReader", "d6/d2d/a00047.html#abb99b826e135cac651269f27058c9e81", null ],
+    [ "CreateCommutesReader", "d6/d2d/a00047.html#a885c232a2eb6f42e7f20ee73814742cd", null ],
+    [ "CreateHouseholdReader", "d6/d2d/a00047.html#af8f94fd8f5a9cafc1eff4399e2b3e093", null ],
+    [ "CreateHouseholdReader", "d6/d2d/a00047.html#a9e221561b2f5d30bc9d512a7022df99f", null ],
+    [ "OpenFile", "d6/d2d/a00047.html#aec0d3e2d69f4fe085e479a2cec3e398e", null ]
 ];

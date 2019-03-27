@@ -1,6 +1,5 @@
 var a00027 =
 [
-    [ "HouseholdCSVReader", "d0/d33/a00027.html#aa83f488af915c290a9d6ffb03712d244", null ],
-    [ "SetReferenceHouseholds", "d0/d33/a00027.html#ae1f12dfb634ec54d84b096e57c3effad", null ],
-    [ "m_input_stream", "d0/d33/a00027.html#a5571f6cc645370732f5c00f78e5821a1", null ]
+    [ "~GeoGridWriter", "d0/d33/a00027.html#ac39b3553fa52b22d47cd5972d5e1c4b8", null ],
+    [ "Write", "d0/d33/a00027.html#a2a4c494a6bbe1776e71706a1c3a7ff9a", null ]
 ];

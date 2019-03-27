@@ -1,4 +1,6 @@
 var a00032 =
 [
-    [ "Apply", "dc/d87/a00032.html#aab3d28774bc024e8f48949fffc05f8f4", null ]
+    [ "HouseholdReader", "dc/d87/a00032.html#a176ab97c6e6fecf6f866a3acc173c82d", null ],
+    [ "~HouseholdReader", "dc/d87/a00032.html#a1a0b479e10e4bbcaa57bc0a4955df946", null ],
+    [ "SetReferenceHouseholds", "dc/d87/a00032.html#ae8f72e3d2cf0cda493fdb3fe17f90da7", null ]
 ];

@@ -1,8 +1,8 @@
-<map id="CSV.h" name="CSV.h">
-<area shape="rect" id="node2" href="$db/da2/a00300.html" title="Header for the command line controller. " alt="" coords="5,80,145,107"/>
-<area shape="rect" id="node3" href="$db/d48/a00148.html" title="CommutesCSVReader.cpp" alt="" coords="169,80,360,107"/>
-<area shape="rect" id="node4" href="$d6/d43/a00216.html" title="HouseholdCSVReader.cpp" alt="" coords="385,80,571,107"/>
-<area shape="rect" id="node5" href="$dc/ded/a00252.html" title="LocationsCSVReader.cpp" alt="" coords="596,80,776,107"/>
-<area shape="rect" id="node6" href="$dc/de6/a00167.html" title="Source file of csv. " alt="" coords="801,80,875,107"/>
-<area shape="rect" id="node7" href="$de/d53/a00169.html" title="Source file of CSVRow. " alt="" coords="899,80,998,107"/>
+<map id="ContactPoolSys.h" name="ContactPoolSys.h">
+<area shape="rect" id="node2" href="$dc/de6/a00167.html" title="Definition of ContactPool Id Type. " alt="" coords="355,155,467,181"/>
+<area shape="rect" id="node8" href="$d6/de1/a00233.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="557,80,694,107"/>
+<area shape="rect" id="node13" href="$dd/dae/a00163.html" title="Header for the core ContactPool class. " alt="" coords="236,80,399,107"/>
+<area shape="rect" id="node16" href="$d0/d61/a00302.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="970,80,1142,107"/>
+<area shape="rect" id="node14" href="$d6/d7d/a00161.html" title="Header for the ContactLogMode class. " alt="" coords="5,155,200,181"/>
+<area shape="rect" id="node17" href="$d8/d23/a00326.html" title="Interface/Implementation for SVIterator. " alt="" coords="1304,155,1403,181"/>
 </map>

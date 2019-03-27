@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: HouseholdGenerator.h File Reference</title>
+<title>Stride Reference Manual: GeoPopBuilder.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 020903a</span>
+   &#160;<span id="projectnumber">- generated for commit 6980f2e</span>
    </div>
   </td>
  </tr>
@@ -108,27 +108,31 @@ $(document).ready(function(){initNavTree('dd/df3/a00219.html','../../');});
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">HouseholdGenerator.h File Reference</div>  </div>
+<div class="title">GeoPopBuilder.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d2/d94/a00184_source.html">Generator.h</a>&quot;</code><br />
+
+<p>Initialize populations.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d0/d5e/a00136_source.html">AbstractPopBuilder.h</a>&quot;</code><br />
+<code>#include &lt;boost/property_tree/ptree_fwd.hpp&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for HouseholdGenerator.h:</div>
+Include dependency graph for GeoPopBuilder.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../db/dc4/a00495.gif" border="0" usemap="#HouseholdGenerator_8h" alt=""/></div>
-<map name="HouseholdGenerator_8h" id="HouseholdGenerator_8h">
-<area shape="rect" id="node2" href="../../d2/d94/a00184.html" title="Generator.h" alt="" coords="263,80,362,107"/>
-<area shape="rect" id="node3" href="../../dd/dfe/a00283.html" title="Interface of RnMan. " alt="" coords="196,155,296,181"/>
-<area shape="rect" id="node4" href="../../d2/d04/a00281.html" title="Interface of RnPcg. " alt="" coords="55,229,128,256"/>
+<div class="center"><img src="../../d0/da2/a00502.gif" border="0" usemap="#GeoPopBuilder_8h" alt=""/></div>
+<map name="GeoPopBuilder_8h" id="GeoPopBuilder_8h">
+<area shape="rect" id="node2" href="../../d0/d5e/a00136.html" title="Base Class for PopBuilders. " alt="" coords="160,80,315,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d3/dad/a00496.gif" border="0" usemap="#HouseholdGenerator_8hdep" alt=""/></div>
-<map name="HouseholdGenerator_8hdep" id="HouseholdGenerator_8hdep">
-<area shape="rect" id="node2" href="../../dc/d9a/a00218.html" title="HouseholdGenerator.cpp" alt="" coords="5,80,187,107"/>
-<area shape="rect" id="node3" href="../../da/de7/a00210.html" title="Initialize populations: implementation. " alt="" coords="211,80,354,107"/>
+<div class="center"><img src="../../d4/de5/a00503.gif" border="0" usemap="#GeoPopBuilder_8hdep" alt=""/></div>
+<map name="GeoPopBuilder_8hdep" id="GeoPopBuilder_8hdep">
+<area shape="rect" id="node2" href="../../dd/df4/a00193.html" title="Header for the command line controller. " alt="" coords="5,80,165,107"/>
+<area shape="rect" id="node3" href="../../dc/d9a/a00218.html" title="Initialize populations: implementation. " alt="" coords="190,80,333,107"/>
+<area shape="rect" id="node4" href="../../dd/d56/a00274.html" title="Core Population class. " alt="" coords="357,80,473,107"/>
 </map>
 </div>
 </div>
@@ -136,23 +140,30 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3c/a00028.html">geopop::HouseholdGenerator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates ContactPools for ContactType Household.  <a href="../../dc/d3c/a00028.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d2a/a00086.html">stride::GeoPopBuilder</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds poulation of a geographic grid.  <a href="../../da/d2a/a00086.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:da/d75/a00334"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d75/a00334.html">geopop</a></td></tr>
-<tr class="memdesc:da/d75/a00334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
+<tr class="memitem:d2/daf/a00346"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/daf/a00346.html">geopop</a></td></tr>
+<tr class="memdesc:d2/daf/a00346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:df/df1/a00357"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/a00357.html">stride</a></td></tr>
+<tr class="memdesc:df/df1/a00357"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Initialize populations. </p>
+
+<p>Definition in file <a class="el" href="../../dd/df3/a00219_source.html">GeoPopBuilder.h</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_02b8471d88aea77fae7c19982808da05.html">generators</a></li><li class="navelem"><a class="el" href="../../dd/df3/a00219.html">HouseholdGenerator.h</a></li>
-    <li class="footer">Generated on Sat Mar 23 2019 11:58:15 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_d174127a4330655b353181aebfd9b441.html">pop</a></li><li class="navelem"><a class="el" href="../../dd/df3/a00219.html">GeoPopBuilder.h</a></li>
+    <li class="footer">Generated on Wed Mar 27 2019 19:58:40 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

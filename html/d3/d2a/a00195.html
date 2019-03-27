@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: GeoGridJSONWriter.cpp File Reference</title>
+<title>Stride Reference Manual: GeoAggregator.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 020903a</span>
+   &#160;<span id="projectnumber">- generated for commit 6980f2e</span>
    </div>
   </td>
  </tr>
@@ -105,61 +105,94 @@ $(document).ready(function(){initNavTree('d3/d2a/a00195.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">GeoGridJSONWriter.cpp File Reference</div>  </div>
+<div class="title">GeoAggregator.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d7/ded/a00196_source.html">GeoGridJSONWriter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../de/db9/a00159_source.html">contact/ContactPool.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d3/d65/a00154_source.html">geopop/ContactCenter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../da/deb/a00189_source.html">geopop/GeoGrid.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../dc/d6a/a00261_source.html">pop/Person.h</a>&quot;</code><br />
-<code>#include &lt;boost/property_tree/json_parser.hpp&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;omp.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d7/d03/a00254_source.html">KdTree.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d0/def/a00256_source.html">KdTree2DPoint.h</a>&quot;</code><br />
+<code>#include &lt;boost/geometry/algorithms/within.hpp&gt;</code><br />
+<code>#include &lt;boost/geometry/core/access.hpp&gt;</code><br />
+<code>#include &lt;boost/geometry/geometries/box.hpp&gt;</code><br />
+<code>#include &lt;boost/geometry/geometries/polygon.hpp&gt;</code><br />
+<code>#include &lt;boost/geometry/geometries/register/box.hpp&gt;</code><br />
+<code>#include &lt;tuple&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for GeoGridJSONWriter.cpp:</div>
+Include dependency graph for GeoAggregator.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../db/db1/a00460.gif" border="0" usemap="#GeoGridJSONWriter_8cpp" alt=""/></div>
-<map name="GeoGridJSONWriter_8cpp" id="GeoGridJSONWriter_8cpp">
-<area shape="rect" id="node2" href="../../d7/ded/a00196.html" title="GeoGridJSONWriter.h" alt="" coords="1003,87,1157,114"/>
-<area shape="rect" id="node33" href="../../de/db9/a00159.html" title="Header for the core ContactPool class. " alt="" coords="463,259,625,285"/>
-<area shape="rect" id="node36" href="../../d3/d65/a00154.html" title="geopop/ContactCenter.h" alt="" coords="1669,259,1848,285"/>
-<area shape="rect" id="node37" href="../../da/deb/a00189.html" title="geopop/GeoGrid.h" alt="" coords="1201,87,1340,114"/>
-<area shape="rect" id="node46" href="../../dc/d6a/a00261.html" title="Header file for the Person class. " alt="" coords="2408,177,2515,203"/>
-<area shape="rect" id="node3" href="../../de/dd2/a00207.html" title="GeoGridWriter.h" alt="" coords="1951,177,2073,203"/>
-<area shape="rect" id="node6" href="../../d3/d1a/a00251.html" title="geopop/Location.h" alt="" coords="1010,177,1150,203"/>
-<area shape="rect" id="node7" href="../../dd/dae/a00163.html" title="Definition of ContactPool Id Type. " alt="" coords="1190,341,1354,367"/>
-<area shape="rect" id="node13" href="../../dc/d98/a00225.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="1405,259,1595,285"/>
-<area shape="rect" id="node18" href="../../d9/d38/a00166.html" title="geopop/Coordinate.h" alt="" coords="1793,341,1949,367"/>
-<area shape="rect" id="node21" href="../../de/d25/a00290.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="650,259,822,285"/>
-<area shape="rect" id="node22" href="../../d0/d39/a00314.html" title="Interface/Implementation for SVIterator. " alt="" coords="325,341,424,367"/>
-<area shape="rect" id="node34" href="../../d1/db7/a00157.html" title="Header for the ContactLogMode class. " alt="" coords="499,341,693,367"/>
-<area shape="rect" id="node38" href="../../d7/da0/a00198.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="2176,177,2384,203"/>
-<area shape="rect" id="node39" href="../../d4/d9a/a00246.html" title="KdTree.h" alt="" coords="2493,259,2569,285"/>
-<area shape="rect" id="node44" href="../../dd/dd7/a00248.html" title="KdTree2DPoint.h" alt="" coords="2217,259,2343,285"/>
-<area shape="rect" id="node40" href="../../d6/db3/a00130.html" title="AABBox.h" alt="" coords="2357,341,2443,367"/>
-<area shape="rect" id="node41" href="../../d6/d22/a00245.html" title="KdNode.h" alt="" coords="2729,341,2813,367"/>
-<area shape="rect" id="node47" href="../../d1/de1/a00213.html" title="Header for the Health class. " alt="" coords="2593,259,2722,285"/>
+<div class="center"><img src="../../db/de0/a00465.gif" border="0" usemap="#GeoAggregator_8h" alt=""/></div>
+<map name="GeoAggregator_8h" id="GeoAggregator_8h">
+<area shape="rect" id="node2" href="../../d7/d03/a00254.html" title="KdTree.h" alt="" coords="589,87,665,114"/>
+<area shape="rect" id="node10" href="../../d0/def/a00256.html" title="KdTree2DPoint.h" alt="" coords="316,87,443,114"/>
+<area shape="rect" id="node3" href="../../de/d76/a00134.html" title="AABBox.h" alt="" coords="417,177,502,203"/>
+<area shape="rect" id="node4" href="../../d0/d3e/a00253.html" title="KdNode.h" alt="" coords="716,177,800,203"/>
+<area shape="rect" id="node11" href="../../d5/dcb/a00170.html" title="geopop/Coordinate.h" alt="" coords="185,177,341,203"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d2c/a00466.gif" border="0" usemap="#GeoAggregator_8hdep" alt=""/></div>
+<map name="GeoAggregator_8hdep" id="GeoAggregator_8hdep">
+<area shape="rect" id="node2" href="../../d7/ded/a00196.html" title="GeoGrid.cpp" alt="" coords="20,80,121,107"/>
 </map>
 </div>
 </div>
 <p><a href="../../d3/d2a/a00195_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html">geopop::Collector&lt; InsertIter, T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggregates into a vector that must should remain alive for the usage duration of the <a class="el" href="../../dd/dad/a00005.html" title="Aggregates into a vector that must should remain alive for the usage duration of the Collector...">Collector</a>.  <a href="../../dd/dad/a00005.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/de7/a00014.html">geopop::GeoAggregator&lt; Policy, F &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="../../d2/de7/a00014.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time...">GeoAggregator</a> can either be instantiated with a functor, or be called with one every time.  <a href="../../d2/de7/a00014.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d1b/a00015.html">geopop::GeoAggregator&lt; Policy &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="../../d2/de7/a00014.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time...">GeoAggregator</a> that has to be called with a functor.  <a href="../../dd/d1b/a00015.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d7a/a00016.html">geopop::GeoAggregator&lt; Policy, F &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="../../d2/de7/a00014.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time...">GeoAggregator</a> constructed with a functor.  <a href="../../d7/d7a/a00016.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dea/a00046.html">geopop::RadiusPolicy</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d2/de7/a00014.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time...">GeoAggregator</a> Policy that aggregates locations within a radius (in km) of a center point.  <a href="../../d3/dea/a00046.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d0b/a00004.html">geopop::BoxPolicy</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d2/de7/a00014.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time...">GeoAggregator</a> Policy that aggregates over an axis aligned bounding box.  <a href="../../d0/d0b/a00004.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d3a/a00040.html">geopop::PolygonPolicy</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="../../d2/de7/a00014.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time...">GeoAggregator</a> Policy that aggregates over a (clockwise) polygon.  <a href="../../db/d3a/a00040.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:da/d75/a00334"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d75/a00334.html">geopop</a></td></tr>
-<tr class="memdesc:da/d75/a00334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
+<tr class="memitem:d9/d48/a00345"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d48/a00345.html">geoaggregator_detail</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:d2/daf/a00346"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/daf/a00346.html">geopop</a></td></tr>
+<tr class="memdesc:d2/daf/a00346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a938f08fc654e93c04d874a884bbd6862"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d30/a00370.html">double</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d48/a00345.html#a938f08fc654e93c04d874a884bbd6862">geoaggregator_detail::RadianToDegree</a> (<a class="el" href="../../d3/d30/a00370.html">double</a> rad)</td></tr>
+<tr class="separator:a938f08fc654e93c04d874a884bbd6862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bc5cba95de279162ab3741d610bb6dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d30/a00370.html">double</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d48/a00345.html#a4bc5cba95de279162ab3741d610bb6dc">geoaggregator_detail::DegreeToRadian</a> (<a class="el" href="../../d3/d30/a00370.html">double</a> deg)</td></tr>
+<tr class="separator:a4bc5cba95de279162ab3741d610bb6dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad29105dc339e24a7c92af01763abce35"><td class="memTemplParams" colspan="2">template&lt;typename InsertIter , typename T  = typename InsertIter::container_type::value_type&gt; </td></tr>
+<tr class="memitem:ad29105dc339e24a7c92af01763abce35"><td class="memTemplItemLeft" align="right" valign="top">Collector&lt; InsertIter, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/daf/a00346.html#ad29105dc339e24a7c92af01763abce35">geopop::MakeCollector</a> (const InsertIter &amp;ins)</td></tr>
+<tr class="memdesc:ad29105dc339e24a7c92af01763abce35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a <a class="el" href="../../dd/dad/a00005.html" title="Aggregates into a vector that must should remain alive for the usage duration of the Collector...">Collector</a>, useful for type inference.  <a href="../../d2/daf/a00346.html#ad29105dc339e24a7c92af01763abce35">More...</a><br /></td></tr>
+<tr class="separator:ad29105dc339e24a7c92af01763abce35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_c490ff723361adf09283ce460b26e466.html">io</a></li><li class="navelem"><a class="el" href="../../d3/d2a/a00195.html">GeoGridJSONWriter.cpp</a></li>
-    <li class="footer">Generated on Sat Mar 23 2019 11:58:15 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_1fafd3a38d53c2ca250f450f6134d22a.html">geo</a></li><li class="navelem"><a class="el" href="../../d3/d2a/a00195.html">GeoAggregator.h</a></li>
+    <li class="footer">Generated on Wed Mar 27 2019 19:58:40 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

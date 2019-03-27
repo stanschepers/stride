@@ -1,7 +1,6 @@
-<map id="DaysOffInterface.h" name="DaysOffInterface.h">
-<area shape="rect" id="node2" href="$d1/d0d/a00171.html" title="DaysOffAll class: everybody gets the day off. " alt="" coords="5,80,104,107"/>
-<area shape="rect" id="node3" href="$d7/d3f/a00173.html" title="DaysOffNone class. " alt="" coords="129,80,247,107"/>
-<area shape="rect" id="node4" href="$d8/df1/a00174.html" title="DaysOffAll class: everybody gets the day off. " alt="" coords="271,80,398,107"/>
-<area shape="rect" id="node5" href="$de/d45/a00175.html" title="DaysOffStandard class. " alt="" coords="422,80,565,107"/>
-<area shape="rect" id="node6" href="$da/dd4/a00291.html" title="Implementation for the Simulator class. " alt="" coords="456,155,531,181"/>
+<map id="ControlHelper.h" name="ControlHelper.h">
+<area shape="rect" id="node2" href="$d9/d5e/a00295.html" title="Interface of RnMan. " alt="" coords="195,87,295,114"/>
+<area shape="rect" id="node9" href="$d0/d39/a00314.html" title="Definition of Stopwatch. " alt="" coords="452,87,576,114"/>
+<area shape="rect" id="node3" href="$d6/d82/a00293.html" title="Interface of RnPcg. " alt="" coords="8,169,81,196"/>
+<area shape="rect" id="node10" href="$dd/dbb/a00330.html" title="Utilities to tag clocks and reformat clock readout to string. " alt="" coords="503,169,619,196"/>
 </map>

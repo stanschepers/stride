@@ -1,2 +1,2 @@
-<map id="geopop::GeoAggregator&lt; Policy, F &gt;" name="geopop::GeoAggregator&lt; Policy, F &gt;">
+<map id="geopop::Collector&lt; InsertIter, T &gt;" name="geopop::Collector&lt; InsertIter, T &gt;">
 </map>

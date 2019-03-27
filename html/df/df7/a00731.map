@@ -1,4 +1,4 @@
-<map id="geopop::GeoGridJSONWriter" name="geopop::GeoGridJSONWriter">
-<area shape="rect" id="node2" href="$d3/dfe/a00025.html" title="An interface for writing the GeoGrid to a file, can be implemented with multiple file types..." alt="" coords="5,285,172,377"/>
-<area shape="rect" id="node5" title="STL class. " alt="" coords="295,145,403,223"/>
+<map id="geopop::DaycarePopulator" name="geopop::DaycarePopulator">
+<area shape="rect" id="node2" href="$dd/d32/a00041.html" title="Interface for populators. " alt="" coords="80,417,231,553"/>
+<area shape="rect" id="node4" href="$d4/d98/a00120.html" title="{stride::util::RnMan\n||+ RnMan()\l+ RnMan()\l+ operator==()\l+ GetInfo()\l+ GetUniform01Generator()\l+ GetUniformIntGenerator()\l+ GetDiscreteGenerator()\l+ Initialize()\l+ IsEmpty()\l+ Shuffle()\l}" alt="" coords="178,145,381,355"/>
 </map>

@@ -1,6 +1,12 @@
-<map id="HouseholdPopulator.h" name="HouseholdPopulator.h">
-<area shape="rect" id="node2" href="$d5/d42/a00269.html" title="Populator.h" alt="" coords="367,80,462,107"/>
-<area shape="rect" id="node3" href="$dd/dae/a00163.html" title="Definition of ContactPool Id Type. " alt="" coords="135,155,299,181"/>
-<area shape="rect" id="node9" href="$dd/dfe/a00283.html" title="Interface of RnMan. " alt="" coords="365,155,465,181"/>
-<area shape="rect" id="node10" href="$d2/d04/a00281.html" title="Interface of RnPcg. " alt="" coords="378,229,451,256"/>
+<map id="GeoGridWriterFactory.cpp" name="GeoGridWriterFactory.cpp">
+<area shape="rect" id="node2" href="$df/d24/a00217.html" title="GeoGridWriterFactory.h" alt="" coords="5,155,172,181"/>
+<area shape="rect" id="node5" href="$da/de7/a00210.html" title="GeoGridProtoWriter.h" alt="" coords="445,80,599,107"/>
+<area shape="rect" id="node6" href="$d3/dd5/a00215.html" title="GeoGridWriter.h" alt="" coords="248,155,369,181"/>
+<area shape="rect" id="node33" href="$da/d15/a00188.html" title="util/Exception.h" alt="" coords="51,229,169,256"/>
+<area shape="rect" id="node8" href="$d0/d2f/a00259.html" title="geopop/Location.h" alt="" coords="1128,155,1268,181"/>
+<area shape="rect" id="node9" href="$dc/de6/a00167.html" title="Definition of ContactPool Id Type. " alt="" coords="867,311,1031,338"/>
+<area shape="rect" id="node14" href="$d6/de1/a00233.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="602,229,791,256"/>
+<area shape="rect" id="node19" href="$d5/dcb/a00170.html" title="geopop/Coordinate.h" alt="" coords="1693,229,1849,256"/>
+<area shape="rect" id="node22" href="$d0/d61/a00302.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="1112,229,1284,256"/>
+<area shape="rect" id="node23" href="$d8/d23/a00326.html" title="Interface/Implementation for SVIterator. " alt="" coords="1286,311,1385,338"/>
 </map>

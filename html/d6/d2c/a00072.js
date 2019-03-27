@@ -1,9 +1,10 @@
 var a00072 =
 [
-    [ "IdSubscriptArray", "d6/d2c/a00072.html#abf1e7645bd2c756f5eaffc15a767441e", null ],
-    [ "IdSubscriptArray", "d6/d2c/a00072.html#ab50f872bc3116a9ab4b9d9520e25731c", null ],
-    [ "operator[]", "d6/d2c/a00072.html#ad5fe0f6c6c524f10a8d9fdfe51818637", null ],
-    [ "operator[]", "d6/d2c/a00072.html#a72943f7cebcd7ab3a72bc386350f1cef", null ],
-    [ "at", "d6/d2c/a00072.html#a2bb18c0410138ca69513bf3d23e14754", null ],
-    [ "at", "d6/d2c/a00072.html#a24b0248f52ad367c8abad440494853e6", null ]
+    [ "ContactHandler", "d6/d2c/a00072.html#acd8b09e759ed6049412de25662d1301d", null ],
+    [ "operator()", "d6/d2c/a00072.html#ac03cd0d69d17bb0a97189c24ed537fdf", null ],
+    [ "HasContactAndTransmission", "d6/d2c/a00072.html#a65ae0c571176ea267cf980ce31408f35", null ],
+    [ "HasContact", "d6/d2c/a00072.html#a4a6ef10cff06328c9bc5b7f6337339ad", null ],
+    [ "HasTransmission", "d6/d2c/a00072.html#a94d8f2bdeff1e99b1e6380060e8fb622", null ],
+    [ "RateToProbability", "d6/d2c/a00072.html#a51fd44b433163a1bd2a9fb424a003344", null ],
+    [ "m_uniform01_generator", "d6/d2c/a00072.html#ad89329d01eda188d96ac8fea0386cdc4", null ]
 ];

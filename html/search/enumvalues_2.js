@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['exposed',['Exposed',['../d9/d48/a00345.html#a738f5251821f53315d2aebf214fbd070aa54eecd5041d37f5c8443e0ee91e241a',1,'stride']]]
+  ['daycare',['Daycare',['../d0/d65/a00360.html#a61a32e88a50c57e6f5c49f0996b6b462ac963279bf39ce72ce90d9b3f30b27e1c',1,'stride::ContactType']]]
 ];

@@ -1,3 +1,4 @@
-<map id="proto::GeoGrid" name="proto::GeoGrid">
-<area shape="rect" id="node2" href="$d2/dee/a00049.html" title="{Message\n||}" alt="" coords="69,5,148,83"/>
+<map id="geopop::PreSchoolPopulator" name="geopop::PreSchoolPopulator">
+<area shape="rect" id="node2" href="$dd/d32/a00041.html" title="Interface for populators. " alt="" coords="80,417,231,553"/>
+<area shape="rect" id="node4" href="$d4/d98/a00120.html" title="{stride::util::RnMan\n||+ RnMan()\l+ RnMan()\l+ operator==()\l+ GetInfo()\l+ GetUniform01Generator()\l+ GetUniformIntGenerator()\l+ GetDiscreteGenerator()\l+ Initialize()\l+ IsEmpty()\l+ Shuffle()\l}" alt="" coords="178,145,381,355"/>
 </map>
