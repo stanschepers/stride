@@ -43,9 +43,8 @@ void DaycarePopulator::Apply(GeoGrid &geoGrid, const GeoGridConfig& geoGridConfi
                 auto dist = m_rn_man.GetUniformIntGenerator(0, static_cast<int>(classes.size()), 0U);
 
                 // 2. for every student assign a class
-                for (const auto& hhCenter : loc->RefCenters(Id::Household)) {
-                        ContactPool* const contactPool = (*hhCenter)[0];
-                        for (Person* p : *contactPool) {
+                for (const auto& pool : loc->RefPools(Id::Household)) {
+                        for (Person* p : *pool) {
                                 if (AgeBrackets::Daycare::HasAge(p->GetAge()) &&
                                     MakeChoice(geoGridConfig.input.participation_daycare)) {
                                         auto& c = classes[dist()];

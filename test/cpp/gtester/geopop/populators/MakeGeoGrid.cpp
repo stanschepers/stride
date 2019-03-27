@@ -17,6 +17,8 @@
 
 #include "geopop/Location.h"
 #include "geopop/generators/HouseholdGenerator.h"
+#include "geopop/generators/DaycareGenerator.h"
+#include "geopop/generators/PreSchoolGenerator.h"
 #include "geopop/generators/K12SchoolGenerator.h"
 #include "pop/Population.h"
 #include "util/RnMan.h"
@@ -59,9 +61,13 @@ void MakeGeoGrid(const GeoGridConfig& ggConfig, int locCount, int locPop, int sc
         GeoGridConfig      config{};
         auto&              geoGrid = pop->RefGeoGrid();
         RnMan              rnMan(RnInfo{});
+        DaycareGenerator   dayGen(rnMan);
+        PreSchoolGenerator preGen(rnMan);
         K12SchoolGenerator k12Gen(rnMan);
         HouseholdGenerator hhGen(rnMan);
         const unsigned int pph   = ggConfig.pools.pools_per_household;
+        const unsigned int ppday = ggConfig.pools.pools_per_daycare;
+        const unsigned int pppre = ggConfig.pools.pools_per_preschool;
         const unsigned int ppk12 = ggConfig.pools.pools_per_k12school;
 
         size_t sampleId = 0;
@@ -70,6 +76,8 @@ void MakeGeoGrid(const GeoGridConfig& ggConfig, int locCount, int locPop, int sc
                 auto loc = make_shared<Location>(locI, 1, Coordinate(0.0, 0.0), "", locPop);
 
                 for (int schI = 0; schI < schoolCount; schI++) {
+                        dayGen.AddPools(*loc, pop, ppday);
+                        preGen.AddPools(*loc, pop, pppre);
                         k12Gen.AddPools(*loc, pop, ppk12);
                 }
 
@@ -79,7 +87,8 @@ void MakeGeoGrid(const GeoGridConfig& ggConfig, int locCount, int locPop, int sc
 
                         for (int i = 0; i < personCount; i++) {
                                 auto sample = populationSample[sampleId % populationSize];
-                                auto p      = pop->CreatePerson(personId, sample, contactPool->GetId(), 0, 0, 0, 0, 0);
+                                auto p      = pop->CreatePerson(personId, sample, contactPool->GetId(), 0, 0, 0, 0, 0,
+                                                                0, 0);
                                 contactPool->AddMember(p);
                                 sampleId++;
                                 personId++;

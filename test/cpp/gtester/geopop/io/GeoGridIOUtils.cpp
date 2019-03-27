@@ -175,10 +175,10 @@ shared_ptr<GeoGrid> GetPopulatedGeoGrid(Population* pop)
         const auto geoGrid = make_shared<GeoGrid>(pop);
         const auto loc     = make_shared<Location>(1, 4, Coordinate(0, 0), "Bavikhove", 2500);
 
-        auto dayPool = pop->RefPoolSys().CreateContactPool(Id::K12School);
-        loc->RefPools(Id::K12School).emplace_back(dayPool);
+        auto dayPool = pop->RefPoolSys().CreateContactPool(Id::Daycare);
+        loc->RefPools(Id::Daycare).emplace_back(dayPool);
         auto prePool = pop->RefPoolSys().CreateContactPool(Id::PreSchool);
-        loc->RefPools(Id::K12School).emplace_back(prePool);
+        loc->RefPools(Id::PreSchool).emplace_back(prePool);
         auto k12Pool = pop->RefPoolSys().CreateContactPool(Id::K12School);
         loc->RefPools(Id::K12School).emplace_back(k12Pool);
         auto pcPool = pop->RefPoolSys().CreateContactPool(Id::PrimaryCommunity);

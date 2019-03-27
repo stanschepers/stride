@@ -28,7 +28,7 @@ namespace geopop {
 using namespace std;
 using namespace stride::ContactType;
 
-void DaycareGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig, unsigned int& ccCounter)
+void DaycareGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig)
 {
         // 1. given the number of persons of daycare age, calculate number of daycare's; daycare's
         //    have 500 pupils on average
@@ -51,32 +51,21 @@ void DaycareGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfi
         }
 
         const auto dist = m_rn_man.GetDiscreteGenerator(weights, 0U);
-        auto& poolSys = geoGrid.GetPopulation()->RefPoolSys();
+        auto       pop  = geoGrid.GetPopulation();
 
         for (auto i = 0U; i < schoolCount; i++) {
                 const auto loc = geoGrid[dist()];
-                const auto day = make_shared<ContactCenter>(ccCounter++, Id::Daycare);
-
-                for (auto j = 0U; j < geoGridConfig.pools.pools_per_daycare; ++j) {
-                        const auto p = poolSys.CreateContactPool(Id::Daycare);
-                        day->RegisterPool(p);
-                        loc->RegisterPool<Id::Daycare>(p);
-                }
-
-                loc->AddCenter(day);
+                AddPools(*loc, pop, geoGridConfig.pools.pools_per_daycare);
         }
 }
 
-void DaycareGenerator::SetupPools(Location& loc, ContactCenter& center, const GeoGridConfig& geoGridConfig,
-                                stride::Population* pop)
+void DaycareGenerator::AddPools(geopop::Location &loc, stride::Population *pop, unsigned int number)
 {
-    auto& poolSys = pop->RefPoolSys();
-
-    for (auto i = 0U; i < geoGridConfig.pools.pools_per_daycare; ++i) {
-            const auto p = poolSys.CreateContactPool(stride::ContactType::Id::Daycare);
-            center.RegisterPool(p);
-            loc.RegisterPool<Id::Daycare>(p);
-    }
+        auto& poolSys = pop->RefPoolSys();
+        for (auto i = 0U; i < number; ++i) {
+                const auto p = poolSys.CreateContactPool(Id::Daycare);
+                loc.RegisterPool<Id::Daycare>(p);
+        }
 }
 
 } // namespace geopop

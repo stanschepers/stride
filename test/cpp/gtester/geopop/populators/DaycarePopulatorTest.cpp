@@ -14,9 +14,10 @@
  */
 
 #include "geopop/populators/DaycarePopulator.h"
+#include "geopop/generators/DaycareGenerator.h"
 
+#include "MakeGeoGrid.h"
 #include "contact/AgeBrackets.h"
-#include "createGeogrid.h"
 #include "geopop/GeoGrid.h"
 #include "geopop/GeoGridConfig.h"
 #include "geopop/Location.h"
@@ -35,41 +36,41 @@ using namespace stride::util;
 
 namespace {
 
-// Check that populator can handle empty GeoGrid
-TEST(DaycarePopulatorTest, NoPopulation)
+class DaycarePopulatorTest : public testing::Test
 {
-        RnMan rnMan{RnInfo{}};
-        auto  pop     = Population::Create();
-        auto  geoGrid = GeoGrid(pop.get());
+public:
+        DaycarePopulatorTest()
+            : m_rn_man(RnInfo()), m_daycare_populator(m_rn_man), m_geogrid_config(), m_pop(Population::Create()),
+              m_geo_grid(m_pop->RefGeoGrid()), m_daycare_generator(m_rn_man)
+        {
+        }
 
-        geoGrid.AddLocation(make_shared<Location>(0, 0, Coordinate(0.0, 0.0), "", 0));
-        geoGrid.Finalize();
+protected:
+        RnMan                  m_rn_man;
+        DaycarePopulator       m_daycare_populator;
+        GeoGridConfig          m_geogrid_config;
+        shared_ptr<Population> m_pop;
+        GeoGrid&               m_geo_grid;
+        DaycareGenerator       m_daycare_generator;
+        const unsigned int     m_ppday = GeoGridConfig{}.pools.pools_per_daycare;
+};
 
-        DaycarePopulator   daycarePopulator(rnMan);
-        GeoGridConfig      config{};
+// Check that populator can handle empty GeoGrid
+TEST_F(DaycarePopulatorTest, NoPopulation)
+{
+        m_geo_grid.AddLocation(make_shared<Location>(0, 0, Coordinate(0.0, 0.0), "", 0));
+        m_geo_grid.Finalize();
 
-        EXPECT_NO_THROW(daycarePopulator.Apply(geoGrid, config));
+        EXPECT_NO_THROW(m_daycare_populator.Apply(m_geo_grid, m_geogrid_config));
 }
 
 // Check that populator can handle one Location
-TEST(DaycarePopulatorTest, OneLocationTest)
+TEST_F(DaycarePopulatorTest, OneLocationTest)
 {
-        auto pop = Population::Create();
-        SetupDaycareGeoGrid(1, 300, 5, 100, 3, pop.get());
-        auto& geoGrid = pop->RefGeoGrid();
-        geoGrid.Finalize();
-
-        RnMan              rnMan{RnInfo{}};
-        DaycarePopulator   daycarePopulator(rnMan);
-        GeoGridConfig      config{};
-        config.input.participation_daycare      = 1;
-
-        daycarePopulator.Apply(geoGrid, config);
-
-        auto location   = *geoGrid.begin();
-        auto daycares   = location->RefCenters(Id::Daycare);
-
-        EXPECT_EQ(5, daycares.size());
+        MakeGeoGrid(m_geogrid_config, 1, 300, 5, 100, 3, m_pop.get());
+        m_geo_grid.Finalize();
+        m_geogrid_config.input.participation_daycare = 1;
+        m_daycare_populator.Apply(m_geo_grid, m_geogrid_config);
 
         ///{poolId, poolSize}
         map<int, int> usedCapacity{
@@ -87,14 +88,15 @@ TEST(DaycarePopulatorTest, OneLocationTest)
             {111, 1}, {112, 0}, {113, 1}, {114, 0}, {115, 0}, {116, 0}, {117, 0}, {118, 0}, {119, 0}, {120, 1},
             {121, 0}, {122, 1}, {123, 0}, {124, 0}, {125, 0}};
 
-        for (auto& daycareCenter : daycares) {
-                EXPECT_EQ(1, daycareCenter->size());
-                for (auto& pool : *daycareCenter) {
-                        EXPECT_EQ(usedCapacity[pool->GetId()], pool->size());
-                        for (Person* person : *pool) {
-                                EXPECT_LE(person->GetAge(), AgeBrackets::Daycare::m_upper);
-                                EXPECT_GE(person->GetAge(), AgeBrackets::Daycare::m_lower);
-                        }
+        auto  location = *m_geo_grid.begin();
+        auto& dayPools = location->RefPools(Id::Daycare);
+
+        ASSERT_EQ(dayPools.size(), 5 * m_geogrid_config.pools.pools_per_daycare);
+        for (auto& pool : dayPools) {
+                EXPECT_EQ(usedCapacity[pool->GetId()], pool->size());
+                for (Person* person : *pool) {
+                        EXPECT_LE(person->GetAge(), AgeBrackets::Daycare::m_upper);
+                        EXPECT_GE(person->GetAge(), AgeBrackets::Daycare::m_lower);
                 }
         }
 
@@ -135,43 +137,39 @@ TEST(DaycarePopulatorTest, OneLocationTest)
             {288, 0},   {289, 0},   {290, 0},   {291, 0},   {292, 0},   {293, 3},  {294, 0},  {295, 0},  {296, 0},
             {297, 0},   {298, 0},   {299, 0}};
 
-        for (const auto& person : *geoGrid.GetPopulation()) {
+        for (const auto& person : *m_geo_grid.GetPopulation()) {
                 EXPECT_EQ(persons[person.GetId()], person.GetPoolId(Id::Daycare));
         }
 }
 
 // Check that populator can handle two Locations
-TEST(DaycarePopulatorTest, TwoLocationTest)
+TEST_F(DaycarePopulatorTest, TwoLocationTest)
 {
-        auto pop = Population::Create();
-        SetupDaycareGeoGrid(3, 100, 3, 33, 3, pop.get());
-        auto& geoGrid = pop->RefGeoGrid();
+        MakeGeoGrid(m_geogrid_config, 3, 100, 3, 33, 3, m_pop.get());
 
-        RnMan              rnMan{RnInfo{}};
-        DaycarePopulator   daycarePopulator(rnMan);
-        GeoGridConfig      config{};
-        config.input.participation_daycare      = 1;
+        // Brasschaat and Schoten are close to each oter and will both have students from both.
+        // Kortrijk will only have students going to Kortrijk.
 
-        // Brasschaat and Schoten are close to each oter and will both have students from both
-        // Kortrijk will only have students going to Kortrijk
-        auto brasschaat = *geoGrid.begin();
+        auto brasschaat = *m_geo_grid.begin();
         brasschaat->SetCoordinate(Coordinate(51.29227, 4.49419));
-        auto schoten = *(geoGrid.begin() + 1);
+        auto schoten = *(m_geo_grid.begin() + 1);
+
         schoten->SetCoordinate(Coordinate(51.2497532, 4.4977063));
-        auto kortrijk = *(geoGrid.begin() + 2);
+        auto kortrijk = *(m_geo_grid.begin() + 2);
         kortrijk->SetCoordinate(Coordinate(50.82900246, 3.264406009));
 
-        geoGrid.Finalize();
-        daycarePopulator.Apply(geoGrid, config);
+        m_geo_grid.Finalize();
+        m_geogrid_config.input.participation_daycare = 1;
+        m_daycare_populator.Apply(m_geo_grid, m_geogrid_config);
 
-        auto daycare1 = brasschaat->RefCenters(Id::Daycare);
-        auto daycare2 = schoten->RefCenters(Id::Daycare);
-        auto daycare3 = kortrijk->RefCenters(Id::Daycare);
+        auto& dayPools1 = brasschaat->RefPools(Id::Daycare);
+        auto& dayPools2 = schoten->RefPools(Id::Daycare);
+        auto& dayPools3 = kortrijk->RefPools(Id::Daycare);
 
-        // Check 3 daycares per location.
-        EXPECT_EQ(3, daycare1.size());
-        EXPECT_EQ(3, daycare2.size());
-        EXPECT_EQ(3, daycare3.size());
+        // Check number of pools corresponding to 3 K12Schools per location.
+        EXPECT_EQ(dayPools1.size(), 3 * m_geogrid_config.pools.pools_per_daycare);
+        EXPECT_EQ(dayPools2.size(), 3 * m_geogrid_config.pools.pools_per_daycare);
+        EXPECT_EQ(dayPools3.size(), 3 * m_geogrid_config.pools.pools_per_daycare);
 
         map<int, int> persons{
             {0, 0},     {1, 0},     {2, 0},     {3, 0},     {4, 0},     {5, 0},     {6, 0},     {7, 0},     {8, 0},
@@ -208,14 +206,32 @@ TEST(DaycarePopulatorTest, TwoLocationTest)
             {279, 0},   {280, 0},   {281, 0},   {282, 0},   {283, 0},   {284, 0},   {285, 0},   {286, 0},   {287, 0},
             {288, 0},   {289, 0},   {290, 0},   {291, 0},   {292, 0},   {293, 8},   {294, 0},   {295, 0},   {296, 0}};
 
-        for (const auto& person : *pop) {
-                EXPECT_EQ(persons[person.GetId()], person.GetPoolId(Id::Daycare));
+        for (const auto& pool : dayPools1) {
+                for (const auto& p : *pool) {
+                        const auto dayId = p->GetPoolId(Id::Daycare);
+                        if (AgeBrackets::Daycare::HasAge(p->GetAge())) {
+                                EXPECT_NE(0, dayId);
+                        } else {
+                                EXPECT_EQ(0, dayId);
+                        }
+                }
         }
 
-        for (const auto& hCenter : kortrijk->RefCenters(Id::Daycare)) {
-                for (const auto& pool : *(*hCenter)[0]) {
-                        const auto dayId = pool->GetPoolId(Id::Daycare);
-                        if (AgeBrackets::Daycare::HasAge(pool->GetAge())) {
+        for (const auto& pool : dayPools2) {
+                for (const auto& p : *pool) {
+                        const auto dayId = p->GetPoolId(Id::Daycare);
+                        if (AgeBrackets::Daycare::HasAge(p->GetAge())) {
+                                EXPECT_NE(0, dayId);
+                        } else {
+                                EXPECT_EQ(0, dayId);
+                        }
+                }
+        }
+
+        for (const auto& pool : dayPools3) {
+                for (const auto& p : *pool) {
+                        const auto dayId = p->GetPoolId(Id::Daycare);
+                        if (AgeBrackets::Daycare::HasAge(p->GetAge())) {
                                 EXPECT_NE(0, dayId);
                         } else {
                                 EXPECT_EQ(0, dayId);
