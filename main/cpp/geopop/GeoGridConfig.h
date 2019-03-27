@@ -26,7 +26,6 @@
 namespace geopop {
 
 class GeoGrid;
-class HouseholdCenter;
 
 /**
  * Configuration data mostly for generating a population, but also for computing
@@ -139,7 +138,7 @@ public:
                 /// Used to calculate the number of Workplaces.
                 unsigned int workplace_size       = 20U;
                 unsigned int pools_per_workplace  = 1U;
-                unsigned int workplace_pool_size  = 20U;
+                unsigned int workplace_pool_size = 20U;
 
                 /// Used to calculate the number of Daycare's. (numbers based on Kind&Gezin:
                 /// https://www.kindengezin.be/cijfers-en-rapporten/cijfers/kinderopvang-baby-peuter/)
@@ -152,7 +151,6 @@ public:
                 unsigned int preschool_size      = 200U;
                 unsigned int pools_per_preschool = 10U;
                 unsigned int preschool_pool_size = 20U;
-
         } pools;
 
         /// Read the househould data file, parse it and set data.
