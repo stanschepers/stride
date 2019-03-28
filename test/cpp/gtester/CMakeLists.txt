@@ -83,12 +83,11 @@ set(SRC
     myhayai/class_delivery.cpp
     myhayai/flex_delivery.cpp
     #---
+    visualization/EpiOutputProtoWriterTest2.cpp
     main.cpp
 )
 
-message(STATUS Zoek QT)
 if ((NOT STRIDE_FORCE_NO_QT5) AND QT5_FOUND)  # New
-    message(STATUS jep QT)
     set(SRC ${SRC}
             visualization/EpiOutputHDF5ReaderTest.cpp
             visualization/EpiOutputJSONReaderTest.cpp

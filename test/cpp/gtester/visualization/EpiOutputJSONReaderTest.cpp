@@ -13,26 +13,10 @@
  *  Copyright 2018, Jan Broeckhove and Bistromatics group.
  */
 
-#include "geopop/io/GeoGridJSONReader.h"
-
-#include "contact/ContactType.h"
-#include "geopop/ContactCenter.h"
-#include "geopop/GeoGrid.h"
-#include "pop/Population.h"
-#include "util/Exception.h"
-#include "util/FileSys.h"
 
 #include <fstream>
 #include <gtest/gtest.h>
 #include <memory>
-
-using namespace std;
-using namespace geopop;
-using namespace stride;
-using namespace stride::ContactType;
-using namespace stride::util;
-
-using boost::geometry::get;
 
 namespace {
 

@@ -13,21 +13,7 @@
  *  Copyright 2018, 2019, Jan Broeckhove and Bistromatics group.
  */
 
-#include "GeoGridIOUtils.h"
-#include "geogrid.pb.h"
-#include "geopop/CollegeCenter.h"
-#include "geopop/GeoGridConfig.h"
-#include "geopop/HouseholdCenter.h"
-#include "geopop/K12SchoolCenter.h"
-#include "geopop/PrimaryCommunityCenter.h"
-#include "geopop/SecondaryCommunityCenter.h"
-#include "geopop/WorkplaceCenter.h"
-
 #include <gtest/gtest.h>
-
-using namespace std;
-using namespace geopop;
-using boost::geometry::get;
 
 namespace {
 
