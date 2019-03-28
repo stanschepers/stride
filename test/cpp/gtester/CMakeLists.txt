@@ -86,8 +86,9 @@ set(SRC
     main.cpp
 )
 
-
-if ((NOT STRIDE_FORCE_NO_QT) AND QT_FOUND)  # New
+message(STATUS Zoek QT)
+if ((NOT STRIDE_FORCE_NO_QT5) AND QT5_FOUND)  # New
+    message(STATUS jep QT)
     set(SRC ${SRC}
             visualization/EpiOutputHDF5ReaderTest.cpp
             visualization/EpiOutputJSONReaderTest.cpp
