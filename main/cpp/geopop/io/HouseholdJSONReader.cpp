@@ -15,6 +15,7 @@
 #include "HouseholdJSONReader.h"
 
 #include <nlohmann/json.hpp>
+#include <sstream>
 
 namespace geopop {
 
@@ -33,24 +34,52 @@ void HouseholdJSONReader::SetReferenceHouseholds(unsigned int&                  
         json data;
 
         try {
-
                 *(m_input_stream.get()) >> data;
-                unsigned int p_count = 0U;
+                data["householdsList"];
+        } catch (const json::exception& error) {
+                m_logger->error("An error occured while parsing JSON.");
+                throw runtime_error("An error occured while parsing JSON. Please make sure valid JSON is provided.");
+        }
 
-                /*
-                 * std::vector<unsigned int> instead of auto to eliminate ambiguity when using GCC8 compiler
-                 * // NOLINT to suppress Clion (clang-tidy) code inspection
-                 */
-                for (const std::vector<unsigned int>& household : data["householdsList"]) { // NOLINT
+        unsigned int p_count     = 0U;
+        auto         householdIt = data["householdsList"].begin();
+
+        while (householdIt != data["householdsList"].end()) {
+                try {
+                        const vector<unsigned int>& household = *householdIt;
+
                         p_count += household.size();
                         ref_ages.emplace_back(household);
+
+                } catch (const json::type_error& error) {
+                        const vector<string>& household = *householdIt;
+
+                        vector<unsigned int> householdConverted;
+                        householdConverted.reserve(household.size());
+
+                        stringstream stream;
+                        stream << "[";
+
+                        for (const auto& age : household) {
+                                householdConverted.push_back(static_cast<unsigned int>(stoi(age)));
+                                stream << "\"" << age << "\",";
+                        }
+
+                        stream.seekp(-1, stream.cur);
+                        stream << "]";
+
+                        p_count += household.size();
+                        ref_ages.emplace_back(householdConverted);
+
+                        string conversionWarning =
+                            "HouseholdJSONReader: STRING interpreted as UNSIGNED INT while reading " + stream.str();
+
+                        m_logger->warn(conversionWarning);
+                        cerr << conversionWarning << endl;
                 }
-                ref_person_count = p_count;
-        } catch (const json::parse_error& error) {
-                throw runtime_error("An error occured while parsing JSON. Please make sure valid JSON is provided.");
-        } catch (const json::type_error& error) {
-                throw runtime_error("Incorrect type encoutered while parsing households.");
+                ++householdIt;
         }
+        ref_person_count = p_count;
 }
 
 } // namespace geopop
