@@ -20,42 +20,42 @@
 
 namespace {
 
-TEST(EpiOutputJSONWriterTest, zeroLocationTest)
+TEST(EpiOutputJSONReaderTest, zeroLocationTest)
 {
     EXPECT_TRUE(true);
 }
 
-TEST(EpiOutputJSONWriterTest, oneLocationZeroDaysTest)
+TEST(EpiOutputJSONReaderTest, oneLocationZeroDaysTest)
 {
     EXPECT_TRUE(true);
 }
 
-TEST(EpiOutputJSONWriterTest, oneLocationOneDayTest)
+TEST(EpiOutputJSONReaderTest, oneLocationOneDayTest)
 {
     EXPECT_TRUE(true);
 }
 
-TEST(EpiOutputJSONWriterTest, oneLocationTwoDaysTest)
+TEST(EpiOutputJSONReaderTest, oneLocationTwoDaysTest)
 {
     EXPECT_TRUE(true);
 }
 
-TEST(EpiOutputJSONWriterTest, fiveLocationsOneDayTest)
+TEST(EpiOutputJSONReaderTest, fiveLocationsOneDayTest)
 {
     EXPECT_TRUE(true);
 }
 
-TEST(EpiOutputJSONWriterTest, emptyStreamTest)
+TEST(EpiOutputJSONReaderTest, emptyStreamTest)
 {
     EXPECT_TRUE(true);
 }
 
-TEST(EpiOutputJSONWriterTest, invalidTypeTest)
+TEST(EpiOutputJSONReaderTest, invalidTypeTest)
 {
     EXPECT_TRUE(true);
 }
 
-TEST(EpiOutputJSONWriterTest, invalidJSONTest)
+TEST(EpiOutputJSONReaderTest, invalidJSONTest)
 {
     EXPECT_TRUE(true);
 }

@@ -83,7 +83,6 @@ set(SRC
     myhayai/class_delivery.cpp
     myhayai/flex_delivery.cpp
     #---
-    visualization/EpiOutputProtoWriterTest2.cpp
     main.cpp
 )
 

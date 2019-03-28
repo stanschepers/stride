@@ -20,42 +20,42 @@
 
 namespace {
 
-TEST(EpiOutputHDF5WriterTest, zeroLocationTest)
+TEST(EpiOutputHDF5ReaderTest, zeroLocationTest)
 {
     EXPECT_TRUE(true);
 }
 
-TEST(EpiOutputHDF5WriterTest, oneLocationZeroDaysTest)
+TEST(EpiOutputHDF5ReaderTest, oneLocationZeroDaysTest)
 {
     EXPECT_TRUE(true);
 }
 
-TEST(EpiOutputHDF5WriterTest, oneLocationOneDayTest)
+TEST(EpiOutputHDF5ReaderTest, oneLocationOneDayTest)
 {
     EXPECT_TRUE(true);
 }
 
-TEST(EpiOutputHDF5WriterTest, oneLocationTwoDaysTest)
+TEST(EpiOutputHDF5ReaderTest, oneLocationTwoDaysTest)
 {
     EXPECT_TRUE(true);
 }
 
-TEST(EpiOutputHDF5WriterTest, fiveLocationsOneDayTest)
+TEST(EpiOutputHDF5ReaderTest, fiveLocationsOneDayTest)
 {
     EXPECT_TRUE(true);
 }
 
-TEST(EpiOutputHDF5WriterTest, emptyStreamTest)
+TEST(EpiOutputHDF5ReaderTest, emptyStreamTest)
 {
     EXPECT_TRUE(true);
 }
 
-TEST(EpiOutputHDF5WriterTest, invalidTypeTest)
+TEST(EpiOutputHDF5ReaderTest, invalidTypeTest)
 {
     EXPECT_TRUE(true);
 }
 
-TEST(EpiOutputHDF5WriterTest, invalidHDF5Test)
+TEST(EpiOutputHDF5ReaderTest, invalidHDF5Test)
 {
     EXPECT_TRUE(true);
 }
