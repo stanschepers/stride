@@ -148,5 +148,25 @@ TEST(HouseholdJSONReader, invalidJSONTest)
 
         EXPECT_THROW(readHouseholdsAndCreateGeoGridConfig(jsonString), runtime_error);
 }
+TEST(HouseholdJSONReader, stringFormattedNumbersTest)
+{
+        string jsonString = R"({"householdsName":"TestHousehold","householdsList":[["1","2","3","4","5"]]})";
+
+        shared_ptr<GeoGridConfig> geoGridPtr = readHouseholdsAndCreateGeoGridConfig(jsonString);
+
+        EXPECT_EQ(geoGridPtr->refHH.person_count, 5U);
+
+        const vector<vector<unsigned int>>& HHages = geoGridPtr->refHH.ages;
+
+        EXPECT_EQ(HHages.size(), 1U);
+
+        EXPECT_EQ(HHages[0].size(), 5U);
+
+        EXPECT_EQ(HHages[0][0], 1U);
+        EXPECT_EQ(HHages[0][1], 2U);
+        EXPECT_EQ(HHages[0][2], 3U);
+        EXPECT_EQ(HHages[0][3], 4U);
+        EXPECT_EQ(HHages[0][4], 5U);
+}
 
 } // namespace
