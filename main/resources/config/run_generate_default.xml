@@ -34,7 +34,17 @@
         <commuting_file>flanders_commuting.csv</commuting_file>
         <fraction_college_commuters>0.5</fraction_college_commuters>
         <fraction_workplace_commuters>0.5</fraction_workplace_commuters>
-        <household_file>households_flanders.csv</household_file>
+        <!--<household_file>households_flanders.csv</household_file>-->
+        <households>
+            <household>
+                <population_id>0</population_id>
+                <household_file>households_regionA.csv</household_file>
+            </household>
+            <household>
+                <population_id>1</population_id>
+                <household_file>households_regionB.csv</household_file>
+            </household>
+        </households>
         <participation_college>0.5</participation_college>
         <particpation_workplace>0.75</particpation_workplace>
         <population_size>600000</population_size>

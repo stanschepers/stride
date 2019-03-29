@@ -67,7 +67,18 @@ shared_ptr<Population> GeoPopBuilder::Build(shared_ptr<Population> pop)
         // Set the GeoGridConfig.
         // --------------------------------------------------------------
         GeoGridConfig ggConfig(m_config);
-        ggConfig.SetData(m_config.get<string>("run.geopop_gen.household_file"));
+        auto configGeoPop = m_config.get_child("run.geopop_gen");
+        if(configGeoPop.find("household_file") == configGeoPop.not_found()){
+                map<unsigned int, string> householdsPerId = {};
+                for(const auto& hh:configGeoPop.get_child("households")){
+                        unsigned int popId = hh.second.get<int>("population_id");
+                        string hhFile = hh.second.get<string>("household_file");
+                        householdsPerId.insert(make_pair(popId, hhFile));
+                }
+                ggConfig.SetData(householdsPerId);
+        } else {
+                ggConfig.SetData(m_config.get<string>("run.geopop_gen.household_file"));
+        }
 
         // --------------------------------------------------------------
         // Get GeoGrid associated with 'pop'.
@@ -150,6 +161,7 @@ void GeoPopBuilder::MakePersons(GeoGrid& geoGrid, const GeoGridConfig& geoGridCo
                                                  make_shared<WorkplacePopulator>(m_rn_man, m_stride_logger)};
 
         for (shared_ptr<Populator>& p : populators) {
+                cout << p << endl;
                 p->Apply(geoGrid, geoGridConfig);
         }
 }
