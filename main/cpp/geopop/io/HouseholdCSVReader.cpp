@@ -49,7 +49,7 @@ void HouseholdCSVReader::SetReferenceHouseholds(unsigned int&                   
                 p_count += temp.size();
                 ref_ages.emplace_back(temp);
         }
-        ref_person_count = p_count;
+        ref_person_count += p_count;
 }
 
 } // namespace geopop

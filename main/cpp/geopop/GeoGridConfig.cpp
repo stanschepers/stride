@@ -103,13 +103,12 @@ void GeoGridConfig::SetData(const std::map<unsigned int, std::string> &household
         unsigned int                    personCount = 0;
         vector<vector<unsigned int>>    ages = {};
         for(const auto& idHhFile:householdsFileNamePerId){
-                personCount = 0;
                 ages = {};
 //                const auto id                   = idHhFile.first;
                 const auto householdFileName    = idHhFile.second;
                 auto householdsReader = readerFactory.CreateHouseholdReader(householdFileName);
                 householdsReader->SetReferenceHouseholds(refHH.person_count, refHH.ages);
-                personCountTotal += personCount;
+                personCountTotal += refHH.person_count;
         }
         const auto popSize = input.pop_size;
 
@@ -120,12 +119,12 @@ void GeoGridConfig::SetData(const std::map<unsigned int, std::string> &household
         // Determine age makeup of reference houshold population.
         //----------------------------------------------------------------
         const auto ref_p_count = personCountTotal;
-        const auto averageHhSize = static_cast<double>(ref_p_count) / static_cast<double>(agesTotal.size());
+        const auto averageHhSize = static_cast<double>(ref_p_count) / static_cast<double>(refHH.ages.size());
 
         auto ref_k12school = 0U;
         auto ref_college = 0U;
         auto ref_workplace = 0U;
-        for (const auto &hhAgeProfile : agesTotal) {
+        for (const auto &hhAgeProfile : refHH.ages) {
                 for (const auto &age : hhAgeProfile) {
                         if (K12School::HasAge(age)) {
                                 ref_k12school++;
