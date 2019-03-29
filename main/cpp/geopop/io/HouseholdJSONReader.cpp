@@ -41,10 +41,10 @@ void HouseholdJSONReader::SetReferenceHouseholds(unsigned int&                  
                 throw runtime_error("An error occured while parsing JSON. Please make sure valid JSON is provided.");
         }
 
-        unsigned int p_count     = 0U;
-        auto         householdIt = data["householdsList"].begin();
+        unsigned int p_count = 0U;
 
-        while (householdIt != data["householdsList"].end()) {
+        for (auto householdIt = data["householdsList"].begin(); householdIt != data["householdsList"].end();
+             ++householdIt) {
                 try {
                         const vector<unsigned int>& household = *householdIt;
 
@@ -75,9 +75,7 @@ void HouseholdJSONReader::SetReferenceHouseholds(unsigned int&                  
                             "HouseholdJSONReader: STRING interpreted as UNSIGNED INT while reading " + stream.str();
 
                         m_logger->warn(conversionWarning);
-                        cerr << conversionWarning << endl;
                 }
-                ++householdIt;
         }
         ref_person_count = p_count;
 }
