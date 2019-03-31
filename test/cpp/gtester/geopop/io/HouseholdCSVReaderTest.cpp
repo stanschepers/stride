@@ -76,4 +76,9 @@ TEST(HouseholdCSVReader, test1)
         EXPECT_EQ(HHages[7][1], 75U);
 }
 
+TEST(HouseholdCSVReader, MultipleHouseholdsTest)
+{
+        EXPECT_TRUE(false);
+}
+
 } // namespace
