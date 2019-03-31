@@ -16,7 +16,7 @@
 #include "geopop/generators/SecondaryCommunityGenerator.h"
 
 #include "geopop/GeoGrid.h"
-#include "geopop/GeoGridConfig.h"
+#include "geopop/GeoGridConfigTest.h"
 #include "geopop/Location.h"
 #include "pop/Population.h"
 #include "util/RnMan.h"

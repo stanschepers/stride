@@ -112,3 +112,8 @@ TEST_F(HouseholdPopulatorTest, MultipleHouseholdTypesTest)
         EXPECT_EQ(pool2[0]->GetAge(), 12);
         EXPECT_EQ(pool2[1]->GetAge(), 56);
 }
+
+TEST_F(HouseholdPopulatorTest, HouseholdRightRefHHTest)
+{
+        EXPECT_TRUE(false);
+}

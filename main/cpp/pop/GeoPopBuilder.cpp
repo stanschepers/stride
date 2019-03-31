@@ -21,7 +21,7 @@
 #include "GeoPopBuilder.h"
 
 #include "geopop/GeoGrid.h"
-#include "geopop/GeoGridConfig.h"
+#include "geopop/GeoGridConfigTest.h"
 #include "geopop/generators/CollegeGenerator.h"
 #include "geopop/generators/HouseholdGenerator.h"
 #include "geopop/generators/K12SchoolGenerator.h"
