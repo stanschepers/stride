@@ -10,50 +10,39 @@
  *  You should have received a copy of the GNU General Public License
  *  along with the software. If not, see <http://www.gnu.org/licenses/>.
  *
- *  Copyright 2019, 2020, Jan Broeckhove and Bistromatics group.
+ *  Copyright 2019, Jan Broeckhove and Bistromatics group.
  */
-
-#include "geopop/io/GeoGridProtoWriter.h"
-#include "GeoGridIOUtils.h"
-#include "geopop/CollegeCenter.h"
-#include "geopop/GeoGridConfig.h"
-#include "geopop/HouseholdCenter.h"
-#include "geopop/K12SchoolCenter.h"
-#include "geopop/PrimaryCommunityCenter.h"
-#include "geopop/SecondaryCommunityCenter.h"
-#include "geopop/WorkplaceCenter.h"
-#include "pop/Population.h"
-#include "util/FileSys.h"
 
 #include <gtest/gtest.h>
 
-using namespace std;
-using namespace geopop;
-using namespace stride;
-
 namespace {
 
-TEST(EpiOutputProtoWriterTest, zeroLocationTest)
+TEST(ContactpoolEpiOutputGeneratorTest, zeroMembersTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputProtoWriterTest, oneLocationZeroDaysTest)
+TEST(ContactpoolEpiOutputGeneratorTest, oneMemberTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputProtoWriterTest, oneLocationOneDayTest)
+TEST(ContactpoolEpiOutputGeneratorTest, fiveMembersTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputProtoWriterTest, oneLocationTwoDaysTest)
+TEST(LocationEpiOutputGeneratorTest, zeroContactpoolsTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputProtoWriterTest, fiveLocationsOneDayTest)
+TEST(LocationEpiOutputGeneratorTest, oneContactpoolTest)
+{
+    EXPECT_TRUE(false);
+}
+
+TEST(LocationEpiOutputGeneratorTest, fiveContactpoolsTest)
 {
     EXPECT_TRUE(false);
 }

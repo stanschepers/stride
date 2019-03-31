@@ -33,42 +33,42 @@ namespace {
 
     TEST(EpiOutputProtoWriterTest, zeroLocationTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 TEST(EpiOutputProtoWriterTest, oneLocationZeroDaysTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 TEST(EpiOutputProtoWriterTest, oneLocationOneDayTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 TEST(EpiOutputProtoWriterTest, oneLocationTwoDaysTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 TEST(EpiOutputProtoWriterTest, fiveLocationsOneDayTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 TEST(EpiOutputProtoWriterTest, emptyStreamTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 TEST(EpiOutputProtoWriterTest, invalidTypeTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 TEST(EpiOutputProtoWriterTest, invalidProtobufTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
     
 } // namespace

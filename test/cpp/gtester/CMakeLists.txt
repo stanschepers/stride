@@ -49,6 +49,7 @@ set(SRC
     #---
     #---
     geopop/generators/CollegeGeneratorTest.cpp
+    geopop/generators/EpiOutputGeneratorTest.cpp  # New
     geopop/generators/HouseholdGeneratorTest.cpp
     geopop/generators/K12SchoolGeneratorTest.cpp
     geopop/generators/PrimaryCommunityGeneratorTest.cpp
@@ -86,9 +87,7 @@ set(SRC
     main.cpp
 )
 
-message(STATUS Zoek QT)
 if ((NOT STRIDE_FORCE_NO_QT5) AND QT5_FOUND)  # New
-    message(STATUS jep QT)
     set(SRC ${SRC}
             visualization/EpiOutputHDF5ReaderTest.cpp
             visualization/EpiOutputJSONReaderTest.cpp
