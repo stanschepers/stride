@@ -54,6 +54,7 @@ set(SRC
     geopop/generators/HouseholdGeneratorTest.cpp
     geopop/generators/K12SchoolGeneratorTest.cpp
     geopop/generators/WorkplaceGeneratorTest.cpp
+    geopop/generators/WorkInstanceGeneratorTest.cpp
     #---
     geopop/io/CitiesCSVReaderTest.cpp
     geopop/io/CommutesCSVReaderTest.cpp
@@ -64,6 +65,7 @@ set(SRC
     geopop/io/GeoGridProtoWriterTest.cpp
     geopop/io/HouseholdCSVReaderTest.cpp
     geopop/io/ReaderFactoryTest.cpp
+    geopop/io/WorkplaceFormatReaderTest.cpp
     #---
     geopop/kdtree.cpp
     #---
@@ -73,14 +75,14 @@ set(SRC
     geopop/populators/K12SchoolPopulatorTest.cpp
     geopop/populators/WorkplacePopulatorTest.cpp
     geopop/populators/createGeogrid.cpp
+    geopop/populators/WorkInstancePopulatorTest.cpp
     #---
     myhayai/DeliveryMan.cpp
     myhayai/MyhayaiTests.cpp
     myhayai/class_delivery.cpp
     myhayai/flex_delivery.cpp
     #---
-    main.cpp
-)
+    main.cpp)
 
 #if (OPENMP_FOUND)
 #        set(SRC ${SRC} ParallelRuns.cpp)
