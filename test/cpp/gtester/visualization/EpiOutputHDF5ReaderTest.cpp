@@ -13,65 +13,49 @@
  *  Copyright 2018, Jan Broeckhove and Bistromatics group.
  */
 
-#include "geopop/io/GeoGridHDF5Reader.h"
-
-#include "contact/ContactType.h"
-#include "geopop/ContactCenter.h"
-#include "geopop/GeoGrid.h"
-#include "pop/Population.h"
-#include "util/Exception.h"
-#include "util/FileSys.h"
 
 #include <fstream>
 #include <gtest/gtest.h>
 #include <memory>
 
-using namespace std;
-using namespace geopop;
-using namespace stride;
-using namespace stride::ContactType;
-using namespace stride::util;
-
-using boost::geometry::get;
-
 namespace {
 
-TEST(EpiOutputHDF5WriterTest, zeroLocationTest)
+TEST(EpiOutputHDF5ReaderTest, zeroLocationTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputHDF5WriterTest, oneLocationZeroDaysTest)
+TEST(EpiOutputHDF5ReaderTest, oneLocationZeroDaysTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputHDF5WriterTest, oneLocationOneDayTest)
+TEST(EpiOutputHDF5ReaderTest, oneLocationOneDayTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputHDF5WriterTest, oneLocationTwoDaysTest)
+TEST(EpiOutputHDF5ReaderTest, oneLocationTwoDaysTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputHDF5WriterTest, fiveLocationsOneDayTest)
+TEST(EpiOutputHDF5ReaderTest, fiveLocationsOneDayTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputHDF5WriterTest, emptyStreamTest)
+TEST(EpiOutputHDF5ReaderTest, emptyStreamTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputHDF5WriterTest, invalidTypeTest)
+TEST(EpiOutputHDF5ReaderTest, invalidTypeTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputHDF5WriterTest, invalidHDF5Test)
+TEST(EpiOutputHDF5ReaderTest, invalidHDF5Test)
 {
     EXPECT_TRUE(false);
 }
