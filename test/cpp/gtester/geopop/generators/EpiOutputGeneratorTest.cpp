@@ -31,9 +31,9 @@ namespace {
     TEST(EpiOutputGeneratorTest, contactpoolZeroMembersTest)
     {
         map<string, map<string, unsigned int>> correct_result;
-        for (string s1: ageBrackets){
-            for (string s2: healthCategories){
-                correct_result[s1][s2] = 0;
+        for (const string &ageBracket: ageBrackets){
+            for (const string &healthCategory: healthCategories){
+                correct_result[ageBracket][healthCategory] = 0;
             }
         }
 
@@ -50,9 +50,9 @@ namespace {
     TEST(EpiOutputGeneratorTest, contactpoolOneMemberTest)
     {
         map<string, map<string, unsigned int>> correct_result;
-        for (string s1: ageBrackets){
-            for (string s2: healthCategories){
-                correct_result[s1][s2] = 0;
+        for (const string &ageBracket: ageBrackets){
+            for (const string &healthCategory: healthCategories){
+                correct_result[ageBracket][healthCategory] = 0;
             }
         }
 
@@ -77,12 +77,12 @@ namespace {
     TEST(EpiOutputGeneratorTest, contactpoolFiveMembersTest)
     {
         map<string, map<string, unsigned int>> correct_result;
-        for (string s1: ageBrackets){
-            for (string s2: healthCategories){
-                if (s2 != "Total" || s1 == "College"){
-                    correct_result[s1][s2] = 0;
+        for (const string &ageBracket: ageBrackets){
+            for (const string &healthCategory: healthCategories){
+                if (healthCategory != "Total" || ageBracket == "College"){
+                    correct_result[ageBracket][healthCategory] = 0;
                 } else {
-                    correct_result[s1][s2] = 1;
+                    correct_result[ageBracket][healthCategory] = 1;
                 }
             }
         }
