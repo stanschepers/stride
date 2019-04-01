@@ -17,32 +17,32 @@
 
 namespace {
 
-TEST(ContactpoolEpiOutputGeneratorTest, zeroMembersTest)
+TEST(EpiOutputGeneratorTest, zeroMembersTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(ContactpoolEpiOutputGeneratorTest, oneMemberTest)
+TEST(EpiOutputGeneratorTest, oneMemberTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(ContactpoolEpiOutputGeneratorTest, fiveMembersTest)
+TEST(EpiOutputGeneratorTest, fiveMembersTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(LocationEpiOutputGeneratorTest, zeroContactpoolsTest)
+TEST(EpiOutputGeneratorTest, zeroContactpoolsTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(LocationEpiOutputGeneratorTest, oneContactpoolTest)
+TEST(EpiOutputGeneratorTest, oneContactpoolTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(LocationEpiOutputGeneratorTest, fiveContactpoolsTest)
+TEST(EpiOutputGeneratorTest, fiveContactpoolsTest)
 {
     EXPECT_TRUE(false);
 }
