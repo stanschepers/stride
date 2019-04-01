@@ -58,7 +58,7 @@ public:
         const std::vector<Person*>& GetPool() const { return m_members; }
 
         /// Generate an epi-output map of the contactpool.
-        std::map<std::string, std::map<std::string, int>> const generateEpiOutput();
+        std::map<std::string, std::map<std::string, unsigned int>> const generateEpiOutput();
 
         /// Get the type of ContactPool, used for logging and tests
         ContactType::Id GetType() const { return m_pool_type; }

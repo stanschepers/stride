@@ -30,7 +30,7 @@ namespace {
     // Checks if the function generateEpiOutput of the class Contactpool returns the expected result with no members in the contactpool.
     TEST(EpiOutputGeneratorTest, contactpoolZeroMembersTest)
     {
-        map<string, map<string, int>> correct_result;
+        map<string, map<string, unsigned int>> correct_result;
         for (string s1: ageBrackets){
             for (string s2: healthCategories){
                 correct_result[s1][s2] = 0;
@@ -39,7 +39,7 @@ namespace {
 
         ContactPool test(1, ContactType::Id::Household);
 
-        map<string, map<string, int>> result = test.generateEpiOutput();
+        map<string, map<string, unsigned int>> result = test.generateEpiOutput();
 
         EXPECT_TRUE(correct_result.size() == result.size()
                     && std::equal(correct_result.begin(), correct_result.end(),
@@ -49,7 +49,7 @@ namespace {
     // Checks if the function generateEpiOutput of the class Contactpool returns the expected result with one member in the contactpool.
     TEST(EpiOutputGeneratorTest, contactpoolOneMemberTest)
     {
-        map<string, map<string, int>> correct_result;
+        map<string, map<string, unsigned int>> correct_result;
         for (string s1: ageBrackets){
             for (string s2: healthCategories){
                 correct_result[s1][s2] = 0;
@@ -66,7 +66,7 @@ namespace {
         ContactPool test(1, ContactType::Id::Household);
         test.AddMember(&p);
 
-        map<string, map<string, int>> result = test.generateEpiOutput();
+        map<string, map<string, unsigned int>> result = test.generateEpiOutput();
 
         EXPECT_TRUE(correct_result.size() == result.size()
                     && std::equal(correct_result.begin(), correct_result.end(),
@@ -76,7 +76,7 @@ namespace {
     // Checks if the function generateEpiOutput of the class Contactpool returns the expected result with five members in the contactpool.
     TEST(EpiOutputGeneratorTest, contactpoolFiveMembersTest)
     {
-        map<string, map<string, int>> correct_result;
+        map<string, map<string, unsigned int>> correct_result;
         for (string s1: ageBrackets){
             for (string s2: healthCategories){
                 if (s2 != "Total" || s1 == "College"){
@@ -112,7 +112,7 @@ namespace {
             test.AddMember(&persons[i]);
         }
 
-        map<string, map<string, int>> result = test.generateEpiOutput();
+        map<string, map<string, unsigned int>> result = test.generateEpiOutput();
 
         EXPECT_TRUE(correct_result.size() == result.size()
                     && std::equal(correct_result.begin(), correct_result.end(),
