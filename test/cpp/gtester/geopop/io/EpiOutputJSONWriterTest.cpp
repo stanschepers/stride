@@ -23,27 +23,27 @@ namespace {
 
 TEST(EpiOutputJSONWriterTest, zeroLocationTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 TEST(EpiOutputJSONWriterTest, oneLocationZeroDaysTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 TEST(EpiOutputJSONWriterTest, oneLocationOneDayTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 TEST(EpiOutputJSONWriterTest, oneLocationTwoDaysTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 TEST(EpiOutputJSONWriterTest, fiveLocationsOneDayTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 

@@ -49,6 +49,7 @@ set(SRC
     #---
     #---
     geopop/generators/CollegeGeneratorTest.cpp
+    geopop/generators/EpiOutputGeneratorTest.cpp  # New
     geopop/generators/HouseholdGeneratorTest.cpp
     geopop/generators/K12SchoolGeneratorTest.cpp
     geopop/generators/PrimaryCommunityGeneratorTest.cpp

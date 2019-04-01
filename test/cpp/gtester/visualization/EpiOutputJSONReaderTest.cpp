@@ -22,42 +22,42 @@ namespace {
 
 TEST(EpiOutputJSONReaderTest, zeroLocationTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 TEST(EpiOutputJSONReaderTest, oneLocationZeroDaysTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 TEST(EpiOutputJSONReaderTest, oneLocationOneDayTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 TEST(EpiOutputJSONReaderTest, oneLocationTwoDaysTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 TEST(EpiOutputJSONReaderTest, fiveLocationsOneDayTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 TEST(EpiOutputJSONReaderTest, emptyStreamTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 TEST(EpiOutputJSONReaderTest, invalidTypeTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 TEST(EpiOutputJSONReaderTest, invalidJSONTest)
 {
-    EXPECT_TRUE(true);
+    EXPECT_TRUE(false);
 }
 
 } // namespace
