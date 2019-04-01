@@ -96,7 +96,7 @@ namespace {
         ContactPool test(1, ContactType::Id::Household);
         vector<unsigned int> ages = {45, 17, 5, 1, 75};
         vector<Person> persons = {Person(), Person(), Person(), Person(), Person()};
-        for (int i = 0; i < persons.size(); i++) {
+        for (unsigned int i = 0; i < persons.size(); i++) {
             persons[i].SetAge(ages[i]);
             if (i != 0){
                 persons[i].GetHealth().SetSusceptible();
