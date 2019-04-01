@@ -52,6 +52,10 @@ unsigned int ContactPool::GetInfectedCount() const
         return infected;
 }
 
+    const std::map<std::string, std::map<std::string, int>> ContactPool::generateEpiOutput() {
+            return map<string, map<string, int>>();
+    }
+
 std::tuple<bool, unsigned int> ContactPool::SortMembers()
 {
         bool         infectious_cases = false;

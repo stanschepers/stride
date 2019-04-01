@@ -47,7 +47,6 @@ set(SRC
     UnitSlice1.cpp
     UnitSlice2.cpp
     #---
-    #---
     geopop/generators/CollegeGeneratorTest.cpp
     geopop/generators/EpiOutputGeneratorTest.cpp  # New
     geopop/generators/HouseholdGeneratorTest.cpp

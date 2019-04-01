@@ -57,8 +57,8 @@ public:
         /// Get the entire pool of members.
         const std::vector<Person*>& GetPool() const { return m_members; }
 
-        /// Get the amount of people per healthcategory.(met map maken: key = string met naam, value = number of)
-//        const std::map<std::string, int>
+        /// Generate an epi-output map of the contactpool.
+        std::map<std::string, std::map<std::string, int>> const generateEpiOutput();
 
         /// Get the type of ContactPool, used for logging and tests
         ContactType::Id GetType() const { return m_pool_type; }
