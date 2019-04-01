@@ -58,7 +58,6 @@ set(SRC
     geopop/io/CitiesCSVReaderTest.cpp
     geopop/io/CommutesCSVReaderTest.cpp
     geopop/io/GeoGridIOUtils.cpp
-        geopop/io/GeoGridConfigTest.cpp
     #geopop/io/GeoGridJSONReaderTest.cpp
     #geopop/io/GeoGridJSONWriterTest.cpp
     geopop/io/GeoGridProtoReaderTest.cpp
