@@ -179,10 +179,9 @@ endif()
 # Qt5
 #----------------------------------------------------------------------------
 if (NOT STRIDE_FORCE_NO_QT5)
-#    message(STATUS "TEST: ${CMAKE_PREFIX_PATH}")
     set(TEMP CMAKE_PREFIX_PATH)
     if(APPLE)
-        set(CMAKE_PREFIX_PATH /usr/local/opt/qt)
+        set(CMAKE_PREFIX_PATH /usr/local/opt/qt5)
     else()
         set(CMAKE_PREFIX_PATH $ENV{HOME}/Qt/5.12.2/gcc_64)
     find_package(Qt5Core REQUIRED)

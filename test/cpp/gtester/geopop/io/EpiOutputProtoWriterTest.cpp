@@ -13,23 +13,7 @@
  *  Copyright 2019, 2020, Jan Broeckhove and Bistromatics group.
  */
 
-#include "geopop/io/GeoGridProtoWriter.h"
-#include "GeoGridIOUtils.h"
-#include "geopop/CollegeCenter.h"
-#include "geopop/GeoGridConfig.h"
-#include "geopop/HouseholdCenter.h"
-#include "geopop/K12SchoolCenter.h"
-#include "geopop/PrimaryCommunityCenter.h"
-#include "geopop/SecondaryCommunityCenter.h"
-#include "geopop/WorkplaceCenter.h"
-#include "pop/Population.h"
-#include "util/FileSys.h"
-
 #include <gtest/gtest.h>
-
-using namespace std;
-using namespace geopop;
-using namespace stride;
 
 namespace {
 

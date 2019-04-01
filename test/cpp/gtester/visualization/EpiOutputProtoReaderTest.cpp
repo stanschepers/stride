@@ -13,60 +13,46 @@
  *  Copyright 2018, 2019, Jan Broeckhove and Bistromatics group.
  */
 
-#include "GeoGridIOUtils.h"
-#include "geogrid.pb.h"
-#include "geopop/CollegeCenter.h"
-#include "geopop/GeoGridConfig.h"
-#include "geopop/HouseholdCenter.h"
-#include "geopop/K12SchoolCenter.h"
-#include "geopop/PrimaryCommunityCenter.h"
-#include "geopop/SecondaryCommunityCenter.h"
-#include "geopop/WorkplaceCenter.h"
-
 #include <gtest/gtest.h>
-
-using namespace std;
-using namespace geopop;
-using boost::geometry::get;
 
 namespace {
 
-    TEST(EpiOutputProtoWriterTest, zeroLocationTest)
+TEST(EpiOutputProtoReaderTest, zeroLocationTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputProtoWriterTest, oneLocationZeroDaysTest)
+TEST(EpiOutputProtoReaderTest, oneLocationZeroDaysTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputProtoWriterTest, oneLocationOneDayTest)
+TEST(EpiOutputProtoReaderTest, oneLocationOneDayTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputProtoWriterTest, oneLocationTwoDaysTest)
+TEST(EpiOutputProtoReaderTest, oneLocationTwoDaysTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputProtoWriterTest, fiveLocationsOneDayTest)
+TEST(EpiOutputProtoReaderTest, fiveLocationsOneDayTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputProtoWriterTest, emptyStreamTest)
+TEST(EpiOutputProtoReaderTest, emptyStreamTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputProtoWriterTest, invalidTypeTest)
+TEST(EpiOutputProtoReaderTest, invalidTypeTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputProtoWriterTest, invalidProtobufTest)
+TEST(EpiOutputProtoReaderTest, invalidProtobufTest)
 {
     EXPECT_TRUE(false);
 }

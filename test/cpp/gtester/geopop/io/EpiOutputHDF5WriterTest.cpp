@@ -13,29 +13,12 @@
  *  Copyright 2018, 2019, Jan Broeckhove and Bistromatics group.
  */
 
-#include "GeoGridIOUtils.h"
-
-#include "geopop/CollegeCenter.h"
-#include "geopop/GeoGridConfig.h"
-#include "geopop/HouseholdCenter.h"
-#include "geopop/K12SchoolCenter.h"
-#include "geopop/PrimaryCommunityCenter.h"
-#include "geopop/WorkplaceCenter.h"
-#include "geopop/io/GeoGridJSONWriter.h"
-#include "pop/Population.h"
-#include "util/FileSys.h"
 
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/property_tree/xml_parser.hpp>
 #include <gtest/gtest.h>
 #include <iostream>
 #include <sstream>
-
-using namespace std;
-using namespace geopop;
-using namespace stride;
-using namespace stride::util;
-using boost::property_tree::ptree;
 
 namespace {
 

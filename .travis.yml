@@ -129,13 +129,11 @@ install:
     #--------- OSX
   - |
     if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-      brew upgrade python cmake
-      brew install ccache swig qt
-      brew link --force qt
-      sudo ln -s /usr/local/Cellar/qt/5.12.1/plugins /usr/local/plugins
-      sudo ln -s /usr/local/Cellar/qt/5.12.1/mkspecs/ /usr/local/mkspecs
-      export LDFLAGS="-L/usr/local/opt/qt5/lib"
-      export CPPFLAGS="-I/usr/local/opt/qt5/include"
+      brew install ccache swig qt && brew link --force qt
+      sudo ln -s /usr/local/Cellar/qt/5.12.2/plugins /usr/local/plugins
+      sudo ln -s /usr/local/Cellar/qt/5.12.2/mkspecs/ /usr/local/mkspecs
+      export CMAKE_PREFIX_PATH=/usr/local/opt/qt5:$CMAKE_PREFIX_PATH
+      export LD_LIBRARY_PATH=/usr/local/opt/qt5/lib/
     fi
     #--------- All platforms
   - |

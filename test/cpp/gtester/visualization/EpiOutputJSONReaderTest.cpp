@@ -13,65 +13,49 @@
  *  Copyright 2018, Jan Broeckhove and Bistromatics group.
  */
 
-#include "geopop/io/GeoGridJSONReader.h"
-
-#include "contact/ContactType.h"
-#include "geopop/ContactCenter.h"
-#include "geopop/GeoGrid.h"
-#include "pop/Population.h"
-#include "util/Exception.h"
-#include "util/FileSys.h"
 
 #include <fstream>
 #include <gtest/gtest.h>
 #include <memory>
 
-using namespace std;
-using namespace geopop;
-using namespace stride;
-using namespace stride::ContactType;
-using namespace stride::util;
-
-using boost::geometry::get;
-
 namespace {
 
-TEST(EpiOutputJSONWriterTest, zeroLocationTest)
+TEST(EpiOutputJSONReaderTest, zeroLocationTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputJSONWriterTest, oneLocationZeroDaysTest)
+TEST(EpiOutputJSONReaderTest, oneLocationZeroDaysTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputJSONWriterTest, oneLocationOneDayTest)
+TEST(EpiOutputJSONReaderTest, oneLocationOneDayTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputJSONWriterTest, oneLocationTwoDaysTest)
+TEST(EpiOutputJSONReaderTest, oneLocationTwoDaysTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputJSONWriterTest, fiveLocationsOneDayTest)
+TEST(EpiOutputJSONReaderTest, fiveLocationsOneDayTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputJSONWriterTest, emptyStreamTest)
+TEST(EpiOutputJSONReaderTest, emptyStreamTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputJSONWriterTest, invalidTypeTest)
+TEST(EpiOutputJSONReaderTest, invalidTypeTest)
 {
     EXPECT_TRUE(false);
 }
 
-TEST(EpiOutputJSONWriterTest, invalidJSONTest)
+TEST(EpiOutputJSONReaderTest, invalidJSONTest)
 {
     EXPECT_TRUE(false);
 }
