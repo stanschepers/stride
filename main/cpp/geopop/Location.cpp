@@ -91,7 +91,46 @@ unsigned int Location::GetOutgoingCommuteCount(double fractionCommuters) const
         return static_cast<unsigned int>(floor(totalProportion * (fractionCommuters * m_pop_count)));
 }
 
+unsigned int Location::GetMemberCount() const
+{
+        unsigned int total_members = 0;
+        for (stride::ContactPool* pool: this->CRefPools(stride::ContactType::Id::Household)){
+                total_members += pool->size();
+        }
+        return total_members;
+}
+
 double Location::GetPopFraction() const { return m_pop_fraction; }
+
+std::map<std::string, std::map<std::string, double>> const Location::GenerateEpiOutput()
+{
+        // Get the total amount of members in the location
+        unsigned int total_members = this->GetMemberCount();
+
+        // Initialize the map
+        vector<string> ageBrackets = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
+        vector<string> healthCategories = {"Total", "Susceptible", "Infected", "Infectious", "Symptomatic", "Recovered",
+                                           "Immune"};
+        std::map<std::string, std::map<std::string, double>> epiOutput;
+        for (const string &ageBracket: ageBrackets){
+                for (const string &healthCategory: healthCategories){
+                        epiOutput[ageBracket][healthCategory] = 0;
+                }
+        }
+
+        // Iterate over all Household contactpools in the location and calculate the epi-output
+        for (stride::ContactPool* pool: this->CRefPools(stride::ContactType::Id::Household)){
+                std::map<std::string, std::map<std::string, unsigned int>> epiOutput_pool = pool->GenerateEpiOutput();
+                for (const string &ageBracket: ageBrackets){
+                        for (const string &healthCategory: healthCategories){
+                                epiOutput[ageBracket][healthCategory] +=
+                                        double(epiOutput_pool[ageBracket][healthCategory]) / double(total_members);
+                        }
+                }
+        }
+
+        return epiOutput;
+}
 
 void Location::SetPopCount(unsigned int totalPopCount)
 {

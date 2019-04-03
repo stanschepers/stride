@@ -28,6 +28,7 @@
 #include <typeinfo>
 #include <unordered_map>
 #include <vector>
+#include <map>
 
 namespace stride {
 class ContactPool;
@@ -77,11 +78,17 @@ public:
         /// Gets the absolute population.
         unsigned int GetPopCount() const { return m_pop_count; }
 
+        /// Gets the amount of members in all household pools.
+        unsigned int GetMemberCount() const;
+
         /// Gets the province.
         unsigned int GetProvince() const { return m_province; }
 
-        /// Get Location's population fraction (of the total populaion count).
+        /// Get Location's population fraction (of the total population count).
         double GetPopFraction() const;
+
+        /// Generate an epi-output map of the Household contactpools.
+        std::map<std::string, std::map<std::string, double>> const GenerateEpiOutput();
 
         /// Sets the Coordinate of this Location.
         void SetCoordinate(const Coordinate& coordinate) { m_coordinate = coordinate; }
@@ -89,7 +96,7 @@ public:
         /// Set Location's population count using its population fraction and the total population count.
         void SetPopCount(unsigned int totalPopCount);
 
-        /// Set Location's population fraction (of the total populaion count).
+        /// Set Location's population fraction (of the total population count).
         void SetPopFraction(double relativePopulation);
 
 public:

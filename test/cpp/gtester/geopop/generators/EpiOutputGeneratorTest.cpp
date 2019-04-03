@@ -15,6 +15,8 @@
 
 #include "contact/ContactPool.h"
 #include "pop/Person.h"
+#include "geopop/Location.h"
+#include "geopop/Coordinate.h"
 
 #include <gtest/gtest.h>
 #include <map>
@@ -22,12 +24,23 @@
 
 using namespace std;
 using namespace stride;
+using namespace geopop;
+
+vector<string> ageBrackets = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
+vector<string> healthCategories = {"Total", "Susceptible", "Infected", "Infectious", "Symptomatic", "Recovered", "Immune"};
+
+bool compareMapWithDoubles(map<string, map<string, double>> map1, map<string, map<string, double>> map2){
+    for (const string &ageBracket: ageBrackets) {
+        for (const string &healtCategory: healthCategories) {
+            if (map1[ageBracket][healtCategory] - map2[ageBracket][healtCategory] > 0.0000000000001) return false;
+        }
+    }
+    return true;
+}
 
 namespace {
-    vector<string> ageBrackets = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
-    vector<string> healthCategories = {"Total", "Susceptible", "Infected", "Infectious", "Symptomatic", "Recovered", "Immune"};
 
-    // Checks if the function generateEpiOutput of the class Contactpool returns the expected result with no members in the contactpool.
+    /// Checks if the function generateEpiOutput of the class Contactpool returns the expected result with no members in the contactpool.
     TEST(EpiOutputGeneratorTest, contactpoolZeroMembersTest)
     {
         map<string, map<string, unsigned int>> correct_result;
@@ -39,14 +52,14 @@ namespace {
 
         ContactPool test(1, ContactType::Id::Household);
 
-        map<string, map<string, unsigned int>> result = test.generateEpiOutput();
+        map<string, map<string, unsigned int>> result = test.GenerateEpiOutput();
 
         EXPECT_TRUE(correct_result.size() == result.size()
                     && std::equal(correct_result.begin(), correct_result.end(),
                                   result.begin()));
     }
 
-    // Checks if the function generateEpiOutput of the class Contactpool returns the expected result with one member in the contactpool.
+    /// Checks if the function generateEpiOutput of the class Contactpool returns the expected result with one member in the contactpool.
     TEST(EpiOutputGeneratorTest, contactpoolOneMemberTest)
     {
         map<string, map<string, unsigned int>> correct_result;
@@ -66,14 +79,14 @@ namespace {
         ContactPool test(1, ContactType::Id::Household);
         test.AddMember(&p);
 
-        map<string, map<string, unsigned int>> result = test.generateEpiOutput();
+        map<string, map<string, unsigned int>> result = test.GenerateEpiOutput();
 
         EXPECT_TRUE(correct_result.size() == result.size()
                     && std::equal(correct_result.begin(), correct_result.end(),
                                   result.begin()));
     }
 
-    // Checks if the function generateEpiOutput of the class Contactpool returns the expected result with five members in the contactpool.
+    /// Checks if the function generateEpiOutput of the class Contactpool returns the expected result with five members in the contactpool.
     TEST(EpiOutputGeneratorTest, contactpoolFiveMembersTest)
     {
         map<string, map<string, unsigned int>> correct_result;
@@ -94,44 +107,182 @@ namespace {
         correct_result["Senior"]["Recovered"] = 1;
 
         ContactPool test(1, ContactType::Id::Household);
-        vector<unsigned int> ages = {45, 17, 5, 1, 75};
-        vector<Person> persons = {Person(), Person(), Person(), Person(), Person()};
-        for (unsigned int i = 0; i < persons.size(); i++) {
+        vector<unsigned int> ages = {22, 17, 5, 1, 75};
+        vector<Person> persons{};
+        for (unsigned int i = 0; i < ages.size(); i++) {
+            persons.emplace_back(Person());
+        }
+        for (unsigned int i = 0; i < ages.size(); i++) {
             persons[i].SetAge(ages[i]);
             if (i != 0){
                 persons[i].GetHealth().SetSusceptible();
                 if (i > 1) {
                     persons[i].GetHealth().StartInfection();
-                }
-                if (i > 2) {
-                    persons[i].GetHealth().StopInfection();
+                    if (i > 2) {
+                        persons[i].GetHealth().StopInfection();
+                    }
                 }
             } else {
                 persons[i].GetHealth().SetImmune();
+                persons[i].SetPoolId(ContactType::Id::Workplace, 1);
             }
             test.AddMember(&persons[i]);
         }
 
-        map<string, map<string, unsigned int>> result = test.generateEpiOutput();
+        map<string, map<string, unsigned int>> result = test.GenerateEpiOutput();
 
         EXPECT_TRUE(correct_result.size() == result.size()
                     && std::equal(correct_result.begin(), correct_result.end(),
                                   result.begin()));
     }
 
+    /// Checks if the function generateEpiOutput of the class Location returns the expected result with no contactpools in the location.
     TEST(EpiOutputGeneratorTest, locationZeroContactpoolsTest)
     {
-        EXPECT_TRUE(false);
+        map<string, map<string, double>> correct_result;
+        for (const string &ageBracket: ageBrackets){
+            for (const string &healthCategory: healthCategories){
+                correct_result[ageBracket][healthCategory] = 0;
+            }
+        }
+
+        Location test (1, 1, Coordinate(0.0, 0.0), "test", 0U);
+
+        map<string, map<string, double>> result = test.GenerateEpiOutput();
+
+        EXPECT_TRUE(correct_result.size() == result.size()
+                    && compareMapWithDoubles(result, correct_result));
     }
 
+    /// Checks if the function generateEpiOutput of the class Location returns the expected result with one contactpool in the location.
     TEST(EpiOutputGeneratorTest, locationOneContactpoolTest)
     {
-        EXPECT_TRUE(false);
+        map<string, map<string, double>> correct_result;
+        for (const string &ageBracket: ageBrackets){
+            for (const string &healthCategory: healthCategories){
+                if (healthCategory != "Total" || ageBracket == "College"){
+                    correct_result[ageBracket][healthCategory] = 0;
+                } else {
+                    correct_result[ageBracket][healthCategory] = 0.2;
+                }
+            }
+        }
+
+        correct_result["Daycare"]["Recovered"] = 0.2;
+        correct_result["PreSchool"]["Infected"] = 0.2;
+        correct_result["K12School"]["Susceptible"] = 0.2;
+        correct_result["Workplace"]["Immune"] = 0.2;
+        correct_result["Senior"]["Recovered"] = 0.2;
+
+        ContactPool pool(1, ContactType::Id::Household);
+        vector<unsigned int> ages = {22, 17, 5, 1, 75};
+        vector<Person> persons{};
+        for (unsigned int i = 0; i < ages.size(); i++) {
+            persons.emplace_back(Person());
+        }
+        for (unsigned int i = 0; i < ages.size(); i++) {
+            persons[i].SetAge(ages[i]);
+            if (i != 0){
+                persons[i].GetHealth().SetSusceptible();
+                if (i > 1) {
+                    persons[i].GetHealth().StartInfection();
+                    if (i > 2) {
+                        persons[i].GetHealth().StopInfection();
+                    }
+                }
+            } else {
+                persons[i].GetHealth().SetImmune();
+                persons[i].SetPoolId(ContactType::Id::Workplace, 1);
+            }
+            pool.AddMember(&persons[i]);
+        }
+
+        Location test (1, 1, Coordinate(0.0, 0.0), "test", 0U);
+        test.RegisterPool(&pool, stride::ContactType::Id::Household);
+
+        map<string, map<string, double>> result = test.GenerateEpiOutput();
+
+        EXPECT_TRUE(correct_result.size() == result.size()
+                    && compareMapWithDoubles(result, correct_result));
     }
 
+    /// Checks if the function generateEpiOutput of the class Location returns the expected result with five contactpools in the location.
     TEST(EpiOutputGeneratorTest, locationFiveContactpoolsTest)
     {
-        EXPECT_TRUE(false);
+        map<string, map<string, double>> correct_result;
+        for (const string &ageBracket: ageBrackets){
+            for (const string &healthCategory: healthCategories){
+                correct_result[ageBracket][healthCategory] = 0;
+            }
+        }
+
+        correct_result["Daycare"]["Total"] = 0.2;
+        correct_result["Daycare"]["Susceptible"] = 0.1;
+        correct_result["Daycare"]["Recovered"] = 0.1;
+
+        correct_result["PreSchool"]["Total"] = 0.1;
+        correct_result["PreSchool"]["Susceptible"] = 0.1;
+
+        correct_result["K12School"]["Total"] = 0.2;
+        correct_result["K12School"]["Recovered"] = 0.1;
+        correct_result["K12School"]["Immune"] = 0.1;
+
+        correct_result["College"]["Total"] = 0.1;
+        correct_result["College"]["Infected"] = 0.1;
+
+        correct_result["Workplace"]["Total"] = 0.28;
+        correct_result["Workplace"]["Infected"] = 0.1;
+        correct_result["Workplace"]["Recovered"] = 0.1;
+        correct_result["Workplace"]["Immune"] = 0.8;
+
+        correct_result["Senior"]["Total"] = 0.12;
+        correct_result["Senior"]["Susceptible"] = 0.1;
+        correct_result["Senior"]["Immune"] = 0.02;
+
+        ContactPool pool(1, ContactType::Id::Household);
+        ContactPool pool2(1, ContactType::Id::Household);
+        vector<unsigned int> ages = {45, 17, 5, 1, 75, 35, 25, 22, 2, 12};
+        vector<Person> persons{};
+        for (unsigned int i = 0; i < ages.size(); i++) {
+            persons.emplace_back(Person());
+        }
+        for (unsigned int i = 0; i < ages.size(); i++) {
+            persons[i].SetAge(ages[i]);
+            if (i > 1){
+                persons[i].GetHealth().SetSusceptible();
+                if (i > 4) {
+                    persons[i].GetHealth().StartInfection();
+                }
+                if (i > 6) {
+                    persons[i].GetHealth().StopInfection();
+                    if (i == 7){
+                        persons[i].SetPoolId(ContactType::Id::Workplace, 1);
+                    }
+                }
+            } else {
+                persons[i].GetHealth().SetImmune();
+
+            }
+            pool.AddMember(&persons[i]);
+            if (i != 0){
+                pool2.AddMember(&persons[i]);
+            }
+        }
+        Person p;
+        p.SetAge(80);
+        p.GetHealth().SetImmune();
+        pool2.AddMember(&p);
+
+        Location test (1, 1, Coordinate(0.0, 0.0), "test", 0U);
+        for (unsigned int i = 0; i < 4; i++) {
+            test.RegisterPool(&pool, stride::ContactType::Id::Household);
+        }
+        test.RegisterPool(&pool2, stride::ContactType::Id::Household);
+
+        map<string, map<string, double>> result = test.GenerateEpiOutput();
+
+        EXPECT_TRUE(correct_result.size() == result.size()
+                    && compareMapWithDoubles(result, correct_result));
     }
 
 } // namespace

@@ -53,7 +53,7 @@ unsigned int ContactPool::GetInfectedCount() const
         return infected;
 }
 
-const std::map<std::string, std::map<std::string, unsigned int>> ContactPool::generateEpiOutput()
+const std::map<std::string, std::map<std::string, unsigned int>> ContactPool::GenerateEpiOutput()
 {
         // Prepare a map
         vector<string> ageBrackets = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
@@ -61,7 +61,7 @@ const std::map<std::string, std::map<std::string, unsigned int>> ContactPool::ge
         map<string, map<string, unsigned int>> epiOutput;
         for (const string &ageBracket: ageBrackets){
                 for (const string &healthCategory: healthCategories){
-                        epiOutput[ageBracket][healthCategory] = 0;
+                        epiOutput[ageBracket][healthCategory] = 0U;
                 }
         }
 
@@ -75,7 +75,7 @@ const std::map<std::string, std::map<std::string, unsigned int>> ContactPool::ge
                         ageBracket = "PreSchool";
                 } else if (AgeBrackets::K12School::HasAge(age)){
                         ageBracket = "K12School";
-                } else if (AgeBrackets::College::HasAge(age)){
+                } else if (AgeBrackets::College::HasAge(age) && member->GetPoolId(ContactType::Id::Workplace) == 0){
                         ageBracket = "College";
                 } else if (AgeBrackets::Workplace::HasAge(age)){
                         ageBracket = "Workplace";
