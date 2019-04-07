@@ -19,8 +19,8 @@
 #include "contact/ContactPool.h"
 #include "contact/ContactType.h"
 #include "geopop/Location.h"
+#include <spdlog/logger.h>
 
-#include <boost/property_tree/ptree_fwd.hpp>
 
 namespace geopop {
 
@@ -34,7 +34,7 @@ class GeoGridJSONReader : public GeoGridReader
 {
 public:
         /// Construct the GeoGridJSONReader with the istream which contains the JSON.
-        GeoGridJSONReader(std::unique_ptr<std::istream> inputStream, stride::Population* pop);
+        GeoGridJSONReader(std::unique_ptr<std::istream> inputStream, stride::Population* pop, std::shared_ptr<spdlog::logger> logger = nullptr);
 
         /// No copy constructor.
         GeoGridJSONReader(const GeoGridJSONReader&) = delete;
@@ -46,20 +46,8 @@ public:
         void Read() override;
 
 private:
-        /// Create a ContactCenter based on the information stored in the provided boost property tree.
-        std::shared_ptr<ContactCenter> ParseContactCenter(boost::property_tree::ptree& contactCenter);
-
-        /// Create a ContactCenter based on the information stored in the provided boost property tree.
-        stride::ContactPool* ParseContactPool(boost::property_tree::ptree& contactPool, stride::ContactType::Id typeId);
-
-        /// Create a Coordinate based on the information stored in the provided boost property tree.
-        Coordinate ParseCoordinate(boost::property_tree::ptree& coordinate);
-
-        /// Create a Location based on the information stored in the provided boost property tree.
-        std::shared_ptr<Location> ParseLocation(boost::property_tree::ptree& location);
-
-        /// Create a Person based on the information stored in the provided boost property tree.
-        stride::Person* ParsePerson(boost::property_tree::ptree& person);
+        /// Logger used by GeoGridJSONReader.
+        std::shared_ptr<spdlog::logger> m_logger;
 };
 
 } // namespace geopop
