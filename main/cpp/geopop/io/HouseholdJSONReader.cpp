@@ -15,6 +15,7 @@
 #include "HouseholdJSONReader.h"
 
 #include <nlohmann/json.hpp>
+#include <boost/lexical_cast.hpp>
 #include <sstream>
 
 namespace geopop {
@@ -61,7 +62,7 @@ void HouseholdJSONReader::SetReferenceHouseholds(unsigned int&                  
                         stream << "[";
 
                         for (const auto& age : household) {
-                                householdConverted.push_back(static_cast<unsigned int>(stoi(age)));
+                                householdConverted.push_back(boost::lexical_cast<unsigned int>(age));
                                 stream << "\"" << age << "\",";
                         }
 
