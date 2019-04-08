@@ -16,7 +16,6 @@
 #include <geopop/GeoGridConfig.h>
 #include "PreSchoolGenerator.h"
 
-#include "geopop/ContactCenter.h"
 #include "geopop/GeoGrid.h"
 #include "geopop/GeoGridConfig.h"
 #include "geopop/Location.h"
