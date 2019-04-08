@@ -33,8 +33,8 @@ namespace filesys = std::filesystem;
 
 namespace geopop {
 
-std::shared_ptr<GeoGridReader> GeoGridReaderFactory::CreateReader(const std::string &filename, stride::Population *pop,
-                                                                  std::shared_ptr<spdlog::logger> strideLogger) const
+std::shared_ptr<GeoGridReader> GeoGridReaderFactory::CreateReader(const std::string&  filename,
+                                                                  stride::Population* pop) const
 {
         const filesys::path path(filename);
         if (!filesys::exists(path)) {
@@ -42,7 +42,7 @@ std::shared_ptr<GeoGridReader> GeoGridReaderFactory::CreateReader(const std::str
         }
 
         if (path.extension().string() == ".json") {
-                return std::make_shared<GeoGridJSONReader>(std::make_unique<std::ifstream>(path.string()), pop, strideLogger);
+                return std::make_shared<GeoGridJSONReader>(std::make_unique<std::ifstream>(path.string()), pop);
         } else if (path.extension().string() == ".proto") {
                 return std::make_shared<GeoGridProtoReader>(std::make_unique<std::ifstream>(path.string()), pop);
         } else {

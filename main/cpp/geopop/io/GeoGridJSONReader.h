@@ -19,8 +19,8 @@
 #include "contact/ContactPool.h"
 #include "contact/ContactType.h"
 #include "geopop/Location.h"
+#include <nlohmann/json.hpp>
 #include <spdlog/logger.h>
-
 
 namespace geopop {
 
@@ -34,7 +34,7 @@ class GeoGridJSONReader : public GeoGridReader
 {
 public:
         /// Construct the GeoGridJSONReader with the istream which contains the JSON.
-        GeoGridJSONReader(std::unique_ptr<std::istream> inputStream, stride::Population* pop, std::shared_ptr<spdlog::logger> logger = nullptr);
+        GeoGridJSONReader(std::unique_ptr<std::istream> inputStream, stride::Population* pop);
 
         /// No copy constructor.
         GeoGridJSONReader(const GeoGridJSONReader&) = delete;
@@ -46,8 +46,15 @@ public:
         void Read() override;
 
 private:
-        /// Logger used by GeoGridJSONReader.
-        std::shared_ptr<spdlog::logger> m_logger;
+        /// Create a Person based on the information stored in the provided JSON.
+        stride::Person* ParsePerson(const nlohmann::json& person);
+        /// Create a Location based on the information stored in the provided JSON.
+        std::shared_ptr<Location> ParseLocation(const nlohmann::json& location);
+        /// Create a Coordinate based on the information stored in the provided JSON.
+        Coordinate ParseCoordinate(const nlohmann::json& coordinate);
+        /// Create a ContactPool based on the information stored in the provided JSON.
+        void ParseContactPool(const std::shared_ptr<Location>& location, const nlohmann::json& contactPool,
+                              stride::ContactType::Id type);
 };
 
 } // namespace geopop
