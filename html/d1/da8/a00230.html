@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: HouseholdReader.h File Reference</title>
+<title>Stride Reference Manual: IdSubscriptArray.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 6980f2e</span>
+   &#160;<span id="projectnumber">- generated for commit ad17258</span>
    </div>
   </td>
  </tr>
@@ -108,32 +108,80 @@ $(document).ready(function(){initNavTree('d1/da8/a00230.html','../../');});
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">HouseholdReader.h File Reference</div>  </div>
+<div class="title">IdSubscriptArray.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d0/d61/a00302_source.html">util/SegmentedVector.h</a>&quot;</code><br />
-<code>#include &lt;memory&gt;</code><br />
-<code>#include &lt;vector&gt;</code><br />
+
+<p>Container for the contact pools of various type (household, work, ...).  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../db/ddf/a00164_source.html">contact/ContactType.h</a>&quot;</code><br />
+<code>#include &lt;array&gt;</code><br />
+<code>#include &lt;bitset&gt;</code><br />
+<code>#include &lt;initializer_list&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for HouseholdReader.h:</div>
+Include dependency graph for IdSubscriptArray.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d5/dee/a00518.gif" border="0" usemap="#HouseholdReader_8h" alt=""/></div>
-<map name="HouseholdReader_8h" id="HouseholdReader_8h">
-<area shape="rect" id="node2" href="../../d0/d61/a00302.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="341,80,513,107"/>
-<area shape="rect" id="node3" href="../../d8/d23/a00326.html" title="Interface/Implementation for SVIterator. " alt="" coords="479,155,577,181"/>
+<div class="center"><img src="../../d8/dc7/a00517.gif" border="0" usemap="#IdSubscriptArray_8h" alt=""/></div>
+<map name="IdSubscriptArray_8h" id="IdSubscriptArray_8h">
+<area shape="rect" id="node2" href="../../db/ddf/a00164.html" title="Definition of ContactPool Id Type. " alt="" coords="133,80,297,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../dd/d4d/a00519.gif" border="0" usemap="#HouseholdReader_8hdep" alt=""/></div>
-<map name="HouseholdReader_8hdep" id="HouseholdReader_8hdep">
-<area shape="rect" id="node2" href="../../d8/d72/a00199.html" title="GeoGridConfig.cpp" alt="" coords="544,155,685,181"/>
-<area shape="rect" id="node3" href="../../dc/d98/a00225.html" title="HouseholdCSVReader.h" alt="" coords="195,80,367,107"/>
-<area shape="rect" id="node6" href="../../de/d25/a00290.html" title="ReaderFactory.h" alt="" coords="392,80,515,107"/>
-<area shape="rect" id="node4" href="../../d5/ddf/a00224.html" title="HouseholdCSVReader.cpp" alt="" coords="5,155,192,181"/>
-<area shape="rect" id="node5" href="../../d4/d66/a00289.html" title="ReaderFactory.cpp" alt="" coords="217,155,354,181"/>
-<area shape="rect" id="node7" href="../../dc/d9a/a00218.html" title="Initialize populations: implementation. " alt="" coords="378,155,521,181"/>
+<div class="center"><img src="../../d5/dee/a00518.gif" border="0" usemap="#IdSubscriptArray_8hdep" alt=""/></div>
+<map name="IdSubscriptArray_8hdep" id="IdSubscriptArray_8hdep">
+<area shape="rect" id="node2" href="../../d5/db1/a00140.html" title="Contact profiles stored in simulator. " alt="" coords="531,80,685,107"/>
+<area shape="rect" id="node9" href="../../db/d44/a00162.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="1102,80,1237,107"/>
+<area shape="rect" id="node23" href="../../d8/d64/a00181.html" title="Initialize populations: implementation. " alt="" coords="761,229,924,256"/>
+<area shape="rect" id="node24" href="../../d0/def/a00256.html" title="Location.h" alt="" coords="3545,155,3633,181"/>
+<area shape="rect" id="node44" href="../../d5/d35/a00266.html" title="Header file for the Person class. " alt="" coords="4749,80,4827,107"/>
+<area shape="rect" id="node3" href="../../da/d50/a00301.html" title="Header for the Simulator class. " alt="" coords="459,155,517,181"/>
+<area shape="rect" id="node4" href="../../d8/d17/a00304.html" title="Header for the command line controller. " alt="" coords="339,229,474,256"/>
+<area shape="rect" id="node5" href="../../d2/d71/a00309.html" title="Header for the command line controller. " alt="" coords="498,229,638,256"/>
+<area shape="rect" id="node6" href="../../db/da2/a00300.html" title="Implementation for the Simulator class. " alt="" coords="663,229,737,256"/>
+<area shape="rect" id="node7" href="../../d0/d61/a00302.html" title="Implementation for the SimBuilder class. " alt="" coords="5,229,123,256"/>
+<area shape="rect" id="node8" href="../../d1/de3/a00306.html" title="Implementation for SimRunner. " alt="" coords="147,229,264,256"/>
+<area shape="rect" id="node10" href="../../d6/d7d/a00161.html" title="Core Population class. " alt="" coords="840,155,989,181"/>
+<area shape="rect" id="node11" href="../../d9/dd6/a00272.html" title="Header file for the core Population class. " alt="" coords="1316,155,1417,181"/>
+<area shape="rect" id="node12" href="../../d0/d4a/a00147.html" title="CollegeGenerator.cpp" alt="" coords="999,229,1159,256"/>
+<area shape="rect" id="node13" href="../../d6/dfb/a00172.html" title="DaycareGenerator.cpp" alt="" coords="1183,229,1350,256"/>
+<area shape="rect" id="node14" href="../../dc/d28/a00223.html" title="HouseholdGenerator.cpp" alt="" coords="1375,229,1556,256"/>
+<area shape="rect" id="node15" href="../../d4/d9a/a00246.html" title="K12SchoolGenerator.cpp" alt="" coords="1581,229,1761,256"/>
+<area shape="rect" id="node16" href="../../d3/d5e/a00275.html" title="PreSchoolGenerator.cpp" alt="" coords="1986,229,2163,256"/>
+<area shape="rect" id="node17" href="../../d2/d82/a00279.html" title="PrimaryCommunityGenerator.cpp" alt="" coords="2187,229,2423,256"/>
+<area shape="rect" id="node18" href="../../d9/d5e/a00295.html" title="SecondaryCommunityGenerator.cpp" alt="" coords="2447,229,2702,256"/>
+<area shape="rect" id="node19" href="../../dd/dbb/a00330.html" title="WorkplaceGenerator.cpp" alt="" coords="1785,229,1962,256"/>
+<area shape="rect" id="node20" href="../../dd/df4/a00193.html" title="GeoGrid.cpp" alt="" coords="2727,229,2828,256"/>
+<area shape="rect" id="node21" href="../../d1/d72/a00204.html" title="GeoGridProtoReader.cpp" alt="" coords="872,304,1051,331"/>
+<area shape="rect" id="node22" href="../../dc/d98/a00225.html" title="HouseholdPopulator.cpp" alt="" coords="2903,229,3081,256"/>
+<area shape="rect" id="node25" href="../../dc/ded/a00252.html" title="KdTree2DPoint.cpp" alt="" coords="3607,229,3748,256"/>
+<area shape="rect" id="node26" href="../../dd/db2/a00151.html" title="CommutesCSVReader.cpp" alt="" coords="4122,229,4313,256"/>
+<area shape="rect" id="node27" href="../../d8/d72/a00199.html" title="GeoGridJSONReader.h" alt="" coords="4337,229,4498,256"/>
+<area shape="rect" id="node28" href="../../dd/de3/a00201.html" title="GeoGridJSONWriter.h" alt="" coords="5302,229,5455,256"/>
+<area shape="rect" id="node30" href="../../d5/d13/a00205.html" title="GeoGridProtoReader.h" alt="" coords="3935,229,4097,256"/>
+<area shape="rect" id="node31" href="../../de/dd2/a00207.html" title="GeoGridProtoWriter.h" alt="" coords="5123,229,5277,256"/>
+<area shape="rect" id="node33" href="../../dc/d31/a00208.html" title="GeoGridReader.cpp" alt="" coords="4523,229,4667,256"/>
+<area shape="rect" id="node34" href="../../d0/d2f/a00259.html" title="LocationsReader.h" alt="" coords="3772,229,3911,256"/>
+<area shape="rect" id="node35" href="../../d4/d04/a00255.html" title="Location.cpp" alt="" coords="5479,229,5582,256"/>
+<area shape="rect" id="node36" href="../../da/d1e/a00149.html" title="CollegePopulator.cpp" alt="" coords="3239,229,3395,256"/>
+<area shape="rect" id="node37" href="../../d8/df1/a00174.html" title="DaycarePopulator.cpp" alt="" coords="3420,229,3583,256"/>
+<area shape="rect" id="node38" href="../../dd/dd7/a00248.html" title="K12SchoolPopulator.cpp" alt="" coords="5607,229,5783,256"/>
+<area shape="rect" id="node39" href="../../d0/d19/a00273.html" title="Populator.cpp" alt="" coords="3105,229,3215,256"/>
+<area shape="rect" id="node40" href="../../d6/d4b/a00277.html" title="PreSchoolPopulator.cpp" alt="" coords="4741,229,4915,256"/>
+<area shape="rect" id="node41" href="../../d2/d04/a00281.html" title="PrimaryCommunityPopulator.cpp" alt="" coords="5807,229,6039,256"/>
+<area shape="rect" id="node42" href="../../d3/d4a/a00297.html" title="SecondaryCommunityPopulator.cpp" alt="" coords="6063,229,6313,256"/>
+<area shape="rect" id="node43" href="../../dc/d50/a00332.html" title="WorkplacePopulator.cpp" alt="" coords="4617,304,4791,331"/>
+<area shape="rect" id="node29" href="../../d3/db1/a00200.html" title="GeoGridJSONWriter.cpp" alt="" coords="6065,304,6233,331"/>
+<area shape="rect" id="node32" href="../../d5/df1/a00206.html" title="GeoGridProtoWriter.cpp" alt="" coords="5367,304,5537,331"/>
+<area shape="rect" id="node45" href="../../de/db9/a00159.html" title="Implementation for the core ContcatPool class. " alt="" coords="4219,155,4346,181"/>
+<area shape="rect" id="node46" href="../../d6/db6/a00241.html" title="Implementation of Infector algorithms. " alt="" coords="4371,155,4467,181"/>
+<area shape="rect" id="node47" href="../../df/d17/a00231.html" title="Implementation for the Immunizer class. " alt="" coords="4491,155,4607,181"/>
+<area shape="rect" id="node48" href="../../de/db1/a00197.html" title="GeoGridConfig.h" alt="" coords="2657,155,2783,181"/>
+<area shape="rect" id="node49" href="../../d2/d0a/a00333.html" title="WorkplacePopulator.h" alt="" coords="4939,229,5098,256"/>
+<area shape="rect" id="node50" href="../../da/d53/a00265.html" title="Header file for the Person class. " alt="" coords="4632,155,4725,181"/>
 </map>
 </div>
 </div>
@@ -141,26 +189,33 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d87/a00032.html">geopop::HouseholdReader</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the reference Household profiles from file.  <a href="../../dc/d87/a00032.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dee/a00053.html">stride::ContactType::IdSubscriptArray&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An std::array modified to enable subscripting with the constact pool type indentifiers.  <a href="../../dc/dee/a00053.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html">stride::ContactType::IdSubscriptArray&lt; bool &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialisation of <a class="el" href="../../dc/dee/a00053.html" title="An std::array modified to enable subscripting with the constact pool type indentifiers. ">IdSubscriptArray</a> foor booleans.  <a href="../../d9/da5/a00075.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:df/df1/a00357"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/a00357.html">stride</a></td></tr>
-<tr class="memdesc:df/df1/a00357"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
+<tr class="memitem:d0/dc3/a00354"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc3/a00354.html">stride</a></td></tr>
+<tr class="memdesc:d0/dc3/a00354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d2/daf/a00346"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/daf/a00346.html">geopop</a></td></tr>
-<tr class="memdesc:d2/daf/a00346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
+<tr class="memitem:df/df1/a00357"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/a00357.html">stride::ContactType</a></td></tr>
+<tr class="memdesc:df/df1/a00357"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace to manage types of <a class="el" href="../../d6/d2c/a00072.html" title="A group of Persons that potentially have contacts with one another. ">ContactPool</a>. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Container for the contact pools of various type (household, work, ...). </p>
+
+<p>Definition in file <a class="el" href="../../d1/da8/a00230_source.html">IdSubscriptArray.h</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_c490ff723361adf09283ce460b26e466.html">io</a></li><li class="navelem"><a class="el" href="../../d1/da8/a00230.html">HouseholdReader.h</a></li>
-    <li class="footer">Generated on Wed Mar 27 2019 19:58:40 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_d006795525347f4aaca311cb4e45f0bc.html">contact</a></li><li class="navelem"><a class="el" href="../../d1/da8/a00230.html">IdSubscriptArray.h</a></li>
+    <li class="footer">Generated on Mon Apr 8 2019 09:59:44 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

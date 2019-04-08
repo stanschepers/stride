@@ -1,7 +1,4 @@
-<map id="GeoAggregator.h" name="GeoAggregator.h">
-<area shape="rect" id="node2" href="$d7/d03/a00254.html" title="KdTree.h" alt="" coords="589,87,665,114"/>
-<area shape="rect" id="node10" href="$d0/def/a00256.html" title="KdTree2DPoint.h" alt="" coords="316,87,443,114"/>
-<area shape="rect" id="node3" href="$de/d76/a00134.html" title="AABBox.h" alt="" coords="417,177,502,203"/>
-<area shape="rect" id="node4" href="$d0/d3e/a00253.html" title="KdNode.h" alt="" coords="716,177,800,203"/>
-<area shape="rect" id="node11" href="$d5/dcb/a00170.html" title="geopop/Coordinate.h" alt="" coords="185,177,341,203"/>
+<map id="geogrid.pb.h" name="geogrid.pb.h">
+<area shape="rect" id="node2" href="$d1/d72/a00204.html" title="GeoGridProtoReader.cpp" alt="" coords="5,80,184,107"/>
+<area shape="rect" id="node3" href="$d5/df1/a00206.html" title="GeoGridProtoWriter.cpp" alt="" coords="208,80,379,107"/>
 </map>

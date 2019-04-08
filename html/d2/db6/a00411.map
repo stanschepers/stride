@@ -1,17 +1,51 @@
-<map id="ContactHandler.h" name="ContactHandler.h">
-<area shape="rect" id="node2" href="$d6/d22/a00245.html" title="Header for the Infector class. " alt="" coords="139,80,221,107"/>
-<area shape="rect" id="node6" href="$d0/d24/a00222.html" title="Implementation for HelthSeeder class. " alt="" coords="423,80,559,107"/>
-<area shape="rect" id="node7" href="$d8/d17/a00304.html" title="Header for the Simulator class. " alt="" coords="761,80,820,107"/>
-<area shape="rect" id="node3" href="$d6/d08/a00244.html" title="Implementation of Infector algorithms. " alt="" coords="5,155,101,181"/>
-<area shape="rect" id="node4" href="$d0/d1f/a00247.html" title="Header for the InfectorMap. " alt="" coords="125,155,235,181"/>
-<area shape="rect" id="node5" href="$d3/d07/a00305.html" title="Implementation for the SimBuilder class. " alt="" coords="167,229,284,256"/>
-<area shape="rect" id="node8" href="$d0/da2/a00307.html" title="Header for the command line controller. " alt="" coords="310,155,445,181"/>
-<area shape="rect" id="node9" href="$d7/df2/a00312.html" title="Header for the command line controller. " alt="" coords="469,155,609,181"/>
-<area shape="rect" id="node10" href="$dc/d0f/a00303.html" title="Implementation for the Simulator class. " alt="" coords="633,155,708,181"/>
-<area shape="rect" id="node11" href="$d2/d71/a00309.html" title="Implementation for SimRunner. " alt="" coords="732,155,849,181"/>
-<area shape="rect" id="node12" href="$d9/db6/a00146.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="873,155,978,181"/>
-<area shape="rect" id="node13" href="$d9/d21/a00240.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="1002,155,1163,181"/>
-<area shape="rect" id="node14" href="$d2/dc8/a00242.html" title="Observer for SimEvents for commandline interface usage. " alt="" coords="1188,155,1329,181"/>
-<area shape="rect" id="node15" href="$d9/dd6/a00272.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="1354,155,1515,181"/>
-<area shape="rect" id="node16" href="$de/de9/a00322.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="1540,155,1713,181"/>
+<map id="ContactPool.h" name="ContactPool.h">
+<area shape="rect" id="node2" href="$de/db9/a00159.html" title="Implementation for the core ContcatPool class. " alt="" coords="1405,80,1531,107"/>
+<area shape="rect" id="node3" href="$db/d44/a00162.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="2006,80,2141,107"/>
+<area shape="rect" id="node5" href="$d9/dd6/a00272.html" title="Header file for the core Population class. " alt="" coords="2023,155,2124,181"/>
+<area shape="rect" id="node21" href="$dd/df4/a00193.html" title="GeoGrid.cpp" alt="" coords="5,229,107,256"/>
+<area shape="rect" id="node29" href="$d6/db6/a00241.html" title="Implementation of Infector algorithms. " alt="" coords="3644,80,3740,107"/>
+<area shape="rect" id="node30" href="$d2/d94/a00184.html" title="Header for the DiseaseSeeder class. " alt="" coords="1651,80,1781,107"/>
+<area shape="rect" id="node32" href="$d0/d53/a00232.html" title="Header for the Immunizer class. " alt="" coords="3764,80,3865,107"/>
+<area shape="rect" id="node34" href="$de/db1/a00197.html" title="GeoGridConfig.h" alt="" coords="3767,155,3894,181"/>
+<area shape="rect" id="node36" href="$da/d1e/a00149.html" title="CollegePopulator.cpp" alt="" coords="4671,229,4827,256"/>
+<area shape="rect" id="node37" href="$d8/df1/a00174.html" title="DaycarePopulator.cpp" alt="" coords="4852,229,5015,256"/>
+<area shape="rect" id="node38" href="$d0/d19/a00273.html" title="Populator.cpp" alt="" coords="5039,229,5148,256"/>
+<area shape="rect" id="node39" href="$d6/d4b/a00277.html" title="PreSchoolPopulator.cpp" alt="" coords="5172,229,5345,256"/>
+<area shape="rect" id="node41" href="$dc/d50/a00332.html" title="WorkplacePopulator.cpp" alt="" coords="4547,304,4720,331"/>
+<area shape="rect" id="node42" href="$d8/d72/a00199.html" title="GeoGridJSONReader.h" alt="" coords="4239,155,4401,181"/>
+<area shape="rect" id="node43" href="$d3/db1/a00200.html" title="GeoGridJSONWriter.cpp" alt="" coords="4923,80,5091,107"/>
+<area shape="rect" id="node44" href="$d5/d13/a00205.html" title="GeoGridProtoReader.h" alt="" coords="4520,80,4683,107"/>
+<area shape="rect" id="node46" href="$d5/df1/a00206.html" title="GeoGridProtoWriter.cpp" alt="" coords="5165,80,5336,107"/>
+<area shape="rect" id="node47" href="$d4/d04/a00255.html" title="Location.cpp" alt="" coords="5361,80,5463,107"/>
+<area shape="rect" id="node48" href="$dd/dd7/a00248.html" title="K12SchoolPopulator.cpp" alt="" coords="5488,80,5664,107"/>
+<area shape="rect" id="node49" href="$d2/d04/a00281.html" title="PrimaryCommunityPopulator.cpp" alt="" coords="5688,80,5920,107"/>
+<area shape="rect" id="node50" href="$d3/d4a/a00297.html" title="SecondaryCommunityPopulator.cpp" alt="" coords="5944,80,6195,107"/>
+<area shape="rect" id="node4" href="$d6/d7d/a00161.html" title="Core Population class. " alt="" coords="1799,155,1948,181"/>
+<area shape="rect" id="node6" href="$dc/d52/a00183.html" title="Implementation for the DiseaseSeeder class. " alt="" coords="131,229,277,256"/>
+<area shape="rect" id="node7" href="$dd/df3/a00219.html" title="Implementation for HelthSeeder class. " alt="" coords="1489,229,1625,256"/>
+<area shape="rect" id="node8" href="$db/dc3/a00284.html" title="Implementation for the PublicHealthAgency class. " alt="" coords="624,229,797,256"/>
+<area shape="rect" id="node9" href="$d0/d48/a00165.html" title="Header for the command line controller. " alt="" coords="821,229,957,256"/>
+<area shape="rect" id="node10" href="$d7/d6e/a00190.html" title="Header for the command line controller. " alt="" coords="981,229,1141,256"/>
+<area shape="rect" id="node11" href="$d8/d17/a00304.html" title="Header for the command line controller. " alt="" coords="1166,229,1301,256"/>
+<area shape="rect" id="node12" href="$d2/d71/a00309.html" title="Header for the command line controller. " alt="" coords="1325,229,1465,256"/>
+<area shape="rect" id="node13" href="$d0/d4a/a00147.html" title="CollegeGenerator.cpp" alt="" coords="2089,229,2249,256"/>
+<area shape="rect" id="node14" href="$d6/dfb/a00172.html" title="DaycareGenerator.cpp" alt="" coords="2274,229,2441,256"/>
+<area shape="rect" id="node15" href="$dc/d28/a00223.html" title="HouseholdGenerator.cpp" alt="" coords="2465,229,2647,256"/>
+<area shape="rect" id="node16" href="$d4/d9a/a00246.html" title="K12SchoolGenerator.cpp" alt="" coords="2671,229,2851,256"/>
+<area shape="rect" id="node17" href="$d3/d5e/a00275.html" title="PreSchoolGenerator.cpp" alt="" coords="2875,229,3053,256"/>
+<area shape="rect" id="node18" href="$d2/d82/a00279.html" title="PrimaryCommunityGenerator.cpp" alt="" coords="3077,229,3313,256"/>
+<area shape="rect" id="node19" href="$d9/d5e/a00295.html" title="SecondaryCommunityGenerator.cpp" alt="" coords="3337,229,3591,256"/>
+<area shape="rect" id="node20" href="$dd/dbb/a00330.html" title="WorkplaceGenerator.cpp" alt="" coords="3615,229,3793,256"/>
+<area shape="rect" id="node22" href="$d7/da0/a00198.html" title="GeoGridJSONReader.cpp" alt="" coords="4217,229,4393,256"/>
+<area shape="rect" id="node23" href="$d1/d72/a00204.html" title="GeoGridProtoReader.cpp" alt="" coords="4417,229,4596,256"/>
+<area shape="rect" id="node24" href="$dc/d98/a00225.html" title="HouseholdPopulator.cpp" alt="" coords="1887,229,2065,256"/>
+<area shape="rect" id="node25" href="$d8/d64/a00181.html" title="Initialize populations: implementation. " alt="" coords="1649,229,1812,256"/>
+<area shape="rect" id="node26" href="$d3/dd5/a00215.html" title="Initialize populations: implementation. " alt="" coords="3759,304,3902,331"/>
+<area shape="rect" id="node27" href="$d6/de1/a00233.html" title="Initialize populations: implementation. " alt="" coords="301,229,459,256"/>
+<area shape="rect" id="node28" href="$dd/d86/a00271.html" title="Core Population class. " alt="" coords="483,229,599,256"/>
+<area shape="rect" id="node31" href="$d0/d61/a00302.html" title="Implementation for the SimBuilder class. " alt="" coords="1657,155,1775,181"/>
+<area shape="rect" id="node33" href="$df/d17/a00231.html" title="Implementation for the Immunizer class. " alt="" coords="3627,155,3743,181"/>
+<area shape="rect" id="node35" href="$d7/ded/a00196.html" title="GeoGridConfig.cpp" alt="" coords="3868,229,4009,256"/>
+<area shape="rect" id="node40" href="$d2/d0a/a00333.html" title="WorkplacePopulator.h" alt="" coords="4034,229,4193,256"/>
+<area shape="rect" id="node45" href="$da/de7/a00210.html" title="GeoGridReaderFactory.cpp" alt="" coords="4507,155,4696,181"/>
 </map>

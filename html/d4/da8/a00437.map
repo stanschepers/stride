@@ -1,5 +1,7 @@
-<map id="DaycareGenerator.h" name="DaycareGenerator.h">
-<area shape="rect" id="node2" href="$dd/da2/a00192.html" title="Generator.h" alt="" coords="263,80,362,107"/>
-<area shape="rect" id="node3" href="$d9/d5e/a00295.html" title="Interface of RnMan. " alt="" coords="196,155,296,181"/>
-<area shape="rect" id="node4" href="$d6/d82/a00293.html" title="Interface of RnPcg. " alt="" coords="55,229,128,256"/>
+<map id="DaysOffInterface.h" name="DaysOffInterface.h">
+<area shape="rect" id="node2" href="$d5/de9/a00176.html" title="DaysOffAll class: everybody gets the day off. " alt="" coords="5,80,104,107"/>
+<area shape="rect" id="node3" href="$d9/d90/a00178.html" title="DaysOffNone class. " alt="" coords="129,80,247,107"/>
+<area shape="rect" id="node4" href="$db/dd9/a00179.html" title="DaysOffAll class: everybody gets the day off. " alt="" coords="271,80,398,107"/>
+<area shape="rect" id="node5" href="$d0/d81/a00180.html" title="DaysOffStandard class. " alt="" coords="422,80,565,107"/>
+<area shape="rect" id="node6" href="$db/da2/a00300.html" title="Implementation for the Simulator class. " alt="" coords="456,155,531,181"/>
 </map>

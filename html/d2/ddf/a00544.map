@@ -1,14 +1,5 @@
-<map id="InfectorExec.h" name="InfectorExec.h">
-<area shape="rect" id="node2" href="$d0/d1f/a00247.html" title="Header for the InfectorMap. " alt="" coords="24,80,133,107"/>
-<area shape="rect" id="node4" href="$d8/d17/a00304.html" title="Header for the Simulator class. " alt="" coords="667,80,725,107"/>
-<area shape="rect" id="node7" href="$dc/d0f/a00303.html" title="Implementation for the Simulator class. " alt="" coords="147,155,221,181"/>
-<area shape="rect" id="node3" href="$d3/d07/a00305.html" title="Implementation for the SimBuilder class. " alt="" coords="5,155,123,181"/>
-<area shape="rect" id="node5" href="$d0/da2/a00307.html" title="Header for the command line controller. " alt="" coords="629,155,763,181"/>
-<area shape="rect" id="node6" href="$d7/df2/a00312.html" title="Header for the command line controller. " alt="" coords="787,155,927,181"/>
-<area shape="rect" id="node8" href="$d2/d71/a00309.html" title="Implementation for SimRunner. " alt="" coords="952,155,1069,181"/>
-<area shape="rect" id="node9" href="$d9/db6/a00146.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="1093,155,1198,181"/>
-<area shape="rect" id="node10" href="$d9/d21/a00240.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="1222,155,1383,181"/>
-<area shape="rect" id="node11" href="$d2/dc8/a00242.html" title="Observer for SimEvents for commandline interface usage. " alt="" coords="1408,155,1549,181"/>
-<area shape="rect" id="node12" href="$d9/dd6/a00272.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="245,155,406,181"/>
-<area shape="rect" id="node13" href="$de/de9/a00322.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="431,155,604,181"/>
+<map id="K12SchoolGenerator.h" name="K12SchoolGenerator.h">
+<area shape="rect" id="node2" href="$da/deb/a00189.html" title="Generator.h" alt="" coords="263,80,362,107"/>
+<area shape="rect" id="node3" href="$d8/d0a/a00292.html" title="Interface of RnMan. " alt="" coords="196,155,296,181"/>
+<area shape="rect" id="node4" href="$de/d25/a00290.html" title="Interface of RnPcg. " alt="" coords="55,229,128,256"/>
 </map>

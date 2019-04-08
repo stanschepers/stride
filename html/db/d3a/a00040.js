@@ -1,8 +1,10 @@
 var a00040 =
 [
-    [ "Args", "db/d3a/a00040.html#a5468ac31eae54f8b993ffd14a62927d7", null ],
-    [ "PolygonPolicy", "db/d3a/a00040.html#a9f6a7862371bdb5991a62af32bfc44fe", null ],
-    [ "GetBoundingBox", "db/d3a/a00040.html#a37ead64e0fc7096f4d71ee2c2b5ce8d0", null ],
-    [ "Contains", "db/d3a/a00040.html#aa76a2a2617b5fd1ae1ff45891adf65b5", null ],
-    [ "m_poly", "db/d3a/a00040.html#a69ddb55e11e6fa42222646a21432bfb1", null ]
+    [ "Populator", "db/d3a/a00040.html#a555413f57e921b72913adb79172abb9d", null ],
+    [ "~Populator", "db/d3a/a00040.html#ac218f00867d01c6507088582162710c9", null ],
+    [ "Apply", "db/d3a/a00040.html#a2f009fc6c0acb9a100568304204e03d5", null ],
+    [ "GetNearbyPools", "db/d3a/a00040.html#a720e1d4541eb3af0b9b2bd6089e8a4ce", null ],
+    [ "MakeChoice", "db/d3a/a00040.html#af7b9250da3bb9be0c877028a56bf5b2a", null ],
+    [ "m_rn_man", "db/d3a/a00040.html#aea1433eb78a263d44fe81683ff65987e", null ],
+    [ "m_logger", "db/d3a/a00040.html#aeecc8afde4f92991f8140a1f3145aeda", null ]
 ];

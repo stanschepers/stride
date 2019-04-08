@@ -1,4 +1,5 @@
 var a00043 =
 [
-    [ "Apply", "d6/d42/a00043.html#a559d7ad22eb399e5ee7c53f0af92927e", null ]
+    [ "Apply", "d6/d42/a00043.html#adb7003e2d40127bcf9bc4a0576815e5a", null ],
+    [ "AddPools", "d6/d42/a00043.html#a9c1eddc731f4fc27d04e474aa560aab4", null ]
 ];
