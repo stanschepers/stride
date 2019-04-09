@@ -14,9 +14,8 @@
 
 #include "HouseholdJSONReader.h"
 
-#include <nlohmann/json.hpp>
 #include <boost/lexical_cast.hpp>
-#include <sstream>
+#include <nlohmann/json.hpp>
 
 namespace geopop {
 
@@ -44,37 +43,26 @@ void HouseholdJSONReader::SetReferenceHouseholds(unsigned int&                  
 
         unsigned int p_count = 0U;
 
-        for (auto householdIt = data["householdsList"].begin(); householdIt != data["householdsList"].end();
-             ++householdIt) {
-                try {
-                        const vector<unsigned int>& household = *householdIt;
+        for (const json& household : data["householdsList"]) {
 
+                if (household[0].is_number()) {
                         p_count += household.size();
                         ref_ages.emplace_back(household);
-
-                } catch (const json::type_error& error) {
-                        const vector<string>& household = *householdIt;
-
+                } else {
                         vector<unsigned int> householdConverted;
                         householdConverted.reserve(household.size());
 
-                        stringstream stream;
-                        stream << "[";
-
                         for (const auto& age : household) {
-                                householdConverted.push_back(boost::lexical_cast<unsigned int>(age));
-                                stream << "\"" << age << "\",";
+                                householdConverted.push_back(boost::lexical_cast<unsigned int>(age.get<string>()));
                         }
-
-                        stream.seekp(-1, stream.cur);
-                        stream << "]";
 
                         p_count += household.size();
                         ref_ages.emplace_back(householdConverted);
 
                         string conversionWarning =
-                            "HouseholdJSONReader: STRING interpreted as UNSIGNED INT while reading " + stream.str();
+                            "HouseholdJSONReader: STRING interpreted as UNSIGNED INT while reading " + household.dump();
 
+                        cerr << conversionWarning << endl;
                         m_logger->warn(conversionWarning);
                 }
         }
