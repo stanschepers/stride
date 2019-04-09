@@ -22,18 +22,25 @@ Window {
         zoomLevel: 10
         focus: true
 
-        Keys.onSpacePressed: root.addLocation()
-        Keys.onReturnPressed: map.clearMapItems()
+//        Keys.onSpacePressed: root.addLocation()
+//        Keys.onReturnPressed: map.clearMapItems()
     }
 
-    function addLocation(){
+//    Connections {
+//        target: MapController
+//        onDoAddLocation: {
+//            addLocation(latitude, longtitude, radius)
+//        }
+//    }
+
+    function addLocation(latitude, longtitude, radius){
         var component = Qt.createComponent("location.qml");
         if (component.status == Component.Ready) {
             var location = component.createObject(map);
-            location.coorLat = 50.8503
-            location.coorLong = 4.3517
-            location.rad = 5000
-            location.col = '#800000FF'
+            location.coorLat = latitude
+            location.coorLong = longtitude
+            location.rad = radius
+            location.col = Qt.rgba(Math.random(),Math.random(),Math.random(), 0.5);
             map.addMapItem(location)
         }
         else

@@ -5,7 +5,7 @@ MapCircle {
     property real coorLat;
     property real coorLong;
     property real rad;
-    property string col;
+    property color col;
     center {
         latitude: coorLat
         longitude: coorLong

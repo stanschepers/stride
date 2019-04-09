@@ -5,9 +5,11 @@ set(CMAKE_AUTORCC ON)
 
 set(SOURCE_FILES
         source/main.cpp
+        source/MapController.cpp
         )
 
 set(HEADER_FILES
+        source/MapController.h
         )
 
 set(UI_FILES
@@ -30,6 +32,6 @@ add_executable(StrideVisualization
 #        ${moc_sources}
         )
 
-target_link_libraries(StrideVisualization PUBLIC Qt5::Widgets Qt5::Core Qt5::Quick libstride)
+target_link_libraries(StrideVisualization PUBLIC Qt5::Widgets Qt5::Core Qt5::Quick) # libstride)
 
 install(FILES ${QML_FILES} DESTINATION ${BIN_INSTALL_LOCATION}/Qt5Stride)
