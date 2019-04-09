@@ -16,18 +16,66 @@
 #include "EpiOutputJSONReader.h"
 
 #include <memory>
-#include <iostream>
+#include <fstream>
 
 namespace visualization {
 
-EpiOutputJSONReader::EpiOutputJSONReader(unique_ptr<istream> inputStream, Population* pop)
-    : EpiOutputReader(move(inputStream), pop)
+EpiOutputJSONReader::EpiOutputJSONReader(std::unique_ptr<std::istream> inputStream, EpiOutput& epiOutput)
+    : EpiOutputReader(move(inputStream), epiOutput)
 {
 }
 
 void EpiOutputJSONReader::Read()
 {
-        std::cout << "implementation?" << std::endl;
+        m_epiOutput["Daycare"]["Total"] = 0;
+        m_epiOutput["Daycare"]["Susceptible"] = 0;
+        m_epiOutput["Daycare"]["Infected"] = 0;
+        m_epiOutput["Daycare"]["Infectious"] = 0;
+        m_epiOutput["Daycare"]["Symptomatic"] = 0;
+        m_epiOutput["Daycare"]["Recovered"] = 0;
+        m_epiOutput["Daycare"]["Immune"] = 0;
+
+        m_epiOutput["PreSchool"]["Total"] = 0;
+        m_epiOutput["PreSchool"]["Susceptible"] = 0;
+        m_epiOutput["PreSchool"]["Infected"] = 0;
+        m_epiOutput["PreSchool"]["Infectious"] = 0;
+        m_epiOutput["PreSchool"]["Symptomatic"] = 0;
+        m_epiOutput["PreSchool"]["Recovered"] = 0;
+        m_epiOutput["PreSchool"]["Immune"] = 0;
+
+        m_epiOutput["K12School"]["Total"] = 0;
+        m_epiOutput["K12School"]["Susceptible"] = 0;
+        m_epiOutput["K12School"]["Infected"] = 0;
+        m_epiOutput["K12School"]["Infectious"] = 0;
+        m_epiOutput["K12School"]["Symptomatic"] = 0;
+        m_epiOutput["K12School"]["Recovered"] = 0;
+        m_epiOutput["K12School"]["Immune"] = 0;
+
+        m_epiOutput["College"]["Total"] = 0;
+        m_epiOutput["College"]["Susceptible"] = 0;
+        m_epiOutput["College"]["Infected"] = 0;
+        m_epiOutput["College"]["Infectious"] = 0;
+        m_epiOutput["College"]["Symptomatic"] = 0;
+        m_epiOutput["College"]["Recovered"] = 0;
+        m_epiOutput["College"]["Immune"] = 0;
+
+        m_epiOutput["Workplace"]["Total"] = 0;
+        m_epiOutput["Workplace"]["Susceptible"] = 0;
+        m_epiOutput["Workplace"]["Infected"] = 0;
+        m_epiOutput["Workplace"]["Infectious"] = 0;
+        m_epiOutput["Workplace"]["Symptomatic"] = 0;
+        m_epiOutput["Workplace"]["Recovered"] = 0;
+        m_epiOutput["Workplace"]["Immune"] = 0;
+
+        m_epiOutput["Senior"]["Total"] = 0;
+        m_epiOutput["Senior"]["Susceptible"] = 0;
+        m_epiOutput["Senior"]["Infected"] = 0;
+        m_epiOutput["Senior"]["Infectious"] = 0;
+        m_epiOutput["Senior"]["Symptomatic"] = 0;
+        m_epiOutput["Senior"]["Recovered"] = 0;
+        m_epiOutput["Senior"]["Immune"] = 0;
+
+
 //        boost::property_tree::ptree root;
 //        try {
 //                boost::property_tree::read_json(*m_inputStream, root);

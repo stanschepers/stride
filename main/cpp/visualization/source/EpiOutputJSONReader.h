@@ -16,13 +16,13 @@
 #pragma once
 
 #include "EpiOutputReader.h"
-#include "contact/ContactPool.h"
-#include "contact/ContactType.h"
-#include "geopop/Location.h"
+#include "EpiOutput.h"
 
-#include <boost/property_tree/ptree_fwd.hpp>
+#include <memory>
 
 namespace visualization {
+
+class EpiOutputReader;
 
 /**
  * An implementation of the EpiOutputReader using JSON.
@@ -32,7 +32,7 @@ class EpiOutputJSONReader : public EpiOutputReader
 {
 public:
         /// Construct the EpiOutputJSONReader with the istream which contains the JSON.
-        EpiOutputJSONReader(std::unique_ptr<std::istream> inputStream);
+        EpiOutputJSONReader(std::unique_ptr<std::istream> inputStream, EpiOutput& epiOutput);
 
         /// No copy constructor.
         EpiOutputJSONReader(const EpiOutputJSONReader&) = delete;

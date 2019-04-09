@@ -1,3 +1,5 @@
+set(CMAKE_CXX_STANDARD 17)
+
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
@@ -16,7 +18,7 @@ set(HEADER_FILES
         source/EpiOutputReaderFactory.h
         source/EpiOutputJSONReader.h
         source/MapController.h
-        )
+        source/EpiOutput.h)
 
 set(UI_FILES
         )

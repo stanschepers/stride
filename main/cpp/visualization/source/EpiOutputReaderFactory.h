@@ -14,11 +14,11 @@
  */
 
 #include <memory>
-#include <string>
+
+#include "EpiOutputReader.h"
+#include "EpiOutput.h"
 
 namespace visualization {
-
-class EpiOutputReader;
 
 /**
  * A Factory for creating the correct implementation of a EpiOutputReader based on the filename extension
@@ -27,7 +27,7 @@ class EpiOutputReaderFactory
 {
 public:
         /// Create a EpiOutputReader based on the provided extension in the filename
-        std::shared_ptr<EpiOutputReader> CreateReader(const std::string& filename) const;
+        std::shared_ptr<EpiOutputReader> CreateReader(const std::string& filename, EpiOutput& epiOutput) const;
 };
 
 } // namespace visualization

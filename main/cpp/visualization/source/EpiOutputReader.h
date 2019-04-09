@@ -13,11 +13,14 @@
  *  Copyright 2019, Jan Broeckhove and Bistromatics group.
  */
 
+#pragma once
+
 #include <istream>
-#include <map>
 #include <memory>
 #include <tuple>
 #include <vector>
+
+#include "EpiOutput.h"
 
 namespace visualization {
 
@@ -25,26 +28,27 @@ namespace visualization {
  * An abstract base class for creating a map with the epi-output that was read from a file, can be implemented
  * using multiple file types (proto, hdf5 and json are currently implemented)
  */
-class GeoGridReader
+class EpiOutputReader
 {
 public:
         /// Parametrized constructor.
-        EpiOutputReader(std::unique_ptr<std::istream> inputStream);
+        EpiOutputReader(std::unique_ptr<std::istream> inputStream, EpiOutput& epiOutput);
 
         /// No copy constructor.
         EpiOutputReader(const EpiOutputReader&) = delete;
 
         /// No copy assignement.
-        EpiOutputReader operator=(const EpiOutputReader&) = delete;
+        EpiOutputReader& operator=(const EpiOutputReader&) = delete;
 
         /// Default destructor.
         virtual ~EpiOutputReader() = default;
 
-        /// Perform the actual read and return the created GeoGrid.
+        /// Perform the actual read and return the created EpiOutput.
         virtual void Read() = 0;
 
 protected:
         std::unique_ptr<std::istream> m_inputStream; ///< File to read.
+        EpiOutput& m_epiOutput; ///< Resulted epi-output
 };
 
 } // namespace visualization

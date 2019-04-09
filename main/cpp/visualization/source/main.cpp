@@ -4,11 +4,17 @@
 #include <QQmlContext>
 #include <iostream>
 
-//#include "MapController.h"
+#include "MapController.h"
+
+#include <iostream>
 
 
 int main(int argc, char *argv[]) {
-    std::string filename = argv[0];
+//    std::string filename = argv[0];
+    visualization::MapController ctrl("/home/laurens/Desktop/test.json");
+
+
+
 
     QGuiApplication app(argc, argv);
 

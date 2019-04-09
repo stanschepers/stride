@@ -13,15 +13,12 @@
  *  Copyright 2018, Jan Broeckhove and Bistromatics group.
  */
 
-#include "GeoGridReader.h"
-
-#include "geopop/GeoGrid.h"
-#include "geopop/Location.h"
+#include "EpiOutputReader.h"
 
 namespace visualization {
 
-GeoGridReader::GeoGridReader(std::unique_ptr<std::istream> inputStream)
-    : m_inputStream(std::move(inputStream)))
+EpiOutputReader::EpiOutputReader(std::unique_ptr<std::istream> inputStream, EpiOutput& epiOutput)
+    : m_inputStream(std::move(inputStream)), m_epiOutput(epiOutput)
 {
 }
 

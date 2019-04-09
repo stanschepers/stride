@@ -2,6 +2,7 @@ import QtQuick 2.12
 import QtQuick.Window 2.0
 import QtLocation 5.6
 import QtPositioning 5.6
+import QtQuick.Controls 1.4
 
 Window {
     id: root
@@ -22,8 +23,8 @@ Window {
         zoomLevel: 10
         focus: true
 
-//        Keys.onSpacePressed: root.addLocation()
-//        Keys.onReturnPressed: map.clearMapItems()
+        //Keys.onSpacePressed: root.addLocation(50.8503, 4.3517, 3000)
+        //Keys.onReturnPressed: map.clearMapItems()
     }
 
     function addLocation(latitude, longtitude, radius){
@@ -38,5 +39,21 @@ Window {
         }
         else
             console.log("Error loading component:", component.errorString());
+    }
+
+    Slider {
+        id: zoomSlider;
+        z: map.z + 3
+        minimumValue: map.minimumZoomLevel;
+        maximumValue: map.maximumZoomLevel;
+        anchors.margins: 10
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        orientation : Qt.Horizontal
+        value: map.zoomLevel
+        onValueChanged: {
+            map.zoomLevel = value
+        }
     }
 }
