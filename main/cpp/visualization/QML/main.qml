@@ -26,13 +26,6 @@ Window {
 //        Keys.onReturnPressed: map.clearMapItems()
     }
 
-//    Connections {
-//        target: MapController
-//        onDoAddLocation: {
-//            addLocation(latitude, longtitude, radius)
-//        }
-//    }
-
     function addLocation(latitude, longtitude, radius){
         var component = Qt.createComponent("location.qml");
         if (component.status == Component.Ready) {

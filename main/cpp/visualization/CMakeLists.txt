@@ -4,11 +4,17 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
 set(SOURCE_FILES
+        source/EpiOutputReader.cpp
+        source/EpiOutputReaderFactory.cpp
+        source/EpiOutputJSONReader.cpp
         source/main.cpp
         source/MapController.cpp
         )
 
 set(HEADER_FILES
+        source/EpiOutputReader.h
+        source/EpiOutputReaderFactory.h
+        source/EpiOutputJSONReader.h
         source/MapController.h
         )
 

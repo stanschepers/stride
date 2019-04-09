@@ -18,7 +18,6 @@ int main(int argc, char *argv[]) {
     QObject *root = engine.rootObjects()[0];
 
 //    MapController ctrl;
-//    ctrl.addLocation(50.8503, 4.3517, 3000);
     QMetaObject::invokeMethod(root, "addLocation", Q_ARG(QVariant, QVariant::fromValue(50.8503)),
                               Q_ARG(QVariant, QVariant::fromValue(4.3517)), Q_ARG(QVariant, QVariant::fromValue(3000)));
 
