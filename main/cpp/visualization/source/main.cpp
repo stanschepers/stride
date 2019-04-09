@@ -1,6 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQuickView>
+#include <QQmlContext>
+
 #include "execs/StanController.h"
 
 using namespace std;
@@ -10,13 +12,10 @@ using namespace boost::property_tree;
 
 int main(int argc, char *argv[])
 {
-    QGuiApplication app(argc,argv);
-    QQuickView view;
-//    ptree configPt;
-//    StanController ctrl(configPt);
-    view.setSource(QUrl(QStringLiteral("./bin/Qt5Stride/main.qml")));
-//    view.setWidth(360);
-//    view.setHeight(640);
-//    view.show();
+    QGuiApplication app(argc, argv);
+
+    QQmlApplicationEngine engine;
+    engine.load(QUrl(QStringLiteral("./bin/Qt5Stride/main.qml")));
+
     return app.exec();
 }

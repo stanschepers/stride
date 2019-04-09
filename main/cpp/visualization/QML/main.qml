@@ -1,9 +1,10 @@
-import QtQuick 2.0
+import QtQuick 2.12
 import QtQuick.Window 2.0
 import QtLocation 5.6
 import QtPositioning 5.6
 
 Window {
+    id: root
     width: 512
     height: 512
     visible: true
@@ -11,17 +12,31 @@ Window {
     Plugin {
         id: mapPlugin
         name: "osm" // "mapboxgl", "esri", ...
-        // specify plugin parameters if necessary
-        // PluginParameter {
-        //     name:
-        //     value:
-        // }
     }
 
     Map {
+        id: map
         anchors.fill: parent
         plugin: mapPlugin
-        center: QtPositioning.coordinate(59.91, 10.75) // Oslo
-        zoomLevel: 14
+        center: QtPositioning.coordinate(50.8503, 4.3517) // Brussels
+        zoomLevel: 10
+        focus: true
+
+        Keys.onSpacePressed: root.addLocation()
+        Keys.onReturnPressed: map.clearMapItems()
+    }
+
+    function addLocation(){
+        var component = Qt.createComponent("location.qml");
+        if (component.status == Component.Ready) {
+            var location = component.createObject(map);
+            location.coorLat = 50.8503
+            location.coorLong = 4.3517
+            location.rad = 5000
+            location.col = '#800000FF'
+            map.addMapItem(location)
+        }
+        else
+            console.log("Error loading component:", component.errorString());
     }
 }
