@@ -6,8 +6,8 @@ import QtQuick.Controls 1.4
 
 Window {
     id: root
-    width: 512
-    height: 512
+    width: 1024
+    height: 1024
     visible: true
 
     Plugin {
@@ -21,39 +21,61 @@ Window {
         plugin: mapPlugin
         center: QtPositioning.coordinate(50.8503, 4.3517) // Brussels
         zoomLevel: 10
-        focus: true
+        //focus: true
 
         //Keys.onSpacePressed: root.addLocation(50.8503, 4.3517, 3000)
         //Keys.onReturnPressed: map.clearMapItems()
     }
 
-    function addLocation(latitude, longtitude, radius){
+    function addLocation(locationId, latitude, longtitude, radius) {
         var component = Qt.createComponent("location.qml");
         if (component.status == Component.Ready) {
             var location = component.createObject(map);
-            location.coorLat = latitude
-            location.coorLong = longtitude
-            location.rad = radius
+            location.coorLat = latitude;
+            location.coorLong = longtitude;
+            location.rad = radius;
             location.col = Qt.rgba(Math.random(),Math.random(),Math.random(), 0.5);
-            map.addMapItem(location)
+            location.idName = locationId;
+            map.addMapItem(location);
+        }
+        var componentCentre = Qt.createComponent("location.qml");
+        if (componentCentre.status == Component.Ready) {
+            var centerCircle = componentCentre.createObject(map);
+            centerCircle.coorLat = latitude;
+            centerCircle.coorLong = longtitude;
+            centerCircle.rad = radius / 100;
+            centerCircle.col = "red";
+            centerCircle.idName = "center" + locationId;
+            map.addMapItem(centerCircle);
         }
         else
             console.log("Error loading component:", component.errorString());
     }
 
     Slider {
-        id: zoomSlider;
+        id: daySlider;
         z: map.z + 3
-        minimumValue: map.minimumZoomLevel;
-        maximumValue: map.maximumZoomLevel;
         anchors.margins: 10
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         anchors.right: parent.right
         orientation : Qt.Horizontal
-        value: map.zoomLevel
         onValueChanged: {
-            map.zoomLevel = value
+            ctrl.setDay = value
         }
+    }
+
+    function initialize(zoomlevel, centerLat, centerLong, firstDay, lastDay) {
+//        console.log(zoomlevel)
+//        console.log(centerLat)
+//        console.log(centerLong)
+//        console.log(firstDay)
+//        console.log(lastDay)
+        map.zoomLevel = zoomlevel;
+        map.center = QtPositioning.coordinate(centerLat, centerLong);
+
+        daySlider.minimumValue = firstDay;
+        daySlider.maximumValue = lastDay;
+        daySlider.value = firstDay;
     }
 }
