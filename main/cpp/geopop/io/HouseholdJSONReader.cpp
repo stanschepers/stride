@@ -15,7 +15,6 @@
 #include "HouseholdJSONReader.h"
 
 #include <boost/lexical_cast.hpp>
-#include <nlohmann/json.hpp>
 
 namespace geopop {
 
@@ -26,6 +25,21 @@ using json = nlohmann::json;
 HouseholdJSONReader::HouseholdJSONReader(std::unique_ptr<std::istream> inputStream)
     : m_input_stream(std::move(inputStream))
 {
+}
+
+unsigned int HouseholdJSONReader::parseAge(const nlohmann::json& age) const
+{
+        if (age.is_string()) {
+                string conversionWarning =
+                    "HouseholdJSONReader: STRING interpreted as UNSIGNED INT while reading " + age.dump();
+
+                cerr << conversionWarning << endl;
+                m_logger->warn(conversionWarning);
+
+                return boost::lexical_cast<unsigned int>(age.get<string>());
+        } else {
+                return age.get<unsigned int>();
+        }
 }
 
 void HouseholdJSONReader::SetReferenceHouseholds(unsigned int&                           ref_person_count,
@@ -45,26 +59,16 @@ void HouseholdJSONReader::SetReferenceHouseholds(unsigned int&                  
 
         for (const json& household : data["householdsList"]) {
 
-                if (household[0].is_number()) {
-                        p_count += household.size();
-                        ref_ages.emplace_back(household);
-                } else {
-                        vector<unsigned int> householdConverted;
-                        householdConverted.reserve(household.size());
+                vector<unsigned int> parsedHH;
+                parsedHH.reserve(household.size());
 
-                        for (const auto& age : household) {
-                                householdConverted.push_back(boost::lexical_cast<unsigned int>(age.get<string>()));
-                        }
-
-                        p_count += household.size();
-                        ref_ages.emplace_back(householdConverted);
-
-                        string conversionWarning =
-                            "HouseholdJSONReader: STRING interpreted as UNSIGNED INT while reading " + household.dump();
-
-                        cerr << conversionWarning << endl;
-                        m_logger->warn(conversionWarning);
+                for (const auto& age : household) {
+                        parsedHH.push_back(parseAge(age));
                 }
+
+                p_count += household.size();
+                ref_ages.emplace_back(parsedHH);
+                
         }
         ref_person_count = p_count;
 }

@@ -17,6 +17,7 @@
 #include "HouseholdReader.h"
 
 #include <vector>
+#include <nlohmann/json.hpp>
 
 namespace stride {
 
@@ -43,6 +44,10 @@ public:
 private:
         /// Input stream  connected to input data file.
         std::unique_ptr<std::istream> m_input_stream;
+        /// Logger used by HouseholdJSONReader.
+        std::shared_ptr<spdlog::logger> m_logger;
+        /// Parse age
+        unsigned int parseAge(const nlohmann::json& age) const;
 };
 
 } // namespace geopop
