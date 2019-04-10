@@ -47,9 +47,11 @@ void GeoGridJSONReader::Read()
                 throw runtime_error("An error occured while parsing JSON. Please make sure valid JSON is provided.");
         }
 
+        json dummyJSON;
+
         auto& geoGrid   = m_population->RefGeoGrid();
-        auto& locations = data["locations"];
-        auto& people    = data["persons"];
+        auto& locations = data["locations"].is_string() ? dummyJSON : data["locations"];
+        auto& people    = data["persons"].is_string() ? dummyJSON : data["persons"];
 
         for (const auto& person : people) {
                 auto stridePerson               = ParsePerson(person);
@@ -66,55 +68,76 @@ void GeoGridJSONReader::Read()
         m_people.clear();
 }
 
+template <typename T>
+T GeoGridJSONReader::ParseValue(const nlohmann::json& value) const
+{
+        if (value.is_string()) {
+                return boost::lexical_cast<T>(value.get<string>());
+        } else {
+                return value.get<T>();
+        }
+}
+template <>
+string GeoGridJSONReader::ParseValue(const nlohmann::json& value) const
+{
+        return value.get<string>();
+}
+
 stride::Person* GeoGridJSONReader::ParsePerson(const nlohmann::json& person)
 {
-        const auto id   = boost::lexical_cast<unsigned int>(person["id"]);
-        const auto age  = boost::lexical_cast<unsigned int>(person["age"]);
-        const auto hhId = boost::lexical_cast<unsigned int>(person["Household"]);
-        const auto dcId = boost::lexical_cast<unsigned int>(person["Daycare"]);
-        const auto psId = boost::lexical_cast<unsigned int>(person["PreSchool"]);
-        const auto ksId = boost::lexical_cast<unsigned int>(person["K12School"]);
-        const auto coId = boost::lexical_cast<unsigned int>(person["College"]);
-        const auto wpId = boost::lexical_cast<unsigned int>(person["Workplace"]);
-        const auto pcId = boost::lexical_cast<unsigned int>(person["PrimaryCommunity"]);
-        const auto scId = boost::lexical_cast<unsigned int>(person["SecondaryCommunity"]);
+        const auto id   = ParseValue<unsigned int>(person["id"]);
+        const auto age  = ParseValue<unsigned int>(person["age"]);
+        const auto hhId = ParseValue<unsigned int>(person["Household"]);
+        const auto dcId = ParseValue<unsigned int>(person["Daycare"]);
+        const auto psId = ParseValue<unsigned int>(person["PreSchool"]);
+        const auto ksId = ParseValue<unsigned int>(person["K12School"]);
+        const auto coId = ParseValue<unsigned int>(person["College"]);
+        const auto wpId = ParseValue<unsigned int>(person["Workplace"]);
+        const auto pcId = ParseValue<unsigned int>(person["PrimaryCommunity"]);
+        const auto scId = ParseValue<unsigned int>(person["SecondaryCommunity"]);
 
         return m_population->CreatePerson(id, age, hhId, dcId, psId, ksId, coId, wpId, pcId, scId);
 }
 
 std::shared_ptr<Location> GeoGridJSONReader::ParseLocation(const nlohmann::json& location)
 {
-        const auto id         = boost::lexical_cast<unsigned int>(location["id"]);
-        const auto name       = location["name"];
-        const auto province   = boost::lexical_cast<unsigned int>(location["province"]);
-        const auto population = boost::lexical_cast<unsigned int>(location["population"]);
+        const auto id         = ParseValue<unsigned int>(location["id"]);
+        const auto name       = ParseValue<string>(location["name"]);
+        const auto province   = ParseValue<unsigned int>(location["province"]);
+        const auto population = ParseValue<unsigned int>(location["population"]);
         const auto coordinate = ParseCoordinate(location["coordinate"]);
 
         auto locationPtr = make_shared<Location>(id, province, coordinate, name, population);
 
-        for (const auto& contactPool : location["contactPools"]) {
-                const string type = contactPool["class"];
+        if (location.find("contactPools") != location.end() && location["contactPools"].is_array()) {
+                for (const auto& contactPool : location["contactPools"]) {
+                        const auto type = ParseValue<string>(contactPool["class"]);
 
-                static const map<string, Id> types = {{"Daycare", Id::Daycare},
-                                                      {"PreSchool", Id::PreSchool},
-                                                      {"K12School", Id::K12School},
-                                                      {"PrimaryCommunity", Id::PrimaryCommunity},
-                                                      {"SecondaryCommunity", Id::SecondaryCommunity},
-                                                      {"College", Id::College},
-                                                      {"Household", Id::Household},
-                                                      {"Workplace", Id::Workplace}};
+                        static const map<string, Id> types = {{"Daycare", Id::Daycare},
+                                                              {"PreSchool", Id::PreSchool},
+                                                              {"K12School", Id::K12School},
+                                                              {"PrimaryCommunity", Id::PrimaryCommunity},
+                                                              {"SecondaryCommunity", Id::SecondaryCommunity},
+                                                              {"College", Id::College},
+                                                              {"Household", Id::Household},
+                                                              {"Workplace", Id::Workplace}};
 
-                const auto typeId = types.at(type);
+                        const auto typeId = types.at(type);
 
-                for (const auto& pool : contactPool["pools"]) {
-                        ParseContactPool(locationPtr, pool, typeId);
+                        if (contactPool.find("pools") != contactPool.end() && contactPool["pools"].is_array()) {
+                                for (const auto& pool : contactPool["pools"]) {
+                                        ParseContactPool(locationPtr, pool, typeId);
+                                }
+                        }
                 }
         }
 
-        for (const auto& commute : location["commutes"]) {
-                const auto to         = boost::lexical_cast<unsigned int>(commute["to"]);
-                const auto proportion = boost::lexical_cast<double>(commute["proportion"]);
-                m_commutes.emplace_back(id, to, proportion);
+        if (location.find("commutes") != location.end() && location["commutes"].is_array()){
+                for (const auto& commute : location["commutes"]) {
+                        const auto to         = ParseValue<unsigned int>(commute["to"]);
+                        const auto proportion = ParseValue<double>(commute["proportion"]);
+                        m_commutes.emplace_back(id, to, proportion);
+                }
         }
 
         return locationPtr;
@@ -122,8 +145,8 @@ std::shared_ptr<Location> GeoGridJSONReader::ParseLocation(const nlohmann::json&
 
 Coordinate GeoGridJSONReader::ParseCoordinate(const nlohmann::json& coordinate)
 {
-        const auto longitude = boost::lexical_cast<double>(coordinate["longitude"]);
-        const auto latitude  = boost::lexical_cast<double>(coordinate["latitude"]);
+        const auto longitude = ParseValue<double>(coordinate["longitude"]);
+        const auto latitude  = ParseValue<double>(coordinate["latitude"]);
         return {longitude, latitude};
 }
 
@@ -134,12 +157,14 @@ void GeoGridJSONReader::ParseContactPool(const shared_ptr<Location>& location, c
         auto contactPoolPtr = m_population->RefPoolSys().CreateContactPool(type);
         location->RefPools(type).emplace_back(contactPoolPtr);
 
-        for (const auto& id : contactPool["people"]) {
-                const auto  person_id = boost::lexical_cast<unsigned int>(id);
-                const auto& person    = m_people.at(person_id);
-                contactPoolPtr->AddMember(person);
-                // Update original pool id with new pool id used in the population
-                person->SetPoolId(type, contactPoolPtr->GetId());
+        if (contactPool.find("people") != contactPool.end() && contactPool["people"].is_array()){
+                for (const auto& id : contactPool["people"]) {
+                        const auto  person_id = ParseValue<unsigned int>(id);
+                        const auto& person    = m_people.at(person_id);
+                        contactPoolPtr->AddMember(person);
+                        // Update original pool id with new pool id used in the population
+                        person->SetPoolId(type, contactPoolPtr->GetId());
+                }
         }
 }
 } // namespace geopop

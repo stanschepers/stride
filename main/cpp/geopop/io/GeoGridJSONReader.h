@@ -55,6 +55,9 @@ private:
         /// Create a ContactPool based on the information stored in the provided JSON.
         void ParseContactPool(const std::shared_ptr<Location>& location, const nlohmann::json& contactPool,
                               stride::ContactType::Id type);
+        /// Parse value of type T
+        template <typename T>
+        T ParseValue(const nlohmann::json& value) const;
 };
 
 } // namespace geopop
