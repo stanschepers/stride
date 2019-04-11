@@ -83,8 +83,8 @@ public:
         /// Get Location's population fraction (of the total populaion count).
         double GetPopFraction() const;
 
-        /// Get Population id for Households references.
-        unsigned int GetPopulationId() const { return m_population_id;}
+        /// Get household type for Households references.
+        unsigned int GetHouseHoldType() const { return m_household_type;}
 
         /// Sets the Coordinate of this Location.
         void SetCoordinate(const Coordinate& coordinate) { m_coordinate = coordinate; }
@@ -95,8 +95,8 @@ public:
         /// Set Location's population fraction (of the total populaion count).
         void SetPopFraction(double relativePopulation);
 
-        /// Set Population id for Households references.
-        void SetPopulationId(unsigned int populationId) {m_population_id = populationId;}
+        /// Set household type for Households references.
+        void SetHouseHoldType(unsigned int houseHoldType) {m_household_type = houseHoldType;}
 
 public:
         /// Access through const reference to ContactPools of type 'id'.
@@ -161,7 +161,7 @@ private:
         unsigned int m_pop_count;        ///< Population count (number of individuals) at this Location.
         double       m_pop_fraction;     ///< Fraction of whole population at this Location.
         unsigned int m_province;         ///< Province id.
-        unsigned int m_population_id;    ///< Population id.
+        unsigned int m_household_type;    ///<
 
         /// Incomming commutes stored as pair of Location and fraction of population at that Location.
         std::vector<std::pair<Location*, double>> m_inCommutes;
