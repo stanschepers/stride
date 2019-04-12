@@ -18,8 +18,7 @@
 #include "EpiOutputWriter.h"
 #include "geopop/Location.h"
 
-#include <boost/property_tree/ptree.hpp>
-#include <set>
+#include <nlohmann/json.hpp>
 
 namespace stride {
 class ContactPool;
@@ -37,27 +36,15 @@ public:
         /// Construct the EpiOutputJSONWriter.
         EpiOutputJSONWriter();
 
-        /// Write the provided GeoGrid epi-output to the proved ostream in JSON format.
+        /// Write the provided GeoGrid epi-output to the provided ostream in JSON format.
         void Write(GeoGrid& geoGrid, std::ostream& stream) override;
 
 private:
-//        /// Create a Boost Property Tree containing all info needed to reconstruct a ContactCenter.
-//        boost::property_tree::ptree WriteContactCenter(std::shared_ptr<ContactCenter> contactCenter);
-//
-//        /// Create a Boost Property Tree containing all info needed to reconstruct a ContactPool.
-//        boost::property_tree::ptree WriteContactPool(stride::ContactPool* contactPool);
-//
-//        /// Create a Boost Property Tree containing all info needed to reconstruct a Coordinate.
-//        boost::property_tree::ptree WriteCoordinate(const Coordinate& coordinate);
+        /// Create a JSOM object containing all info from a location needed to construct an epi-output
+        nlohmann::json WriteLocation(const Location& location);
 
-        /// Create a Boost Property Tree containing all info needed to reconstruct a Location.
-        boost::property_tree::ptree WriteLocation(const Location& location);
-
-//        /// Create a Boost Property Tree containing all info needed to reconstruct a Person.
-//        boost::property_tree::ptree WritePerson(stride::Person* person);
-
-private:
-        std::set<stride::Person*> m_persons_found; ///< The persons found when looping over the ContactPools.
+        /// Create a JSOM object containing all info from a location needed to construct an epi-output
+        nlohmann::json UpdateLocation(const Location& location);
 };
 
 } // namespace geopop
