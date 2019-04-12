@@ -74,6 +74,9 @@ endif
 ifneq ($(BOOST_NO_SYSTEM_PATHS),)
 	CMAKE_ARGS += -DBOOST_NO_SYSTEM_PATHS:BOOL=$(BOOST_NO_SYSTEM_PATHS)
 endif
+ifneq ($(STRIDE_FORCE_NO_PROTOC),)
+	CMAKE_ARGS += -DSTRIDE_FORCE_NO_PROTOC:BOOL=$(STRIDE_FORCE_NO_PROTOC)
+endif
 #============================================================================
 #   Build directory.
 #============================================================================
