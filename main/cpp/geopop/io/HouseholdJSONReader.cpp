@@ -30,12 +30,6 @@ HouseholdJSONReader::HouseholdJSONReader(std::unique_ptr<std::istream> inputStre
 unsigned int HouseholdJSONReader::parseAge(const nlohmann::json& age) const
 {
         if (age.is_string()) {
-                string conversionWarning =
-                    "HouseholdJSONReader: STRING interpreted as UNSIGNED INT while reading " + age.dump();
-
-                cerr << conversionWarning << endl;
-                m_logger->warn(conversionWarning);
-
                 return boost::lexical_cast<unsigned int>(age.get<string>());
         } else {
                 return age.get<unsigned int>();
@@ -51,7 +45,6 @@ void HouseholdJSONReader::SetReferenceHouseholds(unsigned int&                  
                 *(m_input_stream.get()) >> data;
                 data["householdsList"];
         } catch (const json::exception& error) {
-                m_logger->error("An error occured while parsing JSON.");
                 throw runtime_error("An error occured while parsing JSON. Please make sure valid JSON is provided.");
         }
 

@@ -54,14 +54,6 @@ TEST(GeoGridJSONReaderTest, writeLocationsTest)
                             "pools": []
                         },
                         {
-                            "class": "Daycare",
-                            "pools": []
-                        },
-                        {
-                            "class": "PreSchool",
-                            "pools": []
-                        },
-                        {
                             "class": "K12School",
                             "pools": []
                         },
@@ -99,14 +91,6 @@ TEST(GeoGridJSONReaderTest, writeLocationsTest)
                             "pools": []
                         },
                         {
-                            "class": "Daycare",
-                            "pools": []
-                        },
-                        {
-                            "class": "PreSchool",
-                            "pools": []
-                        },
-                        {
                             "class": "K12School",
                             "pools": []
                         },
@@ -141,14 +125,6 @@ TEST(GeoGridJSONReaderTest, writeLocationsTest)
                     "contactPools": [
                         {
                             "class": "Household",
-                            "pools": []
-                        },
-                        {
-                            "class": "Daycare",
-                            "pools": []
-                        },
-                        {
-                            "class": "PreSchool",
                             "pools": []
                         },
                         {
@@ -207,28 +183,6 @@ TEST(GeoGridJSONReaderTest, writePeopleTest)
                     "contactPools": [
                         {
                             "class": "Household",
-                            "pools": [
-                                {
-                                    "id": 1,
-                                    "people": [
-                                        0
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "class": "Daycare",
-                            "pools": [
-                                {
-                                    "id": 1,
-                                    "people": [
-                                        0
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "class": "PreSchool",
                             "pools": [
                                 {
                                     "id": 1,
@@ -307,10 +261,8 @@ TEST(GeoGridJSONReaderTest, writePeopleTest)
             "persons": [
                 {
                     "College": 1,
-                    "Daycare": 1,
                     "Household": 1,
                     "K12School": 1,
-                    "PreSchool": 1,
                     "PrimaryCommunity": 1,
                     "SecondaryCommunity": 1,
                     "Workplace": 1,
@@ -339,24 +291,6 @@ TEST(GeoGridJSONReaderTest, writeContactPoolsTest)
                     "contactPools": [
                         {
                             "class": "Household",
-                            "pools": [
-                                {
-                                    "id": 1,
-                                    "people": []
-                                }
-                            ]
-                        },
-                        {
-                            "class": "Daycare",
-                            "pools": [
-                                {
-                                    "id": 1,
-                                    "people": []
-                                }
-                            ]
-                        },
-                        {
-                            "class": "PreSchool",
                             "pools": [
                                 {
                                     "id": 1,
@@ -462,14 +396,6 @@ TEST(GeoGridJSONReaderTest, writeCommutesTest)
                             "pools": []
                         },
                         {
-                            "class": "Daycare",
-                            "pools": []
-                        },
-                        {
-                            "class": "PreSchool",
-                            "pools": []
-                        },
-                        {
                             "class": "K12School",
                             "pools": []
                         },
@@ -516,14 +442,6 @@ TEST(GeoGridJSONReaderTest, writeCommutesTest)
                             "pools": []
                         },
                         {
-                            "class": "Daycare",
-                            "pools": []
-                        },
-                        {
-                            "class": "PreSchool",
-                            "pools": []
-                        },
-                        {
                             "class": "K12School",
                             "pools": []
                         },
@@ -558,14 +476,6 @@ TEST(GeoGridJSONReaderTest, writeCommutesTest)
                     "contactPools": [
                         {
                             "class": "Household",
-                            "pools": []
-                        },
-                        {
-                            "class": "Daycare",
-                            "pools": []
-                        },
-                        {
-                            "class": "PreSchool",
                             "pools": []
                         },
                         {

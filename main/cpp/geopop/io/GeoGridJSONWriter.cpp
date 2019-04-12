@@ -113,8 +113,6 @@ nlohmann::json GeoGridJSONWriter::WritePerson(stride::Person* person)
 
         personJSON["id"]                 = person->GetId();
         personJSON["age"]                = (unsigned int)person->GetAge();
-        personJSON["Daycare"]            = person->GetPoolId(Id::Daycare);
-        personJSON["PreSchool"]          = person->GetPoolId(Id::PreSchool);
         personJSON["K12School"]          = person->GetPoolId(Id::K12School);
         personJSON["College"]            = person->GetPoolId(Id::College);
         personJSON["Household"]          = person->GetPoolId(Id::Household);

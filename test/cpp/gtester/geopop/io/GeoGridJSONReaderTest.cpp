@@ -65,8 +65,6 @@ void runPeopleTest(shared_ptr<Population> pop)
                 EXPECT_EQ(cpTypes[contacPoolCounter++], ToString(pool->GetType()));
                 EXPECT_EQ(person->GetId(), 0);
                 EXPECT_EQ(person->GetAge(), 18);
-                EXPECT_EQ(person->GetPoolId(Id::Daycare), 1);
-                EXPECT_EQ(person->GetPoolId(Id::PreSchool), 1);
                 EXPECT_EQ(person->GetPoolId(Id::K12School), 1);
                 EXPECT_EQ(person->GetPoolId(Id::College), 1);
                 EXPECT_EQ(person->GetPoolId(Id::Household), 1);
@@ -294,28 +292,10 @@ TEST(GeoGridJSONReaderTest, readContactPoolsTest)
                     },
                     "contactPools": [
                         {
-                            "class": "Daycare",
-                            "pools": [
-                                {
-                                    "id": 1,
-                                    "people":""
-                                }
-                            ]
-                        },
-                        {
-                            "class": "PreSchool",
-                            "pools": [
-                                {
-                                    "id": 2,
-                                    "people": ""
-                                }
-                            ]
-                        },
-                        {
                             "class": "K12School",
                             "pools": [
                                 {
-                                    "id": 3,
+                                    "id": 1,
                                     "people": ""
                                 }
                             ]
@@ -324,7 +304,7 @@ TEST(GeoGridJSONReaderTest, readContactPoolsTest)
                             "class": "PrimaryCommunity",
                             "pools": [
                                 {
-                                    "id": 4,
+                                    "id": 2,
                                     "people": ""
                                 }
                             ]
@@ -333,7 +313,7 @@ TEST(GeoGridJSONReaderTest, readContactPoolsTest)
                             "class": "College",
                             "pools": [
                                 {
-                                    "id": 5,
+                                    "id": 3,
                                     "people": ""
                                 }
                             ]
@@ -342,7 +322,7 @@ TEST(GeoGridJSONReaderTest, readContactPoolsTest)
                             "class": "Household",
                             "pools": [
                                 {
-                                    "id": 6,
+                                    "id": 4,
                                     "people": ""
                                 }
                             ]
@@ -351,7 +331,7 @@ TEST(GeoGridJSONReaderTest, readContactPoolsTest)
                             "class": "Workplace",
                             "pools": [
                                 {
-                                    "id": 7,
+                                    "id": 5,
                                     "people": ""
                                 }
                             ]
@@ -376,11 +356,13 @@ TEST(GeoGridJSONReaderTest, readContactPoolsTest)
                 }
         }
 
-        map<Id, bool> found = {{Id::Daycare, false},          {Id::PreSchool, false}, {Id::K12School, false},
-                               {Id::PrimaryCommunity, false}, {Id::College, false},   {Id::Household, false},
+        map<Id, bool> found = {{Id::K12School, false},
+                               {Id::PrimaryCommunity, false},
+                               {Id::College, false},
+                               {Id::Household, false},
                                {Id::Workplace, false}};
 
-        for (unsigned int i = 0; i < 7; i++) {
+        for (unsigned int i = 0; i < 5; i++) {
                 EXPECT_FALSE(found[pools[i]->GetType()]);
                 found[pools[i]->GetType()] = true;
         }
@@ -470,28 +452,6 @@ TEST(GeoGridJSONReaderTest, readPeopleTest)
                       ]
                     }
                   ]
-                },
-                {
-                  "class": "Daycare",
-                  "pools": [
-                    {
-                      "id": "8",
-                      "people": [
-                        "0"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "class": "PreSchool",
-                  "pools": [
-                    {
-                      "id": "9",
-                      "people": [
-                        "0"
-                      ]
-                    }
-                  ]
                 }
               ]
             }
@@ -500,8 +460,6 @@ TEST(GeoGridJSONReaderTest, readPeopleTest)
             {
               "id": "0",
               "age": "18",
-              "Daycare": "8",
-              "PreSchool": "9",
               "K12School": "2",
               "College": "4",
               "Household": "5",
@@ -606,28 +564,6 @@ TEST(GeoGridJSONReaderTest, invalidTypesTest)
                       ]
                     }
                   ]
-                },
-                {
-                  "class": "Daycare",
-                  "pools": [
-                    {
-                      "id": "8",
-                      "people": [
-                        "0"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "class": "PreSchool",
-                  "pools": [
-                    {
-                      "id": 9,
-                      "people": [
-                        0
-                      ]
-                    }
-                  ]
                 }
               ]
             }
@@ -636,8 +572,6 @@ TEST(GeoGridJSONReaderTest, invalidTypesTest)
             {
               "id": 0,
               "age": 18,
-              "Daycare": 8,
-              "PreSchool": 9,
               "K12School": 2,
               "College": 4,
               "Household": 5,
@@ -734,28 +668,6 @@ TEST(GeoGridJSONReaderTest, invalidJSONTest)
                       ]
                     }
                   ]
-                },
-                {
-                  "class": "Daycare",
-                  "pools": [
-                    {
-                      "id": "8",
-                      "people": [
-                        "0"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "class": "PreSchool",
-                  "pools": [
-                    {
-                      "id": 9,
-                      "people": [
-                        0
-                      ]
-                    }
-                  ]
                 }
               ]
             }
@@ -764,8 +676,6 @@ TEST(GeoGridJSONReaderTest, invalidJSONTest)
             {
               "id": 0,
               "age": 18,
-              "Daycare": 8,
-              "PreSchool": 9,
               "K12School": 2,
               "College": 4,
               "Household": 5,

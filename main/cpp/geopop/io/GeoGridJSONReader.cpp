@@ -88,15 +88,13 @@ stride::Person* GeoGridJSONReader::ParsePerson(const json& person)
         const auto id   = ParseValue<unsigned int>(person["id"]);
         const auto age  = ParseValue<unsigned int>(person["age"]);
         const auto hhId = ParseValue<unsigned int>(person["Household"]);
-        const auto dcId = ParseValue<unsigned int>(person["Daycare"]);
-        const auto psId = ParseValue<unsigned int>(person["PreSchool"]);
         const auto ksId = ParseValue<unsigned int>(person["K12School"]);
         const auto coId = ParseValue<unsigned int>(person["College"]);
         const auto wpId = ParseValue<unsigned int>(person["Workplace"]);
         const auto pcId = ParseValue<unsigned int>(person["PrimaryCommunity"]);
         const auto scId = ParseValue<unsigned int>(person["SecondaryCommunity"]);
 
-        return m_population->CreatePerson(id, age, hhId, dcId, psId, ksId, coId, wpId, pcId, scId);
+        return m_population->CreatePerson(id, age, hhId, ksId, coId, wpId, pcId, scId);
 }
 
 std::shared_ptr<Location> GeoGridJSONReader::ParseLocation(const json& location)
@@ -113,9 +111,7 @@ std::shared_ptr<Location> GeoGridJSONReader::ParseLocation(const json& location)
                 for (const auto& contactPool : location["contactPools"]) {
                         const auto type = ParseValue<string>(contactPool["class"]);
 
-                        static const map<string, Id> types = {{"Daycare", Id::Daycare},
-                                                              {"PreSchool", Id::PreSchool},
-                                                              {"K12School", Id::K12School},
+                        static const map<string, Id> types = {{"K12School", Id::K12School},
                                                               {"PrimaryCommunity", Id::PrimaryCommunity},
                                                               {"SecondaryCommunity", Id::SecondaryCommunity},
                                                               {"College", Id::College},
