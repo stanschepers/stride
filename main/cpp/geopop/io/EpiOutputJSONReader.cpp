@@ -15,8 +15,8 @@
 
 #include "EpiOutputJSONReader.h"
 
-#include <memory>
 #include <fstream>
+#include <memory>
 
 namespace visualization {
 
@@ -28,97 +28,96 @@ EpiOutputJSONReader::EpiOutputJSONReader(std::unique_ptr<std::istream> inputStre
 void EpiOutputJSONReader::Read()
 {
         m_epiOutput.emplace_back(Location());
-        m_epiOutput[0].name = "Brussel";
-        m_epiOutput[0].id = 0;
-        m_epiOutput[0].latitude = 50.8503;
-        m_epiOutput[0].longitude = 4.3517;
-        m_epiOutput[0].pop_count = 150;
-        m_epiOutput[0].epiOutput["Daycare"]["Total"][0] = 0;
+        m_epiOutput[0].name                               = "Brussel";
+        m_epiOutput[0].id                                 = 0;
+        m_epiOutput[0].latitude                           = 50.8503;
+        m_epiOutput[0].longitude                          = 4.3517;
+        m_epiOutput[0].pop_count                          = 150;
+        m_epiOutput[0].epiOutput["Daycare"]["Total"][0]   = 0;
         m_epiOutput[0].epiOutput["Daycare"]["Total"][100] = 0;
 
         m_epiOutput.emplace_back(Location());
-        m_epiOutput[1].name = "Antwerpen";
-        m_epiOutput[1].id = 1;
-        m_epiOutput[1].latitude = 51.2194;
+        m_epiOutput[1].name      = "Antwerpen";
+        m_epiOutput[1].id        = 1;
+        m_epiOutput[1].latitude  = 51.2194;
         m_epiOutput[1].longitude = 4.4025;
         m_epiOutput[1].pop_count = 100;
-//        m_epiOutput["Antwerpen"]["Daycare"]["Total"][0] = 0;
-//        m_epiOutput["Antwerpen"]["Daycare"]["Susceptible"][0] = 0;
-//        m_epiOutput["Antwerpen"]["Daycare"]["Infected"][0] = 0;
-//        m_epiOutput["Antwerpen"]["Daycare"]["Infectious"][0] = 0;
-//        m_epiOutput["Antwerpen"]["Daycare"]["Symptomatic"][0] = 0;
-//        m_epiOutput["Antwerpen"]["Daycare"]["Recovered"][0] = 0;
-//        m_epiOutput["Antwerpen"]["Daycare"]["Immune"][0] = 0;
-//
-//        m_epiOutput["Antwerpen"]["PreSchool"]["Total"][0] = 0;
-//        m_epiOutput["Antwerpen"]["PreSchool"]["Susceptible"][0] = 0;
-//        m_epiOutput["Antwerpen"]["PreSchool"]["Infected"][0] = 0;
-//        m_epiOutput["Antwerpen"]["PreSchool"]["Infectious"][0] = 0;
-//        m_epiOutput["Antwerpen"]["PreSchool"]["Symptomatic"][0] = 0;
-//        m_epiOutput["Antwerpen"]["PreSchool"]["Recovered"][0] = 0;
-//        m_epiOutput["Antwerpen"]["PreSchool"]["Immune"][0] = 0;
-//
-//        m_epiOutput["Antwerpen"]["K12School"]["Total"][0] = 0;
-//        m_epiOutput["Antwerpen"]["K12School"]["Susceptible"][0] = 0;
-//        m_epiOutput["Antwerpen"]["K12School"]["Infected"][0] = 0;
-//        m_epiOutput["Antwerpen"]["K12School"]["Infectious"][0] = 0;
-//        m_epiOutput["Antwerpen"]["K12School"]["Symptomatic"][0] = 0;
-//        m_epiOutput["Antwerpen"]["K12School"]["Recovered"][0] = 0;
-//        m_epiOutput["Antwerpen"]["K12School"]["Immune"][0] = 0;
-//
-//        m_epiOutput["Antwerpen"]["College"]["Total"][0] = 0;
-//        m_epiOutput["Antwerpen"]["College"]["Susceptible"][0] = 0;
-//        m_epiOutput["Antwerpen"]["College"]["Infected"][0] = 0;
-//        m_epiOutput["Antwerpen"]["College"]["Infectious"][0] = 0;
-//        m_epiOutput["Antwerpen"]["College"]["Symptomatic"][0] = 0;
-//        m_epiOutput["Antwerpen"]["College"]["Recovered"][0] = 0;
-//        m_epiOutput["Antwerpen"]["College"]["Immune"][0] = 0;
-//
-//        m_epiOutput["Antwerpen"]["Workplace"]["Total"][0] = 0;
-//        m_epiOutput["Antwerpen"]["Workplace"]["Susceptible"][0] = 0;
-//        m_epiOutput["Antwerpen"]["Workplace"]["Infected"][0] = 0;
-//        m_epiOutput["Antwerpen"]["Workplace"]["Infectious"][0] = 0;
-//        m_epiOutput["Antwerpen"]["Workplace"]["Symptomatic"][0] = 0;
-//        m_epiOutput["Antwerpen"]["Workplace"]["Recovered"][0] = 0;
-//        m_epiOutput["Antwerpen"]["Workplace"]["Immune"][0] = 0;
-//
-//        m_epiOutput["Antwerpen"]["Senior"]["Total"][0] = 0;
-//        m_epiOutput["Antwerpen"]["Senior"]["Susceptible"][0] = 0;
-//        m_epiOutput["Antwerpen"]["Senior"]["Infected"][0] = 0;
-//        m_epiOutput["Antwerpen"]["Senior"]["Infectious"][0] = 0;
-//        m_epiOutput["Antwerpen"]["Senior"]["Symptomatic"][0] = 0;
-//        m_epiOutput["Antwerpen"]["Senior"]["Recovered"][0] = 0;
-//        m_epiOutput["Antwerpen"]["Senior"]["Immune"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Daycare"]["Total"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Daycare"]["Susceptible"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Daycare"]["Infected"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Daycare"]["Infectious"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Daycare"]["Symptomatic"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Daycare"]["Recovered"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Daycare"]["Immune"][0] = 0;
+        //
+        //        m_epiOutput["Antwerpen"]["PreSchool"]["Total"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["PreSchool"]["Susceptible"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["PreSchool"]["Infected"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["PreSchool"]["Infectious"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["PreSchool"]["Symptomatic"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["PreSchool"]["Recovered"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["PreSchool"]["Immune"][0] = 0;
+        //
+        //        m_epiOutput["Antwerpen"]["K12School"]["Total"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["K12School"]["Susceptible"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["K12School"]["Infected"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["K12School"]["Infectious"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["K12School"]["Symptomatic"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["K12School"]["Recovered"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["K12School"]["Immune"][0] = 0;
+        //
+        //        m_epiOutput["Antwerpen"]["College"]["Total"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["College"]["Susceptible"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["College"]["Infected"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["College"]["Infectious"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["College"]["Symptomatic"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["College"]["Recovered"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["College"]["Immune"][0] = 0;
+        //
+        //        m_epiOutput["Antwerpen"]["Workplace"]["Total"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Workplace"]["Susceptible"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Workplace"]["Infected"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Workplace"]["Infectious"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Workplace"]["Symptomatic"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Workplace"]["Recovered"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Workplace"]["Immune"][0] = 0;
+        //
+        //        m_epiOutput["Antwerpen"]["Senior"]["Total"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Senior"]["Susceptible"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Senior"]["Infected"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Senior"]["Infectious"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Senior"]["Symptomatic"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Senior"]["Recovered"][0] = 0;
+        //        m_epiOutput["Antwerpen"]["Senior"]["Immune"][0] = 0;
 
-
-//        boost::property_tree::ptree root;
-//        try {
-//                boost::property_tree::read_json(*m_inputStream, root);
-//        } catch (runtime_error&) {
-//                throw Exception("Problem parsing JSON file, check whether empty or invalid JSON.");
-//        }
-//
-//        auto& geoGrid = m_population->RefEpiOutput();
-//        auto  people  = root.get_child("persons");
-//
-//        for (auto it = people.begin(); it != people.end(); it++) {
-//                auto person               = ParsePerson(it->second.get_child(""));
-//                m_people[person->GetId()][0] = person;
-//        }
-//        auto locations = root.get_child("locations");
-//
-//        for (auto it = locations.begin(); it != locations.end(); it++) {
-//                shared_ptr<Location> loc;
-//                loc = ParseLocation(it->second.get_child(""));
-//                geoGrid.AddLocation(move(loc));
-//        }
-//
-//        AddCommutes(geoGrid);
-//        m_commutes.clear();
-//        m_people.clear();
+        //        boost::property_tree::ptree root;
+        //        try {
+        //                boost::property_tree::read_json(*m_inputStream, root);
+        //        } catch (runtime_error&) {
+        //                throw Exception("Problem parsing JSON file, check whether empty or invalid JSON.");
+        //        }
+        //
+        //        auto& geoGrid = m_population->RefEpiOutput();
+        //        auto  people  = root.get_child("persons");
+        //
+        //        for (auto it = people.begin(); it != people.end(); it++) {
+        //                auto person               = ParsePerson(it->second.get_child(""));
+        //                m_people[person->GetId()][0] = person;
+        //        }
+        //        auto locations = root.get_child("locations");
+        //
+        //        for (auto it = locations.begin(); it != locations.end(); it++) {
+        //                shared_ptr<Location> loc;
+        //                loc = ParseLocation(it->second.get_child(""));
+        //                geoGrid.AddLocation(move(loc));
+        //        }
+        //
+        //        AddCommutes(geoGrid);
+        //        m_commutes.clear();
+        //        m_people.clear();
 }
 
-//shared_ptr<Location> EpiOutputJSONReader::ParseLocation(boost::property_tree::ptree& location)
+// shared_ptr<Location> EpiOutputJSONReader::ParseLocation(boost::property_tree::ptree& location)
 //{
 //        const auto id         = boost::lexical_cast<unsigned int>(location.get<string>("id"));
 //        const auto name       = location.get<string>("name");
@@ -146,14 +145,14 @@ void EpiOutputJSONReader::Read()
 //        return result;
 //}
 //
-//Coordinate EpiOutputJSONReader::ParseCoordinate(boost::property_tree::ptree& coordinate)
+// Coordinate EpiOutputJSONReader::ParseCoordinate(boost::property_tree::ptree& coordinate)
 //{
 //        const auto longitude = boost::lexical_cast<double>(coordinate.get<string>("longitude"));
 //        const auto latitude  = boost::lexical_cast<double>(coordinate.get<string>("latitude"));
 //        return {longitude, latitude};
 //}
 //
-//shared_ptr<ContactCenter> EpiOutputJSONReader::ParseContactCenter(boost::property_tree::ptree& contactCenter)
+// shared_ptr<ContactCenter> EpiOutputJSONReader::ParseContactCenter(boost::property_tree::ptree& contactCenter)
 //{
 //        const auto type = contactCenter.get<string>("type");
 //        const auto id   = boost::lexical_cast<unsigned int>(contactCenter.get<string>("id"));
@@ -185,7 +184,7 @@ void EpiOutputJSONReader::Read()
 //        return result;
 //}
 //
-//ContactPool* EpiOutputJSONReader::ParseContactPool(boost::property_tree::ptree& contactPool, ContactType::Id typeId)
+// ContactPool* EpiOutputJSONReader::ParseContactPool(boost::property_tree::ptree& contactPool, ContactType::Id typeId)
 //{
 //        // Don't use the id of the ContactPool but the let the Population create an id.
 //        auto result = m_population->RefPoolSys().CreateContactPool(typeId);
@@ -202,7 +201,7 @@ void EpiOutputJSONReader::Read()
 //        return result;
 //}
 //
-//Person* EpiOutputJSONReader::ParsePerson(boost::property_tree::ptree& person)
+// Person* EpiOutputJSONReader::ParsePerson(boost::property_tree::ptree& person)
 //{
 //        const auto id   = boost::lexical_cast<unsigned int>(person.get<string>("id"));
 //        const auto age  = boost::lexical_cast<unsigned int>(person.get<string>("age"));

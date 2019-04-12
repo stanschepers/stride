@@ -13,7 +13,6 @@
  *  Copyright 2018, 2019, Jan Broeckhove and Bistromatics group.
  */
 
-
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/property_tree/xml_parser.hpp>
 #include <gtest/gtest.h>
@@ -22,29 +21,14 @@
 
 namespace {
 
-TEST(EpiOutputHDF5WriterTest, zeroLocationTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputHDF5WriterTest, zeroLocationTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputHDF5WriterTest, oneLocationZeroDaysTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputHDF5WriterTest, oneLocationZeroDaysTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputHDF5WriterTest, oneLocationOneDayTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputHDF5WriterTest, oneLocationOneDayTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputHDF5WriterTest, oneLocationTwoDaysTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputHDF5WriterTest, oneLocationTwoDaysTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputHDF5WriterTest, fiveLocationsOneDayTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputHDF5WriterTest, fiveLocationsOneDayTest) { EXPECT_TRUE(false); }
 
 } // namespace

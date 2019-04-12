@@ -15,8 +15,8 @@
 
 #include <memory>
 
-#include "EpiOutputReader.h"
 #include "EpiOutput.h"
+#include "EpiOutputReader.h"
 
 namespace visualization {
 

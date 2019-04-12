@@ -20,9 +20,9 @@
 
 #include "ContactPool.h"
 
+#include "AgeBrackets.h"
 #include "pop/Age.h"
 #include "pop/Person.h"
-#include "AgeBrackets.h"
 
 #include <algorithm>
 
@@ -56,55 +56,56 @@ unsigned int ContactPool::GetInfectedCount() const
 const std::map<std::string, std::map<std::string, unsigned int>> ContactPool::GenerateEpiOutput()
 {
         // Prepare a map
-        vector<string> ageBrackets = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
-        vector<string> healthCategories = {"Total", "Susceptible", "Infected", "Infectious", "Symptomatic", "Recovered", "Immune"};
+        vector<string> ageBrackets      = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
+        vector<string> healthCategories = {"Total",       "Susceptible", "Infected", "Infectious",
+                                           "Symptomatic", "Recovered",   "Immune"};
         map<string, map<string, unsigned int>> epiOutput;
-        for (const string &ageBracket: ageBrackets){
-                for (const string &healthCategory: healthCategories){
+        for (const string& ageBracket : ageBrackets) {
+                for (const string& healthCategory : healthCategories) {
                         epiOutput[ageBracket][healthCategory] = 0U;
                 }
         }
 
         // Iterate over all members and add 1 to the right health categories
-        for (Person* member: m_members){
+        for (Person* member : m_members) {
                 string ageBracket;
                 double age = member->GetAge();
-                if (AgeBrackets::Daycare::HasAge(age)){
+                if (AgeBrackets::Daycare::HasAge(age)) {
                         ageBracket = "Daycare";
-                } else if (AgeBrackets::PreSchool::HasAge(age)){
+                } else if (AgeBrackets::PreSchool::HasAge(age)) {
                         ageBracket = "PreSchool";
-                } else if (AgeBrackets::K12School::HasAge(age)){
+                } else if (AgeBrackets::K12School::HasAge(age)) {
                         ageBracket = "K12School";
-                } else if (AgeBrackets::College::HasAge(age) && member->GetPoolId(ContactType::Id::Workplace) == 0){
+                } else if (AgeBrackets::College::HasAge(age) && member->GetPoolId(ContactType::Id::Workplace) == 0) {
                         ageBracket = "College";
-                } else if (AgeBrackets::Workplace::HasAge(age)){
+                } else if (AgeBrackets::Workplace::HasAge(age)) {
                         ageBracket = "Workplace";
                 } else {
                         ageBracket = "Senior";
                 }
                 epiOutput[ageBracket]["Total"] += 1;
 
-                if (member->GetHealth().IsSusceptible()){
+                if (member->GetHealth().IsSusceptible()) {
                         epiOutput[ageBracket]["Susceptible"] += 1;
                 }
-                if (member->GetHealth().IsInfected()){
+                if (member->GetHealth().IsInfected()) {
                         epiOutput[ageBracket]["Infected"] += 1;
                 }
-                if (member->GetHealth().IsInfectious()){
+                if (member->GetHealth().IsInfectious()) {
                         epiOutput[ageBracket]["Infectious"] += 1;
                 }
-                if (member->GetHealth().IsSymptomatic()){
+                if (member->GetHealth().IsSymptomatic()) {
                         epiOutput[ageBracket]["Symptomatic"] += 1;
                 }
-                if (member->GetHealth().IsRecovered()){
+                if (member->GetHealth().IsRecovered()) {
                         epiOutput[ageBracket]["Recovered"] += 1;
                 }
-                if (member->GetHealth().IsImmune()){
+                if (member->GetHealth().IsImmune()) {
                         epiOutput[ageBracket]["Immune"] += 1;
                 }
         }
 
-    return epiOutput;
+        return epiOutput;
 }
 
 std::tuple<bool, unsigned int> ContactPool::SortMembers()

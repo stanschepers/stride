@@ -17,25 +17,27 @@
 #define STRIDE_EPIOUTPUT_H
 
 #include <iostream>
-#include <vector>
 #include <map>
+#include <vector>
 
 namespace visualization {
 
-typedef struct {
-    std::string name;
-    unsigned int id;
-    unsigned int pop_count;
-    double latitude;
-    double longitude;
-    //        ageBracket           healthStatus             day        value
-    std::map<std::string, std::map<std::string, std::map<unsigned int, double>>> epiOutput;
+typedef struct
+{
+        std::string  name;
+        unsigned int id;
+        unsigned int pop_count;
+        double       latitude;
+        double       longitude;
+        //        ageBracket           healthStatus             day        value
+        std::map<std::string, std::map<std::string, std::map<unsigned int, double>>> epiOutput;
 } Location;
 
 //            location              ageBracket           healthStatus             day            value
-//typedef std::map<std::string, std::map<std::string, std::map<std::string, std::map<unsigned int, double>>>> EpiOutput;
+// typedef std::map<std::string, std::map<std::string, std::map<std::string, std::map<unsigned int, double>>>>
+// EpiOutput;
 typedef std::vector<Location> EpiOutput;
 
 } // namespace visualization
 
-#endif //STRIDE_EPIOUTPUT_H
+#endif // STRIDE_EPIOUTPUT_H

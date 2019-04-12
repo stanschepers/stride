@@ -23,9 +23,9 @@
 #include "contact/ContactLogMode.h"
 #include "contact/ContactType.h"
 
+#include <map>
 #include <tuple>
 #include <vector>
-#include <map>
 
 namespace stride {
 

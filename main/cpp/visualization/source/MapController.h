@@ -23,32 +23,32 @@
 
 namespace visualization {
 
-class MapController: public QObject {
+class MapController : public QObject
+{
 
-Q_OBJECT
-Q_PROPERTY(QString setDay WRITE setDay)
+        Q_OBJECT
+        Q_PROPERTY(QString setDay WRITE setDay)
 
 public:
-    MapController() = default;
+        MapController() = default;
 
-    explicit MapController(const std::string& filename);
+        explicit MapController(const std::string& filename);
 
-    void setDay(const QString& day);
+        void setDay(const QString& day);
 
-    void initialize(QObject* root);
+        void initialize(QObject* root);
 
 private:
-    void update() const;
+        void update() const;
 
-    EpiOutput m_epiOutput;
+        EpiOutput m_epiOutput;
 
-    unsigned int m_day;  // Current shown step
-    unsigned int m_day_diff;  // Difference between epi-output measurements (Amount of days)
+        unsigned int m_day;      // Current shown step
+        unsigned int m_day_diff; // Difference between epi-output measurements (Amount of days)
 
-    QObject* m_root;
-
+        QObject* m_root;
 };
 
 } // namespace visualization
 
-#endif //STRIDE_MAPCONTROLLER_H
+#endif // STRIDE_MAPCONTROLLER_H

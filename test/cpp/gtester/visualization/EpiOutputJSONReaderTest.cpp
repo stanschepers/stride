@@ -13,51 +13,26 @@
  *  Copyright 2018, Jan Broeckhove and Bistromatics group.
  */
 
-
 #include <fstream>
 #include <gtest/gtest.h>
 #include <memory>
 
 namespace {
 
-TEST(EpiOutputJSONReaderTest, zeroLocationTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputJSONReaderTest, zeroLocationTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputJSONReaderTest, oneLocationZeroDaysTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputJSONReaderTest, oneLocationZeroDaysTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputJSONReaderTest, oneLocationOneDayTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputJSONReaderTest, oneLocationOneDayTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputJSONReaderTest, oneLocationTwoDaysTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputJSONReaderTest, oneLocationTwoDaysTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputJSONReaderTest, fiveLocationsOneDayTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputJSONReaderTest, fiveLocationsOneDayTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputJSONReaderTest, emptyStreamTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputJSONReaderTest, emptyStreamTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputJSONReaderTest, invalidTypeTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputJSONReaderTest, invalidTypeTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputJSONReaderTest, invalidJSONTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputJSONReaderTest, invalidJSONTest) { EXPECT_TRUE(false); }
 
 } // namespace

@@ -21,30 +21,14 @@
 
 namespace {
 
-TEST(EpiOutputJSONWriterTest, zeroLocationTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputJSONWriterTest, zeroLocationTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputJSONWriterTest, oneLocationZeroDaysTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputJSONWriterTest, oneLocationZeroDaysTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputJSONWriterTest, oneLocationOneDayTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputJSONWriterTest, oneLocationOneDayTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputJSONWriterTest, oneLocationTwoDaysTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputJSONWriterTest, oneLocationTwoDaysTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputJSONWriterTest, fiveLocationsOneDayTest)
-{
-    EXPECT_TRUE(false);
-}
-
+TEST(EpiOutputJSONWriterTest, fiveLocationsOneDayTest) { EXPECT_TRUE(false); }
 
 } // namespace

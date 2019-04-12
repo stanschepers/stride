@@ -48,7 +48,7 @@ public:
 
 protected:
         std::unique_ptr<std::istream> m_inputStream; ///< File to read.
-        EpiOutput& m_epiOutput; ///< Resulted epi-output
+        EpiOutput&                    m_epiOutput;   ///< Resulted epi-output
 };
 
 } // namespace visualization

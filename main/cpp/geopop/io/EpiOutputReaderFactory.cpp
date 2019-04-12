@@ -24,12 +24,13 @@
 
 namespace visualization {
 
-std::shared_ptr<EpiOutputReader> EpiOutputReaderFactory::CreateReader(const std::string& filename, EpiOutput& epiOutput) const
+std::shared_ptr<EpiOutputReader> EpiOutputReaderFactory::CreateReader(const std::string& filename,
+                                                                      EpiOutput&         epiOutput) const
 {
-//        const filesys::path path(filename);
-//        if (!filesys::exists(path)) {
-//                throw Exception("EpiOutputReaderFactory::CreateReader> File not found: " + path.string());
-//        }
+        //        const filesys::path path(filename);
+        //        if (!filesys::exists(path)) {
+        //                throw Exception("EpiOutputReaderFactory::CreateReader> File not found: " + path.string());
+        //        }
         std::string path = filename;
 
         if (path.substr(path.size() - 5) == ".json") {
@@ -40,7 +41,8 @@ std::shared_ptr<EpiOutputReader> EpiOutputReaderFactory::CreateReader(const std:
         } else
                 if (path == ".hfd5") {
                 return std::make_shared<EpiOutputHDF5Reader>(std::make_unique<std::ifstream>(path.string()));
-        } */else {
+        } */
+        else {
                 throw "EpiOutputReaderFactory::CreateReader> Unsupported file extension: " + path;
         }
 }

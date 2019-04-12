@@ -41,7 +41,8 @@ std::shared_ptr<EpiOutputWriter> EpiOutputWriterFactory::CreateEpiOutputWriter(c
                 return std::make_shared<EpiOutputJSONWriter>();
         } /*else if (path.extension().string() == ".proto") {
                 return std::make_shared<EpiOutputProtoWriter>();
-        } */else {
+        } */
+        else {
                 throw stride::util::Exception("GeoGridWriterFactory::CreateWriter> Unsupported file extension: " +
                                               path.extension().string());
         }

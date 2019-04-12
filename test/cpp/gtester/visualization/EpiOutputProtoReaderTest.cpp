@@ -17,44 +17,20 @@
 
 namespace {
 
-TEST(EpiOutputProtoReaderTest, zeroLocationTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputProtoReaderTest, zeroLocationTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputProtoReaderTest, oneLocationZeroDaysTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputProtoReaderTest, oneLocationZeroDaysTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputProtoReaderTest, oneLocationOneDayTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputProtoReaderTest, oneLocationOneDayTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputProtoReaderTest, oneLocationTwoDaysTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputProtoReaderTest, oneLocationTwoDaysTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputProtoReaderTest, fiveLocationsOneDayTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputProtoReaderTest, fiveLocationsOneDayTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputProtoReaderTest, emptyStreamTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputProtoReaderTest, emptyStreamTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputProtoReaderTest, invalidTypeTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputProtoReaderTest, invalidTypeTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputProtoReaderTest, invalidProtobufTest)
-{
-    EXPECT_TRUE(false);
-}
-    
+TEST(EpiOutputProtoReaderTest, invalidProtobufTest) { EXPECT_TRUE(false); }
+
 } // namespace

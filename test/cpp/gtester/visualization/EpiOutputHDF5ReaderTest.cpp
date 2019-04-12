@@ -13,51 +13,26 @@
  *  Copyright 2018, Jan Broeckhove and Bistromatics group.
  */
 
-
 #include <fstream>
 #include <gtest/gtest.h>
 #include <memory>
 
 namespace {
 
-TEST(EpiOutputHDF5ReaderTest, zeroLocationTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputHDF5ReaderTest, zeroLocationTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputHDF5ReaderTest, oneLocationZeroDaysTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputHDF5ReaderTest, oneLocationZeroDaysTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputHDF5ReaderTest, oneLocationOneDayTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputHDF5ReaderTest, oneLocationOneDayTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputHDF5ReaderTest, oneLocationTwoDaysTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputHDF5ReaderTest, oneLocationTwoDaysTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputHDF5ReaderTest, fiveLocationsOneDayTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputHDF5ReaderTest, fiveLocationsOneDayTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputHDF5ReaderTest, emptyStreamTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputHDF5ReaderTest, emptyStreamTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputHDF5ReaderTest, invalidTypeTest)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputHDF5ReaderTest, invalidTypeTest) { EXPECT_TRUE(false); }
 
-TEST(EpiOutputHDF5ReaderTest, invalidHDF5Test)
-{
-    EXPECT_TRUE(false);
-}
+TEST(EpiOutputHDF5ReaderTest, invalidHDF5Test) { EXPECT_TRUE(false); }
 
 } // namespace

@@ -15,28 +15,27 @@
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include <QQuickView>
 #include <QQmlContext>
+#include <QQuickView>
 #include <iostream>
 
 #include "MapController.h"
 
 #include <iostream>
 
+int main(int argc, char* argv[])
+{
+        //    std::string filename = argv[0];
+        visualization::MapController ctrl("/home/laurens/Desktop/test.json");
 
-int main(int argc, char *argv[]) {
-//    std::string filename = argv[0];
-    visualization::MapController ctrl("/home/laurens/Desktop/test.json");
+        QGuiApplication app(argc, argv);
 
-    QGuiApplication app(argc, argv);
+        QQmlApplicationEngine engine;
+        engine.rootContext()->setContextProperty("ctrl", &ctrl);
+        engine.load(QUrl::fromLocalFile("./bin/Qt5Stride/main.qml"));
 
-    QQmlApplicationEngine engine;
-    engine.rootContext()->setContextProperty("ctrl", &ctrl);
-    engine.load(QUrl::fromLocalFile("./bin/Qt5Stride/main.qml"));
+        QObject* root = engine.rootObjects()[0];
+        ctrl.initialize(root);
 
-    QObject *root = engine.rootObjects()[0];
-    ctrl.initialize(root);
-
-
-    return app.exec();
+        return app.exec();
 }
