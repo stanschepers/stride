@@ -132,7 +132,7 @@ std::shared_ptr<Location> GeoGridJSONReader::ParseLocation(const json& location)
                 }
         }
 
-        if (location.find("commutes") != location.end() && location["commutes"].is_array()){
+        if (location.find("commutes") != location.end() && location["commutes"].is_array()) {
                 for (const auto& commute : location["commutes"]) {
                         const auto to         = ParseValue<unsigned int>(commute["to"]);
                         const auto proportion = ParseValue<double>(commute["proportion"]);
@@ -156,7 +156,7 @@ void GeoGridJSONReader::ParseContactPool(const shared_ptr<Location>& location, c
         auto contactPoolPtr = m_population->RefPoolSys().CreateContactPool(type);
         location->RefPools(type).emplace_back(contactPoolPtr);
 
-        if (contactPool.find("people") != contactPool.end() && contactPool["people"].is_array()){
+        if (contactPool.find("people") != contactPool.end() && contactPool["people"].is_array()) {
                 for (const auto& id : contactPool["people"]) {
                         const auto  person_id = ParseValue<unsigned int>(id);
                         const auto& person    = m_people.at(person_id);
