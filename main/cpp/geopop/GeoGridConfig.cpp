@@ -59,6 +59,9 @@ void GeoGridConfig::SetData(const string& householdsFileName)
         auto ref_k12school = 0U;
         auto ref_college   = 0U;
         auto ref_workplace = 0U;
+        auto ref_old       = 0U;
+        auto ref_young     = 0U;
+
         for (const auto& hhAgeProfile : refHH.ages) {
                 for (const auto& age : hhAgeProfile) {
                         if (K12School::HasAge(age)) {
@@ -69,6 +72,12 @@ void GeoGridConfig::SetData(const string& householdsFileName)
                         }
                         if (Workplace::HasAge(age)) {
                                 ref_workplace++;
+                        }
+                        if(15 <= age && 24 > age) {
+                                ref_young++;
+                        }
+                        if(55 <= age && 64 > age) {
+                                ref_old++;
                         }
                 }
         }
@@ -91,6 +100,11 @@ void GeoGridConfig::SetData(const string& householdsFileName)
             floor(input.particpation_workplace * (age_count_workplace - popInfo.popcount_college)));
 
         popInfo.count_households = static_cast<unsigned int>(floor(static_cast<double>(popSize) / averageHhSize));
+
+        //----------------------------------------------------------------
+        // Set young/old fraction.
+        //----------------------------------------------------------------
+        refHH.young_old_fraction = static_cast<double>(ref_young) / static_cast<double>(ref_old);
 }
 
 void GeoGridConfig::SetData(const std::map<unsigned int, std::string> &householdsFileNamePerId)

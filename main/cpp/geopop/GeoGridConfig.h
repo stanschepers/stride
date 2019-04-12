@@ -73,6 +73,9 @@ public:
 
                 /// Age profile per reference household.
                 std::vector<std::vector<unsigned int>> ages{};
+
+                /// Young/Old fraction of reference household
+                double young_old_fraction = 1.0;
         } refHH;
 
         // -----------------------------------------------------------------------------------------
