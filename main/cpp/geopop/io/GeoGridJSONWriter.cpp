@@ -67,7 +67,7 @@ nlohmann::json GeoGridJSONWriter::WriteLocation(const Location& location)
                 contactPoolJSON["pools"] = json::array();
 
                 for (const auto& pool : location.CRefPools(type)) {
-                        locationJSON["pools"].push_back(WriteContactPool(pool));
+                        contactPoolJSON["pools"].push_back(WriteContactPool(pool));
                 }
                 locationJSON["contactPools"].push_back(contactPoolJSON);
         }
@@ -112,15 +112,15 @@ nlohmann::json GeoGridJSONWriter::WritePerson(stride::Person* person)
         json personJSON;
 
         personJSON["id"]                 = person->GetId();
-        personJSON["age"]                = person->GetAge();
-        personJSON["daycare"]            = person->GetPoolId(Id::Daycare);
-        personJSON["preSchool"]          = person->GetPoolId(Id::PreSchool);
-        personJSON["k12School"]          = person->GetPoolId(Id::K12School);
-        personJSON["college"]            = person->GetPoolId(Id::College);
-        personJSON["household"]          = person->GetPoolId(Id::Household);
-        personJSON["workplace"]          = person->GetPoolId(Id::Workplace);
-        personJSON["primaryCommunity"]   = person->GetPoolId(Id::PrimaryCommunity);
-        personJSON["secondaryCommunity"] = person->GetPoolId(Id::SecondaryCommunity);
+        personJSON["age"]                = (unsigned int)person->GetAge();
+        personJSON["Daycare"]            = person->GetPoolId(Id::Daycare);
+        personJSON["PreSchool"]          = person->GetPoolId(Id::PreSchool);
+        personJSON["K12School"]          = person->GetPoolId(Id::K12School);
+        personJSON["College"]            = person->GetPoolId(Id::College);
+        personJSON["Household"]          = person->GetPoolId(Id::Household);
+        personJSON["Workplace"]          = person->GetPoolId(Id::Workplace);
+        personJSON["PrimaryCommunity"]   = person->GetPoolId(Id::PrimaryCommunity);
+        personJSON["SecondaryCommunity"] = person->GetPoolId(Id::SecondaryCommunity);
 
         return personJSON;
 }
