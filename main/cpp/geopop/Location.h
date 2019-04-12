@@ -86,6 +86,9 @@ public:
         /// Get household type for Households references.
         unsigned int GetHouseHoldType() const { return m_household_type;}
 
+        /// Gets young/old fraction.
+        double GetYoungOldFraction() const { return m_young_old_fraction;}
+
         /// Sets the Coordinate of this Location.
         void SetCoordinate(const Coordinate& coordinate) { m_coordinate = coordinate; }
 
@@ -97,6 +100,9 @@ public:
 
         /// Set household type for Households references.
         void SetHouseHoldType(unsigned int houseHoldType) {m_household_type = houseHoldType;}
+
+        /// Sets young/old fraction.
+        void SetYoungOldFraction(double youngOldFraction) {m_young_old_fraction = youngOldFraction;}
 
 public:
         /// Access through const reference to ContactPools of type 'id'.
@@ -155,13 +161,14 @@ public:
         const std::vector<std::pair<Location*, double>>& CRefOutgoingCommutes() const { return m_outCommutes; }
 
 private:
-        Coordinate   m_coordinate;       ///< Coordinate of the Location.
-        unsigned int m_id = 0U;          ///< Id.
-        std::string  m_name;             ///< Name.
-        unsigned int m_pop_count;        ///< Population count (number of individuals) at this Location.
-        double       m_pop_fraction;     ///< Fraction of whole population at this Location.
-        unsigned int m_province;         ///< Province id.
-        unsigned int m_household_type;    ///<
+        Coordinate   m_coordinate;           ///< Coordinate of the Location.
+        unsigned int m_id = 0U;              ///< Id.
+        std::string  m_name;                 ///< Name.
+        unsigned int m_pop_count;            ///< Population count (number of individuals) at this Location.
+        double       m_pop_fraction;         ///< Fraction of whole population at this Location.
+        unsigned int m_province;             ///< Province id.
+        unsigned int m_household_type;       ///< Household type
+        double       m_young_old_fraction;   ///< Young/Old fraction (ratio between 15-24y and 55-64y old persons).
 
         /// Incomming commutes stored as pair of Location and fraction of population at that Location.
         std::vector<std::pair<Location*, double>> m_inCommutes;
