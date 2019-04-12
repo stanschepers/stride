@@ -27,19 +27,28 @@ HouseholdCSVReader::HouseholdCSVReader(std::unique_ptr<std::istream> inputStream
 {
 }
 
-void HouseholdCSVReader::SetReferenceHouseholds(unsigned int&                           ref_person_count,
-                                                std::vector<std::vector<unsigned int>>& ref_ages)
+void HouseholdCSVReader::SetReferenceHouseholds(unsigned int &ref_person_count, std::vector<std::vector<unsigned int>> &ref_ages,
+                                                double &ref_young_old_fraction)
 {
         CSV reader(*(m_input_stream.get()));
 
         unsigned int p_count = 0U;
-        for (const CSVRow& row : reader) {
+        unsigned int p_young = 0U;
+        unsigned int p_old   = 0U;
 
+        for (const CSVRow& row : reader) {
                 vector<unsigned int> temp;
                 for (unsigned int i = 0; i < 12; i++) {
                         unsigned int age;
                         try {
                                 age = row.GetValue<unsigned int>(i);
+                                if(age >= 15 && age <= 24) {
+                                      p_young++;
+                                }
+                                if(age >= 55 && age <= 64) {
+                                        p_old++;
+                                }
+
                         } catch (const std::bad_cast& e) {
                                 // NA
                                 break;
@@ -50,6 +59,7 @@ void HouseholdCSVReader::SetReferenceHouseholds(unsigned int&                   
                 ref_ages.emplace_back(temp);
         }
         ref_person_count += p_count;
+        ref_young_old_fraction = static_cast<double>(p_young) / static_cast<double>(p_old);
 }
 
 } // namespace geopop

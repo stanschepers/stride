@@ -44,7 +44,8 @@ TEST(HouseholdCSVReader, test1)
         auto               instream = make_unique<istringstream>(csvString);
         HouseholdCSVReader reader(move(instream));
 
-        reader.SetReferenceHouseholds(geoConfig.refHH.person_count, geoConfig.refHH.ages);
+        reader.SetReferenceHouseholds(geoConfig.refHH.person_count, geoConfig.refHH.ages,
+                geoConfig.refHH.young_old_fraction);
 
         EXPECT_EQ(geoConfig.refHH.person_count, 23U);
 

@@ -28,6 +28,43 @@ namespace geopop {
 
 class GeoGrid;
 
+
+// -----------------------------------------------------------------------------------------
+// The reference Households used to generate the population by random draws.
+// -----------------------------------------------------------------------------------------
+struct ReferenceHouseHold
+{
+        /// Number of persons in the reference household set.
+        unsigned int person_count = 0U;
+
+        /// Age profile per reference household.
+        std::vector<std::vector<unsigned int>> ages{};
+
+        /// Young/Old fraction of reference household
+        double young_old_fraction = 1.0;
+};
+
+// -----------------------------------------------------------------------------------------
+// These are numbers derived from the reference households, the target size of the generated
+// population and the input parameters relating participation school and worplace.
+// These numbers are used as targets in the poggen process and are reproduced (to very close
+// approximation) in the generated population.
+// -----------------------------------------------------------------------------------------
+struct PopulationInfo
+{
+        /// Numbers of individuals in K12School.
+        unsigned int popcount_k12school;
+
+        /// Number of individuals in College.
+        unsigned int popcount_college;
+
+        /// Number of individuals in Workplace.
+        unsigned int popcount_workplace;
+
+        /// The number of households.
+        unsigned int count_households;
+};
+
 /**
  * Configuration data mostly for generating a population, but also for computing
  * the required number of schools, workplaces, communities etc. for that population.
@@ -63,41 +100,13 @@ public:
                 unsigned int pop_size;
         } input;
 
-        // -----------------------------------------------------------------------------------------
-        // The reference Households used to generate the population by random draws.
-        // -----------------------------------------------------------------------------------------
-        struct
-        {
-                /// Number of persons in the reference household set.
-                unsigned int person_count = 0U;
+        ReferenceHouseHold refHH;
 
-                /// Age profile per reference household.
-                std::vector<std::vector<unsigned int>> ages{};
+        PopulationInfo popInfo;
 
-                /// Young/Old fraction of reference household
-                double young_old_fraction = 1.0;
-        } refHH;
+        std::map<unsigned int, ReferenceHouseHold> refHHperHHType;
 
-        // -----------------------------------------------------------------------------------------
-        // These are numbers derived from the reference households, the target size of the generated
-        // population and the input parameters relating participation school and worplace.
-        // These numbers are used as targets in the poggen process and are reproduced (to very close
-        // approximation) in the generated population.
-        // -----------------------------------------------------------------------------------------
-        struct
-        {
-                /// Numbers of individuals in K12School.
-                unsigned int popcount_k12school;
-
-                /// Number of individuals in College.
-                unsigned int popcount_college;
-
-                /// Number of individuals in Workplace.
-                unsigned int popcount_workplace;
-
-                /// The number of households.
-                unsigned int count_households;
-        } popInfo;
+        std::map<unsigned int, PopulationInfo> popInfoperHHtype;
 
         // -----------------------------------------------------------------------------------------
         // Config params for ContactPools (constants for now at least).

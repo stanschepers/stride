@@ -47,7 +47,7 @@ void GeoGridConfig::SetData(const string& householdsFileName)
         ReaderFactory readerFactory;
 
         auto householdsReader = readerFactory.CreateHouseholdReader(householdsFileName);
-        householdsReader->SetReferenceHouseholds(refHH.person_count, refHH.ages);
+        householdsReader->SetReferenceHouseholds(refHH.person_count, refHH.ages, refHH.young_old_fraction);
         const auto popSize = input.pop_size;
 
         //----------------------------------------------------------------
@@ -59,8 +59,6 @@ void GeoGridConfig::SetData(const string& householdsFileName)
         auto ref_k12school = 0U;
         auto ref_college   = 0U;
         auto ref_workplace = 0U;
-        auto ref_old       = 0U;
-        auto ref_young     = 0U;
 
         for (const auto& hhAgeProfile : refHH.ages) {
                 for (const auto& age : hhAgeProfile) {
@@ -72,12 +70,6 @@ void GeoGridConfig::SetData(const string& householdsFileName)
                         }
                         if (Workplace::HasAge(age)) {
                                 ref_workplace++;
-                        }
-                        if(15 <= age && 24 > age) {
-                                ref_young++;
-                        }
-                        if(55 <= age && 64 > age) {
-                                ref_old++;
                         }
                 }
         }
@@ -100,11 +92,6 @@ void GeoGridConfig::SetData(const string& householdsFileName)
             floor(input.particpation_workplace * (age_count_workplace - popInfo.popcount_college)));
 
         popInfo.count_households = static_cast<unsigned int>(floor(static_cast<double>(popSize) / averageHhSize));
-
-        //----------------------------------------------------------------
-        // Set young/old fraction.
-        //----------------------------------------------------------------
-        refHH.young_old_fraction = static_cast<double>(ref_young) / static_cast<double>(ref_old);
 }
 
 void GeoGridConfig::SetData(const std::map<unsigned int, std::string> &householdsFileNamePerId)
@@ -114,14 +101,14 @@ void GeoGridConfig::SetData(const std::map<unsigned int, std::string> &household
         unsigned int                    personCountTotal = 0;
         vector<vector<unsigned int>>    agesTotal = {};
 
-        unsigned int                    personCount = 0;
+//        unsigned int                    personCount = 0;
         vector<vector<unsigned int>>    ages = {};
         for(const auto& idHhFile:householdsFileNamePerId){
                 ages = {};
 //                const auto id                   = idHhFile.first;
                 const auto householdFileName    = idHhFile.second;
                 auto householdsReader = readerFactory.CreateHouseholdReader(householdFileName);
-                householdsReader->SetReferenceHouseholds(refHH.person_count, refHH.ages);
+                householdsReader->SetReferenceHouseholds(refHH.person_count, refHH.ages, refHH.young_old_fraction);
                 personCountTotal += refHH.person_count;
         }
         const auto popSize = input.pop_size;
@@ -174,7 +161,6 @@ void GeoGridConfig::SetData(const std::map<unsigned int, std::string> &household
 
         popInfo.count_households = static_cast<unsigned int>(floor(
                 static_cast<double>(popSize) / averageHhSize));
-        // cout << personCountTotal << endl;
 }
 
 ostream& operator<<(ostream& out, const GeoGridConfig& config)

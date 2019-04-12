@@ -43,7 +43,7 @@ class Location
 public:
         /// Parametrized constructor with population count.
         Location(unsigned int id, unsigned int province, Coordinate coordinate = Coordinate(0.0, 0.0),
-                 std::string name = "", unsigned int popCount = 0U, unsigned int popId = 0U);
+                 std::string name = "", unsigned int popCount = 0U, unsigned int hhId = 0U);
 
         /// Perform a full comparison with the other location.
         bool operator==(const Location& other) const;
