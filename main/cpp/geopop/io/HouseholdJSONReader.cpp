@@ -61,7 +61,6 @@ void HouseholdJSONReader::SetReferenceHouseholds(unsigned int&                  
 
                 p_count += household.size();
                 ref_ages.emplace_back(parsedHH);
-                
         }
         ref_person_count = p_count;
 }

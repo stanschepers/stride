@@ -42,8 +42,8 @@ void runPeopleTest(shared_ptr<Population> pop)
         auto& geoGrid  = pop->RefGeoGrid();
         auto  location = geoGrid[0];
 
-        string cpTypes[8] = {"Household", "Daycare",   "PreSchool",        "K12School",
-                             "College",   "Workplace", "PrimaryCommunity", "SecondaryCommunity"};
+        string cpTypes[8] = {"Household", "K12School",        "College",
+                             "Workplace", "PrimaryCommunity", "SecondaryCommunity"};
 
         EXPECT_EQ(location->GetID(), 1);
         EXPECT_EQ(location->GetName(), "Bavikhove");
