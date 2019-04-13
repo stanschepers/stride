@@ -96,30 +96,37 @@ void GeoGridConfig::SetData(const string& householdsFileName)
 
 void GeoGridConfig::SetData(const std::map<unsigned int, std::string> &householdsFileNamePerId)
 {
-
         ReaderFactory                   readerFactory;
-        unsigned int                    personCountTotal = 0;
-        vector<vector<unsigned int>>    agesTotal = {};
 
-//        unsigned int                    personCount = 0;
-        vector<vector<unsigned int>>    ages = {};
         for(const auto& idHhFile:householdsFileNamePerId){
-                ages = {};
-//                const auto id                   = idHhFile.first;
+                unsigned int                    personCount = 0;
+                vector<vector<unsigned int>>    ages = {};
+                double                          youngOldFraction = 1.0;
+
+                const auto hhId                 = idHhFile.first;
                 const auto householdFileName    = idHhFile.second;
+
                 auto householdsReader = readerFactory.CreateHouseholdReader(householdFileName);
-                householdsReader->SetReferenceHouseholds(refHH.person_count, refHH.ages, refHH.young_old_fraction);
-                personCountTotal += refHH.person_count;
+                householdsReader->SetReferenceHouseholds(personCount, ages, youngOldFraction);
+                ReferenceHouseHold hh {personCount, ages, youngOldFraction};
+                refHHperHHType.insert(make_pair(hhId, hh));
+
+                // add total
+                refHH.person_count += personCount;
+                for(const auto& age:ages){
+                        refHH.ages.emplace_back(age);
+                }
+                refHH.young_old_fraction += youngOldFraction;
+
         }
         const auto popSize = input.pop_size;
 
-//        refHH.ages = ages;
-//        refHH.person_count = personCount;
+        refHH.young_old_fraction = refHH.young_old_fraction / static_cast<double>(refHHperHHType.size()); // average
 
         //----------------------------------------------------------------
         // Determine age makeup of reference houshold population.
         //----------------------------------------------------------------
-        const auto ref_p_count = personCountTotal;
+        const auto ref_p_count = refHH.person_count;
         const auto averageHhSize = static_cast<double>(ref_p_count) / static_cast<double>(refHH.ages.size());
 
         auto ref_k12school = 0U;
