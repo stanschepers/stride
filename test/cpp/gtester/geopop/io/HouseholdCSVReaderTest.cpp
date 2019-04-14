@@ -37,7 +37,7 @@ TEST(HouseholdCSVReader, test1)
  55,54,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
  40,40,3,3,NA,NA,NA,NA,NA,NA,NA,NA
  35,32,6,3,NA,NA,NA,NA,NA,NA,NA,NA
- 78,75,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+ 78,75,24,64,63,16,14,17,19,20,21,55
 )";
 
         GeoGridConfig      geoConfig{};
@@ -47,7 +47,9 @@ TEST(HouseholdCSVReader, test1)
         reader.SetReferenceHouseholds(geoConfig.refHH.person_count, geoConfig.refHH.ages,
                 geoConfig.refHH.young_old_fraction);
 
-        EXPECT_EQ(geoConfig.refHH.person_count, 23U);
+        EXPECT_EQ(geoConfig.refHH.person_count, 33U);
+
+        EXPECT_DOUBLE_EQ(geoConfig.refHH.young_old_fraction, 1.75);
 
         const vector<vector<unsigned int>>& HHages = geoConfig.refHH.ages;
 
@@ -59,7 +61,7 @@ TEST(HouseholdCSVReader, test1)
         EXPECT_EQ(HHages[4].size(), 2U);
         EXPECT_EQ(HHages[5].size(), 4U);
         EXPECT_EQ(HHages[6].size(), 4U);
-        EXPECT_EQ(HHages[7].size(), 2U);
+        EXPECT_EQ(HHages[7].size(), 12U);
 
         EXPECT_EQ(HHages[0][0], 42U);
         EXPECT_EQ(HHages[0][1], 38U);
@@ -75,6 +77,17 @@ TEST(HouseholdCSVReader, test1)
 
         EXPECT_EQ(HHages[7][0], 78U);
         EXPECT_EQ(HHages[7][1], 75U);
+        EXPECT_EQ(HHages[7][2], 24U);
+        EXPECT_EQ(HHages[7][3], 64U);
+        EXPECT_EQ(HHages[7][4], 63U);
+        EXPECT_EQ(HHages[7][5], 16U);
+        EXPECT_EQ(HHages[7][6], 14U);
+        EXPECT_EQ(HHages[7][7], 17U);
+        EXPECT_EQ(HHages[7][8], 19U);
+        EXPECT_EQ(HHages[7][9], 20U);
+        EXPECT_EQ(HHages[7][10], 21U);
+        EXPECT_EQ(HHages[7][11], 55U);
+
 }
 
 } // namespace
