@@ -16,11 +16,14 @@
 #include "HouseholdCSVReader.h"
 
 #include "util/CSV.h"
+#include "contact/AgeBrackets.h"
 
 namespace geopop {
 
 using namespace std;
 using namespace stride::util;
+using namespace stride;
+
 
 HouseholdCSVReader::HouseholdCSVReader(std::unique_ptr<std::istream> inputStream)
     : m_input_stream(std::move(inputStream))
@@ -42,10 +45,10 @@ void HouseholdCSVReader::SetReferenceHouseholds(unsigned int &ref_person_count, 
                         unsigned int age;
                         try {
                                 age = row.GetValue<unsigned int>(i);
-                                if(age >= 15 && age <= 24) {
+                                if(AgeBrackets::Young::HasAge(age)) {
                                       p_young++;
                                 }
-                                if(age >= 55 && age <= 64) {
+                                if(AgeBrackets::Old::HasAge(age)) {
                                         p_old++;
                                 }
 
