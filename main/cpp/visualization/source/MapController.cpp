@@ -15,7 +15,7 @@
 
 #include <QVariant>
 
-#include "EpiOutputReaderFactory.h"
+#include "geopop/io/EpiOutputReaderFactory.h"
 #include "MapController.h"
 
 namespace visualization {
@@ -24,7 +24,7 @@ MapController::MapController(const std::string& filename) : QObject(nullptr)
 {
         // Read in the epi-output
         visualization::EpiOutputReaderFactory readerFactory;
-        const auto&                           reader = readerFactory.CreateReader(filename, m_epiOutput);
+        const auto& reader = readerFactory.CreateReader(filename, m_epiOutput);
         reader->Read();
         // Check how big the gap in between measurements is
         auto diff = m_epiOutput[0].epiOutput.begin()->second.begin()->second.begin();

@@ -20,7 +20,7 @@
 #include <tuple>
 #include <vector>
 
-#include "EpiOutput.h"
+#include "visualization/source/EpiOutput.h"
 
 namespace visualization {
 
