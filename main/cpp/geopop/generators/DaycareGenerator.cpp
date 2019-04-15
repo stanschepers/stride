@@ -41,7 +41,7 @@ void DaycareGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfi
 
         vector<double> weights;
         for (const auto& loc : geoGrid) {
-                weights.push_back(loc->GetPopFraction());
+                weights.push_back(loc->GetPopFraction() * loc->GetYoungOldFraction());
         }
 
         if (weights.empty()) {

@@ -42,7 +42,7 @@ void PreSchoolGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridCon
 
         vector<double> weights;
         for (const auto& loc : geoGrid) {
-                weights.push_back(loc->GetPopFraction());
+                weights.push_back(loc->GetPopFraction() * loc->GetYoungOldFraction());
         }
 
         if (weights.empty()) {
