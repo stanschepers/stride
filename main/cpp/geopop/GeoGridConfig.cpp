@@ -184,7 +184,7 @@ void GeoGridConfig::SetData(const std::map<unsigned int, std::string> &household
                 input.participation_college * age_count_college));
 
         popInfo.popcount_workplace = static_cast<unsigned int>(
-                floor(input.particpation_workplace * (age_count_workplace - popInfo.popcount_college)));
+                floor(input.participation_workplace * (age_count_workplace - popInfo.popcount_college)));
 
         popInfo.count_households = static_cast<unsigned int>(floor(
                 static_cast<double>(popSize) / averageHhSize));

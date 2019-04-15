@@ -52,6 +52,12 @@ struct ReferenceHouseHold
 // -----------------------------------------------------------------------------------------
 struct PopulationInfo
 {
+        /// Numbers of individuals in Daycare.
+        unsigned int popcount_daycare;
+
+        /// Numbers of individuals in PreSchool.
+        unsigned int popcount_preschool;
+
         /// Numbers of individuals in K12School.
         unsigned int popcount_k12school;
 
