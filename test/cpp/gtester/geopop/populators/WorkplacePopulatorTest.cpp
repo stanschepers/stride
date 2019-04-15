@@ -63,7 +63,7 @@ TEST_F(WorkplacePopulatorTest, NoActive)
 {
         MakeGeoGrid(m_geogrid_config, 3, 100, 3, 33, 3, m_pop.get());
 
-        m_geogrid_config.input.particpation_workplace = 0;
+        m_geogrid_config.input.participation_workplace = 0;
         m_geogrid_config.input.participation_college  = 1;
 
         // Nobody works, everybody in the student age bracket goes to college: so workplace is empty.
@@ -91,7 +91,7 @@ TEST_F(WorkplacePopulatorTest, NoCommuting)
         MakeGeoGrid(m_geogrid_config, 3, 100, 3, 33, 3, m_pop.get());
 
         m_geogrid_config.input.fraction_workplace_commuters = 0;
-        m_geogrid_config.input.particpation_workplace       = 1;
+        m_geogrid_config.input.participation_workplace      = 1;
         m_geogrid_config.input.participation_college        = 0.5;
 
         // Brasschaat and Schoten are close to each other
@@ -169,7 +169,7 @@ TEST_F(WorkplacePopulatorTest, OnlyCommuting)
         m_geogrid_config.input.fraction_workplace_commuters = 1;
         m_geogrid_config.input.fraction_college_commuters   = 0;
         m_geogrid_config.popInfo.popcount_workplace         = 1;
-        m_geogrid_config.input.particpation_workplace       = 1;
+        m_geogrid_config.input.participation_workplace       = 1;
         m_geogrid_config.input.participation_college        = 0.5;
 
         // only commuting
@@ -231,7 +231,7 @@ TEST_F(WorkplacePopulatorTest, OnlyCommutingButNoCommutingAvaiable)
         m_geogrid_config.input.fraction_workplace_commuters = 1;
         m_geogrid_config.input.fraction_college_commuters   = 0;
         m_geogrid_config.popInfo.popcount_workplace         = 1;
-        m_geogrid_config.input.particpation_workplace       = 1;
+        m_geogrid_config.input.participation_workplace       = 1;
         m_geogrid_config.input.participation_college        = 0.5;
 
         auto brasschaat = *m_geo_grid.begin();

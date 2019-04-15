@@ -28,6 +28,8 @@
 #include "geopop/generators/PrimaryCommunityGenerator.h"
 #include "geopop/generators/SecondaryCommunityGenerator.h"
 #include "geopop/generators/WorkplaceGenerator.h"
+#include "geopop/generators/DaycareGenerator.h"
+#include "geopop/generators/PreSchoolGenerator.h"
 #include "geopop/io/ReaderFactory.h"
 #include "geopop/populators/CollegePopulator.h"
 #include "geopop/populators/HouseholdPopulator.h"
@@ -35,6 +37,8 @@
 #include "geopop/populators/PrimaryCommunityPopulator.h"
 #include "geopop/populators/SecondaryCommunityPopulator.h"
 #include "geopop/populators/WorkplacePopulator.h"
+#include "geopop/populators/DaycarePopulator.h"
+#include "geopop/populators/PreSchoolPopulator.h"
 #include "pop/Population.h"
 #include "pop/SurveySeeder.h"
 #include "util/FileSys.h"
@@ -139,7 +143,9 @@ void GeoPopBuilder::MakeLocations(GeoGrid& geoGrid, const GeoGridConfig& geoGrid
 
 void GeoPopBuilder::MakePools(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig)
 {
-        vector<shared_ptr<Generator>> generators{make_shared<K12SchoolGenerator>(m_rn_man, m_stride_logger),
+        vector<shared_ptr<Generator>> generators{make_shared<DaycareGenerator>(m_rn_man, m_stride_logger),
+                                                 make_shared<PreSchoolGenerator>(m_rn_man, m_stride_logger),
+                                                 make_shared<K12SchoolGenerator>(m_rn_man, m_stride_logger),
                                                  make_shared<CollegeGenerator>(m_rn_man, m_stride_logger),
                                                  make_shared<WorkplaceGenerator>(m_rn_man, m_stride_logger),
                                                  make_shared<PrimaryCommunityGenerator>(m_rn_man, m_stride_logger),
@@ -154,6 +160,8 @@ void GeoPopBuilder::MakePools(GeoGrid& geoGrid, const GeoGridConfig& geoGridConf
 void GeoPopBuilder::MakePersons(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig)
 {
         vector<shared_ptr<Populator>> populators{make_shared<HouseholdPopulator>(m_rn_man, m_stride_logger),
+                                                 make_shared<DaycarePopulator>(m_rn_man, m_stride_logger),
+                                                 make_shared<PreSchoolPopulator>(m_rn_man, m_stride_logger),
                                                  make_shared<K12SchoolPopulator>(m_rn_man, m_stride_logger),
                                                  make_shared<CollegePopulator>(m_rn_man, m_stride_logger),
                                                  make_shared<PrimaryCommunityPopulator>(m_rn_man, m_stride_logger),

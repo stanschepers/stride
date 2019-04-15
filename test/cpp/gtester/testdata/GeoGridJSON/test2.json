@@ -81,6 +81,30 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "id": "6",
+                    "type": "Daycare",
+                    "pools": [
+                        {
+                            "id": "8",
+                            "people": [
+                                "0"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "7",
+                    "type": "PreSchool",
+                    "pools": [
+                        {
+                            "id": "9",
+                            "people": [
+                                "0"
+                            ]
+                        }
+                    ]
                 }
             ]
         }
@@ -89,6 +113,8 @@
         {
             "id": "0",
             "age": "18",
+            "Daycare": "8",
+            "PreSchool": "9",
             "K12School": "2",
             "College": "4",
             "Household": "5",

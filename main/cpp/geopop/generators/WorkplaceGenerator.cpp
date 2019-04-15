@@ -47,7 +47,7 @@ void WorkplaceGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridCon
                     (loc->GetPopCount() +
                      loc->GetIncomingCommuteCount(geoGridConfig.input.fraction_workplace_commuters) -
                      loc->GetOutgoingCommuteCount(geoGridConfig.input.fraction_workplace_commuters) *
-                         geoGridConfig.input.particpation_workplace);
+                         geoGridConfig.input.participation_workplace);
 
                 const double weight = ActivePeopleCount / EmployeeCount;
                 AssertThrow(weight >= 0 && weight <= 1 && !std::isnan(weight), "Invalid weight: " + to_string(weight),

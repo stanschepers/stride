@@ -63,7 +63,7 @@ void WorkplacePopulator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridCon
                         for (auto p : *hhPool) {
                                 if (AgeBrackets::Workplace::HasAge((p->GetAge()))) {
                                         bool isStudent      = MakeChoice(geoGridConfig.input.participation_college);
-                                        bool isActiveWorker = MakeChoice(geoGridConfig.input.particpation_workplace);
+                                        bool isActiveWorker = MakeChoice(geoGridConfig.input.participation_workplace);
 
                                         if ((AgeBrackets::College::HasAge(p->GetAge()) && !isStudent) ||
                                             isActiveWorker) {

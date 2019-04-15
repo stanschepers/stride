@@ -304,6 +304,8 @@ bool GeoGrid_Location_ContactPools_Type_IsValid(int value) {
     case 3:
     case 4:
     case 5:
+    case 6:
+    case 7:
       return true;
     default:
       return false;
@@ -311,6 +313,8 @@ bool GeoGrid_Location_ContactPools_Type_IsValid(int value) {
 }
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const GeoGrid_Location_ContactPools_Type GeoGrid_Location_ContactPools::Daycare;
+const GeoGrid_Location_ContactPools_Type GeoGrid_Location_ContactPools::PreSchool;
 const GeoGrid_Location_ContactPools_Type GeoGrid_Location_ContactPools::K12School;
 const GeoGrid_Location_ContactPools_Type GeoGrid_Location_ContactPools::PrimaryCommunity;
 const GeoGrid_Location_ContactPools_Type GeoGrid_Location_ContactPools::SecondaryCommunity;

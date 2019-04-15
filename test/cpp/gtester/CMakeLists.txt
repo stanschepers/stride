@@ -54,6 +54,8 @@ set(SRC
     geopop/generators/PrimaryCommunityGeneratorTest.cpp
     geopop/generators/SecondaryCommunityGeneratorTest.cpp
     geopop/generators/WorkplaceGeneratorTest.cpp
+    geopop/generators/DaycareGeneratorTest.cpp
+    geopop/generators/PreSchoolGeneratorTest.cpp
     #---
     geopop/io/CitiesCSVReaderTest.cpp
     geopop/io/CommutesCSVReaderTest.cpp
@@ -74,14 +76,15 @@ set(SRC
     geopop/populators/PrimaryCommunityPopulatorTests.cpp
     geopop/populators/SecondaryCommunityPopulatorTests.cpp
     geopop/populators/WorkplacePopulatorTest.cpp
+    geopop/populators/DaycarePopulatorTest.cpp
+    geopop/populators/PreSchoolPopulatorTest.cpp
     #---
     myhayai/DeliveryMan.cpp
     myhayai/MyhayaiTests.cpp
     myhayai/class_delivery.cpp
     myhayai/flex_delivery.cpp
     #---
-    main.cpp
-)
+    main.cpp)
 
 #if (OPENMP_FOUND)
 #        set(SRC ${SRC} ParallelRuns.cpp)

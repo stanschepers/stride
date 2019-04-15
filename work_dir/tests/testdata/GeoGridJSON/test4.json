@@ -6,42 +6,34 @@
             "province": "4",
             "population": "2500",
             "coordinate": {
+                "x": "0",
+                "y": "0",
                 "longitude": "0",
                 "latitude": "0"
             },
             "contactCenters": [
                 {
-                    "id": "0",
-                    "type": "Daycare",
-                    "pools": ""
-                },
-                {
-                    "id": "1",
-                    "type": "PreSchool",
-                    "pools": ""
-                },
-                {
-                    "id": "2",
+                    "id": 0,
                     "type": "K12School",
                     "pools": ""
                 },
                 {
-                    "id": "3",
-                    "type": "PrimaryCommunity",
+                    "id": 1,
+                    "type": "Studio",
                     "pools": ""
                 },
                 {
-                    "id": "4",
+                    "id": 2,
                     "type": "College",
                     "pools": ""
                 },
                 {
-                    "id": "5",
+                    "id": 3,
                     "type": "Household",
                     "pools": ""
                 },
                 {
-                    "id": "6",
+                    "id": 5,
                     "type": "Workplace",
                     "pools": ""
                 }

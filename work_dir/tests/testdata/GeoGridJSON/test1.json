@@ -12,36 +12,26 @@
             "contactCenters": [
                 {
                     "id": "0",
-                    "type": "Daycare",
-                    "pools": ""
-                },
-                {
-                    "id": "1",
-                    "type": "PreSchool",
-                    "pools": ""
-                },
-                {
-                    "id": "2",
                     "type": "K12School",
                     "pools": ""
                 },
                 {
-                    "id": "3",
+                    "id": "1",
                     "type": "PrimaryCommunity",
                     "pools": ""
                 },
                 {
-                    "id": "4",
+                    "id": "2",
                     "type": "College",
                     "pools": ""
                 },
                 {
-                    "id": "5",
+                    "id": "3",
                     "type": "Household",
                     "pools": ""
                 },
                 {
-                    "id": "6",
+                    "id": "4",
                     "type": "Workplace",
                     "pools": ""
                 }

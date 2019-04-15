@@ -106,7 +106,11 @@ shared_ptr<ContactCenter> GeoGridJSONReader::ParseContactCenter(boost::property_
         const auto id   = boost::lexical_cast<unsigned int>(contactCenter.get<string>("id"));
 
         ContactType::Id typeId;
-        if (type == ToString(Id::K12School)) {
+        if (type == ToString(Id::Daycare)) {
+                typeId = Id::Daycare;
+        } else if (type == ToString(Id::PreSchool)) {
+                typeId = Id::PreSchool;
+        } else if (type == ToString(Id::K12School)) {
                 typeId = Id::K12School;
         } else if (type == ToString(Id::College)) {
                 typeId = Id::College;
@@ -154,13 +158,15 @@ Person* GeoGridJSONReader::ParsePerson(boost::property_tree::ptree& person)
         const auto id   = boost::lexical_cast<unsigned int>(person.get<string>("id"));
         const auto age  = boost::lexical_cast<unsigned int>(person.get<string>("age"));
         const auto hhId = boost::lexical_cast<unsigned int>(person.get<string>("Household"));
+        const auto dcId = boost::lexical_cast<unsigned int>(person.get<string>("Daycare"));
+        const auto psId = boost::lexical_cast<unsigned int>(person.get<string>("PreSchool"));
         const auto ksId = boost::lexical_cast<unsigned int>(person.get<string>("K12School"));
         const auto coId = boost::lexical_cast<unsigned int>(person.get<string>("College"));
         const auto wpId = boost::lexical_cast<unsigned int>(person.get<string>("Workplace"));
         const auto pcId = boost::lexical_cast<unsigned int>(person.get<string>("PrimaryCommunity"));
         const auto scId = boost::lexical_cast<unsigned int>(person.get<string>("SecondaryCommunity"));
 
-        return m_population->CreatePerson(id, age, hhId, ksId, coId, wpId, pcId, scId);
+        return m_population->CreatePerson(id, age, hhId, dcId, psId, ksId, coId, wpId, pcId, scId);
 }
 
 } // namespace geopop
