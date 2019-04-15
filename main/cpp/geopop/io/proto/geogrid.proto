@@ -41,12 +41,14 @@ message GeoGrid {
             int64 id = 1;
 
             enum Type {
-                K12School = 0;
-                PrimaryCommunity = 1;
-                SecondaryCommunity = 2;
-                College = 3;
-                Household = 4;
-                Workplace = 5;
+                Daycare = 0;
+                PreSchool = 1;
+                K12School = 2;
+                PrimaryCommunity = 3;
+                SecondaryCommunity = 4;
+                College = 5;
+                Household = 6;
+                Workplace = 7;
             }
             Type type = 2;
 

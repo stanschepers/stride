@@ -13,22 +13,19 @@
  *  Copyright 2018, 2019, Jan Broeckhove and Bistromatics group.
  */
 
-#include <geopop/GeoGridConfig.h>
-#include "PreSchoolGenerator.h"
+#include "Generator.h"
 
-#include "geopop/GeoGrid.h"
 #include "geopop/GeoGridConfig.h"
-#include "geopop/Location.h"
-#include "pop/Population.h"
-#include "util/RnMan.h"
+#include "geopop/PoolParams.h"
 
 namespace geopop {
 
-using namespace std;
-using namespace stride::ContactType;
+    using namespace std;
+    using namespace stride;
+    using namespace stride::ContactType;
 
-
-void PreSchoolGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig)
+template<>
+void Generator<stride::ContactType::Id::PreSchool>::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig)
 {
         // 1. given the number of persons of school age, calculate number of schools; schools
         //    have 500 pupils on average
@@ -36,9 +33,9 @@ void PreSchoolGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridCon
         //    relative number of pupils for that location; the relative number of pupils is set
         //    to the relative population w.r.t the total population.
 
-        const auto pupilCount = geoGridConfig.popInfo.popcount_preschool;
+        const auto pupilCount = geoGridConfig.info.popcount_preschool;
         const auto schoolCount =
-            static_cast<unsigned int>(ceil(pupilCount / static_cast<double>(geoGridConfig.pools.preschool_size)));
+            static_cast<unsigned int>(ceil(pupilCount / static_cast<double>(PoolParams<Id::PreSchool>::people)));
 
         vector<double> weights;
         for (const auto& loc : geoGrid) {
@@ -55,16 +52,7 @@ void PreSchoolGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridCon
 
         for (auto i = 0U; i < schoolCount; i++) {
                 const auto loc = geoGrid[dist()];
-                AddPools(*loc, pop, geoGridConfig.pools.pools_per_preschool);
-        }
-}
-
-void PreSchoolGenerator::AddPools(geopop::Location &loc, stride::Population *pop, unsigned int number)
-{
-        auto& poolSys = pop->RefPoolSys();
-        for (auto i = 0U; i < number; ++i) {
-                const auto p = poolSys.CreateContactPool(Id::PreSchool);
-                loc.RegisterPool<Id::PreSchool>(p);
+                AddPools(*loc, pop);
         }
 }
 

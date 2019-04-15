@@ -68,7 +68,7 @@ TEST_F(K12SchoolGeneratorTest, OneLocationTest)
 // Check that generator can handle empty GeoGrid.
 TEST_F(K12SchoolGeneratorTest, ZeroLocationTest)
 {
-        m_geogrid_config.param.pop_size             = 10000;
+        m_geogrid_config.param.pop_size          = 10000;
         m_geogrid_config.info.popcount_k12school = 2000;
 
         m_k12school_generator.Apply(m_geo_grid, m_geogrid_config);
@@ -79,7 +79,7 @@ TEST_F(K12SchoolGeneratorTest, ZeroLocationTest)
 // Check that generator can handle five Locations.
 TEST_F(K12SchoolGeneratorTest, FiveLocationsTest)
 {
-        m_geogrid_config.param.pop_size             = 37542 * 100;
+        m_geogrid_config.param.pop_size          = 37542 * 100;
         m_geogrid_config.info.popcount_k12school = 750840;
 
         auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 10150 * 100);

@@ -13,8 +13,8 @@
  *  Copyright 2018, 2019, Jan Broeckhove and Bistromatics group.
  */
 
-#include "geopop/populators/PreSchoolPopulator.h"
-#include "geopop/generators/PreSchoolGenerator.h"
+#include "geopop/populators/Populator.h"
+#include "geopop/generators/Generator.h"
 
 #include "MakeGeoGrid.h"
 #include "contact/AgeBrackets.h"
@@ -52,7 +52,6 @@ protected:
         shared_ptr<Population> m_pop;
         GeoGrid&               m_geo_grid;
         PreSchoolGenerator     m_preschool_generator;
-        const unsigned int     m_pppre = GeoGridConfig{}.pools.pools_per_preschool;
 };
 
 TEST_F(PreSchoolPopulatorTest, NoPopulation)
@@ -67,7 +66,7 @@ TEST_F(PreSchoolPopulatorTest, OneLocationTest)
 {
         MakeGeoGrid(m_geogrid_config, 1, 300, 5, 100, 3, m_pop.get());
         m_geo_grid.Finalize();
-        m_geogrid_config.input.participation_preschool = 1;
+        m_geogrid_config.param.participation_preschool = 1;
         m_preschool_populator.Apply(m_geo_grid, m_geogrid_config);
 
         map<int, int> usedCapacity{
@@ -88,7 +87,7 @@ TEST_F(PreSchoolPopulatorTest, OneLocationTest)
         auto  location = *m_geo_grid.begin();
         auto& prePools = location->RefPools(Id::PreSchool);
 
-        ASSERT_EQ(prePools.size(), 5 * m_geogrid_config.pools.pools_per_preschool);
+        ASSERT_EQ(prePools.size(), 5 * PoolParams<Id::PreSchool>::pools);
         for (auto& pool : prePools) {
                 EXPECT_EQ(usedCapacity[pool->GetId()], pool->size());
                 for (Person* person : *pool) {
@@ -155,7 +154,7 @@ TEST_F(PreSchoolPopulatorTest, TwoLocationTest)
         kortrijk->SetCoordinate(Coordinate(50.82900246, 3.264406009));
 
         m_geo_grid.Finalize();
-        m_geogrid_config.input.participation_preschool = 1;
+        m_geogrid_config.param.participation_preschool = 1;
         m_preschool_populator.Apply(m_geo_grid, m_geogrid_config);
 
         auto& prePools1 = brasschaat->RefPools(Id::PreSchool);
@@ -163,9 +162,9 @@ TEST_F(PreSchoolPopulatorTest, TwoLocationTest)
         auto& prePools3 = kortrijk->RefPools(Id::PreSchool);
 
         // Check number of pools corresponding to 3 K12Schools per location.
-        EXPECT_EQ(prePools1.size(), 3 * m_geogrid_config.pools.pools_per_preschool);
-        EXPECT_EQ(prePools2.size(), 3 * m_geogrid_config.pools.pools_per_preschool);
-        EXPECT_EQ(prePools3.size(), 3 * m_geogrid_config.pools.pools_per_preschool);
+        EXPECT_EQ(prePools1.size(), 3 * PoolParams<Id::PreSchool>::pools);
+        EXPECT_EQ(prePools2.size(), 3 * PoolParams<Id::PreSchool>::pools);
+        EXPECT_EQ(prePools3.size(), 3 * PoolParams<Id::PreSchool>::pools);
 
         map<int, int> persons{
             {0, 0},     {1, 0},     {2, 0},     {3, 0},     {4, 0},     {5, 0},     {6, 0},     {7, 0},     {8, 0},

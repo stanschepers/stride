@@ -96,10 +96,10 @@ void GeoGridConfig::SetData(const string& householdsFileName)
         const auto age_count_college   = static_cast<unsigned int>(floor(popSize * fraction_college_age));
         const auto age_count_workplace = static_cast<unsigned int>(floor(popSize * fraction_workplace_age));
 
-        info.popcount_daycare = static_cast<unsigned int>(floor(input.participation_daycare * age_count_daycare));
+        info.popcount_daycare = static_cast<unsigned int>(floor(param.participation_daycare * age_count_daycare));
 
         info.popcount_preschool =
-           static_cast<unsigned int>(floor(input.participation_preschool * age_count_preschool));
+           static_cast<unsigned int>(floor(param.participation_preschool * age_count_preschool));
 
         info.popcount_k12school = age_count_k12school;
 
@@ -118,8 +118,8 @@ ostream& operator<<(ostream& out, const GeoGridConfig& config)
         out << "Input:" << endl;
         out << setw(w) << "Fraction college commuters:" << config.param.fraction_college_commuters << "\n";
         out << setw(w) << "Fraction workplace commuters:" << config.param.fraction_workplace_commuters << "\n";
-        out << setw(w) << "Participation fraction of daycare:" << config.input.participation_daycare << "\n";
-        out << setw(w) << "Participation fraction of preschool:" << config.input.participation_preschool << "\n";
+        out << setw(w) << "Participation fraction of daycare:" << config.param.participation_daycare << "\n";
+        out << setw(w) << "Participation fraction of preschool:" << config.param.participation_preschool << "\n";
         out << setw(w) << "Participation fraction of college:" << config.param.participation_college << "\n";
         out << setw(w) << "Participation fraction of workplace:" << config.param.participation_workplace << "\n";
         out << setw(w) << "Target population size" << intToDottedString(config.param.pop_size) << "\n"

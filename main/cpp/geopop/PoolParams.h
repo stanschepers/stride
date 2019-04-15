@@ -34,6 +34,20 @@ struct PoolParams<stride::ContactType::Id::Household>
 };
 
 template<>
+struct PoolParams<stride::ContactType::Id::Daycare>
+{
+        static constexpr unsigned int people = 9U;
+        static constexpr unsigned int pools = 1U;
+};
+
+template<>
+struct PoolParams<stride::ContactType::Id::PreSchool>
+{
+        static constexpr unsigned int people = 200U;
+        static constexpr unsigned int pools = 10U;
+};
+
+template<>
 struct PoolParams<stride::ContactType::Id::K12School>
 {
         static constexpr unsigned int people = 500U;
