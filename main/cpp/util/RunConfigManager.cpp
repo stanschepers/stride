@@ -71,8 +71,10 @@ void RunConfigManager::AddGeoPopConfig(ptree& pt)
                 <fraction_college_commuters>0.5</fraction_college_commuters>
                 <fraction_workplace_commuters>0.5</fraction_workplace_commuters>
                 <household_file>households_flanders.csv</household_file>
+                <participation_daycare>0.45</participation_daycare>
+                <participation_preschool>0.99</participation_preschool>
                 <participation_college>0.5</participation_college>
-                <particpation_workplace>0.75</particpation_workplace>
+                <participation_workplace>0.75</participation_workplace>
                 <population_size>600000</population_size>
     </geopop_gen>
 </run>
