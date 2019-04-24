@@ -26,7 +26,6 @@
 namespace geopop {
 
 class GeoGrid;
-class HouseholdCenter;
 
 /**
  * Configuration data mostly for generating a population, but also for computing
@@ -42,7 +41,7 @@ public:
         explicit GeoGridConfig(const boost::property_tree::ptree& configPt);
 
         // -----------------------------------------------------------------------------------------
-        // Input parameters set by constructor with configuration property tree.
+        // Parameters set by constructor with configuration property tree.
         // -----------------------------------------------------------------------------------------
         struct
         {
@@ -50,7 +49,7 @@ public:
                 double participation_college;
 
                 /// Participation of workplace (fraction of people of work age and not going to
-                /// college having emplayment).
+                /// college and having employment).
                 double particpation_workplace;
 
                 /// Fraction of college students that commute.
@@ -61,7 +60,7 @@ public:
 
                 /// Target population size for the generated population.
                 unsigned int pop_size;
-        } input;
+        } param;
 
         // -----------------------------------------------------------------------------------------
         // The reference Households used to generate the population by random draws.
@@ -77,9 +76,10 @@ public:
 
         // -----------------------------------------------------------------------------------------
         // These are numbers derived from the reference households, the target size of the generated
-        // population and the input parameters relating participation school and worplace.
-        // These numbers are used as targets in the poggen process and are reproduced (to very close
-        // approximation) in the generated population.
+        // population and the input parameters relating participation in college and workplace.
+        // These numbers are used as targets in the population generation process and are reproduced
+        // (to very close approximation) in the generated population.
+        // The numbers are set by the SetData method.
         // -----------------------------------------------------------------------------------------
         struct
         {
@@ -94,34 +94,11 @@ public:
 
                 /// The number of households.
                 unsigned int count_households;
-        } popInfo;
+        } info;
 
         // -----------------------------------------------------------------------------------------
-        // Config params for ContactPools (constants for now at least).
-        // -----------------------------------------------------------------------------------------
-        struct
-        {
-                /// Every houselhold constitutes a single ContactPool.
-                unsigned int pools_per_houselhold = 1U;
-
-                /// Used to calculate the number of K12Schools.
-                unsigned int k12school_size      = 500U;
-                unsigned int pools_per_k12school = 25U;
-
-                /// Used to calculate the number of Colleges.
-                unsigned int college_size      = 3000U;
-                unsigned int pools_per_college = 20U;
-
-                /// Used to calculate the number of Communities.
-                unsigned int community_size      = 2000U;
-                unsigned int pools_per_community = 1U;
-
-                /// Used to calculate the number of Workplaces.
-                unsigned int workplace_size      = 20U;
-                unsigned int pools_per_workplace = 1U;
-        } pools;
-
         /// Read the househould data file, parse it and set data.
+        // -----------------------------------------------------------------------------------------
         void SetData(const std::string& householdsFileName);
 };
 

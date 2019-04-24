@@ -43,7 +43,7 @@ using namespace boost::property_tree;
 
 namespace stride {
 
-StanController::StanController(const ptree& config) : ControlHelper("Stancontoller", config) {}
+StanController::StanController(const ptree& config, const string& name) : ControlHelper(config, name) {}
 
 void StanController::Control()
 {
@@ -108,7 +108,6 @@ void StanController::Control()
                 m_stride_logger->info("For run with seed {} final infected count is: {}", seeds[i], results[i].back());
         }
 
-
         // -----------------------------------------------------------------------------------------
         // Stan scenario: step 6, output to file.
         // -----------------------------------------------------------------------------------------
@@ -122,12 +121,6 @@ void StanController::Control()
                 csv.AddRow(v.begin(), v.end());
         }
         csv.Write(FileSys::BuildPath(m_config.get<string>("run.output_prefix"), "stan_infected.csv"));
-
-        // -----------------------------------------------------------------------------------------
-        // Done, shutdown.
-        // -----------------------------------------------------------------------------------------
-        LogShutdown();
-        spdlog::drop_all();
 }
 
 } // namespace stride
