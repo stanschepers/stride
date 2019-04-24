@@ -18,6 +18,7 @@
 #include "CommutesReader.h"
 #include "HouseholdReader.h"
 #include "LocationsReader.h"
+#include "DistributionReader.h"
 
 #include <istream>
 #include <memory>
@@ -59,6 +60,12 @@ public:
 
         /// Create a HouseholdReader based on the absolute filesystem path the input file.
         static std::shared_ptr<HouseholdReader> CreateHouseholdReader(const filesys::path& path);
+
+        /// Create a DistributionReader based on the filename relative to the data directory.
+        static std::shared_ptr<DistributionReader> CreateDistributionReader(const std::string& filename);
+
+        /// Create a DistributionReader based on the absolute filesystem path the input file.
+        static std::shared_ptr<DistributionReader> CreateDistributionReader(const filesys::path& path);
 
 private:
         /// Create an istream based on the filesystem path.

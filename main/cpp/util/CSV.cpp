@@ -67,7 +67,11 @@ CSV::CSV(const filesys::path& path, std::initializer_list<std::string> optLabels
         }
 }
 
-CSV::CSV(std::istream& inputStream) : m_labels(), m_column_count(0) { ReadFromStream(inputStream); }
+CSV::CSV(std::istream& inputStream, const std::tuple<std::string, char>& delimiters) : m_labels(),
+                                                                                                m_column_count(0)
+{
+        ReadFromStream(inputStream, delimiters);
+}
 
 CSV::CSV(const vector<string>& labels) : m_labels(labels), m_column_count(labels.size()) {}
 
@@ -130,25 +134,26 @@ void CSV::WriteRows(std::ofstream& file) const
         }
 }
 
-void CSV::ReadFromStream(std::istream& inputStream)
+void CSV::ReadFromStream(std::istream& inputStream, const std::tuple<std::string, char>& delimiters)
 {
         std::string line;
 
         // header
-        getline(inputStream, line);
+        getline(inputStream, line, get<1>(delimiters));
         line                                  = Trim(line);
-        std::vector<std::string> headerLabels = Split(line, ","); // Split is bad! There is no option to escape ",".
+        std::vector<std::string> headerLabels = Split(line, get<0>(delimiters)); // Split is bad! There is no option to escape ",".
         for (const std::string& label : headerLabels) {
                 m_labels.push_back(Trim(label, "\""));
         }
         m_column_count = m_labels.size();
 
         // body
-        while (getline(inputStream, line)) {
+        while (getline(inputStream, line, get<1>(delimiters))) {
                 line = Trim(line);
+                line = Trim(line, "\n"); // Solution to dirty csv files that use other delimiters and still have \n
                 if (!line.empty()) {
                         std::vector<std::string> values =
-                            Split(line, ","); // Split is bad! There is no option to escape ",".
+                            Split(line, get<0>(delimiters)); // Split is bad! There is no option to escape ",".
                         AddRow(values);
                 }
         }

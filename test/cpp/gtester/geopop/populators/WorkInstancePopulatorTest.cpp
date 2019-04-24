@@ -16,10 +16,10 @@
 //#include "geopop/populators/WorkInstancePopulator.h"
 
 #include "contact/AgeBrackets.h"
-#include "createGeogrid.h"
+//#include "createGeogrid.h"
 #include "geopop/GeoGrid.h"
 #include "geopop/GeoGridConfig.h"
-#include "geopop/HouseholdCenter.h"
+//#include "geopop/HouseholdCenter.h"
 //#include "geopop/WorkplaceCenter.h"
 #include "geopop/Location.h"
 #include "pop/Population.h"

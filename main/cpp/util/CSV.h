@@ -50,7 +50,7 @@ public:
         explicit CSV(const filesys::path& path, std::initializer_list<std::string> optLabels = {});
 
         /// Initialize from inputstream.
-        explicit CSV(std::istream& inputStream);
+        explicit CSV(std::istream& inputStream, const std::tuple<std::string, char>& delimiters = {",",'\n'});
 
         /// Initialize with columnCount only; labels default to sequence numbers.
         explicit CSV(size_t columnCount);
@@ -113,7 +113,7 @@ private:
         friend std::ofstream& operator<<(std::ofstream& ofs, const CSV& csv);
 
         /// Read data from input stream.
-        void ReadFromStream(std::istream& inputStream);
+        void ReadFromStream(std::istream& inputStream, const std::tuple<std::string, char>& delimiters = {",",'\n'});
 
         /// Write header with labels.
         void WriteLabels(std::ofstream& file) const;

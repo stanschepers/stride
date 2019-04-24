@@ -15,7 +15,7 @@
 
 //#include "geopop/generators/WorkInstanceGenerator.h"
 
-#include "../../createlogger.h"
+//#include "../../createlogger.h"
 #include "geopop/GeoGrid.h"
 #include "geopop/GeoGridConfig.h"
 #include "geopop/Location.h"

@@ -58,6 +58,7 @@ shared_ptr<Population> GeoPopBuilder::Build(shared_ptr<Population> pop)
         // ------------------------------------------------------------
         GeoGridConfig ggConfig(m_config);
         ggConfig.SetData(m_config.get<string>("run.geopop_gen.household_file"));
+        ggConfig.SetDistributionData(m_config.get<string>("run.geopop_gen.distribution_file"));
 
         // ------------------------------------------------------------
         // Get GeoGrid associated with 'pop'.

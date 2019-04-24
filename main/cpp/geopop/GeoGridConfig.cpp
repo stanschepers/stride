@@ -17,6 +17,7 @@
 
 #include "contact/AgeBrackets.h"
 #include "geopop/io/HouseholdReader.h"
+#include "geopop/io/DistributionReader.h"
 #include "geopop/io/ReaderFactory.h"
 #include "util/StringUtils.h"
 
@@ -91,6 +92,13 @@ void GeoGridConfig::SetData(const string& householdsFileName)
         info.count_households = static_cast<unsigned int>(floor(static_cast<double>(popSize) / averageHhSize));
 }
 
+void GeoGridConfig::SetDistributionData(const std::string &distributionFileName)
+{
+        auto distributionReader = ReaderFactory::CreateDistributionReader(distributionFileName);
+        distributionReader->SetWorkDistribution(param.work_distribution);
+}
+
+
 ostream& operator<<(ostream& out, const GeoGridConfig& config)
 {
         const int w = 53;
@@ -99,7 +107,7 @@ ostream& operator<<(ostream& out, const GeoGridConfig& config)
         out << setw(w) << "Fraction college commuters:" << config.param.fraction_college_commuters << "\n";
         out << setw(w) << "Fraction workplace commuters:" << config.param.fraction_workplace_commuters << "\n";
         out << setw(w) << "Participation fraction of college:" << config.param.participation_college << "\n";
-        out << setw(w) << "Participation fraaction of workplace:" << config.param.particpation_workplace << "\n";
+        out << setw(w) << "Participation fraction of workplace:" << config.param.particpation_workplace << "\n";
         out << setw(w) << "Target population size" << intToDottedString(config.param.pop_size) << "\n"
             << "\n";
         out << "Calculated:"
