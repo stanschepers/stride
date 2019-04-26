@@ -60,7 +60,7 @@ void HouseholdPopulator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridCon
                         auto hh_dist = genPerHhType.at(loc->GetHouseHoldType());
                         for (auto& pool : loc->RefPools(Id::Household)) {
                                 const auto hDraw = static_cast<unsigned int>(hh_dist());
-                                for (const auto& age : geoGridConfig.refHH.ages[hDraw]) {
+                                for (const auto& age : geoGridConfig.refHHperHHType.at(loc->GetHouseHoldType()).ages[hDraw]) {
                                         const auto p = pop->CreatePerson(person_id++, age, pool->GetId(), 0, 0, 0, 0, 0, 0, 0);
                                         pool->AddMember(p);
                                 }
