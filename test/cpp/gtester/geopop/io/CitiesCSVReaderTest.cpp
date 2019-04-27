@@ -43,6 +43,14 @@ shared_ptr<GeoGrid> getExpectedGeoGrid()
         loc6->SetPopFraction(0.06618731981930856);
         loc7->SetPopFraction(0.0073292397793566838);
 
+        loc1->SetHouseHoldType(1);
+        loc2->SetHouseHoldType(0);
+        loc3->SetHouseHoldType(3);
+        loc4->SetHouseHoldType(5);
+        loc5->SetHouseHoldType(999);
+        loc6->SetHouseHoldType(10000000);
+        loc7->SetHouseHoldType(0);
+
         geoGrid->AddLocation(loc1);
         geoGrid->AddLocation(loc2);
         geoGrid->AddLocation(loc3);
@@ -57,12 +65,12 @@ shared_ptr<GeoGrid> getExpectedGeoGrid()
 TEST(CitiesCSVReaderTest, test1)
 {
         string csvString = R"(id,province,population,x_coord,y_coord,latitude,longitude,name,hh_type
-11002,1,269954,153104.586,212271.7101,51.2165845,4.413545489,ANTWERPEN,0
+11002,1,269954,153104.586,212271.7101,51.2165845,4.413545489,ANTWERPEN,1
 11007,1,6643,158373.2671,209240.2514,51.1966684,4.4856299,BORSBEEK,0
-11008,1,23237,158918.8198,221748.3274,51.29227,4.49419,BRASSCHAAT,0
-11009,1,16227,168070.1501,224780.0715,51.3495775,4.6376322,BRECHT,0
-11016,1,10454,156460.2596,237847.8004,51.38298,4.47518,ESSEN,0
-73107,7,23326,243578.1573,184975.9303,50.96991794,5.70979219,MAASMECHELEN,0
+11008,1,23237,158918.8198,221748.3274,51.29227,4.49419,BRASSCHAAT,3
+11009,1,16227,168070.1501,224780.0715,51.3495775,4.6376322,BRECHT,5
+11016,1,10454,156460.2596,237847.8004,51.38298,4.47518,ESSEN,999
+73107,7,23326,243578.1573,184975.9303,50.96991794,5.70979219,MAASMECHELEN,10000000
 73109,7,2583,251986.4171,160699.7771,50.74921941,5.806343076,VOEREN-'S GRAVENVOEREN,0
 )";
 
@@ -78,6 +86,35 @@ TEST(CitiesCSVReaderTest, test1)
                 EXPECT_EQ(*loc, *(expected->GetById(loc->GetID())));
                 EXPECT_DOUBLE_EQ(loc->GetPopFraction(), (expected->GetById(loc->GetID()))->GetPopFraction());
         }
+}
+
+
+TEST(CitiesCSVReaderTest, houseHoldTypeTest)
+{
+        string csvString = R"(id,province,population,x_coord,y_coord,latitude,longitude,name,hh_type
+11002,1,269954,153104.586,212271.7101,51.2165845,4.413545489,ANTWERPEN,1
+11007,1,6643,158373.2671,209240.2514,51.1966684,4.4856299,BORSBEEK,0
+11008,1,23237,158918.8198,221748.3274,51.29227,4.49419,BRASSCHAAT,3
+11009,1,16227,168070.1501,224780.0715,51.3495775,4.6376322,BRECHT,5
+11016,1,10454,156460.2596,237847.8004,51.38298,4.47518,ESSEN,999
+73107,7,23326,243578.1573,184975.9303,50.96991794,5.70979219,MAASMECHELEN,10000000
+73109,7,2583,251986.4171,160699.7771,50.74921941,5.806343076,VOEREN-'S GRAVENVOEREN,0
+)";
+
+
+        const auto expected = getExpectedGeoGrid();
+        auto       pop      = Population::Create();
+        auto&      geoGrid  = pop->RefGeoGrid();
+        auto       instream = make_unique<istringstream>(csvString);
+
+        LocationsCSVReader reader(move(instream));
+        reader.FillGeoGrid(geoGrid);
+
+        for (const auto& loc : geoGrid) {
+                EXPECT_EQ(*loc, *(expected->GetById(loc->GetID())));
+                EXPECT_EQ(loc->GetHouseHoldType(), (expected->GetById(loc->GetID()))->GetHouseHoldType());
+        }
+
 }
 
 } // namespace
