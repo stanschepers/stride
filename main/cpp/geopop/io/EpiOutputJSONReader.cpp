@@ -32,16 +32,39 @@ void EpiOutputJSONReader::Read()
         m_epiOutput[0].id                                 = 0;
         m_epiOutput[0].latitude                           = 50.8503;
         m_epiOutput[0].longitude                          = 4.3517;
-        m_epiOutput[0].pop_count                          = 150;
+        m_epiOutput[0].pop_count                          = 180000;
         m_epiOutput[0].epiOutput["Daycare"]["Total"][0]   = 0;
+        m_epiOutput[0].epiOutput["Daycare"]["Total"][50]  = 0;
         m_epiOutput[0].epiOutput["Daycare"]["Total"][100] = 0;
 
         m_epiOutput.emplace_back(Location());
-        m_epiOutput[1].name      = "Antwerpen";
-        m_epiOutput[1].id        = 1;
-        m_epiOutput[1].latitude  = 51.2194;
-        m_epiOutput[1].longitude = 4.4025;
-        m_epiOutput[1].pop_count = 100;
+        m_epiOutput[1].name      = "Wilrijk";
+        m_epiOutput[1].id        = 3;
+        m_epiOutput[1].latitude  = 51.1683;
+        m_epiOutput[1].longitude = 4.3943;
+        m_epiOutput[1].pop_count = 40943;
+
+        m_epiOutput.emplace_back(Location());
+        m_epiOutput[2].name      = "Vilvoorde";
+        m_epiOutput[2].id        = 2;
+        m_epiOutput[2].latitude  = 50.9273;
+        m_epiOutput[2].longitude = 4.4258;
+        m_epiOutput[2].pop_count = 37964;
+
+        m_epiOutput.emplace_back(Location());
+        m_epiOutput[3].name      = "Antwerpen";
+        m_epiOutput[3].id        = 1;
+        m_epiOutput[3].latitude  = 51.2194;
+        m_epiOutput[3].longitude = 4.4025;
+        m_epiOutput[3].pop_count = 520504;
+
+        m_epiOutput.emplace_back(Location());
+        m_epiOutput[4].name      = "Shanghai";
+        m_epiOutput[4].id        = 3;
+        m_epiOutput[4].latitude  = 31.2304;
+        m_epiOutput[4].longitude = 121.4737;
+        m_epiOutput[4].pop_count = 24100000;
+
         //        m_epiOutput["Antwerpen"]["Daycare"]["Total"][0] = 0;
         //        m_epiOutput["Antwerpen"]["Daycare"]["Susceptible"][0] = 0;
         //        m_epiOutput["Antwerpen"]["Daycare"]["Infected"][0] = 0;

@@ -13,6 +13,9 @@
  *  Copyright 2019, Jan Broeckhove and Bistromatics group.
  */
 
+#include <math.h>
+#include <limits>
+
 #include <QVariant>
 
 #include "geopop/io/EpiOutputReaderFactory.h"
@@ -20,13 +23,21 @@
 
 namespace visualization {
 
+double distanceOnEarth(double lat1, double long1, double lat2, double long2){
+//        double a = std::pow((std::sin((lat2 - lat1) / 2) * M_PI) / 180, 2) + std::cos((lat1 * M_PI) / 180) * std::cos((lat2 * M_PI) / 180) * std::pow((std::sin((long2 - long1) / 2) * M_PI) / 180, 2);
+//        a = 2 * 6371000 * std::atan2(std::sqrt(a), std::sqrt(1 - a));
+        double a = std::acos(std::sin((lat1 * M_PI) / 180) * std::sin((lat2 * M_PI) / 180) + std::cos((lat1 * M_PI) / 180) * std::cos((lat2 * M_PI) / 180) * std::cos(((long2 - long1) * M_PI) / 180)) * 6731000;
+//        std::cout << a << std::endl;
+        return a;
+}
+
 MapController::MapController(const std::string& filename) : QObject(nullptr)
 {
         // Read in the epi-output
         visualization::EpiOutputReaderFactory readerFactory;
         const auto& reader = readerFactory.CreateReader(filename, m_epiOutput);
         reader->Read();
-        // Check how big the gap in between measurements is
+        // Check how big the gap is in between measurements
         auto diff = m_epiOutput[0].epiOutput.begin()->second.begin()->second.begin();
         diff++;
         m_day_diff = diff->first;
@@ -38,13 +49,24 @@ void MapController::setDay(const QString& day)
         temp_day      = (temp_day / m_day_diff) * m_day_diff;
         if (temp_day != m_day) {
                 m_day = temp_day;
-                std::cout << m_day << std::endl;
+                std::cout << "Day set to: " << m_day << std::endl;
         }
+}
+
+void MapController::setWindowHeight(const QString& height){
+        m_window_height = static_cast<unsigned int>(height.toDouble());
+}
+
+void MapController::setWindowWidth(const QString& width){
+        m_window_width = static_cast<unsigned int>(width.toDouble());
 }
 
 void MapController::initialize(QObject* root)
 {
         m_root = root;
+
+        // Get the window sizes
+        QMetaObject::invokeMethod(m_root, "getWindowSize");
 
         // Set the current day as the first day
         m_day = m_epiOutput[0].epiOutput.begin()->second.begin()->second.begin()->first;
@@ -54,28 +76,61 @@ void MapController::initialize(QObject* root)
         unsigned int lastDay  = m_epiOutput[0].epiOutput.begin()->second.begin()->second.rbegin()->first;
 
         // Variables for the map
-        unsigned int zoomlevel       = 10; // TODO: Hoe zoomlevel uitrekenen?
-        double       centerLatitude  = 0;
-        double       centerLongitude = 0;
+        double zoomlevel        = 0; // TODO: Hoe zoomlevel uitrekenen?
+        double centerLatitude   = 0;
+        double centerLongitude  = 0;
+        double smallestLat      = std::numeric_limits<double>::infinity();;
+        double biggestLat       = 0;
+        double smallestLong     = std::numeric_limits<double>::infinity();;
+        double biggestLong      = 0;
+
+        // Sort the locations in order of population size (Great to small)
+        std::sort(m_epiOutput.begin(), m_epiOutput.end(), [ ]( const Location& lhs, const Location& rhs )
+        {
+            return lhs.pop_count > rhs.pop_count;
+        });
+
+        // Put the locations on the map
         for (auto const& location : m_epiOutput) {
-                // To calculate the center of the map
-                centerLatitude += location.latitude;
-                centerLongitude += location.longitude;
+                
+                // To calculate the zoom level
+                if (location.latitude < smallestLat){
+                    smallestLat = location.latitude;
+                }
+                if (location.latitude  > biggestLat){
+                    biggestLat = location.latitude;
+                }
+                if (location.longitude < smallestLong){
+                    smallestLong = location.longitude;
+                }
+                if (location.longitude  > biggestLong){
+                    biggestLong = location.longitude;
+                }
 
                 // Create an id for the circle on the map
                 QString id = QString::fromStdString("location" + std::to_string(location.id));
                 // Add the circle to the map
                 // TODO: Hoe straal berekenen?
-                QMetaObject::invokeMethod(root, "addLocation", Q_ARG(QVariant, id),
+                QMetaObject::invokeMethod(m_root, "addLocation", Q_ARG(QVariant, id),
                                           Q_ARG(QVariant, QVariant::fromValue(location.latitude)),
                                           Q_ARG(QVariant, QVariant::fromValue(location.longitude)),
-                                          Q_ARG(QVariant, QVariant::fromValue(location.pop_count * 100)));
+                                          Q_ARG(QVariant, QVariant::fromValue(location.pop_count * 0.03)));  // radius
         }
 
-        centerLatitude /= m_epiOutput.size();
-        centerLongitude /= m_epiOutput.size();
+        // Calculate the center of the map
+        centerLatitude = (smallestLat + biggestLat) / 2;
+        centerLongitude = (smallestLong + biggestLong) / 2;
+
+        // Calculate the zoom level of the map
+//        std::cout << smallestLat << "   " << biggestLat << std::endl;
+//        std::cout << smallestLong << "   " << biggestLong << std::endl;
+        double pixelsize = std::max(distanceOnEarth(smallestLat, smallestLong, smallestLat, biggestLong) / double(m_window_width), distanceOnEarth(smallestLat, smallestLong,biggestLat, smallestLong) / double(m_window_height));
+        zoomlevel = (std::log2((40075016.686 * std::cos((centerLatitude * M_PI) / 180)) / pixelsize) - 8) * 0.9;
+//        std::cout << pixelsize << "   " << zoomlevel << std::endl;
+
+        // Change the properties of the map
         QMetaObject::invokeMethod(
-            root, "initialize", Q_ARG(QVariant, QVariant::fromValue(zoomlevel)),
+            m_root, "initialize", Q_ARG(QVariant, QVariant::fromValue(zoomlevel)),
             Q_ARG(QVariant, QVariant::fromValue(centerLatitude)), Q_ARG(QVariant, QVariant::fromValue(centerLongitude)),
             Q_ARG(QVariant, QVariant::fromValue(firstDay)), Q_ARG(QVariant, QVariant::fromValue(lastDay)));
 }

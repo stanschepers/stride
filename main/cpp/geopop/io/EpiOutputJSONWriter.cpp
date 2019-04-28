@@ -26,7 +26,7 @@ namespace geopop {
 using namespace std;
 using namespace stride;
 
-EpiOutputJSONWriter::EpiOutputJSONWriter() : m_persons_found() {}
+EpiOutputJSONWriter::EpiOutputJSONWriter() {}
 
 void EpiOutputJSONWriter::Write(GeoGrid& geoGrid, ostream& stream)
 {

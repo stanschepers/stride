@@ -10,6 +10,7 @@ Window {
     height: 1024
     visible: true
 
+
     Plugin {
         id: mapPlugin
         name: "osm" // "mapboxgl", "esri", ...
@@ -78,4 +79,12 @@ Window {
         daySlider.maximumValue = lastDay;
         daySlider.value = firstDay;
     }
+
+    function getWindowSize(){
+        ctrl.setWindowWidth = width
+        ctrl.setWindowHeight = height
+    }
+
+    onWidthChanged: ctrl.setWindowWidth = width
+    onHeightChanged: ctrl.setWindowHeight = height
 }

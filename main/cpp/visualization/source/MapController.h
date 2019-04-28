@@ -28,14 +28,25 @@ class MapController : public QObject
 
         Q_OBJECT
         Q_PROPERTY(QString setDay WRITE setDay)
+        Q_PROPERTY(QString setWindowHeight WRITE setWindowHeight)
+        Q_PROPERTY(QString setWindowWidth WRITE setWindowWidth)
 
 public:
         MapController() = default;
 
+        /// Create a MapController and read the epi-output file
         explicit MapController(const std::string& filename);
 
+        /// Set the shown day
         void setDay(const QString& day);
 
+        /// Set the window height
+        void setWindowHeight(const QString& height);
+
+        /// Set the window width
+        void setWindowWidth(const QString& width);
+
+        /// Initialize the map
         void initialize(QObject* root);
 
 private:
@@ -43,8 +54,10 @@ private:
 
         EpiOutput m_epiOutput;
 
-        unsigned int m_day;      // Current shown step
-        unsigned int m_day_diff; // Difference between epi-output measurements (Amount of days)
+        unsigned int m_day = 0;      // Current shown step
+        unsigned int m_day_diff = 0; // Difference between epi-output measurements (Amount of days)
+        unsigned int m_window_height = 0;
+        unsigned int m_window_width = 0;
 
         QObject* m_root;
 };

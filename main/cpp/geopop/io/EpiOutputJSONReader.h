@@ -15,7 +15,6 @@
 
 #pragma once
 
-#include "EpiOutput.h"
 #include "EpiOutputReader.h"
 
 #include <memory>
