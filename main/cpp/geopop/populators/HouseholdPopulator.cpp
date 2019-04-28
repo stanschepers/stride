@@ -49,9 +49,9 @@ void HouseholdPopulator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridCon
                 map<unsigned int, std::function<int()>> genPerHhType;
 
                 auto i_gen = 0U;
-                for (auto const& [type, refHH] : geoGridConfig.refHHperHHType) {
+                for (auto const& [type, refHH] : geoGridConfig.refHHperHHType) { // TODO make less generators
                         genPerHhType.insert(make_pair(type, m_rn_man.GetUniformIntGenerator(0,
-                                static_cast<int>(geoGridConfig.refHH.ages.size()), i_gen)));
+                                static_cast<int>(geoGridConfig.refHH.ages.size()), 0U)));
                         i_gen++;
                 }
                 auto pop       = geoGrid.GetPopulation();
