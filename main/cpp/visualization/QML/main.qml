@@ -80,11 +80,11 @@ Window {
         daySlider.value = firstDay;
     }
 
-    function getWindowSize(){
+    onWidthChanged: ctrl.setWindowWidth = width
+    onHeightChanged: ctrl.setWindowHeight = height
+
+    Component.onCompleted: {
         ctrl.setWindowWidth = width
         ctrl.setWindowHeight = height
     }
-
-    onWidthChanged: ctrl.setWindowWidth = width
-    onHeightChanged: ctrl.setWindowHeight = height
 }

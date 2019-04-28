@@ -65,9 +65,6 @@ void MapController::initialize(QObject* root)
 {
         m_root = root;
 
-        // Get the window sizes
-        QMetaObject::invokeMethod(m_root, "getWindowSize");
-
         // Set the current day as the first day
         m_day = m_epiOutput[0].epiOutput.begin()->second.begin()->second.begin()->first;
 
@@ -76,7 +73,7 @@ void MapController::initialize(QObject* root)
         unsigned int lastDay  = m_epiOutput[0].epiOutput.begin()->second.begin()->second.rbegin()->first;
 
         // Variables for the map
-        double zoomlevel        = 0; // TODO: Hoe zoomlevel uitrekenen?
+        double zoomlevel        = 0;
         double centerLatitude   = 0;
         double centerLongitude  = 0;
         double smallestLat      = std::numeric_limits<double>::infinity();;
@@ -110,7 +107,6 @@ void MapController::initialize(QObject* root)
                 // Create an id for the circle on the map
                 QString id = QString::fromStdString("location" + std::to_string(location.id));
                 // Add the circle to the map
-                // TODO: Hoe straal berekenen?
                 QMetaObject::invokeMethod(m_root, "addLocation", Q_ARG(QVariant, id),
                                           Q_ARG(QVariant, QVariant::fromValue(location.latitude)),
                                           Q_ARG(QVariant, QVariant::fromValue(location.longitude)),
