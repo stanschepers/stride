@@ -21,6 +21,7 @@ set(UI_FILES
 set(QML_FILES
         QML/main.qml
         QML/location.qml
+        QML/RoundMouseArea.qml
         )
 
 set_property(SOURCE source/main.cpp PROPERTY SKIP_AUTOMOC ON)

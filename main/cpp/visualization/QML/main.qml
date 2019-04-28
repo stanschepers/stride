@@ -47,7 +47,7 @@ Window {
             centerCircle.rad = radius / 100;
             centerCircle.col = "red";
             centerCircle.idName = "center" + locationId;
-            map.addMapItem(centerCircle);
+            map.addMapItem(centerCircle);  // TODO: split this in seprate qml file
         }
         else
             console.log("Error loading component:", component.errorString());

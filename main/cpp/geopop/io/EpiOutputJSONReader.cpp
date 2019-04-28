@@ -58,12 +58,12 @@ void EpiOutputJSONReader::Read()
         m_epiOutput[3].longitude = 4.4025;
         m_epiOutput[3].pop_count = 520504;
 
-        m_epiOutput.emplace_back(Location());
-        m_epiOutput[4].name      = "Shanghai";
-        m_epiOutput[4].id        = 3;
-        m_epiOutput[4].latitude  = 31.2304;
-        m_epiOutput[4].longitude = 121.4737;
-        m_epiOutput[4].pop_count = 24100000;
+//        m_epiOutput.emplace_back(Location());
+//        m_epiOutput[4].name      = "Shanghai";
+//        m_epiOutput[4].id        = 3;
+//        m_epiOutput[4].latitude  = 31.2304;
+//        m_epiOutput[4].longitude = 121.4737;
+//        m_epiOutput[4].pop_count = 24100000;
 
         //        m_epiOutput["Antwerpen"]["Daycare"]["Total"][0] = 0;
         //        m_epiOutput["Antwerpen"]["Daycare"]["Susceptible"][0] = 0;
