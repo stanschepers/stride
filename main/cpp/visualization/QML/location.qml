@@ -3,11 +3,12 @@ import QtLocation 5.6
 import QtQuick.Controls 2.1
 
 MapCircle {
-    property string idName
+    property string name
     property real coorLat
     property real coorLong
     property real rad
     property color col
+    property bool showPopup: true
     id: locationCircle
     center {
         latitude: coorLat
@@ -16,34 +17,35 @@ MapCircle {
     radius: rad
     color: col
     border.width: 1
+    border.color: "#696969"
 
-//    MouseArea {
-//        id: mouseArea
-//        anchors.fill: parent
-
-//        hoverEnabled: true
-
-//        onEntered: popup.open()
+//    focus: true
+//    Keys.onSpacePressed: {
+//        showPopup = !showPopup
+//        popup.focus = true
+//        focus = false
+//        print(showPopup)
 //    }
 
     RoundMouseArea {
-        id: mouseArea
+        id: mouseAreaCircle
         anchors.fill: parent
 
 //        onEntered: popup.open()
     }
 
     Popup {
-
-            visible: mouseAreaPopup.containsMouse || mouseArea.containsMouse
+            focus: true
+            visible: /*locationCircle.showPopup &*/ (mouseAreaPopup.containsMouse | mouseAreaCircle.containsMouse)
             id: popup
-
-            x: /*parent.x*/ mouseArea.mouseX - 3.5 * width/4
-            y: /*parent.y*/ mouseArea.mouseY - height/8
+            x: mouseAreaCircle.mouseX - 3.5 * width/4
+            y: mouseAreaCircle.mouseY - height/8
             width: 200
             height: 300
-            modal: true
-            focus: true
+
+            contentWidth: width
+            contentHeight: height
+            dim: false
 
             enter: Transition {
                 NumberAnimation { property: "opacity"; from: 0.0; to: 1.0 }
@@ -52,16 +54,36 @@ MapCircle {
                 NumberAnimation { property: "opacity"; from: 1.0; to: 0.0 }
             }
 
-            closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
+            background: Rectangle {
+                width: popup.width
+                height: popup.height
+                anchors.centerIn: parent
+                radius: 10
+                color: "#ecf0f1"
+                border.color: "#696969"
+                border.width: 1
+                Text {
+                    anchors.fill: parent
+                    anchors.margins: 10
+                    text: locationCircle.name
+                }
 
-            contentItem: Text {
-                text: locationCircle.idName
+//                focus: true
+//                Keys.onSpacePressed: {
+//                    showPopup = !showPopup
+//                    popup.focus = false
+//                    focus = true
+//                    print(showPopup)
+//                }
             }
+
+            closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
 
             MouseArea {
                 id: mouseAreaPopup
-                anchors.fill: parent
-
+                width: popup.width
+                height: popup.height
+                anchors.centerIn: parent
                 hoverEnabled: true
 
 //                onExited: popup.close()

@@ -30,7 +30,7 @@ Window {
         //Keys.onReturnPressed: map.clearMapItems()
     }
 
-    function addLocation(locationId, latitude, longtitude, radius) {
+    function addLocation(locationName, latitude, longtitude, radius) {
         var component = Qt.createComponent("location.qml");
         if (component.status === Component.Ready) {
             var location = component.createObject(map);
@@ -38,7 +38,7 @@ Window {
             location.coorLong = longtitude;
             location.rad = radius;
             location.col = Qt.rgba(Math.random(),Math.random(),Math.random(), 0.5);
-            location.idName = locationId;
+            location.name = locationName;
             map.addMapItem(location);
         }
         var componentCentre = Qt.createComponent("location.qml");
@@ -48,7 +48,7 @@ Window {
             centerCircle.coorLong = longtitude;
             centerCircle.rad = radius / 100;
             centerCircle.col = "red";
-            centerCircle.idName = "center" + locationId;
+            centerCircle.name = "center" + locationName;
             map.addMapItem(centerCircle);  // TODO: split this in seprate qml file
         }
         else

@@ -49,7 +49,7 @@ void MapController::setDay(const QString& day)
         temp_day      = (temp_day / m_day_diff) * m_day_diff;
         if (temp_day != m_day) {
                 m_day = temp_day;
-                std::cout << "Day set to: " << m_day << std::endl;
+//                std::cout << "Day set to: " << m_day << std::endl;
         }
 }
 
@@ -108,10 +108,8 @@ void MapController::initialize(QObject* root)
                     biggestLong = location.longitude;
                 }
 
-                // Create an id for the circle on the map
-                QString id = QString::fromStdString("location" + std::to_string(location.id));
                 // Add the circle to the map
-                QMetaObject::invokeMethod(m_root, "addLocation", Q_ARG(QVariant, id),
+                QMetaObject::invokeMethod(m_root, "addLocation", Q_ARG(QVariant, QString::fromStdString(location.name)),
                                           Q_ARG(QVariant, QVariant::fromValue(location.latitude)),
                                           Q_ARG(QVariant, QVariant::fromValue(location.longitude)),
                                           Q_ARG(QVariant, QVariant::fromValue(location.pop_count * 0.03)));  // radius
