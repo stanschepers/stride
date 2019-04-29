@@ -30,6 +30,7 @@ class MapController : public QObject
         Q_PROPERTY(QString setDay WRITE setDay)
         Q_PROPERTY(QString setWindowHeight WRITE setWindowHeight)
         Q_PROPERTY(QString setWindowWidth WRITE setWindowWidth)
+        Q_PROPERTY(QString getDay READ getDay NOTIFY dayChanged)
 
 public:
         MapController() = default;
@@ -40,6 +41,9 @@ public:
         /// Set the shown day
         void setDay(const QString& day);
 
+        /// Get the shown day
+        QString getDay();
+
         /// Set the window height
         void setWindowHeight(const QString& height);
 
@@ -48,6 +52,9 @@ public:
 
         /// Initialize the map
         void initialize(QObject* root);
+
+signals:
+        void dayChanged();
 
 private:
         void update() const;

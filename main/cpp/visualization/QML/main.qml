@@ -9,6 +9,7 @@ Window {
     width: 1024
     height: 1024
     visible: true
+    color: "#ecf0f1"
 
 
     Plugin {
@@ -19,6 +20,7 @@ Window {
     Map {
         id: map
         anchors.fill: parent
+        anchors.bottomMargin: 60
         plugin: mapPlugin
         center: QtPositioning.coordinate(50.8503, 4.3517) // Brussels
         zoomLevel: 10
@@ -30,7 +32,7 @@ Window {
 
     function addLocation(locationId, latitude, longtitude, radius) {
         var component = Qt.createComponent("location.qml");
-        if (component.status == Component.Ready) {
+        if (component.status === Component.Ready) {
             var location = component.createObject(map);
             location.coorLat = latitude;
             location.coorLong = longtitude;
@@ -40,7 +42,7 @@ Window {
             map.addMapItem(location);
         }
         var componentCentre = Qt.createComponent("location.qml");
-        if (componentCentre.status == Component.Ready) {
+        if (componentCentre.status === Component.Ready) {
             var centerCircle = componentCentre.createObject(map);
             centerCircle.coorLat = latitude;
             centerCircle.coorLong = longtitude;
@@ -57,14 +59,34 @@ Window {
         id: daySlider;
         z: map.z + 3
         anchors.margins: 10
-        anchors.bottom: parent.bottom
+        anchors.rightMargin: parent.width * 0.1
+        anchors.top: map.bottom
         anchors.left: parent.left
         anchors.right: parent.right
         orientation : Qt.Horizontal
         onValueChanged: {
             ctrl.setDay = value
+            day.text = ctrl.getDay
         }
     }
+
+    Rectangle {
+        id: rec1
+        anchors.left: daySlider.right
+        anchors.top: map.bottom
+        anchors.bottom: parent.bottom
+        anchors.right: parent.right
+        color: "#ecf0f1"
+
+        Text {
+            id: day
+            text: ctrl.getDay
+
+            anchors.centerIn: rec1
+        }
+    }
+
+
 
     function initialize(zoomlevel, centerLat, centerLong, firstDay, lastDay) {
 //        console.log(zoomlevel)

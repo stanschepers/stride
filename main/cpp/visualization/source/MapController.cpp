@@ -53,7 +53,11 @@ void MapController::setDay(const QString& day)
         }
 }
 
-void MapController::setWindowHeight(const QString& height){
+QString MapController::getDay(){
+    return QString::number(m_day);
+}
+
+    void MapController::setWindowHeight(const QString& height){
         m_window_height = static_cast<unsigned int>(height.toDouble());
 }
 
