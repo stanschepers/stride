@@ -169,7 +169,6 @@ void GeoPopBuilder::MakePersons(GeoGrid& geoGrid, const GeoGridConfig& geoGridCo
                                                  make_shared<WorkplacePopulator>(m_rn_man, m_stride_logger)};
 
         for (shared_ptr<Populator>& p : populators) {
-                cout << p << endl;
                 p->Apply(geoGrid, geoGridConfig);
         }
 }
