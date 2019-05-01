@@ -20,7 +20,7 @@ Window {
         id: map
 
         anchors.fill: parent
-        anchors.bottomMargin: 60
+        anchors.bottomMargin: 20
 
         plugin: mapPlugin
         center: QtPositioning.coordinate(50.8503, 4.3517) // Brussels
@@ -32,14 +32,41 @@ Window {
         //Keys.onReturnPressed: map.clearMapItems()
     }
 
+    Rectangle {
+        id: coverUpCopyRight
+        height: 60
+        color: "#ecf0f1"
+
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+    }
+
+    Button {
+        id: autoSimButton
+        text: "Auto sim"
+        width: 160
+        height: 40
+
+        anchors.top: coverUpCopyRight.top
+        anchors.left: parent.left
+        anchors.bottom: parent.bottom
+        anchors.margins: 10
+
+        onClicked: {
+            print("Auto sim clicked")  // TODO: Should start an auto increase day simulation
+        }
+    }
+
     Slider {
         id: daySlider;
+        height: 40
         z: map.z + 3
 
         anchors.margins: 10
         anchors.rightMargin: parent.width * 0.1
-        anchors.top: map.bottom
-        anchors.left: parent.left
+        anchors.bottom: parent.bottom
+        anchors.left: autoSimButton.right
         anchors.right: parent.right
 
         orientation : Qt.Horizontal
@@ -55,7 +82,7 @@ Window {
         color: "#ecf0f1"
 
         anchors.left: daySlider.right
-        anchors.top: map.bottom
+        anchors.top: coverUpCopyRight.top
         anchors.bottom: parent.bottom
         anchors.right: parent.right
 
@@ -70,11 +97,11 @@ Window {
     Button {
         id: openDataButton
         text: "Show data"
-        width: 200
-        height: 50
+        width: 160
+        height: 40
 
-        anchors.bottom: map.bottom
-        anchors.right: map.right
+        anchors.top: parent.top
+        anchors.right: parent.right
         anchors.margins: 10
 
         onClicked: {
@@ -94,18 +121,18 @@ Window {
 
         anchors.right: parent.right
         anchors.top: parent.top
-        anchors.bottom: map.bottom
+        anchors.bottom: coverUpCopyRight.top
         anchors.rightMargin: -radius
 
         Button {
             id: closeDataButton
-            text: "Close"
-            width: 100
-            height: 50
+            text: "X"
+            width: 30
+            height: 30
 
-            anchors.bottom: dataBar.bottom
+            anchors.top: dataBar.top
             anchors.right: dataBar.right
-            anchors.bottomMargin: 10
+            anchors.topMargin: 10
             anchors.rightMargin: 20
 
             onClicked: {
@@ -119,9 +146,9 @@ Window {
             text: ""
 
             anchors.horizontalCenter: dataBar.horizontalCenter
-            anchors.top: dataBar.top
+            anchors.top: closeDataButton.bottom
             anchors.right: root.right
-            anchors.topMargin: 20
+            anchors.topMargin: 5
         }
 
 
@@ -136,9 +163,28 @@ Window {
             anchors.margins: 10
         }
 
+        focus: true
+        Keys.onEscapePressed: visible = false
+
     }
 
+    ComboBox {
+        id: ageBracketComboBox
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.margins: 10
+        width: 240
+        model: [ "Age bracket", "Apple", "Coconut" ]  // TODO: fill with right values
+    }
 
+    ComboBox {
+        id: healthStatusComboBox
+        anchors.top: parent.top
+        anchors.left: ageBracketComboBox.right
+        anchors.margins: 10
+        width: 240
+        model: [ "Health status", "Apple", "Coconut" ]  // TODO: fill with right values
+    }
 
     function initialize(zoomlevel, centerLat, centerLong, firstDay, lastDay) {
         map.zoomLevel = zoomlevel;
