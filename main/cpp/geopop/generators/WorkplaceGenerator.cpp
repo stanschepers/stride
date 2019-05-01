@@ -13,11 +13,13 @@
  *  Copyright 2018, 2019, Jan Broeckhove and Bistromatics group.
  */
 
+#include <geopop/GeoGridConfig.h>
 #include "Generator.h"
 
 #include "geopop/GeoGridConfig.h"
 #include "geopop/PoolParams.h"
 #include "util/Assert.h"
+
 
 namespace geopop {
 
@@ -25,18 +27,36 @@ using namespace std;
 using namespace stride;
 using namespace stride::ContactType;
 
+
 template<>
 void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig)
 {
         // 1. active people count and the commuting people count are given
-        // 2. count the workplaces
+        // 2. count the workplaces, either by poolparams or if given: the work distribution
         // 3. count the working people at each location = #residents + #incoming commuters - #outgoing commuters
         // 4. use that information for the distribution
         // 5. assign each workplaces to a location
 
         const auto EmployeeCount = geoGridConfig.info.popcount_workplace;
-        const auto WorkplacesCount =
-            static_cast<unsigned int>(ceil(EmployeeCount / static_cast<double>(PoolParams<Id::Workplace>::people)));
+        auto WorkplacesCount = static_cast<unsigned int>(ceil(EmployeeCount /
+                                     static_cast<double>(PoolParams<Id::Workplace>::people)));
+
+        //try to access the distribution info if applicable
+        const auto distribution = geoGridConfig.param.work_distribution;
+        if (!distribution.empty()){
+                double PoolSize = 0;
+                for(auto entry : distribution){
+                    double ratio = std::get<0>(entry);
+                    unsigned int minSize = std::get<1>(entry);
+                    unsigned int maxSize = std::get<2>(entry);
+                    double avg = (minSize+maxSize)/2.0;
+                    PoolSize += avg*ratio;
+                }
+                const auto NewWorkplacesCount = static_cast<unsigned int>(ceil(EmployeeCount / PoolSize));
+                m_logger->trace("Number of workplaces generated through distribution file: " + to_string(NewWorkplacesCount)
+                                + ", instead of: " + to_string(WorkplacesCount));
+                WorkplacesCount = NewWorkplacesCount;
+        }
 
         // = for each location #residents + #incoming commuting people - #outgoing commuting people
         vector<double> weights;
