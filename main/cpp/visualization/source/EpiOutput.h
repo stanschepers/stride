@@ -24,13 +24,13 @@ namespace visualization {
 
 typedef struct
 {
-        std::string  name;
-        unsigned int id;
-        unsigned int pop_count;
-        double       latitude;
-        double       longitude;
+        std::string  name = "";
+        unsigned int id = 0;
+        unsigned int pop_count = 0;
+        double       latitude = 0;
+        double       longitude = 0;
         //        ageBracket           healthStatus             day        value
-        std::map<std::string, std::map<std::string, std::map<unsigned int, double>>> epiOutput;
+        std::map<std::string, std::map<std::string, std::map<unsigned int, double>>> epiOutput = {};
 } Location;
 
 //            location              ageBracket           healthStatus             day            value

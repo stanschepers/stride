@@ -20,15 +20,24 @@ Item {
         return isWithinOurRadius;
     }
 
+    onContainsMouseChanged: {
+        if (containsMouse === true){
+            roundMouseArea.entered()
+        } else {
+            roundMouseArea.exited()
+        }
+    }
+
     signal clicked
 
     signal entered
+
+    signal exited
 
     MouseArea {
         id: mouseArea
         anchors.fill: parent
         hoverEnabled: true
         onClicked: if (roundMouseArea.containsMouse) roundMouseArea.clicked()
-        onEntered: if (roundMouseArea.containsMouse) roundMouseArea.entered()
     }
 }

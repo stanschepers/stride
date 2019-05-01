@@ -46,6 +46,7 @@ MapController::MapController(const std::string& filename) : QObject(nullptr)
 void MapController::setDay(const QString& day)
 {
         auto temp_day = static_cast<unsigned int>(day.toDouble());
+//        std::cout << "Given day: " << temp_day << std::endl;
         temp_day      = (temp_day / m_day_diff) * m_day_diff;
         if (temp_day != m_day) {
                 m_day = temp_day;
@@ -63,6 +64,20 @@ QString MapController::getDay(){
 
 void MapController::setWindowWidth(const QString& width){
         m_window_width = static_cast<unsigned int>(width.toDouble());
+}
+
+void MapController::setShownInformation(const QString& locationId){
+        if (locationId == QString("")){
+                QMetaObject::invokeMethod(m_root, "emptyData");
+                return;
+        }
+        for (const auto &location: m_epiOutput){
+                if (location.id == locationId.toUInt()){
+                        QMetaObject::invokeMethod(m_root, "setData", Q_ARG(QVariant, QString::fromStdString(location.name)));
+                        return;
+                }
+        }
+
 }
 
 void MapController::initialize(QObject* root)
@@ -109,7 +124,7 @@ void MapController::initialize(QObject* root)
                 }
 
                 // Add the circle to the map
-                QMetaObject::invokeMethod(m_root, "addLocation", Q_ARG(QVariant, QString::fromStdString(location.name)),
+                QMetaObject::invokeMethod(m_root, "addLocation", Q_ARG(QVariant, QString::number(location.id)),
                                           Q_ARG(QVariant, QVariant::fromValue(location.latitude)),
                                           Q_ARG(QVariant, QVariant::fromValue(location.longitude)),
                                           Q_ARG(QVariant, QVariant::fromValue(location.pop_count * 0.03)));  // radius

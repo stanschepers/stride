@@ -27,10 +27,10 @@ class MapController : public QObject
 {
 
         Q_OBJECT
-        Q_PROPERTY(QString setDay WRITE setDay)
-        Q_PROPERTY(QString setWindowHeight WRITE setWindowHeight)
-        Q_PROPERTY(QString setWindowWidth WRITE setWindowWidth)
-        Q_PROPERTY(QString getDay READ getDay NOTIFY dayChanged)
+        Q_PROPERTY(QString shownDay READ getDay WRITE setDay NOTIFY dayChanged)
+        Q_PROPERTY(QString setWindowHeight WRITE setWindowHeight NOTIFY heightChanged)
+        Q_PROPERTY(QString setWindowWidth WRITE setWindowWidth NOTIFY widthChanged)
+        Q_PROPERTY(QString setShownInformation WRITE setShownInformation NOTIFY tempChanged)
 
 public:
         MapController() = default;
@@ -50,23 +50,34 @@ public:
         /// Set the window width
         void setWindowWidth(const QString& width);
 
+        /// Set the shown information about one locality
+        void setShownInformation(const QString& locationId);
+
         /// Initialize the map
         void initialize(QObject* root);
 
 signals:
         void dayChanged();
 
+        void heightChanged();
+
+        void widthChanged();
+
+        void tempChanged();
+
 private:
+
+        /// Update the circles/information on the map
         void update() const;
 
-        EpiOutput m_epiOutput;
+        EpiOutput m_epiOutput = EpiOutput();
 
         unsigned int m_day = 0;      // Current shown step
         unsigned int m_day_diff = 0; // Difference between epi-output measurements (Amount of days)
         unsigned int m_window_height = 0;
         unsigned int m_window_width = 0;
 
-        QObject* m_root;
+        QObject* m_root = nullptr;
 };
 
 } // namespace visualization
