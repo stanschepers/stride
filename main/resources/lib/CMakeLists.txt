@@ -26,6 +26,8 @@ if(NOT HDF5_FOUND)
        # Tell hdf5 that we are manually overriding certain settings
        set (HDF5_EXTERNALLY_CONFIGURED 1)
        set (BUILD_TESTING 0)
+       set (HDF5_BUILD_EXAMPLES 0)
+       set (HDF5_BUILD_TOOLS 0)
        set (HDF5_EXPORTED_TARGETS "libstride")
        # Add the sub project
        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -w")
