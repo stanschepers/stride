@@ -84,6 +84,9 @@ set(STRIDE_SRC
     geopop/io/CommutesCSVReader.cpp
     #geopop/io/GeoGridJSONReader.cpp
     #geopop/io/GeoGridJSONWriter.cpp
+    #geopop/io/GeoGridHDF5Reader.cpp
+    geopop/io/GeoGridHDF5Writer.cpp
+    geopop/io/GeoGridHDF5Writer.h
     geopop/io/GeoGridProtoReader.cpp
     geopop/io/GeoGridProtoReader.h
     geopop/io/GeoGridProtoWriter.cpp
