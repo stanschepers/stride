@@ -20,6 +20,7 @@
 #include "GeoGridWriter.h"
 #include "util/Exception.h"
 
+#include <fstream>
 #include <iostream>
 
 #ifdef BOOST_FOUND
@@ -31,16 +32,18 @@ namespace filesys = boost::filesystem;
 namespace filesys = std::filesystem;
 #endif
 
+using namespace std;
+
 namespace geopop {
 
-std::shared_ptr<GeoGridWriter> GeoGridWriterFactory::CreateGeoGridWriter(const std::string& filename)
+std::shared_ptr<GeoGridWriter> GeoGridWriterFactory::CreateGeoGridWriter(const string& filepath)
 {
-        filesys::path path(filename);
+        filesys::path path(filepath);
 
         if (path.extension().string() == ".json") {
-                return std::make_shared<GeoGridJSONWriter>();
+                return make_shared<GeoGridJSONWriter>(make_shared<ofstream>(path.string()));
         } else if (path.extension().string() == ".proto") {
-                return std::make_shared<GeoGridProtoWriter>();
+                return make_shared<GeoGridProtoWriter>(make_shared<ofstream>(path.string()));
         } else {
                 throw stride::util::Exception("GeoGridWriterFactory::CreateWriter> Unsupported file extension: " +
                                               path.extension().string());

@@ -15,7 +15,7 @@
 
 #pragma once
 
-#include "GeoGridWriter.h"
+#include "GeoGridStreamWriter.h"
 #include "geopop/Location.h"
 
 #include <nlohmann/json.hpp>
@@ -33,14 +33,17 @@ class ContactCenter;
 /**
  * Writes a GeoGrid to a JSON file.
  */
-class GeoGridJSONWriter : public GeoGridWriter
+class GeoGridJSONWriter : public GeoGridStreamWriter
 {
 public:
-        /// Construct the GeoGridJSONWriter.
-        GeoGridJSONWriter();
+        /// GeoGridJSONWriter cannot be instantiated without stream.
+        GeoGridJSONWriter() = delete;
+
+        /// Construct GeoGridProtoWriter referencing given stream
+        explicit GeoGridJSONWriter(std::shared_ptr<std::ostream> stream);
 
         /// Write the provided GeoGrid to the proved ostream in JSON format.
-        void Write(GeoGrid& geoGrid, std::ostream& stream) override;
+        void Write(GeoGrid& geoGrid) override;
 
 private:
         /// Create a JSON object containing all info needed to reconstruct a ContactPool.

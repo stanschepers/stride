@@ -31,7 +31,7 @@ using namespace stride::util;
 using json = nlohmann::json;
 
 GeoGridJSONReader::GeoGridJSONReader(unique_ptr<istream> inputStream, Population* pop)
-    : GeoGridReader(move(inputStream), pop)
+    : GeoGridStreamReader(move(inputStream), pop)
 {
 }
 

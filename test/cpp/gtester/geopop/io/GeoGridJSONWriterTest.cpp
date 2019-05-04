@@ -167,11 +167,11 @@ TEST(GeoGridJSONReaderTest, writeLocationsTest)
         geoGrid.AddLocation(make_shared<Location>(2, 3, Coordinate(0, 0), "Gent", 5000));
         geoGrid.AddLocation(make_shared<Location>(3, 2, Coordinate(0, 0), "Mons", 2500));
 
-        GeoGridJSONWriter writer;
-        stringstream      ss;
-        writer.Write(geoGrid, ss);
+        shared_ptr<stringstream> ss = make_shared<stringstream>();
+        GeoGridJSONWriter        writer(ss);
+        writer.Write(geoGrid);
 
-        EXPECT_TRUE(compareOutput(expectedOutput, ss.str()));
+        EXPECT_TRUE(compareOutput(expectedOutput, ss->str()));
 }
 
 TEST(GeoGridJSONReaderTest, writePeopleTest)
@@ -275,11 +275,11 @@ TEST(GeoGridJSONReaderTest, writePeopleTest)
         auto pop        = Population::Create();
         auto geoGridPtr = GetPopulatedGeoGrid(pop.get());
 
-        GeoGridJSONWriter writer;
-        stringstream      ss;
-        writer.Write(*geoGridPtr, ss);
+        shared_ptr<stringstream> ss = make_shared<stringstream>();
+        GeoGridJSONWriter        writer(ss);
+        writer.Write(*geoGridPtr);
 
-        EXPECT_TRUE(compareOutput(expectedOutput, ss.str()));
+        EXPECT_TRUE(compareOutput(expectedOutput, ss->str()));
 }
 
 TEST(GeoGridJSONReaderTest, writeContactPoolsTest)
@@ -368,11 +368,11 @@ TEST(GeoGridJSONReaderTest, writeContactPoolsTest)
 
         geoGrid.AddLocation(location);
 
-        GeoGridJSONWriter writer;
-        stringstream      ss;
-        writer.Write(geoGrid, ss);
+        shared_ptr<stringstream> ss = make_shared<stringstream>();
+        GeoGridJSONWriter        writer(ss);
+        writer.Write(geoGrid);
 
-        EXPECT_TRUE(compareOutput(expectedOutput, ss.str()));
+        EXPECT_TRUE(compareOutput(expectedOutput, ss->str()));
 }
 
 TEST(GeoGridJSONReaderTest, writeCommutesTest)
@@ -515,11 +515,11 @@ TEST(GeoGridJSONReaderTest, writeCommutesTest)
         auto pop        = Population::Create();
         auto geoGridPtr = GetCommutesGeoGrid(pop.get());
 
-        GeoGridJSONWriter writer;
-        stringstream      ss;
-        writer.Write(*geoGridPtr, ss);
+        shared_ptr<stringstream> ss = make_shared<stringstream>();
+        GeoGridJSONWriter        writer(ss);
+        writer.Write(*geoGridPtr);
 
-        EXPECT_TRUE(compareOutput(expectedOutput, ss.str()));
+        EXPECT_TRUE(compareOutput(expectedOutput, ss->str()));
 }
 
 } // namespace

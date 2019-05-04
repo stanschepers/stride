@@ -88,6 +88,13 @@ set(STRIDE_SRC
     geopop/io/GeoGridProtoWriter.cpp
     geopop/io/GeoGridProtoWriter.h
     geopop/io/GeoGridReader.cpp
+    geopop/io/GeoGridReader.h
+    geopop/io/GeoGridStreamReader.cpp
+    geopop/io/GeoGridStreamReader.h
+    geopop/io/GeoGridFileReader.cpp
+    geopop/io/GeoGridFileReader.h
+    geopop/io/GeoGridReader.cpp
+    geopop/io/GeoGridReader.h
     geopop/io/GeoGridReaderFactory.cpp
     geopop/io/GeoGridReaderFactory.h
     geopop/io/GeoGridWriterFactory.cpp
@@ -145,7 +152,7 @@ set(STRIDE_SRC
 #============================================================================
 # Build the Stride library.
 #============================================================================
-add_library(libstride ${STRIDE_SRC})
+add_library(libstride STATIC ${STRIDE_SRC})
 target_compile_definitions(libstride PUBLIC "-DSTRIDE_GIT_HASH=${STRIDE_WC_REVISION_HASH}")
 target_compile_definitions(libstride PUBLIC "-DPROCCOUNT=${PROCCOUNT}")
 target_link_libraries(libstride PRIVATE ${LIBS})
