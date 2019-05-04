@@ -31,17 +31,19 @@ namespace filesys = boost::filesystem;
 namespace filesys = std::filesystem;
 #endif
 
+using namespace std;
+
 namespace geopop {
 
-std::shared_ptr<GeoGridWriter> GeoGridWriterFactory::CreateGeoGridWriter(const std::string& filename)
+std::shared_ptr<GeoGridWriter> GeoGridWriterFactory::CreateGeoGridWriter(const string& filepath)
 {
-        filesys::path path(filename);
+        filesys::path path(filepath);
 
         /*if (path.extension().string() == ".json") {
                 return std::make_shared<GeoGridJSONWriter>();
         } else */
-         if (path.extension().string() == ".proto") {
-                return std::make_shared<GeoGridProtoWriter>();
+        if (path.extension().string() == ".proto") {
+                return make_shared<GeoGridProtoWriter>(make_shared<ofstream>(path.string()));
         } else {
                 throw stride::util::Exception("GeoGridWriterFactory::CreateWriter> Unsupported file extension: " +
                                               path.extension().string());

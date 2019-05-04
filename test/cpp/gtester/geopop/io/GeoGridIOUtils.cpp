@@ -145,11 +145,12 @@ void ComparePerson(const proto::GeoGrid_Person& protoPerson)
 
 void CompareGeoGrid(GeoGrid& geoGrid)
 {
-        GeoGridProtoWriter writer;
-        stringstream       ss;
-        writer.Write(geoGrid, ss);
+
+        shared_ptr<stringstream> ss = make_shared<stringstream>();
+        GeoGridProtoWriter       writer(ss);
+        writer.Write(geoGrid);
         proto::GeoGrid protoGrid;
-        protoGrid.ParseFromIstream(&ss);
+        protoGrid.ParseFromIstream(ss.get());
         compareGeoGrid(geoGrid, protoGrid);
 }
 
