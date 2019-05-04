@@ -20,6 +20,7 @@
 #include "GeoGridWriter.h"
 #include "util/Exception.h"
 
+#include <fstream>
 #include <iostream>
 
 #ifdef BOOST_FOUND
