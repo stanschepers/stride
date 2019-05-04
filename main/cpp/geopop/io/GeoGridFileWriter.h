@@ -1,3 +1,5 @@
+#include <utility>
+
 /*
  *  This is free software: you can redistribute it and/or modify it
  *  under the terms of the GNU General Public License as published by
@@ -18,24 +20,36 @@
 #include <memory>
 #include <ostream>
 
+#include "GeoGridWriter.h"
+
 namespace geopop {
 
 class GeoGrid;
 
 /**
- * An interface for writing the GeoGrid.
+ * An interface for writing the GeoGrid to a file, can be implemented with multiple file types.
+ * HDF5 is currently implemented.
  */
-class GeoGridWriter
+class GeoGridFileWriter : public GeoGridWriter
 {
 public:
-        /// Default construtor
-        GeoGridWriter() = default;
+        /// GeoGridFileWriter cannot be instantiated without filename
+        GeoGridFileWriter() = delete;
 
-        /// Pure virtual destrutor to make class abstract.
-        virtual ~GeoGridWriter() = default;
+        /// Construct GeoGridFileWriter referencing given filename
+        explicit GeoGridFileWriter(std::string  fileName) : m_file_name(std::move(fileName)) {};
 
-        /// Write the GeoGrid.
-        virtual void Write(GeoGrid& geoGrid) = 0;
+        /// Default destructor.
+        ~GeoGridFileWriter() override = default;
+
+        /// Write the GeoGrid to file.
+        void Write(GeoGrid& geoGrid) override = 0;
+
+        /// Return file name
+        std::string FileName() { return m_file_name; }
+
+protected:
+        std::string m_file_name;
 };
 
 } // namespace geopop
