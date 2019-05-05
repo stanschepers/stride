@@ -26,8 +26,8 @@ namespace geopop {
 
 using namespace std;
 using namespace stride;
-using namespace stride::util;
 using namespace stride::ContactType;
+using namespace H5;
 
 GeoGridHDF5Writer::GeoGridHDF5Writer(string fileName) : GeoGridFileWriter(move(fileName)), m_persons_found() {}
 
@@ -36,11 +36,11 @@ void GeoGridHDF5Writer::Write(GeoGrid& geoGrid)
         try {
                 // Turn off the auto-printing when failure occurs so that we can
                 // handle the errors appropriately
-                //                H5::Exception::dontPrint();
+                //                Exception::dontPrint();
 
-                H5::H5File file(m_file_name, H5F_ACC_TRUNC);
+                H5File file(m_file_name, H5F_ACC_TRUNC);
 
-                H5::Group locations_group(file.createGroup("/Locations"));
+                Group locations_group(file.createGroup("/Locations"));
                 WriteAttribute(geoGrid.size(), "size", locations_group);
 
                 for (const auto& location : geoGrid) {
@@ -51,17 +51,17 @@ void GeoGridHDF5Writer::Write(GeoGrid& geoGrid)
 
                 m_persons_found.clear();
 
-        } catch (const H5::Exception& e) {
+        } catch (const Exception& e) {
                 throw stride::util::Exception("There was an error writing the GeoGrid to the file: " +
                                               e.getDetailMsg());
         }
 }
 
-void GeoGridHDF5Writer::WriteLocation(Location& loc, H5::Group& locsGroup)
+void GeoGridHDF5Writer::WriteLocation(Location& loc, Group& locsGroup)
 {
         /// Create group for location
 
-        H5::Group locGroup(locsGroup.createGroup("Location" + to_string(loc.GetID())));
+        Group locGroup(locsGroup.createGroup("Location" + to_string(loc.GetID())));
         /// Set location attributes
         WriteAttribute(loc.GetID(), "id", locGroup);
         WriteAttribute(loc.GetName(), "name", locGroup);
@@ -73,7 +73,7 @@ void GeoGridHDF5Writer::WriteLocation(Location& loc, H5::Group& locsGroup)
         auto commutes = loc.CRefOutgoingCommutes();
         WriteCommutes(commutes, locGroup);
 
-        H5::Group    cpGroup(locGroup.createGroup("ContactPools"));
+        Group        cpGroup(locGroup.createGroup("ContactPools"));
         unsigned int pool_count = 0;
         for (Id type : IdList) {
                 for (auto pool : loc.RefPools(type)) {
@@ -84,13 +84,13 @@ void GeoGridHDF5Writer::WriteLocation(Location& loc, H5::Group& locsGroup)
         WriteAttribute(pool_count, "size", cpGroup);
 }
 
-void GeoGridHDF5Writer::WriteCommutes(const vector<pair<Location*, double>>& commutes, H5::Group& locGroup)
+void GeoGridHDF5Writer::WriteCommutes(const vector<pair<Location*, double>>& commutes, Group& locGroup)
 {
         /// Create compound datatype
-        H5::CompType commute_t = H5Utils::GetCompoundType<H5Utils::H5Commute>();
+        CompType commute_t = H5Utils::GetCompoundType<H5Utils::H5Commute>();
 
         /// Create dataset
-        H5::DataSet dataset(locGroup.createDataSet("commutes", commute_t, CreateSpace(commutes.size())));
+        DataSet dataset(locGroup.createDataSet("commutes", commute_t, CreateSpace(commutes.size())));
         WriteAttribute(commutes.size(), "size", dataset);
 
         vector<H5Utils::H5Commute> comms(commutes.size());
@@ -102,14 +102,14 @@ void GeoGridHDF5Writer::WriteCommutes(const vector<pair<Location*, double>>& com
         dataset.write(comms.data(), commute_t);
 }
 
-void GeoGridHDF5Writer::WriteContactPool(const ContactPool& pool, Id type, H5::Group& cpGroup)
+void GeoGridHDF5Writer::WriteContactPool(const ContactPool& pool, Id type, Group& cpGroup)
 {
 
-        H5::CompType pool_person_t = H5Utils::GetCompoundType<H5Utils::H5PoolPerson>();
+        CompType pool_person_t = H5Utils::GetCompoundType<H5Utils::H5PoolPerson>();
 
         /// Create dataset
-        string      label = ToString(type) + to_string(pool.GetId());
-        H5::DataSet dataset(cpGroup.createDataSet(label, pool_person_t, CreateSpace(pool.size())));
+        string  label = ToString(type) + to_string(pool.GetId());
+        DataSet dataset(cpGroup.createDataSet(label, pool_person_t, CreateSpace(pool.size())));
         WriteAttribute(pool.GetId(), "id", dataset);
         WriteAttribute(pool.size(), "size", dataset);
         WriteAttribute(ToString(type), "type", dataset);
@@ -123,18 +123,18 @@ void GeoGridHDF5Writer::WriteContactPool(const ContactPool& pool, Id type, H5::G
         dataset.write(people.data(), pool_person_t);
 }
 
-void GeoGridHDF5Writer::WritePeople(H5::Group& rootGroup)
+void GeoGridHDF5Writer::WritePeople(Group& rootGroup)
 {
 
         /// Create compound datatype
-        H5::CompType person_t = H5Utils::GetCompoundType<H5Utils::H5Person>();
+        CompType person_t = H5Utils::GetCompoundType<H5Utils::H5Person>();
 
         /// Create dataset
-        H5::DataSet dataset(rootGroup.createDataSet("People", person_t, CreateSpace(m_persons_found.size())));
+        DataSet dataset(rootGroup.createDataSet("People", person_t, CreateSpace(m_persons_found.size())));
         WriteAttribute(m_persons_found.size(), "size", dataset);
 
         vector<H5Utils::H5Person> people(m_persons_found.size());
-        int               y = 0;
+        int                       y = 0;
         for (auto p : m_persons_found) {
                 people[y].id                    = p->GetId();
                 people[y].age                   = p->GetAge();
@@ -151,18 +151,18 @@ void GeoGridHDF5Writer::WritePeople(H5::Group& rootGroup)
 }
 
 template <typename T>
-void GeoGridHDF5Writer::WriteAttribute(T value, const std::string& name, H5::H5Object& h5Object)
+void GeoGridHDF5Writer::WriteAttribute(T value, const string& name, H5Object& h5Object)
 {
-        hsize_t       one_dim[] = {1};
-        H5::DataSpace atom(1, one_dim);
-        auto          attribute(h5Object.createAttribute(name, HDF5Type(value), atom));
+        hsize_t   one_dim[] = {1};
+        DataSpace atom(1, one_dim);
+        auto      attribute(h5Object.createAttribute(name, HDF5Type(value), atom));
         attribute.write(HDF5Type(value), &value);
 }
 
-H5::DataSpace GeoGridHDF5Writer::CreateSpace(hsize_t size)
+DataSpace GeoGridHDF5Writer::CreateSpace(hsize_t size)
 {
         hsize_t dim[] = {size};
-        return H5::DataSpace(1, dim);
+        return DataSpace(1, dim);
 }
 
 template <typename T>
@@ -174,44 +174,44 @@ auto GeoGridHDF5Writer::HDF5Type(const T&)
 template <>
 auto GeoGridHDF5Writer::HDF5Type(const int&)
 {
-        return H5::PredType::NATIVE_INT;
+        return PredType::NATIVE_INT;
 }
 
 template <>
 auto GeoGridHDF5Writer::HDF5Type(const unsigned int&)
 {
-        return H5::PredType::NATIVE_UINT;
+        return PredType::NATIVE_UINT;
 }
 
 template <>
 auto GeoGridHDF5Writer::HDF5Type(const long&)
 {
-        return H5::PredType::NATIVE_LONG;
+        return PredType::NATIVE_LONG;
 }
 
 template <>
 auto GeoGridHDF5Writer::HDF5Type(const unsigned long&)
 {
-        return H5::PredType::NATIVE_ULONG;
+        return PredType::NATIVE_ULONG;
 }
 
 template <>
 auto GeoGridHDF5Writer::HDF5Type(const float&)
 {
-        return H5::PredType::NATIVE_FLOAT;
+        return PredType::NATIVE_FLOAT;
 }
 
 template <>
 auto GeoGridHDF5Writer::HDF5Type(const double&)
 {
-        return H5::PredType::NATIVE_DOUBLE;
+        return PredType::NATIVE_DOUBLE;
 }
 
 template <>
-auto GeoGridHDF5Writer::HDF5Type(const std::string& value)
+auto GeoGridHDF5Writer::HDF5Type(const string& value)
 {
         auto str_length = value.length();
-        return H5::StrType(H5::PredType::C_S1, str_length + 1);
+        return StrType(PredType::C_S1, str_length + 1);
 }
 
 } // namespace geopop
