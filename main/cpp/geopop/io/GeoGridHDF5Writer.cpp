@@ -36,7 +36,7 @@ void GeoGridHDF5Writer::Write(GeoGrid& geoGrid)
         try {
                 // Turn off the auto-printing when failure occurs so that we can
                 // handle the errors appropriately
-//                H5::Exception::dontPrint();
+                H5::Exception::dontPrint();
 
                 H5::H5File file(m_file_name, H5F_ACC_TRUNC);
 
@@ -121,7 +121,7 @@ void GeoGridHDF5Writer::WriteContactPool(const ContactPool& pool, Id type, H5::G
         H5::DataSpace space(1, dim);
 
         /// Create dataset
-        string label = "POOL_" + to_string(pool.GetId()) + "_" + to_string(static_cast<unsigned int>(type));
+        string      label = "POOL_" + to_string(pool.GetId()) + "_" + to_string(static_cast<unsigned int>(type));
         H5::DataSet dataset(cpGroup.createDataSet(label, H5::PredType::NATIVE_UINT, space));
         WriteAttribute(to_string(pool.GetId()), "id", dataset);
         WriteAttribute(pool.size(), "size", dataset);
@@ -138,9 +138,9 @@ void GeoGridHDF5Writer::WriteContactPool(const ContactPool& pool, Id type, H5::G
 
 void GeoGridHDF5Writer::WritePeople(H5::Group& rootGroup)
 {
-        hsize_t dim2 = 2; /// id + age
-        for (auto id : IdList) {  /// + number of pool types
-                (void) id;
+        hsize_t dim2 = 2;        /// id + age
+        for (auto id : IdList) { /// + number of pool types
+                (void)id;
                 ++dim2;
         }
 
@@ -152,13 +152,13 @@ void GeoGridHDF5Writer::WritePeople(H5::Group& rootGroup)
         H5::DataSet dataset(rootGroup.createDataSet("People", H5::PredType::NATIVE_UINT, space));
         WriteAttribute(m_persons_found.size(), "size", dataset);
 
-        vector<vector<unsigned int>> people(dim2 , vector<unsigned int>(m_persons_found.size()));
+        vector<vector<unsigned int>> people(dim2, vector<unsigned int>(m_persons_found.size()));
 
         int y = 0;
         for (auto p : m_persons_found) {
-                int x = 0;
+                int x          = 0;
                 people[x++][y] = p->GetId();
-                people[x++][y] = p->GetAge();
+                people[x++][y] = static_cast<unsigned int>(p->GetAge());
                 for (auto id : IdList) {
                         people[x++][y] = p->GetPoolId(id);
                 }
