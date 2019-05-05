@@ -19,7 +19,6 @@
 #include "contact/ContactType.h"
 #include "geopop/GeoGrid.h"
 #include "pop/Person.h"
-#include "util/Exception.h"
 #include "util/SegmentedVector.h"
 
 namespace geopop {
@@ -36,7 +35,7 @@ void GeoGridHDF5Writer::Write(GeoGrid& geoGrid)
         try {
                 // Turn off the auto-printing when failure occurs so that we can
                 // handle the errors appropriately
-                H5::Exception::dontPrint();
+                //                H5::Exception::dontPrint();
 
                 H5::H5File file(m_file_name, H5F_ACC_TRUNC);
 
@@ -52,7 +51,8 @@ void GeoGridHDF5Writer::Write(GeoGrid& geoGrid)
                 m_persons_found.clear();
 
         } catch (const H5::Exception& e) {
-                throw stride::util::Exception("There was an error writing the GeoGrid to the file:" + e.getDetailMsg());
+                throw stride::util::Exception("There was an error writing the GeoGrid to the file: " +
+                                              e.getDetailMsg());
         }
 }
 
@@ -60,7 +60,7 @@ void GeoGridHDF5Writer::WriteLocation(Location& loc, H5::Group& locsGroup)
 {
         /// Create group for location
 
-        H5::Group locGroup(locsGroup.createGroup("LOC" + to_string(loc.GetID())));
+        H5::Group locGroup(locsGroup.createGroup("Location" + to_string(loc.GetID())));
         /// Set location attributes
         WriteAttribute(loc.GetID(), "id", locGroup);
         WriteAttribute(loc.GetName(), "name", locGroup);
@@ -85,27 +85,22 @@ void GeoGridHDF5Writer::WriteLocation(Location& loc, H5::Group& locsGroup)
 
 void GeoGridHDF5Writer::WriteCommutes(const vector<pair<Location*, double>>& commutes, H5::Group& locGroup)
 {
-
-        /// Create compound datatype
-        typedef struct commute_struct
+        typedef struct commute_h5
         {
                 unsigned int to;
                 double       proportion;
-        } commute_struct;
+        } commute_h5;
 
-        H5::CompType commute_t(sizeof(commute_struct));
-        commute_t.insertMember("to", HOFFSET(commute_struct, to), H5::PredType::NATIVE_UINT);
-        commute_t.insertMember("proportion", HOFFSET(commute_struct, proportion), H5::PredType::NATIVE_DOUBLE);
-
-        /// Create dataspace
-        hsize_t       dim[] = {commutes.size()};
-        H5::DataSpace space(1, dim);
+        /// Create compound datatype
+        H5::CompType commute_t(sizeof(commute_h5));
+        commute_t.insertMember("to", HOFFSET(commute_h5, to), H5::PredType::NATIVE_UINT);
+        commute_t.insertMember("proportion", HOFFSET(commute_h5, proportion), H5::PredType::NATIVE_DOUBLE);
 
         /// Create dataset
-        H5::DataSet dataset(locGroup.createDataSet("commutes", commute_t, space));
+        H5::DataSet dataset(locGroup.createDataSet("commutes", commute_t, CreateSpace(commutes.size())));
         WriteAttribute(commutes.size(), "size", dataset);
 
-        vector<commute_struct> comms(commutes.size());
+        vector<commute_h5> comms(commutes.size());
         for (unsigned long i = 0; i < commutes.size(); ++i) {
                 comms[i].to         = commutes[i].first->GetID();
                 comms[i].proportion = commutes[i].second;
@@ -116,56 +111,78 @@ void GeoGridHDF5Writer::WriteCommutes(const vector<pair<Location*, double>>& com
 
 void GeoGridHDF5Writer::WriteContactPool(const ContactPool& pool, Id type, H5::Group& cpGroup)
 {
-        /// Create dataspace
-        hsize_t       dim[] = {pool.size()};
-        H5::DataSpace space(1, dim);
+
+        typedef struct pool_person_h5
+        {
+                unsigned int id;
+        } pool_person_h5;
+
+        /// Create compound datatype
+        H5::CompType pool_person_t(sizeof(pool_person_h5));
+        pool_person_t.insertMember("id", HOFFSET(pool_person_h5, id), H5::PredType::NATIVE_UINT);
 
         /// Create dataset
-        string      label = "POOL_" + to_string(pool.GetId()) + "_" + to_string(static_cast<unsigned int>(type));
-        H5::DataSet dataset(cpGroup.createDataSet(label, H5::PredType::NATIVE_UINT, space));
-        WriteAttribute(to_string(pool.GetId()), "id", dataset);
+        string      label = ToString(type) + to_string(pool.GetId());
+        H5::DataSet dataset(cpGroup.createDataSet(label, pool_person_t, CreateSpace(pool.size())));
+        WriteAttribute(pool.GetId(), "id", dataset);
         WriteAttribute(pool.size(), "size", dataset);
-        WriteAttribute(static_cast<unsigned int>(type), "type", dataset);
+        WriteAttribute(ToString(type), "type", dataset);
 
-        vector<unsigned int> people(pool.size());
+        vector<pool_person_h5> people(pool.size());
         for (unsigned long i = 0; i < pool.size(); ++i) {
-                people[i] = pool[i]->GetId();
+                people[i].id = pool[i]->GetId();
                 m_persons_found.insert(pool[i]);
         }
 
-        dataset.write(people.data(), H5::PredType::NATIVE_UINT);
+        dataset.write(people.data(), pool_person_t);
 }
 
 void GeoGridHDF5Writer::WritePeople(H5::Group& rootGroup)
 {
-        hsize_t dim2 = 2;        /// id + age
-        for (auto id : IdList) { /// + number of pool types
-                (void)id;
-                ++dim2;
-        }
+        typedef struct person_h5
+        {
+                unsigned int id;
+                float        age;
+                unsigned int household_id;
+                unsigned int k12School_id;
+                unsigned int college_id;
+                unsigned int workplace_id;
+                unsigned int primaryCommunity_id;
+                unsigned int secondaryCommunity_id;
+        } person_h5;
 
-        /// Create dataspace
-        hsize_t       dims[] = {m_persons_found.size(), dim2};
-        H5::DataSpace space(2, dims);
+        /// Create compound datatype
+        H5::CompType person_t(sizeof(person_h5));
+        person_t.insertMember("id", HOFFSET(person_h5, id), H5::PredType::NATIVE_UINT);
+        person_t.insertMember("age", HOFFSET(person_h5, age), H5::PredType::NATIVE_FLOAT);
+        person_t.insertMember("household_id", HOFFSET(person_h5, household_id), H5::PredType::NATIVE_UINT);
+        person_t.insertMember("k12School_id", HOFFSET(person_h5, k12School_id), H5::PredType::NATIVE_UINT);
+        person_t.insertMember("college_id", HOFFSET(person_h5, college_id), H5::PredType::NATIVE_UINT);
+        person_t.insertMember("workplace_id", HOFFSET(person_h5, workplace_id), H5::PredType::NATIVE_UINT);
+        person_t.insertMember("primaryCommunity_id", HOFFSET(person_h5, primaryCommunity_id),
+                              H5::PredType::NATIVE_UINT);
+        person_t.insertMember("secondaryCommunity_id", HOFFSET(person_h5, secondaryCommunity_id),
+                              H5::PredType::NATIVE_UINT);
 
         /// Create dataset
-        H5::DataSet dataset(rootGroup.createDataSet("People", H5::PredType::NATIVE_UINT, space));
+        H5::DataSet dataset(rootGroup.createDataSet("People", person_t, CreateSpace(m_persons_found.size())));
         WriteAttribute(m_persons_found.size(), "size", dataset);
 
-        vector<vector<unsigned int>> people(dim2, vector<unsigned int>(m_persons_found.size()));
-
-        int y = 0;
+        vector<person_h5> people(m_persons_found.size());
+        int               y = 0;
         for (auto p : m_persons_found) {
-                int x          = 0;
-                people[x++][y] = p->GetId();
-                people[x++][y] = static_cast<unsigned int>(p->GetAge());
-                for (auto id : IdList) {
-                        people[x++][y] = p->GetPoolId(id);
-                }
+                people[y].id                    = p->GetId();
+                people[y].age                   = p->GetAge();
+                people[y].household_id          = p->GetPoolId(Id::Household);
+                people[y].k12School_id          = p->GetPoolId(Id::K12School);
+                people[y].college_id            = p->GetPoolId(Id::College);
+                people[y].workplace_id          = p->GetPoolId(Id::Workplace);
+                people[y].primaryCommunity_id   = p->GetPoolId(Id::PrimaryCommunity);
+                people[y].secondaryCommunity_id = p->GetPoolId(Id::SecondaryCommunity);
                 y++;
         }
 
-        dataset.write(people.data(), H5::PredType::NATIVE_UINT);
+        dataset.write(people.data(), person_t);
 }
 
 template <typename T>
@@ -177,53 +194,10 @@ void GeoGridHDF5Writer::WriteAttribute(T value, const std::string& name, H5::H5O
         attribute.write(HDF5Type(value), &value);
 }
 
-template <typename T>
-auto GeoGridHDF5Writer::HDF5Type(const T&)
+H5::DataSpace GeoGridHDF5Writer::CreateSpace(hsize_t size)
 {
-        throw stride::util::Exception("Tried to write unsupported type to HDF5.");
-}
-
-template <>
-auto GeoGridHDF5Writer::HDF5Type(const int&)
-{
-        return H5::PredType::NATIVE_INT;
-}
-
-template <>
-auto GeoGridHDF5Writer::HDF5Type(const unsigned int&)
-{
-        return H5::PredType::NATIVE_UINT;
-}
-
-template <>
-auto GeoGridHDF5Writer::HDF5Type(const long&)
-{
-        return H5::PredType::NATIVE_LONG;
-}
-
-template <>
-auto GeoGridHDF5Writer::HDF5Type(const unsigned long&)
-{
-        return H5::PredType::NATIVE_ULONG;
-}
-
-template <>
-auto GeoGridHDF5Writer::HDF5Type(const float&)
-{
-        return H5::PredType::NATIVE_FLOAT;
-}
-
-template <>
-auto GeoGridHDF5Writer::HDF5Type(const double&)
-{
-        return H5::PredType::NATIVE_DOUBLE;
-}
-
-template <>
-auto GeoGridHDF5Writer::HDF5Type(const std::string& value)
-{
-        auto str_length = value.length();
-        return H5::StrType(H5::PredType::C_S1, str_length);
+        hsize_t dim[] = {size};
+        return H5::DataSpace(1, dim);
 }
 
 } // namespace geopop
