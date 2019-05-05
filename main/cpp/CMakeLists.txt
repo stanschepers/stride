@@ -88,6 +88,8 @@ set(STRIDE_SRC
     geopop/io/GeoGridHDF5Reader.h
     geopop/io/GeoGridHDF5Writer.cpp
     geopop/io/GeoGridHDF5Writer.h
+    geopop/io/GeoGridHDF5Utils.cpp
+    geopop/io/GeoGridHDF5Utils.h
     geopop/io/GeoGridProtoReader.cpp
     geopop/io/GeoGridProtoReader.h
     geopop/io/GeoGridProtoWriter.cpp
