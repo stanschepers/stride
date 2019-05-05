@@ -1,3 +1,5 @@
+#include <utility>
+
 /*
  *  This is free software: you can redistribute it and/or modify it
  *  under the terms of the GNU General Public License as published by
@@ -10,27 +12,28 @@
  *  You should have received a copy of the GNU General Public License
  *  along with the software. If not, see <http://www.gnu.org/licenses/>.
  *
- *  Copyright 2018, Jan Broeckhove and Bistromatics group.
+ *  Copyright 2018, 2019Jan Broeckhove and Bistromatics group.
  */
 
-#include "GeoGridReader.h"
+#include "GeoGridHDF5Reader.h"
 
 #include "geopop/GeoGrid.h"
-#include "geopop/Location.h"
+#include "pop/Person.h"
+#include "pop/Population.h"
+
+#include <iostream>
+#include <stdexcept>
 
 namespace geopop {
 
-GeoGridReader::GeoGridReader(stride::Population* pop) : m_people(), m_commutes(), m_population(pop) {}
+using namespace std;
+using namespace stride::ContactType;
 
-void GeoGridReader::AddCommutes(GeoGrid& geoGrid)
+GeoGridHDF5Reader::GeoGridHDF5Reader(std::string inputFilePath, stride::Population* pop)
+    : GeoGridFileReader(std::move(inputFilePath), pop)
 {
-        for (const auto& commute_tuple : m_commutes) {
-                const auto a      = geoGrid.GetById(std::get<0>(commute_tuple));
-                const auto b      = geoGrid.GetById(std::get<1>(commute_tuple));
-                const auto amount = std::get<2>(commute_tuple);
-                a->AddOutgoingCommute(b, amount);
-                b->AddIncomingCommute(a, amount);
-        }
 }
+
+void GeoGridHDF5Reader::Read() { GeoGridFileReader::Read(); }
 
 } // namespace geopop
