@@ -13,32 +13,67 @@
  *  Copyright 2018, Jan Broeckhove and Bistromatics group.
  */
 
-#pragma once
-
 #include "GeoGridHDF5Utils.h"
 
 namespace H5Utils {
 
+using namespace std;
+using namespace H5;
+
 template <>
-H5::CompType GetCompoundType<H5Commute>()
+CompType GetCompoundType<H5Commute>()
 {
-        H5::CompType commute_t(sizeof(H5Commute));
-        commute_t.insertMember("to", HOFFSET(H5Commute, to), H5::PredType::NATIVE_UINT);
-        commute_t.insertMember("proportion", HOFFSET(H5Commute, proportion), H5::PredType::NATIVE_DOUBLE);
+        CompType commute_t(sizeof(H5Commute));
+        commute_t.insertMember("to", HOFFSET(H5Commute, to), PredType::NATIVE_UINT);
+        commute_t.insertMember("proportion", HOFFSET(H5Commute, proportion), PredType::NATIVE_DOUBLE);
         return commute_t;
 }
 
 template <>
-H5::CompType GetCompoundType<H5PoolPerson>()
+CompType GetCompoundType<H5PoolPerson>()
 {
-        H5::CompType pool_person_t(sizeof(H5PoolPerson));
-        pool_person_t.insertMember("id", HOFFSET(H5PoolPerson, id), H5::PredType::NATIVE_UINT);
+        CompType pool_person_t(sizeof(H5PoolPerson));
+        pool_person_t.insertMember("id", HOFFSET(H5PoolPerson, id), PredType::NATIVE_UINT);
         return pool_person_t;
 }
 
 template <>
-H5::CompType GetCompoundType<H5Person>()
+CompType GetCompoundType<H5Person>()
 {
+        CompType person_t(sizeof(H5Person));
+        person_t.insertMember("id", HOFFSET(H5Person, id), PredType::NATIVE_UINT);
+        person_t.insertMember("age", HOFFSET(H5Person, age), PredType::NATIVE_FLOAT);
+        person_t.insertMember("household_id", HOFFSET(H5Person, household_id), PredType::NATIVE_UINT);
+        person_t.insertMember("k12School_id", HOFFSET(H5Person, k12School_id), PredType::NATIVE_UINT);
+        person_t.insertMember("college_id", HOFFSET(H5Person, college_id), PredType::NATIVE_UINT);
+        person_t.insertMember("workplace_id", HOFFSET(H5Person, workplace_id), PredType::NATIVE_UINT);
+        person_t.insertMember("primaryCommunity_id", HOFFSET(H5Person, primaryCommunity_id), PredType::NATIVE_UINT);
+        person_t.insertMember("secondaryCommunity_id", HOFFSET(H5Person, secondaryCommunity_id), PredType::NATIVE_UINT);
+        return person_t;
+}
+
+DataSpace CreateSpace(hsize_t size)
+{
+        hsize_t dim[] = {size};
+        return DataSpace(1, dim);
+}
+
+H5::PredType HDF5Type(const int&) { return PredType::NATIVE_INT; }
+
+H5::PredType HDF5Type(const unsigned int&) { return PredType::NATIVE_UINT; }
+
+H5::PredType HDF5Type(const long&) { return PredType::NATIVE_LONG; }
+
+H5::PredType HDF5Type(const unsigned long&) { return PredType::NATIVE_ULONG; }
+
+H5::PredType HDF5Type(const float&) { return PredType::NATIVE_FLOAT; }
+
+H5::PredType HDF5Type(const double&) { return PredType::NATIVE_DOUBLE; }
+
+H5::StrType HDF5Type(const string& value)
+{
+        auto str_length = value.length();
+        return StrType(PredType::C_S1, str_length + 1);
 }
 
 } // namespace H5Utils

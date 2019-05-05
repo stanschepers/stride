@@ -28,6 +28,7 @@ using namespace std;
 using namespace stride;
 using namespace stride::ContactType;
 using namespace H5;
+using namespace H5Utils;
 
 GeoGridHDF5Writer::GeoGridHDF5Writer(string fileName) : GeoGridFileWriter(move(fileName)), m_persons_found() {}
 
@@ -87,13 +88,13 @@ void GeoGridHDF5Writer::WriteLocation(Location& loc, Group& locsGroup)
 void GeoGridHDF5Writer::WriteCommutes(const vector<pair<Location*, double>>& commutes, Group& locGroup)
 {
         /// Create compound datatype
-        CompType commute_t = H5Utils::GetCompoundType<H5Utils::H5Commute>();
+        CompType commute_t = GetCompoundType<H5Commute>();
 
         /// Create dataset
         DataSet dataset(locGroup.createDataSet("commutes", commute_t, CreateSpace(commutes.size())));
         WriteAttribute(commutes.size(), "size", dataset);
 
-        vector<H5Utils::H5Commute> comms(commutes.size());
+        vector<H5Commute> comms(commutes.size());
         for (unsigned long i = 0; i < commutes.size(); ++i) {
                 comms[i].to         = commutes[i].first->GetID();
                 comms[i].proportion = commutes[i].second;
@@ -105,7 +106,7 @@ void GeoGridHDF5Writer::WriteCommutes(const vector<pair<Location*, double>>& com
 void GeoGridHDF5Writer::WriteContactPool(const ContactPool& pool, Id type, Group& cpGroup)
 {
 
-        CompType pool_person_t = H5Utils::GetCompoundType<H5Utils::H5PoolPerson>();
+        CompType pool_person_t = GetCompoundType<H5PoolPerson>();
 
         /// Create dataset
         string  label = ToString(type) + to_string(pool.GetId());
@@ -114,7 +115,7 @@ void GeoGridHDF5Writer::WriteContactPool(const ContactPool& pool, Id type, Group
         WriteAttribute(pool.size(), "size", dataset);
         WriteAttribute(ToString(type), "type", dataset);
 
-        vector<H5Utils::H5PoolPerson> people(pool.size());
+        vector<H5PoolPerson> people(pool.size());
         for (unsigned long i = 0; i < pool.size(); ++i) {
                 people[i].id = pool[i]->GetId();
                 m_persons_found.insert(pool[i]);
@@ -127,7 +128,7 @@ void GeoGridHDF5Writer::WritePeople(Group& rootGroup)
 {
 
         /// Create compound datatype
-        CompType person_t = H5Utils::GetCompoundType<H5Utils::H5Person>();
+        CompType person_t = GetCompoundType<H5Person>();
 
         /// Create dataset
         DataSet dataset(rootGroup.createDataSet("People", person_t, CreateSpace(m_persons_found.size())));
@@ -157,61 +158,6 @@ void GeoGridHDF5Writer::WriteAttribute(T value, const string& name, H5Object& h5
         DataSpace atom(1, one_dim);
         auto      attribute(h5Object.createAttribute(name, HDF5Type(value), atom));
         attribute.write(HDF5Type(value), &value);
-}
-
-DataSpace GeoGridHDF5Writer::CreateSpace(hsize_t size)
-{
-        hsize_t dim[] = {size};
-        return DataSpace(1, dim);
-}
-
-template <typename T>
-auto GeoGridHDF5Writer::HDF5Type(const T&)
-{
-        throw stride::util::Exception("Tried to write unsupported type to HDF5.");
-}
-
-template <>
-auto GeoGridHDF5Writer::HDF5Type(const int&)
-{
-        return PredType::NATIVE_INT;
-}
-
-template <>
-auto GeoGridHDF5Writer::HDF5Type(const unsigned int&)
-{
-        return PredType::NATIVE_UINT;
-}
-
-template <>
-auto GeoGridHDF5Writer::HDF5Type(const long&)
-{
-        return PredType::NATIVE_LONG;
-}
-
-template <>
-auto GeoGridHDF5Writer::HDF5Type(const unsigned long&)
-{
-        return PredType::NATIVE_ULONG;
-}
-
-template <>
-auto GeoGridHDF5Writer::HDF5Type(const float&)
-{
-        return PredType::NATIVE_FLOAT;
-}
-
-template <>
-auto GeoGridHDF5Writer::HDF5Type(const double&)
-{
-        return PredType::NATIVE_DOUBLE;
-}
-
-template <>
-auto GeoGridHDF5Writer::HDF5Type(const string& value)
-{
-        auto str_length = value.length();
-        return StrType(PredType::C_S1, str_length + 1);
 }
 
 } // namespace geopop

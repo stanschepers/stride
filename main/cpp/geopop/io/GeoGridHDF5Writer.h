@@ -59,11 +59,6 @@ private:
         template <typename T>
         void WriteAttribute(T value, const std::string& name, H5::H5Object& h5Object);
 
-        static H5::DataSpace CreateSpace(hsize_t size);
-
-        template <typename T>
-        static auto HDF5Type(const T&);
-
 private:
         std::set<stride::Person*> m_persons_found; ///< The persons found when looping over the ContactPools.
 };

@@ -45,4 +45,20 @@ struct H5Person
 template <typename T>
 H5::CompType GetCompoundType();
 
+H5::DataSpace CreateSpace(hsize_t size);
+
+H5::PredType HDF5Type(const int&);
+
+H5::PredType HDF5Type(const unsigned int&);
+
+H5::PredType HDF5Type(const long&);
+
+H5::PredType HDF5Type(const unsigned long&);
+
+H5::PredType HDF5Type(const float&);
+
+H5::PredType HDF5Type(const double&);
+
+H5::StrType HDF5Type(const std::string& value);
+
 } // namespace H5Utils
