@@ -200,4 +200,53 @@ H5::DataSpace GeoGridHDF5Writer::CreateSpace(hsize_t size)
         return H5::DataSpace(1, dim);
 }
 
+template <typename T>
+auto GeoGridHDF5Writer::HDF5Type(const T&)
+{
+        throw stride::util::Exception("Tried to write unsupported type to HDF5.");
+}
+
+template <>
+auto GeoGridHDF5Writer::HDF5Type(const int&)
+{
+        return H5::PredType::NATIVE_INT;
+}
+
+template <>
+auto GeoGridHDF5Writer::HDF5Type(const unsigned int&)
+{
+        return H5::PredType::NATIVE_UINT;
+}
+
+template <>
+auto GeoGridHDF5Writer::HDF5Type(const long&)
+{
+        return H5::PredType::NATIVE_LONG;
+}
+
+template <>
+auto GeoGridHDF5Writer::HDF5Type(const unsigned long&)
+{
+        return H5::PredType::NATIVE_ULONG;
+}
+
+template <>
+auto GeoGridHDF5Writer::HDF5Type(const float&)
+{
+        return H5::PredType::NATIVE_FLOAT;
+}
+
+template <>
+auto GeoGridHDF5Writer::HDF5Type(const double&)
+{
+        return H5::PredType::NATIVE_DOUBLE;
+}
+
+template <>
+auto GeoGridHDF5Writer::HDF5Type(const std::string& value)
+{
+        auto str_length = value.length();
+        return H5::StrType(H5::PredType::C_S1, str_length + 1);
+}
+
 } // namespace geopop

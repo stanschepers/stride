@@ -62,53 +62,7 @@ private:
         static H5::DataSpace CreateSpace(hsize_t size);
 
         template <typename T>
-        static inline auto HDF5Type(const T&)
-        {
-                throw stride::util::Exception("Tried to write unsupported type to HDF5.");
-        }
-
-        template <>
-        inline auto HDF5Type(const int&)
-        {
-                return H5::PredType::NATIVE_INT;
-        }
-
-        template <>
-        inline auto HDF5Type(const unsigned int&)
-        {
-                return H5::PredType::NATIVE_UINT;
-        }
-
-        template <>
-        inline auto HDF5Type(const long&)
-        {
-                return H5::PredType::NATIVE_LONG;
-        }
-
-        template <>
-        inline auto HDF5Type(const unsigned long&)
-        {
-                return H5::PredType::NATIVE_ULONG;
-        }
-
-        template <>
-        inline auto HDF5Type(const float&)
-        {
-                return H5::PredType::NATIVE_FLOAT;
-        }
-
-        template <>
-        inline auto HDF5Type(const double&)
-        {
-                return H5::PredType::NATIVE_DOUBLE;
-        }
-
-        template <>
-        inline auto HDF5Type(const std::string& value)
-        {
-                auto str_length = value.length();
-                return H5::StrType(H5::PredType::C_S1, str_length+1);
-        }
+        static auto HDF5Type(const T&);
 
 private:
         std::set<stride::Person*> m_persons_found; ///< The persons found when looping over the ContactPools.
