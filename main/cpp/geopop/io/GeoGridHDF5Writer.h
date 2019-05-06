@@ -61,6 +61,8 @@ private:
 
 private:
         std::set<stride::Person*> m_persons_found; ///< The persons found when looping over the ContactPools.
+        static unsigned int sm_location_counter;
+        static unsigned int sm_pool_counter;
 };
 
 } // namespace geopop

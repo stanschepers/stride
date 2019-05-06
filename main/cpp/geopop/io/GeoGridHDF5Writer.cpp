@@ -62,7 +62,7 @@ void GeoGridHDF5Writer::WriteLocation(Location& loc, Group& locsGroup)
 {
         /// Create group for location
 
-        Group locGroup(locsGroup.createGroup("Location" + to_string(loc.GetID())));
+        Group locGroup(locsGroup.createGroup("Location" + to_string(sm_location_counter++)));
         /// Set location attributes
         WriteAttribute(loc.GetID(), "id", locGroup);
         WriteAttribute(loc.GetName(), "name", locGroup);
@@ -75,14 +75,13 @@ void GeoGridHDF5Writer::WriteLocation(Location& loc, Group& locsGroup)
         WriteCommutes(commutes, locGroup);
 
         Group        cpGroup(locGroup.createGroup("ContactPools"));
-        unsigned int pool_count = 0;
         for (Id type : IdList) {
                 for (auto pool : loc.RefPools(type)) {
-                        ++pool_count;
                         WriteContactPool(*pool, type, cpGroup);
                 }
         }
-        WriteAttribute(pool_count, "size", cpGroup);
+        WriteAttribute(sm_pool_counter, "size", cpGroup);
+        sm_pool_counter = 0;
 }
 
 void GeoGridHDF5Writer::WriteCommutes(const vector<pair<Location*, double>>& commutes, Group& locGroup)
@@ -109,7 +108,7 @@ void GeoGridHDF5Writer::WriteContactPool(const ContactPool& pool, Id type, Group
         CompType pool_person_t = GetCompoundType<H5PoolPerson>();
 
         /// Create dataset
-        string  label = ToString(type) + to_string(pool.GetId());
+        string  label = "Pool" + to_string(sm_pool_counter++);
         DataSet dataset(cpGroup.createDataSet(label, pool_person_t, CreateSpace(pool.size())));
         WriteAttribute(pool.GetId(), "id", dataset);
         WriteAttribute(pool.size(), "size", dataset);
