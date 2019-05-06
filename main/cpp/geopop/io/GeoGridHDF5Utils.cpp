@@ -43,12 +43,12 @@ CompType GetCompoundType<H5Person>()
         CompType person_t(sizeof(H5Person));
         person_t.insertMember("id", HOFFSET(H5Person, id), PredType::NATIVE_UINT);
         person_t.insertMember("age", HOFFSET(H5Person, age), PredType::NATIVE_FLOAT);
-        person_t.insertMember("household_id", HOFFSET(H5Person, household_id), PredType::NATIVE_UINT);
-        person_t.insertMember("k12School_id", HOFFSET(H5Person, k12School_id), PredType::NATIVE_UINT);
-        person_t.insertMember("college_id", HOFFSET(H5Person, college_id), PredType::NATIVE_UINT);
-        person_t.insertMember("workplace_id", HOFFSET(H5Person, workplace_id), PredType::NATIVE_UINT);
-        person_t.insertMember("primaryCommunity_id", HOFFSET(H5Person, primaryCommunity_id), PredType::NATIVE_UINT);
-        person_t.insertMember("secondaryCommunity_id", HOFFSET(H5Person, secondaryCommunity_id), PredType::NATIVE_UINT);
+        person_t.insertMember("Household", HOFFSET(H5Person, Household), PredType::NATIVE_UINT);
+        person_t.insertMember("K12School", HOFFSET(H5Person, K12School), PredType::NATIVE_UINT);
+        person_t.insertMember("College", HOFFSET(H5Person, College), PredType::NATIVE_UINT);
+        person_t.insertMember("Workplace", HOFFSET(H5Person, Workplace), PredType::NATIVE_UINT);
+        person_t.insertMember("PrimaryCommunity", HOFFSET(H5Person, PrimaryCommunity), PredType::NATIVE_UINT);
+        person_t.insertMember("SecondaryCommunity", HOFFSET(H5Person, SecondaryCommunity), PredType::NATIVE_UINT);
         return person_t;
 }
 

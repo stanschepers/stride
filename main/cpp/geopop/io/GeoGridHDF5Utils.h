@@ -34,12 +34,12 @@ struct H5Person
 {
         unsigned int id;
         float        age;
-        unsigned int household_id;
-        unsigned int k12School_id;
-        unsigned int college_id;
-        unsigned int workplace_id;
-        unsigned int primaryCommunity_id;
-        unsigned int secondaryCommunity_id;
+        unsigned int Household;
+        unsigned int K12School;
+        unsigned int College;
+        unsigned int Workplace;
+        unsigned int PrimaryCommunity;
+        unsigned int SecondaryCommunity;
 };
 
 template <typename T>

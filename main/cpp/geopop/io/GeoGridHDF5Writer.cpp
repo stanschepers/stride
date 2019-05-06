@@ -137,14 +137,14 @@ void GeoGridHDF5Writer::WritePeople(Group& rootGroup)
         vector<H5Utils::H5Person> people(m_persons_found.size());
         int                       y = 0;
         for (auto p : m_persons_found) {
-                people[y].id                    = p->GetId();
-                people[y].age                   = p->GetAge();
-                people[y].household_id          = p->GetPoolId(Id::Household);
-                people[y].k12School_id          = p->GetPoolId(Id::K12School);
-                people[y].college_id            = p->GetPoolId(Id::College);
-                people[y].workplace_id          = p->GetPoolId(Id::Workplace);
-                people[y].primaryCommunity_id   = p->GetPoolId(Id::PrimaryCommunity);
-                people[y].secondaryCommunity_id = p->GetPoolId(Id::SecondaryCommunity);
+                people[y].id                 = p->GetId();
+                people[y].age                = p->GetAge();
+                people[y].Household          = p->GetPoolId(Id::Household);
+                people[y].K12School          = p->GetPoolId(Id::K12School);
+                people[y].College            = p->GetPoolId(Id::College);
+                people[y].Workplace          = p->GetPoolId(Id::Workplace);
+                people[y].PrimaryCommunity   = p->GetPoolId(Id::PrimaryCommunity);
+                people[y].SecondaryCommunity = p->GetPoolId(Id::SecondaryCommunity);
                 y++;
         }
 
