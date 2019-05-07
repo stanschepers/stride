@@ -73,7 +73,7 @@ H5::PredType HDF5Type(const double&) { return PredType::NATIVE_DOUBLE; }
 H5::StrType HDF5Type(const string& value)
 {
         auto str_length = value.length();
-        return StrType(PredType::C_S1, str_length + 1);
+        return StrType(PredType::C_S1, str_length);
 }
 
 } // namespace H5Utils

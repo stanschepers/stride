@@ -57,7 +57,10 @@ private:
         void WritePeople(H5::Group& rootGroup);
 
         template <typename T>
-        void WriteAttribute(T value, const std::string& name, H5::H5Object& h5Object);
+        static void WriteAttribute(const T& value, const std::string& name, H5::H5Object& h5Object);
+
+        template <>
+        void WriteAttribute(const std::string& value, const std::string& name, H5::H5Object& h5Object);
 
 private:
         std::set<stride::Person*> m_persons_found; ///< The persons found when looping over the ContactPools.

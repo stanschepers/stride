@@ -30,6 +30,9 @@ using namespace stride::ContactType;
 using namespace H5;
 using namespace H5Utils;
 
+unsigned int GeoGridHDF5Writer::sm_location_counter;
+unsigned int GeoGridHDF5Writer::sm_pool_counter;
+
 GeoGridHDF5Writer::GeoGridHDF5Writer(string fileName) : GeoGridFileWriter(move(fileName)), m_persons_found() {}
 
 void GeoGridHDF5Writer::Write(GeoGrid& geoGrid)
@@ -37,7 +40,7 @@ void GeoGridHDF5Writer::Write(GeoGrid& geoGrid)
         try {
                 // Turn off the auto-printing when failure occurs so that we can
                 // handle the errors appropriately
-                //                Exception::dontPrint();
+                Exception::dontPrint();
 
                 H5File file(m_file_name, H5F_ACC_TRUNC);
 
@@ -74,7 +77,7 @@ void GeoGridHDF5Writer::WriteLocation(Location& loc, Group& locsGroup)
         auto commutes = loc.CRefOutgoingCommutes();
         WriteCommutes(commutes, locGroup);
 
-        Group        cpGroup(locGroup.createGroup("ContactPools"));
+        Group cpGroup(locGroup.createGroup("ContactPools"));
         for (Id type : IdList) {
                 for (auto pool : loc.RefPools(type)) {
                         WriteContactPool(*pool, type, cpGroup);
@@ -151,12 +154,17 @@ void GeoGridHDF5Writer::WritePeople(Group& rootGroup)
 }
 
 template <typename T>
-void GeoGridHDF5Writer::WriteAttribute(T value, const string& name, H5Object& h5Object)
+void GeoGridHDF5Writer::WriteAttribute(const T& value, const string& name, H5Object& h5Object)
 {
-        hsize_t   one_dim[] = {1};
-        DataSpace atom(1, one_dim);
-        auto      attribute(h5Object.createAttribute(name, HDF5Type(value), atom));
+        auto attribute(h5Object.createAttribute(name, HDF5Type(value), CreateSpace(1)));
         attribute.write(HDF5Type(value), &value);
+}
+
+template <>
+void GeoGridHDF5Writer::WriteAttribute(const string& value, const string& name, H5Object& h5Object)
+{
+        auto attribute(h5Object.createAttribute(name, HDF5Type(value), CreateSpace(1)));
+        attribute.write(HDF5Type(value), value);
 }
 
 } // namespace geopop
