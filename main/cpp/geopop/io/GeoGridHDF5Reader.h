@@ -16,12 +16,12 @@
 #pragma once
 
 #include "GeoGridFileReader.h"
+#include "GeoGridHDF5Utils.h"
 #include "contact/ContactPool.h"
 #include "contact/ContactType.h"
 #include "geopop/Location.h"
 
 #include <memory>
-#include <set>
 
 namespace geopop {
 
@@ -43,6 +43,21 @@ public:
 
         /// Actually perform the read and return the GeoGrid.
         void Read() override;
+
+private:
+        /// People
+        void ReadPeople(const H5::DataSet& people);
+        void ReadPerson(const H5Utils::H5Person& person);
+
+        /// Locations
+        void ReadLocations(const H5::Group& locations, GeoGrid& grid);
+        void ReadLocation(const H5::Group& location, GeoGrid& grid);
+        void ReadContactPool(const H5::DataSet& pool, const std::shared_ptr<Location>& location);
+
+        template <typename T>
+        static void ReadAttribute(T& value, const std::string& name, const H5::H5Object& h5Object);
+        template <>
+        void ReadAttribute(std::string& value, const std::string& name, const H5::H5Object& h5Object);
 
 };
 
