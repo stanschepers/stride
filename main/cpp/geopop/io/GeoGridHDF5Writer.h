@@ -59,13 +59,13 @@ private:
         template <typename T>
         static void WriteAttribute(const T& value, const std::string& name, H5::H5Object& h5Object);
 
-        template <>
-        void WriteAttribute(const std::string& value, const std::string& name, H5::H5Object& h5Object);
-
 private:
         std::set<stride::Person*> m_persons_found; ///< The persons found when looping over the ContactPools.
         static unsigned int sm_location_counter;
         static unsigned int sm_pool_counter;
 };
+
+template <>
+void GeoGridHDF5Writer::WriteAttribute(const std::string& value, const std::string& name, H5::H5Object& h5Object);
 
 } // namespace geopop

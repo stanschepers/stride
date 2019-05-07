@@ -56,9 +56,10 @@ private:
 
         template <typename T>
         static void ReadAttribute(T& value, const std::string& name, const H5::H5Object& h5Object);
-        template <>
-        void ReadAttribute(std::string& value, const std::string& name, const H5::H5Object& h5Object);
 
 };
+
+template <>
+void GeoGridHDF5Reader::ReadAttribute(std::string& value, const std::string& name, const H5::H5Object& h5Object);
 
 } // namespace geopop
