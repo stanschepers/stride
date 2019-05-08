@@ -67,6 +67,8 @@ set(STRIDE_SRC
     geopop/GeoGrid.cpp
     geopop/GeoGridConfig.cpp
     geopop/Location.cpp
+    geopop/Epidemiologic.cpp
+    geopop/Epidemiologic.h
     #---
     geopop/geo/GeoGridKdTree.cpp
     geopop/geo/KdTree2DPoint.cpp
@@ -149,7 +151,7 @@ set(STRIDE_SRC
     viewers/InfectedViewer.cpp
     viewers/PersonsFileViewer.cpp
     viewers/SummaryFileViewer.cpp
-)
+    )
 
 #============================================================================
 # Build the Stride library.

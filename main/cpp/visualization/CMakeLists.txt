@@ -7,12 +7,9 @@ set(CMAKE_AUTORCC ON)
 
 set(SOURCE_FILES
         source/main.cpp
-        source/MapController.cpp
-        )
-
-set(HEADER_FILES
-        source/MapController.h
         source/EpiOutput.h
+        source/MapController.cpp
+        source/MapController.h
         )
 
 set(UI_FILES
@@ -31,7 +28,6 @@ set_property(SOURCE source/main.cpp PROPERTY SKIP_AUTOMOC ON)
 
 add_executable(StrideVisualization
         ${SOURCE_FILES}
-        ${HEADER_FILES}
 #        ${ui_wrap}
 #        ${moc_sources}
         )

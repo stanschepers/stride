@@ -24,6 +24,7 @@
 #include "contact/ContactPoolSys.h"
 #include "contact/ContactType.h"
 #include "geopop/GeoGrid.h"
+#include "geopop/Epidemiologic.h"
 #include "pop/Person.h"
 #include "util/RnMan.h"
 #include "util/SegmentedVector.h"
@@ -71,7 +72,7 @@ public:
         const ContactPoolSys& CRefPoolSys() const { return m_pool_sys; }
 
         /// Get the GeoGrid associated with this population (may be a nullptr).
-        const geopop::GeoGrid& CRefGeoGrid() const { return m_geo_grid; }
+        const geopop::GeoGrid<geopop::Epidemiologic>& CRefGeoGrid() const { return m_geo_grid; }
 
         /// Return the contactlogger.
         std::shared_ptr<spdlog::logger>& RefContactLogger() { return m_contact_logger; }
@@ -80,16 +81,16 @@ public:
         ContactPoolSys& RefPoolSys() { return m_pool_sys; }
 
         /// Reference the GeoGrid associated with this population (may be a nullptr).
-        geopop::GeoGrid& RefGeoGrid() { return m_geo_grid; }
+        geopop::GeoGrid<geopop::Epidemiologic>& RefGeoGrid() { return m_geo_grid; }
 
 private:
         /// Non-trivial default constructor.
         Population();
 
 private:
-        ContactPoolSys                  m_pool_sys;       ///< The global @ContactPoolSys.
-        std::shared_ptr<spdlog::logger> m_contact_logger; ///< Logger for contact/transmission.
-        geopop::GeoGrid                 m_geo_grid;       ///< Associated @GeoGrid may be nullptr.
+        ContactPoolSys                          m_pool_sys;       ///< The global @ContactPoolSys.
+        std::shared_ptr<spdlog::logger>         m_contact_logger; ///< Logger for contact/transmission.
+        geopop::GeoGrid<geopop::Epidemiologic>  m_geo_grid;       ///< Associated @GeoGrid may be nullptr.
 };
 
 } // namespace stride
