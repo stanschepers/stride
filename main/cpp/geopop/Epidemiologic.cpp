@@ -43,17 +43,17 @@ namespace geopop {
                CRefOutgoingCommutes() == other.CRefOutgoingCommutes();
     }
 
-    void Location::AddIncomingCommute(shared_ptr<Location> otherLocation, double fraction)
+    void Epidemiologic::AddIncomingCommute(shared_ptr<Epidemiologic> otherLocation, double fraction)
     {
         m_inCommutes.emplace_back(otherLocation.get(), fraction);
     }
 
-    void Location::AddOutgoingCommute(shared_ptr<Location> otherLocation, double fraction)
+    void Epidemiologic::AddOutgoingCommute(shared_ptr<Epidemiologic> otherLocation, double fraction)
     {
         m_outCommutes.emplace_back(otherLocation.get(), fraction);
     }
 
-    int Location::GetIncomingCommuteCount(double fractionCommuters) const
+    int Epidemiologic::GetIncomingCommuteCount(double fractionCommuters) const
     {
         double value = 0;
         for (const auto& locProportion : m_inCommutes) {
@@ -63,7 +63,7 @@ namespace geopop {
         return static_cast<int>(floor(value));
     }
 
-    unsigned int Location::GetInfectedCount() const
+    unsigned int Epidemiologic::GetInfectedCount() const
     {
         unsigned int total{0U};
         for (const auto& pool : CRefPools<Id::Household>()) {
@@ -75,7 +75,7 @@ namespace geopop {
         return total;
     }
 
-    unsigned int Location::GetOutgoingCommuteCount(double fractionCommuters) const
+    unsigned int Epidemiologic::GetOutgoingCommuteCount(double fractionCommuters) const
     {
         double totalProportion = 0;
         for (const auto& locProportion : m_outCommutes) {
@@ -85,7 +85,7 @@ namespace geopop {
         return static_cast<unsigned int>(floor(totalProportion * (fractionCommuters * m_pop_count)));
     }
 
-    unsigned int Location::GetMemberCount() const
+    unsigned int Epidemiologic::GetMemberCount() const
     {
         unsigned int total_members = 0;
         for (stride::ContactPool* pool: this->CRefPools(stride::ContactType::Id::Household)){
@@ -94,11 +94,11 @@ namespace geopop {
         return total_members;
     }
 
-    double Location::GetPopFraction() const { return m_pop_fraction; }
+    double Epidemiologic::GetPopFraction() const { return m_pop_fraction; }
 
-    std::map<std::string, std::map<std::string, double>> const Location::GenerateEpiOutput()
+    std::map<std::string, std::map<std::string, double>> const Epidemiologic::GenerateEpiOutput()
     {
-        // Get the total amount of members in the location
+        // Get the total amount of members in the Epidemiologic
         unsigned int total_members = this->GetMemberCount();
 
         // Initialize the map
@@ -112,7 +112,7 @@ namespace geopop {
             }
         }
 
-        // Iterate over all Household contactpools in the location and calculate the epi-output
+        // Iterate over all Household contactpools in the Epidemiologic and calculate the epi-output
         for (stride::ContactPool* pool: this->CRefPools(stride::ContactType::Id::Household)){
             std::map<std::string, std::map<std::string, unsigned int>> epiOutput_pool = pool->GenerateEpiOutput();
             for (const string &ageBracket: ageBrackets){
@@ -126,10 +126,10 @@ namespace geopop {
         return epiOutput;
     }
 
-    void Location::SetPopCount(unsigned int totalPopCount)
+    void Epidemiologic::SetPopCount(unsigned int totalPopCount)
     {
         m_pop_count = static_cast<unsigned int>(floor(m_pop_fraction * totalPopCount));
     }
-    void Location::SetPopFraction(double relativePopulation) { m_pop_fraction = relativePopulation; }
+    void Epidemiologic::SetPopFraction(double relativePopulation) { m_pop_fraction = relativePopulation; }
 
 } // namespace geopop

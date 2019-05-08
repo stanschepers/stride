@@ -24,7 +24,7 @@ using namespace stride;
 using namespace stride::ContactType;
 
 template<>
-void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig)
+void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig)
 {
         // 1. active people count and the commuting people count are given
         // 2. count the workplaces
@@ -40,9 +40,9 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
         vector<double> weights;
         for (const auto& loc : geoGrid) {
                 const double ActivePeopleCount =
-                    (loc->GetPopCount() +
-                     loc->GetIncomingCommuteCount(ggConfig.param.fraction_workplace_commuters) -
-                     loc->GetOutgoingCommuteCount(ggConfig.param.fraction_workplace_commuters) *
+                    (loc->getContent()->GetPopCount() +
+                     loc->getContent()->GetIncomingCommuteCount(ggConfig.param.fraction_workplace_commuters) -
+                     loc->getContent()->GetOutgoingCommuteCount(ggConfig.param.fraction_workplace_commuters) *
                          ggConfig.param.particpation_workplace);
 
                 const double weight = ActivePeopleCount / EmployeeCount;

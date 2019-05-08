@@ -23,12 +23,14 @@
 
 namespace geopop {
 
+class Epidemiologic;
+
 using namespace std;
 using namespace stride;
 
 EpiOutputJSONWriter::EpiOutputJSONWriter() {}
 
-void EpiOutputJSONWriter::Write(GeoGrid& geoGrid, ostream& stream)
+void EpiOutputJSONWriter::Write(GeoGrid<Epidemiologic>& geoGrid, ostream& stream)
 {
 
 }

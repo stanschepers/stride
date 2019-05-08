@@ -25,10 +25,10 @@ using namespace stride::util;
 
 LocationsCSVReader::LocationsCSVReader(unique_ptr<istream> inputStream) : LocationsReader(move(inputStream)) {}
 
-void LocationsCSVReader::FillGeoGrid(GeoGrid& geoGrid) const
+void LocationsCSVReader::FillGeoGrid(GeoGrid<Epidemiologic>& geoGrid) const
 {
 
-        vector<pair<shared_ptr<Location>, int>> locations;
+        vector<pair<shared_ptr<Location<Epidemiologic>>, int>> locations;
 
         CSV  reader(*(m_inputStream.get()));
         auto totalPopulation = 0U;
@@ -37,7 +37,8 @@ void LocationsCSVReader::FillGeoGrid(GeoGrid& geoGrid) const
                 // In file: id,province,population,x_coord,y_coord,latitude,longitude,name
                 // Ignore x and y, we do not use them,
                 // In Coordinate constructor switch order of latitude and longitude
-                const auto loc = make_shared<Location>(row.GetValue<int>(0), row.GetValue<int>(1),
+                const auto epi = make_shared<Epidemiologic>();
+                const auto loc = make_shared<Location<Epidemiologic>>(row.GetValue<int>(0), row.GetValue<int>(1), epi,
                                                        Coordinate(row.GetValue<double>(6), row.GetValue<double>(5)),
                                                        row.GetValue(7));
                 geoGrid.AddLocation(loc);
@@ -46,7 +47,7 @@ void LocationsCSVReader::FillGeoGrid(GeoGrid& geoGrid) const
         }
 
         for (const auto& l : locations) {
-                l.first->SetPopFraction(static_cast<double>(l.second) / static_cast<double>(totalPopulation));
+                l.first->getContent()->SetPopFraction(static_cast<double>(l.second) / static_cast<double>(totalPopulation));
         }
 }
 

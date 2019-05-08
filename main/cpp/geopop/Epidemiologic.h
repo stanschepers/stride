@@ -39,7 +39,7 @@ namespace geopop {
  * Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes.
  */
     class Epidemiologic {
-
+    public:
         /// Parametrized constructor with population count.  // TODO: Reimplement
         Epidemiologic(unsigned int popCount = 0U);
 

@@ -139,7 +139,7 @@ vector<ContactPool*> GeoGrid<LocationContent>::GetNearbyPools(Id id, const Locat
 template <class LocationContent>
 vector<Location<LocationContent>*> GeoGrid<LocationContent>::TopK(size_t k) const
 {
-        auto cmp = [](Location<LocationContent>* rhs, Location<LocationContent>* lhs) { return rhs->GetPopCount() > lhs->GetPopCount(); };
+        auto cmp = [](Location<LocationContent>* rhs, Location<LocationContent>* lhs) { return rhs->getContent()->GetPopCount() > lhs->getContent()->GetPopCount(); };
 
         priority_queue<Location<LocationContent>*, vector<Location<LocationContent>*>, decltype(cmp)> queue(cmp);
         for (const auto& loc : m_locations) {

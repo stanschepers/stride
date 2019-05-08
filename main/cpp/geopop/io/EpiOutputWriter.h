@@ -20,7 +20,10 @@
 
 namespace geopop {
 
+template <class LocationContent>
 class GeoGrid;
+
+class Epidemiologic;
 
 /**
  * An interface for writing the epi-output of a GeoGrid to a file, can be implemented with multiple file types.
@@ -33,7 +36,7 @@ public:
         virtual ~EpiOutputWriter() = default;
 
         /// Write the GeoGrid to ostream.
-        virtual void Write(GeoGrid& geoGrid, std::ostream& stream) = 0;
+        virtual void Write(GeoGrid<Epidemiologic>& geoGrid, std::ostream& stream) = 0;
 };
 
 } // namespace geopop

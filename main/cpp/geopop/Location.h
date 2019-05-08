@@ -18,6 +18,7 @@
 #include "contact/ContactType.h"
 #include "contact/IdSubscriptArray.h"
 #include "geopop/Coordinate.h"
+#include "geopop/Epidemiologic.h"
 #include "util/SegmentedVector.h"
 
 #include <iostream>
@@ -44,8 +45,10 @@ class Location
 {
 public:
         /// Parametrized constructor with population count.  // TODO: Reimplement
-        Location<Content>(unsigned int id, unsigned int province, Content* content, Coordinate coordinate = Coordinate(0.0, 0.0), std::string name = "");
-
+        Location<Content>(unsigned int id, unsigned int province, std::shared_ptr<Content> content, Coordinate coordinate = Coordinate(0.0, 0.0), std::string name = "");
+        /// Specialised contructor for Epidemiologic as template
+        Location<Epidemiologic>(unsigned int id, unsigned int province, Coordinate coordinate = Coordinate(0.0, 0.0), std::string name = "", unsigned int popCount = 0U);
+// TODO: FIX THIS
         /// Perform a full comparison with the other location.  // TODO: Reimplement
         bool operator==(const Location<Content>& other) const;
 
@@ -65,14 +68,14 @@ public:
         void SetCoordinate(const Coordinate& coordinate) { m_coordinate = coordinate; }
 
         /// Gets the content
-        Content* getContent(){ return m_content; }
+        std::shared_ptr<Content> getContent(){ return m_content; }
 
 private:
-        Content* m_content;          ///< Content of the Location
-        Coordinate   m_coordinate;   ///< Coordinate of the Location.
-        unsigned int m_id = 0U;      ///< Id.
-        std::string  m_name;         ///< Name.
-        unsigned int m_province;     ///< Province id.
+        std::shared_ptr<Content> m_content;  ///< Content of the Location
+        Coordinate   m_coordinate;           ///< Coordinate of the Location.
+        unsigned int m_id = 0U;              ///< Id.
+        std::string  m_name;                 ///< Name.
+        unsigned int m_province;             ///< Province id.
 };
 
 } // namespace geopop
