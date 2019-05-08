@@ -76,3 +76,5 @@ private:
 };
 
 } // namespace geopop
+
+#include "Location.cpp"

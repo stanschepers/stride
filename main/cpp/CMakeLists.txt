@@ -64,9 +64,9 @@ set(STRIDE_SRC
     execs/StanController.cpp
     #---
     geopop/Coordinate.h
-    geopop/GeoGrid.cpp
+    geopop/GeoGrid.h
     geopop/GeoGridConfig.cpp
-    geopop/Location.cpp
+    geopop/Location.h
     geopop/Epidemiologic.cpp
     geopop/Epidemiologic.h
     #---

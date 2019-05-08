@@ -27,7 +27,12 @@
 #include <memory>
 
 namespace geopop {
+
+template <class LocationContent>
 class GeoGrid;
+
+class Epidemiology;
+
 class GeoGridConfig;
 } // namespace geopop
 
@@ -56,14 +61,14 @@ public:
 
 private:
         /// Read files with location data and constructs GeoGrid config.
-        void MakeLocations(geopop::GeoGrid& geoGrid, const geopop::GeoGridConfig& geoGridConfig,
+        void MakeLocations(geopop::GeoGrid<geopop::Epidemiology>& geoGrid, const geopop::GeoGridConfig& geoGridConfig,
                            const std::string& citiesFileName, const std::string& commutingFileName);
 
         /// Build and store the Geo part of the GeoGrid.
-        void MakePools(geopop::GeoGrid& geoGrid, const geopop::GeoGridConfig& geoGridConfig);
+        void MakePools(geopop::GeoGrid<geopop::Epidemiology>& geoGrid, const geopop::GeoGridConfig& geoGridConfig);
 
         /// Build and store the Pop part of the GeoGrid.
-        void MakePersons(geopop::GeoGrid& geoGrid, const geopop::GeoGridConfig& geoGridConfig);
+        void MakePersons(geopop::GeoGrid<geopop::Epidemiology>& geoGrid, const geopop::GeoGridConfig& geoGridConfig);
 };
 
 } // namespace stride

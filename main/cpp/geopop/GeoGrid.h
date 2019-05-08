@@ -147,3 +147,5 @@ private:
 };
 
 } // namespace geopop
+
+#include "GeoGrid.cpp"
