@@ -33,14 +33,6 @@ Location<Content>::Location(unsigned int id, unsigned int province, std::shared_
 {
 }
 
-template <>
-Location<Epidemiologic>::Location(unsigned int id, unsigned int province, geopop::Coordinate coordinate, std::string name, unsigned int popCount)
-    : m_coordinate(coordinate), m_id(id), m_name(move(name)), m_province(province)
-{
-        Epidemiologic* temp = new Epidemiologic(popCount);
-        this->m_content = temp;
-}
-
 template <class Content>
 bool Location<Content>::operator==(const Location<Content>& other) const
 {

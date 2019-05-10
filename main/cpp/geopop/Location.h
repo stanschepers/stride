@@ -47,7 +47,13 @@ public:
         /// Parametrized constructor with population count.  // TODO: Reimplement
         Location<Content>(unsigned int id, unsigned int province, std::shared_ptr<Content> content, Coordinate coordinate = Coordinate(0.0, 0.0), std::string name = "");
         /// Specialised contructor for Epidemiologic as template
-        Location<Epidemiologic>(unsigned int id, unsigned int province, Coordinate coordinate = Coordinate(0.0, 0.0), std::string name = "", unsigned int popCount = 0U);
+        template <typename = std::enable_if<std::is_same<Content, Epidemiologic>::value>>
+        Location<Content>(unsigned int id, unsigned int province, Coordinate coordinate = Coordinate(0.0, 0.0),
+                std::string name = "", unsigned int popCount = 0U)
+                : m_coordinate(coordinate), m_id(id), m_name(move(name)), m_province(province)
+        {
+                this->m_content = std::make_shared<Content>(popCount);
+        }
 // TODO: FIX THIS
         /// Perform a full comparison with the other location.  // TODO: Reimplement
         bool operator==(const Location<Content>& other) const;
