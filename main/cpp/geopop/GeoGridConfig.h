@@ -97,6 +97,9 @@ public:
 
                 /// The number of households.
                 unsigned int count_households;
+
+                /// The number of workplaces.
+                unsigned int count_workplaces;
         } info;
 
         // -----------------------------------------------------------------------------------------
@@ -108,6 +111,7 @@ public:
         /// Read the workplace distribution data file, parse it and set data.
         // -----------------------------------------------------------------------------------------
         void SetDistributionData(const std::string& distributionFileName);
+
 };
 
 } // namespace geopop

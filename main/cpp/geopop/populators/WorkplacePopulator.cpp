@@ -23,6 +23,8 @@
 #include "util/Assert.h"
 
 #include <utility>
+#include <map>
+#include <vector>
 
 namespace geopop {
 
@@ -48,6 +50,20 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
         const auto popWorkplace         = geoGridConfig.info.popcount_workplace;
         const auto fracCollegeCommute   = geoGridConfig.param.fraction_college_commuters;
         const auto fracWorkplaceCommute = geoGridConfig.param.fraction_workplace_commuters;
+        const auto distribution         = geoGridConfig.param.work_distribution;
+
+        // --------------------------------------------------------------------------------
+        // For every entry in distribution, calculate number of employees per workclass
+        // --------------------------------------------------------------------------------
+        vector<unsigned int> limits;
+        for (const auto &entry: distribution) {
+                double ratio = std::get<0>(entry);
+                unsigned int minSize = std::get<1>(entry);
+                unsigned int maxSize = std::get<2>(entry);
+                double nrOfWp = ratio*double(16324);
+                double avgSize = (double(minSize+maxSize))/2;
+                limits.emplace_back(floor(nrOfWp*avgSize));
+        }
 
         double fracCommuteStudents = 0.0;
         if (static_cast<bool>(fracWorkplaceCommute) && popWorkplace) {
@@ -88,7 +104,10 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                 // Set NearbyWorkspacePools and associated generator
                 // --------------------------------------------------------------------------------
                 nearbyWp      = geoGrid.GetNearbyPools(Id::Workplace, *loc);
-                genNonCommute = m_rn_man.GetUniformIntGenerator(0, static_cast<int>(nearbyWp.size()), 0U);
+
+
+
+
 
                 // --------------------------------------------------------------------------------
                 // For everyone of working age: decide between work or college (iff of College age)
@@ -114,6 +133,14 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                                                 auto& pools = commuteLocations[genCommute()]->RefPools(Id::Workplace);
                                                 auto s = static_cast<int>(pools.size());
                                                 auto  gen   = m_rn_man.GetUniformIntGenerator(0, s);
+
+//                                                double ratio = std::get<0>(entry);
+//                                                unsigned int minSize = std::get<1>(entry);
+//                                                unsigned int maxSize = std::get<2>(entry);
+//                                                auto  size   = m_rn_man.GetUniformIntGenerator(minSize, maxSize);
+
+
+
                                                 auto  pool  = pools[gen()];
                                                 // so that's it
                                                 pool->AddMember(person);
@@ -122,6 +149,8 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                                                 // ----------------------------
                                                 // this person does not commute
                                                 // ----------------------------
+                                                genNonCommute = m_rn_man.GetUniformIntGenerator(0, static_cast<int>(nearbyWp.size()), 0U);
+
                                                 const auto idraw = genNonCommute();
                                                 nearbyWp[idraw]->AddMember(person);
                                                 person->SetPoolId(Id::Workplace, nearbyWp[idraw]->GetId());
@@ -135,6 +164,25 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                         }
                 }
         }
+
+        // --------------------------------------------------------------------------------
+        // Redistribute pools according to distribution file
+        // --------------------------------------------------------------------------------
+//        std::map<std::tuple<double, unsigned int, unsigned int>, std::vector<ContactPool*>> ActualRatios;
+//        std::tuple<double, unsigned int, unsigned int> unAssigned = {0.0, 0, 0};
+//        for (auto workpool: nearbyWp){
+//                const auto size = workpool->size();
+//                for (const auto entry: distribution) {
+//                        unsigned int minSize = std::get<1>(entry);
+//                        unsigned int maxSize = std::get<2>(entry);
+//                        if ((unsigned) (size - minSize) <= (minSize - maxSize)) {
+//                                ActualRatios[entry].emplace_back(workpool);
+//                        } else if (entry == distribution[distribution.size()-1]){
+//                                ActualRatios[unAssigned].emplace_back(workpool);
+//                        }
+//                }
+//        }
+
 
         m_logger->trace("Done populating Workplaces");
 }

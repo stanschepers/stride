@@ -94,6 +94,8 @@ void GeoGridConfig::SetData(const string& householdsFileName)
 
 void GeoGridConfig::SetDistributionData(const std::string &distributionFileName)
 {
+        //STILL NEED TO CHECK RATIOS AND SIZES
+
         auto distributionReader = ReaderFactory::CreateDistributionReader(distributionFileName);
         distributionReader->SetWorkDistribution(param.work_distribution);
         for(auto tup: param.work_distribution){

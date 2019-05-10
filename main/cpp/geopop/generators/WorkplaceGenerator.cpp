@@ -58,6 +58,8 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                 WorkplacesCount = NewWorkplacesCount;
         }
 
+//        geoGridConfig.info.count_workplaces = WorkplacesCount;
+
         // = for each location #residents + #incoming commuting people - #outgoing commuting people
         vector<double> weights;
         for (const auto& loc : geoGrid) {
