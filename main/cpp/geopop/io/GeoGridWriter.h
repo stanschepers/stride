@@ -23,7 +23,7 @@ namespace geopop {
 template <class LocationContent>
 class GeoGrid;
 
-class Epidemiology;
+class Epidemiologic;
 
 /**
  * An interface for writing the GeoGrid to a file, can be implemented with multiple file types.

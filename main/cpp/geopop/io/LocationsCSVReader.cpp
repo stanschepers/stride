@@ -37,8 +37,7 @@ void LocationsCSVReader::FillGeoGrid(GeoGrid<Epidemiologic>& geoGrid) const
                 // In file: id,province,population,x_coord,y_coord,latitude,longitude,name
                 // Ignore x and y, we do not use them,
                 // In Coordinate constructor switch order of latitude and longitude
-                const auto epi = make_shared<Epidemiologic>();
-                const auto loc = make_shared<Location<Epidemiologic>>(row.GetValue<int>(0), row.GetValue<int>(1), epi,
+                const auto loc = make_shared<Location<Epidemiologic>>(row.GetValue<int>(0), row.GetValue<int>(1),
                                                        Coordinate(row.GetValue<double>(6), row.GetValue<double>(5)),
                                                        row.GetValue(7));
                 geoGrid.AddLocation(loc);

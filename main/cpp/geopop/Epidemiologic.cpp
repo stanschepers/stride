@@ -19,6 +19,7 @@
 #include "disease/Health.h"
 #include "pop/Person.h"
 #include "util/Exception.h"
+#include "geopop/Location.h"
 
 #include <cmath>
 
@@ -27,8 +28,8 @@ namespace geopop {
     using namespace std;
     using namespace stride::ContactType;
 
-    Epidemiologic::Epidemiologic(unsigned int popCount)
-            : m_pop_count(popCount), m_pop_fraction(0.0), m_inCommutes(), m_outCommutes(), m_pool_index()
+    Epidemiologic::Epidemiologic(Location<Epidemiologic>* location, unsigned int popCount)
+            : m_pop_count(popCount), m_pop_fraction(0.0), m_inCommutes(), m_outCommutes(), m_pool_index(), m_location(location)
     {
     }
 
@@ -95,6 +96,8 @@ namespace geopop {
     }
 
     double Epidemiologic::GetPopFraction() const { return m_pop_fraction; }
+
+    unsigned int Epidemiologic::GetID() const { return m_location->GetID(); }
 
     std::map<std::string, std::map<std::string, double>> const Epidemiologic::GenerateEpiOutput()
     {

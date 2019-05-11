@@ -35,15 +35,18 @@ namespace stride {
 
 namespace geopop {
 
+template <class Content>
+class Location;
+
 /**
  * Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes.
  */
     class Epidemiologic {
     public:
-        /// Parametrized constructor with population count.  // TODO: Reimplement
-        Epidemiologic(unsigned int popCount = 0U);
+        /// Parametrized constructor with population count.
+        explicit Epidemiologic(Location<Epidemiologic>* location, unsigned int popCount = 0U);
 
-        /// Perform a full comparison with the other Epidemiologic.  // TODO: Reimplement
+        /// Perform a full comparison with the other Epidemiologic.
         bool operator==(const Epidemiologic &other) const;
 
         /// Adds a Epidemiologic and a proportion to the incoming commute vector.
@@ -71,6 +74,12 @@ namespace geopop {
 
         /// Get Epidemiologic's population fraction (of the total population count).
         double GetPopFraction() const;
+
+        /// Get the ID of the location
+        unsigned int GetID() const;
+
+        /// Get the location of which this is the content
+        Location<Epidemiologic>* GetLocation() const { return m_location; }
 
         /// Generate an epi-output map of the Household contactpools.
         std::map<std::string, std::map<std::string, double>> const GenerateEpiOutput();
@@ -138,8 +147,10 @@ namespace geopop {
         const std::vector<std::pair<Epidemiologic*, double>>& CRefOutgoingCommutes() const { return m_outCommutes; }
 
     private:
-        unsigned int m_pop_count;    ///< Population count (number of individuals) at this Epidemiologic.
-        double       m_pop_fraction; ///< Fraction of whole population at this Epidemiologic.
+        unsigned int m_pop_count;             ///< Population count (number of individuals) at this Epidemiologic.
+        double       m_pop_fraction;          ///< Fraction of whole population at this Epidemiologic.
+        Location<Epidemiologic>* m_location;  ///< Link to the location
+
 
         /// Incomming commutes stored as pair of Epidemiologic and fraction of population at that Epidemiologic.
         std::vector<std::pair<Epidemiologic*, double>> m_inCommutes;

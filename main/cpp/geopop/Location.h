@@ -50,9 +50,9 @@ public:
         template <typename = std::enable_if<std::is_same<Content, Epidemiologic>::value>>
         Location<Content>(unsigned int id, unsigned int province, Coordinate coordinate = Coordinate(0.0, 0.0),
                 std::string name = "", unsigned int popCount = 0U)
-                : m_coordinate(coordinate), m_id(id), m_name(move(name)), m_province(province)
+                : m_coordinate(coordinate), m_id(id), m_name(move(name)), m_province(province), m_content(std::make_shared<Content>(this, popCount))
         {
-                this->m_content = std::make_shared<Content>(popCount);
+//                this->m_content = std::make_shared<Content>(this, popCount);
         }
 // TODO: FIX THIS
         /// Perform a full comparison with the other location.  // TODO: Reimplement

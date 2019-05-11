@@ -109,8 +109,7 @@ shared_ptr<Location<Epidemiologic>> GeoGridProtoReader::ParseLocation(const prot
         const auto  population = protoLocation.population();
         const auto& coordinate = ParseCoordinate(protoLocation.coordinate());
 
-        auto epi = make_shared<Epidemiologic>(population);
-        auto loc = make_shared<Location<Epidemiologic>>(id, province, coordinate, name);
+        auto loc = make_shared<Location<Epidemiologic>>(id, province, coordinate, name, population);
 
         for (int idx = 0; idx < protoLocation.contactpools_size(); idx++) {
                 const proto::GeoGrid_Location_ContactPools& protoPools = protoLocation.contactpools(idx);

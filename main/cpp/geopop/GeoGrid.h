@@ -70,6 +70,7 @@ public:
         /// Find contactpools in startRadius (in km) around start and, if none are found, double
         /// the radius and search again until the radius gets infinite. May return an empty vector
         /// when there are really no pools to be found (empty grid).
+        template <typename = std::enable_if<std::is_same<LocationContent, Epidemiologic>::value>>
         std::vector<stride::ContactPool*> GetNearbyPools(stride::ContactType::Id id, const Location<LocationContent>& start,
                                                          double startRadius = 10.0) const;
 
