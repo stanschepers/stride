@@ -13,7 +13,7 @@
  *  Copyright 2019, Jan Broeckhove and Bistromatics group.
  */
 
-#include <math.h>
+#include <cmath>
 #include <limits>
 
 #include <QVariant>
