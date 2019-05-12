@@ -44,7 +44,7 @@ template <class Content>
 class Location
 {
 public:
-        /// Parametrized constructor with population count.  // TODO: Reimplement
+        /// Parametrized constructor with population count.
         Location<Content>(unsigned int id, unsigned int province, std::shared_ptr<Content> content, Coordinate coordinate = Coordinate(0.0, 0.0), std::string name = "");
         /// Specialised contructor for Epidemiologic as template
         template <typename = std::enable_if<std::is_same<Content, Epidemiologic>::value>>
@@ -54,7 +54,7 @@ public:
         {
         }
 
-        /// Perform a full comparison with the other location.  // TODO: Reimplement
+        /// Perform a full comparison with the other location.
         bool operator==(const Location<Content>& other) const;
 
         /// Gets the Coordinate of this Location.

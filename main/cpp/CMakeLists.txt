@@ -62,7 +62,8 @@ set(STRIDE_SRC
     execs/GenPopController.cpp
     execs/SimController.cpp
     execs/StanController.cpp
-    #---
+    execs/EpiController.cpp
+        #---
     geopop/Coordinate.h
     geopop/GeoGrid.h
     geopop/GeoGridConfig.cpp
@@ -151,6 +152,7 @@ set(STRIDE_SRC
     viewers/InfectedViewer.cpp
     viewers/PersonsFileViewer.cpp
     viewers/SummaryFileViewer.cpp
+    viewers/EpiOutputViewer.cpp
     )
 
 #============================================================================
