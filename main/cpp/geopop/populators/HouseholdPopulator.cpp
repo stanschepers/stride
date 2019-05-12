@@ -26,7 +26,7 @@ using namespace std;
 using namespace stride::ContactType;
 
 template<>
-void Populator<stride::ContactType::Id::Household>::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig)
+void Populator<stride::ContactType::Id::Household>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& geoGridConfig)
 {
         m_logger->trace("Starting to populate Households");
 
@@ -34,8 +34,8 @@ void Populator<stride::ContactType::Id::Household>::Apply(GeoGrid& geoGrid, cons
         auto hh_dist   = m_rn_man.GetUniformIntGenerator(0, static_cast<int>(geoGridConfig.refHH.ages.size()), 0U);
         auto pop       = geoGrid.GetPopulation();
 
-        for (const shared_ptr<Location>& loc : geoGrid) {
-                for (auto& pool : loc->RefPools(Id::Household)) {
+        for (const shared_ptr<Location<Epidemiologic>>& loc : geoGrid) {
+                for (auto& pool : loc->getContent()->RefPools(Id::Household)) {
                         const auto hDraw = static_cast<unsigned int>(hh_dist());
                         for (const auto& age : geoGridConfig.refHH.ages[hDraw]) {
                                 const auto p = pop->CreatePerson(person_id++, age, pool->GetId(), 0, 0, 0, 0, 0);

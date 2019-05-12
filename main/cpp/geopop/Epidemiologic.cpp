@@ -29,7 +29,7 @@ namespace geopop {
     using namespace stride::ContactType;
 
     Epidemiologic::Epidemiologic(Location<Epidemiologic>* location, unsigned int popCount)
-            : m_pop_count(popCount), m_pop_fraction(0.0), m_inCommutes(), m_outCommutes(), m_pool_index(), m_location(location)
+            : m_pop_count(popCount), m_pop_fraction(0.0), m_location(location), m_inCommutes(), m_outCommutes(), m_pool_index()
     {
     }
 

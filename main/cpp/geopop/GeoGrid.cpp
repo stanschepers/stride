@@ -117,15 +117,15 @@ vector<const Location<LocationContent>*> GeoGrid<LocationContent>::LocationsInRa
         return result;
 }
 
-template <class LocationContent>
-template <typename = std::enable_if<std::is_same<LocationContent, Epidemiologic>::value>>
-vector<ContactPool*> GeoGrid<LocationContent>::GetNearbyPools(Id id, const Location<LocationContent>& start, double startRadius) const
+template <>
+template <>
+vector<ContactPool*> GeoGrid<Epidemiologic>::GetNearbyPools(Id id, const Location<Epidemiologic>& start, double startRadius) const
 {
         double               currentRadius = startRadius;
         vector<ContactPool*> pools;
 
         while (pools.empty()) {
-                for (const Location<LocationContent>* nearLoc : LocationsInRadius(start, currentRadius)) {
+                for (const Location<Epidemiologic>* nearLoc : LocationsInRadius(start, currentRadius)) {
                         const auto& locPool = nearLoc->getContent()->CRefPools(id);  // TODO: Hier zou je moeten weten dat het Epidemiologic is
                         pools.insert(pools.end(), locPool.begin(), locPool.end());
                 }

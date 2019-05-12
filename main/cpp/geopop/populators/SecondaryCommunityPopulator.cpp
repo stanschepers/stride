@@ -29,12 +29,12 @@ using namespace stride::ContactType;
 namespace geopop {
 
 template<>
-void Populator<stride::ContactType::Id::SecondaryCommunity>::Apply(GeoGrid& geoGrid, const GeoGridConfig&)
+void Populator<stride::ContactType::Id::SecondaryCommunity>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig&)
 {
         m_logger->trace("Starting to populate Secondary Communities");
 
         for (const auto& loc : geoGrid) {
-                if (loc->GetPopCount() == 0) {
+                if (loc->getContent()->GetPopCount() == 0) {
                         continue;
                 }
                 // 1. find all communities in an area of 10-k*10 km
@@ -45,7 +45,7 @@ void Populator<stride::ContactType::Id::SecondaryCommunity>::Apply(GeoGrid& geoG
                 }
 
                 // 2. find all households in this location
-                const auto& households = loc->RefPools(Id::Household);
+                const auto& households = loc->getContent()->RefPools(Id::Household);
 
                 auto hh_per_comm        = households.size() / nearbyPools.size();
                 auto remainder          = households.size() % nearbyPools.size();

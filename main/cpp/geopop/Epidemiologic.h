@@ -46,6 +46,12 @@ class Location;
         /// Parametrized constructor with population count.
         explicit Epidemiologic(Location<Epidemiologic>* location, unsigned int popCount = 0U);
 
+        /// No copy constructor.
+        Epidemiologic(const Epidemiologic&) = delete;
+
+        /// No copy assignment.
+        Epidemiologic operator=(const Epidemiologic&) = delete;
+
         /// Perform a full comparison with the other Epidemiologic.
         bool operator==(const Epidemiologic &other) const;
 
