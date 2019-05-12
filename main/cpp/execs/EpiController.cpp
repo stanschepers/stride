@@ -68,7 +68,7 @@ namespace stride {
         // -----------------------------------------------------------------------------------------
         auto runner = make_shared<SimRunner>(m_config, sim);
         const auto epiStride = m_config.get<unsigned int>("run.epi_stride");
-        auto eoViewer = make_shared<viewers::EpiOutputViewer>(runner);
+        auto eoViewer = make_shared<viewers::EpiOutputViewer>(runner, epiStride);
         runner->Register(eoViewer, bind(&viewers::EpiOutputViewer::Update, eoViewer, std::placeholders::_1));
         runner->Run();
     }

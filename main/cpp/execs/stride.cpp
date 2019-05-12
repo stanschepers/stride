@@ -21,6 +21,7 @@
 #include "GenPopController.h"
 #include "SimController.h"
 #include "StanController.h"
+#include "EpiController.h"
 #include "util/FileSys.h"
 #include "util/RunConfigManager.h"
 #include "util/StringUtils.h"
@@ -129,7 +130,7 @@ int main(int argc, char** argv)
 
                         if (execArg.getValue() == "sim") {
                                 if (epiArg.isSet()){
-                                        std::cout << "yep" << " " << epiArg.getValue() << "  " << fileArg.getValue() << std::endl;
+                                        EpiController(configPt).Control(); //std::cout << "yep" << " " << epiArg.getValue() << "  " << fileArg.getValue() << std::endl;
                                 } else if (!stanArg.isSet()) {
                                         SimController(configPt).Control();
                                 } else {
