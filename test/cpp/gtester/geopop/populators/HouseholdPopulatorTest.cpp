@@ -46,7 +46,7 @@ protected:
         HouseholdPopulator     m_household_populator;
         GeoGridConfig          m_gg_config;
         shared_ptr<Population> m_pop;
-        GeoGrid&               m_geo_grid;
+        GeoGrid<Epidemiologic>&               m_geo_grid;
         HouseholdGenerator     m_household_generator;
 };
 
@@ -54,13 +54,13 @@ TEST_F(HouseholdPopulatorTest, OneHouseholdTest)
 {
         m_gg_config.refHH.ages = vector<vector<unsigned int>>{{8U}};
 
-        auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
+        auto loc1 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
         m_household_generator.AddPools(*loc1, m_pop.get(), m_gg_config);
 
         m_geo_grid.AddLocation(loc1);
         m_household_populator.Apply(m_geo_grid, m_gg_config);
 
-        const auto& hPools = loc1->RefPools(Id::Household);
+        const auto& hPools = loc1->getContent()->RefPools(Id::Household);
         ASSERT_EQ(hPools.size(), 1);
         ASSERT_EQ(hPools[0]->size(), 1);
 }
@@ -74,7 +74,7 @@ TEST_F(HouseholdPopulatorTest, FiveHouseholdsTest)
 {
         m_gg_config.refHH.ages = vector<vector<unsigned int>>{{18U}};
 
-        auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
+        auto loc1 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
 
         for (unsigned int i = 0U; i < 5U; ++i) {
                 m_household_generator.AddPools(*loc1, m_pop.get(), m_gg_config);
@@ -83,7 +83,7 @@ TEST_F(HouseholdPopulatorTest, FiveHouseholdsTest)
         m_geo_grid.AddLocation(loc1);
         m_household_populator.Apply(m_geo_grid, m_gg_config);
 
-        for (const auto& hPool : loc1->RefPools(Id::Household)) {
+        for (const auto& hPool : loc1->getContent()->RefPools(Id::Household)) {
                 ASSERT_EQ(hPool->size(), 1);
                 EXPECT_EQ((*hPool)[0]->GetAge(), 18);
         }
@@ -93,14 +93,14 @@ TEST_F(HouseholdPopulatorTest, MultipleHouseholdTypesTest)
 {
         m_gg_config.refHH.ages = vector<vector<unsigned int>>{{18U}, {12U, 56U}};
 
-        const auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
+        const auto loc1 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
         m_household_generator.AddPools(*loc1, m_pop.get(), m_gg_config);
         m_household_generator.AddPools(*loc1, m_pop.get(), m_gg_config);
 
         m_geo_grid.AddLocation(loc1);
         m_household_populator.Apply(m_geo_grid, m_gg_config);
 
-        const auto& hPools = loc1->RefPools(Id::Household);
+        const auto& hPools = loc1->getContent()->RefPools(Id::Household);
         const auto& pool1  = *hPools[0];
         const auto& pool2  = *hPools[1];
 

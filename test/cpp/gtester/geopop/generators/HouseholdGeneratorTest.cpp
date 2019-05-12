@@ -46,7 +46,7 @@ protected:
         HouseholdGenerator     m_household_generator;
         GeoGridConfig          m_gg_config;
         shared_ptr<Population> m_pop;
-        GeoGrid                m_geo_grid;
+        GeoGrid<Epidemiologic>                m_geo_grid;
         unsigned int           m_pph = m_gg_config.pools[Id::Household];
 };
 
@@ -55,12 +55,12 @@ TEST_F(HouseholdGeneratorTest, OneLocationTest)
 {
         m_gg_config.info.count_households = 4;
 
-        auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
+        auto loc1 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
         m_geo_grid.AddLocation(loc1);
 
         m_household_generator.Apply(m_geo_grid, m_gg_config);
 
-        const auto& poolsOfLoc1 = loc1->CRefPools<Id::Household>();
+        const auto& poolsOfLoc1 = loc1->getContent()->CRefPools<Id::Household>();
         EXPECT_EQ(poolsOfLoc1.size(), 4);
 }
 
@@ -79,11 +79,11 @@ TEST_F(HouseholdGeneratorTest, FiveLocationsTest)
         m_gg_config.info.count_households = 4000;
         m_gg_config.param.pop_size           = 37542 * 100;
 
-        auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 10150 * 100);
-        auto loc2 = make_shared<Location>(2, 4, Coordinate(0, 0), "Vlaams-Brabant", 10040 * 100);
-        auto loc3 = make_shared<Location>(3, 4, Coordinate(0, 0), "Henegouwen", 7460 * 100);
-        auto loc4 = make_shared<Location>(4, 4, Coordinate(0, 0), "Limburg", 3269 * 100);
-        auto loc5 = make_shared<Location>(5, 4, Coordinate(0, 0), "Luxemburg", 4123 * 100);
+        auto loc1 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Antwerpen", 10150 * 100);
+        auto loc2 = make_shared<Location<Epidemiologic>>(2, 4, Coordinate(0, 0), "Vlaams-Brabant", 10040 * 100);
+        auto loc3 = make_shared<Location<Epidemiologic>>(3, 4, Coordinate(0, 0), "Henegouwen", 7460 * 100);
+        auto loc4 = make_shared<Location<Epidemiologic>>(4, 4, Coordinate(0, 0), "Limburg", 3269 * 100);
+        auto loc5 = make_shared<Location<Epidemiologic>>(5, 4, Coordinate(0, 0), "Luxemburg", 4123 * 100);
 
         m_geo_grid.AddLocation(loc1);
         m_geo_grid.AddLocation(loc2);
@@ -92,7 +92,7 @@ TEST_F(HouseholdGeneratorTest, FiveLocationsTest)
         m_geo_grid.AddLocation(loc5);
 
         for (const auto& loc : m_geo_grid) {
-                loc->SetPopFraction(static_cast<double>(loc->GetPopCount()) /
+                loc->getContent()->SetPopFraction(static_cast<double>(loc->getContent()->GetPopCount()) /
                                     static_cast<double>(m_gg_config.param.pop_size));
         }
 
@@ -100,7 +100,7 @@ TEST_F(HouseholdGeneratorTest, FiveLocationsTest)
 
         array<unsigned int, 5> sizes{1179, 1137, 868, 358, 458};
         for (auto i = 0U; i < sizes.size(); i++) {
-                EXPECT_EQ(sizes[i] * m_pph, m_geo_grid[i]->CRefPools(Id::Household).size());
+                EXPECT_EQ(sizes[i] * m_pph, m_geo_grid[i]->getContent()->CRefPools(Id::Household).size());
         }
 }
 

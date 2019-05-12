@@ -49,14 +49,14 @@ protected:
         CollegePopulator       m_college_populator;
         GeoGridConfig          m_gg_config;
         shared_ptr<Population> m_pop;
-        GeoGrid&               m_geo_grid;
+        GeoGrid<Epidemiologic>&               m_geo_grid;
         CollegeGenerator       m_college_generator;
         unsigned int           m_ppc = m_gg_config.pools[Id::College];
 };
 
 TEST_F(CollegePopulatorTest, NoPopulation)
 {
-        m_geo_grid.AddLocation(make_shared<Location>(0, 0, Coordinate(0.0, 0.0), "", 0));
+        m_geo_grid.AddLocation(make_shared<Location<Epidemiologic>>(0, 0, Coordinate(0.0, 0.0), "", 0));
         m_geo_grid.Finalize();
 
         EXPECT_NO_THROW(m_college_populator.Apply(m_geo_grid, m_gg_config));
@@ -91,7 +91,7 @@ TEST_F(CollegePopulatorTest, NoStudents)
         }
 
         for (auto& loc : m_geo_grid) {
-                for (auto& pool : loc->RefPools(Id::College)) {
+                for (auto& pool : loc->getContent()->RefPools(Id::College)) {
                         ASSERT_EQ(pool->size(), 0);
                 }
         }
@@ -164,7 +164,7 @@ TEST_F(CollegePopulatorTest, NotCommuting)
         }
 
         // Assert that persons of Schoten only go to Schoten or Brasschaat
-        for (const auto& hPool : schoten->RefPools(Id::Household)) {
+        for (const auto& hPool : schoten->getContent()->RefPools(Id::Household)) {
                 for (auto p : *hPool) {
                         const auto pId = p->GetPoolId(Id::College);
                         if (AgeBrackets::College::HasAge(p->GetAge())) {
@@ -176,7 +176,7 @@ TEST_F(CollegePopulatorTest, NotCommuting)
         }
 
         // Assert that persons of Brasschaat only go to Schoten or Brasschaat
-        for (const auto& hPool : brasschaat->RefPools(Id::Household)) {
+        for (const auto& hPool : brasschaat->getContent()->RefPools(Id::Household)) {
                 for (auto p : *hPool) {
                         const auto pId = p->GetPoolId(Id::College);
                         if (AgeBrackets::College::HasAge(p->GetAge())) {
@@ -188,7 +188,7 @@ TEST_F(CollegePopulatorTest, NotCommuting)
         }
 
         // Assert that persons of Kortrijk only go to Kortijk
-        for (const auto& hPool : kortrijk->RefPools(Id::Household)) {
+        for (const auto& hPool : kortrijk->getContent()->RefPools(Id::Household)) {
                 for (auto p : *hPool) {
                         const auto pId = p->GetPoolId(Id::College);
                         if (AgeBrackets::College::HasAge(p->GetAge())) {
@@ -214,16 +214,16 @@ TEST_F(CollegePopulatorTest, OnlyCommuting)
         kortrijk->SetCoordinate(Coordinate(50.82900246, 3.264406009));
         m_college_generator.AddPools(*kortrijk, m_pop.get(), m_gg_config);
 
-        schoten->AddOutgoingCommute(kortrijk, 0.5);
-        kortrijk->AddIncomingCommute(schoten, 0.5);
-        kortrijk->AddOutgoingCommute(schoten, 0.5);
-        schoten->AddIncomingCommute(kortrijk, 0.5);
+        schoten->getContent()->AddOutgoingCommute(kortrijk->getContent(), 0.5);
+        kortrijk->getContent()->AddIncomingCommute(schoten->getContent(), 0.5);
+        kortrijk->getContent()->AddOutgoingCommute(schoten->getContent(), 0.5);
+        schoten->getContent()->AddIncomingCommute(kortrijk->getContent(), 0.5);
 
         m_geo_grid.Finalize();
         m_college_populator.Apply(m_geo_grid, m_gg_config);
 
         // Assert that persons of Schoten only go to Kortrijk
-        for (const auto& hPool : schoten->RefPools(Id::Household)) {
+        for (const auto& hPool : schoten->getContent()->RefPools(Id::Household)) {
                 for (auto p : *hPool) {
                         const auto pId = p->GetPoolId(Id::College);
                         if (AgeBrackets::College::HasAge(p->GetAge())) {
@@ -235,7 +235,7 @@ TEST_F(CollegePopulatorTest, OnlyCommuting)
         }
 
         // Assert that persons of Kortrijk only go to Schoten
-        for (const auto& hPool : kortrijk->RefPools(Id::Household)) {
+        for (const auto& hPool : kortrijk->getContent()->RefPools(Id::Household)) {
                 for (auto p : *hPool) {
                         const auto pId = p->GetPoolId(Id::College);
                         if (AgeBrackets::College::HasAge(p->GetAge())) {
@@ -266,16 +266,16 @@ TEST_F(CollegePopulatorTest, OnlyCommutingButNoCommutingAvaiable)
         m_college_generator.AddPools(*kortrijk, m_pop.get(), m_gg_config);
 
         // test case is only commuting but between nobody is commuting from or to Brasschaat
-        schoten->AddOutgoingCommute(kortrijk, 0.5);
-        kortrijk->AddIncomingCommute(schoten, 0.5);
-        kortrijk->AddOutgoingCommute(schoten, 0.5);
-        schoten->AddIncomingCommute(kortrijk, 0.5);
+        schoten->getContent()->AddOutgoingCommute(kortrijk->getContent(), 0.5);
+        kortrijk->getContent()->AddIncomingCommute(schoten->getContent(), 0.5);
+        kortrijk->getContent()->AddOutgoingCommute(schoten->getContent(), 0.5);
+        schoten->getContent()->AddIncomingCommute(kortrijk->getContent(), 0.5);
 
         m_geo_grid.Finalize();
         m_college_populator.Apply(m_geo_grid, m_gg_config);
 
         // Assert that persons of Schoten only commute to Kortrijk
-        for (const auto& hPool : schoten->RefPools(Id::Household)) {
+        for (const auto& hPool : schoten->getContent()->RefPools(Id::Household)) {
                 for (auto p : *hPool) {
                         const auto pId = p->GetPoolId(Id::College);
                         if (AgeBrackets::College::HasAge(p->GetAge())) {
@@ -287,7 +287,7 @@ TEST_F(CollegePopulatorTest, OnlyCommutingButNoCommutingAvaiable)
         }
 
         // Assert that persons of Brasschaat only commute to Brasschaat or Schoten
-        for (const auto& hPool : brasschaat->RefPools(Id::Household)) {
+        for (const auto& hPool : brasschaat->getContent()->RefPools(Id::Household)) {
                 for (auto p : *hPool) {
                         const auto pId = p->GetPoolId(Id::College);
                         if (AgeBrackets::College::HasAge(p->GetAge())) {
@@ -299,7 +299,7 @@ TEST_F(CollegePopulatorTest, OnlyCommutingButNoCommutingAvaiable)
         }
 
         // Assert that persons of Kortrijk only commute to Schoten
-        for (const auto& hPool : kortrijk->RefPools(Id::Household)) {
+        for (const auto& hPool : kortrijk->getContent()->RefPools(Id::Household)) {
                 for (auto p : *hPool) {
                         const auto pId = p->GetPoolId(Id::College);
                         if (AgeBrackets::College::HasAge(p->GetAge())) {

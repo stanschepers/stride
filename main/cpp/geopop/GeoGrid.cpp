@@ -117,25 +117,25 @@ vector<const Location<LocationContent>*> GeoGrid<LocationContent>::LocationsInRa
         return result;
 }
 
-template <>
-template <>
-vector<ContactPool*> GeoGrid<Epidemiologic>::GetNearbyPools(Id id, const Location<Epidemiologic>& start, double startRadius) const
-{
-        double               currentRadius = startRadius;
-        vector<ContactPool*> pools;
-
-        while (pools.empty()) {
-                for (const Location<Epidemiologic>* nearLoc : LocationsInRadius(start, currentRadius)) {
-                        const auto& locPool = nearLoc->getContent()->CRefPools(id);  // TODO: Hier zou je moeten weten dat het Epidemiologic is
-                        pools.insert(pools.end(), locPool.begin(), locPool.end());
-                }
-                currentRadius *= 2;
-                if (currentRadius == numeric_limits<double>::infinity()) {
-                        break;
-                }
-        }
-        return pools;
-}
+//template <>
+//template <>
+//vector<ContactPool*> GeoGrid<Epidemiologic>::GetNearbyPools(Id id, const Location<Epidemiologic>& start, double startRadius) const
+//{
+//        double               currentRadius = startRadius;
+//        vector<ContactPool*> pools;
+//
+//        while (pools.empty()) {
+//                for (const Location<Epidemiologic>* nearLoc : LocationsInRadius(start, currentRadius)) {
+//                        const auto& locPool = nearLoc->getContent()->CRefPools(id);
+//                        pools.insert(pools.end(), locPool.begin(), locPool.end());
+//                }
+//                currentRadius *= 2;
+//                if (currentRadius == numeric_limits<double>::infinity()) {
+//                        break;
+//                }
+//        }
+//        return pools;
+//}
 
 template <class LocationContent>
 vector<Location<LocationContent>*> GeoGrid<LocationContent>::TopK(size_t k) const

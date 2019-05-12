@@ -18,19 +18,22 @@
 #include "contact/ContactType.h"
 #include "geopop/geo/GeoGridKdTree.h"
 
+#include "geopop/Location.h"
+#include "contact/ContactPool.h"
+
 #include <set>
 #include <unordered_map>
 #include <vector>
 
 namespace stride {
-class ContactPool;
+//class ContactPool;
 class Population;
 } // namespace stride
 
 namespace geopop {
 
-template <class Content>
-class Location;
+//template <class Content>
+//class Location;
 
 template <typename Policy, typename... F>
 class GeoAggregator;
@@ -72,7 +75,22 @@ public:
         /// when there are really no pools to be found (empty grid).
         template <typename = std::enable_if<std::is_same<LocationContent, Epidemiologic>::value>>
         std::vector<stride::ContactPool*> GetNearbyPools(stride::ContactType::Id id, const Location<LocationContent>& start,
-                                                         double startRadius = 10.0) const;
+                                                         double startRadius = 10.0) const{
+                double               currentRadius = startRadius;
+                vector<stride::ContactPool*> pools;
+
+                while (pools.empty()) {
+                        for (const Location<Epidemiologic>* nearLoc : LocationsInRadius(start, currentRadius)) {
+                                const auto& locPool = nearLoc->getContent()->CRefPools(id);
+                                pools.insert(pools.end(), locPool.begin(), locPool.end());
+                        }
+                        currentRadius *= 2;
+                        if (currentRadius == numeric_limits<double>::infinity()) {
+                                break;
+                        }
+                }
+                return pools;
+        }
 
         /**
          * Gets the locations in a rectangle determined by the two coordinates (long1, lat1) and (long2, lat2).

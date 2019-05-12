@@ -46,7 +46,7 @@ protected:
         PrimaryCommunityGenerator m_community_generator;
         GeoGridConfig             m_gg_config;
         shared_ptr<Population>    m_pop;
-        GeoGrid                   m_geo_grid;
+        GeoGrid<Epidemiologic>                   m_geo_grid;
         unsigned int              m_pppc = m_gg_config.pools[Id::PrimaryCommunity];
 };
 
@@ -54,10 +54,10 @@ TEST_F(PrimaryCommunityGeneratorTest, OneLocationTest)
 {
         m_gg_config.param.pop_size = 10000;
 
-        auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
+        auto loc1 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
         m_geo_grid.AddLocation(loc1);
 
-        const auto& p1 = loc1->CRefPools(Id::PrimaryCommunity);
+        const auto& p1 = loc1->getContent()->CRefPools(Id::PrimaryCommunity);
         EXPECT_EQ(p1.size(), 0);
 
         m_community_generator.Apply(m_geo_grid, m_gg_config);
@@ -71,14 +71,14 @@ TEST_F(PrimaryCommunityGeneratorTest, EqualLocationTest)
 
         for (int i = 0; i < 10; i++) {
                 m_geo_grid.AddLocation(
-                    make_shared<Location>(1, 4, Coordinate(0, 0), "Location " + to_string(i), 10 * 1000 * 1000));
+                    make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Location " + to_string(i), 10 * 1000 * 1000));
         }
 
         m_community_generator.Apply(m_geo_grid, m_gg_config);
 
         array<unsigned int, 10> expected{546, 495, 475, 500, 463, 533, 472, 539, 496, 481};
         for (auto i = 0U; i < expected.size(); i++) {
-                const auto& p = m_geo_grid[i]->CRefPools(Id::PrimaryCommunity);
+                const auto& p = m_geo_grid[i]->getContent()->CRefPools(Id::PrimaryCommunity);
                 EXPECT_EQ(expected[i] * m_pppc, p.size());
         }
 }
@@ -99,11 +99,11 @@ TEST_F(PrimaryCommunityGeneratorTest, FiveLocationsTest)
         m_gg_config.param.pop_size             = 37542 * 100;
         m_gg_config.info.popcount_k12school = 750840;
 
-        auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 10150 * 100);
-        auto loc2 = make_shared<Location>(1, 4, Coordinate(0, 0), "Vlaams-Brabant", 10040 * 100);
-        auto loc3 = make_shared<Location>(1, 4, Coordinate(0, 0), "Henegouwen", 7460 * 100);
-        auto loc4 = make_shared<Location>(1, 4, Coordinate(0, 0), "Limburg", 3269 * 100);
-        auto loc5 = make_shared<Location>(1, 4, Coordinate(0, 0), "Luxemburg", 4123 * 100);
+        auto loc1 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Antwerpen", 10150 * 100);
+        auto loc2 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Vlaams-Brabant", 10040 * 100);
+        auto loc3 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Henegouwen", 7460 * 100);
+        auto loc4 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Limburg", 3269 * 100);
+        auto loc5 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Luxemburg", 4123 * 100);
 
         m_geo_grid.AddLocation(loc1);
         m_geo_grid.AddLocation(loc2);
@@ -115,7 +115,7 @@ TEST_F(PrimaryCommunityGeneratorTest, FiveLocationsTest)
 
         array<unsigned int, 5> expected{553, 518, 410, 173, 224};
         for (auto i = 0U; i < expected.size(); i++) {
-                const auto& cp = m_geo_grid[i]->CRefPools(Id::PrimaryCommunity);
+                const auto& cp = m_geo_grid[i]->getContent()->CRefPools(Id::PrimaryCommunity);
                 EXPECT_EQ(expected[i] * m_pppc, cp.size());
         }
 }

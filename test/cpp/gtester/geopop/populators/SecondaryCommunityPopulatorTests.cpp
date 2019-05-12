@@ -37,7 +37,7 @@ class SecondaryCommunityPopulatorTest : public testing::Test
 public:
         SecondaryCommunityPopulatorTest()
             : m_rn_man(RnInfo{}), m_populator(m_rn_man), m_gg_config(), m_pop(Population::Create()),
-              m_location(make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500)),
+              m_location(make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Antwerpen", 2500)),
               m_geo_grid(m_pop->RefGeoGrid()), m_person(), m_community_generator(m_rn_man),
               m_household_generator(m_rn_man)
         {
@@ -53,7 +53,7 @@ protected:
 
                 m_person = make_shared<Person>();
                 m_person->SetId(42);
-                m_location->RefPools(Id::Household)[0]->AddMember(m_person.get());
+                m_location->getContent()->RefPools(Id::Household)[0]->AddMember(m_person.get());
 
                 m_geo_grid.AddLocation(m_location);
 
@@ -64,8 +64,8 @@ protected:
         SecondaryCommunityPopulator m_populator;
         GeoGridConfig               m_gg_config;
         shared_ptr<Population>      m_pop;
-        shared_ptr<Location>        m_location;
-        GeoGrid&                    m_geo_grid;
+        shared_ptr<Location<Epidemiologic>>        m_location;
+        GeoGrid<Epidemiologic>&                    m_geo_grid;
         shared_ptr<Person>          m_person;
         SecondaryCommunityGenerator m_community_generator;
         HouseholdGenerator          m_household_generator;
@@ -76,7 +76,7 @@ TEST_F(SecondaryCommunityPopulatorTest, OneCommunityTest)
         m_geo_grid.Finalize();
         m_populator.Apply(m_geo_grid, m_gg_config);
 
-        auto& scPools = m_location->RefPools(Id::SecondaryCommunity);
+        auto& scPools = m_location->getContent()->RefPools(Id::SecondaryCommunity);
         ASSERT_EQ(scPools.size(), 1);
         EXPECT_EQ(scPools[0]->size(), 1);
         EXPECT_EQ((*scPools[0])[0]->GetId(), 42);
@@ -96,7 +96,7 @@ TEST_F(SecondaryCommunityPopulatorTest, HouseholdTest)
         person2->SetId(5);
         person2->SetAge(2);
 
-        auto pool = m_location->RefPools(Id::Household)[0];
+        auto pool = m_location->getContent()->RefPools(Id::Household)[0];
         pool->AddMember(person2.get());
 
         m_community_generator.AddPools(*m_location, m_pop.get(), m_gg_config);
@@ -104,7 +104,7 @@ TEST_F(SecondaryCommunityPopulatorTest, HouseholdTest)
         m_geo_grid.Finalize();
         m_populator.Apply(m_geo_grid, m_gg_config);
 
-        auto& scPools = m_location->RefPools(Id::SecondaryCommunity);
+        auto& scPools = m_location->getContent()->RefPools(Id::SecondaryCommunity);
         ASSERT_EQ(scPools.size(), 2);
         EXPECT_EQ(scPools[0]->size(), 2);
         EXPECT_EQ((*scPools[0])[0]->GetId(), 42);
@@ -116,14 +116,14 @@ TEST_F(SecondaryCommunityPopulatorTest, HouseholdTest)
 // and that person gets assigned to the SecondaryCommunity at the first Location.
 TEST_F(SecondaryCommunityPopulatorTest, TwoLocationsTest)
 {
-        auto location2 = make_shared<Location>(2, 5, Coordinate(1, 1), "Brussel", 1500);
+        auto location2 = make_shared<Location<Epidemiologic>>(2, 5, Coordinate(1, 1), "Brussel", 1500);
         m_community_generator.AddPools(*location2, m_pop.get(), m_gg_config);
 
         m_geo_grid.AddLocation(location2);
         m_geo_grid.Finalize();
         m_populator.Apply(m_geo_grid, m_gg_config);
 
-        auto& scPools = m_location->RefPools(Id::SecondaryCommunity);
+        auto& scPools = m_location->getContent()->RefPools(Id::SecondaryCommunity);
         ASSERT_EQ(scPools.size(), 1);
         EXPECT_EQ(scPools[0]->size(), 1);
         EXPECT_EQ((*scPools[0])[0]->GetId(), 42);

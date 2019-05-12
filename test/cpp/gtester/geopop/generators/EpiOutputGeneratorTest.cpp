@@ -16,6 +16,7 @@
 #include "contact/ContactPool.h"
 #include "geopop/Coordinate.h"
 #include "geopop/Location.h"
+#include "geopop/Epidemiologic.h"
 #include "pop/Person.h"
 
 #include <gtest/gtest.h>
@@ -150,9 +151,9 @@ TEST(EpiOutputGeneratorTest, locationZeroContactpoolsTest)
                 }
         }
 
-        Location test(1, 1, Coordinate(0.0, 0.0), "test", 0U);
+        Location<Epidemiologic> test(1, 1, Coordinate(0.0, 0.0), "test", 0U);
 
-        map<string, map<string, double>> result = test.GenerateEpiOutput();
+        map<string, map<string, double>> result = test.getContent()->GenerateEpiOutput();
 
         EXPECT_TRUE(correct_result.size() == result.size() && compareMapWithDoubles(result, correct_result));
 }
@@ -201,10 +202,10 @@ TEST(EpiOutputGeneratorTest, locationOneContactpoolTest)
                 pool.AddMember(&persons[i]);
         }
 
-        Location test(1, 1, Coordinate(0.0, 0.0), "test", 0U);
-        test.RegisterPool(&pool, stride::ContactType::Id::Household);
+        Location<Epidemiologic> test(1, 1, Coordinate(0.0, 0.0), "test", 0U);
+        test.getContent()->RegisterPool(&pool, stride::ContactType::Id::Household);
 
-        map<string, map<string, double>> result = test.GenerateEpiOutput();
+        map<string, map<string, double>> result = test.getContent()->GenerateEpiOutput();
 
         EXPECT_TRUE(correct_result.size() == result.size() && compareMapWithDoubles(result, correct_result));
 }
@@ -276,13 +277,13 @@ TEST(EpiOutputGeneratorTest, locationFiveContactpoolsTest)
         p.GetHealth().SetImmune();
         pool2.AddMember(&p);
 
-        Location test(1, 1, Coordinate(0.0, 0.0), "test", 0U);
+        Location<Epidemiologic> test(1, 1, Coordinate(0.0, 0.0), "test", 0U);
         for (unsigned int i = 0; i < 4; i++) {
-                test.RegisterPool(&pool, stride::ContactType::Id::Household);
+                test.getContent()->RegisterPool(&pool, stride::ContactType::Id::Household);
         }
-        test.RegisterPool(&pool2, stride::ContactType::Id::Household);
+        test.getContent()->RegisterPool(&pool2, stride::ContactType::Id::Household);
 
-        map<string, map<string, double>> result = test.GenerateEpiOutput();
+        map<string, map<string, double>> result = test.getContent()->GenerateEpiOutput();
 
         EXPECT_TRUE(correct_result.size() == result.size() && compareMapWithDoubles(result, correct_result));
 }
