@@ -125,6 +125,11 @@ int main(int argc, char** argv)
                         }
                         if (stanArg.isSet()) {
                                 configPt.put("run.stan_count", stanArg.getValue());
+                        } else if (epiArg.isSet()){
+                                configPt.put("run.epi_stride", epiArg.getValue());
+                                if (fileArg.isSet()){
+                                        configPt.put("run.file_format", fileArg.getValue());
+                                }
                         }
                         configPt.sort();
 
