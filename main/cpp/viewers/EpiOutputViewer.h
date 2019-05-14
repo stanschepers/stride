@@ -1,6 +1,3 @@
-#include <utility>
-
-#pragma once
 /*
  *  This is free software: you can redistribute it and/or modify it
  *  under the terms of the GNU General Public License as published by
@@ -13,7 +10,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with the software. If not, see <http://www.gnu.org/licenses/>.
  *
- *  Copyright 2019, Kuylen E, Willem L, Broeckhove J
+ *  Copyright 2019, Laurens Van Damme.
  */
 
 /**
@@ -21,11 +18,14 @@
  * Observer for the epidemiological condition of the population each timestep.
  */
 
+#pragma once
+
 #include "sim/event/Id.h"
 #include "geopop/io/EpiOutputWriter.h"
 
 #include <memory>
 #include <vector>
+#include <utility>
 
 namespace stride {
 
