@@ -135,7 +135,7 @@ int main(int argc, char** argv)
 
                         if (execArg.getValue() == "sim") {
                                 if (epiArg.isSet()){
-                                        EpiController(configPt).Control(); //std::cout << "yep" << " " << epiArg.getValue() << "  " << fileArg.getValue() << std::endl;
+                                        EpiController(configPt).Control();
                                 } else if (!stanArg.isSet()) {
                                         SimController(configPt).Control();
                                 } else {

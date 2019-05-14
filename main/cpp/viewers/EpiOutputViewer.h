@@ -1,3 +1,5 @@
+#include <utility>
+
 #pragma once
 /*
  *  This is free software: you can redistribute it and/or modify it
@@ -20,22 +22,26 @@
  */
 
 #include "sim/event/Id.h"
+#include "geopop/io/EpiOutputWriter.h"
 
 #include <memory>
 #include <vector>
 
 namespace stride {
 
-    class SimRunner;
+class SimRunner;
 
-    namespace viewers {
+namespace viewers {
 
 /// Viewer gathers infection count at each sim step.
 class EpiOutputViewer
 {
 public:
     /// Instantiate cases viewer.
-    explicit EpiOutputViewer(std::shared_ptr<SimRunner> runner, unsigned int stride) : m_runner(std::move(runner)), m_stride(stride) {}
+    explicit EpiOutputViewer(std::shared_ptr<SimRunner> runner, unsigned int stride,
+                             std::ostream& stream, std::shared_ptr<geopop::EpiOutputWriter>& epi_output_writer) :
+                             m_runner(std::move(runner)), m_stride(stride), m_current_step(0), m_stream(stream),
+                             m_epi_output_writer(epi_output_writer) {}
 
     /// Let viewer perform update.
     void Update(sim_event::Id id);
@@ -43,6 +49,9 @@ public:
 private:
     std::shared_ptr<SimRunner> m_runner;
     unsigned int m_stride;
+    unsigned int m_current_step;
+    std::ostream& m_stream;
+    std::shared_ptr<geopop::EpiOutputWriter> m_epi_output_writer;
 };
 
 } // namespace viewers

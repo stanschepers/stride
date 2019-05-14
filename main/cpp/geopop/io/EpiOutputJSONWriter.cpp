@@ -27,12 +27,31 @@ class Epidemiologic;
 
 using namespace std;
 using namespace stride;
+using json = nlohmann::json;
 
 EpiOutputJSONWriter::EpiOutputJSONWriter() {}
 
-void EpiOutputJSONWriter::Write(GeoGrid<Epidemiologic>& geoGrid, ostream& stream)
+void EpiOutputJSONWriter::Write(GeoGrid<Epidemiologic>& geoGrid, unsigned int day, ostream& stream)
 {
+    json output;
 
+    std::cout << "Writing Day " << day << std::endl;
+    output["locations"] = json::array();
+    for (const auto& location : geoGrid) {
+        output["locations"].push_back(WriteLocation(*location));
+    }
+
+    stream << setw(4) << output;
+}
+
+nlohmann::json EpiOutputJSONWriter::WriteLocation(const Location<Epidemiologic>& location)
+{
+    json locationJSON;
+
+    std::cout << "Writing location " << location.GetID() << std::endl;
+    locationJSON["epi-output"] = location.getContent()->GenerateEpiOutput();
+
+    return locationJSON;
 }
 
 } // namespace geopop

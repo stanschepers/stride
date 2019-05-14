@@ -25,6 +25,19 @@
 #include "sim/SimRunner.h"
 #include "viewers/EpiOutputViewer.h"
 
+#include "geopop/io/EpiOutputWriter.h"
+#include "geopop/io/EpiOutputWriterFactory.h"
+#include "util/FileSys.h"
+
+#ifdef BOOST_FOUND
+#include <boost/filesystem.hpp>
+#include <boost/filesystem/path.hpp>
+namespace filesys = boost::filesystem;
+#else
+#include <filesystem>
+namespace filesys = std::filesystem;
+#endif
+
 #include <boost/property_tree/ptree.hpp>
 
 using namespace std;
@@ -56,7 +69,7 @@ namespace stride {
         // -----------------------------------------------------------------------------------------
         // Epi scenario: step 2, create a population, as described by the parameter in the config.
         // -----------------------------------------------------------------------------------------
-        auto pop = Population::Create(m_config, rnMan, m_stride_logger);
+        auto pop = Population::Create(m_config, rnMan);
 
         // -----------------------------------------------------------------------------------------
         // Epi scenario: step 3, create a simulator, as described by the parameter in the config.
@@ -67,10 +80,27 @@ namespace stride {
         // Epi scenario: step , build a runner, register viewers and run.
         // -----------------------------------------------------------------------------------------
         auto runner = make_shared<SimRunner>(m_config, sim);
+        const auto fileFormat = m_config.get<std::string>("run.file_format");
+
+        const auto prefix      = m_config.get<string>("run.output_prefix");
+        const auto epiOutputFileName = "epiOutput." + fileFormat;
+        const auto epiOutputFilePath = FileSys::BuildPath(prefix, epiOutputFileName);
+
+        shared_ptr<geopop::EpiOutputWriter> epiOutputWriter = geopop::EpiOutputWriterFactory::CreateEpiOutputWriter(epiOutputFileName);
+        ofstream                  outputFileStream(epiOutputFilePath.string());
+
         const auto epiStride = m_config.get<unsigned int>("run.epi_stride");
-        auto eoViewer = make_shared<viewers::EpiOutputViewer>(runner, epiStride);
+        auto eoViewer = make_shared<viewers::EpiOutputViewer>(runner, epiStride, outputFileStream, epiOutputWriter);
         runner->Register(eoViewer, bind(&viewers::EpiOutputViewer::Update, eoViewer, std::placeholders::_1));
+
+        std::cout << prefix << std::endl;
+
+        m_stride_logger->info("Start the simulation and writing the epi-output to file {}.", epiOutputFilePath.string());
+
         runner->Run();
+        outputFileStream.close();
+
+        m_stride_logger->info("Simulation over and done writing epi-output to file.");
     }
 
 } // namespace stride

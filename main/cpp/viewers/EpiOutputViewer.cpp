@@ -36,8 +36,15 @@ void EpiOutputViewer::Update(const sim_event::Id id)
     switch (id) {
         case Id::AtStart:
         case Id::Stepped: {
-            m_runner->GetSim()->GetPopulation()->RefGeoGrid(); //.doSomething();
-            std::cout << m_stride << " Do something..." << std::endl; // TODO: implement update for epi-output viewer
+            if (m_current_step % m_stride == 0) {
+                std::cout << m_stride << " Do something... " << m_current_step << std::endl;
+//                if (m_current_step == 0) {
+                m_epi_output_writer->Write(m_runner->GetSim()->GetPopulation()->RefGeoGrid(), m_current_step, m_stream);
+//                } else {
+//                    m_epiOutputWriter->Update(m_runner->GetSim()->GetPopulation()->RefGeoGrid(), m_stream);
+//                }
+            }
+            m_current_step++;
             break;
         }
         default: break;

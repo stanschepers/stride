@@ -37,7 +37,7 @@ public:
         EpiOutputJSONWriter();
 
         /// Write the provided GeoGrid epi-output to the provided ostream in JSON format.
-        void Write(GeoGrid<Epidemiologic>& geoGrid, std::ostream& stream) override;
+        void Write(GeoGrid<Epidemiologic>& geoGrid, unsigned int day, std::ostream& stream) override;
 
 private:
         /// Create a JSOM object containing all info from a location needed to construct an epi-output
