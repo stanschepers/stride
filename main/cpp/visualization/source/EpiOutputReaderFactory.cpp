@@ -24,8 +24,7 @@
 
 namespace visualization {
 
-std::shared_ptr<EpiOutputReader> EpiOutputReaderFactory::CreateReader(const std::string& filename,
-                                                                      EpiOutput&         epiOutput) const
+std::shared_ptr<EpiOutputReader> EpiOutputReaderFactory::CreateReader(const std::string& filename, geopop::GeoGrid<EpiOutput>* epiOutput) const
 {
         //        const filesys::path path(filename);
         //        if (!filesys::exists(path)) {

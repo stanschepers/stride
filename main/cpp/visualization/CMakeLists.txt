@@ -6,10 +6,16 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
 set(SOURCE_FILES
-        source/main.cpp
+        source/strideVisualization.cpp
         source/EpiOutput.h
         source/MapController.cpp
         source/MapController.h
+        source/EpiOutputReader.cpp
+        source/EpiOutputReader.h
+        source/EpiOutputReaderFactory.cpp
+        source/EpiOutputReaderFactory.h
+        source/EpiOutputJSONReader.cpp
+        source/EpiOutputJSONReader.h
         )
 
 set(UI_FILES
@@ -21,7 +27,7 @@ set(QML_FILES
         QML/RoundMouseArea.qml
         )
 
-set_property(SOURCE source/main.cpp PROPERTY SKIP_AUTOMOC ON)
+set_property(SOURCE source/strideVisualization.cpp PROPERTY SKIP_AUTOMOC ON)
 
 #qt5_wrap_ui(ui_wrap ${project_ui})
 #qt5_wrap_cpp(moc_sources ${project_headers})

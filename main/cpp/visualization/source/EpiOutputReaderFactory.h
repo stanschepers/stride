@@ -26,7 +26,7 @@ class EpiOutputReaderFactory
 {
 public:
         /// Create a EpiOutputReader based on the provided extension in the filename
-        std::shared_ptr<EpiOutputReader> CreateReader(const std::string& filename, EpiOutput& epiOutput) const;
+        std::shared_ptr<EpiOutputReader> CreateReader(const std::string& filename, geopop::GeoGrid<EpiOutput>* epiOutput) const;
 };
 
 } // namespace visualization

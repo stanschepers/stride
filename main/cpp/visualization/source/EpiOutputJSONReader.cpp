@@ -13,51 +13,50 @@
  *  Copyright 2019, Laurens Van Damme.
  */
 
-#include "EpiOutputJSONReader.h"
+#include "geopop/Location.h"
+#include "geopop/Coordinate.h"
 
 #include <fstream>
 #include <memory>
 
+#include "EpiOutputJSONReader.h"
+
 namespace visualization {
 
-EpiOutputJSONReader::EpiOutputJSONReader(std::unique_ptr<std::istream> inputStream, EpiOutput& epiOutput)
+EpiOutputJSONReader::EpiOutputJSONReader(std::unique_ptr<std::istream> inputStream, geopop::GeoGrid<EpiOutput>* epiOutput)
     : EpiOutputReader(move(inputStream), epiOutput)
 {
 }
 
 void EpiOutputJSONReader::Read()
 {
-        m_epiOutput.emplace_back(Location());
-        m_epiOutput[0].name                               = "Brussel";
-        m_epiOutput[0].id                                 = 0;
-        m_epiOutput[0].latitude                           = 50.8503;
-        m_epiOutput[0].longitude                          = 4.3517;
-        m_epiOutput[0].pop_count                          = 180000;
-        m_epiOutput[0].epiOutput["Daycare"]["Total"][0]   = 0;
-        m_epiOutput[0].epiOutput["Daycare"]["Total"][50]  = 0;
-        m_epiOutput[0].epiOutput["Daycare"]["Total"][100] = 0;
+    m_epiOutput;//[0][0].get()->getContent();  // TODO: What is wrong here????
+//        m_epiOutput->AddLocation(std::shared_ptr<geopop::Location<EpiOutput>>(0, 0, std::shared_ptr<EpiOutput>(), geopop::Coordinate(50.8503, 4.3517), "Brussel"));
+//        m_epiOutput[0]->getContent()->epiOutput["Daycare"]["Total"][0]   = 0;
+//        m_epiOutput[0]->getContent()->epiOutput["Daycare"]["Total"][50]  = 0;
+//        m_epiOutput[0]->getContent()->epiOutput["Daycare"]["Total"][100] = 0;
 
-        m_epiOutput.emplace_back(Location());
-        m_epiOutput[1].name      = "Wilrijk";
-        m_epiOutput[1].id        = 3;
-        m_epiOutput[1].latitude  = 51.1683;
-        m_epiOutput[1].longitude = 4.3943;
-        m_epiOutput[1].pop_count = 40943;
-
-        m_epiOutput.emplace_back(Location());
-        m_epiOutput[2].name      = "Vilvoorde";
-        m_epiOutput[2].id        = 2;
-        m_epiOutput[2].latitude  = 50.9273;
-        m_epiOutput[2].longitude = 4.4258;
-        m_epiOutput[2].pop_count = 37964;
-
-        m_epiOutput.emplace_back(Location());
-        m_epiOutput[3].name      = "Antwerpen";
-        m_epiOutput[3].id        = 1;
-        m_epiOutput[3].latitude  = 51.2194;
-        m_epiOutput[3].longitude = 4.4025;
-        m_epiOutput[3].pop_count = 520504;
-
+//        m_epiOutput.emplace_back(Location());
+//        m_epiOutput[1].name      = "Wilrijk";
+//        m_epiOutput[1].id        = 3;
+//        m_epiOutput[1].latitude  = 51.1683;
+//        m_epiOutput[1].longitude = 4.3943;
+//        m_epiOutput[1].pop_count = 40943;
+//
+//        m_epiOutput.emplace_back(Location());
+//        m_epiOutput[2].name      = "Vilvoorde";
+//        m_epiOutput[2].id        = 2;
+//        m_epiOutput[2].latitude  = 50.9273;
+//        m_epiOutput[2].longitude = 4.4258;
+//        m_epiOutput[2].pop_count = 37964;
+//
+//        m_epiOutput.emplace_back(Location());
+//        m_epiOutput[3].name      = "Antwerpen";
+//        m_epiOutput[3].id        = 1;
+//        m_epiOutput[3].latitude  = 51.2194;
+//        m_epiOutput[3].longitude = 4.4025;
+//        m_epiOutput[3].pop_count = 520504;
+//
 //        m_epiOutput.emplace_back(Location());
 //        m_epiOutput[4].name      = "Shanghai";
 //        m_epiOutput[4].id        = 4;

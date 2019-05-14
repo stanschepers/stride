@@ -13,8 +13,9 @@
  *  Copyright 2019, Laurens Van Damme.
  */
 
-#ifndef STRIDE_MAPCONTROLLER_H
-#define STRIDE_MAPCONTROLLER_H
+#pragma once
+
+#include "geopop/GeoGrid.h"
 
 #include <QObject>
 #include <QString>
@@ -70,7 +71,7 @@ private:
         /// Update the circles/information on the map
         void update() const;
 
-        EpiOutput m_epiOutput = EpiOutput();
+        geopop::GeoGrid<EpiOutput> m_geogrid;
 
         unsigned int m_day = 0;      // Current shown step
         unsigned int m_day_diff = 0; // Difference between epi-output measurements (Amount of days)
@@ -81,5 +82,3 @@ private:
 };
 
 } // namespace visualization
-
-#endif // STRIDE_MAPCONTROLLER_H

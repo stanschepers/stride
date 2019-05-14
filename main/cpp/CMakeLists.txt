@@ -81,12 +81,6 @@ set(STRIDE_SRC
     geopop/generators/SecondaryCommunityGenerator.cpp
     geopop/generators/WorkplaceGenerator.cpp
     #---
-    geopop/io/EpiOutputReader.cpp
-    geopop/io/EpiOutputReader.h
-    geopop/io/EpiOutputReaderFactory.cpp
-    geopop/io/EpiOutputReaderFactory.h
-    geopop/io/EpiOutputJSONReader.cpp
-    geopop/io/EpiOutputJSONReader.h
     geopop/io/EpiOutputWriter.h
     geopop/io/EpiOutputWriterFactory.cpp
     geopop/io/EpiOutputWriterFactory.h

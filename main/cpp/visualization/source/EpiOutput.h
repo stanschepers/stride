@@ -19,7 +19,11 @@
 #include <map>
 #include <vector>
 
-        //        ageBracket           healthStatus             day        value
-typedef std::map<std::string, std::map<std::string, std::map<unsigned int, double>>> EpiOutput;
+struct EpiOutput{
+    unsigned int pop_count;
+    //        ageBracket           healthStatus             day        value
+    std::map<std::string, std::map<std::string, std::map<unsigned int, double>>> epiOutput;
+};
+
 
 

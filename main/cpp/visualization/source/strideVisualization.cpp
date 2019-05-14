@@ -17,15 +17,38 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QQuickView>
+#include <QFileInfo>
+
 #include <iostream>
 
 #include "MapController.h"
 
-#include <iostream>
-
+/// Main program of the stride visualizer.
 int main(int argc, char* argv[])
 {
-        //    std::string filename = argv[0];
+        // -----------------------------------------------------------------------------------------
+        // Check if an epi-output file is given
+        // -----------------------------------------------------------------------------------------
+        if (argc == 1){
+                QFileInfo check_file(argv[0]);
+                // check if file exists and if yes: Is it really a file and no directory?
+                if (!check_file.exists() || !check_file.isFile()) {
+                        std::cerr << "The given file doesn't exist!" << std::endl;
+                        return -1;
+                }
+        }
+        else if (argc < 1){
+                std::cerr << "No epi-output file specified!" << std::endl;
+                return -1;
+        }
+        else {
+                std::cerr << "To many arguments were given!" << std::endl;
+                return -1;
+        }
+
+        // -----------------------------------------------------------------------------------------
+        // Run the Qt visualization tool.
+        // -----------------------------------------------------------------------------------------
         visualization::MapController ctrl("/home/laurens/Desktop/test.json");
 
         QGuiApplication app(argc, argv);

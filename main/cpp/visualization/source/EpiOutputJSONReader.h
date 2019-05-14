@@ -31,7 +31,7 @@ class EpiOutputJSONReader : public EpiOutputReader
 {
 public:
         /// Construct the EpiOutputJSONReader with the istream which contains the JSON.
-        EpiOutputJSONReader(std::unique_ptr<std::istream> inputStream, EpiOutput& epiOutput);
+        EpiOutputJSONReader(std::unique_ptr<std::istream> inputStream, geopop::GeoGrid<EpiOutput>* epiOutput);
 
         /// No copy constructor.
         EpiOutputJSONReader(const EpiOutputJSONReader&) = delete;

@@ -18,7 +18,7 @@
 
 #include <QVariant>
 
-#include "geopop/io/EpiOutputReaderFactory.h"
+#include "EpiOutputReaderFactory.h"
 #include "MapController.h"
 
 namespace visualization {
@@ -31,14 +31,14 @@ double distanceOnEarth(double lat1, double long1, double lat2, double long2){
         return a;
 }
 
-MapController::MapController(const std::string& filename) : QObject(nullptr)
+MapController::MapController(const std::string& filename) : QObject(nullptr), m_geogrid(geopop::GeoGrid<EpiOutput>(nullptr))
 {
         // Read in the epi-output
         visualization::EpiOutputReaderFactory readerFactory;
-        const auto& reader = readerFactory.CreateReader(filename, m_epiOutput);
+        const auto& reader = readerFactory.CreateReader(filename, &m_geogrid);
         reader->Read();
         // Check how big the gap is in between measurements
-        auto diff = m_epiOutput[0].epiOutput.begin()->second.begin()->second.begin();
+        auto diff = m_geogrid[0]->getContent()->epiOutput.begin()->second.begin()->second.begin();
         diff++;
         m_day_diff = diff->first;
 }
@@ -71,9 +71,9 @@ void MapController::setShownInformation(const QString& locationId){
                 QMetaObject::invokeMethod(m_root, "emptyData");
                 return;
         }
-        for (const auto &location: m_epiOutput){
-                if (location.id == locationId.toUInt()){
-                        QMetaObject::invokeMethod(m_root, "setData", Q_ARG(QVariant, QString::fromStdString(location.name)));
+        for (const auto &location: m_geogrid){
+                if (location.get()->GetID() == locationId.toUInt()){
+                        QMetaObject::invokeMethod(m_root, "setData", Q_ARG(QVariant, QString::fromStdString(location.get()->GetName())));
                         return;
                 }
         }
@@ -85,11 +85,11 @@ void MapController::initialize(QObject* root)
         m_root = root;
 
         // Set the current day as the first day
-        m_day = m_epiOutput[0].epiOutput.begin()->second.begin()->second.begin()->first;
+        m_day = m_geogrid[0].get()->getContent().get()->epiOutput.begin()->second.begin()->second.begin()->first;
 
         // Variables for the slider
         unsigned int firstDay = m_day;
-        unsigned int lastDay  = m_epiOutput[0].epiOutput.begin()->second.begin()->second.rbegin()->first;
+        unsigned int lastDay  = m_geogrid[0].get()->getContent().get()->epiOutput.begin()->second.begin()->second.rbegin()->first;
 
         // Variables for the map
         double zoomlevel        = 0;
@@ -101,33 +101,33 @@ void MapController::initialize(QObject* root)
         double biggestLong      = 0;
 
         // Sort the locations in order of population size (Great to small)
-        std::sort(m_epiOutput.begin(), m_epiOutput.end(), [ ]( const Location& lhs, const Location& rhs )
+        std::sort(m_geogrid.begin(), m_geogrid.end(), [ ]( const std::shared_ptr<geopop::Location<EpiOutput>>& lhs, const std::shared_ptr<geopop::Location<EpiOutput>>& rhs )
         {
-            return lhs.pop_count > rhs.pop_count;
+            return lhs->getContent()->pop_count > rhs->getContent()->pop_count;
         });
 
         // Put the locations on the map
-        for (auto const& location : m_epiOutput) {
+        for (auto const& location : m_geogrid) {
                 
                 // To calculate the zoom level
-                if (location.latitude < smallestLat){
-                    smallestLat = location.latitude;
+                if (location.get()->GetCoordinate().get<0>() < smallestLat){
+                    smallestLat = location.get()->GetCoordinate().get<0>();
                 }
-                if (location.latitude  > biggestLat){
-                    biggestLat = location.latitude;
+                if (location.get()->GetCoordinate().get<0>()  > biggestLat){
+                    biggestLat = location.get()->GetCoordinate().get<0>();
                 }
-                if (location.longitude < smallestLong){
-                    smallestLong = location.longitude;
+                if (location.get()->GetCoordinate().get<1>() < smallestLong){
+                    smallestLong = location.get()->GetCoordinate().get<1>();
                 }
-                if (location.longitude  > biggestLong){
-                    biggestLong = location.longitude;
+                if (location.get()->GetCoordinate().get<1>()  > biggestLong){
+                    biggestLong = location.get()->GetCoordinate().get<1>();
                 }
 
                 // Add the circle to the map
-                QMetaObject::invokeMethod(m_root, "addLocation", Q_ARG(QVariant, QString::number(location.id)),
-                                          Q_ARG(QVariant, QVariant::fromValue(location.latitude)),
-                                          Q_ARG(QVariant, QVariant::fromValue(location.longitude)),
-                                          Q_ARG(QVariant, QVariant::fromValue(location.pop_count * 0.03)));  // radius
+                QMetaObject::invokeMethod(m_root, "addLocation", Q_ARG(QVariant, QString::number(location.get()->GetID())),
+                                          Q_ARG(QVariant, QVariant::fromValue(location.get()->GetCoordinate().get<1>())),
+                                          Q_ARG(QVariant, QVariant::fromValue(location.get()->GetCoordinate().get<1>())),
+                                          Q_ARG(QVariant, QVariant::fromValue(location.get()->getContent().get()->pop_count * 0.03)));  // radius
         }
 
         // Calculate the center of the map

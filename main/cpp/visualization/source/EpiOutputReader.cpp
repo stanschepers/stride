@@ -17,7 +17,7 @@
 
 namespace visualization {
 
-EpiOutputReader::EpiOutputReader(std::unique_ptr<std::istream> inputStream, EpiOutput& epiOutput)
+EpiOutputReader::EpiOutputReader(std::unique_ptr<std::istream> inputStream, geopop::GeoGrid<EpiOutput>* epiOutput)
     : m_inputStream(std::move(inputStream)), m_epiOutput(epiOutput)
 {
 }

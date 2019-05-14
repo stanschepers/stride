@@ -15,6 +15,8 @@
 
 #pragma once
 
+#include "geopop/GeoGrid.h"
+
 #include <istream>
 #include <memory>
 #include <tuple>
@@ -25,14 +27,14 @@
 namespace visualization {
 
 /**
- * An abstract base class for creating a map with the epi-output that was read from a file, can be implemented
+ * An abstract base class for creating a GeoGrid with the epi-output that was read from a file, can be implemented
  * using multiple file types (proto, hdf5 and json are currently implemented)
  */
 class EpiOutputReader
 {
 public:
         /// Parametrized constructor.
-        EpiOutputReader(std::unique_ptr<std::istream> inputStream, EpiOutput& epiOutput);
+        EpiOutputReader(std::unique_ptr<std::istream> inputStream, geopop::GeoGrid<EpiOutput>* epiOutput);
 
         /// No copy constructor.
         EpiOutputReader(const EpiOutputReader&) = delete;
@@ -48,7 +50,7 @@ public:
 
 protected:
         std::unique_ptr<std::istream> m_inputStream; ///< File to read.
-        EpiOutput&                    m_epiOutput;   ///< Resulted epi-output
+        geopop::GeoGrid<EpiOutput>* m_epiOutput;     ///< Resulting epi-output
 };
 
 } // namespace visualization
