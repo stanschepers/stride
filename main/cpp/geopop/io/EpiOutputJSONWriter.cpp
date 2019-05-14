@@ -29,29 +29,46 @@ using namespace std;
 using namespace stride;
 using json = nlohmann::json;
 
-EpiOutputJSONWriter::EpiOutputJSONWriter() {}
+EpiOutputJSONWriter::EpiOutputJSONWriter() : m_output() {}
 
-void EpiOutputJSONWriter::Write(GeoGrid<Epidemiologic>& geoGrid, unsigned int day, ostream& stream)
+void EpiOutputJSONWriter::Write(std::ostream& stream)
 {
-    json output;
+    stream << setw(4) << m_output;
+}
 
-    std::cout << "Writing Day " << day << std::endl;
-    output["locations"] = json::array();
-    for (const auto& location : geoGrid) {
-        output["locations"].push_back(WriteLocation(*location));
+void EpiOutputJSONWriter::Update(GeoGrid<Epidemiologic>& geoGrid, unsigned int day)
+{
+    std::vector<std::string> ageBrackets = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
+    std::vector<std::string> healthStatuses = {"Total", "Susceptible", "Infected", "Infectious", "Symptomatic", "Recovered", "Immune"};
+    if (day == 0){
+        for (unsigned int i = 0; i < geoGrid.size(); i++) {
+            const auto loc = geoGrid[i];
+            m_output["locations"][i]["id"] = loc->GetID();
+            m_output["locations"][i]["name"] = loc->GetName();
+            m_output["locations"][i]["province"] = loc->GetProvince();
+            m_output["locations"][i]["coordinate"][0] = loc->GetCoordinate().get<0>();
+            m_output["locations"][i]["coordinate"][1] = loc->GetCoordinate().get<1>();
+            m_output["locations"][i]["pop_count"] = loc->getContent()->GetPopCount();
+        }
     }
-
-    stream << setw(4) << output;
+    for (unsigned int i = 0; i < geoGrid.size(); i++) {
+        auto epiOutput = geoGrid[i]->getContent()->GenerateEpiOutput();
+        for (const std::string& ageBracket: ageBrackets){
+            for (const std::string& healthStatus: healthStatuses){
+                m_output["locations"][i]["epi-output"][ageBracket][healthStatus][std::to_string(day)] = epiOutput[ageBracket][healthStatus];
+            }
+        }
+    }
 }
 
-nlohmann::json EpiOutputJSONWriter::WriteLocation(const Location<Epidemiologic>& location)
-{
-    json locationJSON;
-
-    std::cout << "Writing location " << location.GetID() << std::endl;
-    locationJSON["epi-output"] = location.getContent()->GenerateEpiOutput();
-
-    return locationJSON;
-}
+//nlohmann::json EpiOutputJSONWriter::WriteLocation(const Location<Epidemiologic>& location)
+//{
+//    json locationJSON;
+//
+//    std::cout << "Writing location " << location.GetID() << std::endl;
+//    locationJSON["epi-output"] = location.getContent()->GenerateEpiOutput();
+//
+//    return locationJSON;
+//}
 
 } // namespace geopop

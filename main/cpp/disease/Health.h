@@ -20,6 +20,9 @@
 
 #pragma once
 
+#include <vector>
+#include <string>
+
 namespace stride {
 
 /// Enumerate the various health states with respect to the infection.

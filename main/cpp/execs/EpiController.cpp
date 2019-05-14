@@ -69,6 +69,7 @@ namespace stride {
         // -----------------------------------------------------------------------------------------
         // Epi scenario: step 2, create a population, as described by the parameter in the config.
         // -----------------------------------------------------------------------------------------
+        m_stride_logger->info("Generating a population...");
         auto pop = Population::Create(m_config, rnMan);
 
         // -----------------------------------------------------------------------------------------
@@ -93,11 +94,10 @@ namespace stride {
         auto eoViewer = make_shared<viewers::EpiOutputViewer>(runner, epiStride, outputFileStream, epiOutputWriter);
         runner->Register(eoViewer, bind(&viewers::EpiOutputViewer::Update, eoViewer, std::placeholders::_1));
 
-        std::cout << prefix << std::endl;
-
-        m_stride_logger->info("Start the simulation and writing the epi-output to file {}.", epiOutputFilePath.string());
+        m_stride_logger->info("Starting the simulation and writing the epi-output with a stride of {} to file {}.", epiStride, epiOutputFilePath.string());
 
         runner->Run();
+        epiOutputWriter->Write(outputFileStream);
         outputFileStream.close();
 
         m_stride_logger->info("Simulation over and done writing epi-output to file.");

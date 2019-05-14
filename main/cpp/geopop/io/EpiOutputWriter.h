@@ -35,8 +35,11 @@ public:
         /// Construct the Writer.
         virtual ~EpiOutputWriter() = default;
 
-        /// Write the epi-output of the GeoGrid to ostream.
-        virtual void Write(GeoGrid<Epidemiologic>& geoGrid, unsigned int day, std::ostream& stream) = 0;
+        /// Write the epi-output to the ostream.
+        virtual void Write(std::ostream& stream) = 0;
+
+        /// Write the epi-output of the GeoGrid to the right data format.
+        virtual void Update(GeoGrid<Epidemiologic>& geoGrid, unsigned int day) = 0;
 };
 
 } // namespace geopop

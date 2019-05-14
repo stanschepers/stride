@@ -56,13 +56,12 @@ unsigned int ContactPool::GetInfectedCount() const
 const std::map<std::string, std::map<std::string, unsigned int>> ContactPool::GenerateEpiOutput()
 {
         // Prepare a map
-        vector<string> ageBrackets      = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
-        vector<string> healthCategories = {"Total",       "Susceptible", "Infected", "Infectious",
-                                           "Symptomatic", "Recovered",   "Immune"};
+        std::vector<std::string> ageBrackets = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
+        std::vector<std::string> healthStatuses = {"Total", "Susceptible", "Infected", "Infectious", "Symptomatic", "Recovered", "Immune"};
         map<string, map<string, unsigned int>> epiOutput;
         for (const string& ageBracket : ageBrackets) {
-                for (const string& healthCategory : healthCategories) {
-                        epiOutput[ageBracket][healthCategory] = 0U;
+                for (const string& healthStatus : healthStatuses) {
+                        epiOutput[ageBracket][healthStatus] = 0U;
                 }
         }
 
