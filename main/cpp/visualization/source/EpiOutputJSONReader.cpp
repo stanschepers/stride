@@ -30,11 +30,18 @@ EpiOutputJSONReader::EpiOutputJSONReader(std::unique_ptr<std::istream> inputStre
 
 void EpiOutputJSONReader::Read()
 {
-    m_epiOutput;//[0][0].get()->getContent();  // TODO: What is wrong here????
-//        m_epiOutput->AddLocation(std::shared_ptr<geopop::Location<EpiOutput>>(0, 0, std::shared_ptr<EpiOutput>(), geopop::Coordinate(50.8503, 4.3517), "Brussel"));
-//        m_epiOutput[0]->getContent()->epiOutput["Daycare"]["Total"][0]   = 0;
-//        m_epiOutput[0]->getContent()->epiOutput["Daycare"]["Total"][50]  = 0;
-//        m_epiOutput[0]->getContent()->epiOutput["Daycare"]["Total"][100] = 0;
+    auto& geoGrid = *m_epiOutput;
+    geoGrid.AddLocation(std::make_shared<geopop::Location<EpiOutput>>(0, 0, std::make_shared<EpiOutput>(), geopop::Coordinate(50.8503, 4.3517), "Brussel"));
+    geoGrid[0]->getContent()->pop_count = 180000;
+    geoGrid[0]->getContent()->epiOutput["Daycare"]["Total"][0]   = 0;
+    geoGrid[0]->getContent()->epiOutput["Daycare"]["Total"][50]  = 0;
+    geoGrid[0]->getContent()->epiOutput["Daycare"]["Total"][100] = 0;
+
+    geoGrid.AddLocation(std::make_shared<geopop::Location<EpiOutput>>(3, 0, std::make_shared<EpiOutput>(), geopop::Coordinate(51.1683, 4.3943), "Wilrijk"));
+    geoGrid[1]->getContent()->pop_count = 40943;
+    geoGrid[1]->getContent()->epiOutput["Daycare"]["Total"][0]   = 0;
+    geoGrid[1]->getContent()->epiOutput["Daycare"]["Total"][50]  = 0;
+    geoGrid[1]->getContent()->epiOutput["Daycare"]["Total"][100] = 0;
 
 //        m_epiOutput.emplace_back(Location());
 //        m_epiOutput[1].name      = "Wilrijk";
