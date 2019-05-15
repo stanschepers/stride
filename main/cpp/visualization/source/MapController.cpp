@@ -126,7 +126,7 @@ void MapController::initialize(QObject* root)
                 QMetaObject::invokeMethod(m_root, "addLocation", Q_ARG(QVariant, QString::number(location->GetID())),
                                           Q_ARG(QVariant, QVariant::fromValue(location->GetCoordinate().get<0>())),
                                           Q_ARG(QVariant, QVariant::fromValue(location->GetCoordinate().get<1>())),
-                                          Q_ARG(QVariant, QVariant::fromValue(location->getContent()->pop_count * 0.2g)));  // radius
+                                          Q_ARG(QVariant, QVariant::fromValue(location->getContent()->pop_count * 0.2)));  // radius
         }
 
         // Calculate the center of the map
