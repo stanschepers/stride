@@ -24,20 +24,27 @@
 
 namespace visualization {
 
+/**
+ * MapController for use within the visualization, controller of the GUI and communicates with the qml.
+ */
 class MapController : public QObject
 {
 
         Q_OBJECT
         Q_PROPERTY(QString shownDay READ getDay WRITE setDay NOTIFY dayChanged)
-        Q_PROPERTY(QString setWindowHeight WRITE setWindowHeight NOTIFY heightChanged)
-        Q_PROPERTY(QString setWindowWidth WRITE setWindowWidth NOTIFY widthChanged)
-        Q_PROPERTY(QString setShownInformation WRITE setShownInformation NOTIFY tempChanged)
+        Q_PROPERTY(QString setWindowHeight READ getDay WRITE setWindowHeight NOTIFY heightChanged)
+        Q_PROPERTY(QString setWindowWidth READ getDay WRITE setWindowWidth NOTIFY widthChanged)
+        Q_PROPERTY(QString setShownInformation READ getDay WRITE setShownInformation NOTIFY shownInformationChanged)
 
 public:
-        MapController() = default;
-
         /// Create a MapController and read the epi-output file
         explicit MapController(const std::string& filename);
+
+        /// No copy constructor.
+        MapController(const MapController&) = delete;
+
+        /// No copy assignement.
+        MapController& operator=(const MapController&) = delete;
 
         /// Set the shown day
         void setDay(const QString& day);
@@ -58,27 +65,31 @@ public:
         void initialize(QObject* root);
 
 signals:
+        /// Signal for when day changes
         void dayChanged();
 
+        /// Signal for when height changes
         void heightChanged();
 
+        /// Signal for when width changes
         void widthChanged();
 
-        void tempChanged();
+        /// Signal for when the show information changes
+        void shownInformationChanged();
 
 private:
 
         /// Update the circles/information on the map
         void update() const;
 
-        geopop::GeoGrid<EpiOutput> m_geogrid;
+        geopop::GeoGrid<EpiOutput> m_geogrid; ///< GeoGrid that contains all the locations and their epi-output
 
-        unsigned int m_day = 0;      // Current shown step
-        unsigned int m_day_diff = 0; // Difference between epi-output measurements (Amount of days)
-        unsigned int m_window_height = 0;
-        unsigned int m_window_width = 0;
+        unsigned int m_day = 0;      ///<  Current shown step
+        unsigned int m_day_diff = 0; ///<  Difference (Amount of days) between epi-output measurements (Stride)
+        unsigned int m_window_height = 0; ///< Height of the GUI window
+        unsigned int m_window_width = 0; ///< Width of the GUI window
 
-        QObject* m_root = nullptr;
+        QObject* m_root = nullptr; ///< Root of the Qt object
 };
 
 } // namespace visualization

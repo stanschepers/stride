@@ -29,15 +29,15 @@ int main(int argc, char* argv[])
         // -----------------------------------------------------------------------------------------
         // Check if an epi-output file is given
         // -----------------------------------------------------------------------------------------
-        if (argc == 1){
-                QFileInfo check_file(argv[0]);
+        if (argc == 2){
+                QFileInfo check_file(argv[1]);
                 // check if file exists and if yes: Is it really a file and no directory?
                 if (!check_file.exists() || !check_file.isFile()) {
                         std::cerr << "The given file doesn't exist!" << std::endl;
                         return -1;
                 }
         }
-        else if (argc < 1){
+        else if (argc < 2){
                 std::cerr << "No epi-output file specified!" << std::endl;
                 return -1;
         }
@@ -49,7 +49,7 @@ int main(int argc, char* argv[])
         // -----------------------------------------------------------------------------------------
         // Run the Qt visualization tool.
         // -----------------------------------------------------------------------------------------
-        visualization::MapController ctrl("/home/laurens/Desktop/test.json");
+        visualization::MapController ctrl(argv[1]);
 
         QGuiApplication app(argc, argv);
 

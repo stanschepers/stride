@@ -100,11 +100,11 @@ void MapController::initialize(QObject* root)
         double smallestLong     = std::numeric_limits<double>::infinity();;
         double biggestLong      = 0;
 
-//        // Sort the locations in order of population size (Great to small)
-//        std::sort(m_geogrid.begin(), m_geogrid.end(), [ ]( const std::shared_ptr<geopop::Location<EpiOutput>>& lhs, const std::shared_ptr<geopop::Location<EpiOutput>>& rhs )
-//        {
-//            return lhs->getContent()->pop_count > rhs->getContent()->pop_count;
-//        });
+        // Sort the locations in order of population size (Great to small)
+        std::sort(m_geogrid.begin(), m_geogrid.end(), [ ]( const std::shared_ptr<geopop::Location<EpiOutput>>& lhs, const std::shared_ptr<geopop::Location<EpiOutput>>& rhs )
+        {
+            return lhs->getContent()->pop_count > rhs->getContent()->pop_count;
+        });
 
         // Put the locations on the map
         for (auto const& location : m_geogrid) {

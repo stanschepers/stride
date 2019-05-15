@@ -29,7 +29,7 @@ using namespace stride::ContactType;
 
 template <class Content>
 Location<Content>::Location(unsigned int id, unsigned int province, std::shared_ptr<Content> content, Coordinate coordinate, string name)
-    : m_coordinate(coordinate), m_id(id), m_name(move(name)), m_province(province), m_content(content)
+    : m_content(content), m_coordinate(coordinate), m_id(id), m_name(move(name)), m_province(province)
 {
 }
 

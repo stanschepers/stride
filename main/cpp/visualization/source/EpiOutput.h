@@ -19,10 +19,14 @@
 #include <map>
 #include <vector>
 
+/**
+ * Epi-output for use within the visualization, contains epi-output of location.
+ */
+
 struct EpiOutput{
-    unsigned int pop_count;
+    unsigned int pop_count = 0;
     //        ageBracket           healthStatus             day        value
-    std::map<std::string, std::map<std::string, std::map<unsigned int, double>>> epiOutput;
+    std::map<std::string, std::map<std::string, std::map<unsigned int, double>>> epiOutput{};
 };
 
 
