@@ -148,12 +148,16 @@ Window {
             anchors.horizontalCenter: dataBar.horizontalCenter
             anchors.top: closeDataButton.bottom
             anchors.right: root.right
+            anchors.left: dataBar.left
             anchors.topMargin: 5
+            anchors.leftMargin: 10
+            anchors.rightMargin: 10
         }
 
 
         Text {
             id: dataBarEpiOutput
+            wrapMode: Text.WordWrap
             text: ""
 
             anchors.top: dataBarlocationName.bottom
@@ -214,7 +218,7 @@ Window {
             centerCircle.rad = radius / 100;
             centerCircle.col = "red";
             centerCircle.locationId = locationId;
-            map.addMapItem(centerCircle);
+            map.addMapItem(centerCircle);  // TODO: split this in seprate qml file
         }
         else
             console.log("Error loading component:", component.errorString());
@@ -229,8 +233,8 @@ Window {
 
     function setData(locationName){
         dataBarlocationName.text = "<b>" + locationName + "</b>"
-        // TODO: echte info inladen + miss naar een list overgaan (probleem als je weg gaat van hover dan gaat de lijst weg dus een list is stom, hoe oplsossen?)
-        dataBarEpiOutput.text = 'AgeBracket:\n- Healthy: 25%\n- Infected: 48%\n- Recovered: 27%\n\nAgeBracket:\n- Healthy: 40%\n- Infected: 20%\n- Recovered: 40%\n\nAgeBracket:\n- Healthy: 40%\n- Infected: 20%\n- Recovered: 40%\n\nAgeBracket:\n- Healthy: 40%\n- Infected: 20%\n- Recovered: 40%'
+        // TODO: echte info inladen + miss naar een list overgaan (probeelm als je weg gaat van hover dan gaat de lijst weg dus een list is tsom, hoe oplsossen?)
+        dataBarEpiOutput.text = 'AgeBracket:\n- Healthy: 25%\n- Infected: 48%\n- Recovered: 27%\n\nAgeBracket:\n- Healthy: 40%\n- Infected: 20%\n- Recovered: 40%\n\nAgeBracket:\n- Healthy: 40%\n- Infected: 20%\n- Recovered: 40%\n\nAgeBracket:\n- Healthy: 40%\n- Infected: 20%\n- Recovered: 40%\n\nAgeBracket:\n- Healthy: 25%\n- Infected: 48%\n- Recovered: 27%\n\nAgeBracket:\n- Healthy: 40%\n- Infected: 20%\n- Recovered: 40%\n\nAgeBracket:\n- Healthy: 40%\n- Infected: 20%\n- Recovered: 40%\n\nAgeBracket:\n- Healthy: 40%\n- Infected: 20%\n- Recovered: 40%'
     }
 
     function emptyData(){
