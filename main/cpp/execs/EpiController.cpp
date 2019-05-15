@@ -69,7 +69,7 @@ namespace stride {
         // -----------------------------------------------------------------------------------------
         // Epi scenario: step 2, create a population, as described by the parameter in the config.
         // -----------------------------------------------------------------------------------------
-        m_stride_logger->info("Generating a population...");
+        m_stride_logger->info("Generating the population...");
         auto pop = Population::Create(m_config, rnMan);
 
         // -----------------------------------------------------------------------------------------
@@ -88,7 +88,8 @@ namespace stride {
         const auto epiOutputFilePath = FileSys::BuildPath(prefix, epiOutputFileName);
 
         shared_ptr<geopop::EpiOutputWriter> epiOutputWriter = geopop::EpiOutputWriterFactory::CreateEpiOutputWriter(epiOutputFileName);
-        std::ofstream                  outputFileStream(epiOutputFilePath.string());
+        std::string temp = epiOutputFilePath.string();
+        std::ofstream                  outputFileStream(temp);
 
         const auto epiStride = m_config.get<unsigned int>("run.epi_stride");
         auto eoViewer = make_shared<viewers::EpiOutputViewer>(runner, epiStride, outputFileStream, epiOutputWriter);
