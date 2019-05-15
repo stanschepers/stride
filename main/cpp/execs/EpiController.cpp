@@ -39,6 +39,8 @@ namespace filesys = std::filesystem;
 #endif
 
 #include <boost/property_tree/ptree.hpp>
+//#include <ostream>
+#include <fstream>
 
 using namespace std;
 using namespace stride;
