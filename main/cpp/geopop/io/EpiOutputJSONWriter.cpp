@@ -29,7 +29,9 @@ using namespace std;
 using namespace stride;
 using json = nlohmann::json;
 
-EpiOutputJSONWriter::EpiOutputJSONWriter() : m_output() {}
+EpiOutputJSONWriter::EpiOutputJSONWriter() : m_output() {
+    m_output["measured_days"] = {};
+}
 
 void EpiOutputJSONWriter::Write(std::ostream& stream)
 {
@@ -40,6 +42,7 @@ void EpiOutputJSONWriter::Update(GeoGrid<Epidemiologic>& geoGrid, unsigned int d
 {
     std::vector<std::string> ageBrackets = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
     std::vector<std::string> healthStatuses = {"Total", "Susceptible", "Infected", "Infectious", "Symptomatic", "Recovered", "Immune"};
+    m_output["measured_days"].push_back(day);
     if (day == 0){
         for (unsigned int i = 0; i < geoGrid.size(); i++) {
             const auto loc = geoGrid[i];
@@ -60,15 +63,5 @@ void EpiOutputJSONWriter::Update(GeoGrid<Epidemiologic>& geoGrid, unsigned int d
         }
     }
 }
-
-//nlohmann::json EpiOutputJSONWriter::WriteLocation(const Location<Epidemiologic>& location)
-//{
-//    json locationJSON;
-//
-//    std::cout << "Writing location " << location.GetID() << std::endl;
-//    locationJSON["epi-output"] = location.getContent()->GenerateEpiOutput();
-//
-//    return locationJSON;
-//}
 
 } // namespace geopop

@@ -34,7 +34,7 @@ class EpiOutputJSONWriter : public EpiOutputWriter
 {
 public:
         /// Construct the EpiOutputJSONWriter.
-        EpiOutputJSONWriter();
+        explicit EpiOutputJSONWriter();
 
         /// Write the provided GeoGrid epi-output to the provided ostream in JSON format.
         void Write(std::ostream& stream) override;
@@ -43,13 +43,7 @@ public:
         void Update(GeoGrid<Epidemiologic>& geoGrid, unsigned int day) override;
 
 private:
-//        /// Create a JSOM object containing all info from a location needed to construct an epi-output
-//        nlohmann::json WriteLocation(const Location<Epidemiologic>& location);
-//
-//        /// Create a JSOM object containing all info from a location needed to construct an epi-output
-//        nlohmann::json UpdateLocation(const Location<Epidemiologic>& location);
-
-        nlohmann::json m_output;
+        nlohmann::json m_output;  ///< json to be written to a file
 };
 
 } // namespace geopop

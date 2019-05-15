@@ -13,50 +13,85 @@
  *  Copyright 2019, Laurens Van Damme.
  */
 
-#include "geopop/Location.h"
-#include "geopop/Coordinate.h"
-
 #include <fstream>
 #include <memory>
 
+#include <nlohmann/json.hpp>
+
 #include "EpiOutputJSONReader.h"
+#include "geopop/Location.h"
+#include "geopop/Coordinate.h"
+
+using json = nlohmann::json;
 
 namespace visualization {
 
-EpiOutputJSONReader::EpiOutputJSONReader(std::unique_ptr<std::istream> inputStream, geopop::GeoGrid<EpiOutput>* epiOutput)
-    : EpiOutputReader(move(inputStream), epiOutput)
-{
-}
+    EpiOutputJSONReader::EpiOutputJSONReader(std::unique_ptr<std::istream> inputStream,
+                                             geopop::GeoGrid<EpiOutput> *epiOutput)
+            : EpiOutputReader(move(inputStream), epiOutput) {
+    }
 
-void EpiOutputJSONReader::Read() {
-    auto &geoGrid = *m_epiOutput;
-    geoGrid.AddLocation(std::make_shared<geopop::Location<EpiOutput>>(0, 1, std::make_shared<EpiOutput>(),
-                                                                      geopop::Coordinate(50.8503, 4.3517),
-                                                                      "Brussel"));
-    geoGrid[0]->getContent()->pop_count = 180000;
-    geoGrid[0]->getContent()->epiOutput["Daycare"]["Total"][0] = 0;
-    geoGrid[0]->getContent()->epiOutput["Daycare"]["Total"][50] = 0;
-    geoGrid[0]->getContent()->epiOutput["Daycare"]["Total"][100] = 0;
+    void EpiOutputJSONReader::Read() {
+        json data;
 
-    geoGrid.AddLocation(std::make_shared<geopop::Location<EpiOutput>>(3, 0, std::make_shared<EpiOutput>(),
-                                                                      geopop::Coordinate(51.1683, 4.3943),
-                                                                      "Wilrijk"));
-    geoGrid[1]->getContent()->pop_count = 40943;
+        try {
+            *(m_inputStream.get()) >> data;
+            data["locations"];
+        } catch (const json::exception &error) {
+            throw std::runtime_error("An error occured while parsing JSON. Please make sure valid JSON is provided.");
+        }
 
-    geoGrid.AddLocation(std::make_shared<geopop::Location<EpiOutput>>(2, 2, std::make_shared<EpiOutput>(),
-                                                                      geopop::Coordinate(50.9273, 4.4258),
-                                                                      "Vilvoorde"));
-    geoGrid[2]->getContent()->pop_count = 37964;
+        auto &geoGrid = *m_epiOutput;
 
-    geoGrid.AddLocation(std::make_shared<geopop::Location<EpiOutput>>(1, 0, std::make_shared<EpiOutput>(),
-                                                                      geopop::Coordinate(51.2194, 4.4025),
-                                                                      "Antwerpen"));
-    geoGrid[3]->getContent()->pop_count = 520504;
+        std::vector<std::string> ageBrackets = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
+        std::vector<std::string> healthStatuses = {"Total", "Susceptible", "Infected", "Infectious", "Symptomatic",
+                                                   "Recovered", "Immune"};
 
-    geoGrid.AddLocation(std::make_shared<geopop::Location<EpiOutput>>(4, 3, std::make_shared<EpiOutput>(),
-                                                                      geopop::Coordinate(31.2304, 121.4737),
-                                                                      "Shanghai"));
-    geoGrid[4]->getContent()->pop_count = 24100000;
-}
+        for (unsigned int i = 0; i < data["locations"].size(); i++) {
+            geoGrid.AddLocation(std::make_shared<geopop::Location<EpiOutput>>(data["locations"][i]["id"],
+                                                                              data["locations"][i]["province"],
+                                                                              std::make_shared<EpiOutput>(),
+                                                                              geopop::Coordinate(
+                                                                                      data["locations"][i]["coordinate"][1],
+                                                                                      data["locations"][i]["coordinate"][0]),
+                                                                              data["locations"][i]["name"]));
+            geoGrid[i]->getContent()->pop_count = data["locations"][i]["pop_count"];
+            for (const std::string& ageBracket: ageBrackets){
+                for (const std::string& healthStatus: healthStatuses){
+                    for (unsigned int day: data["measured_days"]) {
+                        geoGrid[0]->getContent()->epiOutput["Daycare"]["Total"][day] = data["locations"][i]["epi-output"][ageBracket][healthStatus][std::to_string(day)];
+                    }
+                }
+            }
+        }
+
+//        geoGrid.AddLocation(std::make_shared<geopop::Location<EpiOutput>>(0, 1, std::make_shared<EpiOutput>(),
+//                                                                          geopop::Coordinate(50.8503, 4.3517),
+//                                                                          "Brussel"));
+//        geoGrid[0]->getContent()->pop_count = 180000;
+//        geoGrid[0]->getContent()->epiOutput["Daycare"]["Total"][0] = 0;
+//        geoGrid[0]->getContent()->epiOutput["Daycare"]["Total"][50] = 0;
+//        geoGrid[0]->getContent()->epiOutput["Daycare"]["Total"][100] = 0;
+//
+//        geoGrid.AddLocation(std::make_shared<geopop::Location<EpiOutput>>(3, 0, std::make_shared<EpiOutput>(),
+//                                                                          geopop::Coordinate(51.1683, 4.3943),
+//                                                                          "Wilrijk"));
+//        geoGrid[1]->getContent()->pop_count = 40943;
+//
+//        geoGrid.AddLocation(std::make_shared<geopop::Location<EpiOutput>>(2, 2, std::make_shared<EpiOutput>(),
+//                                                                          geopop::Coordinate(50.9273, 4.4258),
+//                                                                          "Vilvoorde"));
+//        geoGrid[2]->getContent()->pop_count = 37964;
+//
+//        geoGrid.AddLocation(std::make_shared<geopop::Location<EpiOutput>>(1, 0, std::make_shared<EpiOutput>(),
+//                                                                          geopop::Coordinate(51.2194, 4.4025),
+//                                                                          "Antwerpen"));
+//        geoGrid[3]->getContent()->pop_count = 520504;
+//
+//        geoGrid.AddLocation(std::make_shared<geopop::Location<EpiOutput>>(4, 3, std::make_shared<EpiOutput>(),
+//                                                                          geopop::Coordinate(31.2304, 121.4737),
+//                                                                          "Shanghai"));
+//        geoGrid[4]->getContent()->pop_count = 24100000;
+    }
 
 } // namespace visualization

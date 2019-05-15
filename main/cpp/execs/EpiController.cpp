@@ -89,10 +89,11 @@ namespace stride {
         const auto epiOutputFileName = "epiOutput." + fileFormat;
         const auto epiOutputFilePath = FileSys::BuildPath(prefix, epiOutputFileName);
 
+        const auto epiStride = m_config.get<unsigned int>("run.epi_stride");
+
         shared_ptr<geopop::EpiOutputWriter> epiOutputWriter = geopop::EpiOutputWriterFactory::CreateEpiOutputWriter(epiOutputFileName);
         std::ofstream                  outputFileStream(epiOutputFilePath.string());
 
-        const auto epiStride = m_config.get<unsigned int>("run.epi_stride");
         auto eoViewer = make_shared<viewers::EpiOutputViewer>(runner, epiStride, outputFileStream, epiOutputWriter);
         runner->Register(eoViewer, bind(&viewers::EpiOutputViewer::Update, eoViewer, std::placeholders::_1));
 

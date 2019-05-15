@@ -43,21 +43,11 @@ public:
         void Read() override;
 
 private:
-        //        /// Create a ContactCenter based on the information stored in the provided boost property tree.
-        //        std::shared_ptr<ContactCenter> ParseContactCenter(boost::property_tree::ptree& contactCenter);
-        //
-        //        /// Create a ContactCenter based on the information stored in the provided boost property tree.
-        //        stride::ContactPool* ParseContactPool(boost::property_tree::ptree& contactPool,
-        //        stride::ContactType::Id typeId);
-        //
-        //        /// Create a Coordinate based on the information stored in the provided boost property tree.
-        //        Coordinate ParseCoordinate(boost::property_tree::ptree& coordinate);
-        //
-        //        /// Create a Location based on the information stored in the provided boost property tree.
-        //        std::shared_ptr<Location> ParseLocation(boost::property_tree::ptree& location);
-        //
-        //        /// Create a Person based on the information stored in the provided boost property tree.
-        //        stride::Person* ParsePerson(boost::property_tree::ptree& person);
+//        /// Create a Coordinate based on the information stored in the provided boost property tree.
+//        geopop::Coordinate ParseCoordinate(boost::property_tree::ptree& coordinate);
+//
+//        /// Create a Location based on the information stored in the provided boost property tree.
+//        std::shared_ptr<geopop::Location<EpiOutput>> ParseLocation(boost::property_tree::ptree& location);
 };
 
 } // namespace visualization

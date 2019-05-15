@@ -32,7 +32,7 @@ class Epidemiologic;
 class EpiOutputWriter
 {
 public:
-        /// Construct the Writer.
+        /// Deconstruct the Writer
         virtual ~EpiOutputWriter() = default;
 
         /// Write the epi-output to the ostream.

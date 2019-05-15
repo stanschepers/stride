@@ -27,7 +27,6 @@ double distanceOnEarth(double lat1, double long1, double lat2, double long2){
 //        double a = std::pow((std::sin((lat2 - lat1) / 2) * M_PI) / 180, 2) + std::cos((lat1 * M_PI) / 180) * std::cos((lat2 * M_PI) / 180) * std::pow((std::sin((long2 - long1) / 2) * M_PI) / 180, 2);
 //        a = 2 * 6371000 * std::atan2(std::sqrt(a), std::sqrt(1 - a));
         double a = std::acos(std::sin((lat1 * M_PI) / 180) * std::sin((lat2 * M_PI) / 180) + std::cos((lat1 * M_PI) / 180) * std::cos((lat2 * M_PI) / 180) * std::cos(((long2 - long1) * M_PI) / 180)) * 6731000;
-//        std::cout << a << std::endl;
         return a;
 }
 
@@ -127,7 +126,7 @@ void MapController::initialize(QObject* root)
                 QMetaObject::invokeMethod(m_root, "addLocation", Q_ARG(QVariant, QString::number(location->GetID())),
                                           Q_ARG(QVariant, QVariant::fromValue(location->GetCoordinate().get<0>())),
                                           Q_ARG(QVariant, QVariant::fromValue(location->GetCoordinate().get<1>())),
-                                          Q_ARG(QVariant, QVariant::fromValue(location->getContent()->pop_count * 0.03)));  // radius
+                                          Q_ARG(QVariant, QVariant::fromValue(location->getContent()->pop_count * 0.2g)));  // radius
         }
 
         // Calculate the center of the map
@@ -135,11 +134,8 @@ void MapController::initialize(QObject* root)
         centerLongitude = (smallestLong + biggestLong) / 2;
 
         // Calculate the zoom level of the map
-//        std::cout << smallestLat << "   " << biggestLat << std::endl;
-//        std::cout << smallestLong << "   " << biggestLong << std::endl;
         double pixelsize = std::max(distanceOnEarth(smallestLat, smallestLong, smallestLat, biggestLong) / double(m_window_width), distanceOnEarth(smallestLat, smallestLong,biggestLat, smallestLong) / double(m_window_height));
         zoomlevel = (std::log2((40075016.686 * std::cos((centerLatitude * M_PI) / 180)) / pixelsize) - 8) * 0.9;
-//        std::cout << pixelsize << "   " << zoomlevel << std::endl;
 
         // Change the properties of the map
         QMetaObject::invokeMethod(
