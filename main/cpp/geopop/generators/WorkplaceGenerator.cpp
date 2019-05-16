@@ -13,13 +13,9 @@
  *  Copyright 2018, 2019, Jan Broeckhove and Bistromatics group.
  */
 
-#include <geopop/GeoGridConfig.h>
 #include "Generator.h"
 
-#include "geopop/GeoGridConfig.h"
-#include "geopop/PoolParams.h"
 #include "util/Assert.h"
-
 
 namespace geopop {
 
@@ -29,7 +25,7 @@ using namespace stride::ContactType;
 
 
 template<>
-void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig)
+void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig)
 {
         // 1. active people count and the commuting people count are given
         // 2. count the workplaces, either by poolparams or if given: the work distribution
@@ -37,9 +33,9 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
         // 4. use that information for the distribution
         // 5. assign each workplaces to a location
 
-        const auto EmployeeCount = geoGridConfig.info.popcount_workplace;
+        const auto EmployeeCount = ggConfig.info.popcount_workplace;
         auto WorkplacesCount = static_cast<unsigned int>(ceil(EmployeeCount /
-                                     static_cast<double>(PoolParams<Id::Workplace>::people)));
+                                     static_cast<double>(ggConfig.people[Id::Workplace])));
 
         //try to access the distribution info if applicable
         const auto distribution = geoGridConfig.param.work_distribution;
@@ -65,9 +61,9 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
         for (const auto& loc : geoGrid) {
                 const double ActivePeopleCount =
                     (loc->GetPopCount() +
-                     loc->GetIncomingCommuteCount(geoGridConfig.param.fraction_workplace_commuters) -
-                     loc->GetOutgoingCommuteCount(geoGridConfig.param.fraction_workplace_commuters) *
-                         geoGridConfig.param.particpation_workplace);
+                     loc->GetIncomingCommuteCount(ggConfig.param.fraction_workplace_commuters) -
+                     loc->GetOutgoingCommuteCount(ggConfig.param.fraction_workplace_commuters) *
+                         ggConfig.param.particpation_workplace);
 
                 const double weight = ActivePeopleCount / EmployeeCount;
                 AssertThrow(weight >= 0 && weight <= 1 && !std::isnan(weight), "Invalid weight: " + to_string(weight),
@@ -85,7 +81,7 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
 
         for (auto i = 0U; i < WorkplacesCount; i++) {
                 const auto loc = geoGrid[dist()];
-                AddPools(*loc, pop);
+                AddPools(*loc, pop, ggConfig);
         }
 }
 
