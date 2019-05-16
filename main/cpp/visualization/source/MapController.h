@@ -35,6 +35,8 @@ class MapController : public QObject
         Q_PROPERTY(QString setWindowHeight READ getDay WRITE setWindowHeight NOTIFY heightChanged)
         Q_PROPERTY(QString setWindowWidth READ getDay WRITE setWindowWidth NOTIFY widthChanged)
         Q_PROPERTY(QString setShownInformation READ getDay WRITE setShownInformation NOTIFY shownInformationChanged)
+        Q_PROPERTY(QString setAgeBracket READ getDay WRITE setAgeBracket NOTIFY ageBracketChanged)
+        Q_PROPERTY(QString setHealthStatus READ getDay WRITE setHealthStatus NOTIFY healthStatusChanged)
 
 public:
         /// Create a MapController and read the epi-output file
@@ -64,6 +66,15 @@ public:
         /// Initialize the map
         void initialize(QObject* root);
 
+        /// Update the color of the circles on the map
+        void updateLocations();
+
+        /// Set the selected age bracket
+        void setAgeBracket(const QString& ageBracket);
+
+        /// Set the selected health status
+        void setHealthStatus(const QString& healthStatus);
+
 signals:
         /// Signal for when day changes
         void dayChanged();
@@ -77,17 +88,21 @@ signals:
         /// Signal for when the show information changes
         void shownInformationChanged();
 
+        /// Signal for when the selected age bracket changes
+        void ageBracketChanged();
+
+        /// Signal for when the selected health status changes
+        void healthStatusChanged();
+
 private:
-
-        /// Update the circles/information on the map
-        void update() const;
-
         geopop::GeoGrid<EpiOutput> m_geogrid; ///< GeoGrid that contains all the locations and their epi-output
 
-        unsigned int m_day = 0;      ///<  Current shown step
-        unsigned int m_day_diff = 0; ///<  Difference (Amount of days) between epi-output measurements (Stride)
-        unsigned int m_window_height = 0; ///< Height of the GUI window
-        unsigned int m_window_width = 0; ///< Width of the GUI window
+        unsigned int m_day;      ///<  Current shown step
+        unsigned int m_day_diff; ///<  Difference (Amount of days) between epi-output measurements (Stride)
+        unsigned int m_window_height; ///< Height of the GUI window
+        unsigned int m_window_width; ///< Width of the GUI window
+        std::string m_selectedAgeBracket; ///< Selected age bracket in the GUI
+        std::string m_selectedHealthStatus; ///< Selected health status in the GUI
 
         QObject* m_root = nullptr; ///< Root of the Qt object
 };

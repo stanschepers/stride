@@ -143,6 +143,7 @@ Window {
         Text {
             id: dataBarlocationName
             wrapMode: Text.WordWrap
+            horizontalAlignment: Text.AlignHCenter
             text: ""
 
             anchors.horizontalCenter: dataBar.horizontalCenter
@@ -150,8 +151,8 @@ Window {
             anchors.right: root.right
             anchors.left: dataBar.left
             anchors.topMargin: 5
-            anchors.leftMargin: 10
-            anchors.rightMargin: 10
+            anchors.leftMargin: 5
+            anchors.rightMargin: 15
         }
 
 
@@ -178,7 +179,9 @@ Window {
         anchors.left: parent.left
         anchors.margins: 10
         width: 240
-        model: [ "Age bracket", "Apple", "Coconut" ]  // TODO: fill with right values
+        model: ["Age bracket", "Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"]
+
+        onActivated: ctrl.setAgeBracket = model[index]
     }
 
     ComboBox {
@@ -187,7 +190,9 @@ Window {
         anchors.left: ageBracketComboBox.right
         anchors.margins: 10
         width: 240
-        model: [ "Health status", "Apple", "Coconut" ]  // TODO: fill with right values
+        model: ["Health status", "Susceptible", "Infected", "Infectious", "Symptomatic", "Recovered", "Immune"]
+
+        onActivated: ctrl.setHealthStatus = model[index]
     }
 
     function initialize(zoomlevel, centerLat, centerLong, firstDay, lastDay) {
@@ -206,7 +211,8 @@ Window {
             location.coorLat = latitude;
             location.coorLong = longtitude;
             location.rad = radius;
-            location.col = Qt.rgba(Math.random(),Math.random(),Math.random(), 0.5);
+            location.col = Qt.hsva(Math.random(), 1, 1, 0.5);
+//            location.col = Qt.rgba(Math.random(),Math.random(),Math.random(), 0.5);
             location.locationId = locationId;
             map.addMapItem(location);
         }
@@ -218,7 +224,7 @@ Window {
             centerCircle.rad = radius / 100;
             centerCircle.col = "red";
             centerCircle.locationId = locationId;
-            map.addMapItem(centerCircle);  // TODO: split this in seprate qml file
+            map.addMapItem(centerCircle);
         }
         else
             console.log("Error loading component:", component.errorString());
@@ -240,6 +246,26 @@ Window {
     function emptyData(){
         dataBarlocationName.text = ""
         dataBarEpiOutput.text = ""
+    }
+
+    function updateLocation(locationId, value){
+        var children = map.children;
+        for (var i = 0; i < children.length; ++i){
+            if (children[i].locationId === locationId){
+                if (value === -1){
+                    children[i].color = Qt.hsva(Math.random(), 1, 1, 0.5);
+                } else {
+                    var high = 500;
+                    var low = 0.1;
+                    value = -0.6 * value + 0.3
+//                    value = -0.6 * (Math.log((high - low) * value + low) - Math.log(low))/(Math.log(high) - Math.log(low)) + 0.3;
+                    if (value < 0){
+                        value = 1 + value;
+                    }
+                    children[i].color = Qt.hsva(value, 1, 1, 0.5);
+                }
+            }
+        }
     }
 
     onWidthChanged: ctrl.setWindowWidth = width

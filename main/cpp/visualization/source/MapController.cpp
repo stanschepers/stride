@@ -30,7 +30,7 @@ double distanceOnEarth(double lat1, double long1, double lat2, double long2){
         return a;
 }
 
-MapController::MapController(const std::string& filename) : QObject(nullptr), m_geogrid(geopop::GeoGrid<EpiOutput>(nullptr))
+MapController::MapController(const std::string& filename) : QObject(nullptr), m_geogrid(geopop::GeoGrid<EpiOutput>(nullptr)), m_day(0), m_day_diff(0), m_window_height(0), m_window_width(0), m_selectedAgeBracket("Total"), m_selectedHealthStatus("Total")
 {
         // Read in the epi-output
         visualization::EpiOutputReaderFactory readerFactory;
@@ -49,6 +49,8 @@ void MapController::setDay(const QString& day)
         temp_day      = (temp_day / m_day_diff) * m_day_diff;
         if (temp_day != m_day) {
                 m_day = temp_day;
+                if (m_selectedHealthStatus != "Total" || m_selectedAgeBracket != "Total")
+                this->updateLocations();
 //                std::cout << "Day set to: " << m_day << std::endl;
         }
 }
@@ -74,6 +76,13 @@ void MapController::setShownInformation(const QString& locationId){
                 if (location->GetID() == locationId.toUInt()){
                         QMetaObject::invokeMethod(m_root, "setData", Q_ARG(QVariant, QString::fromStdString(location->GetName())));
                         return;
+//                        for( auto const& [ageBracketKey, ageBracketVal] : location->getContent()->epiOutput)
+//                        {
+//                            for( auto const& [healthStatusKey, healthStatusVal] : ageBracketVal )
+//                            {
+//
+//                            }
+//                        }
                 }
         }
 
@@ -144,18 +153,48 @@ void MapController::initialize(QObject* root)
             Q_ARG(QVariant, QVariant::fromValue(firstDay)), Q_ARG(QVariant, QVariant::fromValue(lastDay)));
 }
 
-void MapController::update() const
+void MapController::updateLocations()
 {
-        //    for( auto const& location : m_epiOutput )
-        //    {
-        //        for( auto const& [ageBracketKey, ageBracketVal] : location.epiOutput)
-        //        {
-        //            for( auto const& [healthStatusKey, healthStatusVal] : ageBracketVal )
-        //            {
-        //
-        //            }
-        //        }
-        //    }
+        for (const auto &location : m_geogrid) {
+                if (m_selectedAgeBracket == "Total" && m_selectedHealthStatus == "Total"){
+                        QMetaObject::invokeMethod(m_root, "updateLocation",
+                                                  Q_ARG(QVariant, QVariant::fromValue(location->GetID())),
+                                                  Q_ARG(QVariant, QVariant::fromValue(-1)));
+                }
+                else if (m_selectedAgeBracket == "Total"){
+                        std::vector<std::string> ageBrackets = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
+                        double total = 0;
+                        for (const auto &ageBracket: ageBrackets){
+                                total += location->getContent()->epiOutput[ageBracket][m_selectedHealthStatus][m_day];
+                        }
+                        QMetaObject::invokeMethod(m_root, "updateLocation",
+                                                  Q_ARG(QVariant, QVariant::fromValue(location->GetID())),
+                                                  Q_ARG(QVariant, QVariant::fromValue(total)));
+                }
+                else {
+                        QMetaObject::invokeMethod(m_root, "updateLocation",
+                                                  Q_ARG(QVariant, QVariant::fromValue(location->GetID())),
+                                                  Q_ARG(QVariant, QVariant::fromValue(location->getContent()->epiOutput[m_selectedAgeBracket][m_selectedHealthStatus][m_day])));
+                }
+        }
+}
+
+void MapController::setAgeBracket(const QString &ageBracket) {
+        m_selectedAgeBracket = ageBracket.toStdString();
+        if (m_selectedAgeBracket == "Age bracket"){
+                m_selectedAgeBracket = "Total";
+        }
+//        std::cout << m_selectedAgeBracket << std::endl;
+        this->updateLocations();
+}
+
+void MapController::setHealthStatus(const QString &healthStatus) {
+        m_selectedHealthStatus = healthStatus.toStdString();
+        if (m_selectedHealthStatus == "Health status"){
+                m_selectedHealthStatus = "Total";
+        }
+//        std::cout << m_selectedHealthStatus << std::endl;
+        this->updateLocations();
 }
 
 } // namespace visualization
