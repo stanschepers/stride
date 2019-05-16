@@ -59,7 +59,7 @@ namespace visualization {
             for (const std::string& ageBracket: ageBrackets){
                 for (const std::string& healthStatus: healthStatuses){
                     for (unsigned int day: data["measured_days"]) {
-                        geoGrid[0]->getContent()->epiOutput["Daycare"]["Total"][day] = data["locations"][i]["epi-output"][ageBracket][healthStatus][std::to_string(day)];
+                        geoGrid[i]->getContent()->epiOutput[ageBracket][healthStatus][day] = data["locations"][i]["epi-output"][ageBracket][healthStatus][std::to_string(day)];
                     }
                 }
             }
