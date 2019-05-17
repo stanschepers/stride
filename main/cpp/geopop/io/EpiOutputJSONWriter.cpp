@@ -17,6 +17,8 @@
 
 #include "geopop/GeoGrid.h"
 #include "geopop/Location.h"
+#include "disease/Health.h"
+#include "contact/AgeBrackets.h"
 
 #include <iostream>
 #include <omp.h>
@@ -40,9 +42,7 @@ void EpiOutputJSONWriter::Write(std::ostream& stream)
 
 void EpiOutputJSONWriter::Update(GeoGrid<Epidemiologic>& geoGrid, unsigned int day)
 {
-    std::vector<std::string> ageBrackets = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
-    std::vector<std::string> healthStatuses = {"Total", "Susceptible", "Infected", "Infectious", "Symptomatic", "Recovered", "Immune"};
-    m_output["measured_days"].push_back(day);
+  m_output["measured_days"].push_back(day);
     if (day == 0){
         for (unsigned int i = 0; i < geoGrid.size(); i++) {
             const auto loc = geoGrid[i];
@@ -56,8 +56,8 @@ void EpiOutputJSONWriter::Update(GeoGrid<Epidemiologic>& geoGrid, unsigned int d
     }
     for (unsigned int i = 0; i < geoGrid.size(); i++) {
         auto epiOutput = geoGrid[i]->getContent()->GenerateEpiOutput();
-        for (const std::string& ageBracket: ageBrackets){
-            for (const std::string& healthStatus: healthStatuses){
+        for (const std::string& ageBracket: stride::ageBrackets){
+            for (const std::string& healthStatus: stride::healthStatuses){
                 m_output["locations"][i]["epi-output"][ageBracket][healthStatus][std::to_string(day)] = epiOutput[ageBracket][healthStatus];
             }
         }

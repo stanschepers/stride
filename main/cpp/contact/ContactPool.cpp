@@ -20,6 +20,7 @@
 
 #include "ContactPool.h"
 
+#include "disease/Health.h"
 #include "AgeBrackets.h"
 #include "pop/Age.h"
 #include "pop/Person.h"
@@ -56,11 +57,9 @@ unsigned int ContactPool::GetInfectedCount() const
 const std::map<std::string, std::map<std::string, unsigned int>> ContactPool::GenerateEpiOutput()
 {
         // Prepare a map
-        std::vector<std::string> ageBrackets = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
-        std::vector<std::string> healthStatuses = {"Total", "Susceptible", "Infected", "Infectious", "Symptomatic", "Recovered", "Immune"};
         map<string, map<string, unsigned int>> epiOutput;
-        for (const string& ageBracket : ageBrackets) {
-                for (const string& healthStatus : healthStatuses) {
+        for (const string& ageBracket : stride::ageBrackets) {
+                for (const string& healthStatus : stride::healthStatuses) {
                         epiOutput[ageBracket][healthStatus] = 0U;
                 }
         }

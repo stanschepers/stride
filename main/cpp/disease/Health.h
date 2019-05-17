@@ -37,6 +37,9 @@ enum class HealthStatus : unsigned short int
         Immune                   = 6U
 };
 
+inline std::vector<std::string> healthStatuses = {"Total", "Susceptible", "Infected", "Infectious", "Symptomatic",
+                                                  "Recovered", "Immune"};
+
 /// Holds a person's health data.
 class Health
 {

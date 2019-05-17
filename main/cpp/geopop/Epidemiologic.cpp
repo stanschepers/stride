@@ -17,6 +17,7 @@
 #include "contact/ContactPool.h"
 #include "contact/ContactType.h"
 #include "disease/Health.h"
+#include "contact/AgeBrackets.h"
 #include "pop/Person.h"
 #include "util/Exception.h"
 #include "geopop/Location.h"
@@ -105,23 +106,20 @@ namespace geopop {
         unsigned int total_members = this->GetMemberCount();
 
         // Initialize the map
-        vector<string> ageBrackets = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
-        vector<string> healthCategories = {"Total", "Susceptible", "Infected", "Infectious", "Symptomatic", "Recovered",
-                                           "Immune"};
         std::map<std::string, std::map<std::string, double>> epiOutput;
-        for (const string &ageBracket: ageBrackets){
-            for (const string &healthCategory: healthCategories){
-                epiOutput[ageBracket][healthCategory] = 0;
+        for (const string &ageBracket: stride::ageBrackets){
+            for (const string &healthStatus: stride::healthStatuses){
+                epiOutput[ageBracket][healthStatus] = 0;
             }
         }
 
         // Iterate over all Household contactpools in the Epidemiologic and calculate the epi-output
         for (stride::ContactPool* pool: this->CRefPools(stride::ContactType::Id::Household)){
             std::map<std::string, std::map<std::string, unsigned int>> epiOutput_pool = pool->GenerateEpiOutput();
-            for (const string &ageBracket: ageBrackets){
-                for (const string &healthCategory: healthCategories){
-                    epiOutput[ageBracket][healthCategory] +=
-                            double(epiOutput_pool[ageBracket][healthCategory]) / double(total_members);
+            for (const string &ageBracket: stride::ageBrackets){
+                for (const string &healthStatus: stride::healthStatuses){
+                    epiOutput[ageBracket][healthStatus] +=
+                            double(epiOutput_pool[ageBracket][healthStatus]) / double(total_members);
                 }
             }
         }

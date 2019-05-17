@@ -21,6 +21,8 @@
 #include "EpiOutputJSONReader.h"
 #include "geopop/Location.h"
 #include "geopop/Coordinate.h"
+#include "disease/Health.h"
+#include "contact/AgeBrackets.h"
 
 using json = nlohmann::json;
 
@@ -43,10 +45,6 @@ namespace visualization {
 
         auto &geoGrid = *m_epiOutput;
 
-        std::vector<std::string> ageBrackets = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
-        std::vector<std::string> healthStatuses = {"Total", "Susceptible", "Infected", "Infectious", "Symptomatic",
-                                                   "Recovered", "Immune"};
-
         for (unsigned int i = 0; i < data["locations"].size(); i++) {
             geoGrid.AddLocation(std::make_shared<geopop::Location<EpiOutput>>(data["locations"][i]["id"],
                                                                               data["locations"][i]["province"],
@@ -56,8 +54,8 @@ namespace visualization {
                                                                                       data["locations"][i]["coordinate"][0]),
                                                                               data["locations"][i]["name"]));
             geoGrid[i]->getContent()->pop_count = data["locations"][i]["pop_count"];
-            for (const std::string& ageBracket: ageBrackets){
-                for (const std::string& healthStatus: healthStatuses){
+            for (const std::string& ageBracket: stride::ageBrackets){
+                for (const std::string& healthStatus: stride::healthStatuses){
                     for (unsigned int day: data["measured_days"]) {
                         geoGrid[i]->getContent()->epiOutput[ageBracket][healthStatus][day] = data["locations"][i]["epi-output"][ageBracket][healthStatus][std::to_string(day)];
                     }

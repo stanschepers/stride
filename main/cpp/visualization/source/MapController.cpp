@@ -16,6 +16,9 @@
 #include <cmath>
 #include <limits>
 
+#include "contact/AgeBrackets.h"
+#include "disease/Health.h"
+
 #include <QVariant>
 
 #include "EpiOutputReaderFactory.h"
@@ -121,7 +124,7 @@ void MapController::initialize(QObject* root)
                 if (location->GetCoordinate().get<0>() < smallestLat){
                     smallestLat = location->GetCoordinate().get<0>();
                 }
-                if (location->GetCoordinate().get<0>()  > biggestLat){
+                if (location->GetCoordinate().get<0>() > biggestLat){
                     biggestLat = location->GetCoordinate().get<0>();
                 }
                 if (location->GetCoordinate().get<1>() < smallestLong){
@@ -162,9 +165,8 @@ void MapController::updateLocations()
                                                   Q_ARG(QVariant, QVariant::fromValue(-1)));
                 }
                 else if (m_selectedAgeBracket == "Total"){
-                        std::vector<std::string> ageBrackets = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
                         double total = 0;
-                        for (const auto &ageBracket: ageBrackets){
+                        for (const auto &ageBracket: stride::ageBrackets){
                                 total += location->getContent()->epiOutput[ageBracket][m_selectedHealthStatus][m_day];
                         }
                         QMetaObject::invokeMethod(m_root, "updateLocation",

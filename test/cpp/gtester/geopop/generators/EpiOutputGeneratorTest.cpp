@@ -14,10 +14,12 @@
  */
 
 #include "contact/ContactPool.h"
+#include "contact/AgeBrackets.h"
 #include "geopop/Coordinate.h"
 #include "geopop/Location.h"
 #include "geopop/Epidemiologic.h"
 #include "pop/Person.h"
+#include "disease/Health.h"
 
 #include <gtest/gtest.h>
 #include <map>
@@ -27,14 +29,10 @@ using namespace std;
 using namespace stride;
 using namespace geopop;
 
-vector<string> ageBrackets      = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
-vector<string> healthCategories = {"Total",       "Susceptible", "Infected", "Infectious",
-                                   "Symptomatic", "Recovered",   "Immune"};
-
 bool compareMapWithDoubles(map<string, map<string, double>> map1, map<string, map<string, double>> map2)
 {
-        for (const string& ageBracket : ageBrackets) {
-                for (const string& healtCategory : healthCategories) {
+        for (const string& ageBracket : stride::ageBrackets) {
+                for (const string& healtCategory : stride::healthStatuses) {
                         if (map1[ageBracket][healtCategory] - map2[ageBracket][healtCategory] > 0.0000000000001)
                                 return false;
                 }
@@ -49,9 +47,9 @@ namespace {
 TEST(EpiOutputGeneratorTest, contactpoolZeroMembersTest)
 {
         map<string, map<string, unsigned int>> correct_result;
-        for (const string& ageBracket : ageBrackets) {
-                for (const string& healthCategory : healthCategories) {
-                        correct_result[ageBracket][healthCategory] = 0;
+        for (const string& ageBracket : stride::ageBrackets) {
+                for (const string& healthStatus : stride::healthStatuses) {
+                        correct_result[ageBracket][healthStatus] = 0;
                 }
         }
 
@@ -68,9 +66,9 @@ TEST(EpiOutputGeneratorTest, contactpoolZeroMembersTest)
 TEST(EpiOutputGeneratorTest, contactpoolOneMemberTest)
 {
         map<string, map<string, unsigned int>> correct_result;
-        for (const string& ageBracket : ageBrackets) {
-                for (const string& healthCategory : healthCategories) {
-                        correct_result[ageBracket][healthCategory] = 0;
+        for (const string& ageBracket : stride::ageBrackets) {
+                for (const string& healthStatus : stride::healthStatuses) {
+                        correct_result[ageBracket][healthStatus] = 0;
                 }
         }
 
@@ -95,12 +93,12 @@ TEST(EpiOutputGeneratorTest, contactpoolOneMemberTest)
 TEST(EpiOutputGeneratorTest, contactpoolFiveMembersTest)
 {
         map<string, map<string, unsigned int>> correct_result;
-        for (const string& ageBracket : ageBrackets) {
-                for (const string& healthCategory : healthCategories) {
-                        if (healthCategory != "Total" || ageBracket == "College") {
-                                correct_result[ageBracket][healthCategory] = 0;
+        for (const string& ageBracket : stride::ageBrackets) {
+                for (const string& healthStatus : stride::healthStatuses) {
+                        if (healthStatus != "Total" || ageBracket == "College") {
+                                correct_result[ageBracket][healthStatus] = 0;
                         } else {
-                                correct_result[ageBracket][healthCategory] = 1;
+                                correct_result[ageBracket][healthStatus] = 1;
                         }
                 }
         }
@@ -145,9 +143,9 @@ TEST(EpiOutputGeneratorTest, contactpoolFiveMembersTest)
 TEST(EpiOutputGeneratorTest, locationZeroContactpoolsTest)
 {
         map<string, map<string, double>> correct_result;
-        for (const string& ageBracket : ageBrackets) {
-                for (const string& healthCategory : healthCategories) {
-                        correct_result[ageBracket][healthCategory] = 0;
+        for (const string& ageBracket : stride::ageBrackets) {
+                for (const string& healthStatus : stride::healthStatuses) {
+                        correct_result[ageBracket][healthStatus] = 0;
                 }
         }
 
@@ -163,12 +161,12 @@ TEST(EpiOutputGeneratorTest, locationZeroContactpoolsTest)
 TEST(EpiOutputGeneratorTest, locationOneContactpoolTest)
 {
         map<string, map<string, double>> correct_result;
-        for (const string& ageBracket : ageBrackets) {
-                for (const string& healthCategory : healthCategories) {
-                        if (healthCategory != "Total" || ageBracket == "College") {
-                                correct_result[ageBracket][healthCategory] = 0;
+        for (const string& ageBracket : stride::ageBrackets) {
+                for (const string& healthStatus : stride::healthStatuses) {
+                        if (healthStatus != "Total" || ageBracket == "College") {
+                                correct_result[ageBracket][healthStatus] = 0;
                         } else {
-                                correct_result[ageBracket][healthCategory] = 0.2;
+                                correct_result[ageBracket][healthStatus] = 0.2;
                         }
                 }
         }
@@ -215,9 +213,9 @@ TEST(EpiOutputGeneratorTest, locationOneContactpoolTest)
 TEST(EpiOutputGeneratorTest, locationFiveContactpoolsTest)
 {
         map<string, map<string, double>> correct_result;
-        for (const string& ageBracket : ageBrackets) {
-                for (const string& healthCategory : healthCategories) {
-                        correct_result[ageBracket][healthCategory] = 0;
+        for (const string& ageBracket : stride::ageBrackets) {
+                for (const string& healthStatus : stride::healthStatuses) {
+                        correct_result[ageBracket][healthStatus] = 0;
                 }
         }
 
