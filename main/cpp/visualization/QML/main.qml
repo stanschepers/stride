@@ -3,6 +3,7 @@ import QtQuick.Window 2.0
 import QtLocation 5.6
 import QtPositioning 5.6
 import QtQuick.Controls 1.4
+import QtQuick.Layouts 1.11
 
 Window {
     id: root
@@ -197,16 +198,18 @@ Window {
 
     Rectangle {
         id: colorSpectrum
+        width: 30
+        radius: 5
+        visible: false;
+
+        border.width: 1
+        border.color: "#696969"
+
         anchors.left: autoSimButton.left
         anchors.top: ageBracketComboBox.bottom
         anchors.bottom: coverUpCopyRight.top
         anchors.bottomMargin: 20
         anchors.topMargin: 20
-        width: 30
-        radius: 5
-
-        border.width: 1
-        border.color: "#696969"
 
         gradient: Gradient {
             GradientStop {
@@ -217,6 +220,52 @@ Window {
             }
             GradientStop {
                 position: 1.0; color: Qt.hsva(0.3, 1, 1, 1)
+            }
+        }
+
+        Rectangle {
+            id: spectrumHighRec
+            width: 160
+            height: 40
+            radius: 10
+            color: "#ecf0f1"
+
+            border.width: 1
+            border.color: "#696969"
+
+            anchors.left: parent.right
+            anchors.top: parent.top
+
+            Text {
+                id: spectrumHighValue
+                horizontalAlignment: Text.AlignHCenter
+                text: qsTr("100%")
+
+                anchors.fill: parent
+                anchors.margins: 5
+            }
+        }
+
+        Rectangle {
+            id: spectrumLowRec
+            width: 160
+            height: 40
+            radius: 10
+            color: "#ecf0f1"
+
+            border.width: 1
+            border.color: "#696969"
+
+            anchors.left: parent.right
+            anchors.bottom: parent.bottom
+
+            Text {
+                id: spectrumLowValue
+                horizontalAlignment: Text.AlignHCenter
+                text: qsTr("0.123456%")
+
+                anchors.fill: parent
+                anchors.margins: 5
             }
         }
     }
@@ -283,7 +332,7 @@ Window {
                 } else {
                     var high = 500;
                     var low = 0.1;
-                    value = -0.6 * value + 0.3
+                    value = -0.6 * value + 0.3;
 //                    value = -0.6 * (Math.log((high - low) * value + low) - Math.log(low))/(Math.log(high) - Math.log(low)) + 0.3;
                     if (value < 0){
                         value = 1 + value;
@@ -291,6 +340,16 @@ Window {
                     children[i].color = Qt.hsva(value, 1, 1, 0.5);
                 }
             }
+        }
+    }
+
+    function updateColorSpectrumValues(low, high){
+        if (low == -1 && high == -1){
+            colorSpectrum.visible = false;
+        } else {
+            colorSpectrum.visible = true;
+            spectrumLowValue.text = low;
+            spectrumHighValue.text = high;
         }
     }
 
