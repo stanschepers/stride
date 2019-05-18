@@ -37,6 +37,7 @@ class MapController : public QObject
         Q_PROPERTY(QString setShownInformation READ getDay WRITE setShownInformation NOTIFY shownInformationChanged)
         Q_PROPERTY(QString setAgeBracket READ getDay WRITE setAgeBracket NOTIFY ageBracketChanged)
         Q_PROPERTY(QString setHealthStatus READ getDay WRITE setHealthStatus NOTIFY healthStatusChanged)
+        Q_PROPERTY(bool dataPinned READ isDataPinned WRITE pinData NOTIFY dataPinnedChanged)
 
 public:
         /// Create a MapController and read the epi-output file
@@ -75,6 +76,12 @@ public:
         /// Set the selected health status
         void setHealthStatus(const QString& healthStatus);
 
+        /// Get the state of dataPinned
+        bool isDataPinned();
+
+        /// Set the state of dataPinned
+        void pinData(bool pinned);
+
 signals:
         /// Signal for when day changes
         void dayChanged();
@@ -94,9 +101,14 @@ signals:
         /// Signal for when the selected health status changes
         void healthStatusChanged();
 
+        /// Signal for when the selected health status changes
+        void dataPinnedChanged();
+
 private:
         geopop::GeoGrid<EpiOutput> m_geogrid; ///< GeoGrid that contains all the locations and their epi-output
 
+        bool m_data_pinned; ///< Indicates if the shown data is pinned
+        unsigned int m_pinned_location; ///< Id of the last location of which the data is shown
         unsigned int m_day;      ///<  Current shown step
         unsigned int m_day_diff; ///<  Difference (Amount of days) between epi-output measurements (Stride)
         unsigned int m_window_height; ///< Height of the GUI window

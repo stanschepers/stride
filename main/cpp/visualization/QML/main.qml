@@ -6,7 +6,7 @@ import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.11
 
 Window {
-    id: root
+    id: dataVisualWindow
     width: 1024
     height: 1024
     visible: true
@@ -43,21 +43,21 @@ Window {
         anchors.right: parent.right
     }
 
-    Button {
-        id: autoSimButton
-        text: "Auto sim"
-        width: 160
-        height: 40
+//    Button {
+//        id: autoSimButton
+//        text: "Auto sim"
+//        width: 160
+//        height: 40
 
-        anchors.top: coverUpCopyRight.top
-        anchors.left: parent.left
-        anchors.bottom: parent.bottom
-        anchors.margins: 10
+//        anchors.top: coverUpCopyRight.top
+//        anchors.left: parent.left
+//        anchors.bottom: parent.bottom
+//        anchors.margins: 10
 
-        onClicked: {
-            print("Auto sim clicked")  // TODO: Should start an auto increase day simulation
-        }
-    }
+//        onClicked: {
+//            print("Auto sim clicked")  // TODO: Should start an auto increase day simulation
+//        }
+//    }
 
     Slider {
         id: daySlider;
@@ -67,7 +67,7 @@ Window {
         anchors.margins: 10
         anchors.rightMargin: parent.width * 0.1
         anchors.bottom: parent.bottom
-        anchors.left: autoSimButton.right
+        anchors.left: parent.left
         anchors.right: parent.right
 
         orientation : Qt.Horizontal
@@ -125,6 +125,24 @@ Window {
         anchors.bottom: coverUpCopyRight.top
         anchors.rightMargin: -radius
 
+        Text {
+            id: pinnedText
+            text: "Pinned (click to unpin)"
+            font.pointSize: 6
+            visible: false
+
+            anchors.top: dataBar.top
+            anchors.left: dataBar.left
+            anchors.right: closeDataButton.left
+            anchors.margins: 10
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: { ctrl.dataPinned = !ctrl.dataPinned; dataVisualWindow.emptyData(); }
+            }
+
+        }
+
         Button {
             id: closeDataButton
             text: "X"
@@ -149,24 +167,29 @@ Window {
 
             anchors.horizontalCenter: dataBar.horizontalCenter
             anchors.top: closeDataButton.bottom
-            anchors.right: root.right
             anchors.left: dataBar.left
             anchors.topMargin: 5
             anchors.leftMargin: 5
             anchors.rightMargin: 15
         }
 
-
-        Text {
-            id: dataBarEpiOutput
-            wrapMode: Text.WordWrap
-            text: ""
+        Rectangle {
+            id: seperation
+            height: 1
+            color: "#696969"
 
             anchors.top: dataBarlocationName.bottom
-            anchors.right: root.right
+            anchors.right: dataBar.right
+            anchors.left: dataBar.left
+        }
+
+        DataBarList {
+            id: dataBarEpiOutput
+
+            anchors.top: seperation.bottom
+            anchors.right: dataBar.right
             anchors.left: dataBar.left
             anchors.bottom: dataBar.bottom
-            anchors.margins: 10
         }
 
         focus: true
@@ -205,21 +228,22 @@ Window {
         border.width: 1
         border.color: "#696969"
 
-        anchors.left: autoSimButton.left
+        anchors.left: parent.left
         anchors.top: ageBracketComboBox.bottom
         anchors.bottom: coverUpCopyRight.top
         anchors.bottomMargin: 20
         anchors.topMargin: 20
+        anchors.leftMargin: 10
 
         gradient: Gradient {
             GradientStop {
-                position: 0.0; color: Qt.hsva(0.7, 1, 1, 1)
+                position: 0.0; color: Qt.hsva(0.7, 1, 1, 0.7)
             }
             GradientStop {
-                position: 0.5; color: Qt.hsva(0, 1, 1, 1)
+                position: 0.5; color: Qt.hsva(0, 1, 1, 0.7)
             }
             GradientStop {
-                position: 1.0; color: Qt.hsva(0.3, 1, 1, 1)
+                position: 1.0; color: Qt.hsva(0.3, 1, 1, 0.7)
             }
         }
 
@@ -262,7 +286,7 @@ Window {
             Text {
                 id: spectrumLowValue
                 horizontalAlignment: Text.AlignHCenter
-                text: qsTr("0.123456%")
+                text: qsTr("0%")
 
                 anchors.fill: parent
                 anchors.margins: 5
@@ -312,15 +336,20 @@ Window {
         return widthArg;
     }
 
-    function setData(locationName){
-        dataBarlocationName.text = "<b>" + locationName + "</b>"
-        // TODO: echte info inladen + miss naar een list overgaan (probeelm als je weg gaat van hover dan gaat de lijst weg dus een list is tsom, hoe oplsossen?)
-        dataBarEpiOutput.text = 'AgeBracket:\n- Healthy: 25%\n- Infected: 48%\n- Recovered: 27%\n\nAgeBracket:\n- Healthy: 40%\n- Infected: 20%\n- Recovered: 40%\n\nAgeBracket:\n- Healthy: 40%\n- Infected: 20%\n- Recovered: 40%\n\nAgeBracket:\n- Healthy: 40%\n- Infected: 20%\n- Recovered: 40%\n\nAgeBracket:\n- Healthy: 25%\n- Infected: 48%\n- Recovered: 27%\n\nAgeBracket:\n- Healthy: 40%\n- Infected: 20%\n- Recovered: 40%\n\nAgeBracket:\n- Healthy: 40%\n- Infected: 20%\n- Recovered: 40%\n\nAgeBracket:\n- Healthy: 40%\n- Infected: 20%\n- Recovered: 40%'
+    function setData(locationName, epiOutput){
+        dataBarlocationName.text = "<b>" + locationName + "</b>";
+        var ageBrackets = ["Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"]
+        var healthStatuses = ["Total", "Susceptible", "Infected", "Infectious", "Symptomatic", "Recovered", "Immune"]
+        for (var i = 0; i < ageBrackets.length; i++){
+            for (var j = 0; j < healthStatuses.length; j++){
+                dataBarEpiOutput.addItem(healthStatuses[j], ageBrackets[i], epiOutput[ageBrackets[i]][healthStatuses[j]]);
+            }
+        }
     }
 
     function emptyData(){
-        dataBarlocationName.text = ""
-        dataBarEpiOutput.text = ""
+        dataBarlocationName.text = "";
+        dataBarEpiOutput.emptyList();
     }
 
     function updateLocation(locationId, value){
@@ -351,6 +380,10 @@ Window {
             spectrumLowValue.text = low;
             spectrumHighValue.text = high;
         }
+    }
+
+    function togglePinned(value){
+        pinnedText.visible = value;
     }
 
     onWidthChanged: ctrl.setWindowWidth = width

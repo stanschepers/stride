@@ -48,11 +48,11 @@ QString makePresentablePercentage(double value){
         if (percentage.size() > 7){
                 percentage = percentage.substr(0,6);
         }
-        percentage += "%";
+        percentage = "%" + percentage;
         return QString::fromStdString(percentage);
 }
 
-MapController::MapController(const std::string& filename) : QObject(nullptr), m_geogrid(geopop::GeoGrid<EpiOutput>(nullptr)), m_day(0), m_day_diff(0), m_window_height(0), m_window_width(0), m_selectedAgeBracket("Total"), m_selectedHealthStatus("Total"), m_smallest_values(), m_biggest_values()
+MapController::MapController(const std::string& filename) : QObject(nullptr), m_geogrid(geopop::GeoGrid<EpiOutput>(nullptr)), m_data_pinned(false), m_pinned_location(0), m_day(0), m_day_diff(0), m_window_height(0), m_window_width(0), m_selectedAgeBracket("Total"), m_selectedHealthStatus("Total"), m_smallest_values(), m_biggest_values()
 {
         // Read in the epi-output
         visualization::EpiOutputReaderFactory readerFactory;
@@ -67,21 +67,29 @@ MapController::MapController(const std::string& filename) : QObject(nullptr), m_
 void MapController::setDay(const QString& day)
 {
         auto temp_day = static_cast<unsigned int>(day.toDouble());
-//        std::cout << "Given day: " << temp_day << std::endl;
-        temp_day      = (temp_day / m_day_diff) * m_day_diff;
+        temp_day      = (temp_day / m_day_diff) * m_day_diff; // Calculating with ints so
+        // Check if the value is in a new interval
         if (temp_day != m_day) {
                 m_day = temp_day;
-                if (m_selectedHealthStatus != "Total" || m_selectedAgeBracket != "Total")
-                this->updateLocations();
+                if (m_selectedHealthStatus != "Total" || m_selectedAgeBracket != "Total") {
+                        this->updateLocations();
+                        // If a location is pinned, update the info
+                        if (m_data_pinned){
+                                m_data_pinned = false;
+                                QMetaObject::invokeMethod(m_root, "emptyData");
+                                this->setShownInformation(QString::number(m_pinned_location));
+                                m_data_pinned = true;
+                        }
+                }
 //                std::cout << "Day set to: " << m_day << std::endl;
         }
 }
 
 QString MapController::getDay(){
-    return QString::number(m_day);
+        return QString::number(m_day);
 }
 
-    void MapController::setWindowHeight(const QString& height){
+void MapController::setWindowHeight(const QString& height){
         m_window_height = static_cast<unsigned int>(height.toDouble());
 }
 
@@ -90,21 +98,32 @@ void MapController::setWindowWidth(const QString& width){
 }
 
 void MapController::setShownInformation(const QString& locationId){
+        // If a location is pinned, don't update the shown data
+        if (m_data_pinned){
+            return;
+        }
+        // Keep in member which is the last shown location
+        m_pinned_location = locationId.toUInt();
+        // If no location is selected, display nothing
         if (locationId == QString("")){
                 QMetaObject::invokeMethod(m_root, "emptyData");
                 return;
         }
+        // Find the right location and send the data to the GUI
         for (const auto &location: m_geogrid){
                 if (location->GetID() == locationId.toUInt()){
-                        QMetaObject::invokeMethod(m_root, "setData", Q_ARG(QVariant, QString::fromStdString(location->GetName())));
+                        QVariantMap info;  // Create a Qt variable to pass to QML
+                        for (const std::string &ageBracket: stride::ageBrackets)
+                        {
+                                QVariantMap ageInfo;
+                                for (const std::string &healthStatus: stride::healthStatuses)
+                                {
+                                        ageInfo[QString::fromStdString(healthStatus)] = makePresentablePercentage(location->getContent()->epiOutput[ageBracket][healthStatus][m_day]);
+                                }
+                                info[QString::fromStdString(ageBracket)] = QVariant(ageInfo);
+                        }
+                        QMetaObject::invokeMethod(m_root, "setData", Q_ARG(QVariant, QString::fromStdString(location->GetName())), Q_ARG(QVariant, info));
                         return;
-//                        for( auto const& [ageBracketKey, ageBracketVal] : location->getContent()->epiOutput)
-//                        {
-//                            for( auto const& [healthStatusKey, healthStatusVal] : ageBracketVal )
-//                            {
-//
-//                            }
-//                        }
                 }
         }
 
@@ -313,6 +332,16 @@ void MapController::setHealthStatus(const QString &healthStatus) {
         }
 //        std::cout << m_selectedHealthStatus << std::endl;
         this->updateLocations();
+}
+
+bool MapController::isDataPinned() {
+    return m_data_pinned;
+}
+
+void MapController::pinData(bool pinned) {
+    m_data_pinned = pinned;
+    // Call the QML method to show the pinned sign
+    QMetaObject::invokeMethod(m_root, "togglePinned", Q_ARG(QVariant, QVariant::fromValue(pinned)));
 }
 
 } // namespace visualization

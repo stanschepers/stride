@@ -25,6 +25,8 @@ MapCircle {
 
         onEntered: ctrl.setShownInformation = parent.locationId
 
+        onClicked: ctrl.dataPinned = !ctrl.dataPinned
+
         onExited: ctrl.setShownInformation = ""
     }
 

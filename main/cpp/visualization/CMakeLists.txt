@@ -25,6 +25,7 @@ set(QML_FILES
         QML/main.qml
         QML/location.qml
         QML/RoundMouseArea.qml
+        QML/DataBarList.qml
         )
 
 set_property(SOURCE source/strideVisualization.cpp PROPERTY SKIP_AUTOMOC ON)
