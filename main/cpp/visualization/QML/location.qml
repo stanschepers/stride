@@ -25,7 +25,7 @@ MapCircle {
 
         onEntered: ctrl.setShownInformation = parent.locationId
 
-        onClicked: ctrl.dataPinned = !ctrl.dataPinned
+        onClicked: { ctrl.dataPinned = !ctrl.dataPinned; mouseAreaCircle.visible = false; mouseAreaCircle.visible = true; }
 
         onExited: ctrl.setShownInformation = ""
     }
