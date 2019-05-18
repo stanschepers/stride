@@ -179,20 +179,6 @@ void GeoGridHDF5Reader::ReadContactPool(const H5::DataSet& pool, const shared_pt
         }
 }
 
-template <typename T>
-void GeoGridHDF5Reader::ReadAttribute(T& value, const string& name, const H5Object& h5Object)
-{
-        auto attribute = h5Object.openAttribute(name);
-        auto dtype     = attribute.getDataType();
-        attribute.read(dtype, &value);
-}
 
-template <>
-void GeoGridHDF5Reader::ReadAttribute(string& value, const string& name, const H5Object& h5Object)
-{
-        auto attribute = h5Object.openAttribute(name);
-        auto dtype     = attribute.getStrType();
-        attribute.read(dtype, value);
-}
 
 } // namespace geopop

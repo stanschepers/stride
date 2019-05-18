@@ -54,12 +54,6 @@ private:
         void ReadLocation(const H5::Group& location, GeoGrid& grid);
         void ReadContactPool(const H5::DataSet& pool, const std::shared_ptr<Location>& location);
 
-        template <typename T>
-        static void ReadAttribute(T& value, const std::string& name, const H5::H5Object& h5Object);
-
 };
-
-template <>
-void GeoGridHDF5Reader::ReadAttribute(std::string& value, const std::string& name, const H5::H5Object& h5Object);
 
 } // namespace geopop

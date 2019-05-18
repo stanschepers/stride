@@ -30,10 +30,10 @@ using namespace stride::ContactType;
 using namespace H5;
 using namespace H5Utils;
 
-unsigned int GeoGridHDF5Writer::sm_location_counter;
-unsigned int GeoGridHDF5Writer::sm_pool_counter;
-
-GeoGridHDF5Writer::GeoGridHDF5Writer(string fileName) : GeoGridFileWriter(move(fileName)), m_persons_found() {}
+GeoGridHDF5Writer::GeoGridHDF5Writer(string fileName)
+    : GeoGridFileWriter(move(fileName)), m_persons_found(), m_location_counter(), m_pool_counter()
+{
+}
 
 void GeoGridHDF5Writer::Write(GeoGrid& geoGrid)
 {
@@ -65,7 +65,7 @@ void GeoGridHDF5Writer::WriteLocation(Location& loc, Group& locsGroup)
 {
         /// Create group for location
 
-        Group locGroup(locsGroup.createGroup("Location" + to_string(sm_location_counter++)));
+        Group locGroup(locsGroup.createGroup("Location" + to_string(m_location_counter++)));
         /// Set location attributes
         WriteAttribute(loc.GetID(), "id", locGroup);
         WriteAttribute(loc.GetName(), "name", locGroup);
@@ -83,8 +83,8 @@ void GeoGridHDF5Writer::WriteLocation(Location& loc, Group& locsGroup)
                         WriteContactPool(*pool, type, cpGroup);
                 }
         }
-        WriteAttribute(sm_pool_counter, "size", cpGroup);
-        sm_pool_counter = 0;
+        WriteAttribute(m_pool_counter, "size", cpGroup);
+        m_pool_counter = 0;
 }
 
 void GeoGridHDF5Writer::WriteCommutes(const vector<pair<Location*, double>>& commutes, Group& locGroup)
@@ -111,7 +111,7 @@ void GeoGridHDF5Writer::WriteContactPool(const ContactPool& pool, Id type, Group
         CompType pool_person_t = GetCompoundType<H5PoolPerson>();
 
         /// Create dataset
-        string  label = "Pool" + to_string(sm_pool_counter++);
+        string  label = "Pool" + to_string(m_pool_counter++);
         DataSet dataset(cpGroup.createDataSet(label, pool_person_t, CreateSpace(pool.size())));
         WriteAttribute(pool.GetId(), "id", dataset);
         WriteAttribute(pool.size(), "size", dataset);
@@ -151,20 +151,6 @@ void GeoGridHDF5Writer::WritePeople(Group& rootGroup)
         }
 
         dataset.write(people.data(), person_t);
-}
-
-template <typename T>
-void GeoGridHDF5Writer::WriteAttribute(const T& value, const string& name, H5Object& h5Object)
-{
-        auto attribute(h5Object.createAttribute(name, HDF5Type(value), CreateSpace(1)));
-        attribute.write(HDF5Type(value), &value);
-}
-
-template <>
-void GeoGridHDF5Writer::WriteAttribute(const string& value, const string& name, H5Object& h5Object)
-{
-        auto attribute(h5Object.createAttribute(name, HDF5Type(value), CreateSpace(1)));
-        attribute.write(HDF5Type(value), value);
 }
 
 } // namespace geopop

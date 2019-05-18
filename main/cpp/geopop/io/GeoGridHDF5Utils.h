@@ -61,4 +61,34 @@ H5::PredType HDF5Type(const double&);
 
 H5::StrType HDF5Type(const std::string& value);
 
+template <typename T>
+inline void WriteAttribute(const T& value, const std::string& name, H5::H5Object& h5Object)
+{
+        auto attribute(h5Object.createAttribute(name, HDF5Type(value), CreateSpace(1)));
+        attribute.write(HDF5Type(value), &value);
+}
+
+template <>
+inline void WriteAttribute(const std::string& value, const std::string& name, H5::H5Object& h5Object)
+{
+        auto attribute(h5Object.createAttribute(name, HDF5Type(value), CreateSpace(1)));
+        attribute.write(HDF5Type(value), value);
+}
+
+template <typename T>
+inline void ReadAttribute(T& value, const std::string& name, const H5::H5Object& h5Object)
+{
+        auto attribute = h5Object.openAttribute(name);
+        auto dtype     = attribute.getDataType();
+        attribute.read(dtype, &value);
+}
+
+template <>
+inline void ReadAttribute(std::string& value, const std::string& name, const H5::H5Object& h5Object)
+{
+        auto attribute = h5Object.openAttribute(name);
+        auto dtype     = attribute.getStrType();
+        attribute.read(dtype, value);
+}
+
 } // namespace H5Utils
