@@ -195,6 +195,32 @@ Window {
         onActivated: ctrl.setHealthStatus = model[index]
     }
 
+    Rectangle {
+        id: colorSpectrum
+        anchors.left: autoSimButton.left
+        anchors.top: ageBracketComboBox.bottom
+        anchors.bottom: coverUpCopyRight.top
+        anchors.bottomMargin: 20
+        anchors.topMargin: 20
+        width: 30
+        radius: 5
+
+        border.width: 1
+        border.color: "#696969"
+
+        gradient: Gradient {
+            GradientStop {
+                position: 0.0; color: Qt.hsva(0.7, 1, 1, 1)
+            }
+            GradientStop {
+                position: 0.5; color: Qt.hsva(0, 1, 1, 1)
+            }
+            GradientStop {
+                position: 1.0; color: Qt.hsva(0.3, 1, 1, 1)
+            }
+        }
+    }
+
     function initialize(zoomlevel, centerLat, centerLong, firstDay, lastDay) {
         map.zoomLevel = zoomlevel;
         map.center = QtPositioning.coordinate(centerLat, centerLong);

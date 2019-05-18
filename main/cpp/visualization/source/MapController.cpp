@@ -33,7 +33,12 @@ double distanceOnEarth(double lat1, double long1, double lat2, double long2){
         return a;
 }
 
-MapController::MapController(const std::string& filename) : QObject(nullptr), m_geogrid(geopop::GeoGrid<EpiOutput>(nullptr)), m_day(0), m_day_diff(0), m_window_height(0), m_window_width(0), m_selectedAgeBracket("Total"), m_selectedHealthStatus("Total")
+double scaleValue(double low, double high, double value){
+//        return (high - low) * value + low;
+        return (value - low)/(high - low);
+}
+
+MapController::MapController(const std::string& filename) : QObject(nullptr), m_geogrid(geopop::GeoGrid<EpiOutput>(nullptr)), m_day(0), m_day_diff(0), m_window_height(0), m_window_width(0), m_selectedAgeBracket("Total"), m_selectedHealthStatus("Total"), m_smallest_values(), m_biggest_values()
 {
         // Read in the epi-output
         visualization::EpiOutputReaderFactory readerFactory;
@@ -106,9 +111,9 @@ void MapController::initialize(QObject* root)
         double zoomlevel        = 0;
         double centerLatitude   = 0;
         double centerLongitude  = 0;
-        double smallestLat      = std::numeric_limits<double>::infinity();;
+        double smallestLat      = std::numeric_limits<double>::infinity();
         double biggestLat       = 0;
-        double smallestLong     = std::numeric_limits<double>::infinity();;
+        double smallestLong     = std::numeric_limits<double>::infinity();
         double biggestLong      = 0;
 
         // Sort the locations in order of population size (Great to small)
@@ -117,7 +122,15 @@ void MapController::initialize(QObject* root)
             return lhs->getContent()->pop_count > rhs->getContent()->pop_count;
         });
 
-        // Put the locations on the map
+        // Initialize biggest and smalles values
+        for (const std::string& ageBracket: stride::ageBrackets) {
+                for (const std::string &healthStatus: stride::healthStatuses) {
+                        m_smallest_values[ageBracket][healthStatus] = std::numeric_limits<double>::infinity();
+                        m_biggest_values[ageBracket][healthStatus] = 0;
+                }
+        }
+
+        // Put the locations on the map and search the smallest and biggest values
         for (auto const& location : m_geogrid) {
                 
                 // To calculate the zoom level
@@ -139,6 +152,19 @@ void MapController::initialize(QObject* root)
                                           Q_ARG(QVariant, QVariant::fromValue(location->GetCoordinate().get<0>())),
                                           Q_ARG(QVariant, QVariant::fromValue(location->GetCoordinate().get<1>())),
                                           Q_ARG(QVariant, QVariant::fromValue(location->getContent()->pop_count * 0.2)));  // radius
+
+                for (const std::string& ageBracket: stride::ageBrackets) {
+                        for (const std::string &healthStatus: stride::healthStatuses) {
+                                // If the value is smaller than the smallest value, replace it
+                                if (location->getContent()->epiOutput[ageBracket][healthStatus][firstDay] < m_smallest_values[ageBracket][healthStatus]){
+                                        m_smallest_values[ageBracket][healthStatus] = location->getContent()->epiOutput[ageBracket][healthStatus][firstDay];
+                                }
+                                // If the value is bigger than the biggest value, replace it
+                                if (location->getContent()->epiOutput[ageBracket][healthStatus][lastDay] > m_biggest_values[ageBracket][healthStatus]){
+                                        m_biggest_values[ageBracket][healthStatus] = location->getContent()->epiOutput[ageBracket][healthStatus][lastDay];
+                                }
+                        }
+                }
         }
 
         // Calculate the center of the map
@@ -159,25 +185,39 @@ void MapController::initialize(QObject* root)
 void MapController::updateLocations()
 {
         for (const auto &location : m_geogrid) {
+                double value;
+                // No category is selected, give random colors
                 if (m_selectedAgeBracket == "Total" && m_selectedHealthStatus == "Total"){
-                        QMetaObject::invokeMethod(m_root, "updateLocation",
-                                                  Q_ARG(QVariant, QVariant::fromValue(location->GetID())),
-                                                  Q_ARG(QVariant, QVariant::fromValue(-1)));
+                        value = -1;
                 }
+                // Only category in health status selected
                 else if (m_selectedAgeBracket == "Total"){
+                        // When only health status is selected, sum up all the values of each age bracket in that health status
                         double total = 0;
+                        double smallestTotal = 0;
+                        double biggestTotal = 0;
                         for (const auto &ageBracket: stride::ageBrackets){
                                 total += location->getContent()->epiOutput[ageBracket][m_selectedHealthStatus][m_day];
+                                smallestTotal += m_smallest_values[ageBracket][m_selectedHealthStatus];
+                                biggestTotal += m_biggest_values[ageBracket][m_selectedHealthStatus];
                         }
-                        QMetaObject::invokeMethod(m_root, "updateLocation",
-                                                  Q_ARG(QVariant, QVariant::fromValue(location->GetID())),
-                                                  Q_ARG(QVariant, QVariant::fromValue(total)));
+                        // Scale the value so the evolution is seen in the GUI
+                        value = scaleValue(smallestTotal, biggestTotal, total);
                 }
+                // Only category in age bracket selected
+                else if (m_selectedHealthStatus == "Total"){
+                        // Don't scale the value because people don't age (Else colors will all be the same)
+                        value = location->getContent()->epiOutput[m_selectedAgeBracket][m_selectedHealthStatus][m_day];
+                }
+                // Specific category selected
                 else {
-                        QMetaObject::invokeMethod(m_root, "updateLocation",
-                                                  Q_ARG(QVariant, QVariant::fromValue(location->GetID())),
-                                                  Q_ARG(QVariant, QVariant::fromValue(location->getContent()->epiOutput[m_selectedAgeBracket][m_selectedHealthStatus][m_day])));
+                        // Scale the value so the evolution is seen in the GUI
+                        value = scaleValue(m_smallest_values[m_selectedAgeBracket][m_selectedHealthStatus], m_biggest_values[m_selectedAgeBracket][m_selectedHealthStatus], location->getContent()->epiOutput[m_selectedAgeBracket][m_selectedHealthStatus][m_day]);
                 }
+                // Call the QML method to update the circle on the map
+                QMetaObject::invokeMethod(m_root, "updateLocation",
+                                          Q_ARG(QVariant, QVariant::fromValue(location->GetID())),
+                                          Q_ARG(QVariant, QVariant::fromValue(value)));
         }
 }
 

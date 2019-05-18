@@ -103,6 +103,8 @@ private:
         unsigned int m_window_width; ///< Width of the GUI window
         std::string m_selectedAgeBracket; ///< Selected age bracket in the GUI
         std::string m_selectedHealthStatus; ///< Selected health status in the GUI
+        std::map<std::string, std::map<std::string, double>> m_smallest_values; ///< Smallest epi-output values for each category
+        std::map<std::string, std::map<std::string, double>> m_biggest_values; ///< Biggest epi-output values for each category
 
         QObject* m_root = nullptr; ///< Root of the Qt object
 };
