@@ -78,8 +78,10 @@ void GeoGridHDF5Reader::ReadPeople(const DataSet& people)
         vector<H5Person> people_data(size);
         people.read(people_data.data(), GetCompoundType<H5Person>());
 
-        for (auto person : people_data) {
-                ReadPerson(person);
+        if (size > 0) {
+                for (auto person : people_data) {
+                        ReadPerson(person);
+                }
         }
 }
 
@@ -97,9 +99,11 @@ void GeoGridHDF5Reader::ReadLocations(Group const& locations, GeoGrid& grid)
         size_t size;
         ReadAttribute(size, "size", locations);
 
-        for (size_t idx = 0; idx < size; ++idx) {
-                Group location(locations.openGroup("Location" + to_string(idx)));
-                ReadLocation(location, grid);
+        if (size > 0) {
+                for (size_t idx = 0; idx < size; ++idx) {
+                        Group location(locations.openGroup("Location" + to_string(idx)));
+                        ReadLocation(location, grid);
+                }
         }
 }
 
@@ -125,13 +129,15 @@ void GeoGridHDF5Reader::ReadLocation(const H5::Group& location, GeoGrid& grid)
 
         ReadAttribute(contact_pool_count, "size", contact_pools);
 
-        for (size_t idx = 0; idx < contact_pool_count; ++idx) {
-                DataSet pool(contact_pools.openDataSet("Pool" + to_string(idx)));
-                ReadContactPool(pool, locationPtr);
+        if (contact_pool_count > 0) {
+                for (size_t idx = 0; idx < contact_pool_count; ++idx) {
+                        DataSet pool(contact_pools.openDataSet("Pool" + to_string(idx)));
+                        ReadContactPool(pool, locationPtr);
+                }
         }
 
         /// Commutes
-        DataSet commutes(location.openDataSet("commutes"));
+        DataSet      commutes(location.openDataSet("commutes"));
         unsigned int commutes_count;
 
         ReadAttribute(commutes_count, "size", commutes);
@@ -139,12 +145,13 @@ void GeoGridHDF5Reader::ReadLocation(const H5::Group& location, GeoGrid& grid)
         vector<H5Commute> commute_data(commutes_count);
         commutes.read(commute_data.data(), GetCompoundType<H5Commute>());
 
-        for (auto c : commute_data) {
-                m_commutes.emplace_back(id, c.to, c.proportion);
+        if (commutes_count > 0) {
+                for (auto c : commute_data) {
+                        m_commutes.emplace_back(id, c.to, c.proportion);
+                }
         }
 
-        grid.AddLocation(move(locationPtr));
-
+        grid.AddLocation(locationPtr);
 }
 
 void GeoGridHDF5Reader::ReadContactPool(const H5::DataSet& pool, const shared_ptr<Location>& location)
@@ -162,7 +169,7 @@ void GeoGridHDF5Reader::ReadContactPool(const H5::DataSet& pool, const shared_pt
         ReadAttribute(size, "size", pool);
         ReadAttribute(type, "type", pool);
 
-        Id type_id = types.at(type);
+        Id                   type_id = types.at(type);
         vector<H5PoolPerson> pool_data(size);
         pool.read(pool_data.data(), GetCompoundType<H5PoolPerson>());
 
@@ -170,15 +177,15 @@ void GeoGridHDF5Reader::ReadContactPool(const H5::DataSet& pool, const shared_pt
         auto contactPoolPtr = m_population->RefPoolSys().CreateContactPool(type_id);
         location->RefPools(type_id).emplace_back(contactPoolPtr);
 
-        for (auto p : pool_data) {
-                const auto  person_id = p.id;
-                const auto& person    = m_people.at(person_id);
-                contactPoolPtr->AddMember(person);
-                // Update original pool id with new pool id used in the population
-                person->SetPoolId(type_id, contactPoolPtr->GetId());
+        if (size > 0) {
+                for (auto p : pool_data) {
+                        const auto  person_id = p.id;
+                        const auto& person    = m_people.at(person_id);
+                        contactPoolPtr->AddMember(person);
+                        // Update original pool id with new pool id used in the population
+                        person->SetPoolId(type_id, contactPoolPtr->GetId());
+                }
         }
 }
-
-
 
 } // namespace geopop

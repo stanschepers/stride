@@ -74,31 +74,22 @@ TEST(GeoGridHDF5ReaderTest, readCommutesTest)
         GeoGridHDF5Reader reader(FileSys::GetTestsDir().string() + "/testdata/GeoGridHDF5/commutesTest.h5", pop.get());
         reader.Read();
 
-        auto& geogrid = pop->CRefGeoGrid();
+        auto& geogrid = pop->RefGeoGrid();
         // Bavikhove
-        {
-                auto  loc      = geogrid[0];
-                auto& commutes = loc->CRefOutgoingCommutes();
-                EXPECT_EQ(2, commutes[0].first->GetID());
-                EXPECT_EQ(0.5, commutes[0].second);
-                EXPECT_EQ(3, commutes[1].first->GetID());
-                EXPECT_EQ(0.25, commutes[1].second);
-        }
+        auto& commutes = geogrid[0]->CRefOutgoingCommutes();
+        EXPECT_EQ(2, commutes[0].first->GetID());
+        EXPECT_EQ(0.5, commutes[0].second);
+        EXPECT_EQ(3, commutes[1].first->GetID());
+        EXPECT_EQ(0.25, commutes[1].second);
         // Gent
-        {
-                auto  loc      = geogrid[1];
-                auto& commutes = loc->CRefOutgoingCommutes();
-                EXPECT_EQ(1, commutes[0].first->GetID());
-                EXPECT_EQ(0.75, commutes[0].second);
-                EXPECT_EQ(3, commutes[1].first->GetID());
-                EXPECT_EQ(0.5, commutes[1].second);
-        }
+        auto& commutes1 = geogrid[1]->CRefOutgoingCommutes();
+        EXPECT_EQ(1, commutes1[0].first->GetID());
+        EXPECT_EQ(0.75, commutes1[0].second);
+        EXPECT_EQ(3, commutes1[1].first->GetID());
+        EXPECT_EQ(0.5, commutes1[1].second);
         // Mons
-        {
-                auto  loc      = geogrid[2];
-                auto& commutes = loc->CRefOutgoingCommutes();
-                EXPECT_EQ(0, commutes.size());
-        }
+        auto& commutes2 = geogrid[2]->CRefOutgoingCommutes();
+        EXPECT_EQ(0, commutes2.size());
 }
 TEST(GeoGridHDF5ReaderTest, readContactPoolTest)
 {
@@ -117,7 +108,7 @@ TEST(GeoGridHDF5ReaderTest, readContactPoolTest)
 TEST(GeoGridHDF5ReaderTest, readPeopleTest)
 {
         auto              pop = Population::Create();
-        GeoGridHDF5Reader reader(FileSys::GetTestsDir().string() + "/testdata/GeoGridHDF5/commutesTest.h5", pop.get());
+        GeoGridHDF5Reader reader(FileSys::GetTestsDir().string() + "/testdata/GeoGridHDF5/peopleTest.h5", pop.get());
         reader.Read();
 
         auto& geogrid = pop->CRefGeoGrid();
@@ -127,8 +118,8 @@ TEST(GeoGridHDF5ReaderTest, readPeopleTest)
         EXPECT_EQ(0, person.GetId());
         EXPECT_EQ(18.0, person.GetAge());
         for (Id type : IdList) {
-                EXPECT_EQ(0, person.GetPoolId(type));
-                EXPECT_EQ(0, loc->CRefPools(type).at(0)->GetId());
+                EXPECT_EQ(1, person.GetPoolId(type));
+                EXPECT_EQ(1, loc->CRefPools(type).at(0)->GetId());
         }
 }
 TEST(GeoGridHDF5ReaderTest, emptyFileTest)
