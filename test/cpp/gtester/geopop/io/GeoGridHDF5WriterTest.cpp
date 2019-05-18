@@ -62,10 +62,10 @@ TEST(GeoGridHDF5WriterTest, writeLocationsTest)
         geoGrid.AddLocation(make_shared<Location>(2, 3, Coordinate(0, 0), "Gent", 5000));
         geoGrid.AddLocation(make_shared<Location>(3, 2, Coordinate(0, 0), "Mons", 2500));
 
-        GeoGridHDF5Writer writer(FileSys::GetTestsDir().string() + "/testdata/locationsTest.h5");
+        GeoGridHDF5Writer writer(FileSys::GetTestsDir().string() + "/testdata/GeoGridHDF5/locationsTest.h5");
         writer.Write(geoGrid);
 
-        H5File file(FileSys::GetTestsDir().string() + "/testdata/locationsTest.h5", H5F_ACC_RDONLY);
+        H5File file(FileSys::GetTestsDir().string() + "/testdata/GeoGridHDF5/locationsTest.h5", H5F_ACC_RDONLY);
 
         Group loc0(file.openGroup("/Locations/Location0"));
         Group loc1(file.openGroup("/Locations/Location1"));
@@ -82,10 +82,10 @@ TEST(GeoGridHDF5WriterTest, writePeopleTest)
         auto   geoGridPtr = GetPopulatedGeoGrid(pop.get());
         Person p1         = pop->at(0);
 
-        GeoGridHDF5Writer writer(FileSys::GetTestsDir().string() + "/testdata/peopleTest.h5");
+        GeoGridHDF5Writer writer(FileSys::GetTestsDir().string() + "/testdata/GeoGridHDF5/peopleTest.h5");
         writer.Write(*geoGridPtr);
 
-        H5File file(FileSys::GetTestsDir().string() + "/testdata/peopleTest.h5", H5F_ACC_RDONLY);
+        H5File file(FileSys::GetTestsDir().string() + "/testdata/GeoGridHDF5/peopleTest.h5", H5F_ACC_RDONLY);
 
         {
                 DataSet          people(file.openDataSet("/People"));
@@ -152,10 +152,10 @@ TEST(GeoGridHDF5WriterTest, writeCommutesTest)
         auto pop        = Population::Create();
         auto geoGridPtr = GetCommutesGeoGrid(pop.get());
 
-        GeoGridHDF5Writer writer(FileSys::GetTestsDir().string() + "/testdata/commutesTest.h5");
+        GeoGridHDF5Writer writer(FileSys::GetTestsDir().string() + "/testdata/GeoGridHDF5/commutesTest.h5");
         writer.Write(*geoGridPtr);
 
-        H5File file(FileSys::GetTestsDir().string() + "/testdata/commutesTest.h5", H5F_ACC_RDONLY);
+        H5File file(FileSys::GetTestsDir().string() + "/testdata/GeoGridHDF5/commutesTest.h5", H5F_ACC_RDONLY);
 
         {
                 DataSet           HHpool(file.openDataSet("/Locations/Location0/commutes"));
@@ -198,10 +198,10 @@ TEST(GeoGridHDF5WriterTest, writeContactPoolTest)
 
         geoGrid.AddLocation(location);
 
-        GeoGridHDF5Writer writer(FileSys::GetTestsDir().string() + "/testdata/contactPoolsTest.h5");
+        GeoGridHDF5Writer writer(FileSys::GetTestsDir().string() + "/testdata/GeoGridHDF5/contactPoolsTest.h5");
         writer.Write(geoGrid);
 
-        H5File file(FileSys::GetTestsDir().string() + "/testdata/contactPoolsTest.h5", H5F_ACC_RDONLY);
+        H5File file(FileSys::GetTestsDir().string() + "/testdata/GeoGridHDF5/contactPoolsTest.h5", H5F_ACC_RDONLY);
 
         for (Id tid : IdList) {
                 DataSet pool(file.openDataSet("/Locations/Location0/ContactPools/Pool" + to_string(ToSizeT(tid))));

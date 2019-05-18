@@ -65,7 +65,7 @@ void GeoGridHDF5Reader::Read()
                 m_people.clear();
 
         } catch (Exception& e) {
-                throw stride::util::Exception("There was an error writing the GeoGrid to the file: " +
+                throw stride::util::Exception("There was an error reading the GeoGrid from the file: " +
                                               e.getDetailMsg());
         }
 }
