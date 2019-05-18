@@ -59,7 +59,7 @@ set(SRC
     geopop/io/CommutesCSVReaderTest.cpp
     geopop/io/GeoGridIOUtils.cpp
 #    geopop/io/GeoGridHDF5ReaderTest.cpp
-#    geopop/io/GeoGridHDF5WriterTest.cpp
+        geopop/io/GeoGridHDF5WriterTest.cpp
     geopop/io/GeoGridProtoReaderTest.cpp
     geopop/io/GeoGridProtoWriterTest.cpp
     geopop/io/HouseholdCSVReaderTest.cpp
