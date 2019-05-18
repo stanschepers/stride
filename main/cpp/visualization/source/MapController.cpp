@@ -59,12 +59,12 @@ MapController::MapController(const std::string& filename) : QObject(nullptr), m_
         const auto& reader = readerFactory.CreateReader(filename, &m_geogrid);
         reader->Read();
         // Check how big the gap is in between measurements
-        auto diff = m_geogrid[0]->getContent()->epiOutput.begin()->second.begin()->second.begin();
+        auto diff = m_geogrid[0]->GetContent()->epiOutput.begin()->second.begin()->second.begin();
         diff++;
         m_day_diff = diff->first;
 }
 
-void MapController::setDay(const QString& day)
+void MapController::SetDay(const QString &day)
 {
         auto temp_day = static_cast<unsigned int>(day.toDouble());
         temp_day      = (temp_day / m_day_diff) * m_day_diff; // Calculating with ints so
@@ -72,32 +72,32 @@ void MapController::setDay(const QString& day)
         if (temp_day != m_day) {
                 m_day = temp_day;
                 if (m_selectedHealthStatus != "Total" || m_selectedAgeBracket != "Total") {
-                        this->updateLocations();
-                        // If a location is pinned, update the info
-                        if (m_data_pinned){
-                                m_data_pinned = false;
-                                QMetaObject::invokeMethod(m_root, "emptyData");
-                                this->setShownInformation(QString::number(m_pinned_location));
-                                m_data_pinned = true;
-                        }
+                    this->UpdateLocations();
+                }
+                // If a location is pinned, update the info
+                if (m_data_pinned){
+                        m_data_pinned = false;
+                        QMetaObject::invokeMethod(m_root, "emptyData");
+                    this->SetShownInformation(QString::number(m_pinned_location));
+                        m_data_pinned = true;
                 }
 //                std::cout << "Day set to: " << m_day << std::endl;
         }
 }
 
-QString MapController::getDay(){
+QString MapController::GetDay(){
         return QString::number(m_day);
 }
 
-void MapController::setWindowHeight(const QString& height){
+void MapController::SetWindowHeight(const QString &height){
         m_window_height = static_cast<unsigned int>(height.toDouble());
 }
 
-void MapController::setWindowWidth(const QString& width){
+void MapController::SetWindowWidth(const QString &width){
         m_window_width = static_cast<unsigned int>(width.toDouble());
 }
 
-void MapController::setShownInformation(const QString& locationId){
+void MapController::SetShownInformation(const QString &locationId){
         // If a location is pinned, don't update the shown data
         if (m_data_pinned){
             return;
@@ -118,7 +118,8 @@ void MapController::setShownInformation(const QString& locationId){
                                 QVariantMap ageInfo;
                                 for (const std::string &healthStatus: stride::healthStatuses)
                                 {
-                                        ageInfo[QString::fromStdString(healthStatus)] = makePresentablePercentage(location->getContent()->epiOutput[ageBracket][healthStatus][m_day]);
+                                        ageInfo[QString::fromStdString(healthStatus)] = makePresentablePercentage(
+                                                location->GetContent()->epiOutput[ageBracket][healthStatus][m_day]);
                                 }
                                 info[QString::fromStdString(ageBracket)] = QVariant(ageInfo);
                         }
@@ -129,16 +130,16 @@ void MapController::setShownInformation(const QString& locationId){
 
 }
 
-void MapController::initialize(QObject* root)
+void MapController::Initialize(QObject *root)
 {
         m_root = root;
 
         // Set the current day as the first day
-        m_day = m_geogrid[0]->getContent()->epiOutput.begin()->second.begin()->second.begin()->first;
+        m_day = m_geogrid[0]->GetContent()->epiOutput.begin()->second.begin()->second.begin()->first;
 
         // Variables for the slider
         unsigned int firstDay = m_day;
-        unsigned int lastDay  = m_geogrid[0]->getContent()->epiOutput.begin()->second.begin()->second.rbegin()->first;
+        unsigned int lastDay  = m_geogrid[0]->GetContent()->epiOutput.begin()->second.begin()->second.rbegin()->first;
 
         // Variables for the map
         double zoomlevel        = 0;
@@ -152,7 +153,7 @@ void MapController::initialize(QObject* root)
         // Sort the locations in order of population size (Great to small)
         std::sort(m_geogrid.begin(), m_geogrid.end(), [ ]( const std::shared_ptr<geopop::Location<EpiOutput>>& lhs, const std::shared_ptr<geopop::Location<EpiOutput>>& rhs )
         {
-            return lhs->getContent()->pop_count > rhs->getContent()->pop_count;
+            return lhs->GetContent()->pop_count > rhs->GetContent()->pop_count;
         });
 
         // Initialize biggest and smalles values
@@ -188,19 +189,19 @@ void MapController::initialize(QObject* root)
                 QMetaObject::invokeMethod(m_root, "addLocation", Q_ARG(QVariant, QString::number(location->GetID())),
                                           Q_ARG(QVariant, QVariant::fromValue(location->GetCoordinate().get<0>())),
                                           Q_ARG(QVariant, QVariant::fromValue(location->GetCoordinate().get<1>())),
-                                          Q_ARG(QVariant, QVariant::fromValue(location->getContent()->pop_count * 0.2)));  // radius
+                                          Q_ARG(QVariant, QVariant::fromValue(location->GetContent()->pop_count * 0.2)));  // radius
 
                 // Search the smallest and biggest values of each category
                 for (unsigned int day = firstDay; day < lastDay + 1; day += m_day_diff) {
                         for (const std::string &ageBracket: stride::ageBrackets) {
                                 for (const std::string &healthStatus: stride::healthStatuses) {
                                         // If the value is smaller than the smallest value, replace it
-                                        if (location->getContent()->epiOutput[ageBracket][healthStatus][day] < m_smallest_values[ageBracket][healthStatus]) {
-                                                m_smallest_values[ageBracket][healthStatus] = location->getContent()->epiOutput[ageBracket][healthStatus][day];
+                                        if (location->GetContent()->epiOutput[ageBracket][healthStatus][day] < m_smallest_values[ageBracket][healthStatus]) {
+                                                m_smallest_values[ageBracket][healthStatus] = location->GetContent()->epiOutput[ageBracket][healthStatus][day];
                                         }
                                         // If the value is bigger than the biggest value, replace it
-                                        if (location->getContent()->epiOutput[ageBracket][healthStatus][day] > m_biggest_values[ageBracket][healthStatus]) {
-                                                m_biggest_values[ageBracket][healthStatus] = location->getContent()->epiOutput[ageBracket][healthStatus][day];
+                                        if (location->GetContent()->epiOutput[ageBracket][healthStatus][day] > m_biggest_values[ageBracket][healthStatus]) {
+                                                m_biggest_values[ageBracket][healthStatus] = location->GetContent()->epiOutput[ageBracket][healthStatus][day];
                                         }
                                 }
                         }
@@ -213,7 +214,7 @@ void MapController::initialize(QObject* root)
                                 // Calculate the totals for the health statuses
                                 double total = 0;
                                 for (const std::string &ageBracket: stride::ageBrackets) {
-                                        total += location->getContent()->epiOutput[ageBracket][healthStatus][day];
+                                        total += location->GetContent()->epiOutput[ageBracket][healthStatus][day];
                                 }
                                 // If the value is smaller than the smallest value, replace it
                                 if (total < m_smallest_values["Total"][healthStatus]) {
@@ -242,7 +243,7 @@ void MapController::initialize(QObject* root)
             Q_ARG(QVariant, QVariant::fromValue(firstDay)), Q_ARG(QVariant, QVariant::fromValue(lastDay)));
 }
 
-void MapController::updateLocations()
+void MapController::UpdateLocations()
 {
         // Get the lowest and highest values for the color spectrum
         double low;
@@ -293,7 +294,7 @@ void MapController::updateLocations()
                         // When only health status is selected, sum up all the values of each age bracket in that health status
                         double total = 0;
                         for (const auto &ageBracket: stride::ageBrackets){
-                                total += location->getContent()->epiOutput[ageBracket][m_selectedHealthStatus][m_day];
+                                total += location->GetContent()->epiOutput[ageBracket][m_selectedHealthStatus][m_day];
 
                         }
                         // Scale the value so the evolution is seen in the GUI
@@ -302,12 +303,12 @@ void MapController::updateLocations()
                 // Only category in age bracket selected
                 else if (m_selectedHealthStatus == "Total"){
                         // Don't scale the value because people don't age (Else colors will all be the same)
-                        value = location->getContent()->epiOutput[m_selectedAgeBracket][m_selectedHealthStatus][m_day];
+                        value = location->GetContent()->epiOutput[m_selectedAgeBracket][m_selectedHealthStatus][m_day];
                 }
                 // Specific category selected
                 else {
                         // Scale the value so the evolution is seen in the GUI
-                        value = scaleValue(low, high, location->getContent()->epiOutput[m_selectedAgeBracket][m_selectedHealthStatus][m_day]);
+                        value = scaleValue(low, high, location->GetContent()->epiOutput[m_selectedAgeBracket][m_selectedHealthStatus][m_day]);
                 }
                 // Call the QML method to update the circle on the map
                 QMetaObject::invokeMethod(m_root, "updateLocation",
@@ -316,29 +317,29 @@ void MapController::updateLocations()
         }
 }
 
-void MapController::setAgeBracket(const QString &ageBracket) {
+void MapController::SetAgeBracket(const QString &ageBracket) {
         m_selectedAgeBracket = ageBracket.toStdString();
         if (m_selectedAgeBracket == "Age bracket"){
                 m_selectedAgeBracket = "Total";
         }
 //        std::cout << m_selectedAgeBracket << std::endl;
-        this->updateLocations();
+    this->UpdateLocations();
 }
 
-void MapController::setHealthStatus(const QString &healthStatus) {
+void MapController::SetHealthStatus(const QString &healthStatus) {
         m_selectedHealthStatus = healthStatus.toStdString();
         if (m_selectedHealthStatus == "Health status"){
                 m_selectedHealthStatus = "Total";
         }
 //        std::cout << m_selectedHealthStatus << std::endl;
-        this->updateLocations();
+    this->UpdateLocations();
 }
 
-bool MapController::isDataPinned() {
+bool MapController::IsDataPinned() {
     return m_data_pinned;
 }
 
-void MapController::pinData(bool pinned) {
+void MapController::PinData(bool pinned) {
     m_data_pinned = pinned;
     // Call the QML method to show the pinned sign
     QMetaObject::invokeMethod(m_root, "togglePinned", Q_ARG(QVariant, QVariant::fromValue(pinned)));

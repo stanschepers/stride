@@ -46,7 +46,7 @@ void LocationsCSVReader::FillGeoGrid(GeoGrid<Epidemiologic>& geoGrid) const
         }
 
         for (const auto& l : locations) {
-                l.first->getContent()->SetPopFraction(static_cast<double>(l.second) / static_cast<double>(totalPopulation));
+            l.first->GetContent()->SetPopFraction(static_cast<double>(l.second) / static_cast<double>(totalPopulation));
         }
 }
 

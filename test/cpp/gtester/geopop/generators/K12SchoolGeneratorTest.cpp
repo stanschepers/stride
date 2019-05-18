@@ -61,7 +61,7 @@ TEST_F(K12SchoolGeneratorTest, OneLocationTest)
 
         m_k12school_generator.Apply(m_geo_grid, m_gg_config);
 
-        const auto& poolsOfLoc1 = loc1->getContent()->CRefPools(Id::K12School);
+        const auto& poolsOfLoc1 = loc1->GetContent()->CRefPools(Id::K12School);
         EXPECT_EQ(poolsOfLoc1.size(), 4 * m_ppk12);
 }
 
@@ -95,7 +95,7 @@ TEST_F(K12SchoolGeneratorTest, FiveLocationsTest)
         m_geo_grid.AddLocation(loc5);
 
         for (const auto& loc : m_geo_grid) {
-                loc->getContent()->SetPopFraction(static_cast<double>(loc->getContent()->GetPopCount()) /
+            loc->GetContent()->SetPopFraction(static_cast<double>(loc->GetContent()->GetPopCount()) /
                                     static_cast<double>(m_gg_config.param.pop_size));
         }
 
@@ -103,7 +103,7 @@ TEST_F(K12SchoolGeneratorTest, FiveLocationsTest)
 
         array<unsigned int, 5> sizes{444, 416, 330, 133, 179};
         for (auto i = 0U; i < sizes.size(); i++) {
-                EXPECT_EQ(sizes[i] * m_ppk12, m_geo_grid[i]->getContent()->CRefPools(Id::K12School).size());
+                EXPECT_EQ(sizes[i] * m_ppk12, m_geo_grid[i]->GetContent()->CRefPools(Id::K12School).size());
         }
 }
 

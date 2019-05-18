@@ -126,7 +126,7 @@ vector<const Location<LocationContent>*> GeoGrid<LocationContent>::LocationsInRa
 //
 //        while (pools.empty()) {
 //                for (const Location<Epidemiologic>* nearLoc : LocationsInRadius(start, currentRadius)) {
-//                        const auto& locPool = nearLoc->getContent()->CRefPools(id);
+//                        const auto& locPool = nearLoc->GetContent()->CRefPools(id);
 //                        pools.insert(pools.end(), locPool.begin(), locPool.end());
 //                }
 //                currentRadius *= 2;
@@ -140,7 +140,8 @@ vector<const Location<LocationContent>*> GeoGrid<LocationContent>::LocationsInRa
 template <class LocationContent>
 vector<Location<LocationContent>*> GeoGrid<LocationContent>::TopK(size_t k) const
 {
-        auto cmp = [](Location<LocationContent>* rhs, Location<LocationContent>* lhs) { return rhs->getContent()->GetPopCount() > lhs->getContent()->GetPopCount(); };
+        auto cmp = [](Location<LocationContent>* rhs, Location<LocationContent>* lhs) { return rhs->GetContent()->GetPopCount() >
+                lhs->GetContent()->GetPopCount(); };
 
         priority_queue<Location<LocationContent>*, vector<Location<LocationContent>*>, decltype(cmp)> queue(cmp);
         for (const auto& loc : m_locations) {

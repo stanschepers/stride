@@ -35,13 +35,13 @@ shared_ptr<GeoGrid<Epidemiologic>> getExpectedGeoGrid()
         auto loc6    = make_shared<Location<Epidemiologic>>(73107, 7, Coordinate(5.70979219, 50.96991794), "MAASMECHELEN");
         auto loc7    = make_shared<Location<Epidemiologic>>(73109, 7, Coordinate(5.806343076, 50.74921941), "VOEREN-'S GRAVENVOEREN");
 
-        loc1->getContent()->SetPopFraction(0.76599210042448873);
-        loc2->getContent()->SetPopFraction(0.018849454066692393);
-        loc3->getContent()->SetPopFraction(0.065934783102172378);
-        loc4->getContent()->SetPopFraction(0.04604396976369373);
-        loc5->getContent()->SetPopFraction(0.029663133044287561);
-        loc6->getContent()->SetPopFraction(0.06618731981930856);
-        loc7->getContent()->SetPopFraction(0.0073292397793566838);
+    loc1->GetContent()->SetPopFraction(0.76599210042448873);
+    loc2->GetContent()->SetPopFraction(0.018849454066692393);
+    loc3->GetContent()->SetPopFraction(0.065934783102172378);
+    loc4->GetContent()->SetPopFraction(0.04604396976369373);
+    loc5->GetContent()->SetPopFraction(0.029663133044287561);
+    loc6->GetContent()->SetPopFraction(0.06618731981930856);
+    loc7->GetContent()->SetPopFraction(0.0073292397793566838);
 
         geoGrid->AddLocation(loc1);
         geoGrid->AddLocation(loc2);
@@ -76,7 +76,7 @@ TEST(CitiesCSVReaderTest, test1)
 
         for (const auto& loc : geoGrid) {
                 EXPECT_TRUE(loc->operator==(*expected->GetById(loc->GetID())));
-                EXPECT_DOUBLE_EQ(loc->getContent()->GetPopFraction(), (expected->GetById(loc->GetID()))->getContent()->GetPopFraction());
+                EXPECT_DOUBLE_EQ(loc->GetContent()->GetPopFraction(), (expected->GetById(loc->GetID()))->GetContent()->GetPopFraction());
         }
 }
 

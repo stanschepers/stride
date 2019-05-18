@@ -51,11 +51,11 @@ void EpiOutputJSONWriter::Update(GeoGrid<Epidemiologic>& geoGrid, unsigned int d
             m_output["locations"][i]["province"] = loc->GetProvince();
             m_output["locations"][i]["coordinate"][0] = loc->GetCoordinate().get<0>();
             m_output["locations"][i]["coordinate"][1] = loc->GetCoordinate().get<1>();
-            m_output["locations"][i]["pop_count"] = loc->getContent()->GetPopCount();
+            m_output["locations"][i]["pop_count"] = loc->GetContent()->GetPopCount();
         }
     }
     for (unsigned int i = 0; i < geoGrid.size(); i++) {
-        auto epiOutput = geoGrid[i]->getContent()->GenerateEpiOutput();
+        auto epiOutput = geoGrid[i]->GetContent()->GenerateEpiOutput();
         for (const std::string& ageBracket: stride::ageBrackets){
             for (const std::string& healthStatus: stride::healthStatuses){
                 m_output["locations"][i]["epi-output"][ageBracket][healthStatus][std::to_string(day)] = epiOutput[ageBracket][healthStatus];

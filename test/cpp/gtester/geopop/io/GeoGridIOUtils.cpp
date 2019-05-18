@@ -101,8 +101,8 @@ void CompareLocation(const Location<Epidemiologic>& location, const proto::GeoGr
 {
         EXPECT_EQ(location.GetName(), protoLocation.name());
         EXPECT_EQ(location.GetProvince(), protoLocation.province());
-        EXPECT_EQ(location.getContent()->GetPopCount(), protoLocation.population());
-        EXPECT_EQ(location.getContent()->GetPopCount(), protoLocation.population());
+        EXPECT_EQ(location.GetContent()->GetPopCount(), protoLocation.population());
+        EXPECT_EQ(location.GetContent()->GetPopCount(), protoLocation.population());
         CompareCoordinate(location.GetCoordinate(), protoLocation.coordinate());
 
         static const map<proto::GeoGrid_Location_ContactPools_Type, Id> types = {
@@ -117,13 +117,13 @@ void CompareLocation(const Location<Epidemiologic>& location, const proto::GeoGr
                 const auto& protoContactPools     = protoLocation.contactpools(idx);
                 auto        protoContactPoolsType = protoContactPools.type();
                 auto        typeId                = types.at(protoContactPoolsType);
-                CompareContactPools(typeId, location.getContent()->CRefPools(typeId), protoContactPools);
+                CompareContactPools(typeId, location.GetContent()->CRefPools(typeId), protoContactPools);
         }
 
-        ASSERT_EQ(protoLocation.commutes_size(), location.getContent()->CRefOutgoingCommutes().size());
+        ASSERT_EQ(protoLocation.commutes_size(), location.GetContent()->CRefOutgoingCommutes().size());
         for (int idx = 0; idx < protoLocation.commutes_size(); idx++) {
                 const auto& protoCommute = protoLocation.commutes(idx);
-                auto        commute_pair = location.getContent()->CRefOutgoingCommutes()[idx];
+                auto        commute_pair = location.GetContent()->CRefOutgoingCommutes()[idx];
                 EXPECT_EQ(protoCommute.to(), commute_pair.first->GetID());
                 EXPECT_EQ(protoCommute.proportion(), commute_pair.second);
         }
@@ -170,17 +170,17 @@ shared_ptr<GeoGrid<Epidemiologic>> GetPopulatedGeoGrid(Population* pop)
         const auto loc     = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Bavikhove", 2500);
 
         auto k12Pool = pop->RefPoolSys().CreateContactPool(Id::K12School);
-        loc->getContent()->RefPools(Id::K12School).emplace_back(k12Pool);
+    loc->GetContent()->RefPools(Id::K12School).emplace_back(k12Pool);
         auto pcPool = pop->RefPoolSys().CreateContactPool(Id::PrimaryCommunity);
-        loc->getContent()->RefPools(Id::PrimaryCommunity).emplace_back(pcPool);
+    loc->GetContent()->RefPools(Id::PrimaryCommunity).emplace_back(pcPool);
         auto scPool = pop->RefPoolSys().CreateContactPool(Id::SecondaryCommunity);
-        loc->getContent()->RefPools(Id::SecondaryCommunity).emplace_back(scPool);
+    loc->GetContent()->RefPools(Id::SecondaryCommunity).emplace_back(scPool);
         auto cPool = pop->RefPoolSys().CreateContactPool(Id::College);
-        loc->getContent()->RefPools(Id::College).emplace_back(cPool);
+    loc->GetContent()->RefPools(Id::College).emplace_back(cPool);
         auto hPool = pop->RefPoolSys().CreateContactPool(Id::Household);
-        loc->getContent()->RefPools(Id::Household).emplace_back(hPool);
+    loc->GetContent()->RefPools(Id::Household).emplace_back(hPool);
         auto wPool = pop->RefPoolSys().CreateContactPool(Id::Workplace);
-        loc->getContent()->RefPools(Id::Workplace).emplace_back(wPool);
+    loc->GetContent()->RefPools(Id::Workplace).emplace_back(wPool);
 
         geoGrid->AddLocation(loc);
         const auto person = geoGrid->GetPopulation()->CreatePerson(
@@ -201,17 +201,17 @@ shared_ptr<GeoGrid<Epidemiologic>> GetCommutesGeoGrid(Population* pop)
         const auto gent      = make_shared<Location<Epidemiologic>>(2, 4, Coordinate(0, 0), "Gent", 2500);
         const auto mons      = make_shared<Location<Epidemiologic>>(3, 4, Coordinate(0, 0), "Mons", 2500);
 
-        bavikhove->getContent()->AddOutgoingCommute(gent->getContent(), 0.5);
-        gent->getContent()->AddIncomingCommute(bavikhove->getContent(), 0.5);
+    bavikhove->GetContent()->AddOutgoingCommute(gent->GetContent(), 0.5);
+    gent->GetContent()->AddIncomingCommute(bavikhove->GetContent(), 0.5);
 
-        bavikhove->getContent()->AddOutgoingCommute(mons->getContent(), 0.25);
-        mons->getContent()->AddIncomingCommute(bavikhove->getContent(), 0.25);
+    bavikhove->GetContent()->AddOutgoingCommute(mons->GetContent(), 0.25);
+    mons->GetContent()->AddIncomingCommute(bavikhove->GetContent(), 0.25);
 
-        gent->getContent()->AddOutgoingCommute(bavikhove->getContent(), 0.75);
-        bavikhove->getContent()->AddIncomingCommute(gent->getContent(), 0.75);
+    gent->GetContent()->AddOutgoingCommute(bavikhove->GetContent(), 0.75);
+    bavikhove->GetContent()->AddIncomingCommute(gent->GetContent(), 0.75);
 
-        gent->getContent()->AddOutgoingCommute(mons->getContent(), 0.5);
-        mons->getContent()->AddIncomingCommute(gent->getContent(), 0.5);
+    gent->GetContent()->AddOutgoingCommute(mons->GetContent(), 0.5);
+    mons->GetContent()->AddIncomingCommute(gent->GetContent(), 0.5);
 
         geoGrid->AddLocation(bavikhove);
         geoGrid->AddLocation(gent);

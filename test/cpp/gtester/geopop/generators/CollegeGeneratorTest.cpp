@@ -62,7 +62,7 @@ TEST_F(CollegeGeneratorTest, OneLocationTest)
 
         m_college_generator.Apply(m_geo_grid, m_gg_config);
 
-        const auto& poolsOfLoc1 = loc1->getContent()->CRefPools<Id::College>();
+        const auto& poolsOfLoc1 = loc1->GetContent()->CRefPools<Id::College>();
         EXPECT_EQ(poolsOfLoc1.size(), 3 * m_ppc);
 }
 
@@ -93,7 +93,7 @@ TEST_F(CollegeGeneratorTest, MultipleLocationsTest)
 
         array<unsigned int, sizes.size()> expected{2, 2, 5, 2, 3, 0, 0, 0, 0, 2, 2, 0, 3, 3, 3};
         for (auto i = 0U; i < sizes.size(); i++) {
-                EXPECT_EQ(expected[i] * m_ppc, m_geo_grid[i]->getContent()->CRefPools<Id::College>().size());
+                EXPECT_EQ(expected[i] * m_ppc, m_geo_grid[i]->GetContent()->CRefPools<Id::College>().size());
         }
 }
 

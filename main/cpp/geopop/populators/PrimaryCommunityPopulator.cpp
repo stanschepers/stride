@@ -31,7 +31,7 @@ void Populator<stride::ContactType::Id::PrimaryCommunity>::Apply(GeoGrid<Epidemi
         m_logger->trace("Starting to populate Primary Communities");
 
         for (const shared_ptr<Location<Epidemiologic>>& loc : geoGrid) {
-                if (loc->getContent()->GetPopCount() == 0) {
+                if (loc->GetContent()->GetPopCount() == 0) {
                         continue;
                 }
 
@@ -44,7 +44,7 @@ void Populator<stride::ContactType::Id::PrimaryCommunity>::Apply(GeoGrid<Epidemi
 
                 // 2. for every household assign a community
                 const auto dist = m_rn_man.GetUniformIntGenerator(0, static_cast<int>(nearbyPools.size()), 0U);
-                for (auto& hhPool : loc->getContent()->RefPools(Id::Household)) {
+                for (auto& hhPool : loc->GetContent()->RefPools(Id::Household)) {
                         for (auto p : *hhPool) {
                                 auto& pcPool = nearbyPools[dist()];
                                 pcPool->AddMember(p);

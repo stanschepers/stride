@@ -58,7 +58,7 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid<Epidemiologic>
         // For every location, if populated ...
         // --------------------------------------------------------------------------------
         for (const auto& loc : geoGrid) {
-                if (loc->getContent()->GetPopCount() == 0) {
+                if (loc->GetContent()->GetPopCount() == 0) {
                         continue;
                 }
 
@@ -69,7 +69,7 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid<Epidemiologic>
                 genCommute = function<int()>();
 
                 vector<double> commutingWeights;
-                for (const pair<Epidemiologic*, double>& commute : loc->getContent()->CRefOutgoingCommutes()) {
+                for (const pair<Epidemiologic*, double>& commute : loc->GetContent()->CRefOutgoingCommutes()) {
                         const auto& workplaces = commute.first->RefPools(Id::Workplace);
                         if (!workplaces.empty()) {
                                 commuteLocations.push_back(commute.first->GetLocation());
@@ -93,7 +93,7 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid<Epidemiologic>
                 // --------------------------------------------------------------------------------
                 // For everyone of working age: decide between work or college (iff of College age)
                 // --------------------------------------------------------------------------------
-                for (auto& hhPool : loc->getContent()->RefPools(Id::Household)) {
+                for (auto& hhPool : loc->GetContent()->RefPools(Id::Household)) {
                         for (auto person : *hhPool) {
                                 if (!Workplace::HasAge(person->GetAge())) {
                                         continue;
@@ -111,7 +111,7 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid<Epidemiologic>
                                                 // --------------------------------------------------------------
                                                 // this person commutes to the Location and in particular to Pool
                                                 // --------------------------------------------------------------
-                                                auto& pools = commuteLocations[genCommute()]->getContent()->RefPools(Id::Workplace);
+                                                auto& pools = commuteLocations[genCommute()]->GetContent()->RefPools(Id::Workplace);
                                                 auto s = static_cast<int>(pools.size());
                                                 auto  gen   = m_rn_man.GetUniformIntGenerator(0, s);
                                                 auto  pool  = pools[gen()];

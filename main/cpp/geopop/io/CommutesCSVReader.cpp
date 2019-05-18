@@ -69,8 +69,8 @@ void CommutesCSVReader::FillGeoGrid(GeoGrid<Epidemiologic>& geoGrid) const
                                                         " to " + to_string(locTo->GetID()) +
                                                         " is invalid (0 <= proportion <= 1)");
                                 }
-                                locFrom->getContent()->AddOutgoingCommute(locTo->getContent(), proportion);
-                                locTo->getContent()->AddIncomingCommute(locFrom->getContent(), proportion);
+                            locFrom->GetContent()->AddOutgoingCommute(locTo->GetContent(), proportion);
+                            locTo->GetContent()->AddIncomingCommute(locFrom->GetContent(), proportion);
                         }
                 }
                 rowIndex++;

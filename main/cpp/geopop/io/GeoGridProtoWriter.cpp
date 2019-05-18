@@ -94,12 +94,12 @@ void GeoGridProtoWriter::WriteLocation(Location<Epidemiologic>& location, proto:
         protoLocation->set_id(location.GetID());
         protoLocation->set_name(location.GetName());
         protoLocation->set_province(location.GetProvince());
-        protoLocation->set_population(location.getContent()->GetPopCount());
+        protoLocation->set_population(location.GetContent()->GetPopCount());
         auto coordinate = new proto::GeoGrid_Location_Coordinate();
         WriteCoordinate(location.GetCoordinate(), coordinate);
         protoLocation->set_allocated_coordinate(coordinate);
 
-        auto commutes = location.getContent()->CRefOutgoingCommutes();
+        auto commutes = location.GetContent()->CRefOutgoingCommutes();
         for (auto commute_pair : commutes) {
                 auto commute = protoLocation->add_commutes();
                 commute->set_to(commute_pair.first->GetID());
@@ -107,7 +107,7 @@ void GeoGridProtoWriter::WriteLocation(Location<Epidemiologic>& location, proto:
         }
 
         for (Id typ : IdList) {
-                WriteContactPools(typ, location.getContent()->RefPools(typ), protoLocation->add_contactpools());
+                WriteContactPools(typ, location.GetContent()->RefPools(typ), protoLocation->add_contactpools());
         }
 }
 

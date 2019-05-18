@@ -31,13 +31,13 @@ class MapController : public QObject
 {
 
         Q_OBJECT
-        Q_PROPERTY(QString shownDay READ getDay WRITE setDay NOTIFY dayChanged)
-        Q_PROPERTY(QString setWindowHeight READ getDay WRITE setWindowHeight NOTIFY heightChanged)
-        Q_PROPERTY(QString setWindowWidth READ getDay WRITE setWindowWidth NOTIFY widthChanged)
-        Q_PROPERTY(QString setShownInformation READ getDay WRITE setShownInformation NOTIFY shownInformationChanged)
-        Q_PROPERTY(QString setAgeBracket READ getDay WRITE setAgeBracket NOTIFY ageBracketChanged)
-        Q_PROPERTY(QString setHealthStatus READ getDay WRITE setHealthStatus NOTIFY healthStatusChanged)
-        Q_PROPERTY(bool dataPinned READ isDataPinned WRITE pinData NOTIFY dataPinnedChanged)
+        Q_PROPERTY(QString shownDay READ GetDay WRITE SetDay NOTIFY DayChanged)
+        Q_PROPERTY(QString setWindowHeight READ GetDay WRITE SetWindowHeight NOTIFY HeightChanged)
+        Q_PROPERTY(QString setWindowWidth READ GetDay WRITE SetWindowWidth NOTIFY WidthChanged)
+        Q_PROPERTY(QString setShownInformation READ GetDay WRITE SetShownInformation NOTIFY ShownInformationChanged)
+        Q_PROPERTY(QString setAgeBracket READ GetDay WRITE SetAgeBracket NOTIFY AgeBracketChanged)
+        Q_PROPERTY(QString setHealthStatus READ GetDay WRITE SetHealthStatus NOTIFY HealthStatusChanged)
+        Q_PROPERTY(bool dataPinned READ IsDataPinned WRITE PinData NOTIFY DataPinnedChanged)
 
 public:
         /// Create a MapController and read the epi-output file
@@ -50,59 +50,59 @@ public:
         MapController& operator=(const MapController&) = delete;
 
         /// Set the shown day
-        void setDay(const QString& day);
+        void SetDay(const QString &day);
 
         /// Get the shown day
-        QString getDay();
+        QString GetDay();
 
         /// Set the window height
-        void setWindowHeight(const QString& height);
+        void SetWindowHeight(const QString &height);
 
         /// Set the window width
-        void setWindowWidth(const QString& width);
+        void SetWindowWidth(const QString &width);
 
         /// Set the shown information about one locality
-        void setShownInformation(const QString& locationId);
+        void SetShownInformation(const QString &locationId);
 
         /// Initialize the map
-        void initialize(QObject* root);
+        void Initialize(QObject *root);
 
         /// Update the color of the circles on the map
-        void updateLocations();
+        void UpdateLocations();
 
         /// Set the selected age bracket
-        void setAgeBracket(const QString& ageBracket);
+        void SetAgeBracket(const QString &ageBracket);
 
         /// Set the selected health status
-        void setHealthStatus(const QString& healthStatus);
+        void SetHealthStatus(const QString &healthStatus);
 
         /// Get the state of dataPinned
-        bool isDataPinned();
+        bool IsDataPinned();
 
         /// Set the state of dataPinned
-        void pinData(bool pinned);
+        void PinData(bool pinned);
 
 signals:
         /// Signal for when day changes
-        void dayChanged();
+        void DayChanged();
 
         /// Signal for when height changes
-        void heightChanged();
+        void HeightChanged();
 
         /// Signal for when width changes
-        void widthChanged();
+        void WidthChanged();
 
         /// Signal for when the show information changes
-        void shownInformationChanged();
+        void ShownInformationChanged();
 
         /// Signal for when the selected age bracket changes
-        void ageBracketChanged();
+        void AgeBracketChanged();
 
         /// Signal for when the selected health status changes
-        void healthStatusChanged();
+        void HealthStatusChanged();
 
         /// Signal for when the selected health status changes
-        void dataPinnedChanged();
+        void DataPinnedChanged();
 
 private:
         geopop::GeoGrid<EpiOutput> m_geogrid; ///< GeoGrid that contains all the locations and their epi-output

@@ -41,7 +41,7 @@ void Generator<stride::ContactType::Id::PrimaryCommunity>::Apply(GeoGrid<Epidemi
 
         vector<double> weights;
         for (const auto& loc : geoGrid) {
-                const auto weight = static_cast<double>(loc->getContent()->GetPopCount()) / static_cast<double>(popCount);
+                const auto weight = static_cast<double>(loc->GetContent()->GetPopCount()) / static_cast<double>(popCount);
                 AssertThrow(weight >= 0 && weight <= 1 && !std::isnan(weight),
                             "CommunityGenerator> Invalid weight: " + to_string(weight), m_logger);
                 weights.push_back(weight);

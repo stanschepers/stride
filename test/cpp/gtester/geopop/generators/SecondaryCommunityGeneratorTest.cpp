@@ -57,7 +57,7 @@ TEST_F(SecondaryCommunityGeneratorTest, OneLocationTest)
         auto loc1 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
         m_geo_grid.AddLocation(loc1);
 
-        const auto& p1 = loc1->getContent()->CRefPools(Id::SecondaryCommunity);
+        const auto& p1 = loc1->GetContent()->CRefPools(Id::SecondaryCommunity);
         EXPECT_EQ(p1.size(), 0);
 
         m_community_generator.Apply(m_geo_grid, m_gg_config);
@@ -78,7 +78,7 @@ TEST_F(SecondaryCommunityGeneratorTest, EqualLocationTest)
 
         array<unsigned int, 10> expected{546, 495, 475, 500, 463, 533, 472, 539, 496, 481};
         for (auto i = 0U; i < expected.size(); i++) {
-                const auto& p = m_geo_grid[i]->getContent()->RefPools(Id::SecondaryCommunity);
+                const auto& p = m_geo_grid[i]->GetContent()->RefPools(Id::SecondaryCommunity);
                 EXPECT_EQ(expected[i] * m_ppsc, p.size());
         }
 }
@@ -112,7 +112,7 @@ TEST_F(SecondaryCommunityGeneratorTest, FiveLocationsTest)
 
         array<unsigned int, 5> expected{553, 518, 410, 173, 224};
         for (auto i = 0U; i < expected.size(); i++) {
-                const auto& cp = m_geo_grid[i]->getContent()->CRefPools(Id::SecondaryCommunity);
+                const auto& cp = m_geo_grid[i]->GetContent()->CRefPools(Id::SecondaryCommunity);
                 EXPECT_EQ(expected[i] * m_ppsc, cp.size());
         }
 }

@@ -117,7 +117,7 @@ TEST_F(WorkplacePopulatorTest, NoCommuting)
         m_workplace_populator.Apply(m_geo_grid, m_gg_config);
 
         // Assert that persons of Schoten only go to Schoten or Brasschaat
-        for (const auto& hPool : schoten->getContent()->RefPools(Id::Household)) {
+        for (const auto& hPool : schoten->GetContent()->RefPools(Id::Household)) {
                 for (auto p : hPool[0]) {
                         const auto workId = p->GetPoolId(Id::Workplace);
                         if (AgeBrackets::Workplace::HasAge(p->GetAge()) && !AgeBrackets::College::HasAge(p->GetAge())) {
@@ -131,7 +131,7 @@ TEST_F(WorkplacePopulatorTest, NoCommuting)
         }
 
         // Assert that persons of Brasschaat only go to Schoten or Brasschaat
-        for (const auto& hPool : brasschaat->getContent()->RefPools(Id::Household)) {
+        for (const auto& hPool : brasschaat->GetContent()->RefPools(Id::Household)) {
                 for (auto p : hPool[0]) {
                         const auto workId = p->GetPoolId(Id::Workplace);
                         if (AgeBrackets::Workplace::HasAge(p->GetAge()) && !AgeBrackets::College::HasAge(p->GetAge())) {
@@ -145,7 +145,7 @@ TEST_F(WorkplacePopulatorTest, NoCommuting)
         }
 
         // Assert that persons of Kortrijk only go to Kortijk
-        for (const auto& hPool : kortrijk->getContent()->RefPools(Id::Household)) {
+        for (const auto& hPool : kortrijk->GetContent()->RefPools(Id::Household)) {
                 for (auto p : hPool[0]) {
                         const auto workId = p->GetPoolId(Id::Workplace);
                         if (AgeBrackets::Workplace::HasAge(p->GetAge()) && !AgeBrackets::College::HasAge(p->GetAge())) {
@@ -182,16 +182,16 @@ TEST_F(WorkplacePopulatorTest, OnlyCommuting)
         m_workplace_generator.AddPools(*kortrijk, m_pop.get(), m_gg_config);
         m_workplace_generator.AddPools(*kortrijk, m_pop.get(), m_gg_config);
 
-        schoten->getContent()->AddOutgoingCommute(kortrijk->getContent(), 0.5);
-        kortrijk->getContent()->AddIncomingCommute(schoten->getContent(), 0.5);
-        kortrijk->getContent()->AddOutgoingCommute(schoten->getContent(), 0.5);
-        schoten->getContent()->AddIncomingCommute(kortrijk->getContent(), 0.5);
+    schoten->GetContent()->AddOutgoingCommute(kortrijk->GetContent(), 0.5);
+    kortrijk->GetContent()->AddIncomingCommute(schoten->GetContent(), 0.5);
+    kortrijk->GetContent()->AddOutgoingCommute(schoten->GetContent(), 0.5);
+    schoten->GetContent()->AddIncomingCommute(kortrijk->GetContent(), 0.5);
 
         m_geo_grid.Finalize();
         m_workplace_populator.Apply(m_geo_grid, m_gg_config);
 
         // Assert that persons of Schoten only go to Kortrijk
-        for (const auto& hPool : schoten->getContent()->RefPools(Id::Household)) {
+        for (const auto& hPool : schoten->GetContent()->RefPools(Id::Household)) {
                 for (auto p : hPool[0]) {
                         const auto workId = p->GetPoolId(Id::Workplace);
                         if (AgeBrackets::Workplace::HasAge(p->GetAge()) && !AgeBrackets::College::HasAge(p->GetAge())) {
@@ -205,7 +205,7 @@ TEST_F(WorkplacePopulatorTest, OnlyCommuting)
         }
 
         // Assert that persons of Kortrijk only go to Schoten
-        for (const auto& hPool : kortrijk->getContent()->RefPools(Id::Household)) {
+        for (const auto& hPool : kortrijk->GetContent()->RefPools(Id::Household)) {
                 for (auto p : hPool[0]) {
                         const auto workId = p->GetPoolId(Id::Workplace);
                         if (AgeBrackets::Workplace::HasAge(p->GetAge()) && !AgeBrackets::College::HasAge(p->GetAge())) {
@@ -246,16 +246,16 @@ TEST_F(WorkplacePopulatorTest, NoCommutingAvailable)
         m_workplace_generator.AddPools(*kortrijk, m_pop.get(), m_gg_config);
 
         // test case is only commuting but between nobody is commuting from or to Brasschaat
-        schoten->getContent()->AddOutgoingCommute(kortrijk->getContent(), 0.5);
-        kortrijk->getContent()->AddIncomingCommute(schoten->getContent(), 0.5);
-        kortrijk->getContent()->AddOutgoingCommute(schoten->getContent(), 0.5);
-        schoten->getContent()->AddIncomingCommute(kortrijk->getContent(), 0.5);
+    schoten->GetContent()->AddOutgoingCommute(kortrijk->GetContent(), 0.5);
+    kortrijk->GetContent()->AddIncomingCommute(schoten->GetContent(), 0.5);
+    kortrijk->GetContent()->AddOutgoingCommute(schoten->GetContent(), 0.5);
+    schoten->GetContent()->AddIncomingCommute(kortrijk->GetContent(), 0.5);
 
         m_geo_grid.Finalize();
         m_workplace_populator.Apply(m_geo_grid, m_gg_config);
 
         // Assert that persons of Schoten only go to Kortrijk
-        for (const auto& hPool : schoten->getContent()->RefPools(Id::Household)) {
+        for (const auto& hPool : schoten->GetContent()->RefPools(Id::Household)) {
                 for (auto p : hPool[0]) {
                         const auto workId = p->GetPoolId(Id::Workplace);
                         if (AgeBrackets::Workplace::HasAge(p->GetAge()) && !AgeBrackets::College::HasAge(p->GetAge())) {
@@ -269,7 +269,7 @@ TEST_F(WorkplacePopulatorTest, NoCommutingAvailable)
         }
 
         // Assert that persons of Brasschaat only go to Brasschaat or Schoten
-        for (const auto& hPool : brasschaat->getContent()->RefPools(Id::Household)) {
+        for (const auto& hPool : brasschaat->GetContent()->RefPools(Id::Household)) {
                 for (auto p : hPool[0]) {
                         const auto workId = p->GetPoolId(Id::Workplace);
                         if (AgeBrackets::Workplace::HasAge(p->GetAge()) && !AgeBrackets::College::HasAge(p->GetAge())) {
@@ -283,7 +283,7 @@ TEST_F(WorkplacePopulatorTest, NoCommutingAvailable)
         }
 
         // Assert that persons of Kortrijk only go to Schoten
-        for (const auto& hPool : kortrijk->getContent()->RefPools(Id::Household)) {
+        for (const auto& hPool : kortrijk->GetContent()->RefPools(Id::Household)) {
                 for (auto p : hPool[0]) {
                         const auto workId = p->GetPoolId(Id::Workplace);
                         if (AgeBrackets::Workplace::HasAge(p->GetAge()) && !AgeBrackets::College::HasAge(p->GetAge())) {

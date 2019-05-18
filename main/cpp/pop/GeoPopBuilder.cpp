@@ -112,7 +112,7 @@ void GeoPopBuilder::MakeLocations(GeoGrid<Epidemiologic>& geoGrid, const GeoGrid
         }
 
         for (const shared_ptr<Location<Epidemiologic>>& loc : geoGrid) {
-                loc->getContent()->SetPopCount(geoGridConfig.param.pop_size);
+            loc->GetContent()->SetPopCount(geoGridConfig.param.pop_size);
         }
         geoGrid.Finalize();
 }

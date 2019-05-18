@@ -40,9 +40,9 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid<Epidemiologic>
         vector<double> weights;
         for (const auto& loc : geoGrid) {
                 const double ActivePeopleCount =
-                    (loc->getContent()->GetPopCount() +
-                     loc->getContent()->GetIncomingCommuteCount(ggConfig.param.fraction_workplace_commuters) -
-                     loc->getContent()->GetOutgoingCommuteCount(ggConfig.param.fraction_workplace_commuters) *
+                    (loc->GetContent()->GetPopCount() +
+                            loc->GetContent()->GetIncomingCommuteCount(ggConfig.param.fraction_workplace_commuters) -
+                            loc->GetContent()->GetOutgoingCommuteCount(ggConfig.param.fraction_workplace_commuters) *
                          ggConfig.param.particpation_workplace);
 
                 const double weight = ActivePeopleCount / EmployeeCount;

@@ -81,7 +81,7 @@ public:
 
                 while (pools.empty()) {
                         for (const Location<Epidemiologic>* nearLoc : LocationsInRadius(start, currentRadius)) {
-                                const auto& locPool = nearLoc->getContent()->CRefPools(id);
+                                const auto& locPool = nearLoc->GetContent()->CRefPools(id);
                                 pools.insert(pools.end(), locPool.begin(), locPool.end());
                         }
                         currentRadius *= 2;
