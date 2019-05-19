@@ -20,12 +20,88 @@ Window {
     Map {
         id: map
 
+        property var x1;
+        property var y1;
+        property var x2;
+        property var y2;
+
+        property var coor1;
+        property var coor2;
+
+        property bool disable_panning : false
+        property int no_panning : (MapGestureArea.PinchGesture | MapGestureArea.FlickGesture |MapGestureArea.RotationGesture | MapGestureArea.TiltGesture)
+        property int panning : (MapGestureArea.PanGesture | MapGestureArea.PinchGesture | MapGestureArea.FlickGesture |MapGestureArea.RotationGesture | MapGestureArea.TiltGesture)
+
+        gesture.acceptedGestures: disable_panning ? no_panning : panning
+
         anchors.fill: parent
         anchors.bottomMargin: 20
 
         plugin: mapPlugin
         center: QtPositioning.coordinate(50.8503, 4.3517) // Brussels
         zoomLevel: 10
+
+        MouseArea {
+            id: mapMouseArea
+            anchors.fill: parent
+
+            acceptedButtons: Qt.RightButton
+
+            onPressed: {
+                map.disable_panning = true;
+                map.coor1 = map.toCoordinate(Qt.point(mouse.x,mouse.y));
+
+                if (selectionButton.text == "Rectangle"){
+                    selectionRec.topLeft = map.toCoordinate(Qt.point(mouse.x,mouse.y));
+                    selectionRec.visible = true;
+                }
+                else if (selectionButton.text == "Circle"){
+                    selectionCircle.center = map.toCoordinate(Qt.point(mouse.x,mouse.y));
+                    selectionCircle.visible = true;
+                }
+            }
+            onPositionChanged: {
+                if (map.disable_panning){
+                    if (selectionButton.text == "Rectangle"){
+                        selectionRec.bottomRight = map.toCoordinate(Qt.point(mouse.x,mouse.y));
+                    }
+                    else if (selectionButton.text == "Circle"){
+                        selectionCircle.radius = map.coor1.distanceTo(map.toCoordinate(Qt.point(mouse.x,mouse.y)));
+                    }
+                }
+            }
+            onReleased: {
+                map.disable_panning = false;
+
+                map.coor2 = map.toCoordinate(Qt.point(mouse.x,mouse.y));
+
+                selectionButton.text = "Clear"
+
+                // TODO: Make function that collects and shows data
+            }
+        }
+
+        MapRectangle {
+            id: selectionRec
+            visible: false
+            color: Qt.rgba(1, 1, 1, 0.3)
+
+            border.color: "black"
+            border.width: 2
+
+            z: 3
+        }
+
+        MapCircle {
+            id: selectionCircle
+            visible: false
+            color: Qt.rgba(1, 1, 1, 0.3)
+
+            border.color: "black"
+            border.width: 2
+
+            z: 3
+        }
 
         //focus: true
 
@@ -43,21 +119,31 @@ Window {
         anchors.right: parent.right
     }
 
-//    Button {
-//        id: autoSimButton
-//        text: "Auto sim"
-//        width: 160
-//        height: 40
+    Button {
+        id: selectionButton
+        text: "Rectangle"
+        width: 160
+        height: 40
 
-//        anchors.top: coverUpCopyRight.top
-//        anchors.left: parent.left
-//        anchors.bottom: parent.bottom
-//        anchors.margins: 10
+        anchors.top: coverUpCopyRight.top
+        anchors.left: parent.left
+        anchors.bottom: parent.bottom
+        anchors.margins: 10
 
-//        onClicked: {
-//            print("Auto sim clicked")  // TODO: Should start an auto increase day simulation
-//        }
-//    }
+        onClicked: {
+            if (selectionButton.text == "Rectangle"){
+                selectionButton.text = "Circle";
+            }
+            else if (selectionButton.text == "Circle"){
+                selectionButton.text = "Rectangle";
+            }
+            else if (selectionButton.text == "Clear"){
+                selectionButton.text = "Rectangle";
+                selectionCircle.visible = false;
+                selectionRec.visible = false;
+            }
+        }
+    }
 
     Slider {
         id: daySlider;
@@ -67,7 +153,7 @@ Window {
         anchors.margins: 10
         anchors.rightMargin: parent.width * 0.1
         anchors.bottom: parent.bottom
-        anchors.left: parent.left
+        anchors.left: selectionButton.right
         anchors.right: parent.right
 
         orientation : Qt.Horizontal
