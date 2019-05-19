@@ -139,9 +139,19 @@ void MapController::SetShownInformation(const QString &sourceInformation){
                 break;
             case 4:  // Rectangle
                 header = "Rectangle selection";
-                break;
-            default:
-                header = "ERROR";
+                std::set<const geopop::Location<EpiOutput>*> locations = m_geogrid.LocationsInBox(std::stod(tokens[0]), std::stod(tokens[1]), std::stod(tokens[2]), std::stod(tokens[3]));
+                for (const std::string &ageBracket: stride::ageBrackets)
+                {
+                    for (const std::string &healthStatus: stride::healthStatuses)
+                    {
+                        double total = 0;
+                        for (auto const& location: locations)
+                        {
+                            total += location->GetContent()->epiOutput[ageBracket][healthStatus][m_day];
+                        }
+                        info[ageBracket][healthStatus][m_day] = total;
+                    }
+                }
                 break;
         }
 
