@@ -49,10 +49,12 @@ Window {
 
                 if (selectionButton.text == "Rectangle"){
                     selectionRec.topLeft = map.toCoordinate(Qt.point(mouse.x,mouse.y));
+                    selectionRec.bottomRight = map.toCoordinate(Qt.point(mouse.x,mouse.y));
                     selectionRec.visible = true;
                 }
                 else if (selectionButton.text == "Circle"){
                     selectionCircle.center = map.toCoordinate(Qt.point(mouse.x,mouse.y));
+                    selectionCircle.radius = 0;
                     selectionCircle.visible = true;
                 }
             }
@@ -90,7 +92,16 @@ Window {
             border.color: "black"
             border.width: 2
 
-            z: 3
+            MouseArea {
+                anchors.fill: parent
+
+                onClicked: {
+                    if (!map.disable_panning){
+                        console.log("No no no");
+                        ctrl.dataPinned = false;
+                    }
+                }
+            }
         }
 
         MapCircle {
@@ -101,7 +112,16 @@ Window {
             border.color: "black"
             border.width: 2
 
-            z: 3
+            MouseArea {
+                anchors.fill: parent
+
+                onClicked: {
+                    if (!map.disable_panning){
+                        console.log("No no no");
+                        ctrl.dataPinned = false;
+                    }
+                }
+            }
         }
 
         //focus: true
@@ -143,7 +163,6 @@ Window {
                 selectionCircle.visible = false;
                 selectionRec.visible = false;
                 ctrl.dataPinned = false;
-                // TODO: empty show data
             }
         }
     }
@@ -473,7 +492,14 @@ Window {
 
     function togglePinned(value){
         pinnedText.visible = value;
-        // TODO: delete selection
+        if (value == false){
+            selectionCircle.visible = false;
+            selectionRec.visible = false;
+            dataVisualWindow.emptyData();
+            if (selectionButton.text == "Clear"){
+                selectionButton.text = "Rectangle";
+            }
+        }
     }
 
     onWidthChanged: ctrl.setWindowWidth = width
