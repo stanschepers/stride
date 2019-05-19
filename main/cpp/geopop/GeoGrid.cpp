@@ -85,14 +85,19 @@ set<const Location<LocationContent>*> GeoGrid<LocationContent>::LocationsInBox(d
 {
         CheckFinalized(__func__);
 
-        set<const Location<LocationContent>*> result;
+        set<const Location<void>*> result;
 
         auto agg = BuildAggregator<BoxPolicy>(
             MakeCollector(inserter(result, result.begin())),
             make_tuple(min(long1, long2), min(lat1, lat2), max(long1, long2), max(lat1, lat2)));
         agg();
 
-        return result;
+        set<const Location<LocationContent>*> final_result;
+        for (const Location<void>* loc: result){
+                final_result.emplace_back(reinterpret_cast<Location<LocationContent>*>(const_cast<Location<void>*>(loc)));
+        }
+
+        return final_result;
 }
 
 template <class LocationContent>
@@ -108,13 +113,18 @@ vector<const Location<LocationContent>*> GeoGrid<LocationContent>::LocationsInRa
 {
         CheckFinalized(__func__);
 
-        geogrid_detail::KdTree2DPoint startPt(&start);
-        vector<const Location<LocationContent>*>       result;
+        geogrid_detail::KdTree2DPoint startPt(reinterpret_cast<const Location<void>*>(const_cast<Location<LocationContent>*>(&start)));
+        vector<const Location<void>*>       result;
 
         auto agg = BuildAggregator<RadiusPolicy>(MakeCollector(back_inserter(result)), make_tuple(startPt, radius));
         agg();
 
-        return result;
+        vector<const Location<LocationContent>*> final_result;
+        for (const Location<void>* loc: result){
+            final_result.emplace_back(reinterpret_cast<const Location<LocationContent>*>(const_cast<Location<void>*>(loc)));
+        }
+
+        return final_result;
 }
 
 //template <>

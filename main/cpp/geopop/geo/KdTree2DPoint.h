@@ -49,7 +49,7 @@ public:
         KdTree2DPoint() : m_pt(), m_location(nullptr){};
 
         /// Constructor with Location.
-        explicit KdTree2DPoint(const Location<Epidemiologic>* loc);
+        explicit KdTree2DPoint(const Location<void>* loc);
 
         /// Constructor with longitude and latitude.
         KdTree2DPoint(double longt, double lat) : m_pt(longt, lat), m_location(nullptr) {}
@@ -69,7 +69,7 @@ public:
         }
 
         /// Retrieve the location.
-        const Location<Epidemiologic>* GetLocation() const { return m_location; }
+        const Location<void>* GetLocation() const { return m_location; }
 
         /// Get the coordinate for this Location.
         Coordinate GetPoint() const { return m_pt; }
@@ -82,7 +82,7 @@ public:
 
 private:
         Coordinate      m_pt;       ///< Shortcut for access without dereferencing.
-        const Location<Epidemiologic>* m_location; ///< The underlying location.
+        const Location<void>* m_location; ///< The underlying location.
 };
 
 } // namespace geogrid_detail
