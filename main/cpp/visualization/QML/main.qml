@@ -61,7 +61,14 @@ Window {
             onPositionChanged: {
                 if (map.disable_panning){
                     if (selectionButton.text == "Rectangle"){
-                        selectionRec.bottomRight = map.toCoordinate(Qt.point(mouse.x,mouse.y));  // TODO: fix if corners switch that rectangle doesn't flip
+                        if (map.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude < selectedCoor.longitude){
+                            selectionRec.bottomRight = selectedCoor;
+                            selectionRec.topLeft = map.toCoordinate(Qt.point(mouse.x,mouse.y))
+                        }
+                        else {
+                            selectionRec.topLeft = selectedCoor;
+                            selectionRec.bottomRight = map.toCoordinate(Qt.point(mouse.x,mouse.y));
+                        }
                     }
                     else if (selectionButton.text == "Circle"){
                         selectionCircle.radius = selectedCoor.distanceTo(map.toCoordinate(Qt.point(mouse.x,mouse.y)));
@@ -95,12 +102,7 @@ Window {
             MouseArea {
                 anchors.fill: parent
 
-                onClicked: {
-                    if (!map.disable_panning){
-                        console.log("No no no");
-                        ctrl.dataPinned = false;
-                    }
-                }
+                onClicked: ctrl.dataPinned = false
             }
         }
 
@@ -115,12 +117,7 @@ Window {
             MouseArea {
                 anchors.fill: parent
 
-                onClicked: {
-                    if (!map.disable_panning){
-                        console.log("No no no");
-                        ctrl.dataPinned = false;
-                    }
-                }
+                onClicked: ctrl.dataPinned = false
             }
         }
 
