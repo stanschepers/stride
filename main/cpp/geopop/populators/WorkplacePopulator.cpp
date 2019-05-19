@@ -52,18 +52,9 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
         const auto fracWorkplaceCommute = geoGridConfig.param.fraction_workplace_commuters;
         const auto distribution         = geoGridConfig.param.work_distribution;
 
-        // --------------------------------------------------------------------------------
-        // For every entry in distribution, calculate number of employees per workclass
-        // --------------------------------------------------------------------------------
-        vector<unsigned int> limits;
-        for (const auto &entry: distribution) {
-                double ratio = std::get<0>(entry);
-                unsigned int minSize = std::get<1>(entry);
-                unsigned int maxSize = std::get<2>(entry);
-                double nrOfWp = ratio*double(16324);
-                double avgSize = (double(minSize+maxSize))/2;
-                limits.emplace_back(floor(nrOfWp*avgSize));
-        }
+        int total = 0;
+        int com = 0;
+        int noncom = 0;
 
         double fracCommuteStudents = 0.0;
         if (static_cast<bool>(fracWorkplaceCommute) && popWorkplace) {
@@ -95,6 +86,8 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                                             "Invalid weight: " + to_string(weight), m_logger);
                         }
                 }
+                auto refCommutingWeights = commutingWeights;
+                auto refCommutingLocations = commuteLocations;
 
                 if (!commutingWeights.empty()) {
                         genCommute = m_rn_man.GetDiscreteGenerator(commutingWeights, 0U);
@@ -106,14 +99,12 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                 nearbyWp      = geoGrid.GetNearbyPools(Id::Workplace, *loc);
 
 
-
-
-
                 // --------------------------------------------------------------------------------
                 // For everyone of working age: decide between work or college (iff of College age)
                 // --------------------------------------------------------------------------------
                 for (auto& hhPool : loc->RefPools(Id::Household)) {
-                        for (auto person : *hhPool) {
+                        for (unsigned int i=0; i<unsigned(int((*hhPool).size())); i++) {
+                                auto person = (*hhPool)[i];
                                 if (!Workplace::HasAge(person->GetAge())) {
                                         continue;
                                 }
@@ -125,23 +116,55 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                                         // ---------------------------------------------
                                         // this person is employed
                                         // ---------------------------------------------
+
+                                        total++;
+
                                         const auto isCommuter = m_rn_man.MakeWeightedCoinFlip(fracWorkplaceCommute);
                                         if (!commuteLocations.empty() && isCommuter) {
                                                 // --------------------------------------------------------------
                                                 // this person commutes to the Location and in particular to Pool
                                                 // --------------------------------------------------------------
-                                                auto& pools = commuteLocations[genCommute()]->RefPools(Id::Workplace);
-                                                auto s = static_cast<int>(pools.size());
-                                                auto  gen   = m_rn_man.GetUniformIntGenerator(0, s);
+                                                auto comDraw = genCommute();
+                                                auto& pools  = commuteLocations[comDraw]->RefPools(Id::Workplace);
+                                                auto  s      = static_cast<unsigned int>(pools.size());
+                                                auto  gen    = m_rn_man.GetUniformIntGenerator(0, s);
 
-//                                                double ratio = std::get<0>(entry);
-//                                                unsigned int minSize = std::get<1>(entry);
-//                                                unsigned int maxSize = std::get<2>(entry);
-//                                                auto  size   = m_rn_man.GetUniformIntGenerator(minSize, maxSize);
+                                                auto firstGenDraw = gen();
+                                                auto genDraw = firstGenDraw;
+                                                while (pools[genDraw]->CheckLimit()) {
+                                                        genDraw++;
+                                                        genDraw = genDraw % s;
 
+                                                        if(genDraw == firstGenDraw){
+                                                                // ----------------------------
+                                                                // This commuteLocation is FULL
+                                                                // ----------------------------
+//                                                                commutingWeights[comDraw] = double(0);
+                                                                commutingWeights.erase(commutingWeights.begin() + comDraw);
+                                                                commuteLocations.erase(commuteLocations.begin() + comDraw);
+                                                                if (commutingWeights.empty()){
+                                                                        com++;
+                                                                        genDraw = gen();
+                                                                        break;
+                                                                }
+                                                                genCommute = m_rn_man.GetDiscreteGenerator(commutingWeights, 0U);
 
+                                                                vector<Location*> vecLocs;
+                                                                for (auto g : commuteLocations){
+                                                                        vecLocs.push_back(g);
+//                                                                        std::cout << g << std::endl;
+                                                                }
+                                                                comDraw = genCommute();
 
-                                                auto  pool  = pools[gen()];
+                                                                pools  = commuteLocations[comDraw]->RefPools(Id::Workplace);
+                                                                s      = static_cast<unsigned int>(pools.size());
+                                                                gen    = m_rn_man.GetUniformIntGenerator(0, s);
+                                                                firstGenDraw = gen();
+                                                                genDraw = firstGenDraw;
+                                                        }
+                                                }
+                                                auto pool    = pools[genDraw];
+
                                                 // so that's it
                                                 pool->AddMember(person);
                                                 person->SetPoolId(Id::Workplace, pool->GetId());
@@ -151,9 +174,32 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                                                 // ----------------------------
                                                 genNonCommute = m_rn_man.GetUniformIntGenerator(0, static_cast<int>(nearbyWp.size()), 0U);
 
-                                                const auto idraw = genNonCommute();
-                                                nearbyWp[idraw]->AddMember(person);
-                                                person->SetPoolId(Id::Workplace, nearbyWp[idraw]->GetId());
+//                                                unsigned int attempts = 0;
+//                                                static int count = 0;
+//                                                while(pool->CheckLimit() and attempts < static_cast<unsigned int>(nearbyWp.size())){
+//                                                        attempts++;
+//                                                        pool = nearbyWp[genNonCommute()];
+//                                                        if (attempts == static_cast<unsigned int>(nearbyWp.size())){
+//                                                                count++;
+//                                                        }
+//                                                }
+
+                                                auto firstGenDraw = genNonCommute();
+                                                auto genDraw = firstGenDraw;
+                                                while (nearbyWp[genDraw]->CheckLimit()) {
+                                                        genDraw++;
+                                                        genDraw = genDraw % static_cast<int>(nearbyWp.size());
+
+                                                        if (genDraw == firstGenDraw) {
+                                                                noncom++;
+                                                                genDraw = genNonCommute();
+                                                                break;
+                                                        }
+                                                }
+                                                auto pool = nearbyWp[genDraw];
+
+                                                pool->AddMember(person);
+                                                person->SetPoolId(Id::Workplace, pool->GetId());
                                         }
                                 } else {
                                         // -----------------------------
@@ -182,6 +228,9 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
 //                        }
 //                }
 //        }
+        cerr << "Total work people: "<< total << endl;
+        cerr << "Commute work people: "<< com << endl;
+        cerr << "Non-commute work people: "<< noncom << endl;
 
 
         m_logger->trace("Done populating Workplaces");

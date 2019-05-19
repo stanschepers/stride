@@ -37,24 +37,25 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
         auto WorkplacesCount = static_cast<unsigned int>(ceil(EmployeeCount /
                                      static_cast<double>(ggConfig.people[Id::Workplace])));
 
-        //try to access the distribution info if applicable
-        const auto distribution = geoGridConfig.param.work_distribution;
+        // if distribution file is present, make accurate estimation of WorkplacesCount
+        const auto distribution = ggConfig.param.work_distribution;
+        vector<double> workWeights;
         if (!distribution.empty()){
                 double PoolSize = 0;
                 for(auto entry : distribution){
                     double ratio = std::get<0>(entry);
                     unsigned int minSize = std::get<1>(entry);
                     unsigned int maxSize = std::get<2>(entry);
+
+                    workWeights.emplace_back(ratio);
                     double avg = (minSize+maxSize)/2.0;
                     PoolSize += avg*ratio;
                 }
                 const auto NewWorkplacesCount = static_cast<unsigned int>(ceil(EmployeeCount / PoolSize));
-                m_logger->trace("Number of workplaces generated through distribution file: " + to_string(NewWorkplacesCount)
+                m_logger->trace("Number of workplaces through distribution file: " + to_string(NewWorkplacesCount)
                                 + ", instead of: " + to_string(WorkplacesCount));
                 WorkplacesCount = NewWorkplacesCount;
         }
-
-//        geoGridConfig.info.count_workplaces = WorkplacesCount;
 
         // = for each location #residents + #incoming commuting people - #outgoing commuting people
         vector<double> weights;
@@ -79,10 +80,75 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
         const auto dist = m_rn_man.GetDiscreteGenerator(weights, 0U);
         auto       pop  = geoGrid.GetPopulation();
 
+        // --------------------------------------------------------------------------------
+        // For every entry in distribution, calculate number of workplaces per workclass
+        // --------------------------------------------------------------------------------
+//        vector<unsigned int> wpLimits;
+//        for (const auto &entry: distribution) {
+//                double ratio = std::get<0>(entry);
+//                auto nrOfWpEntry = static_cast<unsigned int>(ceil(ratio*double(WorkplacesCount)));
+//
+//                wpLimits.emplace_back(nrOfWpEntry);
+//        }
+//        unsigned int entryIndex = 0;
+//        int totalSize = 0;
+//        for (auto i = 0U; i < WorkplacesCount; i++) {
+//                const auto loc = geoGrid[dist()];
+//
+//                // ----------------------------------------------
+//                // If there's distribution, add pools using limit
+//                // ----------------------------------------------
+//                if (!distribution.empty()) {
+//                        auto limit = wpLimits[entryIndex];
+//                        auto minSize = std::get<1>(distribution[entryIndex]);
+//                        auto maxSize = std::get<2>(distribution[entryIndex]);
+//                        if (i >= limit) {
+//                                entryIndex++;
+//                                if (entryIndex >= distribution.size()){
+//                                        throw std::exception();
+//                                }
+//                        }
+//                        auto genSize = m_rn_man.GetUniformIntGenerator(minSize, maxSize + 1U); // [a, b[
+//                        unsigned int s = genSize();
+////                        unsigned int s = maxSize;
+//                        totalSize += s;
+//                        AddPools(*loc, pop, ggConfig, s);
+//                } else {
+//                        AddPools(*loc, pop, ggConfig);
+//                }
+//        }
+        unsigned int entryIndex = 0;
+        int totalSize = 0;
         for (auto i = 0U; i < WorkplacesCount; i++) {
                 const auto loc = geoGrid[dist()];
-                AddPools(*loc, pop, ggConfig);
+
+                // ----------------------------------------------
+                // If there's distribution, add pools using limit
+                // ----------------------------------------------
+                if (!distribution.empty()) {
+                        auto workClass = m_rn_man.GetDiscreteGenerator(workWeights, 0U);
+                        entryIndex = workClass();
+                        auto minSize = std::get<1>(distribution[entryIndex]);
+                        auto maxSize = std::get<2>(distribution[entryIndex]);
+
+                        auto genSize = m_rn_man.GetUniformIntGenerator(minSize, maxSize + 1U); // [a, b[
+                        unsigned int s = genSize();
+                        totalSize += s;
+                        AddPools(*loc, pop, ggConfig, s);
+                } else {
+                        AddPools(*loc, pop, ggConfig);
+                }
         }
+        m_logger->trace("Total generated size in workplaces: ", to_string(totalSize));
+}
+
+template<>
+void Generator<stride::ContactType::Id::Workplace>::AddPools(Location& loc, stride::Population* pop,
+                                                    const GeoGridConfig& ggConfig, unsigned int limit)
+{
+        auto& poolSys = pop->RefPoolSys();
+        const auto p = poolSys.CreateContactPool(stride::ContactType::Id::Workplace, limit);
+        loc.RegisterPool<stride::ContactType::Id::Workplace>(p);
 }
 
 } // namespace geopop
