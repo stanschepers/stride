@@ -122,6 +122,7 @@ TEST_F(DaycareGeneratorTest, FiveLocationsTest)
         }
 }
 
+// Check that a larger or smaller y/o fraction lets to respectively more and less instances in that city.
 TEST_F(DaycareGeneratorTest, FiveLocationsYOFractionTest)
 {
     m_geogrid_config.input.pop_size             = 10000;
