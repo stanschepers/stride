@@ -54,8 +54,7 @@ set(SRC
     geopop/generators/PrimaryCommunityGeneratorTest.cpp
     geopop/generators/SecondaryCommunityGeneratorTest.cpp
     geopop/generators/WorkplaceGeneratorTest.cpp
-    geopop/generators/WorkInstanceGeneratorTest.cpp
-    #---
+        #---
     geopop/io/CitiesCSVReaderTest.cpp
     geopop/io/CommutesCSVReaderTest.cpp
     geopop/io/GeoGridIOUtils.cpp
@@ -65,7 +64,7 @@ set(SRC
     geopop/io/GeoGridProtoWriterTest.cpp
     geopop/io/HouseholdCSVReaderTest.cpp
     geopop/io/ReaderFactoryTest.cpp
-    geopop/io/WorkplaceFormatReaderTest.cpp
+        geopop/io/WorkplaceCSVReaderTest.cpp
     #---
     geopop/kdtree.cpp
     #---
@@ -76,8 +75,7 @@ set(SRC
     geopop/populators/PrimaryCommunityPopulatorTests.cpp
     geopop/populators/SecondaryCommunityPopulatorTests.cpp
     geopop/populators/WorkplacePopulatorTest.cpp
-    geopop/populators/WorkInstancePopulatorTest.cpp
-    #---
+        #---
     myhayai/DeliveryMan.cpp
     myhayai/MyhayaiTests.cpp
     myhayai/class_delivery.cpp

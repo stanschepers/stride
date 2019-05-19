@@ -52,6 +52,9 @@ public:
         /// Check if pool has reached its Limit
         bool CheckLimit();
 
+        /// Get the pool limit
+        unsigned int GetLimit() const { return m_limit; }
+
         /// Get the pool id
         unsigned int GetId() const { return m_pool_id; }
 

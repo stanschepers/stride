@@ -94,7 +94,7 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                         auto minSize = std::get<1>(distribution[entryIndex]);
                         auto maxSize = std::get<2>(distribution[entryIndex]);
 
-                        auto genSize = m_rn_man.GetUniformIntGenerator(minSize, maxSize + 2U); // [a, b[
+                        auto genSize = m_rn_man.GetUniformIntGenerator(minSize, maxSize + 1U); // [a, b[
                         unsigned int s = genSize();
                         totalSize += s;
                         AddPools(*loc, pop, ggConfig, s);
@@ -102,8 +102,11 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                         AddPools(*loc, pop, ggConfig);
                 }
         }
-        m_logger->trace("Total generated size in workplaces: " + to_string(totalSize));
-        m_logger->trace("Total number of employees: " + to_string(EmployeeCount));
+
+        if (!distribution.empty()) {
+                m_logger->trace("Total generated size in workplaces: " + to_string(totalSize));
+                m_logger->trace("Total number of employees: " + to_string(EmployeeCount));
+        }
 }
 
 template<>

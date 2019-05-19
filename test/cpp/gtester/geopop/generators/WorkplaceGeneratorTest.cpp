@@ -47,14 +47,14 @@ protected:
         GeoGridConfig          m_gg_config;
         shared_ptr<Population> m_pop;
         GeoGrid                m_geo_grid;
-        unsigned int            m_ppwp = m_gg_config.pools[Id::Workplace];
+        unsigned int           m_ppwp = m_gg_config.pools[Id::Workplace];
 };
 
 // Check that generator can handle empty GeoGrid.
 TEST_F(WorkplaceGeneratorTest, ZeroLocationTest)
 {
         m_gg_config.param.pop_size           = 10000;
-        m_gg_config.info.popcount_college = 20000;
+        m_gg_config.info.popcount_college    = 20000;
         m_workplace_generator.Apply(m_geo_grid, m_gg_config);
 
         EXPECT_EQ(m_geo_grid.size(), 0);
@@ -64,7 +64,7 @@ TEST_F(WorkplaceGeneratorTest, ZeroLocationTest)
 TEST_F(WorkplaceGeneratorTest, NoCommuting)
 {
         m_gg_config.param.pop_size                     = 5 * 1000 * 1000;
-        m_gg_config.info.popcount_workplace         = static_cast<unsigned int>(0.20 * 5 * 1000 * 1000);
+        m_gg_config.info.popcount_workplace            = static_cast<unsigned int>(0.20 * 5 * 1000 * 1000);
         m_gg_config.param.particpation_workplace       = 0.20;
         m_gg_config.param.fraction_workplace_commuters = 0;
 
@@ -93,7 +93,7 @@ TEST_F(WorkplaceGeneratorTest, NoCommuting)
 TEST_F(WorkplaceGeneratorTest, NullCommuting)
 {
         m_gg_config.param.pop_size                     = 5 * 1000 * 1000;
-        m_gg_config.info.popcount_workplace         = static_cast<unsigned int>(0.20 * 5 * 1000 * 1000);
+        m_gg_config.info.popcount_workplace            = static_cast<unsigned int>(0.20 * 5 * 1000 * 1000);
         m_gg_config.param.particpation_workplace       = 0.20;
         m_gg_config.param.fraction_workplace_commuters = 0.10;
 
@@ -134,7 +134,7 @@ TEST_F(WorkplaceGeneratorTest, NullCommuting)
 TEST_F(WorkplaceGeneratorTest, TenCommuting)
 {
         m_gg_config.param.pop_size                     = 5 * 1000 * 1000;
-        m_gg_config.info.popcount_workplace         = static_cast<unsigned int>(0.20 * 5 * 1000 * 1000);
+        m_gg_config.info.popcount_workplace            = static_cast<unsigned int>(0.20 * 5 * 1000 * 1000);
         m_gg_config.param.particpation_workplace       = 0.20;
         m_gg_config.param.fraction_workplace_commuters = 0.10;
 
@@ -200,6 +200,56 @@ TEST_F(WorkplaceGeneratorTest, TenCommuting)
 
         for (auto i = 0U; i < sizes.size(); i++) {
                 EXPECT_EQ(expected[i] * m_ppwp, m_geo_grid[i]->CRefPools(Id::Workplace).size());
+        }
+}
+
+// Check generator can handle empty distribution.
+TEST_F(WorkplaceGeneratorTest, ZeroDistributionTest)
+{
+        m_gg_config.param.pop_size           = 10000;
+        m_gg_config.info.popcount_workplace  = 20000;
+        m_gg_config.param.work_distribution  = {};
+
+        array<unsigned int, 50> sizes{128331, 50784,  191020, 174476, 186595, 105032, 136388, 577,   111380, 171014,
+                                      63673,  49438,  45590,  164666, 185249, 141389, 82525,  40397, 123307, 168128,
+                                      172937, 15581,  22891,  143505, 178516, 116959, 144659, 20775, 156009, 91951,
+                                      49823,  181594, 119075, 27700,  116959, 146583, 102531, 58864, 76946,  91951,
+                                      134464, 59248,  10003,  125423, 15004,  8656,   13658,  50784, 61749,  165243};
+        for (const auto size : sizes) {
+                m_geo_grid.AddLocation(make_shared<Location>(1, 4, Coordinate(0, 0), "Size: " + to_string(size), size));
+        }
+        m_workplace_generator.Apply(m_geo_grid, m_gg_config);
+        for (auto& loc : m_geo_grid) {
+                for (auto &pool : loc.get()->RefPools(Id::Workplace)) {
+                        EXPECT_EQ(pool->GetLimit(), std::numeric_limits<unsigned int>::infinity());
+                }
+        }
+        EXPECT_EQ(m_geo_grid.size(), 50);
+}
+
+// Generate workplaces through distribution file.
+TEST_F(WorkplaceGeneratorTest, DistributionTest)
+{
+        m_gg_config.param.pop_size           = 10000;
+        m_gg_config.info.popcount_workplace  = 20000;
+        m_gg_config.param.work_distribution  = {{0.32, 1, 15}, {0.68, 16, 50}}; // workplacecount = 800
+
+        array<unsigned int, 50> sizes{128331, 50784,  191020, 174476, 186595, 105032, 136388, 577,   111380, 171014,
+                                      63673,  49438,  45590,  164666, 185249, 141389, 82525,  40397, 123307, 168128,
+                                      172937, 15581,  22891,  143505, 178516, 116959, 144659, 20775, 156009, 91951,
+                                      49823,  181594, 119075, 27700,  116959, 146583, 102531, 58864, 76946,  91951,
+                                      134464, 59248,  10003,  125423, 15004,  8656,   13658,  50784, 61749,  165243};
+        for (const auto size : sizes) {
+                m_geo_grid.AddLocation(make_shared<Location>(1, 4, Coordinate(0, 0), "Size: " + to_string(size), size));
+        }
+
+        m_workplace_generator.Apply(m_geo_grid, m_gg_config);
+        for (auto& loc : m_geo_grid) {
+                for (auto &pool : loc.get()->RefPools(Id::Workplace)) {
+                        EXPECT_NE(pool->GetLimit(), std::numeric_limits<unsigned int>::infinity());
+                        EXPECT_NE(pool->GetLimit(), 0U);
+                        EXPECT_TRUE((pool->GetLimit() <= 15) or (pool->GetLimit() <= 50));
+                }
         }
 }
 
