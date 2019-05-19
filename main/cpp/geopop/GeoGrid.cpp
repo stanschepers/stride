@@ -73,8 +73,8 @@ template <class LocationContent>
 void GeoGrid<LocationContent>::Finalize()
 {
         vector<geogrid_detail::KdTree2DPoint> points;
-        for (const auto& loc : m_locations) {
-                points.emplace_back(geogrid_detail::KdTree2DPoint(loc.get()));
+        for (auto const& loc : m_locations) {
+                points.emplace_back(geogrid_detail::KdTree2DPoint(reinterpret_cast<const Location<void>*>(const_cast<Location<LocationContent>*>(loc.get()))));
         }
         m_tree      = GeoGridKdTree::Build(points);
         m_finalized = true;
@@ -94,7 +94,7 @@ set<const Location<LocationContent>*> GeoGrid<LocationContent>::LocationsInBox(d
 
         set<const Location<LocationContent>*> final_result;
         for (const Location<void>* loc: result){
-                final_result.emplace_back(reinterpret_cast<Location<LocationContent>*>(const_cast<Location<void>*>(loc)));
+                final_result.insert(reinterpret_cast<Location<LocationContent>*>(const_cast<Location<void>*>(loc)));
         }
 
         return final_result;

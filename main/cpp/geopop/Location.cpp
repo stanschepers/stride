@@ -13,7 +13,7 @@
  *  Copyright 2018, 2019, Jan Broeckhove, Laurens Van Damme and Bistromatics group.
  */
 
-#include "Location.h"
+//#include "Location.h"
 #include "contact/ContactPool.h"
 #include "contact/ContactType.h"
 #include "disease/Health.h"
