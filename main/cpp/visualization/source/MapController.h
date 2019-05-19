@@ -62,7 +62,7 @@ public:
         void SetWindowWidth(const QString &width);
 
         /// Set the shown information about one locality
-        void SetShownInformation(const QString &locationId);
+        void SetShownInformation(const QString &sourceInformation);
 
         /// Initialize the map
         void Initialize(QObject *root);
@@ -108,7 +108,6 @@ private:
         geopop::GeoGrid<EpiOutput> m_geogrid; ///< GeoGrid that contains all the locations and their epi-output
 
         bool m_data_pinned; ///< Indicates if the shown data is pinned
-        unsigned int m_pinned_location; ///< Id of the last location of which the data is shown
         unsigned int m_day;      ///<  Current shown step
         unsigned int m_day_diff; ///<  Difference (Amount of days) between epi-output measurements (Stride)
         unsigned int m_window_height; ///< Height of the GUI window
@@ -119,6 +118,7 @@ private:
         std::map<std::string, std::map<std::string, double>> m_biggest_values; ///< Biggest epi-output values for each category
 
         QObject* m_root = nullptr; ///< Root of the Qt object
+        QString m_pinned_data; ///< Information of the source of the last shown data
 };
 
 } // namespace visualization

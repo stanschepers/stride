@@ -20,14 +20,6 @@ Window {
     Map {
         id: map
 
-        property var x1;
-        property var y1;
-        property var x2;
-        property var y2;
-
-        property var coor1;
-        property var coor2;
-
         property bool disable_panning : false
         property int no_panning : (MapGestureArea.PinchGesture | MapGestureArea.FlickGesture |MapGestureArea.RotationGesture | MapGestureArea.TiltGesture)
         property int panning : (MapGestureArea.PanGesture | MapGestureArea.PinchGesture | MapGestureArea.FlickGesture |MapGestureArea.RotationGesture | MapGestureArea.TiltGesture)
@@ -42,14 +34,18 @@ Window {
         zoomLevel: 10
 
         MouseArea {
-            id: mapMouseArea
+            id: mapSelectionMouseArea
             anchors.fill: parent
 
             acceptedButtons: Qt.RightButton
 
+            property var selectedCoor;
+
             onPressed: {
                 map.disable_panning = true;
-                map.coor1 = map.toCoordinate(Qt.point(mouse.x,mouse.y));
+                selectedCoor = map.toCoordinate(Qt.point(mouse.x,mouse.y));
+                ctrl.dataPinned = false;
+                dataVisualWindow.emptyData();
 
                 if (selectionButton.text == "Rectangle"){
                     selectionRec.topLeft = map.toCoordinate(Qt.point(mouse.x,mouse.y));
@@ -63,21 +59,26 @@ Window {
             onPositionChanged: {
                 if (map.disable_panning){
                     if (selectionButton.text == "Rectangle"){
-                        selectionRec.bottomRight = map.toCoordinate(Qt.point(mouse.x,mouse.y));
+                        selectionRec.bottomRight = map.toCoordinate(Qt.point(mouse.x,mouse.y));  // TODO: fix if corners switch that rectangle doesn't flip
                     }
                     else if (selectionButton.text == "Circle"){
-                        selectionCircle.radius = map.coor1.distanceTo(map.toCoordinate(Qt.point(mouse.x,mouse.y)));
+                        selectionCircle.radius = selectedCoor.distanceTo(map.toCoordinate(Qt.point(mouse.x,mouse.y)));
                     }
                 }
             }
             onReleased: {
                 map.disable_panning = false;
 
-                map.coor2 = map.toCoordinate(Qt.point(mouse.x,mouse.y));
+                if (selectionButton.text == "Rectangle"){
+                    ctrl.setShownInformation = selectedCoor.latitude + " " + selectedCoor.longitude + " " + map.toCoordinate(Qt.point(mouse.x,mouse.y)).latitude + " " + map.toCoordinate(Qt.point(mouse.x,mouse.y)).longitude;
+                }
+                else if (selectionButton.text == "Circle"){
+                    ctrl.setShownInformation = selectedCoor.latitude + " " + selectedCoor.longitude + " " + selectionCircle.radius;
+                }
+
+                ctrl.dataPinned = true;
 
                 selectionButton.text = "Clear"
-
-                // TODO: Make function that collects and shows data
             }
         }
 
@@ -141,6 +142,8 @@ Window {
                 selectionButton.text = "Rectangle";
                 selectionCircle.visible = false;
                 selectionRec.visible = false;
+                ctrl.dataPinned = false;
+                // TODO: empty show data
             }
         }
     }
@@ -470,6 +473,7 @@ Window {
 
     function togglePinned(value){
         pinnedText.visible = value;
+        // TODO: delete selection
     }
 
     onWidthChanged: ctrl.setWindowWidth = width

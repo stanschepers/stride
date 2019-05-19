@@ -15,6 +15,9 @@
 
 #include <cmath>
 #include <limits>
+#include <string>
+#include <sstream>
+#include <iterator>
 
 #include "contact/AgeBrackets.h"
 #include "disease/Health.h"
@@ -52,7 +55,7 @@ QString makePresentablePercentage(double value){
         return QString::fromStdString(percentage);
 }
 
-MapController::MapController(const std::string& filename) : QObject(nullptr), m_geogrid(geopop::GeoGrid<EpiOutput>(nullptr)), m_data_pinned(false), m_pinned_location(0), m_day(0), m_day_diff(0), m_window_height(0), m_window_width(0), m_selectedAgeBracket("Total"), m_selectedHealthStatus("Total"), m_smallest_values(), m_biggest_values()
+MapController::MapController(const std::string& filename) : QObject(nullptr), m_geogrid(geopop::GeoGrid<EpiOutput>(nullptr)), m_data_pinned(false), m_day(0), m_day_diff(0), m_window_height(0), m_window_width(0), m_selectedAgeBracket("Total"), m_selectedHealthStatus("Total"), m_smallest_values(), m_biggest_values(), m_pinned_data("")
 {
         // Read in the epi-output
         visualization::EpiOutputReaderFactory readerFactory;
@@ -78,7 +81,7 @@ void MapController::SetDay(const QString &day)
                 if (m_data_pinned){
                         m_data_pinned = false;
                         QMetaObject::invokeMethod(m_root, "emptyData");
-                    this->SetShownInformation(QString::number(m_pinned_location));
+                    this->SetShownInformation(m_pinned_data);
                         m_data_pinned = true;
                 }
 //                std::cout << "Day set to: " << m_day << std::endl;
@@ -97,37 +100,66 @@ void MapController::SetWindowWidth(const QString &width){
         m_window_width = static_cast<unsigned int>(width.toDouble());
 }
 
-void MapController::SetShownInformation(const QString &locationId){
+void MapController::SetShownInformation(const QString &sourceInformation){
         // If a location is pinned, don't update the shown data
         if (m_data_pinned){
             return;
         }
+
         // Keep in member which is the last shown location
-        m_pinned_location = locationId.toUInt();
-        // If no location is selected, display nothing
-        if (locationId == QString("")){
+        m_pinned_data = sourceInformation;
+
+        // Tokenize the given information
+        std::istringstream buf(sourceInformation.toStdString());
+        std::istream_iterator<std::string> beg(buf), end;
+
+        std::vector<std::string> tokens(beg, end);
+
+        // Initialize the needed variables
+        std::string header;
+        std::map<std::string, std::map<std::string, std::map<unsigned int, double>>> info;
+
+        // Update the shown info in the correct way
+        switch(tokens.size()){
+            case 0:  // No source: display nothing / clear
                 QMetaObject::invokeMethod(m_root, "emptyData");
                 return;
-        }
-        // Find the right location and send the data to the GUI
-        for (const auto &location: m_geogrid){
-                if (location->GetID() == locationId.toUInt()){
-                        QVariantMap info;  // Create a Qt variable to pass to QML
-                        for (const std::string &ageBracket: stride::ageBrackets)
-                        {
-                                QVariantMap ageInfo;
-                                for (const std::string &healthStatus: stride::healthStatuses)
-                                {
-                                        ageInfo[QString::fromStdString(healthStatus)] = makePresentablePercentage(
-                                                location->GetContent()->epiOutput[ageBracket][healthStatus][m_day]);
-                                }
-                                info[QString::fromStdString(ageBracket)] = QVariant(ageInfo);
-                        }
-                        QMetaObject::invokeMethod(m_root, "setData", Q_ARG(QVariant, QString::fromStdString(location->GetName())), Q_ARG(QVariant, info));
-                        return;
+            case 1:  // Location:
+                // Find the right location and send the data to the GUI
+                for (const auto &location: m_geogrid){
+                    if (location->GetID() == std::stoul(tokens[0])){
+                        header = location->GetName();
+                        info = location->GetContent()->epiOutput;
+                        break;
+                    }
                 }
+                break;
+            case 3:  // Circle:
+                header = "Circle selection";
+                break;
+            case 4:  // Rectangle
+                header = "Rectangle selection";
+                break;
+            default:
+                header = "ERROR";
+                break;
         }
 
+        // Create a Qt variable to pass to QML
+        QVariantMap shownInfo;
+        for (const std::string &ageBracket: stride::ageBrackets)
+        {
+            QVariantMap ageInfo;
+            for (const std::string &healthStatus: stride::healthStatuses)
+            {
+                ageInfo[QString::fromStdString(healthStatus)] = makePresentablePercentage(
+                        info[ageBracket][healthStatus][m_day]);
+            }
+            shownInfo[QString::fromStdString(ageBracket)] = QVariant(ageInfo);
+        }
+
+        // Call the QML method to update the show info in the GUI
+        QMetaObject::invokeMethod(m_root, "setData", Q_ARG(QVariant, QString::fromStdString(header)), Q_ARG(QVariant, shownInfo));
 }
 
 void MapController::Initialize(QObject *root)
