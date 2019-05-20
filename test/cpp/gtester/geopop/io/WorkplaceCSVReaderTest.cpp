@@ -29,11 +29,11 @@ namespace {
 TEST(WorkplaceFormatReader, test1)
 {
         string csvString =
-            "ratio; size_min; size_max\r"
-            "0.77;1;9\r"
-            "0.17;10;49\r"
-            "0.04;50;199\r"
-            "0.02;200;400\r";
+        R"(ratio, size_min, size_max
+            0.77,1,9
+            0.17,10,49
+            0.04,50,199
+            0.02,200,400)";
 
         GeoGridConfig      geoConfig{};
         auto               instream = make_unique<istringstream>(csvString);

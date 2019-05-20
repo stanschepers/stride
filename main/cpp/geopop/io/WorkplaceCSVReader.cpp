@@ -29,7 +29,7 @@ WorkplaceCSVReader::WorkplaceCSVReader(std::unique_ptr<std::istream> inputStream
 
 void WorkplaceCSVReader::SetWorkDistribution(std::vector<std::tuple<double, unsigned int, unsigned int>>& work_distribution)
 {
-        CSV reader(*(m_input_stream.get()), {";", '\r'});
+        CSV reader(*(m_input_stream.get()));
 
         for (const CSVRow& row : reader) {
 
