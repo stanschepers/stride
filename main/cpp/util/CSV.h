@@ -50,7 +50,7 @@ public:
         explicit CSV(const filesys::path& path, std::initializer_list<std::string> optLabels = {});
 
         /// Initialize from inputstream.
-        explicit CSV(std::istream& inputStream, const std::tuple<std::string, char>& delimiters = {",",'\n'});
+        CSV(std::istream& inputStream, const std::tuple<std::string, char>& delimiters = {",",'\n'});
 
         /// Initialize with columnCount only; labels default to sequence numbers.
         explicit CSV(size_t columnCount);
