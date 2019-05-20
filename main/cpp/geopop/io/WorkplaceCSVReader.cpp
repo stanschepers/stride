@@ -44,7 +44,7 @@ void WorkplaceCSVReader::SetWorkDistribution(std::vector<std::tuple<double, unsi
                         // Incorrect type
                         throw e; //
                 }
-                std::tuple<double, unsigned int, unsigned int> temp = {ratio, min_size, max_size};
+                std::tuple<double, unsigned int, unsigned int> temp({ratio, min_size, max_size});
                 work_distribution.emplace_back(temp);
         }
 }
