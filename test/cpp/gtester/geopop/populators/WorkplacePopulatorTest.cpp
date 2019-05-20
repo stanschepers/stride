@@ -334,7 +334,7 @@ TEST_F(WorkplacePopulatorTest, DistributionTest)
         // Sample population and locations, to populate
         MakeGeoGrid(m_gg_config, 3, 100, 3, 33, 3, m_pop.get());
         m_gg_config.info.popcount_workplace  = 10;
-        m_gg_config.param.work_distribution  = {{0.32, 1, 9}, {0.68, 1, 50}};
+        m_gg_config.param.work_distribution  = {std::make_tuple(0.32, 1, 9), std::make_tuple(0.68, 1, 50)};
 
         auto brasschaat = *m_geo_grid.begin();
         brasschaat->SetCoordinate(Coordinate(51.29227, 4.49419));

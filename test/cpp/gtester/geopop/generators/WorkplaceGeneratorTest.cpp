@@ -232,7 +232,7 @@ TEST_F(WorkplaceGeneratorTest, DistributionTest)
 {
         m_gg_config.param.pop_size           = 10000;
         m_gg_config.info.popcount_workplace  = 20000;
-        m_gg_config.param.work_distribution  = {{0.32, 1, 15}, {0.68, 16, 50}}; // workplacecount = 800
+        m_gg_config.param.work_distribution  = {std::make_tuple(0.32, 1, 15), std::make_tuple(0.68, 16, 50)}; // workplacecount = 800
 
         array<unsigned int, 50> sizes{128331, 50784,  191020, 174476, 186595, 105032, 136388, 577,   111380, 171014,
                                       63673,  49438,  45590,  164666, 185249, 141389, 82525,  40397, 123307, 168128,
