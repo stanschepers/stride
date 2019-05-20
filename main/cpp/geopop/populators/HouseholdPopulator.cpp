@@ -52,7 +52,6 @@ void HouseholdPopulator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridCon
                 for (auto const& [type, refHH] : geoGridConfig.refHHperHHType) { // TODO make less generators
                         genPerHhType[type] = m_rn_man.GetUniformIntGenerator(0,
                                 static_cast<int>(refHH.ages.size()), 0U);
-                        cout << type << endl;
                         i_gen++;
                 }
                 auto pop       = geoGrid.GetPopulation();
