@@ -23,12 +23,12 @@
 
 namespace geopop {
 
-    using namespace std;
-    using namespace stride;
-    using namespace stride::ContactType;
+using namespace std;
+using namespace stride;
+using namespace stride::ContactType;
 
 template<>
-void Populator<stride::ContactType::Id::Daycare>::Apply(GeoGrid &geoGrid, const GeoGridConfig& geoGridConfig)
+void Populator<stride::ContactType::Id::Daycare>::Apply(GeoGrid &geoGrid, const GeoGridConfig& ggConfig)
 {
         m_logger->trace("Starting to populate Daycare's");
 
@@ -46,7 +46,7 @@ void Populator<stride::ContactType::Id::Daycare>::Apply(GeoGrid &geoGrid, const 
                 for (const auto& pool : loc->RefPools(Id::Household)) {
                         for (Person* p : *pool) {
                                 if (AgeBrackets::Daycare::HasAge(p->GetAge()) &&
-                                    m_rn_man.MakeWeightedCoinFlip(geoGridConfig.param.participation_daycare)) {
+                                    m_rn_man.MakeWeightedCoinFlip(ggConfig.param.participation_daycare)) {
                                         auto& c = classes[dist()];
                                         c->AddMember(p);
                                         p->SetPoolId(Id::Daycare, c->GetId());

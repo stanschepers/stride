@@ -18,7 +18,6 @@
 #include "geopop/GeoGrid.h"
 #include "geopop/GeoGridConfig.h"
 #include "geopop/Location.h"
-#include "geopop/PoolParams.h"
 #include "pop/Population.h"
 #include "util/RnMan.h"
 
@@ -35,41 +34,42 @@ namespace {
 class DaycareGeneratorTest : public testing::Test {
 public:
         DaycareGeneratorTest()
-        : m_rn_man(RnInfo()), m_daycare_generator(m_rn_man), m_geogrid_config(), m_pop(Population::Create()),
+        : m_rn_man(RnInfo()), m_daycare_generator(m_rn_man), m_gg_config(), m_pop(Population::Create()),
           m_geo_grid(m_pop.get())
         {
         }
 
 protected:
-        RnMan                        m_rn_man;
-        DaycareGenerator             m_daycare_generator;
-        GeoGridConfig                m_geogrid_config;
-        shared_ptr<Population>       m_pop;
-        GeoGrid                      m_geo_grid;
+        RnMan                  m_rn_man;
+        DaycareGenerator       m_daycare_generator;
+        GeoGridConfig          m_gg_config;
+        shared_ptr<Population> m_pop;
+        GeoGrid                m_geo_grid;
+        unsigned int           m_ppday = m_gg_config.pools[Id::Daycare];
 };
 
 // Check that generator can handle one Location.
 TEST_F(DaycareGeneratorTest, OneLocationTest)
 {
-        m_geogrid_config.param.pop_size          = 10000;
-        m_geogrid_config.info.popcount_daycare   = 2000;
+        m_gg_config.param.pop_size          = 10000;
+        m_gg_config.info.popcount_daycare   = 2000;
 
         auto loc1    = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
         m_geo_grid.AddLocation(loc1);
 
-        m_daycare_generator.Apply(m_geo_grid, m_geogrid_config);
+        m_daycare_generator.Apply(m_geo_grid, m_gg_config);
 
         const auto& poolsOfLoc1 = loc1->CRefPools(Id::Daycare);
-        EXPECT_EQ(poolsOfLoc1.size(), 223 * PoolParams<Id::Daycare>::pools);
+        EXPECT_EQ(poolsOfLoc1.size(), 223 * m_ppday);
 }
 
 // Check that generator can handle empty GeoGrid.
 TEST_F(DaycareGeneratorTest, ZeroLocationTest)
 {
-        m_geogrid_config.param.pop_size             = 10000;
-        m_geogrid_config.info.popcount_daycare   = 2000;
+        m_gg_config.param.pop_size             = 10000;
+        m_gg_config.info.popcount_daycare   = 2000;
 
-        m_daycare_generator.Apply(m_geo_grid, m_geogrid_config);
+        m_daycare_generator.Apply(m_geo_grid, m_gg_config);
 
         EXPECT_EQ(m_geo_grid.size(), 0);
 }
@@ -77,8 +77,8 @@ TEST_F(DaycareGeneratorTest, ZeroLocationTest)
 // Check that generator can handle five Locations.
 TEST_F(DaycareGeneratorTest, FiveLocationsTest)
 {
-        m_geogrid_config.param.pop_size         = 37542 * 100;
-        m_geogrid_config.info.popcount_daycare   = 750840;
+        m_gg_config.param.pop_size         = 37542 * 100;
+        m_gg_config.info.popcount_daycare   = 750840;
 
         auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 10150 * 100);
         auto loc2 = make_shared<Location>(1, 4, Coordinate(0, 0), "Vlaams-Brabant", 10040 * 100);
@@ -94,15 +94,14 @@ TEST_F(DaycareGeneratorTest, FiveLocationsTest)
 
         for (const shared_ptr<Location>& loc : m_geo_grid) {
                 loc->SetPopFraction(static_cast<double>(loc->GetPopCount()) /
-                                    static_cast<double>(m_geogrid_config.param.pop_size));
+                                    static_cast<double>(m_gg_config.param.pop_size));
         }
 
-        m_daycare_generator.Apply(m_geo_grid, m_geogrid_config);
+        m_daycare_generator.Apply(m_geo_grid, m_gg_config);
 
         vector<unsigned int> sizes{24254, 23844, 17652, 7778, 9899};
         for (size_t i = 0; i < sizes.size(); i++) {
-                EXPECT_EQ(sizes[i] * PoolParams<Id::Daycare>::pools,
-                          m_geo_grid[i]->CRefPools(Id::Daycare).size() );
+                EXPECT_EQ(sizes[i] * m_ppday, m_geo_grid[i]->CRefPools(Id::Daycare).size() );
         }
 }
 
