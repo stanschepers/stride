@@ -151,7 +151,7 @@ TEST(EpiOutputGeneratorTest, locationZeroContactpoolsTest)
 
         Location<Epidemiologic> test(1, 1, Coordinate(0.0, 0.0), "test", 0U);
 
-        map<string, map<string, double>> result = test.getContent()->GenerateEpiOutput();
+        map<string, map<string, double>> result = test.GetContent()->GenerateEpiOutput();
 
         EXPECT_TRUE(correct_result.size() == result.size() && compareMapWithDoubles(result, correct_result));
 }
@@ -201,9 +201,9 @@ TEST(EpiOutputGeneratorTest, locationOneContactpoolTest)
         }
 
         Location<Epidemiologic> test(1, 1, Coordinate(0.0, 0.0), "test", 0U);
-        test.getContent()->RegisterPool(&pool, stride::ContactType::Id::Household);
+        test.GetContent()->RegisterPool(&pool, stride::ContactType::Id::Household);
 
-        map<string, map<string, double>> result = test.getContent()->GenerateEpiOutput();
+        map<string, map<string, double>> result = test.GetContent()->GenerateEpiOutput();
 
         EXPECT_TRUE(correct_result.size() == result.size() && compareMapWithDoubles(result, correct_result));
 }
@@ -277,11 +277,11 @@ TEST(EpiOutputGeneratorTest, locationFiveContactpoolsTest)
 
         Location<Epidemiologic> test(1, 1, Coordinate(0.0, 0.0), "test", 0U);
         for (unsigned int i = 0; i < 4; i++) {
-                test.getContent()->RegisterPool(&pool, stride::ContactType::Id::Household);
+                test.GetContent()->RegisterPool(&pool, stride::ContactType::Id::Household);
         }
-        test.getContent()->RegisterPool(&pool2, stride::ContactType::Id::Household);
+        test.GetContent()->RegisterPool(&pool2, stride::ContactType::Id::Household);
 
-        map<string, map<string, double>> result = test.getContent()->GenerateEpiOutput();
+        map<string, map<string, double>> result = test.GetContent()->GenerateEpiOutput();
 
         EXPECT_TRUE(correct_result.size() == result.size() && compareMapWithDoubles(result, correct_result));
 }

@@ -26,7 +26,7 @@ void Generator<stride::ContactType::Id::Household>::Apply(GeoGrid<Epidemiologic>
 {
         vector<double> weights;
         for (const auto& loc : geoGrid) {
-                weights.push_back(loc->getContent()->GetPopFraction());
+                weights.push_back(loc->GetContent()->GetPopFraction());
         }
 
         if (weights.empty()) {

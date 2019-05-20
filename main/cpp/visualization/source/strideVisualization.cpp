@@ -58,7 +58,7 @@ int main(int argc, char* argv[])
         engine.load(QUrl::fromLocalFile("./bin/Qt5Stride/main.qml"));
 
         QObject* root = engine.rootObjects()[0];
-        ctrl.initialize(root);
+    ctrl.Initialize(root);
 
         return app.exec();
 }

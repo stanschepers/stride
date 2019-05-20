@@ -35,7 +35,7 @@ void Populator<stride::ContactType::Id::Household>::Apply(GeoGrid<Epidemiologic>
         auto pop       = geoGrid.GetPopulation();
 
         for (const shared_ptr<Location<Epidemiologic>>& loc : geoGrid) {
-                for (auto& pool : loc->getContent()->RefPools(Id::Household)) {
+                for (auto& pool : loc->GetContent()->RefPools(Id::Household)) {
                         const auto hDraw = static_cast<unsigned int>(hh_dist());
                         for (const auto& age : geoGridConfig.refHH.ages[hDraw]) {
                                 const auto p = pop->CreatePerson(person_id++, age, pool->GetId(), 0, 0, 0, 0, 0);

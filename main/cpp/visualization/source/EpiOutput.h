@@ -28,6 +28,3 @@ struct EpiOutput{
     //        ageBracket           healthStatus             day        value
     std::map<std::string, std::map<std::string, std::map<unsigned int, double>>> epiOutput{};
 };
-
-
-

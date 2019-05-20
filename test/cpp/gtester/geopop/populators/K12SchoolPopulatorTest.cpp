@@ -85,7 +85,7 @@ TEST_F(K12SchoolPopulatorTest, OneLocationTest)
             {121, 0}, {122, 1}, {123, 0}, {124, 0}, {125, 0}};
 
         auto  location = *m_geo_grid.begin();
-        auto& k12Pools = location->getContent()->RefPools(Id::K12School);
+        auto& k12Pools = location->GetContent()->RefPools(Id::K12School);
 
         ASSERT_EQ(k12Pools.size(), 5 * m_ppk12);
         for (auto& pool : k12Pools) {
@@ -155,9 +155,9 @@ TEST_F(K12SchoolPopulatorTest, TwoLocationTest)
         m_geo_grid.Finalize();
         m_k12school_populator.Apply(m_geo_grid, m_gg_config);
 
-        auto& k12Pools1 = brasschaat->getContent()->RefPools(Id::K12School);
-        auto& k12Pools2 = schoten->getContent()->RefPools(Id::K12School);
-        auto& k12Pools3 = kortrijk->getContent()->RefPools(Id::K12School);
+        auto& k12Pools1 = brasschaat->GetContent()->RefPools(Id::K12School);
+        auto& k12Pools2 = schoten->GetContent()->RefPools(Id::K12School);
+        auto& k12Pools3 = kortrijk->GetContent()->RefPools(Id::K12School);
 
         // Check number of pools corresponding to 3 K12Schools per location.
         EXPECT_EQ(k12Pools1.size(), 3 * m_ppk12);

@@ -73,7 +73,7 @@ public:
         void SetCoordinate(const Coordinate& coordinate) { m_coordinate = coordinate; }
 
         /// Gets the content
-        std::shared_ptr<Content> getContent() const { return m_content; }
+        std::shared_ptr<Content> GetContent() const { return m_content; }
 
 private:
         std::shared_ptr<Content> m_content;  ///< Content of the Location

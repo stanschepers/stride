@@ -30,8 +30,8 @@ void GeoGridReader::AddCommutes(GeoGrid<Epidemiologic>& geoGrid)
                 const auto a      = geoGrid.GetById(std::get<0>(commute_tuple));
                 const auto b      = geoGrid.GetById(std::get<1>(commute_tuple));
                 const auto amount = std::get<2>(commute_tuple);
-                a->getContent()->AddOutgoingCommute(b->getContent(), amount);
-                b->getContent()->AddIncomingCommute(a->getContent(), amount);
+            a->GetContent()->AddOutgoingCommute(b->GetContent(), amount);
+            b->GetContent()->AddIncomingCommute(a->GetContent(), amount);
         }
 }
 

@@ -59,7 +59,7 @@ public:
                 auto& poolSys = pop->RefPoolSys();
                 for (auto i = 0U; i < ggConfig.pools[ID]; ++i) {
                         const auto p = poolSys.CreateContactPool(ID);
-                        loc.getContent()->RegisterPool<ID>(p);
+                    loc.GetContent()->RegisterPool<ID>(p);
                 }
         }
 

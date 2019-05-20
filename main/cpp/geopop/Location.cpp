@@ -13,7 +13,7 @@
  *  Copyright 2018, 2019, Jan Broeckhove, Laurens Van Damme and Bistromatics group.
  */
 
-#include "Location.h"
+//#include "Location.h"
 #include "contact/ContactPool.h"
 #include "contact/ContactType.h"
 #include "disease/Health.h"
@@ -40,7 +40,7 @@ bool Location<Content>::operator==(const Location<Content>& other) const
 
         return GetID() == other.GetID() && get<0>(GetCoordinate()) == get<0>(other.GetCoordinate()) &&
                   get<1>(GetCoordinate()) == get<1>(other.GetCoordinate()) && GetName() == other.GetName() &&
-                  GetProvince() == other.GetProvince() && m_content->operator==(*other.getContent());
+                  GetProvince() == other.GetProvince() && m_content->operator==(*other.GetContent());
 }
 
 } // namespace geopop

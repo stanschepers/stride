@@ -33,7 +33,7 @@ void Populator<stride::ContactType::Id::K12School>::Apply(GeoGrid<Epidemiologic>
         m_logger->trace("Starting to populate Schools");
 
         for (const auto& loc : geoGrid) {
-                if (loc->getContent()->GetPopCount() == 0) {
+                if (loc->GetContent()->GetPopCount() == 0) {
                         continue;
                 }
 
@@ -43,7 +43,7 @@ void Populator<stride::ContactType::Id::K12School>::Apply(GeoGrid<Epidemiologic>
                 auto dist = m_rn_man.GetUniformIntGenerator(0, static_cast<int>(classes.size()), 0U);
 
                 // 2. for every student assign a class
-                for (auto& pool : loc->getContent()->RefPools(Id::Household)) {
+                for (auto& pool : loc->GetContent()->RefPools(Id::Household)) {
                         for (Person* p : *pool) {
                                 if (AgeBrackets::K12School::HasAge(p->GetAge())) {
                                         auto& c = classes[dist()];

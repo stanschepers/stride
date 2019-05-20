@@ -53,7 +53,7 @@ protected:
 
                 m_person = make_shared<Person>();
                 m_person->SetId(42);
-                m_location->getContent()->RefPools(Id::Household)[0]->AddMember(m_person.get());
+            m_location->GetContent()->RefPools(Id::Household)[0]->AddMember(m_person.get());
 
                 m_geo_grid.AddLocation(m_location);
 
@@ -77,7 +77,7 @@ TEST_F(PrimaryCommunityPopulatorTest, OneCommunityTest)
 
         m_populator.Apply(m_geo_grid, m_gg_config);
 
-        auto& scPools = m_location->getContent()->RefPools(Id::PrimaryCommunity);
+        auto& scPools = m_location->GetContent()->RefPools(Id::PrimaryCommunity);
         ASSERT_EQ(scPools.size(), 1);
         EXPECT_EQ(scPools[0]->size(), 1);
         EXPECT_EQ((*scPools[0])[0]->GetId(), 42);
@@ -97,7 +97,7 @@ TEST_F(PrimaryCommunityPopulatorTest, HouseholdTest)
         person2->SetId(5);
         person2->SetAge(2);
 
-        auto pool = m_location->getContent()->RefPools(Id::Household)[0];
+        auto pool = m_location->GetContent()->RefPools(Id::Household)[0];
         pool->AddMember(person2.get());
 
         m_community_generator.AddPools(*m_location, m_pop.get(), m_gg_config);
@@ -105,7 +105,7 @@ TEST_F(PrimaryCommunityPopulatorTest, HouseholdTest)
         m_geo_grid.Finalize();
         m_populator.Apply(m_geo_grid, m_gg_config);
 
-        auto& scPools = m_location->getContent()->RefPools(Id::PrimaryCommunity);
+        auto& scPools = m_location->GetContent()->RefPools(Id::PrimaryCommunity);
         ASSERT_EQ(scPools.size(), 2);
         EXPECT_EQ(scPools[0]->size(), 1);
         EXPECT_EQ((*scPools[0])[0]->GetId(), 42);
@@ -124,7 +124,7 @@ TEST_F(PrimaryCommunityPopulatorTest, TwoLocationsTest)
         m_geo_grid.Finalize();
         m_populator.Apply(m_geo_grid, m_gg_config);
 
-        auto& scPools = m_location->getContent()->RefPools(Id::PrimaryCommunity);
+        auto& scPools = m_location->GetContent()->RefPools(Id::PrimaryCommunity);
         ASSERT_EQ(scPools.size(), 1);
         EXPECT_EQ(scPools[0]->size(), 1);
         EXPECT_EQ((*scPools[0])[0]->GetId(), 42);

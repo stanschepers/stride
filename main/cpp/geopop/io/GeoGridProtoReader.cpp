@@ -90,7 +90,7 @@ void GeoGridProtoReader::ParseContactPool(shared_ptr<Location<Epidemiologic>>   
 {
         // Don't use the id of the ContactPool but the let the Population create an id
         auto result = m_population->RefPoolSys().CreateContactPool(type);
-        loc->getContent()->RefPools(type).emplace_back(result);
+    loc->GetContent()->RefPools(type).emplace_back(result);
 
         for (int idx = 0; idx < protoContactPool.people_size(); idx++) {
                 const auto person_id = static_cast<unsigned int>(protoContactPool.people(idx));

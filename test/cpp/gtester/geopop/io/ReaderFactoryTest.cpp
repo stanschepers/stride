@@ -54,10 +54,10 @@ TEST(ReaderFactoryTest, TestCommutesFromFile)
 
         res2->FillGeoGrid(geoGrid);
 
-        EXPECT_EQ(geoGrid.GetById(21)->getContent()->GetIncomingCommuteCount(1.0), 500);
-        EXPECT_EQ(geoGrid.GetById(22)->getContent()->GetOutgoingCommuteCount(1.0), 500);
-        EXPECT_EQ(geoGrid.GetById(21)->getContent()->GetIncomingCommuteCount(1.0), 500);
-        EXPECT_EQ(geoGrid.GetById(22)->getContent()->GetOutgoingCommuteCount(1.0), 500);
+        EXPECT_EQ(geoGrid.GetById(21)->GetContent()->GetIncomingCommuteCount(1.0), 500);
+        EXPECT_EQ(geoGrid.GetById(22)->GetContent()->GetOutgoingCommuteCount(1.0), 500);
+        EXPECT_EQ(geoGrid.GetById(21)->GetContent()->GetIncomingCommuteCount(1.0), 500);
+        EXPECT_EQ(geoGrid.GetById(22)->GetContent()->GetOutgoingCommuteCount(1.0), 500);
 }
 
 TEST(ReaderFactoryTest, TestCities)

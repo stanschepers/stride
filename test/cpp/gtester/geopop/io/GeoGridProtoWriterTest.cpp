@@ -44,11 +44,11 @@ TEST(GeoGridProtoWriterTest, contactPoolsTest)
         auto&      geoGrid = pop->RefGeoGrid();
         const auto loc     = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Bavikhove", 2500);
 
-        loc->getContent()->RefPools(Id::K12School).emplace_back(pop->RefPoolSys().CreateContactPool(Id::K12School));
-        loc->getContent()->RefPools(Id::PrimaryCommunity).emplace_back(pop->RefPoolSys().CreateContactPool(Id::PrimaryCommunity));
-        loc->getContent()->RefPools(Id::College).emplace_back(pop->RefPoolSys().CreateContactPool(Id::College));
-        loc->getContent()->RefPools(Id::Household).emplace_back(pop->RefPoolSys().CreateContactPool(Id::Household));
-        loc->getContent()->RefPools(Id::Workplace).emplace_back(pop->RefPoolSys().CreateContactPool(Id::Workplace));
+    loc->GetContent()->RefPools(Id::K12School).emplace_back(pop->RefPoolSys().CreateContactPool(Id::K12School));
+    loc->GetContent()->RefPools(Id::PrimaryCommunity).emplace_back(pop->RefPoolSys().CreateContactPool(Id::PrimaryCommunity));
+    loc->GetContent()->RefPools(Id::College).emplace_back(pop->RefPoolSys().CreateContactPool(Id::College));
+    loc->GetContent()->RefPools(Id::Household).emplace_back(pop->RefPoolSys().CreateContactPool(Id::Household));
+    loc->GetContent()->RefPools(Id::Workplace).emplace_back(pop->RefPoolSys().CreateContactPool(Id::Workplace));
         geoGrid.AddLocation(loc);
 
         CompareGeoGrid(geoGrid);

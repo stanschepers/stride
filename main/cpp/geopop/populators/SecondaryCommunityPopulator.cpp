@@ -34,7 +34,7 @@ void Populator<stride::ContactType::Id::SecondaryCommunity>::Apply(GeoGrid<Epide
         m_logger->trace("Starting to populate Secondary Communities");
 
         for (const auto& loc : geoGrid) {
-                if (loc->getContent()->GetPopCount() == 0) {
+                if (loc->GetContent()->GetPopCount() == 0) {
                         continue;
                 }
                 // 1. find all communities in an area of 10-k*10 km
@@ -45,7 +45,7 @@ void Populator<stride::ContactType::Id::SecondaryCommunity>::Apply(GeoGrid<Epide
                 }
 
                 // 2. find all households in this location
-                const auto& households = loc->getContent()->RefPools(Id::Household);
+                const auto& households = loc->GetContent()->RefPools(Id::Household);
 
                 auto hh_per_comm        = households.size() / nearbyPools.size();
                 auto remainder          = households.size() % nearbyPools.size();

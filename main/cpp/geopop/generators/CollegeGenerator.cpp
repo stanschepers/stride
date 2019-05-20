@@ -39,13 +39,13 @@ void Generator<stride::ContactType::Id::College>::Apply(GeoGrid<Epidemiologic>& 
         // Aggregate population in TopK cities.
         auto totalPop = 0U;
         for (const auto& c : cities) {
-                totalPop += c->getContent()->GetPopCount();
+                totalPop += c->GetContent()->GetPopCount();
         }
 
         // Weights determined by relative population in city.
         vector<double> weights;
         for (const auto& c : cities) {
-                const auto weight = static_cast<double>(c->getContent()->GetPopCount()) / static_cast<double>(totalPop);
+                const auto weight = static_cast<double>(c->GetContent()->GetPopCount()) / static_cast<double>(totalPop);
                 AssertThrow(weight >= 0 && weight <= 1 && !std::isnan(weight),
                             "CollegeGenerator> Invalid weight: " + to_string(weight), m_logger);
                 weights.push_back(weight);

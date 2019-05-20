@@ -36,7 +36,7 @@ void Populator<stride::ContactType::Id::College>::Apply(GeoGrid<Epidemiologic>& 
 
         // for every location
         for (const auto& loc : geoGrid) {
-                if (loc->getContent()->GetPopCount() == 0) {
+                if (loc->GetContent()->GetPopCount() == 0) {
                         continue;
                 }
                 // 1. find all highschools in an area of 10-k*10 km
@@ -50,7 +50,7 @@ void Populator<stride::ContactType::Id::College>::Apply(GeoGrid<Epidemiologic>& 
                 // 2. find all colleges where students from this location commute to
                 vector<Location<Epidemiologic>*> commutingCollege;
                 vector<double>    commutingWeights;
-                for (const auto& commute : loc->getContent()->CRefOutgoingCommutes()) {
+                for (const auto& commute : loc->GetContent()->CRefOutgoingCommutes()) {
                         const auto& cpools = commute.first->CRefPools(Id::College);
                         if (!cpools.empty()) {
                                 commutingCollege.push_back(commute.first->GetLocation());
@@ -65,7 +65,7 @@ void Populator<stride::ContactType::Id::College>::Apply(GeoGrid<Epidemiologic>& 
                 }
 
                 // 2. for every student assign a class
-                for (const auto& hhPool : loc->getContent()->RefPools(Id::Household)) {
+                for (const auto& hhPool : loc->GetContent()->RefPools(Id::Household)) {
                         for (Person* p : *hhPool) {
                                 if (AgeBrackets::College::HasAge(p->GetAge()) &&
                                     m_rn_man.MakeWeightedCoinFlip(geoGridConfig.param.participation_college)) {
@@ -76,7 +76,7 @@ void Populator<stride::ContactType::Id::College>::Apply(GeoGrid<Epidemiologic>& 
 
                                                 // pools to commute to
                                                 const auto& collegePools =
-                                                    commutingCollege[disCommuting()]->getContent()->CRefPools(Id::College);
+                                                        commutingCollege[disCommuting()]->GetContent()->CRefPools(Id::College);
 
                                                 auto disPools = m_rn_man.GetUniformIntGenerator(
                                                     0, static_cast<int>(collegePools.size()), 0U);

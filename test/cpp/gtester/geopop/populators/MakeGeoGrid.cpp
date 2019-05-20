@@ -72,7 +72,7 @@ void MakeGeoGrid(const GeoGridConfig& , int locCount, int locPop, int schoolCoun
 
                 for (int hI = 0; hI < houseHoldCount; hI++) {
                         hhGen.AddPools(*loc, pop, config);
-                        auto contactPool = loc->getContent()->RefPools(Id::Household).back();
+                        auto contactPool = loc->GetContent()->RefPools(Id::Household).back();
 
                         for (int i = 0; i < personCount; i++) {
                                 auto sample = populationSample[sampleId % populationSize];

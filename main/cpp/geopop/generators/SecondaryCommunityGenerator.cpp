@@ -40,7 +40,7 @@ void Generator<stride::ContactType::Id::SecondaryCommunity>::Apply(GeoGrid<Epide
 
         vector<double> weights;
         for (const auto& loc : geoGrid) {
-                const auto weight = static_cast<double>(loc->getContent()->GetPopCount()) / static_cast<double>(popCount);
+                const auto weight = static_cast<double>(loc->GetContent()->GetPopCount()) / static_cast<double>(popCount);
                 AssertThrow(weight >= 0 && weight <= 1 && !std::isnan(weight),
                             "SecondaryCommunityGenerator> Invalid weight: " + to_string(weight), m_logger);
                 weights.push_back(weight);

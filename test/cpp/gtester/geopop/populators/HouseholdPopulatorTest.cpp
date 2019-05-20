@@ -60,7 +60,7 @@ TEST_F(HouseholdPopulatorTest, OneHouseholdTest)
         m_geo_grid.AddLocation(loc1);
         m_household_populator.Apply(m_geo_grid, m_gg_config);
 
-        const auto& hPools = loc1->getContent()->RefPools(Id::Household);
+        const auto& hPools = loc1->GetContent()->RefPools(Id::Household);
         ASSERT_EQ(hPools.size(), 1);
         ASSERT_EQ(hPools[0]->size(), 1);
 }
@@ -83,7 +83,7 @@ TEST_F(HouseholdPopulatorTest, FiveHouseholdsTest)
         m_geo_grid.AddLocation(loc1);
         m_household_populator.Apply(m_geo_grid, m_gg_config);
 
-        for (const auto& hPool : loc1->getContent()->RefPools(Id::Household)) {
+        for (const auto& hPool : loc1->GetContent()->RefPools(Id::Household)) {
                 ASSERT_EQ(hPool->size(), 1);
                 EXPECT_EQ((*hPool)[0]->GetAge(), 18);
         }
@@ -100,7 +100,7 @@ TEST_F(HouseholdPopulatorTest, MultipleHouseholdTypesTest)
         m_geo_grid.AddLocation(loc1);
         m_household_populator.Apply(m_geo_grid, m_gg_config);
 
-        const auto& hPools = loc1->getContent()->RefPools(Id::Household);
+        const auto& hPools = loc1->GetContent()->RefPools(Id::Household);
         const auto& pool1  = *hPools[0];
         const auto& pool2  = *hPools[1];
 
