@@ -40,7 +40,7 @@ class PreSchoolPopulatorTest : public testing::Test
 {
 public:
         PreSchoolPopulatorTest()
-            : m_rn_man(RnInfo()), m_preschool_populator(m_rn_man), m_geogrid_config(), m_pop(Population::Create()),
+            : m_rn_man(RnInfo()), m_preschool_populator(m_rn_man), m_gg_config(), m_pop(Population::Create()),
               m_geo_grid(m_pop->RefGeoGrid()), m_preschool_generator(m_rn_man)
         {
         }
@@ -48,10 +48,11 @@ public:
 protected:
         RnMan                  m_rn_man;
         PreSchoolPopulator     m_preschool_populator;
-        GeoGridConfig          m_geogrid_config;
+        GeoGridConfig          m_gg_config;
         shared_ptr<Population> m_pop;
         GeoGrid&               m_geo_grid;
         PreSchoolGenerator     m_preschool_generator;
+        const unsigned int     m_pppre = m_gg_config.pools[Id::PreSchool];
 };
 
 TEST_F(PreSchoolPopulatorTest, NoPopulation)
@@ -59,15 +60,15 @@ TEST_F(PreSchoolPopulatorTest, NoPopulation)
         m_geo_grid.AddLocation(make_shared<Location>(0, 0, Coordinate(0.0, 0.0), "", 0));
         m_geo_grid.Finalize();
 
-        EXPECT_NO_THROW(m_preschool_populator.Apply(m_geo_grid, m_geogrid_config));
+        EXPECT_NO_THROW(m_preschool_populator.Apply(m_geo_grid, m_gg_config));
 }
 
 TEST_F(PreSchoolPopulatorTest, OneLocationTest)
 {
-        MakeGeoGrid(m_geogrid_config, 1, 300, 5, 100, 3, m_pop.get());
+        MakeGeoGrid(m_gg_config, 1, 300, 5, 100, 3, m_pop.get());
         m_geo_grid.Finalize();
-        m_geogrid_config.param.participation_preschool = 1;
-        m_preschool_populator.Apply(m_geo_grid, m_geogrid_config);
+        m_gg_config.param.participation_preschool = 1;
+        m_preschool_populator.Apply(m_geo_grid, m_gg_config);
 
         map<int, int> usedCapacity{
             {1, 0},   {2, 0},   {3, 0},   {4, 2},   {5, 1},   {6, 0},   {7, 0},   {8, 0},   {9, 0},   {10, 0},
@@ -87,7 +88,7 @@ TEST_F(PreSchoolPopulatorTest, OneLocationTest)
         auto  location = *m_geo_grid.begin();
         auto& prePools = location->RefPools(Id::PreSchool);
 
-        ASSERT_EQ(prePools.size(), 5 * PoolParams<Id::PreSchool>::pools);
+        ASSERT_EQ(prePools.size(), 5 * m_pppre);
         for (auto& pool : prePools) {
                 EXPECT_EQ(usedCapacity[pool->GetId()], pool->size());
                 for (Person* person : *pool) {
@@ -140,7 +141,7 @@ TEST_F(PreSchoolPopulatorTest, OneLocationTest)
 
 TEST_F(PreSchoolPopulatorTest, TwoLocationTest)
 {
-        MakeGeoGrid(m_geogrid_config, 3, 100, 3, 33, 3, m_pop.get());
+        MakeGeoGrid(m_gg_config, 3, 100, 3, 33, 3, m_pop.get());
 
         // Brasschaat and Schoten are close to each oter and will both have students from both.
         // Kortrijk will only have students going to Kortrijk.
@@ -154,17 +155,17 @@ TEST_F(PreSchoolPopulatorTest, TwoLocationTest)
         kortrijk->SetCoordinate(Coordinate(50.82900246, 3.264406009));
 
         m_geo_grid.Finalize();
-        m_geogrid_config.param.participation_preschool = 1;
-        m_preschool_populator.Apply(m_geo_grid, m_geogrid_config);
+        m_gg_config.param.participation_preschool = 1;
+        m_preschool_populator.Apply(m_geo_grid, m_gg_config);
 
         auto& prePools1 = brasschaat->RefPools(Id::PreSchool);
         auto& prePools2 = schoten->RefPools(Id::PreSchool);
         auto& prePools3 = kortrijk->RefPools(Id::PreSchool);
 
         // Check number of pools corresponding to 3 K12Schools per location.
-        EXPECT_EQ(prePools1.size(), 3 * PoolParams<Id::PreSchool>::pools);
-        EXPECT_EQ(prePools2.size(), 3 * PoolParams<Id::PreSchool>::pools);
-        EXPECT_EQ(prePools3.size(), 3 * PoolParams<Id::PreSchool>::pools);
+        EXPECT_EQ(prePools1.size(), 3 * m_pppre);
+        EXPECT_EQ(prePools2.size(), 3 * m_pppre);
+        EXPECT_EQ(prePools3.size(), 3 * m_pppre);
 
         map<int, int> persons{
             {0, 0},     {1, 0},     {2, 0},     {3, 0},     {4, 0},     {5, 0},     {6, 0},     {7, 0},     {8, 0},
