@@ -136,7 +136,7 @@ void CSV::WriteRows(std::ofstream& file) const
 void CSV::ReadFromStream(std::istream& inputStream)
 {
         std::string line;
-        std::tuple<std::string, char> delimiter = {",", '\n'};
+        std::tuple<std::string, char> delimiter(",", '\n');
 
         // header
         getline(inputStream, line, get<1>(delimiter));
