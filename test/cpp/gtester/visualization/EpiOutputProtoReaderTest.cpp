@@ -17,15 +17,13 @@
 
 namespace {
 
-TEST(EpiOutputProtoReaderTest, zeroLocationTest) { EXPECT_TRUE(true); }
+TEST(EpiOutputProtoReaderTest, zeroLocationsTest) { EXPECT_TRUE(true); }
 
 TEST(EpiOutputProtoReaderTest, oneLocationZeroDaysTest) { EXPECT_TRUE(true); }
 
 TEST(EpiOutputProtoReaderTest, oneLocationOneDayTest) { EXPECT_TRUE(true); }
 
-TEST(EpiOutputProtoReaderTest, oneLocationTwoDaysTest) { EXPECT_TRUE(true); }
-
-TEST(EpiOutputProtoReaderTest, fiveLocationsOneDayTest) { EXPECT_TRUE(true); }
+TEST(EpiOutputProtoReaderTest, twoLocationsFiveDayTest) { EXPECT_TRUE(true); }
 
 TEST(EpiOutputProtoReaderTest, emptyStreamTest) { EXPECT_TRUE(true); }
 

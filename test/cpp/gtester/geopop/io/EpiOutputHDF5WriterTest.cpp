@@ -21,14 +21,12 @@
 
 namespace {
 
-TEST(EpiOutputHDF5WriterTest, zeroLocationTest) { EXPECT_TRUE(true); }
+TEST(EpiOutputHDF5WriterTest, zeroLocationsTest) { EXPECT_TRUE(true); }
 
 TEST(EpiOutputHDF5WriterTest, oneLocationZeroDaysTest) { EXPECT_TRUE(true); }
 
 TEST(EpiOutputHDF5WriterTest, oneLocationOneDayTest) { EXPECT_TRUE(true); }
 
-TEST(EpiOutputHDF5WriterTest, oneLocationTwoDaysTest) { EXPECT_TRUE(true); }
-
-TEST(EpiOutputHDF5WriterTest, fiveLocationsOneDayTest) { EXPECT_TRUE(true); }
+TEST(EpiOutputHDF5WriterTest, twoLocationsFiveDayTest) { EXPECT_TRUE(true); }
 
 } // namespace

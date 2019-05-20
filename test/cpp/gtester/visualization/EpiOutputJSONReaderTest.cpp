@@ -16,18 +16,34 @@
 #include <fstream>
 #include <gtest/gtest.h>
 #include <memory>
+#include <iostream>
+
+#include "geopop/GeoGrid.h"
+#include "visualization/source/EpiOutputJSONReader.h"
+
+using namespace std;
+using namespace stride;
+using namespace geopop;
+using namespace visualization;
 
 namespace {
 
-TEST(EpiOutputJSONReaderTest, zeroLocationTest) { EXPECT_TRUE(true); }
+//void getEpiOutputFromJSON(const string& jsonString, geopop::GeoGrid<EpiOutput> *epiOutput)
+//{
+//    auto instream = make_unique<istringstream>(jsonString);
+//
+//    EpiOutputJSONReader geoGridJSONReader(move(instream), epiOutput);
+//
+//    geoGridJSONReader.Read();
+//}
+
+TEST(EpiOutputJSONReaderTest, zeroLocationsTest) { EXPECT_TRUE(true); }
 
 TEST(EpiOutputJSONReaderTest, oneLocationZeroDaysTest) { EXPECT_TRUE(true); }
 
 TEST(EpiOutputJSONReaderTest, oneLocationOneDayTest) { EXPECT_TRUE(true); }
 
-TEST(EpiOutputJSONReaderTest, oneLocationTwoDaysTest) { EXPECT_TRUE(true); }
-
-TEST(EpiOutputJSONReaderTest, fiveLocationsOneDayTest) { EXPECT_TRUE(true); }
+TEST(EpiOutputJSONReaderTest, twoLocationsFiveDayTest) { EXPECT_TRUE(true); }
 
 TEST(EpiOutputJSONReaderTest, emptyStreamTest) { EXPECT_TRUE(true); }
 

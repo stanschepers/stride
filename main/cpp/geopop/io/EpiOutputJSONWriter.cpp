@@ -32,36 +32,36 @@ using namespace stride;
 using json = nlohmann::json;
 
 EpiOutputJSONWriter::EpiOutputJSONWriter() : m_output() {
-    m_output["measured_days"] = {};
+        m_output["measured_days"] = {};
 }
 
 void EpiOutputJSONWriter::Write(std::ostream& stream)
 {
-    stream << setw(4) << m_output;
+        stream << setw(4) << m_output;
 }
 
 void EpiOutputJSONWriter::Update(GeoGrid<Epidemiologic>& geoGrid, unsigned int day)
 {
-  m_output["measured_days"].push_back(day);
-    if (day == 0){
+        m_output["measured_days"].push_back(day);
+        if (day == 0){
+                for (unsigned int i = 0; i < geoGrid.size(); i++) {
+                        const auto loc = geoGrid[i];
+                        m_output["locations"][i]["id"] = loc->GetID();
+                        m_output["locations"][i]["name"] = loc->GetName();
+                        m_output["locations"][i]["province"] = loc->GetProvince();
+                        m_output["locations"][i]["coordinate"][0] = loc->GetCoordinate().get<0>();
+                        m_output["locations"][i]["coordinate"][1] = loc->GetCoordinate().get<1>();
+                        m_output["locations"][i]["pop_count"] = loc->GetContent()->GetPopCount();
+                }
+        }
         for (unsigned int i = 0; i < geoGrid.size(); i++) {
-            const auto loc = geoGrid[i];
-            m_output["locations"][i]["id"] = loc->GetID();
-            m_output["locations"][i]["name"] = loc->GetName();
-            m_output["locations"][i]["province"] = loc->GetProvince();
-            m_output["locations"][i]["coordinate"][0] = loc->GetCoordinate().get<0>();
-            m_output["locations"][i]["coordinate"][1] = loc->GetCoordinate().get<1>();
-            m_output["locations"][i]["pop_count"] = loc->GetContent()->GetPopCount();
+                auto epiOutput = geoGrid[i]->GetContent()->GenerateEpiOutput();
+                for (const std::string& ageBracket: stride::ageBrackets){
+                for (const std::string& healthStatus: stride::healthStatuses){
+                        m_output["locations"][i]["epi-output"][ageBracket][healthStatus][std::to_string(day)] = epiOutput[ageBracket][healthStatus];
+                }
+                }
         }
-    }
-    for (unsigned int i = 0; i < geoGrid.size(); i++) {
-        auto epiOutput = geoGrid[i]->GetContent()->GenerateEpiOutput();
-        for (const std::string& ageBracket: stride::ageBrackets){
-            for (const std::string& healthStatus: stride::healthStatuses){
-                m_output["locations"][i]["epi-output"][ageBracket][healthStatus][std::to_string(day)] = epiOutput[ageBracket][healthStatus];
-            }
-        }
-    }
 }
 
 } // namespace geopop

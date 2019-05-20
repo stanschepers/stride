@@ -19,15 +19,13 @@
 
 namespace {
 
-TEST(EpiOutputHDF5ReaderTest, zeroLocationTest) { EXPECT_TRUE(true); }
+TEST(EpiOutputHDF5ReaderTest, zeroLocationsTest) { EXPECT_TRUE(true); }
 
 TEST(EpiOutputHDF5ReaderTest, oneLocationZeroDaysTest) { EXPECT_TRUE(true); }
 
 TEST(EpiOutputHDF5ReaderTest, oneLocationOneDayTest) { EXPECT_TRUE(true); }
 
-TEST(EpiOutputHDF5ReaderTest, oneLocationTwoDaysTest) { EXPECT_TRUE(true); }
-
-TEST(EpiOutputHDF5ReaderTest, fiveLocationsOneDayTest) { EXPECT_TRUE(true); }
+TEST(EpiOutputHDF5ReaderTest, twoLocationsFiveDayTest) { EXPECT_TRUE(true); }
 
 TEST(EpiOutputHDF5ReaderTest, emptyStreamTest) { EXPECT_TRUE(true); }
 
