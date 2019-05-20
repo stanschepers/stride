@@ -110,11 +110,6 @@ void GeoGridConfig::SetDistributionData(const std::string &distributionFileName)
 
         auto distributionReader = ReaderFactory::CreateDistributionReader(distributionFileName);
         distributionReader->SetWorkDistribution(param.work_distribution);
-        for(auto tup: param.work_distribution){
-            std::cout << std::get<0>(tup) << " "
-                      << std::get<1>(tup) << " "
-                      << std::get<2>(tup) << std::endl;
-        }
 }
 
 
