@@ -41,7 +41,7 @@ ProcessorCount(PROCCOUNT)
 # Required to avoid ld problems on Mac
 set(CMAKE_CXX_FLAGS         "${CMAKE_CXX_FLAGS} -fvisibility=hidden")
 #
-set(CMAKE_CXX_FLAGS         "${CMAKE_CXX_FLAGS} -std=c++17 -Wall -Wextra -pedantic -Weffc++ -pg")
+set(CMAKE_CXX_FLAGS         "${CMAKE_CXX_FLAGS} -std=c++17 -Wall -Wextra -pedantic -Weffc++")
 set(CMAKE_CXX_FLAGS         "${CMAKE_CXX_FLAGS} -Wno-unknown-pragmas")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Ofast" )
 set(CMAKE_CXX_FLAGS_DEBUG   "${CMAKE_CXX_FLAGS_DEBUG} -O0"   )
@@ -101,17 +101,21 @@ find_package(Threads)
 #----------------------------------------------------------------------------
 # ProtoBuf
 #----------------------------------------------------------------------------
+set(Protobuf_USE_STATIC_LIBS ON)
 if(NOT STRIDE_FORCE_NO_PROTOC)
     include(FindProtobuf)
     find_package(Protobuf)
     if(NOT Protobuf_FOUND)
-            set(Protobuf_VERSION "0.0.0")
+        set(Protobuf_VERSION "0.0.0")
+    endif()
+    if((Protobuf_FOUND) AND (${Protobuf_VERSION} VERSION_LESS 3.0.0))
+         set(Protobuf_FOUND FALSE)
     endif()
 else()
-    set(Protobuf_VERSION "0.0.0")
+    set(Protobuf_FOUND FALSE)
 endif()
 #
-if(Protobuf_FOUND AND (${Protobuf_VERSION} VERSION_GREATER 3.0.0 OR ${Protobuf_VERSION} VERSION_EQUAL 3.0.0))
+if(Protobuf_FOUND)
     set(Protobuf_PBS_DIR ${CMAKE_BINARY_DIR}/main/cpp)
     include_directories(SYSTEM ${Protobuf_INCLUDE_DIRS})
 else()
