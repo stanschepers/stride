@@ -118,8 +118,14 @@ namespace geopop {
             std::map<std::string, std::map<std::string, unsigned int>> epiOutput_pool = pool->GenerateEpiOutput();
             for (const string &ageBracket: stride::ageBrackets){
                 for (const string &healthStatus: stride::healthStatuses){
-                    epiOutput[ageBracket][healthStatus] +=
-                            double(epiOutput_pool[ageBracket][healthStatus]) / double(total_members);
+                        if (healthStatus == "Total") {
+                                epiOutput[ageBracket][healthStatus] +=
+                                    double(epiOutput_pool[ageBracket][healthStatus]) / double(total_members);
+                        }
+                        else {
+                                epiOutput[ageBracket][healthStatus] +=
+                                    double(epiOutput_pool[ageBracket][healthStatus]) / double(epiOutput_pool[ageBracket]["Total"]);
+                        }
                 }
             }
         }

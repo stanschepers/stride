@@ -33,12 +33,13 @@ set_property(SOURCE source/strideVisualization.cpp PROPERTY SKIP_AUTOMOC ON)
 #qt5_wrap_ui(ui_wrap ${project_ui})
 #qt5_wrap_cpp(moc_sources ${project_headers})
 
-add_executable(StrideVisualization
+add_executable(strideVisualization
         ${SOURCE_FILES}
 #        ${ui_wrap}
 #        ${moc_sources}
         )
 
-target_link_libraries(StrideVisualization PUBLIC Qt5::Widgets Qt5::Core Qt5::Quick libstride)
+target_link_libraries(strideVisualization PUBLIC Qt5::Widgets Qt5::Core Qt5::Quick libstride)
 
-install(FILES ${QML_FILES} DESTINATION ${BIN_INSTALL_LOCATION}/Qt5Stride)
+install(FILES ${QML_FILES} DESTINATION ${BIN_INSTALL_LOCATION}/strideVisualization)
+install(TARGETS strideVisualization DESTINATION ${BIN_INSTALL_LOCATION})
