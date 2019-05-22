@@ -42,4 +42,4 @@ add_executable(strideVisualization
 target_link_libraries(strideVisualization PUBLIC Qt5::Widgets Qt5::Core Qt5::Quick libstride)
 
 install(FILES ${QML_FILES} DESTINATION ${BIN_INSTALL_LOCATION}/strideVisualization)
-install(TARGETS strideVisualization DESTINATION ${BIN_INSTALL_LOCATION})
+install(TARGETS strideVisualization DESTINATION ${BIN_INSTALL_LOCATION}/strideVisualization)

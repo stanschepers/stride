@@ -368,6 +368,8 @@ void MapController::UpdateLocations()
                 // Take the smallest and biggest in the category
                 low  = m_smallest_values[m_selectedAgeBracket][m_selectedHealthStatus]; // Smallest of that category
                 high = m_biggest_values[m_selectedAgeBracket][m_selectedHealthStatus];  // Biggest of that category
+                low  = 0;
+                high = 1;
         }
         // Call the QML method to update the color spectrum
         QMetaObject::invokeMethod(m_root, "updateColorSpectrumValues", Q_ARG(QVariant, makePresentablePercentage(low)),
@@ -390,7 +392,7 @@ void MapController::UpdateLocations()
                                 total += location->GetContent()->epiOutput[ageBracket][m_selectedHealthStatus][m_day];
                         }
                         // Scale the value so the evolution is seen in the GUI
-                        value = scaleValue(low, high, total);
+                        value = total; // scaleValue(low, high, total);
                 }
                 // Only category in age bracket selected
                 else if (m_selectedHealthStatus == "Total") {
@@ -400,9 +402,9 @@ void MapController::UpdateLocations()
                 // Specific category selected
                 else {
                         // Scale the value so the evolution is seen in the GUI
-                        value = scaleValue(
-                            low, high,
-                            location->GetContent()->epiOutput[m_selectedAgeBracket][m_selectedHealthStatus][m_day]);
+                        value = /*scaleValue(
+                            low, high,*/
+                            location->GetContent()->epiOutput[m_selectedAgeBracket][m_selectedHealthStatus][m_day];//);
                 }
                 // Call the QML method to update the circle on the map
                 QMetaObject::invokeMethod(m_root, "updateLocation",

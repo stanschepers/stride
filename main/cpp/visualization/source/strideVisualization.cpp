@@ -22,6 +22,7 @@
 #include <iostream>
 
 #include "MapController.h"
+#include "util/FileSys.h"
 
 /// Main program of the stride visualizer.
 int main(int argc, char* argv[])
@@ -55,7 +56,7 @@ int main(int argc, char* argv[])
 
         QQmlApplicationEngine engine;
         engine.rootContext()->setContextProperty("ctrl", &ctrl);
-        engine.load(QUrl::fromLocalFile("./bin/Qt5Stride/main.qml"));
+        engine.load(QUrl::fromLocalFile("./bin/strideVisualization/main.qml"));
 
         QObject* root = engine.rootObjects()[0];
     ctrl.Initialize(root);

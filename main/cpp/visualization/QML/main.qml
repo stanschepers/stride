@@ -138,8 +138,8 @@ Window {
     }
 
     Button {
-        id: selectionButton
-        text: "Rectangle"
+        id: autoSimButton
+        text: "Auto sim"
         width: 160
         height: 40
 
@@ -149,31 +149,46 @@ Window {
         anchors.margins: 10
 
         onClicked: {
-            if (selectionButton.text == "Rectangle"){
-                selectionButton.text = "Circle";
+            if (autoSimButton.text == "Auto sim")
+            {
+                if (daySlider.value == daySlider.maximumValue){
+                    daySlider.value = daySlider.minimumValue;
+                }
+                autoSimButton.text = "Stop sim";
+                autoSimTimer.start();
             }
-            else if (selectionButton.text == "Circle"){
-                selectionButton.text = "Rectangle";
+            else if (autoSimButton.text == "Stop sim")
+            {
+                autoSimButton.text = "Auto sim";
+                autoSimTimer.stop();
             }
-            else if (selectionButton.text == "Clear"){
-                selectionButton.text = "Rectangle";
-                selectionCircle.visible = false;
-                selectionRec.visible = false;
-                ctrl.dataPinned = false;
+        }
+
+        Timer {
+            id: autoSimTimer
+            interval: 4000 / daySlider.maximumValue
+            repeat: true
+
+            onTriggered: {
+                daySlider.value = daySlider.value + 1;
+                if (daySlider.value == daySlider.maximumValue){
+                    autoSimButton.text = "Auto sim";
+                    autoSimTimer.stop();
+                }
             }
         }
     }
 
     Slider {
         id: daySlider;
-        height: 40
         z: map.z + 3
 
-        anchors.margins: 10
+        anchors.margins: 5
         anchors.rightMargin: parent.width * 0.1
         anchors.bottom: parent.bottom
-        anchors.left: selectionButton.right
+        anchors.left: autoSimButton.right
         anchors.right: parent.right
+        anchors.top: coverUpCopyRight.top
 
         orientation : Qt.Horizontal
 
@@ -322,6 +337,32 @@ Window {
         model: ["Health status", "Susceptible", "Infected", "Infectious", "Symptomatic", "Recovered", "Immune"]
 
         onActivated: ctrl.setHealthStatus = model[index]
+    }
+
+    Button {
+        id: selectionButton
+        text: "Rectangle"
+        width: 160
+//        height: 40
+
+        anchors.top: parent.top
+        anchors.left: healthStatusComboBox.right
+        anchors.margins: 10
+
+        onClicked: {
+            if (selectionButton.text == "Rectangle"){
+                selectionButton.text = "Circle";
+            }
+            else if (selectionButton.text == "Circle"){
+                selectionButton.text = "Rectangle";
+            }
+            else if (selectionButton.text == "Clear"){
+                selectionButton.text = "Rectangle";
+                selectionCircle.visible = false;
+                selectionRec.visible = false;
+                ctrl.dataPinned = false;
+            }
+        }
     }
 
     Rectangle {
