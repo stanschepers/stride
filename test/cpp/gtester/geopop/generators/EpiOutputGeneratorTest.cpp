@@ -33,7 +33,7 @@ bool compareMapWithDoubles(map<string, map<string, double>> map1, map<string, ma
 {
         for (const string& ageBracket : stride::ageBrackets) {
                 for (const string& healtCategory : stride::healthStatuses) {
-                        if (map1[ageBracket][healtCategory] - map2[ageBracket][healtCategory] > 0.0000000000001)
+                        if (map1[ageBracket][healtCategory] - map2[ageBracket][healtCategory] > 0.00001)
                                 return false;
                 }
         }
@@ -171,11 +171,11 @@ TEST(EpiOutputGeneratorTest, locationOneContactpoolTest)
                 }
         }
 
-        correct_result["Daycare"]["Recovered"]     = 0.2;
-        correct_result["PreSchool"]["Infected"]    = 0.2;
-        correct_result["K12School"]["Susceptible"] = 0.2;
-        correct_result["Workplace"]["Immune"]      = 0.2;
-        correct_result["Senior"]["Recovered"]      = 0.2;
+        correct_result["Daycare"]["Recovered"]     = 1;
+        correct_result["PreSchool"]["Infected"]    = 1;
+        correct_result["K12School"]["Susceptible"] = 1;
+        correct_result["Workplace"]["Immune"]      = 1;
+        correct_result["Senior"]["Recovered"]      = 1;
 
         ContactPool          pool(1, ContactType::Id::Household);
         vector<unsigned int> ages = {22, 17, 5, 1, 75};
@@ -219,28 +219,28 @@ TEST(EpiOutputGeneratorTest, locationFiveContactpoolsTest)
                 }
         }
 
-        correct_result["Daycare"]["Total"]       = 0.2;
-        correct_result["Daycare"]["Susceptible"] = 0.1;
-        correct_result["Daycare"]["Recovered"]   = 0.1;
+        correct_result["Daycare"]["Total"]       = 0.20;
+        correct_result["Daycare"]["Susceptible"] = 0.50;
+        correct_result["Daycare"]["Recovered"]   = 0.50;
 
-        correct_result["PreSchool"]["Total"]       = 0.1;
-        correct_result["PreSchool"]["Susceptible"] = 0.1;
+        correct_result["PreSchool"]["Total"]       = 0.10;
+        correct_result["PreSchool"]["Susceptible"] = 1.00;
 
-        correct_result["K12School"]["Total"]     = 0.2;
-        correct_result["K12School"]["Recovered"] = 0.1;
-        correct_result["K12School"]["Immune"]    = 0.1;
+        correct_result["K12School"]["Total"]     = 0.20;
+        correct_result["K12School"]["Recovered"] = 0.50;
+        correct_result["K12School"]["Immune"]    = 0.50;
 
-        correct_result["College"]["Total"]    = 0.1;
-        correct_result["College"]["Infected"] = 0.1;
+        correct_result["College"]["Total"]    = 0.10;
+        correct_result["College"]["Infected"] = 1.00;
 
         correct_result["Workplace"]["Total"]     = 0.28;
-        correct_result["Workplace"]["Infected"]  = 0.1;
-        correct_result["Workplace"]["Recovered"] = 0.1;
-        correct_result["Workplace"]["Immune"]    = 0.8;
+        correct_result["Workplace"]["Infected"]  = 0.357143;
+        correct_result["Workplace"]["Recovered"] = 0.357143;
+        correct_result["Workplace"]["Immune"]    = 0.285714;
 
         correct_result["Senior"]["Total"]       = 0.12;
-        correct_result["Senior"]["Susceptible"] = 0.1;
-        correct_result["Senior"]["Immune"]      = 0.02;
+        correct_result["Senior"]["Susceptible"] = 0.833333;
+        correct_result["Senior"]["Immune"]      = 0.166667;
 
         ContactPool          pool(1, ContactType::Id::Household);
         ContactPool          pool2(1, ContactType::Id::Household);

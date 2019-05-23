@@ -28,3 +28,11 @@ struct EpiOutput{
     //        ageBracket           healthStatus             day        value
     std::map<std::string, std::map<std::string, std::map<unsigned int, double>>> epiOutput{};
 };
+
+
+
+//for (const string& ageBracket : stride::ageBrackets) {
+//        for (const string& healthStatus : stride::healthStatuses) {
+//                std::cout << ageBracket << " - " << healthStatus << " = " << result[ageBracket][healthStatus] << std::endl;
+//        }
+//}
