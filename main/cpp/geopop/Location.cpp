@@ -36,10 +36,10 @@ Location<Content>::Location(unsigned int id, unsigned int province, std::shared_
 template <class Content>
 bool Location<Content>::operator==(const Location<Content>& other) const
 {
-        using boost::geometry::get;
+//        using boost::geometry::get;
 
-        return GetID() == other.GetID() && get<0>(GetCoordinate()) == get<0>(other.GetCoordinate()) &&
-                  get<1>(GetCoordinate()) == get<1>(other.GetCoordinate()) && GetName() == other.GetName() &&
+        return GetID() == other.GetID() && get<0>() == other.get<0>() &&
+                  get<1>() == other.get<1>() && GetName() == other.GetName() &&
                   GetProvince() == other.GetProvince() && m_content->operator==(*other.GetContent());
 }
 

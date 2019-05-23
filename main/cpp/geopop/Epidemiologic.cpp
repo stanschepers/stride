@@ -112,32 +112,35 @@ std::map<std::string, std::map<std::string, double>> const Epidemiologic::Genera
                 }
         }
 
-        // Iterate over all Household contactpools in the Epidemiologic and calculate the total
-        for (stride::ContactPool* pool : this->CRefPools(stride::ContactType::Id::Household)) {
-                std::map<std::string, std::map<std::string, unsigned int>> epiOutput_pool = pool->GenerateEpiOutput();
+        if (total_members != 0) {
+                // Iterate over all Household contactpools in the Epidemiologic and calculate the total
+                for (stride::ContactPool* pool : this->CRefPools(stride::ContactType::Id::Household)) {
+                        std::map<std::string, std::map<std::string, unsigned int>> epiOutput_pool =
+                            pool->GenerateEpiOutput();
+                        for (const string& ageBracket : stride::ageBrackets) {
+                                for (const string& healthStatus : stride::healthStatuses) {
+                                        epiOutput[ageBracket][healthStatus] +=
+                                            double(epiOutput_pool[ageBracket][healthStatus]);
+                                }
+                        }
+                }
+                // Divide the totals by the total in the age bracket to get the epi-output
                 for (const string& ageBracket : stride::ageBrackets) {
-                        for (const string& healthStatus : stride::healthStatuses) {
-                                epiOutput[ageBracket][healthStatus] += double(epiOutput_pool[ageBracket][healthStatus]);
-
-                        }
-                }
-        }
-        // Divide the totals by the total in the age bracket to get the epi-output
-        for (const string& ageBracket : stride::ageBrackets) {
-                if (epiOutput[ageBracket]["Total"] == 0){
-                        continue;
-                }
-                for (const string& healthStatus : stride::healthStatuses) {
-                        if (healthStatus == "Total") {  // If the total health status,
+                        if (epiOutput[ageBracket]["Total"] == 0) {
                                 continue;
-                        } else {
-                                epiOutput[ageBracket][healthStatus] /= epiOutput[ageBracket]["Total"];
+                        }
+                        for (const string& healthStatus : stride::healthStatuses) {
+                                if (healthStatus == "Total") { // If the total health status,
+                                        continue;
+                                } else {
+                                        epiOutput[ageBracket][healthStatus] /= epiOutput[ageBracket]["Total"];
+                                }
                         }
                 }
-        }
-        // Divide the total of each age bracket by the total pop count
-        for (const string& ageBracket : stride::ageBrackets) {
-                epiOutput[ageBracket]["Total"] /= double(total_members);
+                // Divide the total of each age bracket by the total pop count
+                for (const string& ageBracket : stride::ageBrackets) {
+                        epiOutput[ageBracket]["Total"] /= double(total_members);
+                }
         }
 
         return epiOutput;

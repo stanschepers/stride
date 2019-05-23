@@ -85,7 +85,7 @@ TEST(EpiOutputJSONWriterTest, oneLocationOneDayTest) {
                                 "0": 0.0
                             },
                             "Infected": {
-                                "0": 0.1
+                                "0": 1.0
                             },
                             "Infectious": {
                                 "0": 0.0
@@ -114,10 +114,10 @@ TEST(EpiOutputJSONWriterTest, oneLocationOneDayTest) {
                                 "0": 0.0
                             },
                             "Recovered": {
-                                "0": 0.1
+                                "0": 0.5
                             },
                             "Susceptible": {
-                                "0": 0.1
+                                "0": 0.5
                             },
                             "Symptomatic": {
                                 "0": 0.0
@@ -128,7 +128,7 @@ TEST(EpiOutputJSONWriterTest, oneLocationOneDayTest) {
                         },
                         "K12School": {
                             "Immune": {
-                                "0": 0.1
+                                "0": 0.5
                             },
                             "Infected": {
                                 "0": 0.0
@@ -137,7 +137,7 @@ TEST(EpiOutputJSONWriterTest, oneLocationOneDayTest) {
                                 "0": 0.0
                             },
                             "Recovered": {
-                                "0": 0.1
+                                "0": 0.5
                             },
                             "Susceptible": {
                                 "0": 0.0
@@ -163,7 +163,7 @@ TEST(EpiOutputJSONWriterTest, oneLocationOneDayTest) {
                                 "0": 0.0
                             },
                             "Susceptible": {
-                                "0": 0.1
+                                "0": 1.0
                             },
                             "Symptomatic": {
                                 "0": 0.0
@@ -174,7 +174,7 @@ TEST(EpiOutputJSONWriterTest, oneLocationOneDayTest) {
                         },
                         "Senior": {
                             "Immune": {
-                                "0": 0.02
+                                "0": 0.16666666666666666
                             },
                             "Infected": {
                                 "0": 0.0
@@ -186,7 +186,7 @@ TEST(EpiOutputJSONWriterTest, oneLocationOneDayTest) {
                                 "0": 0.0
                             },
                             "Susceptible": {
-                                "0": 0.1
+                                "0": 0.8333333333333334
                             },
                             "Symptomatic": {
                                 "0": 0.0
@@ -197,16 +197,16 @@ TEST(EpiOutputJSONWriterTest, oneLocationOneDayTest) {
                         },
                         "Workplace": {
                             "Immune": {
-                                "0": 0.08
+                                "0": 0.2857142857142857
                             },
                             "Infected": {
-                                "0": 0.1
+                                "0": 0.35714285714285715
                             },
                             "Infectious": {
                                 "0": 0.0
                             },
                             "Recovered": {
-                                "0": 0.1
+                                "0": 0.35714285714285715
                             },
                             "Susceptible": {
                                 "0": 0.0
@@ -215,7 +215,7 @@ TEST(EpiOutputJSONWriterTest, oneLocationOneDayTest) {
                                 "0": 0.0
                             },
                             "Total": {
-                                "0": 0.27999999999999997
+                                "0": 0.28
                             }
                         }
                     },
@@ -302,12 +302,12 @@ TEST(EpiOutputJSONWriterTest, twoLocationsFiveDaysTest) {
                                         "50": 0.0
                                     },
                                     "Infected": {
-                                        "0": 0.1,
-                                        "10": 0.1,
-                                        "20": 0.1,
-                                        "30": 0.1,
-                                        "40": 0.1,
-                                        "50": 0.1
+                                        "0": 1.0,
+                                        "10": 1.0,
+                                        "20": 1.0,
+                                        "30": 1.0,
+                                        "40": 1.0,
+                                        "50": 1.0
                                     },
                                     "Infectious": {
                                         "0": 0.0,
@@ -376,20 +376,20 @@ TEST(EpiOutputJSONWriterTest, twoLocationsFiveDaysTest) {
                                         "50": 0.0
                                     },
                                     "Recovered": {
-                                        "0": 0.1,
-                                        "10": 0.1,
-                                        "20": 0.1,
-                                        "30": 0.1,
-                                        "40": 0.1,
-                                        "50": 0.1
+                                        "0": 0.5,
+                                        "10": 0.5,
+                                        "20": 0.5,
+                                        "30": 0.5,
+                                        "40": 0.5,
+                                        "50": 0.5
                                     },
                                     "Susceptible": {
-                                        "0": 0.1,
-                                        "10": 0.1,
-                                        "20": 0.1,
-                                        "30": 0.1,
-                                        "40": 0.1,
-                                        "50": 0.1
+                                        "0": 0.5,
+                                        "10": 0.5,
+                                        "20": 0.5,
+                                        "30": 0.5,
+                                        "40": 0.5,
+                                        "50": 0.5
                                     },
                                     "Symptomatic": {
                                         "0": 0.0,
@@ -410,12 +410,12 @@ TEST(EpiOutputJSONWriterTest, twoLocationsFiveDaysTest) {
                                 },
                                 "K12School": {
                                     "Immune": {
-                                        "0": 0.1,
-                                        "10": 0.1,
-                                        "20": 0.1,
-                                        "30": 0.1,
-                                        "40": 0.1,
-                                        "50": 0.1
+                                        "0": 0.5,
+                                        "10": 0.5,
+                                        "20": 0.5,
+                                        "30": 0.5,
+                                        "40": 0.5,
+                                        "50": 0.5
                                     },
                                     "Infected": {
                                         "0": 0.0,
@@ -434,12 +434,12 @@ TEST(EpiOutputJSONWriterTest, twoLocationsFiveDaysTest) {
                                         "50": 0.0
                                     },
                                     "Recovered": {
-                                        "0": 0.1,
-                                        "10": 0.1,
-                                        "20": 0.1,
-                                        "30": 0.1,
-                                        "40": 0.1,
-                                        "50": 0.1
+                                        "0": 0.5,
+                                        "10": 0.5,
+                                        "20": 0.5,
+                                        "30": 0.5,
+                                        "40": 0.5,
+                                        "50": 0.5
                                     },
                                     "Susceptible": {
                                         "0": 0.0,
@@ -500,12 +500,12 @@ TEST(EpiOutputJSONWriterTest, twoLocationsFiveDaysTest) {
                                         "50": 0.0
                                     },
                                     "Susceptible": {
-                                        "0": 0.1,
-                                        "10": 0.1,
-                                        "20": 0.1,
-                                        "30": 0.1,
-                                        "40": 0.1,
-                                        "50": 0.1
+                                        "0": 1.0,
+                                        "10": 1.0,
+                                        "20": 1.0,
+                                        "30": 1.0,
+                                        "40": 1.0,
+                                        "50": 1.0
                                     },
                                     "Symptomatic": {
                                         "0": 0.0,
@@ -526,12 +526,12 @@ TEST(EpiOutputJSONWriterTest, twoLocationsFiveDaysTest) {
                                 },
                                 "Senior": {
                                     "Immune": {
-                                        "0": 0.02,
-                                        "10": 0.02,
-                                        "20": 0.02,
-                                        "30": 0.02,
-                                        "40": 0.02,
-                                        "50": 0.02
+                                        "0": 0.16666666666666666,
+                                        "10": 0.16666666666666666,
+                                        "20": 0.16666666666666666,
+                                        "30": 0.16666666666666666,
+                                        "40": 0.16666666666666666,
+                                        "50": 0.16666666666666666
                                     },
                                     "Infected": {
                                         "0": 0.0,
@@ -558,12 +558,12 @@ TEST(EpiOutputJSONWriterTest, twoLocationsFiveDaysTest) {
                                         "50": 0.0
                                     },
                                     "Susceptible": {
-                                        "0": 0.1,
-                                        "10": 0.1,
-                                        "20": 0.1,
-                                        "30": 0.1,
-                                        "40": 0.1,
-                                        "50": 0.1
+                                        "0": 0.8333333333333334,
+                                        "10": 0.8333333333333334,
+                                        "20": 0.8333333333333334,
+                                        "30": 0.8333333333333334,
+                                        "40": 0.8333333333333334,
+                                        "50": 0.8333333333333334
                                     },
                                     "Symptomatic": {
                                         "0": 0.0,
@@ -584,20 +584,20 @@ TEST(EpiOutputJSONWriterTest, twoLocationsFiveDaysTest) {
                                 },
                                 "Workplace": {
                                     "Immune": {
-                                        "0": 0.08,
-                                        "10": 0.08,
-                                        "20": 0.08,
-                                        "30": 0.08,
-                                        "40": 0.08,
-                                        "50": 0.08
+                                        "0": 0.2857142857142857,
+                                        "10": 0.2857142857142857,
+                                        "20": 0.2857142857142857,
+                                        "30": 0.2857142857142857,
+                                        "40": 0.2857142857142857,
+                                        "50": 0.2857142857142857
                                     },
                                     "Infected": {
-                                        "0": 0.1,
-                                        "10": 0.1,
-                                        "20": 0.1,
-                                        "30": 0.1,
-                                        "40": 0.1,
-                                        "50": 0.1
+                                        "0": 0.35714285714285715,
+                                        "10": 0.35714285714285715,
+                                        "20": 0.35714285714285715,
+                                        "30": 0.35714285714285715,
+                                        "40": 0.35714285714285715,
+                                        "50": 0.35714285714285715
                                     },
                                     "Infectious": {
                                         "0": 0.0,
@@ -608,12 +608,12 @@ TEST(EpiOutputJSONWriterTest, twoLocationsFiveDaysTest) {
                                         "50": 0.0
                                     },
                                     "Recovered": {
-                                        "0": 0.1,
-                                        "10": 0.1,
-                                        "20": 0.1,
-                                        "30": 0.1,
-                                        "40": 0.1,
-                                        "50": 0.1
+                                        "0": 0.35714285714285715,
+                                        "10": 0.35714285714285715,
+                                        "20": 0.35714285714285715,
+                                        "30": 0.35714285714285715,
+                                        "40": 0.35714285714285715,
+                                        "50": 0.35714285714285715
                                     },
                                     "Susceptible": {
                                         "0": 0.0,
@@ -632,12 +632,12 @@ TEST(EpiOutputJSONWriterTest, twoLocationsFiveDaysTest) {
                                         "50": 0.0
                                     },
                                     "Total": {
-                                        "0": 0.27999999999999997,
-                                        "10": 0.27999999999999997,
-                                        "20": 0.27999999999999997,
-                                        "30": 0.27999999999999997,
-                                        "40": 0.27999999999999997,
-                                        "50": 0.27999999999999997
+                                        "0": 0.28,
+                                        "10": 0.28,
+                                        "20": 0.28,
+                                        "30": 0.28,
+                                        "40": 0.28,
+                                        "50": 0.28
                                     }
                                 }
                             },

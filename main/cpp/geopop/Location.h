@@ -30,6 +30,7 @@
 #include <unordered_map>
 #include <vector>
 #include <map>
+#include <stdexcept>
 
 namespace stride {
 class ContactPool;
@@ -74,6 +75,16 @@ public:
 
         /// Gets the content
         std::shared_ptr<Content> GetContent() const { return m_content; }
+
+        /// Get the latitude or longitude from the coordinate of the location
+        template<unsigned int T>
+        double get() const {
+                if (T < 2) {
+                        return m_coordinate.get<T>();
+                } else {
+                        throw std::out_of_range("index");
+                }
+        }
 
 private:
         std::shared_ptr<Content> m_content;  ///< Content of the Location

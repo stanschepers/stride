@@ -49,8 +49,8 @@ void EpiOutputJSONWriter::Update(GeoGrid<Epidemiologic>& geoGrid, unsigned int d
                         m_output["locations"][i]["id"] = loc->GetID();
                         m_output["locations"][i]["name"] = loc->GetName();
                         m_output["locations"][i]["province"] = loc->GetProvince();
-                        m_output["locations"][i]["coordinate"][0] = loc->GetCoordinate().get<0>();
-                        m_output["locations"][i]["coordinate"][1] = loc->GetCoordinate().get<1>();
+                        m_output["locations"][i]["coordinate"][0] = loc->get<0>();
+                        m_output["locations"][i]["coordinate"][1] = loc->get<1>();
                         m_output["locations"][i]["pop_count"] = loc->GetContent()->GetPopCount();
                 }
         }

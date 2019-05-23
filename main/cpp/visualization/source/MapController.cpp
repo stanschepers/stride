@@ -258,24 +258,24 @@ void MapController::Initialize(QObject* root)
         for (auto const& location : m_geogrid) {
 
                 // To calculate the zoom level
-                if (location->GetCoordinate().get<0>() < smallestLat) {
-                        smallestLat = location->GetCoordinate().get<0>();
+                if (location->get<0>() < smallestLat) {
+                        smallestLat = location->get<0>();
                 }
-                if (location->GetCoordinate().get<0>() > biggestLat) {
-                        biggestLat = location->GetCoordinate().get<0>();
+                if (location->get<0>() > biggestLat) {
+                        biggestLat = location->get<0>();
                 }
-                if (location->GetCoordinate().get<1>() < smallestLong) {
-                        smallestLong = location->GetCoordinate().get<1>();
+                if (location->get<1>() < smallestLong) {
+                        smallestLong = location->get<1>();
                 }
-                if (location->GetCoordinate().get<1>() > biggestLong) {
-                        biggestLong = location->GetCoordinate().get<1>();
+                if (location->get<1>() > biggestLong) {
+                        biggestLong = location->get<1>();
                 }
 
                 // Add the circle to the map
                 QMetaObject::invokeMethod(
                     m_root, "addLocation", Q_ARG(QVariant, QString::number(location->GetID())),
-                    Q_ARG(QVariant, QVariant::fromValue(location->GetCoordinate().get<0>())),
-                    Q_ARG(QVariant, QVariant::fromValue(location->GetCoordinate().get<1>())),
+                    Q_ARG(QVariant, QVariant::fromValue(location->get<0>())),
+                    Q_ARG(QVariant, QVariant::fromValue(location->get<1>())),
                     Q_ARG(QVariant, QVariant::fromValue(location->GetContent()->pop_count * 0.2))); // radius
 
                 // Search the smallest and biggest values of each category
