@@ -56,7 +56,7 @@ int main(int argc, char* argv[])
 
         QQmlApplicationEngine engine;
         engine.rootContext()->setContextProperty("ctrl", &ctrl);
-        engine.load(QUrl::fromLocalFile("./bin/strideVisualization/main.qml"));
+        engine.load(QUrl::fromLocalFile("./bin/visualization/main.qml"));
 
         QObject* root = engine.rootObjects()[0];
     ctrl.Initialize(root);
