@@ -62,7 +62,6 @@ set(STRIDE_SRC
     execs/GenPopController.cpp
     execs/SimController.cpp
     execs/StanController.cpp
-    execs/EpiController.cpp
         #---
     geopop/Coordinate.h
     geopop/GeoGrid.h

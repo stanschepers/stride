@@ -30,6 +30,9 @@
 #include "viewers/InfectedFileViewer.h"
 #include "viewers/PersonsFileViewer.h"
 #include "viewers/SummaryFileViewer.h"
+#include "viewers/EpiOutputViewer.h"
+#include "geopop/io/EpiOutputWriter.h"
+#include "geopop/io/EpiOutputWriterFactory.h"
 
 #include <boost/property_tree/xml_parser.hpp>
 #include <regex>
@@ -162,6 +165,22 @@ void ControlHelper::RegisterViewers(shared_ptr<SimRunner> runner)
                 m_stride_logger->info("Registering SummaryFileViewer");
                 const auto v = make_shared<viewers::SummaryFileViewer>(runner, m_output_prefix);
                 runner->Register(v, bind(&viewers::SummaryFileViewer::Update, v, placeholders::_1));
+        }
+
+        // Epi-output viewer
+        if (m_config.get<unsigned int>("run.epi_output.stride", 0)) {
+                m_stride_logger->info("Registering EpiOutputViewer");
+
+                const auto fileFormat = m_config.get<std::string>("run.epi_output.file_type", "json");
+                const auto stride = m_config.get<unsigned int>("run.epi_output.stride");
+                const auto prefix      = m_config.get<string>("run.output_prefix");
+                const auto epiOutputFileName = "epiOutput." + fileFormat;
+                const auto epiOutputFilePath = FileSys::BuildPath(prefix, epiOutputFileName);
+
+                shared_ptr<geopop::EpiOutputWriter> epiOutputWriter = geopop::EpiOutputWriterFactory::CreateEpiOutputWriter(epiOutputFilePath.string());
+
+                auto v = make_shared<viewers::EpiOutputViewer>(runner, stride, epiOutputWriter);
+                runner->Register(v, bind(&viewers::EpiOutputViewer::Update, v, std::placeholders::_1));
         }
 }
 

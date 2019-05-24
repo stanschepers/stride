@@ -31,12 +31,20 @@ using namespace std;
 using namespace stride;
 using json = nlohmann::json;
 
-EpiOutputJSONWriter::EpiOutputJSONWriter() : m_output() {
+EpiOutputJSONWriter::EpiOutputJSONWriter(const std::string& filename) : m_output(), m_fstream() {
+        if (!filename.empty()){
+            m_fstream = std::ofstream(filename);
+        }
         m_output["measured_days"] = {};
 }
 
-void EpiOutputJSONWriter::Write(std::ostream& stream)
+void EpiOutputJSONWriter::Write()
 {
+        this->Write(m_fstream);
+        m_fstream.close();
+}
+
+void EpiOutputJSONWriter::Write(std::ostream& stream) {
         stream << setw(4) << m_output;
 }
 
@@ -57,9 +65,9 @@ void EpiOutputJSONWriter::Update(GeoGrid<Epidemiologic>& geoGrid, unsigned int d
         for (unsigned int i = 0; i < geoGrid.size(); i++) {
                 auto epiOutput = geoGrid[i]->GetContent()->GenerateEpiOutput();
                 for (const std::string& ageBracket: stride::ageBrackets){
-                for (const std::string& healthStatus: stride::healthStatuses){
-                        m_output["locations"][i]["epi-output"][ageBracket][healthStatus][std::to_string(day)] = epiOutput[ageBracket][healthStatus];
-                }
+                        for (const std::string& healthStatus: stride::healthStatuses){
+                                m_output["locations"][i]["epi-output"][ageBracket][healthStatus][std::to_string(day)] = epiOutput[ageBracket][healthStatus];
+                        }
                 }
         }
 }

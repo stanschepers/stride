@@ -42,6 +42,8 @@ void EpiOutputViewer::Update(const sim_event::Id id)
             m_current_step++;
             break;
         }
+        case Id::Finished:
+                m_epi_output_writer->Write();
         default: break;
     }
 }

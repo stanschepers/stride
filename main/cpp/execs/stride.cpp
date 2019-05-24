@@ -21,7 +21,6 @@
 #include "GenPopController.h"
 #include "SimController.h"
 #include "StanController.h"
-#include "EpiController.h"
 #include "util/FileSys.h"
 #include "util/RunConfigManager.h"
 #include "util/StringUtils.h"
@@ -51,22 +50,9 @@ int main(int argc, char** argv)
                 // -----------------------------------------------------------------------------------------
                 CmdLine cmd("stride", ' ', "1.0");
 
-                vector<string>           file_formats{"json", "hdf5", "proto"};
-                ValuesConstraint<string> vc2(file_formats);
-                string                   sf = "Resulting file format of the epi-output:"
-                                              "  \n\t json:  json file."
-                                              "  \n\t hdf5:  hdf5 file."
-                                              "  \n\t proto: protobuf file."
-                                              "\nDefaults to --file_format json.";
-                ValueArg<string> fileArg("f", "file_format", sf, false, "json", &vc2, cmd);
-
-                string sa2 = "Will run a simulation and create a file which contains the epidemiological condition of "
-                             "the population (Epi-output) per <STRIDE> time intervals. Only applies in case of -e sim. ";
-                ValueArg<unsigned int> epiArg("", "epi", sa2, false, 1, "STRIDE", cmd);
-
-                string sa1 = "Stochastic Analysis (stan) will run <COUNT> simulations, each with a "
+                string sa = "Stochastic Analysis (stan) will run <COUNT> simulations, each with a "
                             "different seed for the random engine. Only applies in case of -e sim. ";
-                ValueArg<unsigned int> stanArg("", "stan", sa1, false, 0, "COUNT", cmd);
+                ValueArg<unsigned int> stanArg("", "stan", sa, false, 0, "COUNT", cmd);
 
                 string si = "File are read from the appropriate (config, data) directories of the "
                             "stride install directory. If false, files are read and written to the "
@@ -125,18 +111,11 @@ int main(int argc, char** argv)
                         }
                         if (stanArg.isSet()) {
                                 configPt.put("run.stan_count", stanArg.getValue());
-                        } else if (epiArg.isSet()){
-                                configPt.put("run.epi_stride", epiArg.getValue());
-                                if (fileArg.isSet()){
-                                        configPt.put("run.file_format", fileArg.getValue());
-                                }
                         }
                         configPt.sort();
 
                         if (execArg.getValue() == "sim") {
-                                if (epiArg.isSet()){
-                                        EpiController(configPt).Control();
-                                } else if (!stanArg.isSet()) {
+                                if (!stanArg.isSet()) {
                                         SimController(configPt).Control();
                                 } else {
                                         StanController(configPt).Control();

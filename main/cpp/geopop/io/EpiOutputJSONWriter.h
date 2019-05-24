@@ -18,6 +18,8 @@
 #include "EpiOutputWriter.h"
 #include "geopop/Location.h"
 
+#include <fstream>
+
 #include <nlohmann/json.hpp>
 
 namespace stride {
@@ -34,9 +36,12 @@ class EpiOutputJSONWriter : public EpiOutputWriter
 {
 public:
         /// Construct the EpiOutputJSONWriter.
-        explicit EpiOutputJSONWriter();
+        explicit EpiOutputJSONWriter(const std::string& filename = "");
 
-        /// Write the provided GeoGrid epi-output to the provided ostream in JSON format.
+        /// Write the provided GeoGrid epi-output to the provided JSON file. (If given)
+        void Write() override;
+
+        /// Write the provided GeoGrid epi-output to the provided ostream in JSON format. (Only for test purposes)
         void Write(std::ostream& stream) override;
 
         /// Write the epi-output of the GeoGrid to the right data format.
@@ -44,6 +49,7 @@ public:
 
 private:
         nlohmann::json m_output;  ///< json to be written to a file
+        std::ofstream m_fstream;  ///< The file stream.
 };
 
 } // namespace geopop

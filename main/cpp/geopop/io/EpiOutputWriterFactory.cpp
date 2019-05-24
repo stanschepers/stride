@@ -38,7 +38,7 @@ std::shared_ptr<EpiOutputWriter> EpiOutputWriterFactory::CreateEpiOutputWriter(c
         filesys::path path(filename);
 
         if (path.extension().string() == ".json") {
-                return std::make_shared<EpiOutputJSONWriter>();
+                return std::make_shared<EpiOutputJSONWriter>(filename);
         } /*else if (path.extension().string() == ".proto") {
                 return std::make_shared<EpiOutputProtoWriter>();
         } */
