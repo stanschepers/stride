@@ -32,15 +32,15 @@ using namespace stride::ContactType;
 using namespace stride::AgeBrackets;
 using namespace util;
 
-template<>
+template <>
 void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig)
 {
         m_logger->trace("Starting to populate Workplaces");
 
-        auto genCommute{function<int()>()};
-        auto genNonCommute{function<int()>()};
+        auto                 genCommute{function<int()>()};
+        auto                 genNonCommute{function<int()>()};
         vector<ContactPool*> nearbyWp{};
-        vector<Location*> commuteLocations{};
+        vector<Location*>    commuteLocations{};
 
         const auto participWorkplace    = geoGridConfig.param.particpation_workplace;
         const auto popCollege           = geoGridConfig.info.popcount_college;
@@ -49,15 +49,11 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
         const auto fracWorkplaceCommute = geoGridConfig.param.fraction_workplace_commuters;
         const auto distribution         = geoGridConfig.param.work_distribution;
 
-        int total = 0;
-        int com = 0;
-        int noncom = 0;
-
         // Commuting fraction in student population estimated to obtain commuting fraction in
         // workplace population from commute data.
         double fracCommuteStudents = 0.0;
         if (static_cast<bool>(fracWorkplaceCommute) && popWorkplace) {
-                fracCommuteStudents = (popCollege * fracCollegeCommute) /(popWorkplace * fracWorkplaceCommute);
+                fracCommuteStudents = (popCollege * fracCollegeCommute) / (popWorkplace * fracWorkplaceCommute);
         }
 
         // --------------------------------------------------------------------------------
@@ -85,7 +81,7 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                                             "Invalid weight: " + to_string(weight), m_logger);
                         }
                 }
-                auto refCommutingWeights = commutingWeights;
+                auto refCommutingWeights   = commutingWeights;
                 auto refCommutingLocations = commuteLocations;
 
                 if (!commutingWeights.empty()) {
@@ -95,8 +91,7 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                 // --------------------------------------------------------------------------------
                 // Set NearbyWorkspacePools and associated generator
                 // --------------------------------------------------------------------------------
-                nearbyWp      = geoGrid.GetNearbyPools(Id::Workplace, *loc);
-
+                nearbyWp = geoGrid.GetNearbyPools(Id::Workplace, *loc);
 
                 // --------------------------------------------------------------------------------
                 // For everyone of working age: decide between work or college (iff of College age)
@@ -119,21 +114,18 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                                         // ---------------------------------------------
                                         // this person is employed
                                         // ---------------------------------------------
-
-                                        total++;
-
                                         const auto isCommuter = m_rn_man.MakeWeightedCoinFlip(fracWorkplaceCommute);
                                         if (!commuteLocations.empty() && isCommuter) {
                                                 // --------------------------------------------------------------
                                                 // this person commutes to the Location and in particular to Pool
                                                 // --------------------------------------------------------------
-                                                auto comDraw = genCommute();
-                                                auto& pools  = commuteLocations[comDraw]->RefPools(Id::Workplace);
-                                                auto  s      = static_cast<unsigned int>(pools.size());
-                                                auto  gen    = m_rn_man.GetUniformIntGenerator(0, s);
+                                                auto  comDraw = genCommute();
+                                                auto& pools   = commuteLocations[comDraw]->RefPools(Id::Workplace);
+                                                auto  s       = static_cast<unsigned int>(pools.size());
+                                                auto  gen     = m_rn_man.GetUniformIntGenerator(0, s);
 
                                                 auto firstGenDraw = gen();
-                                                auto genDraw = firstGenDraw;
+                                                auto genDraw      = firstGenDraw;
 
                                                 // ------------------------
                                                 // If distribution is given
@@ -151,14 +143,13 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                                                                         // This commuteLocation is FULL, remove it
                                                                         // ---------------------------------------
                                                                         commutingWeights.erase(
-                                                                        commutingWeights.begin() + comDraw);
+                                                                            commutingWeights.begin() + comDraw);
                                                                         commuteLocations.erase(
-                                                                        commuteLocations.begin() + comDraw);
+                                                                            commuteLocations.begin() + comDraw);
                                                                         if (commutingWeights.empty()) {
                                                                                 // -------------------------------------
                                                                                 // All locations are full, select random
                                                                                 // -------------------------------------
-                                                                                com++;
                                                                                 genDraw = gen();
                                                                                 break;
                                                                         }
@@ -166,20 +157,20 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                                                                         // Select new commuteLocation
                                                                         // --------------------------
                                                                         genCommute = m_rn_man.GetDiscreteGenerator(
-                                                                        commutingWeights, 0U);
+                                                                            commutingWeights, 0U);
 
                                                                         comDraw = genCommute();
 
                                                                         pools = commuteLocations[comDraw]->RefPools(
-                                                                        Id::Workplace);
-                                                                        s = static_cast<unsigned int>(pools.size());
+                                                                            Id::Workplace);
+                                                                        s   = static_cast<unsigned int>(pools.size());
                                                                         gen = m_rn_man.GetUniformIntGenerator(0, s);
                                                                         firstGenDraw = gen();
-                                                                        genDraw = firstGenDraw;
+                                                                        genDraw      = firstGenDraw;
                                                                 }
                                                         }
                                                 }
-                                                auto pool    = pools[genDraw];
+                                                auto pool = pools[genDraw];
 
                                                 // so that's it
                                                 pool->AddMember(person);
@@ -188,9 +179,10 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                                                 // ----------------------------
                                                 // this person does not commute
                                                 // ----------------------------
-                                                genNonCommute = m_rn_man.GetUniformIntGenerator(0, static_cast<int>(nearbyWp.size()), 0U);
+                                                genNonCommute = m_rn_man.GetUniformIntGenerator(
+                                                    0, static_cast<int>(nearbyWp.size()), 0U);
                                                 auto firstGenDraw = genNonCommute();
-                                                auto genDraw = firstGenDraw;
+                                                auto genDraw      = firstGenDraw;
 
                                                 // ------------------------
                                                 // If distribution is given
@@ -206,7 +198,6 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                                                                         // --------------------------------------
                                                                         // All this pools are full, select random
                                                                         // --------------------------------------
-                                                                        noncom++;
                                                                         genDraw = genNonCommute();
                                                                         break;
                                                                 }
@@ -222,9 +213,6 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                 }
         }
 
-        m_logger->trace("Total work people: " + to_string(total));
-        m_logger->trace("Commuting work people: " + to_string(com));
-        m_logger->trace("Non-commuting work people: " + to_string(noncom));
         m_logger->trace("Done populating Workplaces");
 }
 

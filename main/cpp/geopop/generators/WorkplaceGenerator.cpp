@@ -23,8 +23,7 @@ using namespace std;
 using namespace stride;
 using namespace stride::ContactType;
 
-
-template<>
+template <>
 void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig)
 {
         // 1. active people count and the commuting people count are given
@@ -34,26 +33,26 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
         // 5. assign each workplaces to a location
 
         const auto EmployeeCount = ggConfig.info.popcount_workplace;
-        auto WorkplacesCount = static_cast<unsigned int>(ceil(EmployeeCount /
-                                     static_cast<double>(ggConfig.people[Id::Workplace])));
+        auto       WorkplacesCount =
+            static_cast<unsigned int>(ceil(EmployeeCount / static_cast<double>(ggConfig.people[Id::Workplace])));
 
         // if distribution file is present, make accurate estimation of WorkplacesCount
-        const auto distribution = ggConfig.param.work_distribution;
+        const auto     distribution = ggConfig.param.work_distribution;
         vector<double> workWeights;
-        if (!distribution.empty()){
+        if (!distribution.empty()) {
                 double PoolSize = 0;
-                for(auto entry : distribution){
-                    double ratio = std::get<0>(entry);
-                    unsigned int minSize = std::get<1>(entry);
-                    unsigned int maxSize = std::get<2>(entry);
+                for (auto entry : distribution) {
+                        double       ratio   = std::get<0>(entry);
+                        unsigned int minSize = std::get<1>(entry);
+                        unsigned int maxSize = std::get<2>(entry);
 
-                    workWeights.emplace_back(ratio);
-                    double avg = (minSize+maxSize)/2.0;
-                    PoolSize += avg*ratio;
+                        workWeights.emplace_back(ratio);
+                        double avg = (minSize + maxSize) / 2.0;
+                        PoolSize += avg * ratio;
                 }
                 const auto NewWorkplacesCount = static_cast<unsigned int>(ceil(EmployeeCount / PoolSize));
-                m_logger->trace("Number of workplaces through distribution file: " + to_string(NewWorkplacesCount)
-                                + ", instead of: " + to_string(WorkplacesCount));
+                m_logger->trace("Number of workplaces through distribution file: " + to_string(NewWorkplacesCount) +
+                                ", instead of: " + to_string(WorkplacesCount));
                 WorkplacesCount = NewWorkplacesCount;
         }
 
@@ -61,8 +60,7 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
         vector<double> weights;
         for (const auto& loc : geoGrid) {
                 const double ActivePeopleCount =
-                    (loc->GetPopCount() +
-                     loc->GetIncomingCommuteCount(ggConfig.param.fraction_workplace_commuters) -
+                    (loc->GetPopCount() + loc->GetIncomingCommuteCount(ggConfig.param.fraction_workplace_commuters) -
                      loc->GetOutgoingCommuteCount(ggConfig.param.fraction_workplace_commuters) *
                          ggConfig.param.particpation_workplace);
 
@@ -81,7 +79,7 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
         auto       pop  = geoGrid.GetPopulation();
 
         unsigned int entryIndex = 0;
-        int totalSize = 0;
+        int          totalSize  = 0;
         for (auto i = 0U; i < WorkplacesCount; i++) {
                 const auto loc = geoGrid[dist()];
 
@@ -90,12 +88,12 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                 // ----------------------------------------------
                 if (!distribution.empty()) {
                         auto workClass = m_rn_man.GetDiscreteGenerator(workWeights, 0U);
-                        entryIndex = workClass();
-                        auto minSize = std::get<1>(distribution[entryIndex]);
-                        auto maxSize = std::get<2>(distribution[entryIndex]);
+                        entryIndex     = workClass();
+                        auto minSize   = std::get<1>(distribution[entryIndex]);
+                        auto maxSize   = std::get<2>(distribution[entryIndex]);
 
-                        auto genSize = m_rn_man.GetUniformIntGenerator(minSize, maxSize + 1U); // [a, b[
-                        unsigned int s = genSize();
+                        auto         genSize = m_rn_man.GetUniformIntGenerator(minSize, maxSize + 1U); // [a, b[
+                        unsigned int s       = genSize();
                         totalSize += s;
                         AddPools(*loc, pop, ggConfig, s);
                 } else {
@@ -109,12 +107,15 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
         }
 }
 
-template<>
+template <>
 void Generator<stride::ContactType::Id::Workplace>::AddPools(Location& loc, stride::Population* pop,
-                                                    const GeoGridConfig& ggConfig, unsigned int limit)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-parameter"
+                                                             const GeoGridConfig& ggConfig, unsigned int limit)
+#pragma clang diagnostic pop
 {
-        auto& poolSys = pop->RefPoolSys();
-        const auto p = poolSys.CreateContactPool(stride::ContactType::Id::Workplace, limit);
+        auto&      poolSys = pop->RefPoolSys();
+        const auto p       = poolSys.CreateContactPool(stride::ContactType::Id::Workplace, limit);
         loc.RegisterPool<stride::ContactType::Id::Workplace>(p);
 }
 
