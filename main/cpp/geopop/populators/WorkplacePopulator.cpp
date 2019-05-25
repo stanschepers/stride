@@ -42,6 +42,8 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
         vector<ContactPool*> nearbyWp{};
         vector<Location*> commuteLocations{};
 
+        int total = 0;
+
         const auto participCollege      = geoGridConfig.param.participation_college;
         const auto participWorkplace    = geoGridConfig.param.participation_workplace;
         const auto popCollege           = geoGridConfig.info.popcount_college;
@@ -101,11 +103,15 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
 
                                 bool isStudent      = m_rn_man.MakeWeightedCoinFlip(participCollege);
                                 bool isActiveWorker = m_rn_man.MakeWeightedCoinFlip(participWorkplace);
+                                bool isStudentWorker = isStudent && isActiveWorker && College::HasAge(person->GetAge());
 
-                                if ((College::HasAge(person->GetAge()) && !isStudent) || isActiveWorker) {
+                                if (isActiveWorker && !isStudentWorker) {
                                         // ---------------------------------------------
                                         // this person is employed
                                         // ---------------------------------------------
+
+                                        total++;
+
                                         const auto isCommuter = m_rn_man.MakeWeightedCoinFlip(fracWorkplaceCommute);
                                         if (!commuteLocations.empty() && isCommuter) {
                                                 // --------------------------------------------------------------
@@ -136,6 +142,7 @@ void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
                 }
         }
 
+        std::cerr << total << std::endl;
         m_logger->trace("Done populating Workplaces");
 }
 
