@@ -23,7 +23,7 @@ using namespace std;
 using namespace stride;
 using namespace stride::ContactType;
 
-template<>
+template <>
 void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig)
 {
         // 1. active people count and the commuting people count are given
@@ -36,15 +36,11 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
         const auto WorkplacesCount =
             static_cast<unsigned int>(ceil(EmployeeCount / static_cast<double>(ggConfig.people[Id::Workplace])));
 
-        std::cerr << EmployeeCount << std::endl;
-
-
         // = for each location #residents + #incoming commuting people - #outgoing commuting people
         vector<double> weights;
         for (const auto& loc : geoGrid) {
                 const double ActivePeopleCount =
-                    (loc->GetPopCount() +
-                     loc->GetIncomingCommuteCount(ggConfig.param.fraction_workplace_commuters) -
+                    (loc->GetPopCount() + loc->GetIncomingCommuteCount(ggConfig.param.fraction_workplace_commuters) -
                      loc->GetOutgoingCommuteCount(ggConfig.param.fraction_workplace_commuters) *
                          ggConfig.param.participation_workplace);
 

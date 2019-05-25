@@ -31,11 +31,12 @@ using namespace stride::util;
 
 namespace {
 
-class PreSchoolGeneratorTest : public testing::Test {
+class PreSchoolGeneratorTest : public testing::Test
+{
 public:
         PreSchoolGeneratorTest()
-                : m_rn_man(RnInfo()), m_preschool_generator(m_rn_man), m_gg_config(), m_pop(Population::Create()),
-                  m_geo_grid(m_pop.get())
+            : m_rn_man(RnInfo()), m_preschool_generator(m_rn_man), m_gg_config(), m_pop(Population::Create()),
+              m_geo_grid(m_pop.get())
         {
         }
 
@@ -54,7 +55,7 @@ TEST_F(PreSchoolGeneratorTest, OneLocationTest)
         m_gg_config.param.pop_size          = 10000;
         m_gg_config.info.popcount_preschool = 2000;
 
-        auto loc1    = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
+        auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
         m_geo_grid.AddLocation(loc1);
 
         m_preschool_generator.Apply(m_geo_grid, m_gg_config);
@@ -101,7 +102,7 @@ TEST_F(PreSchoolGeneratorTest, FiveLocationsTest)
 
         vector<unsigned int> sizes{1101, 1067, 815, 340, 432};
         for (size_t i = 0; i < sizes.size(); i++) {
-                EXPECT_EQ(sizes[i] * m_pppre, m_geo_grid[i]->CRefPools(Id::PreSchool).size() );
+                EXPECT_EQ(sizes[i] * m_pppre, m_geo_grid[i]->CRefPools(Id::PreSchool).size());
         }
 }
 
