@@ -149,7 +149,16 @@ set(STRIDE_SRC
     )
 
 if(NOT STRIDE_FORCE_NO_QT5)
-    add_subdirectory(visualization)
+#    include(visualization/CMakeLists.txt)
+    set(VIS_SRC
+        visualization/source/EpiOutput.h
+        visualization/source/EpiOutputReader.cpp
+        visualization/source/EpiOutputReader.h
+        visualization/source/EpiOutputReaderFactory.cpp
+        visualization/source/EpiOutputReaderFactory.h
+        visualization/source/EpiOutputJSONReader.cpp
+        visualization/source/EpiOutputJSONReader.h
+        )
 else()
     set(VIS_SRC "")
 endif()
@@ -177,7 +186,8 @@ include(CheckIPOSupported)
 if(NOT STRIDE_FORCE_NO_QT5)
 #    target_link_libraries(libstride PUBLIC libstridevisualization)
 #    target_link_libraries(libstridevisualization PUBLIC libstride)
-    target_link_libraries(strideVisualization PUBLIC libstride)
+#    target_link_libraries(strideVisualization PUBLIC libstride)
+    add_subdirectory(visualization)
 endif()
 
 # For future use: inter procedural optimization

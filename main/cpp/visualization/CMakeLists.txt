@@ -43,12 +43,12 @@ add_executable(strideVisualization
 #        ${moc_sources}
         )
 
-target_link_libraries(strideVisualization PUBLIC Qt5::Widgets Qt5::Core Qt5::Quick)
+target_link_libraries(strideVisualization PUBLIC Qt5::Widgets Qt5::Core Qt5::Quick libstride)
 install(FILES ${QML_FILES} DESTINATION ${BIN_INSTALL_LOCATION}/visualization)
 install(TARGETS strideVisualization DESTINATION ${BIN_INSTALL_LOCATION}/visualization)
 
-SET(listVar "")
-FOREACH(f ${SOURCE_FILES})
-    LIST(APPEND listVar "visualization/${f}")
-ENDFOREACH(f)
-SET(VIS_SRC "${listVar}" PARENT_SCOPE)
+#SET(listVar "")
+#FOREACH(f ${SOURCE_FILES})
+#    LIST(APPEND listVar "visualization/${f}")
+#ENDFOREACH(f)
+#SET(VIS_SRC "${listVar}" PARENT_SCOPE)
