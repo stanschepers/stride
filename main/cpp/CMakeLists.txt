@@ -148,13 +148,20 @@ set(STRIDE_SRC
     viewers/EpiOutputViewer.cpp
     )
 
+if(NOT STRIDE_FORCE_NO_QT5)
+    add_subdirectory(visualization)
+else()
+    set(VIS_SRC "")
+endif()
+
 #============================================================================
 # Build the Stride library.
 #============================================================================
-add_library(libstride ${STRIDE_SRC})
+add_library(libstride ${STRIDE_SRC} ${VIS_SRC})
 target_compile_definitions(libstride PUBLIC "-DSTRIDE_GIT_HASH=${STRIDE_WC_REVISION_HASH}")
 target_compile_definitions(libstride PUBLIC "-DPROCCOUNT=${PROCCOUNT}")
 target_link_libraries(libstride PRIVATE ${LIBS})
+
 if(Protobuf_FOUND)
     target_link_libraries(libstride PUBLIC ${Protobuf_LIBRARIES})
 else()
@@ -167,6 +174,12 @@ set_target_properties(libstride
 )
 include(CheckIPOSupported)
 
+if(NOT STRIDE_FORCE_NO_QT5)
+#    target_link_libraries(libstride PUBLIC libstridevisualization)
+#    target_link_libraries(libstridevisualization PUBLIC libstride)
+    target_link_libraries(strideVisualization PUBLIC libstride)
+endif()
+
 # For future use: inter procedural optimization
 # Disabled for now because of issues with gcc 8.1.0 on travis.
 #check_ipo_supported(RESULT ipo_result)
@@ -174,10 +187,6 @@ include(CheckIPOSupported)
 #    set_target_properties(libstride PROPERTIES INTERPROCEDURAL_OPTIMIZATION TRUE)
 #endif()
 #message( STATUS "CheckIPOSupported: ${ipo_result}" )
-
-if(NOT STRIDE_FORCE_NO_QT5)
-    add_subdirectory(visualization)
-endif()
 
 #============================================================================
 # Build the stride binary.
