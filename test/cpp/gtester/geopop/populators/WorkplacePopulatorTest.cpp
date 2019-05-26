@@ -356,7 +356,7 @@ TEST_F(WorkplacePopulatorTest, DistributionTest)
             for (auto &pool : loc.get()->RefPools(Id::Workplace)) {
                     EXPECT_NE(pool->GetLimit(), std::numeric_limits<unsigned int>::infinity());
                     EXPECT_NE(pool->GetLimit(), 0U);
-                    EXPECT_LE(pool->GetLimit(), pool->size());
+                    EXPECT_LE(pool->size(), pool->GetLimit());
             }
         }
 }
