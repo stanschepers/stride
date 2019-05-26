@@ -1,4 +1,4 @@
-id,province,population,x_coord,y_coord,latitude,longitude,name,population_id
+id,province,population,x_coord,y_coord,latitude,longitude,name,household_id
 11001,1,8249,150964.3953,202431.664,51.1340539,4.3844742,AARTSELAAR,1
 11002,1,269954,153104.586,212271.7101,51.2165845,4.413545489,ANTWERPEN,0
 11004,1,7334,159954.505,206256.5035,51.16082405,4.51038522,BOECHOUT,1
