@@ -36,7 +36,6 @@ void Populator<stride::ContactType::Id::Daycare>::Apply(GeoGrid &geoGrid, const 
                 if (loc->GetPopCount() == 0) {
                         continue;
                 }
-
                 // 1. find all schools in an area of 10-k*10 km
                 const vector<ContactPool*>& classes = geoGrid.GetNearbyPools(Id::Daycare, *loc);
 
