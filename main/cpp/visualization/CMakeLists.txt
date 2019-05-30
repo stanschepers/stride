@@ -5,15 +5,21 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
-set(SOURCE_FILES
-        source/EpiOutput.h
-        source/EpiOutputReader.cpp
-        source/EpiOutputReader.h
-        source/EpiOutputReaderFactory.cpp
-        source/EpiOutputReaderFactory.h
-        source/EpiOutputJSONReader.cpp
-        source/EpiOutputJSONReader.h
-        )
+SET(listVar "")
+FOREACH(f ${VIS_SRC})
+    LIST(APPEND listVar "../${f}")
+ENDFOREACH(f)
+SET(SOURCE_FILES "${listVar}")
+
+#set(SOURCE_FILES ${VIS_SRC}
+#        source/EpiOutput.h
+#        source/EpiOutputReader.cpp
+#        source/EpiOutputReader.h
+#        source/EpiOutputReaderFactory.cpp
+#        source/EpiOutputReaderFactory.h
+#        source/EpiOutputJSONReader.cpp
+#        source/EpiOutputJSONReader.h
+#        )
 
 set(QT_SOURCE_FILES
         source/strideVisualization.cpp
@@ -46,9 +52,3 @@ add_executable(strideVisualization
 target_link_libraries(strideVisualization PUBLIC Qt5::Widgets Qt5::Core Qt5::Quick libstride)
 install(FILES ${QML_FILES} DESTINATION ${BIN_INSTALL_LOCATION}/visualization)
 install(TARGETS strideVisualization DESTINATION ${BIN_INSTALL_LOCATION}/visualization)
-
-#SET(listVar "")
-#FOREACH(f ${SOURCE_FILES})
-#    LIST(APPEND listVar "visualization/${f}")
-#ENDFOREACH(f)
-#SET(VIS_SRC "${listVar}" PARENT_SCOPE)
