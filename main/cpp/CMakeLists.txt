@@ -19,13 +19,10 @@
 # Protocol Buffer sources.
 #============================================================================
 if(Protobuf_FOUND)
-    protobuf_generate_cpp(PROTO_SRC_GEO PROTO_HDR_GEO geopop/io/proto/geogrid.proto)
-    protobuf_generate_cpp(PROTO_SRC_EPI PROTO_HDR_EPI geopop/io/proto/epioutput.proto)
+    protobuf_generate_cpp(PROTO_SRC PROTO_HDR geopop/io/proto/geogrid.proto geopop/io/proto/epioutput.proto)
 else()
-    set(PROTO_SRC_GEO ${Protobuf_PBS_DIR}/geogrid.pb.cc)
-    set(PROTO_HDR_GEO ${Protobuf_PBS_DIR}/geogrid.pb.h)
-    set(PROTO_SRC_EPI ${Protobuf_PBS_DIR}/epioutput.pb.cc)
-    set(PROTO_HDR_EPI ${Protobuf_PBS_DIR}/epioutput.pb.h)
+    set(PROTO_SRC ${Protobuf_PBS_DIR}/geogrid.pb.cc ${Protobuf_PBS_DIR}/epioutput.pb.cc)
+    set(PROTO_HDR ${Protobuf_PBS_DIR}/geogrid.pb.h ${Protobuf_PBS_DIR}/epioutput.pb.h)
 endif()
 
 set_source_files_properties(
@@ -35,7 +32,7 @@ set_source_files_properties(
         COMPILE_FLAGS "-I${Protobuf_PBS_DIR}"
 )
 
-set_property(SOURCE ${PROTO_HDR_GEO} ${PROTO_SRC_GEO} #${PROTO_HDR_EPI} ${PROTO_SRC_EPI}
+set_property(SOURCE ${PROTO_HDR} ${PROTO_SRC} #${PROTO_HDR} ${PROTO_SRC}
         PROPERTY
         COMPILE_FLAGS "-Wno-all -Wno-effc++ -Wno-extra -Wno-pedantic"
         )
@@ -111,8 +108,8 @@ set(STRIDE_SRC
         geopop/populators/SecondaryCommunityPopulator.cpp
         geopop/populators/WorkplacePopulator.cpp
         #---
-#        ${PROTO_SRC_EPI}
-        ${PROTO_SRC_GEO}
+        ${PROTO_SRC}
+        ${PROTO_SRC}
         #---
         viewers/InfectedFile.cpp
         viewers/PersonsFile.cpp
