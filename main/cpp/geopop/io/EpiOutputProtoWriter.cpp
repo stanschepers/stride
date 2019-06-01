@@ -65,12 +65,12 @@ void EpiOutputProtoWriter::Update(GeoGrid<Epidemiologic>& geoGrid, unsigned int 
 
                 auto protoCoor = new proto::EpiOutput_Day_Location_Coordinate();
                 protoCoor->set_latitude(loc->get<0>());
-                protoCoor->set_latitude(loc->get<1>());
+                protoCoor->set_longitude(loc->get<1>());
 
                 protoLoc->set_allocated_coordinate(protoCoor);
                 protoLoc->set_population(loc->GetContent()->GetPopCount());
 
-                auto epiOutput = geoGrid[i]->GetContent()->GenerateEpiOutput();
+                auto epiOutput = loc->GetContent()->GenerateEpiOutput();
 
                 for (const std::string& ageBracket: stride::ageBrackets){
                         auto protoAgeBracket = protoLoc->add_agebrackets();

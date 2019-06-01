@@ -43,7 +43,7 @@ void EpiOutputProtoReader::Read()
 
         for (int l = 0; l < protoEpiOutput.days_size(); l++) {
                 const auto& protoDay = protoEpiOutput.days(l);
-                for (int i = 0; i < protoDay.locations_size(); i++) {
+                for (int i = 0; i < protoDay.locations_size(); i++) {  // TODO: Nu ordt elke locatie elke keer toegevoegd, terwijl da alleen de eerste dag mag!
                         const auto& protoLoc  = protoDay.locations(i);
                         const auto& protoCoor = protoLoc.coordinate();
                         geoGrid.AddLocation(std::make_shared<geopop::Location<EpiOutput>>(
