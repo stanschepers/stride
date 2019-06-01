@@ -17,21 +17,28 @@
 
 #include "EpiOutputWriter.h"
 #include "geopop/Location.h"
+#include "geopop/io/proto_pb/epioutput.pb.h"
 
 #include <fstream>
 
-#include <nlohmann/json.hpp>
+//namespace proto {
+//class EpiOutput;
+//class EpiOutput_Location;
+//class EpiOutput_Location_Coordinate;
+//class EpiOutput_Location_AgeBracket;
+//class EpiOutput_Location_AgeBracket_HealthStatus;
+//}
 
 namespace geopop {
 
 /**
- * Writes a GeoGrid epi-output to a JSON file.
+ * Writes a GeoGrid epi-output to a protobuf file.
  */
-class EpiOutputJSONWriter : public EpiOutputWriter
+class EpiOutputProtoWriter : public EpiOutputWriter
 {
 public:
         /// Construct the EpiOutputJSONWriter.
-        explicit EpiOutputJSONWriter(const std::string& filename = "");
+        explicit EpiOutputProtoWriter(const std::string& filename = "");
 
         /// Write the provided GeoGrid epi-output to the provided JSON file. (If given)
         void Write() override;
@@ -43,7 +50,7 @@ public:
         void Update(GeoGrid<Epidemiologic>& geoGrid, unsigned int day) override;
 
 private:
-        nlohmann::json m_output;  ///< json to be written to a file
+        proto::EpiOutput m_output;  ///< protobuf to be written to a file
         std::ofstream m_fstream;  ///< The file stream.
 };
 

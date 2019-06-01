@@ -32,7 +32,7 @@ set_source_files_properties(
         COMPILE_FLAGS "-I${Protobuf_PBS_DIR}"
 )
 
-set_property(SOURCE ${PROTO_HDR} ${PROTO_SRC} #${PROTO_HDR} ${PROTO_SRC}
+set_property(SOURCE ${PROTO_HDR} ${PROTO_SRC}
         PROPERTY
         COMPILE_FLAGS "-Wno-all -Wno-effc++ -Wno-extra -Wno-pedantic"
         )
@@ -85,6 +85,8 @@ set(STRIDE_SRC
         geopop/io/EpiOutputWriterFactory.h
         geopop/io/EpiOutputJSONWriter.cpp
         geopop/io/EpiOutputJSONWriter.h
+        geopop/io/EpiOutputProtoWriter.cpp
+        geopop/io/EpiOutputProtoWriter.h
         geopop/io/LocationsCSVReader.cpp
         geopop/io/CommutesCSVReader.cpp
         #geopop/io/GeoGridJSONReader.cpp
