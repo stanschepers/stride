@@ -19,47 +19,42 @@ package proto;
 // Epi-output consists of multiple Locations from a GeoGrid.
 message EpiOutput {
 
-    // Location of UUID, name, province and population count, coordinate and it's epi-output per measured day.
-    message Location {
+    // Days where the epi-output is saved from
+    message Day {
 
-        int64 id = 1;
-        string name = 2;
-        int64 province = 3;
-        int64 population = 4;
+        int64 day = 1;
 
-        // Coordinate with longitude and latitude.
-        message Coordinate {
-            double longitude = 1;
-            double latitude = 2;
-        }
-        Coordinate coordinate = 5;
+        // Location of UUID, name, province and population count, coordinate and it's epi-output per measured day.
+        message Location {
 
-        // Age bracket in the epi-output.
-        message AgeBracket {
-            string type = 1;
+            int64 id = 1;
+            string name = 2;
+            int64 province = 3;
+            int64 population = 4;
 
-            // Health status in the age bracket.
-            message HealthStatus {
+            // Coordinate with longitude and latitude.
+            message Coordinate {
+                double longitude = 1;
+                double latitude = 2;
+            }
+            Coordinate coordinate = 5;
+
+            // Age bracket in the epi-output.
+            message AgeBracket {
                 string type = 1;
 
-                // Measured percentage of that health category in a certain day.
-                message Day {
-                    int64 day = 1;
+                // Health status in the age bracket.
+                message HealthStatus {
+                    string type = 1;
                     double percentage = 2;
                 }
-                repeated Day days = 2;
+                repeated HealthStatus healthStatuses = 2;
             }
-            repeated HealthStatus healthStatuses = 2;
+            repeated AgeBracket ageBrackets = 6;
         }
-        repeated AgeBracket ageBrackets = 6;
+
+        // The actual message content: multiple Locations and multiple measured days.
+        repeated Location locations = 2;
     }
-
-    // Measured day in teh epi-output.
-//    message Measured_day {
-//        int64 day = 1;
-//    }
-
-    // The actual message content: multiple Locations and multiple measured days.
-    repeated Location locations = 1;
-//    repeated Measured_day measured_days = 2;
+    repeated Day days = 1;
 }

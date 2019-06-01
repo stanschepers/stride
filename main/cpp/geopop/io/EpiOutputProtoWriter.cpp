@@ -52,41 +52,33 @@ void EpiOutputProtoWriter::Write(std::ostream& stream) {
 
 void EpiOutputProtoWriter::Update(GeoGrid<Epidemiologic>& geoGrid, unsigned int day)
 {
-        if (day == 0){
-                for (unsigned int i = 0; i < geoGrid.size(); i++) {
-                        const auto loc = geoGrid[i];
-                        auto protoLoc = m_output.add_locations();
-                        protoLoc->set_id(loc->GetID());
-                        protoLoc->set_name(loc->GetName());
-                        protoLoc->set_province(loc->GetProvince());
+        auto protoDay = m_output.add_days();
+        protoDay->set_day(day);
 
-                        auto protoCoor = new proto::EpiOutput_Location_Coordinate();
-                        protoCoor->set_latitude(loc->get<0>());
-                        protoCoor->set_latitude(loc->get<1>());
-
-                        protoLoc->set_allocated_coordinate(protoCoor);
-                        protoLoc->set_population(loc->GetContent()->GetPopCount());
-
-                        for (const std::string& ageBracket: stride::ageBrackets){
-                                auto protoAgeBracket = protoLoc->add_agebrackets();
-                                protoAgeBracket->set_type(ageBracket);
-                                for (const std::string& healthStatus: stride::healthStatuses){
-                                        auto protoHealthStatus = protoAgeBracket->add_healthstatuses();
-                                        protoHealthStatus->set_type(healthStatus);
-                                }
-                        }
-                }
-        }
         for (unsigned int i = 0; i < geoGrid.size(); i++) {
+                const auto loc = geoGrid[i];
+
+                auto protoLoc = protoDay->add_locations();
+                protoLoc->set_id(loc->GetID());
+                protoLoc->set_name(loc->GetName());
+                protoLoc->set_province(loc->GetProvince());
+
+                auto protoCoor = new proto::EpiOutput_Day_Location_Coordinate();
+                protoCoor->set_latitude(loc->get<0>());
+                protoCoor->set_latitude(loc->get<1>());
+
+                protoLoc->set_allocated_coordinate(protoCoor);
+                protoLoc->set_population(loc->GetContent()->GetPopCount());
+
                 auto epiOutput = geoGrid[i]->GetContent()->GenerateEpiOutput();
-                auto protoLoc = m_output.locations(i);
-                for (unsigned int j = 0; j < stride::ageBrackets.size(); j++){
-                        auto protoAgeBracket = protoLoc.agebrackets(j);
-                        for (unsigned int k = 0; k < stride::healthStatuses.size(); k++){
-                                auto protoHealthStatus = protoAgeBracket.healthstatuses(k);
-                                auto protoDay = protoHealthStatus.add_days();
-                                protoDay->set_day(day);
-                                protoDay->set_percentage(epiOutput[stride::ageBrackets[j]][stride::healthStatuses[k]]);
+
+                for (const std::string& ageBracket: stride::ageBrackets){
+                        auto protoAgeBracket = protoLoc->add_agebrackets();
+                        protoAgeBracket->set_type(ageBracket);
+                        for (const std::string& healthStatus: stride::healthStatuses){
+                                auto protoHealthStatus = protoAgeBracket->add_healthstatuses();
+                                protoHealthStatus->set_type(healthStatus);
+                                protoHealthStatus->set_percentage(epiOutput[ageBracket][healthStatus]);
                         }
                 }
         }

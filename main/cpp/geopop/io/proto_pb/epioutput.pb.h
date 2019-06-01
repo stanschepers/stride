@@ -52,55 +52,55 @@ namespace proto {
 class EpiOutput;
 class EpiOutputDefaultTypeInternal;
 extern EpiOutputDefaultTypeInternal _EpiOutput_default_instance_;
-class EpiOutput_Location;
-class EpiOutput_LocationDefaultTypeInternal;
-extern EpiOutput_LocationDefaultTypeInternal _EpiOutput_Location_default_instance_;
-class EpiOutput_Location_AgeBracket;
-class EpiOutput_Location_AgeBracketDefaultTypeInternal;
-extern EpiOutput_Location_AgeBracketDefaultTypeInternal _EpiOutput_Location_AgeBracket_default_instance_;
-class EpiOutput_Location_AgeBracket_HealthStatus;
-class EpiOutput_Location_AgeBracket_HealthStatusDefaultTypeInternal;
-extern EpiOutput_Location_AgeBracket_HealthStatusDefaultTypeInternal _EpiOutput_Location_AgeBracket_HealthStatus_default_instance_;
-class EpiOutput_Location_AgeBracket_HealthStatus_Day;
-class EpiOutput_Location_AgeBracket_HealthStatus_DayDefaultTypeInternal;
-extern EpiOutput_Location_AgeBracket_HealthStatus_DayDefaultTypeInternal _EpiOutput_Location_AgeBracket_HealthStatus_Day_default_instance_;
-class EpiOutput_Location_Coordinate;
-class EpiOutput_Location_CoordinateDefaultTypeInternal;
-extern EpiOutput_Location_CoordinateDefaultTypeInternal _EpiOutput_Location_Coordinate_default_instance_;
+class EpiOutput_Day;
+class EpiOutput_DayDefaultTypeInternal;
+extern EpiOutput_DayDefaultTypeInternal _EpiOutput_Day_default_instance_;
+class EpiOutput_Day_Location;
+class EpiOutput_Day_LocationDefaultTypeInternal;
+extern EpiOutput_Day_LocationDefaultTypeInternal _EpiOutput_Day_Location_default_instance_;
+class EpiOutput_Day_Location_AgeBracket;
+class EpiOutput_Day_Location_AgeBracketDefaultTypeInternal;
+extern EpiOutput_Day_Location_AgeBracketDefaultTypeInternal _EpiOutput_Day_Location_AgeBracket_default_instance_;
+class EpiOutput_Day_Location_AgeBracket_HealthStatus;
+class EpiOutput_Day_Location_AgeBracket_HealthStatusDefaultTypeInternal;
+extern EpiOutput_Day_Location_AgeBracket_HealthStatusDefaultTypeInternal _EpiOutput_Day_Location_AgeBracket_HealthStatus_default_instance_;
+class EpiOutput_Day_Location_Coordinate;
+class EpiOutput_Day_Location_CoordinateDefaultTypeInternal;
+extern EpiOutput_Day_Location_CoordinateDefaultTypeInternal _EpiOutput_Day_Location_Coordinate_default_instance_;
 }  // namespace proto
 namespace google {
 namespace protobuf {
 template<> ::proto::EpiOutput* Arena::CreateMaybeMessage<::proto::EpiOutput>(Arena*);
-template<> ::proto::EpiOutput_Location* Arena::CreateMaybeMessage<::proto::EpiOutput_Location>(Arena*);
-template<> ::proto::EpiOutput_Location_AgeBracket* Arena::CreateMaybeMessage<::proto::EpiOutput_Location_AgeBracket>(Arena*);
-template<> ::proto::EpiOutput_Location_AgeBracket_HealthStatus* Arena::CreateMaybeMessage<::proto::EpiOutput_Location_AgeBracket_HealthStatus>(Arena*);
-template<> ::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day* Arena::CreateMaybeMessage<::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day>(Arena*);
-template<> ::proto::EpiOutput_Location_Coordinate* Arena::CreateMaybeMessage<::proto::EpiOutput_Location_Coordinate>(Arena*);
+template<> ::proto::EpiOutput_Day* Arena::CreateMaybeMessage<::proto::EpiOutput_Day>(Arena*);
+template<> ::proto::EpiOutput_Day_Location* Arena::CreateMaybeMessage<::proto::EpiOutput_Day_Location>(Arena*);
+template<> ::proto::EpiOutput_Day_Location_AgeBracket* Arena::CreateMaybeMessage<::proto::EpiOutput_Day_Location_AgeBracket>(Arena*);
+template<> ::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus* Arena::CreateMaybeMessage<::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus>(Arena*);
+template<> ::proto::EpiOutput_Day_Location_Coordinate* Arena::CreateMaybeMessage<::proto::EpiOutput_Day_Location_Coordinate>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace proto {
 
 // ===================================================================
 
-class EpiOutput_Location_Coordinate final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:proto.EpiOutput.Location.Coordinate) */ {
+class EpiOutput_Day_Location_Coordinate final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:proto.EpiOutput.Day.Location.Coordinate) */ {
  public:
-  EpiOutput_Location_Coordinate();
-  virtual ~EpiOutput_Location_Coordinate();
+  EpiOutput_Day_Location_Coordinate();
+  virtual ~EpiOutput_Day_Location_Coordinate();
 
-  EpiOutput_Location_Coordinate(const EpiOutput_Location_Coordinate& from);
+  EpiOutput_Day_Location_Coordinate(const EpiOutput_Day_Location_Coordinate& from);
 
-  inline EpiOutput_Location_Coordinate& operator=(const EpiOutput_Location_Coordinate& from) {
+  inline EpiOutput_Day_Location_Coordinate& operator=(const EpiOutput_Day_Location_Coordinate& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  EpiOutput_Location_Coordinate(EpiOutput_Location_Coordinate&& from) noexcept
-    : EpiOutput_Location_Coordinate() {
+  EpiOutput_Day_Location_Coordinate(EpiOutput_Day_Location_Coordinate&& from) noexcept
+    : EpiOutput_Day_Location_Coordinate() {
     *this = ::std::move(from);
   }
 
-  inline EpiOutput_Location_Coordinate& operator=(EpiOutput_Location_Coordinate&& from) noexcept {
+  inline EpiOutput_Day_Location_Coordinate& operator=(EpiOutput_Day_Location_Coordinate&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -112,34 +112,34 @@ class EpiOutput_Location_Coordinate final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const EpiOutput_Location_Coordinate& default_instance();
+  static const EpiOutput_Day_Location_Coordinate& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const EpiOutput_Location_Coordinate* internal_default_instance() {
-    return reinterpret_cast<const EpiOutput_Location_Coordinate*>(
-               &_EpiOutput_Location_Coordinate_default_instance_);
+  static inline const EpiOutput_Day_Location_Coordinate* internal_default_instance() {
+    return reinterpret_cast<const EpiOutput_Day_Location_Coordinate*>(
+               &_EpiOutput_Day_Location_Coordinate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  void Swap(EpiOutput_Location_Coordinate* other);
-  friend void swap(EpiOutput_Location_Coordinate& a, EpiOutput_Location_Coordinate& b) {
+  void Swap(EpiOutput_Day_Location_Coordinate* other);
+  friend void swap(EpiOutput_Day_Location_Coordinate& a, EpiOutput_Day_Location_Coordinate& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline EpiOutput_Location_Coordinate* New() const final {
-    return CreateMaybeMessage<EpiOutput_Location_Coordinate>(nullptr);
+  inline EpiOutput_Day_Location_Coordinate* New() const final {
+    return CreateMaybeMessage<EpiOutput_Day_Location_Coordinate>(nullptr);
   }
 
-  EpiOutput_Location_Coordinate* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<EpiOutput_Location_Coordinate>(arena);
+  EpiOutput_Day_Location_Coordinate* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<EpiOutput_Day_Location_Coordinate>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const EpiOutput_Location_Coordinate& from);
-  void MergeFrom(const EpiOutput_Location_Coordinate& from);
+  void CopyFrom(const EpiOutput_Day_Location_Coordinate& from);
+  void MergeFrom(const EpiOutput_Day_Location_Coordinate& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -161,7 +161,7 @@ class EpiOutput_Location_Coordinate final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(EpiOutput_Location_Coordinate* other);
+  void InternalSwap(EpiOutput_Day_Location_Coordinate* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -189,7 +189,7 @@ class EpiOutput_Location_Coordinate final :
   double latitude() const;
   void set_latitude(double value);
 
-  // @@protoc_insertion_point(class_scope:proto.EpiOutput.Location.Coordinate)
+  // @@protoc_insertion_point(class_scope:proto.EpiOutput.Day.Location.Coordinate)
  private:
   class HasBitSetters;
 
@@ -201,25 +201,25 @@ class EpiOutput_Location_Coordinate final :
 };
 // -------------------------------------------------------------------
 
-class EpiOutput_Location_AgeBracket_HealthStatus_Day final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day) */ {
+class EpiOutput_Day_Location_AgeBracket_HealthStatus final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus) */ {
  public:
-  EpiOutput_Location_AgeBracket_HealthStatus_Day();
-  virtual ~EpiOutput_Location_AgeBracket_HealthStatus_Day();
+  EpiOutput_Day_Location_AgeBracket_HealthStatus();
+  virtual ~EpiOutput_Day_Location_AgeBracket_HealthStatus();
 
-  EpiOutput_Location_AgeBracket_HealthStatus_Day(const EpiOutput_Location_AgeBracket_HealthStatus_Day& from);
+  EpiOutput_Day_Location_AgeBracket_HealthStatus(const EpiOutput_Day_Location_AgeBracket_HealthStatus& from);
 
-  inline EpiOutput_Location_AgeBracket_HealthStatus_Day& operator=(const EpiOutput_Location_AgeBracket_HealthStatus_Day& from) {
+  inline EpiOutput_Day_Location_AgeBracket_HealthStatus& operator=(const EpiOutput_Day_Location_AgeBracket_HealthStatus& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  EpiOutput_Location_AgeBracket_HealthStatus_Day(EpiOutput_Location_AgeBracket_HealthStatus_Day&& from) noexcept
-    : EpiOutput_Location_AgeBracket_HealthStatus_Day() {
+  EpiOutput_Day_Location_AgeBracket_HealthStatus(EpiOutput_Day_Location_AgeBracket_HealthStatus&& from) noexcept
+    : EpiOutput_Day_Location_AgeBracket_HealthStatus() {
     *this = ::std::move(from);
   }
 
-  inline EpiOutput_Location_AgeBracket_HealthStatus_Day& operator=(EpiOutput_Location_AgeBracket_HealthStatus_Day&& from) noexcept {
+  inline EpiOutput_Day_Location_AgeBracket_HealthStatus& operator=(EpiOutput_Day_Location_AgeBracket_HealthStatus&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -231,34 +231,34 @@ class EpiOutput_Location_AgeBracket_HealthStatus_Day final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const EpiOutput_Location_AgeBracket_HealthStatus_Day& default_instance();
+  static const EpiOutput_Day_Location_AgeBracket_HealthStatus& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const EpiOutput_Location_AgeBracket_HealthStatus_Day* internal_default_instance() {
-    return reinterpret_cast<const EpiOutput_Location_AgeBracket_HealthStatus_Day*>(
-               &_EpiOutput_Location_AgeBracket_HealthStatus_Day_default_instance_);
+  static inline const EpiOutput_Day_Location_AgeBracket_HealthStatus* internal_default_instance() {
+    return reinterpret_cast<const EpiOutput_Day_Location_AgeBracket_HealthStatus*>(
+               &_EpiOutput_Day_Location_AgeBracket_HealthStatus_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  void Swap(EpiOutput_Location_AgeBracket_HealthStatus_Day* other);
-  friend void swap(EpiOutput_Location_AgeBracket_HealthStatus_Day& a, EpiOutput_Location_AgeBracket_HealthStatus_Day& b) {
+  void Swap(EpiOutput_Day_Location_AgeBracket_HealthStatus* other);
+  friend void swap(EpiOutput_Day_Location_AgeBracket_HealthStatus& a, EpiOutput_Day_Location_AgeBracket_HealthStatus& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline EpiOutput_Location_AgeBracket_HealthStatus_Day* New() const final {
-    return CreateMaybeMessage<EpiOutput_Location_AgeBracket_HealthStatus_Day>(nullptr);
+  inline EpiOutput_Day_Location_AgeBracket_HealthStatus* New() const final {
+    return CreateMaybeMessage<EpiOutput_Day_Location_AgeBracket_HealthStatus>(nullptr);
   }
 
-  EpiOutput_Location_AgeBracket_HealthStatus_Day* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<EpiOutput_Location_AgeBracket_HealthStatus_Day>(arena);
+  EpiOutput_Day_Location_AgeBracket_HealthStatus* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<EpiOutput_Day_Location_AgeBracket_HealthStatus>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const EpiOutput_Location_AgeBracket_HealthStatus_Day& from);
-  void MergeFrom(const EpiOutput_Location_AgeBracket_HealthStatus_Day& from);
+  void CopyFrom(const EpiOutput_Day_Location_AgeBracket_HealthStatus& from);
+  void MergeFrom(const EpiOutput_Day_Location_AgeBracket_HealthStatus& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -280,7 +280,7 @@ class EpiOutput_Location_AgeBracket_HealthStatus_Day final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(EpiOutput_Location_AgeBracket_HealthStatus_Day* other);
+  void InternalSwap(EpiOutput_Day_Location_AgeBracket_HealthStatus* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -295,139 +295,6 @@ class EpiOutput_Location_AgeBracket_HealthStatus_Day final :
   // nested types ----------------------------------------------------
 
   // accessors -------------------------------------------------------
-
-  // int64 day = 1;
-  void clear_day();
-  static const int kDayFieldNumber = 1;
-  ::google::protobuf::int64 day() const;
-  void set_day(::google::protobuf::int64 value);
-
-  // double percentage = 2;
-  void clear_percentage();
-  static const int kPercentageFieldNumber = 2;
-  double percentage() const;
-  void set_percentage(double value);
-
-  // @@protoc_insertion_point(class_scope:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
- private:
-  class HasBitSetters;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::int64 day_;
-  double percentage_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_epioutput_2eproto;
-};
-// -------------------------------------------------------------------
-
-class EpiOutput_Location_AgeBracket_HealthStatus final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:proto.EpiOutput.Location.AgeBracket.HealthStatus) */ {
- public:
-  EpiOutput_Location_AgeBracket_HealthStatus();
-  virtual ~EpiOutput_Location_AgeBracket_HealthStatus();
-
-  EpiOutput_Location_AgeBracket_HealthStatus(const EpiOutput_Location_AgeBracket_HealthStatus& from);
-
-  inline EpiOutput_Location_AgeBracket_HealthStatus& operator=(const EpiOutput_Location_AgeBracket_HealthStatus& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  EpiOutput_Location_AgeBracket_HealthStatus(EpiOutput_Location_AgeBracket_HealthStatus&& from) noexcept
-    : EpiOutput_Location_AgeBracket_HealthStatus() {
-    *this = ::std::move(from);
-  }
-
-  inline EpiOutput_Location_AgeBracket_HealthStatus& operator=(EpiOutput_Location_AgeBracket_HealthStatus&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
-  static const EpiOutput_Location_AgeBracket_HealthStatus& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const EpiOutput_Location_AgeBracket_HealthStatus* internal_default_instance() {
-    return reinterpret_cast<const EpiOutput_Location_AgeBracket_HealthStatus*>(
-               &_EpiOutput_Location_AgeBracket_HealthStatus_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    2;
-
-  void Swap(EpiOutput_Location_AgeBracket_HealthStatus* other);
-  friend void swap(EpiOutput_Location_AgeBracket_HealthStatus& a, EpiOutput_Location_AgeBracket_HealthStatus& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline EpiOutput_Location_AgeBracket_HealthStatus* New() const final {
-    return CreateMaybeMessage<EpiOutput_Location_AgeBracket_HealthStatus>(nullptr);
-  }
-
-  EpiOutput_Location_AgeBracket_HealthStatus* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<EpiOutput_Location_AgeBracket_HealthStatus>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const EpiOutput_Location_AgeBracket_HealthStatus& from);
-  void MergeFrom(const EpiOutput_Location_AgeBracket_HealthStatus& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
-  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
-  #else
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(EpiOutput_Location_AgeBracket_HealthStatus* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return nullptr;
-  }
-  inline void* MaybeArenaPtr() const {
-    return nullptr;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  typedef EpiOutput_Location_AgeBracket_HealthStatus_Day Day;
-
-  // accessors -------------------------------------------------------
-
-  // repeated .proto.EpiOutput.Location.AgeBracket.HealthStatus.Day days = 2;
-  int days_size() const;
-  void clear_days();
-  static const int kDaysFieldNumber = 2;
-  ::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day* mutable_days(int index);
-  ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day >*
-      mutable_days();
-  const ::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day& days(int index) const;
-  ::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day* add_days();
-  const ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day >&
-      days() const;
 
   // string type = 1;
   void clear_type();
@@ -443,37 +310,43 @@ class EpiOutput_Location_AgeBracket_HealthStatus final :
   ::std::string* release_type();
   void set_allocated_type(::std::string* type);
 
-  // @@protoc_insertion_point(class_scope:proto.EpiOutput.Location.AgeBracket.HealthStatus)
+  // double percentage = 2;
+  void clear_percentage();
+  static const int kPercentageFieldNumber = 2;
+  double percentage() const;
+  void set_percentage(double value);
+
+  // @@protoc_insertion_point(class_scope:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day > days_;
   ::google::protobuf::internal::ArenaStringPtr type_;
+  double percentage_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_epioutput_2eproto;
 };
 // -------------------------------------------------------------------
 
-class EpiOutput_Location_AgeBracket final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:proto.EpiOutput.Location.AgeBracket) */ {
+class EpiOutput_Day_Location_AgeBracket final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:proto.EpiOutput.Day.Location.AgeBracket) */ {
  public:
-  EpiOutput_Location_AgeBracket();
-  virtual ~EpiOutput_Location_AgeBracket();
+  EpiOutput_Day_Location_AgeBracket();
+  virtual ~EpiOutput_Day_Location_AgeBracket();
 
-  EpiOutput_Location_AgeBracket(const EpiOutput_Location_AgeBracket& from);
+  EpiOutput_Day_Location_AgeBracket(const EpiOutput_Day_Location_AgeBracket& from);
 
-  inline EpiOutput_Location_AgeBracket& operator=(const EpiOutput_Location_AgeBracket& from) {
+  inline EpiOutput_Day_Location_AgeBracket& operator=(const EpiOutput_Day_Location_AgeBracket& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  EpiOutput_Location_AgeBracket(EpiOutput_Location_AgeBracket&& from) noexcept
-    : EpiOutput_Location_AgeBracket() {
+  EpiOutput_Day_Location_AgeBracket(EpiOutput_Day_Location_AgeBracket&& from) noexcept
+    : EpiOutput_Day_Location_AgeBracket() {
     *this = ::std::move(from);
   }
 
-  inline EpiOutput_Location_AgeBracket& operator=(EpiOutput_Location_AgeBracket&& from) noexcept {
+  inline EpiOutput_Day_Location_AgeBracket& operator=(EpiOutput_Day_Location_AgeBracket&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -485,34 +358,34 @@ class EpiOutput_Location_AgeBracket final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const EpiOutput_Location_AgeBracket& default_instance();
+  static const EpiOutput_Day_Location_AgeBracket& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const EpiOutput_Location_AgeBracket* internal_default_instance() {
-    return reinterpret_cast<const EpiOutput_Location_AgeBracket*>(
-               &_EpiOutput_Location_AgeBracket_default_instance_);
+  static inline const EpiOutput_Day_Location_AgeBracket* internal_default_instance() {
+    return reinterpret_cast<const EpiOutput_Day_Location_AgeBracket*>(
+               &_EpiOutput_Day_Location_AgeBracket_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    2;
 
-  void Swap(EpiOutput_Location_AgeBracket* other);
-  friend void swap(EpiOutput_Location_AgeBracket& a, EpiOutput_Location_AgeBracket& b) {
+  void Swap(EpiOutput_Day_Location_AgeBracket* other);
+  friend void swap(EpiOutput_Day_Location_AgeBracket& a, EpiOutput_Day_Location_AgeBracket& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline EpiOutput_Location_AgeBracket* New() const final {
-    return CreateMaybeMessage<EpiOutput_Location_AgeBracket>(nullptr);
+  inline EpiOutput_Day_Location_AgeBracket* New() const final {
+    return CreateMaybeMessage<EpiOutput_Day_Location_AgeBracket>(nullptr);
   }
 
-  EpiOutput_Location_AgeBracket* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<EpiOutput_Location_AgeBracket>(arena);
+  EpiOutput_Day_Location_AgeBracket* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<EpiOutput_Day_Location_AgeBracket>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const EpiOutput_Location_AgeBracket& from);
-  void MergeFrom(const EpiOutput_Location_AgeBracket& from);
+  void CopyFrom(const EpiOutput_Day_Location_AgeBracket& from);
+  void MergeFrom(const EpiOutput_Day_Location_AgeBracket& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -534,7 +407,7 @@ class EpiOutput_Location_AgeBracket final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(EpiOutput_Location_AgeBracket* other);
+  void InternalSwap(EpiOutput_Day_Location_AgeBracket* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -548,20 +421,20 @@ class EpiOutput_Location_AgeBracket final :
 
   // nested types ----------------------------------------------------
 
-  typedef EpiOutput_Location_AgeBracket_HealthStatus HealthStatus;
+  typedef EpiOutput_Day_Location_AgeBracket_HealthStatus HealthStatus;
 
   // accessors -------------------------------------------------------
 
-  // repeated .proto.EpiOutput.Location.AgeBracket.HealthStatus healthStatuses = 2;
+  // repeated .proto.EpiOutput.Day.Location.AgeBracket.HealthStatus healthStatuses = 2;
   int healthstatuses_size() const;
   void clear_healthstatuses();
   static const int kHealthStatusesFieldNumber = 2;
-  ::proto::EpiOutput_Location_AgeBracket_HealthStatus* mutable_healthstatuses(int index);
-  ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location_AgeBracket_HealthStatus >*
+  ::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus* mutable_healthstatuses(int index);
+  ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus >*
       mutable_healthstatuses();
-  const ::proto::EpiOutput_Location_AgeBracket_HealthStatus& healthstatuses(int index) const;
-  ::proto::EpiOutput_Location_AgeBracket_HealthStatus* add_healthstatuses();
-  const ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location_AgeBracket_HealthStatus >&
+  const ::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus& healthstatuses(int index) const;
+  ::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus* add_healthstatuses();
+  const ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus >&
       healthstatuses() const;
 
   // string type = 1;
@@ -578,37 +451,37 @@ class EpiOutput_Location_AgeBracket final :
   ::std::string* release_type();
   void set_allocated_type(::std::string* type);
 
-  // @@protoc_insertion_point(class_scope:proto.EpiOutput.Location.AgeBracket)
+  // @@protoc_insertion_point(class_scope:proto.EpiOutput.Day.Location.AgeBracket)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location_AgeBracket_HealthStatus > healthstatuses_;
+  ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus > healthstatuses_;
   ::google::protobuf::internal::ArenaStringPtr type_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_epioutput_2eproto;
 };
 // -------------------------------------------------------------------
 
-class EpiOutput_Location final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:proto.EpiOutput.Location) */ {
+class EpiOutput_Day_Location final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:proto.EpiOutput.Day.Location) */ {
  public:
-  EpiOutput_Location();
-  virtual ~EpiOutput_Location();
+  EpiOutput_Day_Location();
+  virtual ~EpiOutput_Day_Location();
 
-  EpiOutput_Location(const EpiOutput_Location& from);
+  EpiOutput_Day_Location(const EpiOutput_Day_Location& from);
 
-  inline EpiOutput_Location& operator=(const EpiOutput_Location& from) {
+  inline EpiOutput_Day_Location& operator=(const EpiOutput_Day_Location& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  EpiOutput_Location(EpiOutput_Location&& from) noexcept
-    : EpiOutput_Location() {
+  EpiOutput_Day_Location(EpiOutput_Day_Location&& from) noexcept
+    : EpiOutput_Day_Location() {
     *this = ::std::move(from);
   }
 
-  inline EpiOutput_Location& operator=(EpiOutput_Location&& from) noexcept {
+  inline EpiOutput_Day_Location& operator=(EpiOutput_Day_Location&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -620,34 +493,34 @@ class EpiOutput_Location final :
   static const ::google::protobuf::Descriptor* descriptor() {
     return default_instance().GetDescriptor();
   }
-  static const EpiOutput_Location& default_instance();
+  static const EpiOutput_Day_Location& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const EpiOutput_Location* internal_default_instance() {
-    return reinterpret_cast<const EpiOutput_Location*>(
-               &_EpiOutput_Location_default_instance_);
+  static inline const EpiOutput_Day_Location* internal_default_instance() {
+    return reinterpret_cast<const EpiOutput_Day_Location*>(
+               &_EpiOutput_Day_Location_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    3;
 
-  void Swap(EpiOutput_Location* other);
-  friend void swap(EpiOutput_Location& a, EpiOutput_Location& b) {
+  void Swap(EpiOutput_Day_Location* other);
+  friend void swap(EpiOutput_Day_Location& a, EpiOutput_Day_Location& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline EpiOutput_Location* New() const final {
-    return CreateMaybeMessage<EpiOutput_Location>(nullptr);
+  inline EpiOutput_Day_Location* New() const final {
+    return CreateMaybeMessage<EpiOutput_Day_Location>(nullptr);
   }
 
-  EpiOutput_Location* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<EpiOutput_Location>(arena);
+  EpiOutput_Day_Location* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<EpiOutput_Day_Location>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const EpiOutput_Location& from);
-  void MergeFrom(const EpiOutput_Location& from);
+  void CopyFrom(const EpiOutput_Day_Location& from);
+  void MergeFrom(const EpiOutput_Day_Location& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -669,7 +542,7 @@ class EpiOutput_Location final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(EpiOutput_Location* other);
+  void InternalSwap(EpiOutput_Day_Location* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return nullptr;
@@ -683,21 +556,21 @@ class EpiOutput_Location final :
 
   // nested types ----------------------------------------------------
 
-  typedef EpiOutput_Location_Coordinate Coordinate;
-  typedef EpiOutput_Location_AgeBracket AgeBracket;
+  typedef EpiOutput_Day_Location_Coordinate Coordinate;
+  typedef EpiOutput_Day_Location_AgeBracket AgeBracket;
 
   // accessors -------------------------------------------------------
 
-  // repeated .proto.EpiOutput.Location.AgeBracket ageBrackets = 6;
+  // repeated .proto.EpiOutput.Day.Location.AgeBracket ageBrackets = 6;
   int agebrackets_size() const;
   void clear_agebrackets();
   static const int kAgeBracketsFieldNumber = 6;
-  ::proto::EpiOutput_Location_AgeBracket* mutable_agebrackets(int index);
-  ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location_AgeBracket >*
+  ::proto::EpiOutput_Day_Location_AgeBracket* mutable_agebrackets(int index);
+  ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day_Location_AgeBracket >*
       mutable_agebrackets();
-  const ::proto::EpiOutput_Location_AgeBracket& agebrackets(int index) const;
-  ::proto::EpiOutput_Location_AgeBracket* add_agebrackets();
-  const ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location_AgeBracket >&
+  const ::proto::EpiOutput_Day_Location_AgeBracket& agebrackets(int index) const;
+  ::proto::EpiOutput_Day_Location_AgeBracket* add_agebrackets();
+  const ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day_Location_AgeBracket >&
       agebrackets() const;
 
   // string name = 2;
@@ -714,14 +587,14 @@ class EpiOutput_Location final :
   ::std::string* release_name();
   void set_allocated_name(::std::string* name);
 
-  // .proto.EpiOutput.Location.Coordinate coordinate = 5;
+  // .proto.EpiOutput.Day.Location.Coordinate coordinate = 5;
   bool has_coordinate() const;
   void clear_coordinate();
   static const int kCoordinateFieldNumber = 5;
-  const ::proto::EpiOutput_Location_Coordinate& coordinate() const;
-  ::proto::EpiOutput_Location_Coordinate* release_coordinate();
-  ::proto::EpiOutput_Location_Coordinate* mutable_coordinate();
-  void set_allocated_coordinate(::proto::EpiOutput_Location_Coordinate* coordinate);
+  const ::proto::EpiOutput_Day_Location_Coordinate& coordinate() const;
+  ::proto::EpiOutput_Day_Location_Coordinate* release_coordinate();
+  ::proto::EpiOutput_Day_Location_Coordinate* mutable_coordinate();
+  void set_allocated_coordinate(::proto::EpiOutput_Day_Location_Coordinate* coordinate);
 
   // int64 id = 1;
   void clear_id();
@@ -741,17 +614,144 @@ class EpiOutput_Location final :
   ::google::protobuf::int64 population() const;
   void set_population(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:proto.EpiOutput.Location)
+  // @@protoc_insertion_point(class_scope:proto.EpiOutput.Day.Location)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location_AgeBracket > agebrackets_;
+  ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day_Location_AgeBracket > agebrackets_;
   ::google::protobuf::internal::ArenaStringPtr name_;
-  ::proto::EpiOutput_Location_Coordinate* coordinate_;
+  ::proto::EpiOutput_Day_Location_Coordinate* coordinate_;
   ::google::protobuf::int64 id_;
   ::google::protobuf::int64 province_;
   ::google::protobuf::int64 population_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_epioutput_2eproto;
+};
+// -------------------------------------------------------------------
+
+class EpiOutput_Day final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:proto.EpiOutput.Day) */ {
+ public:
+  EpiOutput_Day();
+  virtual ~EpiOutput_Day();
+
+  EpiOutput_Day(const EpiOutput_Day& from);
+
+  inline EpiOutput_Day& operator=(const EpiOutput_Day& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  EpiOutput_Day(EpiOutput_Day&& from) noexcept
+    : EpiOutput_Day() {
+    *this = ::std::move(from);
+  }
+
+  inline EpiOutput_Day& operator=(EpiOutput_Day&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const EpiOutput_Day& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const EpiOutput_Day* internal_default_instance() {
+    return reinterpret_cast<const EpiOutput_Day*>(
+               &_EpiOutput_Day_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  void Swap(EpiOutput_Day* other);
+  friend void swap(EpiOutput_Day& a, EpiOutput_Day& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline EpiOutput_Day* New() const final {
+    return CreateMaybeMessage<EpiOutput_Day>(nullptr);
+  }
+
+  EpiOutput_Day* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<EpiOutput_Day>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const EpiOutput_Day& from);
+  void MergeFrom(const EpiOutput_Day& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(EpiOutput_Day* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef EpiOutput_Day_Location Location;
+
+  // accessors -------------------------------------------------------
+
+  // repeated .proto.EpiOutput.Day.Location locations = 2;
+  int locations_size() const;
+  void clear_locations();
+  static const int kLocationsFieldNumber = 2;
+  ::proto::EpiOutput_Day_Location* mutable_locations(int index);
+  ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day_Location >*
+      mutable_locations();
+  const ::proto::EpiOutput_Day_Location& locations(int index) const;
+  ::proto::EpiOutput_Day_Location* add_locations();
+  const ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day_Location >&
+      locations() const;
+
+  // int64 day = 1;
+  void clear_day();
+  static const int kDayFieldNumber = 1;
+  ::google::protobuf::int64 day() const;
+  void set_day(::google::protobuf::int64 value);
+
+  // @@protoc_insertion_point(class_scope:proto.EpiOutput.Day)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day_Location > locations_;
+  ::google::protobuf::int64 day_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_epioutput_2eproto;
 };
@@ -850,28 +850,28 @@ class EpiOutput final :
 
   // nested types ----------------------------------------------------
 
-  typedef EpiOutput_Location Location;
+  typedef EpiOutput_Day Day;
 
   // accessors -------------------------------------------------------
 
-  // repeated .proto.EpiOutput.Location locations = 1;
-  int locations_size() const;
-  void clear_locations();
-  static const int kLocationsFieldNumber = 1;
-  ::proto::EpiOutput_Location* mutable_locations(int index);
-  ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location >*
-      mutable_locations();
-  const ::proto::EpiOutput_Location& locations(int index) const;
-  ::proto::EpiOutput_Location* add_locations();
-  const ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location >&
-      locations() const;
+  // repeated .proto.EpiOutput.Day days = 1;
+  int days_size() const;
+  void clear_days();
+  static const int kDaysFieldNumber = 1;
+  ::proto::EpiOutput_Day* mutable_days(int index);
+  ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day >*
+      mutable_days();
+  const ::proto::EpiOutput_Day& days(int index) const;
+  ::proto::EpiOutput_Day* add_days();
+  const ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day >&
+      days() const;
 
   // @@protoc_insertion_point(class_scope:proto.EpiOutput)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location > locations_;
+  ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day > days_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_epioutput_2eproto;
 };
@@ -884,374 +884,326 @@ class EpiOutput final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// EpiOutput_Location_Coordinate
+// EpiOutput_Day_Location_Coordinate
 
 // double longitude = 1;
-inline void EpiOutput_Location_Coordinate::clear_longitude() {
+inline void EpiOutput_Day_Location_Coordinate::clear_longitude() {
   longitude_ = 0;
 }
-inline double EpiOutput_Location_Coordinate::longitude() const {
-  // @@protoc_insertion_point(field_get:proto.EpiOutput.Location.Coordinate.longitude)
+inline double EpiOutput_Day_Location_Coordinate::longitude() const {
+  // @@protoc_insertion_point(field_get:proto.EpiOutput.Day.Location.Coordinate.longitude)
   return longitude_;
 }
-inline void EpiOutput_Location_Coordinate::set_longitude(double value) {
+inline void EpiOutput_Day_Location_Coordinate::set_longitude(double value) {
   
   longitude_ = value;
-  // @@protoc_insertion_point(field_set:proto.EpiOutput.Location.Coordinate.longitude)
+  // @@protoc_insertion_point(field_set:proto.EpiOutput.Day.Location.Coordinate.longitude)
 }
 
 // double latitude = 2;
-inline void EpiOutput_Location_Coordinate::clear_latitude() {
+inline void EpiOutput_Day_Location_Coordinate::clear_latitude() {
   latitude_ = 0;
 }
-inline double EpiOutput_Location_Coordinate::latitude() const {
-  // @@protoc_insertion_point(field_get:proto.EpiOutput.Location.Coordinate.latitude)
+inline double EpiOutput_Day_Location_Coordinate::latitude() const {
+  // @@protoc_insertion_point(field_get:proto.EpiOutput.Day.Location.Coordinate.latitude)
   return latitude_;
 }
-inline void EpiOutput_Location_Coordinate::set_latitude(double value) {
+inline void EpiOutput_Day_Location_Coordinate::set_latitude(double value) {
   
   latitude_ = value;
-  // @@protoc_insertion_point(field_set:proto.EpiOutput.Location.Coordinate.latitude)
+  // @@protoc_insertion_point(field_set:proto.EpiOutput.Day.Location.Coordinate.latitude)
 }
 
 // -------------------------------------------------------------------
 
-// EpiOutput_Location_AgeBracket_HealthStatus_Day
+// EpiOutput_Day_Location_AgeBracket_HealthStatus
 
-// int64 day = 1;
-inline void EpiOutput_Location_AgeBracket_HealthStatus_Day::clear_day() {
-  day_ = PROTOBUF_LONGLONG(0);
+// string type = 1;
+inline void EpiOutput_Day_Location_AgeBracket_HealthStatus::clear_type() {
+  type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::google::protobuf::int64 EpiOutput_Location_AgeBracket_HealthStatus_Day::day() const {
-  // @@protoc_insertion_point(field_get:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day.day)
-  return day_;
+inline const ::std::string& EpiOutput_Day_Location_AgeBracket_HealthStatus::type() const {
+  // @@protoc_insertion_point(field_get:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus.type)
+  return type_.GetNoArena();
 }
-inline void EpiOutput_Location_AgeBracket_HealthStatus_Day::set_day(::google::protobuf::int64 value) {
+inline void EpiOutput_Day_Location_AgeBracket_HealthStatus::set_type(const ::std::string& value) {
   
-  day_ = value;
-  // @@protoc_insertion_point(field_set:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day.day)
+  type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus.type)
+}
+#if LANG_CXX11
+inline void EpiOutput_Day_Location_AgeBracket_HealthStatus::set_type(::std::string&& value) {
+  
+  type_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus.type)
+}
+#endif
+inline void EpiOutput_Day_Location_AgeBracket_HealthStatus::set_type(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus.type)
+}
+inline void EpiOutput_Day_Location_AgeBracket_HealthStatus::set_type(const char* value, size_t size) {
+  
+  type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus.type)
+}
+inline ::std::string* EpiOutput_Day_Location_AgeBracket_HealthStatus::mutable_type() {
+  
+  // @@protoc_insertion_point(field_mutable:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus.type)
+  return type_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* EpiOutput_Day_Location_AgeBracket_HealthStatus::release_type() {
+  // @@protoc_insertion_point(field_release:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus.type)
+  
+  return type_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void EpiOutput_Day_Location_AgeBracket_HealthStatus::set_allocated_type(::std::string* type) {
+  if (type != nullptr) {
+    
+  } else {
+    
+  }
+  type_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), type);
+  // @@protoc_insertion_point(field_set_allocated:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus.type)
 }
 
 // double percentage = 2;
-inline void EpiOutput_Location_AgeBracket_HealthStatus_Day::clear_percentage() {
+inline void EpiOutput_Day_Location_AgeBracket_HealthStatus::clear_percentage() {
   percentage_ = 0;
 }
-inline double EpiOutput_Location_AgeBracket_HealthStatus_Day::percentage() const {
-  // @@protoc_insertion_point(field_get:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day.percentage)
+inline double EpiOutput_Day_Location_AgeBracket_HealthStatus::percentage() const {
+  // @@protoc_insertion_point(field_get:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus.percentage)
   return percentage_;
 }
-inline void EpiOutput_Location_AgeBracket_HealthStatus_Day::set_percentage(double value) {
+inline void EpiOutput_Day_Location_AgeBracket_HealthStatus::set_percentage(double value) {
   
   percentage_ = value;
-  // @@protoc_insertion_point(field_set:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day.percentage)
+  // @@protoc_insertion_point(field_set:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus.percentage)
 }
 
 // -------------------------------------------------------------------
 
-// EpiOutput_Location_AgeBracket_HealthStatus
+// EpiOutput_Day_Location_AgeBracket
 
 // string type = 1;
-inline void EpiOutput_Location_AgeBracket_HealthStatus::clear_type() {
+inline void EpiOutput_Day_Location_AgeBracket::clear_type() {
   type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& EpiOutput_Location_AgeBracket_HealthStatus::type() const {
-  // @@protoc_insertion_point(field_get:proto.EpiOutput.Location.AgeBracket.HealthStatus.type)
+inline const ::std::string& EpiOutput_Day_Location_AgeBracket::type() const {
+  // @@protoc_insertion_point(field_get:proto.EpiOutput.Day.Location.AgeBracket.type)
   return type_.GetNoArena();
 }
-inline void EpiOutput_Location_AgeBracket_HealthStatus::set_type(const ::std::string& value) {
+inline void EpiOutput_Day_Location_AgeBracket::set_type(const ::std::string& value) {
   
   type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:proto.EpiOutput.Location.AgeBracket.HealthStatus.type)
+  // @@protoc_insertion_point(field_set:proto.EpiOutput.Day.Location.AgeBracket.type)
 }
 #if LANG_CXX11
-inline void EpiOutput_Location_AgeBracket_HealthStatus::set_type(::std::string&& value) {
+inline void EpiOutput_Day_Location_AgeBracket::set_type(::std::string&& value) {
   
   type_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:proto.EpiOutput.Location.AgeBracket.HealthStatus.type)
+  // @@protoc_insertion_point(field_set_rvalue:proto.EpiOutput.Day.Location.AgeBracket.type)
 }
 #endif
-inline void EpiOutput_Location_AgeBracket_HealthStatus::set_type(const char* value) {
+inline void EpiOutput_Day_Location_AgeBracket::set_type(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:proto.EpiOutput.Location.AgeBracket.HealthStatus.type)
+  // @@protoc_insertion_point(field_set_char:proto.EpiOutput.Day.Location.AgeBracket.type)
 }
-inline void EpiOutput_Location_AgeBracket_HealthStatus::set_type(const char* value, size_t size) {
+inline void EpiOutput_Day_Location_AgeBracket::set_type(const char* value, size_t size) {
   
   type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:proto.EpiOutput.Location.AgeBracket.HealthStatus.type)
+  // @@protoc_insertion_point(field_set_pointer:proto.EpiOutput.Day.Location.AgeBracket.type)
 }
-inline ::std::string* EpiOutput_Location_AgeBracket_HealthStatus::mutable_type() {
+inline ::std::string* EpiOutput_Day_Location_AgeBracket::mutable_type() {
   
-  // @@protoc_insertion_point(field_mutable:proto.EpiOutput.Location.AgeBracket.HealthStatus.type)
+  // @@protoc_insertion_point(field_mutable:proto.EpiOutput.Day.Location.AgeBracket.type)
   return type_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* EpiOutput_Location_AgeBracket_HealthStatus::release_type() {
-  // @@protoc_insertion_point(field_release:proto.EpiOutput.Location.AgeBracket.HealthStatus.type)
+inline ::std::string* EpiOutput_Day_Location_AgeBracket::release_type() {
+  // @@protoc_insertion_point(field_release:proto.EpiOutput.Day.Location.AgeBracket.type)
   
   return type_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void EpiOutput_Location_AgeBracket_HealthStatus::set_allocated_type(::std::string* type) {
+inline void EpiOutput_Day_Location_AgeBracket::set_allocated_type(::std::string* type) {
   if (type != nullptr) {
     
   } else {
     
   }
   type_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), type);
-  // @@protoc_insertion_point(field_set_allocated:proto.EpiOutput.Location.AgeBracket.HealthStatus.type)
+  // @@protoc_insertion_point(field_set_allocated:proto.EpiOutput.Day.Location.AgeBracket.type)
 }
 
-// repeated .proto.EpiOutput.Location.AgeBracket.HealthStatus.Day days = 2;
-inline int EpiOutput_Location_AgeBracket_HealthStatus::days_size() const {
-  return days_.size();
-}
-inline void EpiOutput_Location_AgeBracket_HealthStatus::clear_days() {
-  days_.Clear();
-}
-inline ::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day* EpiOutput_Location_AgeBracket_HealthStatus::mutable_days(int index) {
-  // @@protoc_insertion_point(field_mutable:proto.EpiOutput.Location.AgeBracket.HealthStatus.days)
-  return days_.Mutable(index);
-}
-inline ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day >*
-EpiOutput_Location_AgeBracket_HealthStatus::mutable_days() {
-  // @@protoc_insertion_point(field_mutable_list:proto.EpiOutput.Location.AgeBracket.HealthStatus.days)
-  return &days_;
-}
-inline const ::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day& EpiOutput_Location_AgeBracket_HealthStatus::days(int index) const {
-  // @@protoc_insertion_point(field_get:proto.EpiOutput.Location.AgeBracket.HealthStatus.days)
-  return days_.Get(index);
-}
-inline ::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day* EpiOutput_Location_AgeBracket_HealthStatus::add_days() {
-  // @@protoc_insertion_point(field_add:proto.EpiOutput.Location.AgeBracket.HealthStatus.days)
-  return days_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day >&
-EpiOutput_Location_AgeBracket_HealthStatus::days() const {
-  // @@protoc_insertion_point(field_list:proto.EpiOutput.Location.AgeBracket.HealthStatus.days)
-  return days_;
-}
-
-// -------------------------------------------------------------------
-
-// EpiOutput_Location_AgeBracket
-
-// string type = 1;
-inline void EpiOutput_Location_AgeBracket::clear_type() {
-  type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& EpiOutput_Location_AgeBracket::type() const {
-  // @@protoc_insertion_point(field_get:proto.EpiOutput.Location.AgeBracket.type)
-  return type_.GetNoArena();
-}
-inline void EpiOutput_Location_AgeBracket::set_type(const ::std::string& value) {
-  
-  type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:proto.EpiOutput.Location.AgeBracket.type)
-}
-#if LANG_CXX11
-inline void EpiOutput_Location_AgeBracket::set_type(::std::string&& value) {
-  
-  type_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:proto.EpiOutput.Location.AgeBracket.type)
-}
-#endif
-inline void EpiOutput_Location_AgeBracket::set_type(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:proto.EpiOutput.Location.AgeBracket.type)
-}
-inline void EpiOutput_Location_AgeBracket::set_type(const char* value, size_t size) {
-  
-  type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:proto.EpiOutput.Location.AgeBracket.type)
-}
-inline ::std::string* EpiOutput_Location_AgeBracket::mutable_type() {
-  
-  // @@protoc_insertion_point(field_mutable:proto.EpiOutput.Location.AgeBracket.type)
-  return type_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* EpiOutput_Location_AgeBracket::release_type() {
-  // @@protoc_insertion_point(field_release:proto.EpiOutput.Location.AgeBracket.type)
-  
-  return type_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void EpiOutput_Location_AgeBracket::set_allocated_type(::std::string* type) {
-  if (type != nullptr) {
-    
-  } else {
-    
-  }
-  type_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), type);
-  // @@protoc_insertion_point(field_set_allocated:proto.EpiOutput.Location.AgeBracket.type)
-}
-
-// repeated .proto.EpiOutput.Location.AgeBracket.HealthStatus healthStatuses = 2;
-inline int EpiOutput_Location_AgeBracket::healthstatuses_size() const {
+// repeated .proto.EpiOutput.Day.Location.AgeBracket.HealthStatus healthStatuses = 2;
+inline int EpiOutput_Day_Location_AgeBracket::healthstatuses_size() const {
   return healthstatuses_.size();
 }
-inline void EpiOutput_Location_AgeBracket::clear_healthstatuses() {
+inline void EpiOutput_Day_Location_AgeBracket::clear_healthstatuses() {
   healthstatuses_.Clear();
 }
-inline ::proto::EpiOutput_Location_AgeBracket_HealthStatus* EpiOutput_Location_AgeBracket::mutable_healthstatuses(int index) {
-  // @@protoc_insertion_point(field_mutable:proto.EpiOutput.Location.AgeBracket.healthStatuses)
+inline ::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus* EpiOutput_Day_Location_AgeBracket::mutable_healthstatuses(int index) {
+  // @@protoc_insertion_point(field_mutable:proto.EpiOutput.Day.Location.AgeBracket.healthStatuses)
   return healthstatuses_.Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location_AgeBracket_HealthStatus >*
-EpiOutput_Location_AgeBracket::mutable_healthstatuses() {
-  // @@protoc_insertion_point(field_mutable_list:proto.EpiOutput.Location.AgeBracket.healthStatuses)
+inline ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus >*
+EpiOutput_Day_Location_AgeBracket::mutable_healthstatuses() {
+  // @@protoc_insertion_point(field_mutable_list:proto.EpiOutput.Day.Location.AgeBracket.healthStatuses)
   return &healthstatuses_;
 }
-inline const ::proto::EpiOutput_Location_AgeBracket_HealthStatus& EpiOutput_Location_AgeBracket::healthstatuses(int index) const {
-  // @@protoc_insertion_point(field_get:proto.EpiOutput.Location.AgeBracket.healthStatuses)
+inline const ::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus& EpiOutput_Day_Location_AgeBracket::healthstatuses(int index) const {
+  // @@protoc_insertion_point(field_get:proto.EpiOutput.Day.Location.AgeBracket.healthStatuses)
   return healthstatuses_.Get(index);
 }
-inline ::proto::EpiOutput_Location_AgeBracket_HealthStatus* EpiOutput_Location_AgeBracket::add_healthstatuses() {
-  // @@protoc_insertion_point(field_add:proto.EpiOutput.Location.AgeBracket.healthStatuses)
+inline ::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus* EpiOutput_Day_Location_AgeBracket::add_healthstatuses() {
+  // @@protoc_insertion_point(field_add:proto.EpiOutput.Day.Location.AgeBracket.healthStatuses)
   return healthstatuses_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location_AgeBracket_HealthStatus >&
-EpiOutput_Location_AgeBracket::healthstatuses() const {
-  // @@protoc_insertion_point(field_list:proto.EpiOutput.Location.AgeBracket.healthStatuses)
+inline const ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus >&
+EpiOutput_Day_Location_AgeBracket::healthstatuses() const {
+  // @@protoc_insertion_point(field_list:proto.EpiOutput.Day.Location.AgeBracket.healthStatuses)
   return healthstatuses_;
 }
 
 // -------------------------------------------------------------------
 
-// EpiOutput_Location
+// EpiOutput_Day_Location
 
 // int64 id = 1;
-inline void EpiOutput_Location::clear_id() {
+inline void EpiOutput_Day_Location::clear_id() {
   id_ = PROTOBUF_LONGLONG(0);
 }
-inline ::google::protobuf::int64 EpiOutput_Location::id() const {
-  // @@protoc_insertion_point(field_get:proto.EpiOutput.Location.id)
+inline ::google::protobuf::int64 EpiOutput_Day_Location::id() const {
+  // @@protoc_insertion_point(field_get:proto.EpiOutput.Day.Location.id)
   return id_;
 }
-inline void EpiOutput_Location::set_id(::google::protobuf::int64 value) {
+inline void EpiOutput_Day_Location::set_id(::google::protobuf::int64 value) {
   
   id_ = value;
-  // @@protoc_insertion_point(field_set:proto.EpiOutput.Location.id)
+  // @@protoc_insertion_point(field_set:proto.EpiOutput.Day.Location.id)
 }
 
 // string name = 2;
-inline void EpiOutput_Location::clear_name() {
+inline void EpiOutput_Day_Location::clear_name() {
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& EpiOutput_Location::name() const {
-  // @@protoc_insertion_point(field_get:proto.EpiOutput.Location.name)
+inline const ::std::string& EpiOutput_Day_Location::name() const {
+  // @@protoc_insertion_point(field_get:proto.EpiOutput.Day.Location.name)
   return name_.GetNoArena();
 }
-inline void EpiOutput_Location::set_name(const ::std::string& value) {
+inline void EpiOutput_Day_Location::set_name(const ::std::string& value) {
   
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:proto.EpiOutput.Location.name)
+  // @@protoc_insertion_point(field_set:proto.EpiOutput.Day.Location.name)
 }
 #if LANG_CXX11
-inline void EpiOutput_Location::set_name(::std::string&& value) {
+inline void EpiOutput_Day_Location::set_name(::std::string&& value) {
   
   name_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:proto.EpiOutput.Location.name)
+  // @@protoc_insertion_point(field_set_rvalue:proto.EpiOutput.Day.Location.name)
 }
 #endif
-inline void EpiOutput_Location::set_name(const char* value) {
+inline void EpiOutput_Day_Location::set_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:proto.EpiOutput.Location.name)
+  // @@protoc_insertion_point(field_set_char:proto.EpiOutput.Day.Location.name)
 }
-inline void EpiOutput_Location::set_name(const char* value, size_t size) {
+inline void EpiOutput_Day_Location::set_name(const char* value, size_t size) {
   
   name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:proto.EpiOutput.Location.name)
+  // @@protoc_insertion_point(field_set_pointer:proto.EpiOutput.Day.Location.name)
 }
-inline ::std::string* EpiOutput_Location::mutable_name() {
+inline ::std::string* EpiOutput_Day_Location::mutable_name() {
   
-  // @@protoc_insertion_point(field_mutable:proto.EpiOutput.Location.name)
+  // @@protoc_insertion_point(field_mutable:proto.EpiOutput.Day.Location.name)
   return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* EpiOutput_Location::release_name() {
-  // @@protoc_insertion_point(field_release:proto.EpiOutput.Location.name)
+inline ::std::string* EpiOutput_Day_Location::release_name() {
+  // @@protoc_insertion_point(field_release:proto.EpiOutput.Day.Location.name)
   
   return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void EpiOutput_Location::set_allocated_name(::std::string* name) {
+inline void EpiOutput_Day_Location::set_allocated_name(::std::string* name) {
   if (name != nullptr) {
     
   } else {
     
   }
   name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:proto.EpiOutput.Location.name)
+  // @@protoc_insertion_point(field_set_allocated:proto.EpiOutput.Day.Location.name)
 }
 
 // int64 province = 3;
-inline void EpiOutput_Location::clear_province() {
+inline void EpiOutput_Day_Location::clear_province() {
   province_ = PROTOBUF_LONGLONG(0);
 }
-inline ::google::protobuf::int64 EpiOutput_Location::province() const {
-  // @@protoc_insertion_point(field_get:proto.EpiOutput.Location.province)
+inline ::google::protobuf::int64 EpiOutput_Day_Location::province() const {
+  // @@protoc_insertion_point(field_get:proto.EpiOutput.Day.Location.province)
   return province_;
 }
-inline void EpiOutput_Location::set_province(::google::protobuf::int64 value) {
+inline void EpiOutput_Day_Location::set_province(::google::protobuf::int64 value) {
   
   province_ = value;
-  // @@protoc_insertion_point(field_set:proto.EpiOutput.Location.province)
+  // @@protoc_insertion_point(field_set:proto.EpiOutput.Day.Location.province)
 }
 
 // int64 population = 4;
-inline void EpiOutput_Location::clear_population() {
+inline void EpiOutput_Day_Location::clear_population() {
   population_ = PROTOBUF_LONGLONG(0);
 }
-inline ::google::protobuf::int64 EpiOutput_Location::population() const {
-  // @@protoc_insertion_point(field_get:proto.EpiOutput.Location.population)
+inline ::google::protobuf::int64 EpiOutput_Day_Location::population() const {
+  // @@protoc_insertion_point(field_get:proto.EpiOutput.Day.Location.population)
   return population_;
 }
-inline void EpiOutput_Location::set_population(::google::protobuf::int64 value) {
+inline void EpiOutput_Day_Location::set_population(::google::protobuf::int64 value) {
   
   population_ = value;
-  // @@protoc_insertion_point(field_set:proto.EpiOutput.Location.population)
+  // @@protoc_insertion_point(field_set:proto.EpiOutput.Day.Location.population)
 }
 
-// .proto.EpiOutput.Location.Coordinate coordinate = 5;
-inline bool EpiOutput_Location::has_coordinate() const {
+// .proto.EpiOutput.Day.Location.Coordinate coordinate = 5;
+inline bool EpiOutput_Day_Location::has_coordinate() const {
   return this != internal_default_instance() && coordinate_ != nullptr;
 }
-inline void EpiOutput_Location::clear_coordinate() {
+inline void EpiOutput_Day_Location::clear_coordinate() {
   if (GetArenaNoVirtual() == nullptr && coordinate_ != nullptr) {
     delete coordinate_;
   }
   coordinate_ = nullptr;
 }
-inline const ::proto::EpiOutput_Location_Coordinate& EpiOutput_Location::coordinate() const {
-  const ::proto::EpiOutput_Location_Coordinate* p = coordinate_;
-  // @@protoc_insertion_point(field_get:proto.EpiOutput.Location.coordinate)
-  return p != nullptr ? *p : *reinterpret_cast<const ::proto::EpiOutput_Location_Coordinate*>(
-      &::proto::_EpiOutput_Location_Coordinate_default_instance_);
+inline const ::proto::EpiOutput_Day_Location_Coordinate& EpiOutput_Day_Location::coordinate() const {
+  const ::proto::EpiOutput_Day_Location_Coordinate* p = coordinate_;
+  // @@protoc_insertion_point(field_get:proto.EpiOutput.Day.Location.coordinate)
+  return p != nullptr ? *p : *reinterpret_cast<const ::proto::EpiOutput_Day_Location_Coordinate*>(
+      &::proto::_EpiOutput_Day_Location_Coordinate_default_instance_);
 }
-inline ::proto::EpiOutput_Location_Coordinate* EpiOutput_Location::release_coordinate() {
-  // @@protoc_insertion_point(field_release:proto.EpiOutput.Location.coordinate)
+inline ::proto::EpiOutput_Day_Location_Coordinate* EpiOutput_Day_Location::release_coordinate() {
+  // @@protoc_insertion_point(field_release:proto.EpiOutput.Day.Location.coordinate)
   
-  ::proto::EpiOutput_Location_Coordinate* temp = coordinate_;
+  ::proto::EpiOutput_Day_Location_Coordinate* temp = coordinate_;
   coordinate_ = nullptr;
   return temp;
 }
-inline ::proto::EpiOutput_Location_Coordinate* EpiOutput_Location::mutable_coordinate() {
+inline ::proto::EpiOutput_Day_Location_Coordinate* EpiOutput_Day_Location::mutable_coordinate() {
   
   if (coordinate_ == nullptr) {
-    auto* p = CreateMaybeMessage<::proto::EpiOutput_Location_Coordinate>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::proto::EpiOutput_Day_Location_Coordinate>(GetArenaNoVirtual());
     coordinate_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:proto.EpiOutput.Location.coordinate)
+  // @@protoc_insertion_point(field_mutable:proto.EpiOutput.Day.Location.coordinate)
   return coordinate_;
 }
-inline void EpiOutput_Location::set_allocated_coordinate(::proto::EpiOutput_Location_Coordinate* coordinate) {
+inline void EpiOutput_Day_Location::set_allocated_coordinate(::proto::EpiOutput_Day_Location_Coordinate* coordinate) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == nullptr) {
     delete coordinate_;
@@ -1267,71 +1219,119 @@ inline void EpiOutput_Location::set_allocated_coordinate(::proto::EpiOutput_Loca
     
   }
   coordinate_ = coordinate;
-  // @@protoc_insertion_point(field_set_allocated:proto.EpiOutput.Location.coordinate)
+  // @@protoc_insertion_point(field_set_allocated:proto.EpiOutput.Day.Location.coordinate)
 }
 
-// repeated .proto.EpiOutput.Location.AgeBracket ageBrackets = 6;
-inline int EpiOutput_Location::agebrackets_size() const {
+// repeated .proto.EpiOutput.Day.Location.AgeBracket ageBrackets = 6;
+inline int EpiOutput_Day_Location::agebrackets_size() const {
   return agebrackets_.size();
 }
-inline void EpiOutput_Location::clear_agebrackets() {
+inline void EpiOutput_Day_Location::clear_agebrackets() {
   agebrackets_.Clear();
 }
-inline ::proto::EpiOutput_Location_AgeBracket* EpiOutput_Location::mutable_agebrackets(int index) {
-  // @@protoc_insertion_point(field_mutable:proto.EpiOutput.Location.ageBrackets)
+inline ::proto::EpiOutput_Day_Location_AgeBracket* EpiOutput_Day_Location::mutable_agebrackets(int index) {
+  // @@protoc_insertion_point(field_mutable:proto.EpiOutput.Day.Location.ageBrackets)
   return agebrackets_.Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location_AgeBracket >*
-EpiOutput_Location::mutable_agebrackets() {
-  // @@protoc_insertion_point(field_mutable_list:proto.EpiOutput.Location.ageBrackets)
+inline ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day_Location_AgeBracket >*
+EpiOutput_Day_Location::mutable_agebrackets() {
+  // @@protoc_insertion_point(field_mutable_list:proto.EpiOutput.Day.Location.ageBrackets)
   return &agebrackets_;
 }
-inline const ::proto::EpiOutput_Location_AgeBracket& EpiOutput_Location::agebrackets(int index) const {
-  // @@protoc_insertion_point(field_get:proto.EpiOutput.Location.ageBrackets)
+inline const ::proto::EpiOutput_Day_Location_AgeBracket& EpiOutput_Day_Location::agebrackets(int index) const {
+  // @@protoc_insertion_point(field_get:proto.EpiOutput.Day.Location.ageBrackets)
   return agebrackets_.Get(index);
 }
-inline ::proto::EpiOutput_Location_AgeBracket* EpiOutput_Location::add_agebrackets() {
-  // @@protoc_insertion_point(field_add:proto.EpiOutput.Location.ageBrackets)
+inline ::proto::EpiOutput_Day_Location_AgeBracket* EpiOutput_Day_Location::add_agebrackets() {
+  // @@protoc_insertion_point(field_add:proto.EpiOutput.Day.Location.ageBrackets)
   return agebrackets_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location_AgeBracket >&
-EpiOutput_Location::agebrackets() const {
-  // @@protoc_insertion_point(field_list:proto.EpiOutput.Location.ageBrackets)
+inline const ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day_Location_AgeBracket >&
+EpiOutput_Day_Location::agebrackets() const {
+  // @@protoc_insertion_point(field_list:proto.EpiOutput.Day.Location.ageBrackets)
   return agebrackets_;
+}
+
+// -------------------------------------------------------------------
+
+// EpiOutput_Day
+
+// int64 day = 1;
+inline void EpiOutput_Day::clear_day() {
+  day_ = PROTOBUF_LONGLONG(0);
+}
+inline ::google::protobuf::int64 EpiOutput_Day::day() const {
+  // @@protoc_insertion_point(field_get:proto.EpiOutput.Day.day)
+  return day_;
+}
+inline void EpiOutput_Day::set_day(::google::protobuf::int64 value) {
+  
+  day_ = value;
+  // @@protoc_insertion_point(field_set:proto.EpiOutput.Day.day)
+}
+
+// repeated .proto.EpiOutput.Day.Location locations = 2;
+inline int EpiOutput_Day::locations_size() const {
+  return locations_.size();
+}
+inline void EpiOutput_Day::clear_locations() {
+  locations_.Clear();
+}
+inline ::proto::EpiOutput_Day_Location* EpiOutput_Day::mutable_locations(int index) {
+  // @@protoc_insertion_point(field_mutable:proto.EpiOutput.Day.locations)
+  return locations_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day_Location >*
+EpiOutput_Day::mutable_locations() {
+  // @@protoc_insertion_point(field_mutable_list:proto.EpiOutput.Day.locations)
+  return &locations_;
+}
+inline const ::proto::EpiOutput_Day_Location& EpiOutput_Day::locations(int index) const {
+  // @@protoc_insertion_point(field_get:proto.EpiOutput.Day.locations)
+  return locations_.Get(index);
+}
+inline ::proto::EpiOutput_Day_Location* EpiOutput_Day::add_locations() {
+  // @@protoc_insertion_point(field_add:proto.EpiOutput.Day.locations)
+  return locations_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day_Location >&
+EpiOutput_Day::locations() const {
+  // @@protoc_insertion_point(field_list:proto.EpiOutput.Day.locations)
+  return locations_;
 }
 
 // -------------------------------------------------------------------
 
 // EpiOutput
 
-// repeated .proto.EpiOutput.Location locations = 1;
-inline int EpiOutput::locations_size() const {
-  return locations_.size();
+// repeated .proto.EpiOutput.Day days = 1;
+inline int EpiOutput::days_size() const {
+  return days_.size();
 }
-inline void EpiOutput::clear_locations() {
-  locations_.Clear();
+inline void EpiOutput::clear_days() {
+  days_.Clear();
 }
-inline ::proto::EpiOutput_Location* EpiOutput::mutable_locations(int index) {
-  // @@protoc_insertion_point(field_mutable:proto.EpiOutput.locations)
-  return locations_.Mutable(index);
+inline ::proto::EpiOutput_Day* EpiOutput::mutable_days(int index) {
+  // @@protoc_insertion_point(field_mutable:proto.EpiOutput.days)
+  return days_.Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location >*
-EpiOutput::mutable_locations() {
-  // @@protoc_insertion_point(field_mutable_list:proto.EpiOutput.locations)
-  return &locations_;
+inline ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day >*
+EpiOutput::mutable_days() {
+  // @@protoc_insertion_point(field_mutable_list:proto.EpiOutput.days)
+  return &days_;
 }
-inline const ::proto::EpiOutput_Location& EpiOutput::locations(int index) const {
-  // @@protoc_insertion_point(field_get:proto.EpiOutput.locations)
-  return locations_.Get(index);
+inline const ::proto::EpiOutput_Day& EpiOutput::days(int index) const {
+  // @@protoc_insertion_point(field_get:proto.EpiOutput.days)
+  return days_.Get(index);
 }
-inline ::proto::EpiOutput_Location* EpiOutput::add_locations() {
-  // @@protoc_insertion_point(field_add:proto.EpiOutput.locations)
-  return locations_.Add();
+inline ::proto::EpiOutput_Day* EpiOutput::add_days() {
+  // @@protoc_insertion_point(field_add:proto.EpiOutput.days)
+  return days_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Location >&
-EpiOutput::locations() const {
-  // @@protoc_insertion_point(field_list:proto.EpiOutput.locations)
-  return locations_;
+inline const ::google::protobuf::RepeatedPtrField< ::proto::EpiOutput_Day >&
+EpiOutput::days() const {
+  // @@protoc_insertion_point(field_list:proto.EpiOutput.days)
+  return days_;
 }
 
 #ifdef __GNUC__

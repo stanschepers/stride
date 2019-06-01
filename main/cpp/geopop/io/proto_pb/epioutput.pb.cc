@@ -16,110 +16,110 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 
-extern PROTOBUF_INTERNAL_EXPORT_epioutput_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_EpiOutput_Location_AgeBracket_HealthStatus_Day_epioutput_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_epioutput_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_EpiOutput_Location_Coordinate_epioutput_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_epioutput_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_EpiOutput_Location_AgeBracket_HealthStatus_epioutput_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_epioutput_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_EpiOutput_Location_AgeBracket_epioutput_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_epioutput_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_EpiOutput_Location_epioutput_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_epioutput_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_EpiOutput_Day_Location_AgeBracket_HealthStatus_epioutput_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_epioutput_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_EpiOutput_Day_Location_Coordinate_epioutput_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_epioutput_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_EpiOutput_Day_Location_AgeBracket_epioutput_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_epioutput_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_EpiOutput_Day_epioutput_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_epioutput_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_EpiOutput_Day_Location_epioutput_2eproto;
 namespace proto {
-class EpiOutput_Location_CoordinateDefaultTypeInternal {
+class EpiOutput_Day_Location_CoordinateDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<EpiOutput_Location_Coordinate> _instance;
-} _EpiOutput_Location_Coordinate_default_instance_;
-class EpiOutput_Location_AgeBracket_HealthStatus_DayDefaultTypeInternal {
+  ::google::protobuf::internal::ExplicitlyConstructed<EpiOutput_Day_Location_Coordinate> _instance;
+} _EpiOutput_Day_Location_Coordinate_default_instance_;
+class EpiOutput_Day_Location_AgeBracket_HealthStatusDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<EpiOutput_Location_AgeBracket_HealthStatus_Day> _instance;
-} _EpiOutput_Location_AgeBracket_HealthStatus_Day_default_instance_;
-class EpiOutput_Location_AgeBracket_HealthStatusDefaultTypeInternal {
+  ::google::protobuf::internal::ExplicitlyConstructed<EpiOutput_Day_Location_AgeBracket_HealthStatus> _instance;
+} _EpiOutput_Day_Location_AgeBracket_HealthStatus_default_instance_;
+class EpiOutput_Day_Location_AgeBracketDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<EpiOutput_Location_AgeBracket_HealthStatus> _instance;
-} _EpiOutput_Location_AgeBracket_HealthStatus_default_instance_;
-class EpiOutput_Location_AgeBracketDefaultTypeInternal {
+  ::google::protobuf::internal::ExplicitlyConstructed<EpiOutput_Day_Location_AgeBracket> _instance;
+} _EpiOutput_Day_Location_AgeBracket_default_instance_;
+class EpiOutput_Day_LocationDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<EpiOutput_Location_AgeBracket> _instance;
-} _EpiOutput_Location_AgeBracket_default_instance_;
-class EpiOutput_LocationDefaultTypeInternal {
+  ::google::protobuf::internal::ExplicitlyConstructed<EpiOutput_Day_Location> _instance;
+} _EpiOutput_Day_Location_default_instance_;
+class EpiOutput_DayDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<EpiOutput_Location> _instance;
-} _EpiOutput_Location_default_instance_;
+  ::google::protobuf::internal::ExplicitlyConstructed<EpiOutput_Day> _instance;
+} _EpiOutput_Day_default_instance_;
 class EpiOutputDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<EpiOutput> _instance;
 } _EpiOutput_default_instance_;
 }  // namespace proto
-static void InitDefaultsEpiOutput_Location_Coordinate_epioutput_2eproto() {
+static void InitDefaultsEpiOutput_Day_Location_Coordinate_epioutput_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::proto::_EpiOutput_Location_Coordinate_default_instance_;
-    new (ptr) ::proto::EpiOutput_Location_Coordinate();
+    void* ptr = &::proto::_EpiOutput_Day_Location_Coordinate_default_instance_;
+    new (ptr) ::proto::EpiOutput_Day_Location_Coordinate();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::proto::EpiOutput_Location_Coordinate::InitAsDefaultInstance();
+  ::proto::EpiOutput_Day_Location_Coordinate::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_EpiOutput_Location_Coordinate_epioutput_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsEpiOutput_Location_Coordinate_epioutput_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_EpiOutput_Day_Location_Coordinate_epioutput_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsEpiOutput_Day_Location_Coordinate_epioutput_2eproto}, {}};
 
-static void InitDefaultsEpiOutput_Location_AgeBracket_HealthStatus_Day_epioutput_2eproto() {
+static void InitDefaultsEpiOutput_Day_Location_AgeBracket_HealthStatus_epioutput_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::proto::_EpiOutput_Location_AgeBracket_HealthStatus_Day_default_instance_;
-    new (ptr) ::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day();
+    void* ptr = &::proto::_EpiOutput_Day_Location_AgeBracket_HealthStatus_default_instance_;
+    new (ptr) ::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day::InitAsDefaultInstance();
+  ::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_EpiOutput_Location_AgeBracket_HealthStatus_Day_epioutput_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsEpiOutput_Location_AgeBracket_HealthStatus_Day_epioutput_2eproto}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_EpiOutput_Day_Location_AgeBracket_HealthStatus_epioutput_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsEpiOutput_Day_Location_AgeBracket_HealthStatus_epioutput_2eproto}, {}};
 
-static void InitDefaultsEpiOutput_Location_AgeBracket_HealthStatus_epioutput_2eproto() {
+static void InitDefaultsEpiOutput_Day_Location_AgeBracket_epioutput_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::proto::_EpiOutput_Location_AgeBracket_HealthStatus_default_instance_;
-    new (ptr) ::proto::EpiOutput_Location_AgeBracket_HealthStatus();
+    void* ptr = &::proto::_EpiOutput_Day_Location_AgeBracket_default_instance_;
+    new (ptr) ::proto::EpiOutput_Day_Location_AgeBracket();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::proto::EpiOutput_Location_AgeBracket_HealthStatus::InitAsDefaultInstance();
+  ::proto::EpiOutput_Day_Location_AgeBracket::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_EpiOutput_Location_AgeBracket_HealthStatus_epioutput_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsEpiOutput_Location_AgeBracket_HealthStatus_epioutput_2eproto}, {
-      &scc_info_EpiOutput_Location_AgeBracket_HealthStatus_Day_epioutput_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<1> scc_info_EpiOutput_Day_Location_AgeBracket_epioutput_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsEpiOutput_Day_Location_AgeBracket_epioutput_2eproto}, {
+      &scc_info_EpiOutput_Day_Location_AgeBracket_HealthStatus_epioutput_2eproto.base,}};
 
-static void InitDefaultsEpiOutput_Location_AgeBracket_epioutput_2eproto() {
+static void InitDefaultsEpiOutput_Day_Location_epioutput_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::proto::_EpiOutput_Location_AgeBracket_default_instance_;
-    new (ptr) ::proto::EpiOutput_Location_AgeBracket();
+    void* ptr = &::proto::_EpiOutput_Day_Location_default_instance_;
+    new (ptr) ::proto::EpiOutput_Day_Location();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::proto::EpiOutput_Location_AgeBracket::InitAsDefaultInstance();
+  ::proto::EpiOutput_Day_Location::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_EpiOutput_Location_AgeBracket_epioutput_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsEpiOutput_Location_AgeBracket_epioutput_2eproto}, {
-      &scc_info_EpiOutput_Location_AgeBracket_HealthStatus_epioutput_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<2> scc_info_EpiOutput_Day_Location_epioutput_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsEpiOutput_Day_Location_epioutput_2eproto}, {
+      &scc_info_EpiOutput_Day_Location_Coordinate_epioutput_2eproto.base,
+      &scc_info_EpiOutput_Day_Location_AgeBracket_epioutput_2eproto.base,}};
 
-static void InitDefaultsEpiOutput_Location_epioutput_2eproto() {
+static void InitDefaultsEpiOutput_Day_epioutput_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::proto::_EpiOutput_Location_default_instance_;
-    new (ptr) ::proto::EpiOutput_Location();
+    void* ptr = &::proto::_EpiOutput_Day_default_instance_;
+    new (ptr) ::proto::EpiOutput_Day();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::proto::EpiOutput_Location::InitAsDefaultInstance();
+  ::proto::EpiOutput_Day::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_EpiOutput_Location_epioutput_2eproto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsEpiOutput_Location_epioutput_2eproto}, {
-      &scc_info_EpiOutput_Location_Coordinate_epioutput_2eproto.base,
-      &scc_info_EpiOutput_Location_AgeBracket_epioutput_2eproto.base,}};
+::google::protobuf::internal::SCCInfo<1> scc_info_EpiOutput_Day_epioutput_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsEpiOutput_Day_epioutput_2eproto}, {
+      &scc_info_EpiOutput_Day_Location_epioutput_2eproto.base,}};
 
 static void InitDefaultsEpiOutput_epioutput_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -134,14 +134,14 @@ static void InitDefaultsEpiOutput_epioutput_2eproto() {
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_EpiOutput_epioutput_2eproto =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsEpiOutput_epioutput_2eproto}, {
-      &scc_info_EpiOutput_Location_epioutput_2eproto.base,}};
+      &scc_info_EpiOutput_Day_epioutput_2eproto.base,}};
 
 void InitDefaults_epioutput_2eproto() {
-  ::google::protobuf::internal::InitSCC(&scc_info_EpiOutput_Location_Coordinate_epioutput_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_EpiOutput_Location_AgeBracket_HealthStatus_Day_epioutput_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_EpiOutput_Location_AgeBracket_HealthStatus_epioutput_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_EpiOutput_Location_AgeBracket_epioutput_2eproto.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_EpiOutput_Location_epioutput_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_EpiOutput_Day_Location_Coordinate_epioutput_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_EpiOutput_Day_Location_AgeBracket_HealthStatus_epioutput_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_EpiOutput_Day_Location_AgeBracket_epioutput_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_EpiOutput_Day_Location_epioutput_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_EpiOutput_Day_epioutput_2eproto.base);
   ::google::protobuf::internal::InitSCC(&scc_info_EpiOutput_epioutput_2eproto.base);
 }
 
@@ -151,66 +151,66 @@ constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descr
 
 const ::google::protobuf::uint32 TableStruct_epioutput_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location_Coordinate, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day_Location_Coordinate, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location_Coordinate, longitude_),
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location_Coordinate, latitude_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day_Location_Coordinate, longitude_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day_Location_Coordinate, latitude_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day, day_),
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day, percentage_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus, type_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus, percentage_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location_AgeBracket_HealthStatus, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day_Location_AgeBracket, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location_AgeBracket_HealthStatus, type_),
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location_AgeBracket_HealthStatus, days_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day_Location_AgeBracket, type_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day_Location_AgeBracket, healthstatuses_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location_AgeBracket, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day_Location, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location_AgeBracket, type_),
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location_AgeBracket, healthstatuses_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day_Location, id_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day_Location, name_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day_Location, province_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day_Location, population_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day_Location, coordinate_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day_Location, agebrackets_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location, id_),
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location, name_),
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location, province_),
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location, population_),
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location, coordinate_),
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Location, agebrackets_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day, day_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput_Day, locations_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::proto::EpiOutput, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput, locations_),
+  PROTOBUF_FIELD_OFFSET(::proto::EpiOutput, days_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::proto::EpiOutput_Location_Coordinate)},
-  { 7, -1, sizeof(::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day)},
-  { 14, -1, sizeof(::proto::EpiOutput_Location_AgeBracket_HealthStatus)},
-  { 21, -1, sizeof(::proto::EpiOutput_Location_AgeBracket)},
-  { 28, -1, sizeof(::proto::EpiOutput_Location)},
+  { 0, -1, sizeof(::proto::EpiOutput_Day_Location_Coordinate)},
+  { 7, -1, sizeof(::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus)},
+  { 14, -1, sizeof(::proto::EpiOutput_Day_Location_AgeBracket)},
+  { 21, -1, sizeof(::proto::EpiOutput_Day_Location)},
+  { 32, -1, sizeof(::proto::EpiOutput_Day)},
   { 39, -1, sizeof(::proto::EpiOutput)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::proto::_EpiOutput_Location_Coordinate_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::proto::_EpiOutput_Location_AgeBracket_HealthStatus_Day_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::proto::_EpiOutput_Location_AgeBracket_HealthStatus_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::proto::_EpiOutput_Location_AgeBracket_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::proto::_EpiOutput_Location_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::proto::_EpiOutput_Day_Location_Coordinate_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::proto::_EpiOutput_Day_Location_AgeBracket_HealthStatus_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::proto::_EpiOutput_Day_Location_AgeBracket_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::proto::_EpiOutput_Day_Location_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::proto::_EpiOutput_Day_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::proto::_EpiOutput_default_instance_),
 };
 
@@ -221,26 +221,26 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 };
 
 const char descriptor_table_protodef_epioutput_2eproto[] =
-  "\n\017epioutput.proto\022\005proto\"\242\004\n\tEpiOutput\022,"
-  "\n\tlocations\030\001 \003(\0132\031.proto.EpiOutput.Loca"
-  "tion\032\346\003\n\010Location\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 "
-  "\001(\t\022\020\n\010province\030\003 \001(\003\022\022\n\npopulation\030\004 \001("
-  "\003\0228\n\ncoordinate\030\005 \001(\0132$.proto.EpiOutput."
-  "Location.Coordinate\0229\n\013ageBrackets\030\006 \003(\013"
-  "2$.proto.EpiOutput.Location.AgeBracket\0321"
-  "\n\nCoordinate\022\021\n\tlongitude\030\001 \001(\001\022\020\n\010latit"
-  "ude\030\002 \001(\001\032\361\001\n\nAgeBracket\022\014\n\004type\030\001 \001(\t\022I"
-  "\n\016healthStatuses\030\002 \003(\01321.proto.EpiOutput"
-  ".Location.AgeBracket.HealthStatus\032\211\001\n\014He"
-  "althStatus\022\014\n\004type\030\001 \001(\t\022C\n\004days\030\002 \003(\01325"
-  ".proto.EpiOutput.Location.AgeBracket.Hea"
-  "lthStatus.Day\032&\n\003Day\022\013\n\003day\030\001 \001(\003\022\022\n\nper"
-  "centage\030\002 \001(\001b\006proto3"
+  "\n\017epioutput.proto\022\005proto\"\221\004\n\tEpiOutput\022\""
+  "\n\004days\030\001 \003(\0132\024.proto.EpiOutput.Day\032\337\003\n\003D"
+  "ay\022\013\n\003day\030\001 \001(\003\0220\n\tlocations\030\002 \003(\0132\035.pro"
+  "to.EpiOutput.Day.Location\032\230\003\n\010Location\022\n"
+  "\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\020\n\010province\030\003 \001"
+  "(\003\022\022\n\npopulation\030\004 \001(\003\022<\n\ncoordinate\030\005 \001"
+  "(\0132(.proto.EpiOutput.Day.Location.Coordi"
+  "nate\022=\n\013ageBrackets\030\006 \003(\0132(.proto.EpiOut"
+  "put.Day.Location.AgeBracket\0321\n\nCoordinat"
+  "e\022\021\n\tlongitude\030\001 \001(\001\022\020\n\010latitude\030\002 \001(\001\032\233"
+  "\001\n\nAgeBracket\022\014\n\004type\030\001 \001(\t\022M\n\016healthSta"
+  "tuses\030\002 \003(\01325.proto.EpiOutput.Day.Locati"
+  "on.AgeBracket.HealthStatus\0320\n\014HealthStat"
+  "us\022\014\n\004type\030\001 \001(\t\022\022\n\npercentage\030\002 \001(\001b\006pr"
+  "oto3"
   ;
 ::google::protobuf::internal::DescriptorTable descriptor_table_epioutput_2eproto = {
   false, InitDefaults_epioutput_2eproto, 
   descriptor_table_protodef_epioutput_2eproto,
-  "epioutput.proto", &assign_descriptors_table_epioutput_2eproto, 581,
+  "epioutput.proto", &assign_descriptors_table_epioutput_2eproto, 564,
 };
 
 void AddDescriptors_epioutput_2eproto() {
@@ -256,57 +256,57 @@ namespace proto {
 
 // ===================================================================
 
-void EpiOutput_Location_Coordinate::InitAsDefaultInstance() {
+void EpiOutput_Day_Location_Coordinate::InitAsDefaultInstance() {
 }
-class EpiOutput_Location_Coordinate::HasBitSetters {
+class EpiOutput_Day_Location_Coordinate::HasBitSetters {
  public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int EpiOutput_Location_Coordinate::kLongitudeFieldNumber;
-const int EpiOutput_Location_Coordinate::kLatitudeFieldNumber;
+const int EpiOutput_Day_Location_Coordinate::kLongitudeFieldNumber;
+const int EpiOutput_Day_Location_Coordinate::kLatitudeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-EpiOutput_Location_Coordinate::EpiOutput_Location_Coordinate()
+EpiOutput_Day_Location_Coordinate::EpiOutput_Day_Location_Coordinate()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:proto.EpiOutput.Location.Coordinate)
+  // @@protoc_insertion_point(constructor:proto.EpiOutput.Day.Location.Coordinate)
 }
-EpiOutput_Location_Coordinate::EpiOutput_Location_Coordinate(const EpiOutput_Location_Coordinate& from)
+EpiOutput_Day_Location_Coordinate::EpiOutput_Day_Location_Coordinate(const EpiOutput_Day_Location_Coordinate& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&longitude_, &from.longitude_,
     static_cast<size_t>(reinterpret_cast<char*>(&latitude_) -
     reinterpret_cast<char*>(&longitude_)) + sizeof(latitude_));
-  // @@protoc_insertion_point(copy_constructor:proto.EpiOutput.Location.Coordinate)
+  // @@protoc_insertion_point(copy_constructor:proto.EpiOutput.Day.Location.Coordinate)
 }
 
-void EpiOutput_Location_Coordinate::SharedCtor() {
+void EpiOutput_Day_Location_Coordinate::SharedCtor() {
   ::memset(&longitude_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&latitude_) -
       reinterpret_cast<char*>(&longitude_)) + sizeof(latitude_));
 }
 
-EpiOutput_Location_Coordinate::~EpiOutput_Location_Coordinate() {
-  // @@protoc_insertion_point(destructor:proto.EpiOutput.Location.Coordinate)
+EpiOutput_Day_Location_Coordinate::~EpiOutput_Day_Location_Coordinate() {
+  // @@protoc_insertion_point(destructor:proto.EpiOutput.Day.Location.Coordinate)
   SharedDtor();
 }
 
-void EpiOutput_Location_Coordinate::SharedDtor() {
+void EpiOutput_Day_Location_Coordinate::SharedDtor() {
 }
 
-void EpiOutput_Location_Coordinate::SetCachedSize(int size) const {
+void EpiOutput_Day_Location_Coordinate::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const EpiOutput_Location_Coordinate& EpiOutput_Location_Coordinate::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_EpiOutput_Location_Coordinate_epioutput_2eproto.base);
+const EpiOutput_Day_Location_Coordinate& EpiOutput_Day_Location_Coordinate::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_EpiOutput_Day_Location_Coordinate_epioutput_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void EpiOutput_Location_Coordinate::Clear() {
-// @@protoc_insertion_point(message_clear_start:proto.EpiOutput.Location.Coordinate)
+void EpiOutput_Day_Location_Coordinate::Clear() {
+// @@protoc_insertion_point(message_clear_start:proto.EpiOutput.Day.Location.Coordinate)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -318,9 +318,9 @@ void EpiOutput_Location_Coordinate::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* EpiOutput_Location_Coordinate::_InternalParse(const char* begin, const char* end, void* object,
+const char* EpiOutput_Day_Location_Coordinate::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<EpiOutput_Location_Coordinate*>(object);
+  auto msg = static_cast<EpiOutput_Day_Location_Coordinate*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -361,11 +361,11 @@ const char* EpiOutput_Location_Coordinate::_InternalParse(const char* begin, con
   return ptr;
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool EpiOutput_Location_Coordinate::MergePartialFromCodedStream(
+bool EpiOutput_Day_Location_Coordinate::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:proto.EpiOutput.Location.Coordinate)
+  // @@protoc_insertion_point(parse_start:proto.EpiOutput.Day.Location.Coordinate)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -409,18 +409,18 @@ bool EpiOutput_Location_Coordinate::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:proto.EpiOutput.Location.Coordinate)
+  // @@protoc_insertion_point(parse_success:proto.EpiOutput.Day.Location.Coordinate)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:proto.EpiOutput.Location.Coordinate)
+  // @@protoc_insertion_point(parse_failure:proto.EpiOutput.Day.Location.Coordinate)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void EpiOutput_Location_Coordinate::SerializeWithCachedSizes(
+void EpiOutput_Day_Location_Coordinate::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:proto.EpiOutput.Location.Coordinate)
+  // @@protoc_insertion_point(serialize_start:proto.EpiOutput.Day.Location.Coordinate)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -438,12 +438,12 @@ void EpiOutput_Location_Coordinate::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:proto.EpiOutput.Location.Coordinate)
+  // @@protoc_insertion_point(serialize_end:proto.EpiOutput.Day.Location.Coordinate)
 }
 
-::google::protobuf::uint8* EpiOutput_Location_Coordinate::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* EpiOutput_Day_Location_Coordinate::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:proto.EpiOutput.Location.Coordinate)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.EpiOutput.Day.Location.Coordinate)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -461,12 +461,12 @@ void EpiOutput_Location_Coordinate::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:proto.EpiOutput.Location.Coordinate)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.EpiOutput.Day.Location.Coordinate)
   return target;
 }
 
-size_t EpiOutput_Location_Coordinate::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:proto.EpiOutput.Location.Coordinate)
+size_t EpiOutput_Day_Location_Coordinate::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:proto.EpiOutput.Day.Location.Coordinate)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -493,23 +493,23 @@ size_t EpiOutput_Location_Coordinate::ByteSizeLong() const {
   return total_size;
 }
 
-void EpiOutput_Location_Coordinate::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:proto.EpiOutput.Location.Coordinate)
+void EpiOutput_Day_Location_Coordinate::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:proto.EpiOutput.Day.Location.Coordinate)
   GOOGLE_DCHECK_NE(&from, this);
-  const EpiOutput_Location_Coordinate* source =
-      ::google::protobuf::DynamicCastToGenerated<EpiOutput_Location_Coordinate>(
+  const EpiOutput_Day_Location_Coordinate* source =
+      ::google::protobuf::DynamicCastToGenerated<EpiOutput_Day_Location_Coordinate>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:proto.EpiOutput.Location.Coordinate)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:proto.EpiOutput.Day.Location.Coordinate)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:proto.EpiOutput.Location.Coordinate)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:proto.EpiOutput.Day.Location.Coordinate)
     MergeFrom(*source);
   }
 }
 
-void EpiOutput_Location_Coordinate::MergeFrom(const EpiOutput_Location_Coordinate& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:proto.EpiOutput.Location.Coordinate)
+void EpiOutput_Day_Location_Coordinate::MergeFrom(const EpiOutput_Day_Location_Coordinate& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:proto.EpiOutput.Day.Location.Coordinate)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -523,36 +523,36 @@ void EpiOutput_Location_Coordinate::MergeFrom(const EpiOutput_Location_Coordinat
   }
 }
 
-void EpiOutput_Location_Coordinate::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:proto.EpiOutput.Location.Coordinate)
+void EpiOutput_Day_Location_Coordinate::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:proto.EpiOutput.Day.Location.Coordinate)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void EpiOutput_Location_Coordinate::CopyFrom(const EpiOutput_Location_Coordinate& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:proto.EpiOutput.Location.Coordinate)
+void EpiOutput_Day_Location_Coordinate::CopyFrom(const EpiOutput_Day_Location_Coordinate& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.EpiOutput.Day.Location.Coordinate)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool EpiOutput_Location_Coordinate::IsInitialized() const {
+bool EpiOutput_Day_Location_Coordinate::IsInitialized() const {
   return true;
 }
 
-void EpiOutput_Location_Coordinate::Swap(EpiOutput_Location_Coordinate* other) {
+void EpiOutput_Day_Location_Coordinate::Swap(EpiOutput_Day_Location_Coordinate* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void EpiOutput_Location_Coordinate::InternalSwap(EpiOutput_Location_Coordinate* other) {
+void EpiOutput_Day_Location_Coordinate::InternalSwap(EpiOutput_Day_Location_Coordinate* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(longitude_, other->longitude_);
   swap(latitude_, other->latitude_);
 }
 
-::google::protobuf::Metadata EpiOutput_Location_Coordinate::GetMetadata() const {
+::google::protobuf::Metadata EpiOutput_Day_Location_Coordinate::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_epioutput_2eproto);
   return ::file_level_metadata_epioutput_2eproto[kIndexInFileMessages];
 }
@@ -560,71 +560,74 @@ void EpiOutput_Location_Coordinate::InternalSwap(EpiOutput_Location_Coordinate* 
 
 // ===================================================================
 
-void EpiOutput_Location_AgeBracket_HealthStatus_Day::InitAsDefaultInstance() {
+void EpiOutput_Day_Location_AgeBracket_HealthStatus::InitAsDefaultInstance() {
 }
-class EpiOutput_Location_AgeBracket_HealthStatus_Day::HasBitSetters {
+class EpiOutput_Day_Location_AgeBracket_HealthStatus::HasBitSetters {
  public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int EpiOutput_Location_AgeBracket_HealthStatus_Day::kDayFieldNumber;
-const int EpiOutput_Location_AgeBracket_HealthStatus_Day::kPercentageFieldNumber;
+const int EpiOutput_Day_Location_AgeBracket_HealthStatus::kTypeFieldNumber;
+const int EpiOutput_Day_Location_AgeBracket_HealthStatus::kPercentageFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-EpiOutput_Location_AgeBracket_HealthStatus_Day::EpiOutput_Location_AgeBracket_HealthStatus_Day()
+EpiOutput_Day_Location_AgeBracket_HealthStatus::EpiOutput_Day_Location_AgeBracket_HealthStatus()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
+  // @@protoc_insertion_point(constructor:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
 }
-EpiOutput_Location_AgeBracket_HealthStatus_Day::EpiOutput_Location_AgeBracket_HealthStatus_Day(const EpiOutput_Location_AgeBracket_HealthStatus_Day& from)
+EpiOutput_Day_Location_AgeBracket_HealthStatus::EpiOutput_Day_Location_AgeBracket_HealthStatus(const EpiOutput_Day_Location_AgeBracket_HealthStatus& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::memcpy(&day_, &from.day_,
-    static_cast<size_t>(reinterpret_cast<char*>(&percentage_) -
-    reinterpret_cast<char*>(&day_)) + sizeof(percentage_));
-  // @@protoc_insertion_point(copy_constructor:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
+  type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.type().size() > 0) {
+    type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.type_);
+  }
+  percentage_ = from.percentage_;
+  // @@protoc_insertion_point(copy_constructor:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
 }
 
-void EpiOutput_Location_AgeBracket_HealthStatus_Day::SharedCtor() {
-  ::memset(&day_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&percentage_) -
-      reinterpret_cast<char*>(&day_)) + sizeof(percentage_));
+void EpiOutput_Day_Location_AgeBracket_HealthStatus::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_EpiOutput_Day_Location_AgeBracket_HealthStatus_epioutput_2eproto.base);
+  type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  percentage_ = 0;
 }
 
-EpiOutput_Location_AgeBracket_HealthStatus_Day::~EpiOutput_Location_AgeBracket_HealthStatus_Day() {
-  // @@protoc_insertion_point(destructor:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
+EpiOutput_Day_Location_AgeBracket_HealthStatus::~EpiOutput_Day_Location_AgeBracket_HealthStatus() {
+  // @@protoc_insertion_point(destructor:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
   SharedDtor();
 }
 
-void EpiOutput_Location_AgeBracket_HealthStatus_Day::SharedDtor() {
+void EpiOutput_Day_Location_AgeBracket_HealthStatus::SharedDtor() {
+  type_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-void EpiOutput_Location_AgeBracket_HealthStatus_Day::SetCachedSize(int size) const {
+void EpiOutput_Day_Location_AgeBracket_HealthStatus::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const EpiOutput_Location_AgeBracket_HealthStatus_Day& EpiOutput_Location_AgeBracket_HealthStatus_Day::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_EpiOutput_Location_AgeBracket_HealthStatus_Day_epioutput_2eproto.base);
+const EpiOutput_Day_Location_AgeBracket_HealthStatus& EpiOutput_Day_Location_AgeBracket_HealthStatus::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_EpiOutput_Day_Location_AgeBracket_HealthStatus_epioutput_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void EpiOutput_Location_AgeBracket_HealthStatus_Day::Clear() {
-// @@protoc_insertion_point(message_clear_start:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
+void EpiOutput_Day_Location_AgeBracket_HealthStatus::Clear() {
+// @@protoc_insertion_point(message_clear_start:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&day_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&percentage_) -
-      reinterpret_cast<char*>(&day_)) + sizeof(percentage_));
+  type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  percentage_ = 0;
   _internal_metadata_.Clear();
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* EpiOutput_Location_AgeBracket_HealthStatus_Day::_InternalParse(const char* begin, const char* end, void* object,
+const char* EpiOutput_Day_Location_AgeBracket_HealthStatus::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<EpiOutput_Location_AgeBracket_HealthStatus_Day*>(object);
+  auto msg = static_cast<EpiOutput_Day_Location_AgeBracket_HealthStatus*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -634,11 +637,20 @@ const char* EpiOutput_Location_AgeBracket_HealthStatus_Day::_InternalParse(const
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // int64 day = 1;
+      // string type = 1;
       case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
-        msg->set_day(::google::protobuf::internal::ReadVarint(&ptr));
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("proto.EpiOutput.Day.Location.AgeBracket.HealthStatus.type");
+        object = msg->mutable_type();
+        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
+          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
+          goto string_till_end;
+        }
+        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
+        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
+        ptr += size;
         break;
       }
       // double percentage = 2;
@@ -663,25 +675,34 @@ const char* EpiOutput_Location_AgeBracket_HealthStatus_Day::_InternalParse(const
     }  // switch
   }  // while
   return ptr;
+string_till_end:
+  static_cast<::std::string*>(object)->clear();
+  static_cast<::std::string*>(object)->reserve(size);
+  goto len_delim_till_end;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool EpiOutput_Location_AgeBracket_HealthStatus_Day::MergePartialFromCodedStream(
+bool EpiOutput_Day_Location_AgeBracket_HealthStatus::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
+  // @@protoc_insertion_point(parse_start:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // int64 day = 1;
+      // string type = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
-                 input, &day_)));
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_type()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->type().data(), static_cast<int>(this->type().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "proto.EpiOutput.Day.Location.AgeBracket.HealthStatus.type"));
         } else {
           goto handle_unusual;
         }
@@ -713,24 +734,29 @@ bool EpiOutput_Location_AgeBracket_HealthStatus_Day::MergePartialFromCodedStream
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
+  // @@protoc_insertion_point(parse_success:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
+  // @@protoc_insertion_point(parse_failure:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void EpiOutput_Location_AgeBracket_HealthStatus_Day::SerializeWithCachedSizes(
+void EpiOutput_Day_Location_AgeBracket_HealthStatus::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
+  // @@protoc_insertion_point(serialize_start:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 day = 1;
-  if (this->day() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->day(), output);
+  // string type = 1;
+  if (this->type().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->type().data(), static_cast<int>(this->type().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "proto.EpiOutput.Day.Location.AgeBracket.HealthStatus.type");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->type(), output);
   }
 
   // double percentage = 2;
@@ -742,18 +768,24 @@ void EpiOutput_Location_AgeBracket_HealthStatus_Day::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
+  // @@protoc_insertion_point(serialize_end:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
 }
 
-::google::protobuf::uint8* EpiOutput_Location_AgeBracket_HealthStatus_Day::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* EpiOutput_Day_Location_AgeBracket_HealthStatus::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 day = 1;
-  if (this->day() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->day(), target);
+  // string type = 1;
+  if (this->type().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->type().data(), static_cast<int>(this->type().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "proto.EpiOutput.Day.Location.AgeBracket.HealthStatus.type");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->type(), target);
   }
 
   // double percentage = 2;
@@ -765,12 +797,12 @@ void EpiOutput_Location_AgeBracket_HealthStatus_Day::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
   return target;
 }
 
-size_t EpiOutput_Location_AgeBracket_HealthStatus_Day::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
+size_t EpiOutput_Day_Location_AgeBracket_HealthStatus::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -782,11 +814,11 @@ size_t EpiOutput_Location_AgeBracket_HealthStatus_Day::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int64 day = 1;
-  if (this->day() != 0) {
+  // string type = 1;
+  if (this->type().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int64Size(
-        this->day());
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->type());
   }
 
   // double percentage = 2;
@@ -799,66 +831,68 @@ size_t EpiOutput_Location_AgeBracket_HealthStatus_Day::ByteSizeLong() const {
   return total_size;
 }
 
-void EpiOutput_Location_AgeBracket_HealthStatus_Day::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
+void EpiOutput_Day_Location_AgeBracket_HealthStatus::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
   GOOGLE_DCHECK_NE(&from, this);
-  const EpiOutput_Location_AgeBracket_HealthStatus_Day* source =
-      ::google::protobuf::DynamicCastToGenerated<EpiOutput_Location_AgeBracket_HealthStatus_Day>(
+  const EpiOutput_Day_Location_AgeBracket_HealthStatus* source =
+      ::google::protobuf::DynamicCastToGenerated<EpiOutput_Day_Location_AgeBracket_HealthStatus>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
     MergeFrom(*source);
   }
 }
 
-void EpiOutput_Location_AgeBracket_HealthStatus_Day::MergeFrom(const EpiOutput_Location_AgeBracket_HealthStatus_Day& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
+void EpiOutput_Day_Location_AgeBracket_HealthStatus::MergeFrom(const EpiOutput_Day_Location_AgeBracket_HealthStatus& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.day() != 0) {
-    set_day(from.day());
+  if (from.type().size() > 0) {
+
+    type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.type_);
   }
   if (from.percentage() != 0) {
     set_percentage(from.percentage());
   }
 }
 
-void EpiOutput_Location_AgeBracket_HealthStatus_Day::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
+void EpiOutput_Day_Location_AgeBracket_HealthStatus::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void EpiOutput_Location_AgeBracket_HealthStatus_Day::CopyFrom(const EpiOutput_Location_AgeBracket_HealthStatus_Day& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:proto.EpiOutput.Location.AgeBracket.HealthStatus.Day)
+void EpiOutput_Day_Location_AgeBracket_HealthStatus::CopyFrom(const EpiOutput_Day_Location_AgeBracket_HealthStatus& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.EpiOutput.Day.Location.AgeBracket.HealthStatus)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool EpiOutput_Location_AgeBracket_HealthStatus_Day::IsInitialized() const {
+bool EpiOutput_Day_Location_AgeBracket_HealthStatus::IsInitialized() const {
   return true;
 }
 
-void EpiOutput_Location_AgeBracket_HealthStatus_Day::Swap(EpiOutput_Location_AgeBracket_HealthStatus_Day* other) {
+void EpiOutput_Day_Location_AgeBracket_HealthStatus::Swap(EpiOutput_Day_Location_AgeBracket_HealthStatus* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void EpiOutput_Location_AgeBracket_HealthStatus_Day::InternalSwap(EpiOutput_Location_AgeBracket_HealthStatus_Day* other) {
+void EpiOutput_Day_Location_AgeBracket_HealthStatus::InternalSwap(EpiOutput_Day_Location_AgeBracket_HealthStatus* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(day_, other->day_);
+  type_.Swap(&other->type_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(percentage_, other->percentage_);
 }
 
-::google::protobuf::Metadata EpiOutput_Location_AgeBracket_HealthStatus_Day::GetMetadata() const {
+::google::protobuf::Metadata EpiOutput_Day_Location_AgeBracket_HealthStatus::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_epioutput_2eproto);
   return ::file_level_metadata_epioutput_2eproto[kIndexInFileMessages];
 }
@@ -866,380 +900,23 @@ void EpiOutput_Location_AgeBracket_HealthStatus_Day::InternalSwap(EpiOutput_Loca
 
 // ===================================================================
 
-void EpiOutput_Location_AgeBracket_HealthStatus::InitAsDefaultInstance() {
+void EpiOutput_Day_Location_AgeBracket::InitAsDefaultInstance() {
 }
-class EpiOutput_Location_AgeBracket_HealthStatus::HasBitSetters {
+class EpiOutput_Day_Location_AgeBracket::HasBitSetters {
  public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int EpiOutput_Location_AgeBracket_HealthStatus::kTypeFieldNumber;
-const int EpiOutput_Location_AgeBracket_HealthStatus::kDaysFieldNumber;
+const int EpiOutput_Day_Location_AgeBracket::kTypeFieldNumber;
+const int EpiOutput_Day_Location_AgeBracket::kHealthStatusesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-EpiOutput_Location_AgeBracket_HealthStatus::EpiOutput_Location_AgeBracket_HealthStatus()
+EpiOutput_Day_Location_AgeBracket::EpiOutput_Day_Location_AgeBracket()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:proto.EpiOutput.Location.AgeBracket.HealthStatus)
+  // @@protoc_insertion_point(constructor:proto.EpiOutput.Day.Location.AgeBracket)
 }
-EpiOutput_Location_AgeBracket_HealthStatus::EpiOutput_Location_AgeBracket_HealthStatus(const EpiOutput_Location_AgeBracket_HealthStatus& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(nullptr),
-      days_(from.days_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.type().size() > 0) {
-    type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.type_);
-  }
-  // @@protoc_insertion_point(copy_constructor:proto.EpiOutput.Location.AgeBracket.HealthStatus)
-}
-
-void EpiOutput_Location_AgeBracket_HealthStatus::SharedCtor() {
-  ::google::protobuf::internal::InitSCC(
-      &scc_info_EpiOutput_Location_AgeBracket_HealthStatus_epioutput_2eproto.base);
-  type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-
-EpiOutput_Location_AgeBracket_HealthStatus::~EpiOutput_Location_AgeBracket_HealthStatus() {
-  // @@protoc_insertion_point(destructor:proto.EpiOutput.Location.AgeBracket.HealthStatus)
-  SharedDtor();
-}
-
-void EpiOutput_Location_AgeBracket_HealthStatus::SharedDtor() {
-  type_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-
-void EpiOutput_Location_AgeBracket_HealthStatus::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const EpiOutput_Location_AgeBracket_HealthStatus& EpiOutput_Location_AgeBracket_HealthStatus::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_EpiOutput_Location_AgeBracket_HealthStatus_epioutput_2eproto.base);
-  return *internal_default_instance();
-}
-
-
-void EpiOutput_Location_AgeBracket_HealthStatus::Clear() {
-// @@protoc_insertion_point(message_clear_start:proto.EpiOutput.Location.AgeBracket.HealthStatus)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  days_.Clear();
-  type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
-}
-
-#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* EpiOutput_Location_AgeBracket_HealthStatus::_InternalParse(const char* begin, const char* end, void* object,
-                  ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<EpiOutput_Location_AgeBracket_HealthStatus*>(object);
-  ::google::protobuf::int32 size; (void)size;
-  int depth; (void)depth;
-  ::google::protobuf::uint32 tag;
-  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
-  auto ptr = begin;
-  while (ptr < end) {
-    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
-    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-    switch (tag >> 3) {
-      // string type = 1;
-      case 1: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
-        ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("proto.EpiOutput.Location.AgeBracket.HealthStatus.type");
-        object = msg->mutable_type();
-        if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
-          parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
-          goto string_till_end;
-        }
-        GOOGLE_PROTOBUF_PARSER_ASSERT(::google::protobuf::internal::StringCheckUTF8(ptr, size, ctx));
-        ::google::protobuf::internal::InlineGreedyStringParser(object, ptr, size, ctx);
-        ptr += size;
-        break;
-      }
-      // repeated .proto.EpiOutput.Location.AgeBracket.HealthStatus.Day days = 2;
-      case 2: {
-        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
-        do {
-          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day::_InternalParse;
-          object = msg->add_days();
-          if (size > end - ptr) goto len_delim_till_end;
-          ptr += size;
-          GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
-              {parser_till_end, object}, ptr - size, ptr));
-          if (ptr >= end) break;
-        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 18 && (ptr += 1));
-        break;
-      }
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->EndGroup(tag);
-          return ptr;
-        }
-        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
-          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
-        ptr = res.first;
-        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
-        if (res.second) return ptr;
-      }
-    }  // switch
-  }  // while
-  return ptr;
-string_till_end:
-  static_cast<::std::string*>(object)->clear();
-  static_cast<::std::string*>(object)->reserve(size);
-  goto len_delim_till_end;
-len_delim_till_end:
-  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
-                               {parser_till_end, object}, size);
-}
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool EpiOutput_Location_AgeBracket_HealthStatus::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:proto.EpiOutput.Location.AgeBracket.HealthStatus)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string type = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_type()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->type().data(), static_cast<int>(this->type().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "proto.EpiOutput.Location.AgeBracket.HealthStatus.type"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .proto.EpiOutput.Location.AgeBracket.HealthStatus.Day days = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_days()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:proto.EpiOutput.Location.AgeBracket.HealthStatus)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:proto.EpiOutput.Location.AgeBracket.HealthStatus)
-  return false;
-#undef DO_
-}
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-
-void EpiOutput_Location_AgeBracket_HealthStatus::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:proto.EpiOutput.Location.AgeBracket.HealthStatus)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string type = 1;
-  if (this->type().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->type().data(), static_cast<int>(this->type().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "proto.EpiOutput.Location.AgeBracket.HealthStatus.type");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->type(), output);
-  }
-
-  // repeated .proto.EpiOutput.Location.AgeBracket.HealthStatus.Day days = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->days_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2,
-      this->days(static_cast<int>(i)),
-      output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:proto.EpiOutput.Location.AgeBracket.HealthStatus)
-}
-
-::google::protobuf::uint8* EpiOutput_Location_AgeBracket_HealthStatus::InternalSerializeWithCachedSizesToArray(
-    ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:proto.EpiOutput.Location.AgeBracket.HealthStatus)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string type = 1;
-  if (this->type().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->type().data(), static_cast<int>(this->type().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "proto.EpiOutput.Location.AgeBracket.HealthStatus.type");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->type(), target);
-  }
-
-  // repeated .proto.EpiOutput.Location.AgeBracket.HealthStatus.Day days = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->days_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->days(static_cast<int>(i)), target);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:proto.EpiOutput.Location.AgeBracket.HealthStatus)
-  return target;
-}
-
-size_t EpiOutput_Location_AgeBracket_HealthStatus::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:proto.EpiOutput.Location.AgeBracket.HealthStatus)
-  size_t total_size = 0;
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .proto.EpiOutput.Location.AgeBracket.HealthStatus.Day days = 2;
-  {
-    unsigned int count = static_cast<unsigned int>(this->days_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->days(static_cast<int>(i)));
-    }
-  }
-
-  // string type = 1;
-  if (this->type().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->type());
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void EpiOutput_Location_AgeBracket_HealthStatus::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:proto.EpiOutput.Location.AgeBracket.HealthStatus)
-  GOOGLE_DCHECK_NE(&from, this);
-  const EpiOutput_Location_AgeBracket_HealthStatus* source =
-      ::google::protobuf::DynamicCastToGenerated<EpiOutput_Location_AgeBracket_HealthStatus>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:proto.EpiOutput.Location.AgeBracket.HealthStatus)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:proto.EpiOutput.Location.AgeBracket.HealthStatus)
-    MergeFrom(*source);
-  }
-}
-
-void EpiOutput_Location_AgeBracket_HealthStatus::MergeFrom(const EpiOutput_Location_AgeBracket_HealthStatus& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:proto.EpiOutput.Location.AgeBracket.HealthStatus)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  days_.MergeFrom(from.days_);
-  if (from.type().size() > 0) {
-
-    type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.type_);
-  }
-}
-
-void EpiOutput_Location_AgeBracket_HealthStatus::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:proto.EpiOutput.Location.AgeBracket.HealthStatus)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void EpiOutput_Location_AgeBracket_HealthStatus::CopyFrom(const EpiOutput_Location_AgeBracket_HealthStatus& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:proto.EpiOutput.Location.AgeBracket.HealthStatus)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool EpiOutput_Location_AgeBracket_HealthStatus::IsInitialized() const {
-  return true;
-}
-
-void EpiOutput_Location_AgeBracket_HealthStatus::Swap(EpiOutput_Location_AgeBracket_HealthStatus* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void EpiOutput_Location_AgeBracket_HealthStatus::InternalSwap(EpiOutput_Location_AgeBracket_HealthStatus* other) {
-  using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  CastToBase(&days_)->InternalSwap(CastToBase(&other->days_));
-  type_.Swap(&other->type_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-}
-
-::google::protobuf::Metadata EpiOutput_Location_AgeBracket_HealthStatus::GetMetadata() const {
-  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_epioutput_2eproto);
-  return ::file_level_metadata_epioutput_2eproto[kIndexInFileMessages];
-}
-
-
-// ===================================================================
-
-void EpiOutput_Location_AgeBracket::InitAsDefaultInstance() {
-}
-class EpiOutput_Location_AgeBracket::HasBitSetters {
- public:
-};
-
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int EpiOutput_Location_AgeBracket::kTypeFieldNumber;
-const int EpiOutput_Location_AgeBracket::kHealthStatusesFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-EpiOutput_Location_AgeBracket::EpiOutput_Location_AgeBracket()
-  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:proto.EpiOutput.Location.AgeBracket)
-}
-EpiOutput_Location_AgeBracket::EpiOutput_Location_AgeBracket(const EpiOutput_Location_AgeBracket& from)
+EpiOutput_Day_Location_AgeBracket::EpiOutput_Day_Location_AgeBracket(const EpiOutput_Day_Location_AgeBracket& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr),
       healthstatuses_(from.healthstatuses_) {
@@ -1248,35 +925,35 @@ EpiOutput_Location_AgeBracket::EpiOutput_Location_AgeBracket(const EpiOutput_Loc
   if (from.type().size() > 0) {
     type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.type_);
   }
-  // @@protoc_insertion_point(copy_constructor:proto.EpiOutput.Location.AgeBracket)
+  // @@protoc_insertion_point(copy_constructor:proto.EpiOutput.Day.Location.AgeBracket)
 }
 
-void EpiOutput_Location_AgeBracket::SharedCtor() {
+void EpiOutput_Day_Location_AgeBracket::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
-      &scc_info_EpiOutput_Location_AgeBracket_epioutput_2eproto.base);
+      &scc_info_EpiOutput_Day_Location_AgeBracket_epioutput_2eproto.base);
   type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-EpiOutput_Location_AgeBracket::~EpiOutput_Location_AgeBracket() {
-  // @@protoc_insertion_point(destructor:proto.EpiOutput.Location.AgeBracket)
+EpiOutput_Day_Location_AgeBracket::~EpiOutput_Day_Location_AgeBracket() {
+  // @@protoc_insertion_point(destructor:proto.EpiOutput.Day.Location.AgeBracket)
   SharedDtor();
 }
 
-void EpiOutput_Location_AgeBracket::SharedDtor() {
+void EpiOutput_Day_Location_AgeBracket::SharedDtor() {
   type_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-void EpiOutput_Location_AgeBracket::SetCachedSize(int size) const {
+void EpiOutput_Day_Location_AgeBracket::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const EpiOutput_Location_AgeBracket& EpiOutput_Location_AgeBracket::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_EpiOutput_Location_AgeBracket_epioutput_2eproto.base);
+const EpiOutput_Day_Location_AgeBracket& EpiOutput_Day_Location_AgeBracket::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_EpiOutput_Day_Location_AgeBracket_epioutput_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void EpiOutput_Location_AgeBracket::Clear() {
-// @@protoc_insertion_point(message_clear_start:proto.EpiOutput.Location.AgeBracket)
+void EpiOutput_Day_Location_AgeBracket::Clear() {
+// @@protoc_insertion_point(message_clear_start:proto.EpiOutput.Day.Location.AgeBracket)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1287,9 +964,9 @@ void EpiOutput_Location_AgeBracket::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* EpiOutput_Location_AgeBracket::_InternalParse(const char* begin, const char* end, void* object,
+const char* EpiOutput_Day_Location_AgeBracket::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<EpiOutput_Location_AgeBracket*>(object);
+  auto msg = static_cast<EpiOutput_Day_Location_AgeBracket*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -1304,7 +981,7 @@ const char* EpiOutput_Location_AgeBracket::_InternalParse(const char* begin, con
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("proto.EpiOutput.Location.AgeBracket.type");
+        ctx->extra_parse_data().SetFieldName("proto.EpiOutput.Day.Location.AgeBracket.type");
         object = msg->mutable_type();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
@@ -1315,13 +992,13 @@ const char* EpiOutput_Location_AgeBracket::_InternalParse(const char* begin, con
         ptr += size;
         break;
       }
-      // repeated .proto.EpiOutput.Location.AgeBracket.HealthStatus healthStatuses = 2;
+      // repeated .proto.EpiOutput.Day.Location.AgeBracket.HealthStatus healthStatuses = 2;
       case 2: {
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::proto::EpiOutput_Location_AgeBracket_HealthStatus::_InternalParse;
+          parser_till_end = ::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus::_InternalParse;
           object = msg->add_healthstatuses();
           if (size > end - ptr) goto len_delim_till_end;
           ptr += size;
@@ -1355,11 +1032,11 @@ len_delim_till_end:
                                {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool EpiOutput_Location_AgeBracket::MergePartialFromCodedStream(
+bool EpiOutput_Day_Location_AgeBracket::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:proto.EpiOutput.Location.AgeBracket)
+  // @@protoc_insertion_point(parse_start:proto.EpiOutput.Day.Location.AgeBracket)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -1373,14 +1050,14 @@ bool EpiOutput_Location_AgeBracket::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->type().data(), static_cast<int>(this->type().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "proto.EpiOutput.Location.AgeBracket.type"));
+            "proto.EpiOutput.Day.Location.AgeBracket.type"));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // repeated .proto.EpiOutput.Location.AgeBracket.HealthStatus healthStatuses = 2;
+      // repeated .proto.EpiOutput.Day.Location.AgeBracket.HealthStatus healthStatuses = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -1403,18 +1080,18 @@ bool EpiOutput_Location_AgeBracket::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:proto.EpiOutput.Location.AgeBracket)
+  // @@protoc_insertion_point(parse_success:proto.EpiOutput.Day.Location.AgeBracket)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:proto.EpiOutput.Location.AgeBracket)
+  // @@protoc_insertion_point(parse_failure:proto.EpiOutput.Day.Location.AgeBracket)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void EpiOutput_Location_AgeBracket::SerializeWithCachedSizes(
+void EpiOutput_Day_Location_AgeBracket::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:proto.EpiOutput.Location.AgeBracket)
+  // @@protoc_insertion_point(serialize_start:proto.EpiOutput.Day.Location.AgeBracket)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1423,12 +1100,12 @@ void EpiOutput_Location_AgeBracket::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->type().data(), static_cast<int>(this->type().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "proto.EpiOutput.Location.AgeBracket.type");
+      "proto.EpiOutput.Day.Location.AgeBracket.type");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->type(), output);
   }
 
-  // repeated .proto.EpiOutput.Location.AgeBracket.HealthStatus healthStatuses = 2;
+  // repeated .proto.EpiOutput.Day.Location.AgeBracket.HealthStatus healthStatuses = 2;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->healthstatuses_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -1441,12 +1118,12 @@ void EpiOutput_Location_AgeBracket::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:proto.EpiOutput.Location.AgeBracket)
+  // @@protoc_insertion_point(serialize_end:proto.EpiOutput.Day.Location.AgeBracket)
 }
 
-::google::protobuf::uint8* EpiOutput_Location_AgeBracket::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* EpiOutput_Day_Location_AgeBracket::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:proto.EpiOutput.Location.AgeBracket)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.EpiOutput.Day.Location.AgeBracket)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1455,13 +1132,13 @@ void EpiOutput_Location_AgeBracket::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->type().data(), static_cast<int>(this->type().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "proto.EpiOutput.Location.AgeBracket.type");
+      "proto.EpiOutput.Day.Location.AgeBracket.type");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->type(), target);
   }
 
-  // repeated .proto.EpiOutput.Location.AgeBracket.HealthStatus healthStatuses = 2;
+  // repeated .proto.EpiOutput.Day.Location.AgeBracket.HealthStatus healthStatuses = 2;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->healthstatuses_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -1473,12 +1150,12 @@ void EpiOutput_Location_AgeBracket::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:proto.EpiOutput.Location.AgeBracket)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.EpiOutput.Day.Location.AgeBracket)
   return target;
 }
 
-size_t EpiOutput_Location_AgeBracket::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:proto.EpiOutput.Location.AgeBracket)
+size_t EpiOutput_Day_Location_AgeBracket::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:proto.EpiOutput.Day.Location.AgeBracket)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1490,7 +1167,7 @@ size_t EpiOutput_Location_AgeBracket::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .proto.EpiOutput.Location.AgeBracket.HealthStatus healthStatuses = 2;
+  // repeated .proto.EpiOutput.Day.Location.AgeBracket.HealthStatus healthStatuses = 2;
   {
     unsigned int count = static_cast<unsigned int>(this->healthstatuses_size());
     total_size += 1UL * count;
@@ -1513,23 +1190,23 @@ size_t EpiOutput_Location_AgeBracket::ByteSizeLong() const {
   return total_size;
 }
 
-void EpiOutput_Location_AgeBracket::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:proto.EpiOutput.Location.AgeBracket)
+void EpiOutput_Day_Location_AgeBracket::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:proto.EpiOutput.Day.Location.AgeBracket)
   GOOGLE_DCHECK_NE(&from, this);
-  const EpiOutput_Location_AgeBracket* source =
-      ::google::protobuf::DynamicCastToGenerated<EpiOutput_Location_AgeBracket>(
+  const EpiOutput_Day_Location_AgeBracket* source =
+      ::google::protobuf::DynamicCastToGenerated<EpiOutput_Day_Location_AgeBracket>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:proto.EpiOutput.Location.AgeBracket)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:proto.EpiOutput.Day.Location.AgeBracket)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:proto.EpiOutput.Location.AgeBracket)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:proto.EpiOutput.Day.Location.AgeBracket)
     MergeFrom(*source);
   }
 }
 
-void EpiOutput_Location_AgeBracket::MergeFrom(const EpiOutput_Location_AgeBracket& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:proto.EpiOutput.Location.AgeBracket)
+void EpiOutput_Day_Location_AgeBracket::MergeFrom(const EpiOutput_Day_Location_AgeBracket& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:proto.EpiOutput.Day.Location.AgeBracket)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -1542,29 +1219,29 @@ void EpiOutput_Location_AgeBracket::MergeFrom(const EpiOutput_Location_AgeBracke
   }
 }
 
-void EpiOutput_Location_AgeBracket::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:proto.EpiOutput.Location.AgeBracket)
+void EpiOutput_Day_Location_AgeBracket::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:proto.EpiOutput.Day.Location.AgeBracket)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void EpiOutput_Location_AgeBracket::CopyFrom(const EpiOutput_Location_AgeBracket& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:proto.EpiOutput.Location.AgeBracket)
+void EpiOutput_Day_Location_AgeBracket::CopyFrom(const EpiOutput_Day_Location_AgeBracket& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.EpiOutput.Day.Location.AgeBracket)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool EpiOutput_Location_AgeBracket::IsInitialized() const {
+bool EpiOutput_Day_Location_AgeBracket::IsInitialized() const {
   return true;
 }
 
-void EpiOutput_Location_AgeBracket::Swap(EpiOutput_Location_AgeBracket* other) {
+void EpiOutput_Day_Location_AgeBracket::Swap(EpiOutput_Day_Location_AgeBracket* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void EpiOutput_Location_AgeBracket::InternalSwap(EpiOutput_Location_AgeBracket* other) {
+void EpiOutput_Day_Location_AgeBracket::InternalSwap(EpiOutput_Day_Location_AgeBracket* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   CastToBase(&healthstatuses_)->InternalSwap(CastToBase(&other->healthstatuses_));
@@ -1572,7 +1249,7 @@ void EpiOutput_Location_AgeBracket::InternalSwap(EpiOutput_Location_AgeBracket* 
     GetArenaNoVirtual());
 }
 
-::google::protobuf::Metadata EpiOutput_Location_AgeBracket::GetMetadata() const {
+::google::protobuf::Metadata EpiOutput_Day_Location_AgeBracket::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_epioutput_2eproto);
   return ::file_level_metadata_epioutput_2eproto[kIndexInFileMessages];
 }
@@ -1580,34 +1257,34 @@ void EpiOutput_Location_AgeBracket::InternalSwap(EpiOutput_Location_AgeBracket* 
 
 // ===================================================================
 
-void EpiOutput_Location::InitAsDefaultInstance() {
-  ::proto::_EpiOutput_Location_default_instance_._instance.get_mutable()->coordinate_ = const_cast< ::proto::EpiOutput_Location_Coordinate*>(
-      ::proto::EpiOutput_Location_Coordinate::internal_default_instance());
+void EpiOutput_Day_Location::InitAsDefaultInstance() {
+  ::proto::_EpiOutput_Day_Location_default_instance_._instance.get_mutable()->coordinate_ = const_cast< ::proto::EpiOutput_Day_Location_Coordinate*>(
+      ::proto::EpiOutput_Day_Location_Coordinate::internal_default_instance());
 }
-class EpiOutput_Location::HasBitSetters {
+class EpiOutput_Day_Location::HasBitSetters {
  public:
-  static const ::proto::EpiOutput_Location_Coordinate& coordinate(const EpiOutput_Location* msg);
+  static const ::proto::EpiOutput_Day_Location_Coordinate& coordinate(const EpiOutput_Day_Location* msg);
 };
 
-const ::proto::EpiOutput_Location_Coordinate&
-EpiOutput_Location::HasBitSetters::coordinate(const EpiOutput_Location* msg) {
+const ::proto::EpiOutput_Day_Location_Coordinate&
+EpiOutput_Day_Location::HasBitSetters::coordinate(const EpiOutput_Day_Location* msg) {
   return *msg->coordinate_;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int EpiOutput_Location::kIdFieldNumber;
-const int EpiOutput_Location::kNameFieldNumber;
-const int EpiOutput_Location::kProvinceFieldNumber;
-const int EpiOutput_Location::kPopulationFieldNumber;
-const int EpiOutput_Location::kCoordinateFieldNumber;
-const int EpiOutput_Location::kAgeBracketsFieldNumber;
+const int EpiOutput_Day_Location::kIdFieldNumber;
+const int EpiOutput_Day_Location::kNameFieldNumber;
+const int EpiOutput_Day_Location::kProvinceFieldNumber;
+const int EpiOutput_Day_Location::kPopulationFieldNumber;
+const int EpiOutput_Day_Location::kCoordinateFieldNumber;
+const int EpiOutput_Day_Location::kAgeBracketsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-EpiOutput_Location::EpiOutput_Location()
+EpiOutput_Day_Location::EpiOutput_Day_Location()
   : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:proto.EpiOutput.Location)
+  // @@protoc_insertion_point(constructor:proto.EpiOutput.Day.Location)
 }
-EpiOutput_Location::EpiOutput_Location(const EpiOutput_Location& from)
+EpiOutput_Day_Location::EpiOutput_Day_Location(const EpiOutput_Day_Location& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr),
       agebrackets_(from.agebrackets_) {
@@ -1617,46 +1294,46 @@ EpiOutput_Location::EpiOutput_Location(const EpiOutput_Location& from)
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   if (from.has_coordinate()) {
-    coordinate_ = new ::proto::EpiOutput_Location_Coordinate(*from.coordinate_);
+    coordinate_ = new ::proto::EpiOutput_Day_Location_Coordinate(*from.coordinate_);
   } else {
     coordinate_ = nullptr;
   }
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&population_) -
     reinterpret_cast<char*>(&id_)) + sizeof(population_));
-  // @@protoc_insertion_point(copy_constructor:proto.EpiOutput.Location)
+  // @@protoc_insertion_point(copy_constructor:proto.EpiOutput.Day.Location)
 }
 
-void EpiOutput_Location::SharedCtor() {
+void EpiOutput_Day_Location::SharedCtor() {
   ::google::protobuf::internal::InitSCC(
-      &scc_info_EpiOutput_Location_epioutput_2eproto.base);
+      &scc_info_EpiOutput_Day_Location_epioutput_2eproto.base);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&coordinate_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&population_) -
       reinterpret_cast<char*>(&coordinate_)) + sizeof(population_));
 }
 
-EpiOutput_Location::~EpiOutput_Location() {
-  // @@protoc_insertion_point(destructor:proto.EpiOutput.Location)
+EpiOutput_Day_Location::~EpiOutput_Day_Location() {
+  // @@protoc_insertion_point(destructor:proto.EpiOutput.Day.Location)
   SharedDtor();
 }
 
-void EpiOutput_Location::SharedDtor() {
+void EpiOutput_Day_Location::SharedDtor() {
   name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete coordinate_;
 }
 
-void EpiOutput_Location::SetCachedSize(int size) const {
+void EpiOutput_Day_Location::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const EpiOutput_Location& EpiOutput_Location::default_instance() {
-  ::google::protobuf::internal::InitSCC(&::scc_info_EpiOutput_Location_epioutput_2eproto.base);
+const EpiOutput_Day_Location& EpiOutput_Day_Location::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_EpiOutput_Day_Location_epioutput_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void EpiOutput_Location::Clear() {
-// @@protoc_insertion_point(message_clear_start:proto.EpiOutput.Location)
+void EpiOutput_Day_Location::Clear() {
+// @@protoc_insertion_point(message_clear_start:proto.EpiOutput.Day.Location)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1674,9 +1351,9 @@ void EpiOutput_Location::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* EpiOutput_Location::_InternalParse(const char* begin, const char* end, void* object,
+const char* EpiOutput_Day_Location::_InternalParse(const char* begin, const char* end, void* object,
                   ::google::protobuf::internal::ParseContext* ctx) {
-  auto msg = static_cast<EpiOutput_Location*>(object);
+  auto msg = static_cast<EpiOutput_Day_Location*>(object);
   ::google::protobuf::int32 size; (void)size;
   int depth; (void)depth;
   ::google::protobuf::uint32 tag;
@@ -1698,7 +1375,7 @@ const char* EpiOutput_Location::_InternalParse(const char* begin, const char* en
         if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        ctx->extra_parse_data().SetFieldName("proto.EpiOutput.Location.name");
+        ctx->extra_parse_data().SetFieldName("proto.EpiOutput.Day.Location.name");
         object = msg->mutable_name();
         if (size > end - ptr + ::google::protobuf::internal::ParseContext::kSlopBytes) {
           parser_till_end = ::google::protobuf::internal::GreedyStringParserUTF8;
@@ -1723,12 +1400,12 @@ const char* EpiOutput_Location::_InternalParse(const char* begin, const char* en
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
         break;
       }
-      // .proto.EpiOutput.Location.Coordinate coordinate = 5;
+      // .proto.EpiOutput.Day.Location.Coordinate coordinate = 5;
       case 5: {
         if (static_cast<::google::protobuf::uint8>(tag) != 42) goto handle_unusual;
         ptr = ::google::protobuf::io::ReadSize(ptr, &size);
         GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-        parser_till_end = ::proto::EpiOutput_Location_Coordinate::_InternalParse;
+        parser_till_end = ::proto::EpiOutput_Day_Location_Coordinate::_InternalParse;
         object = msg->mutable_coordinate();
         if (size > end - ptr) goto len_delim_till_end;
         ptr += size;
@@ -1736,13 +1413,13 @@ const char* EpiOutput_Location::_InternalParse(const char* begin, const char* en
             {parser_till_end, object}, ptr - size, ptr));
         break;
       }
-      // repeated .proto.EpiOutput.Location.AgeBracket ageBrackets = 6;
+      // repeated .proto.EpiOutput.Day.Location.AgeBracket ageBrackets = 6;
       case 6: {
         if (static_cast<::google::protobuf::uint8>(tag) != 50) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::proto::EpiOutput_Location_AgeBracket::_InternalParse;
+          parser_till_end = ::proto::EpiOutput_Day_Location_AgeBracket::_InternalParse;
           object = msg->add_agebrackets();
           if (size > end - ptr) goto len_delim_till_end;
           ptr += size;
@@ -1776,11 +1453,11 @@ len_delim_till_end:
                                {parser_till_end, object}, size);
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool EpiOutput_Location::MergePartialFromCodedStream(
+bool EpiOutput_Day_Location::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:proto.EpiOutput.Location)
+  // @@protoc_insertion_point(parse_start:proto.EpiOutput.Day.Location)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -1807,7 +1484,7 @@ bool EpiOutput_Location::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->name().data(), static_cast<int>(this->name().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "proto.EpiOutput.Location.name"));
+            "proto.EpiOutput.Day.Location.name"));
         } else {
           goto handle_unusual;
         }
@@ -1840,7 +1517,7 @@ bool EpiOutput_Location::MergePartialFromCodedStream(
         break;
       }
 
-      // .proto.EpiOutput.Location.Coordinate coordinate = 5;
+      // .proto.EpiOutput.Day.Location.Coordinate coordinate = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (42 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -1851,7 +1528,7 @@ bool EpiOutput_Location::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .proto.EpiOutput.Location.AgeBracket ageBrackets = 6;
+      // repeated .proto.EpiOutput.Day.Location.AgeBracket ageBrackets = 6;
       case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (50 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
@@ -1874,18 +1551,18 @@ bool EpiOutput_Location::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:proto.EpiOutput.Location)
+  // @@protoc_insertion_point(parse_success:proto.EpiOutput.Day.Location)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:proto.EpiOutput.Location)
+  // @@protoc_insertion_point(parse_failure:proto.EpiOutput.Day.Location)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void EpiOutput_Location::SerializeWithCachedSizes(
+void EpiOutput_Day_Location::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:proto.EpiOutput.Location)
+  // @@protoc_insertion_point(serialize_start:proto.EpiOutput.Day.Location)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1899,7 +1576,7 @@ void EpiOutput_Location::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->name().data(), static_cast<int>(this->name().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "proto.EpiOutput.Location.name");
+      "proto.EpiOutput.Day.Location.name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->name(), output);
   }
@@ -1914,13 +1591,13 @@ void EpiOutput_Location::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(4, this->population(), output);
   }
 
-  // .proto.EpiOutput.Location.Coordinate coordinate = 5;
+  // .proto.EpiOutput.Day.Location.Coordinate coordinate = 5;
   if (this->has_coordinate()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       5, HasBitSetters::coordinate(this), output);
   }
 
-  // repeated .proto.EpiOutput.Location.AgeBracket ageBrackets = 6;
+  // repeated .proto.EpiOutput.Day.Location.AgeBracket ageBrackets = 6;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->agebrackets_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -1933,12 +1610,12 @@ void EpiOutput_Location::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:proto.EpiOutput.Location)
+  // @@protoc_insertion_point(serialize_end:proto.EpiOutput.Day.Location)
 }
 
-::google::protobuf::uint8* EpiOutput_Location::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* EpiOutput_Day_Location::InternalSerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:proto.EpiOutput.Location)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.EpiOutput.Day.Location)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1952,7 +1629,7 @@ void EpiOutput_Location::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->name().data(), static_cast<int>(this->name().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "proto.EpiOutput.Location.name");
+      "proto.EpiOutput.Day.Location.name");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->name(), target);
@@ -1968,14 +1645,14 @@ void EpiOutput_Location::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(4, this->population(), target);
   }
 
-  // .proto.EpiOutput.Location.Coordinate coordinate = 5;
+  // .proto.EpiOutput.Day.Location.Coordinate coordinate = 5;
   if (this->has_coordinate()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         5, HasBitSetters::coordinate(this), target);
   }
 
-  // repeated .proto.EpiOutput.Location.AgeBracket ageBrackets = 6;
+  // repeated .proto.EpiOutput.Day.Location.AgeBracket ageBrackets = 6;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->agebrackets_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -1987,12 +1664,12 @@ void EpiOutput_Location::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:proto.EpiOutput.Location)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.EpiOutput.Day.Location)
   return target;
 }
 
-size_t EpiOutput_Location::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:proto.EpiOutput.Location)
+size_t EpiOutput_Day_Location::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:proto.EpiOutput.Day.Location)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2004,7 +1681,7 @@ size_t EpiOutput_Location::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .proto.EpiOutput.Location.AgeBracket ageBrackets = 6;
+  // repeated .proto.EpiOutput.Day.Location.AgeBracket ageBrackets = 6;
   {
     unsigned int count = static_cast<unsigned int>(this->agebrackets_size());
     total_size += 1UL * count;
@@ -2022,7 +1699,7 @@ size_t EpiOutput_Location::ByteSizeLong() const {
         this->name());
   }
 
-  // .proto.EpiOutput.Location.Coordinate coordinate = 5;
+  // .proto.EpiOutput.Day.Location.Coordinate coordinate = 5;
   if (this->has_coordinate()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
@@ -2055,23 +1732,23 @@ size_t EpiOutput_Location::ByteSizeLong() const {
   return total_size;
 }
 
-void EpiOutput_Location::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:proto.EpiOutput.Location)
+void EpiOutput_Day_Location::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:proto.EpiOutput.Day.Location)
   GOOGLE_DCHECK_NE(&from, this);
-  const EpiOutput_Location* source =
-      ::google::protobuf::DynamicCastToGenerated<EpiOutput_Location>(
+  const EpiOutput_Day_Location* source =
+      ::google::protobuf::DynamicCastToGenerated<EpiOutput_Day_Location>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:proto.EpiOutput.Location)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:proto.EpiOutput.Day.Location)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:proto.EpiOutput.Location)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:proto.EpiOutput.Day.Location)
     MergeFrom(*source);
   }
 }
 
-void EpiOutput_Location::MergeFrom(const EpiOutput_Location& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:proto.EpiOutput.Location)
+void EpiOutput_Day_Location::MergeFrom(const EpiOutput_Day_Location& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:proto.EpiOutput.Day.Location)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -2083,7 +1760,7 @@ void EpiOutput_Location::MergeFrom(const EpiOutput_Location& from) {
     name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   if (from.has_coordinate()) {
-    mutable_coordinate()->::proto::EpiOutput_Location_Coordinate::MergeFrom(from.coordinate());
+    mutable_coordinate()->::proto::EpiOutput_Day_Location_Coordinate::MergeFrom(from.coordinate());
   }
   if (from.id() != 0) {
     set_id(from.id());
@@ -2096,29 +1773,29 @@ void EpiOutput_Location::MergeFrom(const EpiOutput_Location& from) {
   }
 }
 
-void EpiOutput_Location::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:proto.EpiOutput.Location)
+void EpiOutput_Day_Location::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:proto.EpiOutput.Day.Location)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void EpiOutput_Location::CopyFrom(const EpiOutput_Location& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:proto.EpiOutput.Location)
+void EpiOutput_Day_Location::CopyFrom(const EpiOutput_Day_Location& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.EpiOutput.Day.Location)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool EpiOutput_Location::IsInitialized() const {
+bool EpiOutput_Day_Location::IsInitialized() const {
   return true;
 }
 
-void EpiOutput_Location::Swap(EpiOutput_Location* other) {
+void EpiOutput_Day_Location::Swap(EpiOutput_Day_Location* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void EpiOutput_Location::InternalSwap(EpiOutput_Location* other) {
+void EpiOutput_Day_Location::InternalSwap(EpiOutput_Day_Location* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   CastToBase(&agebrackets_)->InternalSwap(CastToBase(&other->agebrackets_));
@@ -2130,7 +1807,332 @@ void EpiOutput_Location::InternalSwap(EpiOutput_Location* other) {
   swap(population_, other->population_);
 }
 
-::google::protobuf::Metadata EpiOutput_Location::GetMetadata() const {
+::google::protobuf::Metadata EpiOutput_Day_Location::GetMetadata() const {
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_epioutput_2eproto);
+  return ::file_level_metadata_epioutput_2eproto[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void EpiOutput_Day::InitAsDefaultInstance() {
+}
+class EpiOutput_Day::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int EpiOutput_Day::kDayFieldNumber;
+const int EpiOutput_Day::kLocationsFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+EpiOutput_Day::EpiOutput_Day()
+  : ::google::protobuf::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:proto.EpiOutput.Day)
+}
+EpiOutput_Day::EpiOutput_Day(const EpiOutput_Day& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(nullptr),
+      locations_(from.locations_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  day_ = from.day_;
+  // @@protoc_insertion_point(copy_constructor:proto.EpiOutput.Day)
+}
+
+void EpiOutput_Day::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_EpiOutput_Day_epioutput_2eproto.base);
+  day_ = PROTOBUF_LONGLONG(0);
+}
+
+EpiOutput_Day::~EpiOutput_Day() {
+  // @@protoc_insertion_point(destructor:proto.EpiOutput.Day)
+  SharedDtor();
+}
+
+void EpiOutput_Day::SharedDtor() {
+}
+
+void EpiOutput_Day::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const EpiOutput_Day& EpiOutput_Day::default_instance() {
+  ::google::protobuf::internal::InitSCC(&::scc_info_EpiOutput_Day_epioutput_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void EpiOutput_Day::Clear() {
+// @@protoc_insertion_point(message_clear_start:proto.EpiOutput.Day)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  locations_.Clear();
+  day_ = PROTOBUF_LONGLONG(0);
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* EpiOutput_Day::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<EpiOutput_Day*>(object);
+  ::google::protobuf::int32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::uint32 tag;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ptr = ::google::protobuf::io::Parse32(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // int64 day = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        msg->set_day(::google::protobuf::internal::ReadVarint(&ptr));
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        break;
+      }
+      // repeated .proto.EpiOutput.Day.Location locations = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        do {
+          ptr = ::google::protobuf::io::ReadSize(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          parser_till_end = ::proto::EpiOutput_Day_Location::_InternalParse;
+          object = msg->add_locations();
+          if (size > end - ptr) goto len_delim_till_end;
+          ptr += size;
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
+              {parser_till_end, object}, ptr - size, ptr));
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 18 && (ptr += 1));
+        break;
+      }
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->EndGroup(tag);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr != nullptr);
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end:
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                               {parser_till_end, object}, size);
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool EpiOutput_Day::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:proto.EpiOutput.Day)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // int64 day = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &day_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .proto.EpiOutput.Day.Location locations = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_locations()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:proto.EpiOutput.Day)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:proto.EpiOutput.Day)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void EpiOutput_Day::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:proto.EpiOutput.Day)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 day = 1;
+  if (this->day() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->day(), output);
+  }
+
+  // repeated .proto.EpiOutput.Day.Location locations = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->locations_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2,
+      this->locations(static_cast<int>(i)),
+      output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:proto.EpiOutput.Day)
+}
+
+::google::protobuf::uint8* EpiOutput_Day::InternalSerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:proto.EpiOutput.Day)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 day = 1;
+  if (this->day() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->day(), target);
+  }
+
+  // repeated .proto.EpiOutput.Day.Location locations = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->locations_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, this->locations(static_cast<int>(i)), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:proto.EpiOutput.Day)
+  return target;
+}
+
+size_t EpiOutput_Day::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:proto.EpiOutput.Day)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .proto.EpiOutput.Day.Location locations = 2;
+  {
+    unsigned int count = static_cast<unsigned int>(this->locations_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->locations(static_cast<int>(i)));
+    }
+  }
+
+  // int64 day = 1;
+  if (this->day() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->day());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void EpiOutput_Day::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:proto.EpiOutput.Day)
+  GOOGLE_DCHECK_NE(&from, this);
+  const EpiOutput_Day* source =
+      ::google::protobuf::DynamicCastToGenerated<EpiOutput_Day>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:proto.EpiOutput.Day)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:proto.EpiOutput.Day)
+    MergeFrom(*source);
+  }
+}
+
+void EpiOutput_Day::MergeFrom(const EpiOutput_Day& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:proto.EpiOutput.Day)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  locations_.MergeFrom(from.locations_);
+  if (from.day() != 0) {
+    set_day(from.day());
+  }
+}
+
+void EpiOutput_Day::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:proto.EpiOutput.Day)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void EpiOutput_Day::CopyFrom(const EpiOutput_Day& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.EpiOutput.Day)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool EpiOutput_Day::IsInitialized() const {
+  return true;
+}
+
+void EpiOutput_Day::Swap(EpiOutput_Day* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void EpiOutput_Day::InternalSwap(EpiOutput_Day* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  CastToBase(&locations_)->InternalSwap(CastToBase(&other->locations_));
+  swap(day_, other->day_);
+}
+
+::google::protobuf::Metadata EpiOutput_Day::GetMetadata() const {
   ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_epioutput_2eproto);
   return ::file_level_metadata_epioutput_2eproto[kIndexInFileMessages];
 }
@@ -2145,7 +2147,7 @@ class EpiOutput::HasBitSetters {
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int EpiOutput::kLocationsFieldNumber;
+const int EpiOutput::kDaysFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 EpiOutput::EpiOutput()
@@ -2156,7 +2158,7 @@ EpiOutput::EpiOutput()
 EpiOutput::EpiOutput(const EpiOutput& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(nullptr),
-      locations_(from.locations_) {
+      days_(from.days_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:proto.EpiOutput)
 }
@@ -2189,7 +2191,7 @@ void EpiOutput::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  locations_.Clear();
+  days_.Clear();
   _internal_metadata_.Clear();
 }
 
@@ -2206,14 +2208,14 @@ const char* EpiOutput::_InternalParse(const char* begin, const char* end, void* 
     ptr = ::google::protobuf::io::Parse32(ptr, &tag);
     GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
     switch (tag >> 3) {
-      // repeated .proto.EpiOutput.Location locations = 1;
+      // repeated .proto.EpiOutput.Day days = 1;
       case 1: {
         if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
         do {
           ptr = ::google::protobuf::io::ReadSize(ptr, &size);
           GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
-          parser_till_end = ::proto::EpiOutput_Location::_InternalParse;
-          object = msg->add_locations();
+          parser_till_end = ::proto::EpiOutput_Day::_InternalParse;
+          object = msg->add_days();
           if (size > end - ptr) goto len_delim_till_end;
           ptr += size;
           GOOGLE_PROTOBUF_PARSER_ASSERT(ctx->ParseExactRange(
@@ -2252,11 +2254,11 @@ bool EpiOutput::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .proto.EpiOutput.Location locations = 1;
+      // repeated .proto.EpiOutput.Day days = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_locations()));
+                input, add_days()));
         } else {
           goto handle_unusual;
         }
@@ -2290,12 +2292,12 @@ void EpiOutput::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .proto.EpiOutput.Location locations = 1;
+  // repeated .proto.EpiOutput.Day days = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->locations_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->days_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1,
-      this->locations(static_cast<int>(i)),
+      this->days(static_cast<int>(i)),
       output);
   }
 
@@ -2312,12 +2314,12 @@ void EpiOutput::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .proto.EpiOutput.Location locations = 1;
+  // repeated .proto.EpiOutput.Day days = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->locations_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->days_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, this->locations(static_cast<int>(i)), target);
+        1, this->days(static_cast<int>(i)), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2341,14 +2343,14 @@ size_t EpiOutput::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .proto.EpiOutput.Location locations = 1;
+  // repeated .proto.EpiOutput.Day days = 1;
   {
-    unsigned int count = static_cast<unsigned int>(this->locations_size());
+    unsigned int count = static_cast<unsigned int>(this->days_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->locations(static_cast<int>(i)));
+          this->days(static_cast<int>(i)));
     }
   }
 
@@ -2379,7 +2381,7 @@ void EpiOutput::MergeFrom(const EpiOutput& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  locations_.MergeFrom(from.locations_);
+  days_.MergeFrom(from.days_);
 }
 
 void EpiOutput::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2407,7 +2409,7 @@ void EpiOutput::Swap(EpiOutput* other) {
 void EpiOutput::InternalSwap(EpiOutput* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  CastToBase(&locations_)->InternalSwap(CastToBase(&other->locations_));
+  CastToBase(&days_)->InternalSwap(CastToBase(&other->days_));
 }
 
 ::google::protobuf::Metadata EpiOutput::GetMetadata() const {
@@ -2420,20 +2422,20 @@ void EpiOutput::InternalSwap(EpiOutput* other) {
 }  // namespace proto
 namespace google {
 namespace protobuf {
-template<> PROTOBUF_NOINLINE ::proto::EpiOutput_Location_Coordinate* Arena::CreateMaybeMessage< ::proto::EpiOutput_Location_Coordinate >(Arena* arena) {
-  return Arena::CreateInternal< ::proto::EpiOutput_Location_Coordinate >(arena);
+template<> PROTOBUF_NOINLINE ::proto::EpiOutput_Day_Location_Coordinate* Arena::CreateMaybeMessage< ::proto::EpiOutput_Day_Location_Coordinate >(Arena* arena) {
+  return Arena::CreateInternal< ::proto::EpiOutput_Day_Location_Coordinate >(arena);
 }
-template<> PROTOBUF_NOINLINE ::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day* Arena::CreateMaybeMessage< ::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day >(Arena* arena) {
-  return Arena::CreateInternal< ::proto::EpiOutput_Location_AgeBracket_HealthStatus_Day >(arena);
+template<> PROTOBUF_NOINLINE ::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus* Arena::CreateMaybeMessage< ::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus >(Arena* arena) {
+  return Arena::CreateInternal< ::proto::EpiOutput_Day_Location_AgeBracket_HealthStatus >(arena);
 }
-template<> PROTOBUF_NOINLINE ::proto::EpiOutput_Location_AgeBracket_HealthStatus* Arena::CreateMaybeMessage< ::proto::EpiOutput_Location_AgeBracket_HealthStatus >(Arena* arena) {
-  return Arena::CreateInternal< ::proto::EpiOutput_Location_AgeBracket_HealthStatus >(arena);
+template<> PROTOBUF_NOINLINE ::proto::EpiOutput_Day_Location_AgeBracket* Arena::CreateMaybeMessage< ::proto::EpiOutput_Day_Location_AgeBracket >(Arena* arena) {
+  return Arena::CreateInternal< ::proto::EpiOutput_Day_Location_AgeBracket >(arena);
 }
-template<> PROTOBUF_NOINLINE ::proto::EpiOutput_Location_AgeBracket* Arena::CreateMaybeMessage< ::proto::EpiOutput_Location_AgeBracket >(Arena* arena) {
-  return Arena::CreateInternal< ::proto::EpiOutput_Location_AgeBracket >(arena);
+template<> PROTOBUF_NOINLINE ::proto::EpiOutput_Day_Location* Arena::CreateMaybeMessage< ::proto::EpiOutput_Day_Location >(Arena* arena) {
+  return Arena::CreateInternal< ::proto::EpiOutput_Day_Location >(arena);
 }
-template<> PROTOBUF_NOINLINE ::proto::EpiOutput_Location* Arena::CreateMaybeMessage< ::proto::EpiOutput_Location >(Arena* arena) {
-  return Arena::CreateInternal< ::proto::EpiOutput_Location >(arena);
+template<> PROTOBUF_NOINLINE ::proto::EpiOutput_Day* Arena::CreateMaybeMessage< ::proto::EpiOutput_Day >(Arena* arena) {
+  return Arena::CreateInternal< ::proto::EpiOutput_Day >(arena);
 }
 template<> PROTOBUF_NOINLINE ::proto::EpiOutput* Arena::CreateMaybeMessage< ::proto::EpiOutput >(Arena* arena) {
   return Arena::CreateInternal< ::proto::EpiOutput >(arena);

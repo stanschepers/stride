@@ -160,6 +160,8 @@ if(NOT STRIDE_FORCE_NO_QT5)
             visualization/source/EpiOutputReaderFactory.h
             visualization/source/EpiOutputJSONReader.cpp
             visualization/source/EpiOutputJSONReader.h
+            visualization/source/EpiOutputProtoReader.cpp
+            visualization/source/EpiOutputProtoReader.h
             )
 else()
     set(VIS_SRC "")

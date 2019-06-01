@@ -16,33 +16,42 @@
 #include "EpiOutputReaderFactory.h"
 
 #include "EpiOutputJSONReader.h"
-//#include "EpiOutputProtoReader.h"
+#include "EpiOutputProtoReader.h"
 //#include "EpiOutputHDF5Reader.h"
 
 #include <fstream>
 #include <memory>
 
+#ifdef BOOST_FOUND
+#include <boost/filesystem.hpp>
+#include <boost/filesystem/path.hpp>
+namespace filesys = boost::filesystem;
+#else
+#include <filesystem>
+namespace filesys = std::filesystem;
+#endif
+
 namespace visualization {
 
 std::shared_ptr<EpiOutputReader> EpiOutputReaderFactory::CreateReader(const std::string& filename, geopop::GeoGrid<EpiOutput>* epiOutput) const
 {
-        //        const filesys::path path(filename);
-        //        if (!filesys::exists(path)) {
-        //                throw Exception("EpiOutputReaderFactory::CreateReader> File not found: " + path.string());
-        //        }
-        std::string path = filename;
+        const filesys::path path(filename);
+        if (!filesys::exists(path)) {
+                throw stride::util::Exception("EpiOutputReaderFactory::CreateReader> File not found: " + path.string());
+        }
+//        std::string path = filename;
 
-        if (path.substr(path.size() - 5) == ".json") {
-                return std::make_shared<EpiOutputJSONReader>(std::make_unique<std::ifstream>(path), epiOutput);
+        if (path.extension().string() == ".json") {  //if (path.substr(path.size() - 5) == ".json") {
+                return std::make_shared<EpiOutputJSONReader>(std::make_unique<std::ifstream>(path.string()), epiOutput);
+        }
+        else if (path.extension().string() == ".proto") {  //if (path.substr(path.size() - 6) == ".proto") {
+                return std::make_shared<EpiOutputProtoReader>(std::make_unique<std::ifstream>(path.string()), epiOutput);
         } /*else
-                if (path == ".proto") {
-                return std::make_shared<EpiOutputProtoReader>(std::make_unique<std::ifstream>(path.string()));
-        } else
                 if (path == ".hfd5") {
                 return std::make_shared<EpiOutputHDF5Reader>(std::make_unique<std::ifstream>(path.string()));
         } */
         else {
-                throw "EpiOutputReaderFactory::CreateReader> Unsupported file extension: " + path;
+                throw stride::util::Exception("EpiOutputReaderFactory::CreateReader> Unsupported file extension: " + path.string());
         }
 }
 
