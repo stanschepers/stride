@@ -43,12 +43,14 @@ void EpiOutputProtoReader::Read()
 
         for (int l = 0; l < protoEpiOutput.days_size(); l++) {
                 const auto& protoDay = protoEpiOutput.days(l);
-                for (int i = 0; i < protoDay.locations_size(); i++) {  // TODO: Nu ordt elke locatie elke keer toegevoegd, terwijl da alleen de eerste dag mag!
+                for (int i = 0; i < protoDay.locations_size(); i++) {
                         const auto& protoLoc  = protoDay.locations(i);
                         const auto& protoCoor = protoLoc.coordinate();
-                        geoGrid.AddLocation(std::make_shared<geopop::Location<EpiOutput>>(
-                            protoLoc.id(), protoLoc.province(), std::make_shared<EpiOutput>(),
-                            geopop::Coordinate(protoCoor.longitude(), protoCoor.latitude()), protoLoc.name()));
+                        if(protoDay.day() == 0) {
+                                geoGrid.AddLocation(std::make_shared<geopop::Location<EpiOutput>>(
+                                    protoLoc.id(), protoLoc.province(), std::make_shared<EpiOutput>(),
+                                    geopop::Coordinate(protoCoor.longitude(), protoCoor.latitude()), protoLoc.name()));
+                        }
                         geoGrid[i]->GetContent()->pop_count = protoLoc.population();
                         for (int j = 0; j < protoLoc.agebrackets_size(); j++) {
                                 const auto& protoAgeBracket = protoLoc.agebrackets(j);
