@@ -37,6 +37,7 @@ void getEpiOutputFromJSON(const string& jsonString, geopop::GeoGrid<EpiOutput> *
         epiOutputJSONReader.Read();
 }
 
+/// Checks if the epi-output json reader creates the expected geoGrid with no time steps
 TEST(EpiOutputJSONReaderTest, zeroLocationsTest) {
         string jsonString = R"({
             "measured_days": [
@@ -50,6 +51,7 @@ TEST(EpiOutputJSONReaderTest, zeroLocationsTest) {
         EXPECT_EQ(0, geoGrid.size());
 }
 
+/// Checks if the epi-output json reader creates the expected geoGrid consisting of one location with epi-output for 0 time steps
 TEST(EpiOutputJSONReaderTest, oneLocationZeroDaysTest) {
         string jsonString = R"({
             "measured_days": [
@@ -62,6 +64,7 @@ TEST(EpiOutputJSONReaderTest, oneLocationZeroDaysTest) {
         EXPECT_EQ(0, geoGrid.size());
 }
 
+/// Checks if the epi-output json reader creates the expected geoGrid consisting of one location with epi-output for 1 time step
 TEST(EpiOutputJSONReaderTest, oneLocationOneDayTest) {
         string jsonString = R"({
             "locations": [
@@ -257,6 +260,7 @@ TEST(EpiOutputJSONReaderTest, oneLocationOneDayTest) {
         EXPECT_EQ(0.02, geoGrid[0]->GetContent()->epiOutput["Senior"]["Immune"][0]);
 }
 
+/// Checks if the epi-output json reader creates the expected geoGrid consisting of two locations with epi-output for 5 time steps
 TEST(EpiOutputJSONReaderTest, twoLocationsFiveDayTest) {
         string jsonString = R"({
                 "locations": [
@@ -1103,14 +1107,17 @@ TEST(EpiOutputJSONReaderTest, twoLocationsFiveDayTest) {
         EXPECT_EQ(0.02, geoGrid[0]->GetContent()->epiOutput["Senior"]["Immune"][50]);
 }
 
+/// Checks if the epi-output json reader throws an exception when the json is empty
 TEST(EpiOutputJSONReaderTest, emptyStreamTest) {
         string jsonString = R"()";
         auto geoGrid = GeoGrid<EpiOutput>(nullptr);
         EXPECT_THROW(getEpiOutputFromJSON(jsonString, &geoGrid), runtime_error);
 }
 
-TEST(EpiOutputJSONReaderTest, invalidTypeTest) { EXPECT_TRUE(true); }
+/// Checks if the epi-output json reader is able to handle invalid input
+TEST(EpiOutputJSONReaderTest, invalidTypeTest) { EXPECT_TRUE(true); }  // TODO: How to?
 
+/// Checks if the epi-output json reader throws an exception when the json is invalid
 TEST(EpiOutputJSONReaderTest, invalidJSONTest) {
         string jsonString = R"(
         "locations": [

@@ -13,8 +13,6 @@
  *  Copyright 2019, Laurens Van Damme
  */
 
-#include <boost/property_tree/json_parser.hpp>
-#include <boost/property_tree/xml_parser.hpp>
 #include <gtest/gtest.h>
 #include <iostream>
 #include <sstream>
@@ -283,6 +281,7 @@ TEST(EpiOutputJSONWriterTest, oneLocationOneDayTest) {
         EXPECT_TRUE(compareOutput(expectedOutput, ss.str()));
 }
 
+/// Checks if the epi-output json writer creates the expected result with a geogrid consisting of two location and over 5 time steps
 TEST(EpiOutputJSONWriterTest, twoLocationsFiveDaysTest) {
         string expectedOutput = R"({
                 "locations": [

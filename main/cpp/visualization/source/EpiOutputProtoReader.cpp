@@ -35,7 +35,7 @@ EpiOutputProtoReader::EpiOutputProtoReader(std::unique_ptr<std::istream> inputSt
 void EpiOutputProtoReader::Read()
 {
         proto::EpiOutput protoEpiOutput;
-        if (!protoEpiOutput.ParseFromIstream(m_inputStream.get())) {
+        if (!protoEpiOutput.ParseFromIstream(m_inputStream.get()) || protoEpiOutput.days_size() == 0) {
                 throw std::runtime_error("Failed to parse Proto file");
         }
 
