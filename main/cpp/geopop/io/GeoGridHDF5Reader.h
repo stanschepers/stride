@@ -26,13 +26,13 @@
 namespace geopop {
 
 /**
- * An implementation of the GeoGridReader using HDF5.
+ * An implementation of the GeoGridFileReader using HDF5.
  * This class is used to read a GeoGrid from an HDF5 file.
  */
 class GeoGridHDF5Reader : public GeoGridFileReader
 {
 public:
-        /// Construct the GeoGridJSONReader with the istream which contains the Protobuf info.
+        /// Construct the GeoGridHDF5Reader with the string which contains the location of the input file.
         GeoGridHDF5Reader(std::string inputFilePath, stride::Population* pop);
 
         /// No copy constructor.
@@ -41,7 +41,7 @@ public:
         /// No copy assignement.
         GeoGridHDF5Reader operator=(const GeoGridHDF5Reader&) = delete;
 
-        /// Actually perform the read and return the GeoGrid.
+        /// Actually perform the read.
         void Read() override;
 
 private:

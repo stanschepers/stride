@@ -31,7 +31,7 @@ public:
         /// Default construtor
         GeoGridWriter() = default;
 
-        /// Pure virtual destrutor to make class abstract.
+        /// Virtual destrutor to make class abstract.
         virtual ~GeoGridWriter() = default;
 
         /// Write the GeoGrid.
