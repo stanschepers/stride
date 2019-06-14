@@ -47,7 +47,7 @@ GeoGridConfig::GeoGridConfig(const ptree& configPt) : GeoGridConfig()
         param.participation_college        = pt.get<double>("run.geopop_gen.participation_college");
         param.participation_workplace      = pt.get<double>("run.geopop_gen.participation_workplace");
 
-        people[Id::Daycare]                = pt.get<unsigned int>("people_per_Daycare", 200U)
+        people[Id::Daycare]                = pt.get<unsigned int>("people_per_Daycare", 9U)
         people[Id::PreSchool]              = pt.get<unsigned int>("people_per_PreSchool", 200U)
         people[Id::K12School]              = pt.get<unsigned int>("people_per_K12School", 500U);
         people[Id::College]                = pt.get<unsigned int>("people_per_College", 3000U);
