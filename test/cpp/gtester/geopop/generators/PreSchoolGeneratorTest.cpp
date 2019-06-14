@@ -13,7 +13,7 @@
  *  Copyright 2019, Jan Broeckhove.
  */
 
-#include "geopop/generators/PreSchoolGenerator.h"
+#include "geopop/generators/Generator.h"
 
 #include "geopop/GeoGrid.h"
 #include "geopop/GeoGridConfig.h"
@@ -31,35 +31,37 @@ using namespace stride::util;
 
 namespace {
 
-class PreSchoolGeneratorTest : public testing::Test {
+class PreSchoolGeneratorTest : public testing::Test
+{
 public:
         PreSchoolGeneratorTest()
-                : m_rn_man(RnInfo()), m_preschool_generator(m_rn_man), m_geogrid_config(), m_pop(Population::Create()),
-                  m_geo_grid(m_pop.get())
+            : m_rn_man(RnInfo()), m_preschool_generator(m_rn_man), m_gg_config(), m_pop(Population::Create()),
+              m_geo_grid(m_pop.get())
         {
         }
 
 protected:
-        RnMan                        m_rn_man;
-        PreSchoolGenerator           m_preschool_generator;
-        GeoGridConfig                m_geogrid_config;
-        shared_ptr<Population>       m_pop;
-        GeoGrid                      m_geo_grid;
+        RnMan                  m_rn_man;
+        PreSchoolGenerator     m_preschool_generator;
+        GeoGridConfig          m_gg_config;
+        shared_ptr<Population> m_pop;
+        GeoGrid                m_geo_grid;
+        unsigned int           m_pppre = m_gg_config.pools[Id::PreSchool];
 };
 
 // Check that generator can handle one Location.
 TEST_F(PreSchoolGeneratorTest, OneLocationTest)
 {
-        m_geogrid_config.input.pop_size             = 10000;
-        m_geogrid_config.popInfo.popcount_preschool = 2000;
+        m_gg_config.param.pop_size          = 10000;
+        m_gg_config.info.popcount_preschool = 2000;
 
-        auto loc1    = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
+        auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
         m_geo_grid.AddLocation(loc1);
 
-        m_preschool_generator.Apply(m_geo_grid, m_geogrid_config);
+        m_preschool_generator.Apply(m_geo_grid, m_gg_config);
 
         const auto& poolsOfLoc1 = loc1->CRefPools(Id::PreSchool);
-        EXPECT_EQ(poolsOfLoc1.size(), 10 * m_geogrid_config.pools.pools_per_preschool);
+        EXPECT_EQ(poolsOfLoc1.size(), 10 * m_pppre);
 }
 
 // Check that generator can handle one Location with a large young/old fraction.
@@ -81,10 +83,10 @@ TEST_F(PreSchoolGeneratorTest, OneLocationLargeYOFractionTest)
 // Check that generator can handle empty GeoGrid.
 TEST_F(PreSchoolGeneratorTest, ZeroLocationTest)
 {
-        m_geogrid_config.input.pop_size             = 10000;
-        m_geogrid_config.popInfo.popcount_preschool = 2000;
+        m_gg_config.param.pop_size          = 10000;
+        m_gg_config.info.popcount_preschool = 2000;
 
-        m_preschool_generator.Apply(m_geo_grid, m_geogrid_config);
+        m_preschool_generator.Apply(m_geo_grid, m_gg_config);
 
         EXPECT_EQ(m_geo_grid.size(), 0);
 }
@@ -92,8 +94,8 @@ TEST_F(PreSchoolGeneratorTest, ZeroLocationTest)
 // Check that generator can handle five Locations.
 TEST_F(PreSchoolGeneratorTest, FiveLocationsTest)
 {
-        m_geogrid_config.input.pop_size             = 37542 * 100;
-        m_geogrid_config.popInfo.popcount_preschool = 750840;
+        m_gg_config.param.pop_size          = 37542 * 100;
+        m_gg_config.info.popcount_preschool = 750840;
 
         auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 10150 * 100);
         auto loc2 = make_shared<Location>(1, 4, Coordinate(0, 0), "Vlaams-Brabant", 10040 * 100);
@@ -109,15 +111,14 @@ TEST_F(PreSchoolGeneratorTest, FiveLocationsTest)
 
         for (const shared_ptr<Location>& loc : m_geo_grid) {
                 loc->SetPopFraction(static_cast<double>(loc->GetPopCount()) /
-                                    static_cast<double>(m_geogrid_config.input.pop_size));
+                                    static_cast<double>(m_gg_config.param.pop_size));
         }
 
-        m_preschool_generator.Apply(m_geo_grid, m_geogrid_config);
+        m_preschool_generator.Apply(m_geo_grid, m_gg_config);
 
         vector<unsigned int> sizes{1101, 1067, 815, 340, 432};
         for (size_t i = 0; i < sizes.size(); i++) {
-                EXPECT_EQ(sizes[i] * m_geogrid_config.pools.pools_per_preschool,
-                          m_geo_grid[i]->CRefPools(Id::PreSchool).size() );
+                EXPECT_EQ(sizes[i] * m_pppre, m_geo_grid[i]->CRefPools(Id::PreSchool).size());
         }
 }
 

@@ -15,6 +15,7 @@
  */
 
 #include "contact/ContactPool.h"
+#include "contact/IdSubscriptArray.h"
 #include "pop/Person.h"
 #include "util/SegmentedVector.h"
 
@@ -52,13 +53,13 @@ struct ReferenceHouseHold
 // -----------------------------------------------------------------------------------------
 struct PopulationInfo
 {
-        /// Numbers of individuals in Daycare.
+        /// Number of individuals in Daycare.
         unsigned int popcount_daycare;
 
-        /// Numbers of individuals in PreSchool.
+        /// Number of individuals in PreSchool.
         unsigned int popcount_preschool;
 
-        /// Numbers of individuals in K12School.
+        /// Number of individuals in K12School.
         unsigned int popcount_k12school;
 
         /// Number of individuals in College.
@@ -67,7 +68,7 @@ struct PopulationInfo
         /// Number of individuals in Workplace.
         unsigned int popcount_workplace;
 
-        /// The number of households.
+        /// Number of households.
         unsigned int count_households;
 };
 
@@ -84,8 +85,18 @@ public:
         /// Constructor that configures input data.
         explicit GeoGridConfig(const boost::property_tree::ptree& configPt);
 
+        /// People per unit (= Household, K12School, College, etc.) for each of the ContactTypes.
+        /// Default initialization. Order in which contacttypes are listed in the
+        /// definition of the enumeration must be respected!
+        stride::ContactType::IdSubscriptArray<unsigned int> people {0U, 9U, 200U, 500U, 3000U, 20U, 2000U, 2000U};
+
+        /// Pools per unit (= Household, K12School, College, etc.) for each of the ContactTypes.
+        /// Default initialization. Order in which contacttypes are listed in the
+        /// definition of the enumeration must be respected!
+        stride::ContactType::IdSubscriptArray<unsigned int> pools {1U, 1U, 10U, 25U, 20U, 1U, 1U, 1U};
+
         // -----------------------------------------------------------------------------------------
-        // Input parameters set by constructor with configuration property tree.
+        // Parameters set by constructor with configuration property tree.
         // -----------------------------------------------------------------------------------------
         struct
         {
@@ -99,7 +110,7 @@ public:
                 double participation_college;
 
                 /// Participation of workplace (fraction of people of work age and not going to
-                /// college having employment).
+                /// college and having employment).
                 double participation_workplace;
 
                 /// Fraction of college students that commute.
@@ -110,63 +121,59 @@ public:
 
                 /// Target population size for the generated population.
                 unsigned int pop_size;
-        } input;
+        } param;
 
         ReferenceHouseHold refHH;
 
-        PopulationInfo popInfo;
+        PopulationInfo info;
 
         std::map<unsigned int, ReferenceHouseHold> refHHperHHType;
 
         std::map<unsigned int, PopulationInfo> popInfoperHHtype;
 
         // -----------------------------------------------------------------------------------------
-        // Config params for ContactPools (constants for now at least).
+        // The reference Households used to generate the population by random draws.
         // -----------------------------------------------------------------------------------------
         struct
         {
-                /// Every household constitutes a single ContactPool.
-                unsigned int pools_per_household = 1U;
+                /// Number of persons in the reference household set.
+                unsigned int person_count = 0U;
 
-                /// Used to calculate the number of K12Schools.
-                unsigned int k12school_size      = 500U;
-                unsigned int pools_per_k12school = 25U;
-                unsigned int k12_pool_size       = 20U;
+                /// Age profile per reference household.
+                std::vector<std::vector<unsigned int>> ages{};
+        } refHH;
 
-                /// Used to calculate the number of Colleges.
-                unsigned int college_size      = 3000U;
-                unsigned int pools_per_college = 20U;
-                unsigned int college_pool_size = 150U;
+        // -----------------------------------------------------------------------------------------
+        // These are numbers derived from the reference households, the target size of the generated
+        // population and the input parameters relating participation in college and workplace.
+        // These numbers are used as targets in the population generation process and are reproduced
+        // (to very close approximation) in the generated population.
+        // The numbers are set by the SetData method.
+        // -----------------------------------------------------------------------------------------
+        struct
+        {
+                /// Number of individuals in Daycare.
+                unsigned int popcount_daycare;
 
-                /// Used to calculate the number of PrimaryCommunities.
-                unsigned int primary_community_size      = 2000U;
-                unsigned int pools_per_primary_community = 1U;
-                unsigned int primary_community_pool_size = 2000U;
+                /// Number of individuals in PreSchool.
+                unsigned int popcount_preschool;
 
-                /// Used to calculate the number of SecondaryCommunities.
-                unsigned int secondary_community_size      = 2000U;
-                unsigned int pools_per_secondary_community = 1U;
-                unsigned int secondary_community_pool_size = 2000U;
+                /// Number of individuals in K12School.
+                unsigned int popcount_k12school;
 
-                /// Used to calculate the number of Workplaces.
-                unsigned int workplace_size       = 20U;
-                unsigned int pools_per_workplace  = 1U;
-                unsigned int workplace_pool_size = 20U;
+                /// Number of individuals in College.
+                unsigned int popcount_college;
 
-                /// Used to calculate the number of Daycare's. (numbers based on Kind&Gezin:
-                /// https://www.kindengezin.be/cijfers-en-rapporten/cijfers/kinderopvang-baby-peuter/)
-                unsigned int daycare_size      = 9U;
-                unsigned int pools_per_daycare = 1U;
-                unsigned int daycare_pool_size = 13U;
+                /// Number of individuals in Workplace.
+                unsigned int popcount_workplace;
 
-                /// Used to calculate the number of PreSchools. (numbers based on Vlaanderen in cijfers:
-                /// https://www.vlaanderen.be/publicaties/vlaams-onderwijs-in-cijfers-2017-2018?section=5)
-                unsigned int preschool_size      = 200U;
-                unsigned int pools_per_preschool = 10U;
-                unsigned int preschool_pool_size = 20U;
-        } pools;
+                /// The number of households.
+                unsigned int count_households;
+        } info;
 
+        // -----------------------------------------------------------------------------------------
         /// Read the househould data file, parse it and set data.
+        // -----------------------------------------------------------------------------------------
         void SetData(const std::string& householdsFileName);
 
         void SetData(const std::map<unsigned int, std::string> &householdsFileNamePerId);
