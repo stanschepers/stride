@@ -1,9 +1,6 @@
 var a00063 =
 [
-    [ "AbstractPopBuilder", "d1/d6f/a00063.html#a0dc3493a948b42c70cd879d83c879526", null ],
-    [ "~AbstractPopBuilder", "d1/d6f/a00063.html#a938da421d2a2d203e7cb90ead7b91807", null ],
-    [ "Build", "d1/d6f/a00063.html#a864865f7e88c7b737ad91a245f49f466", null ],
-    [ "m_config", "d1/d6f/a00063.html#a34a81e371e1bf73c2a75fd9d2df21353", null ],
-    [ "m_rn_man", "d1/d6f/a00063.html#a2a438798c37f82817665369d725a3a34", null ],
-    [ "m_stride_logger", "d1/d6f/a00063.html#a6aa42972b4d340a04b0366af0a889b5e", null ]
+    [ "DaysOffAll", "d1/d6f/a00063.html#a8804c46ae3703253cb96e5f81f92251b", null ],
+    [ "IsWorkOff", "d1/d6f/a00063.html#a61f87cc93335185f90d9d772f168b1bb", null ],
+    [ "IsSchoolOff", "d1/d6f/a00063.html#a12a699d750a9b0a640db4ea47df0b11c", null ]
 ];

@@ -1,5 +1,7 @@
 var a00103 =
 [
-    [ "StanController", "d5/d1e/a00103.html#a5b35e455bb4e17f6cf086cc3ec0b52c2", null ],
-    [ "Control", "d5/d1e/a00103.html#a5cc6905d4a31b469d89177de47007dbe", null ]
+    [ "CreateCliLogger", "d5/d1e/a00103.html#a106af93dd3f814adf8b87ffaaf3ef3bb", null ],
+    [ "CreateFileLogger", "d5/d1e/a00103.html#a52920faed22a1733b580a42ea065ed0d", null ],
+    [ "CreateNullLogger", "d5/d1e/a00103.html#af8edb0cd2ef9049e0347f06e73ae57c2", null ],
+    [ "CreateRotatingLogger", "d5/d1e/a00103.html#a137e01100d0d79b122f731bb1292179d", null ]
 ];

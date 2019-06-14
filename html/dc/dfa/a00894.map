@@ -1,3 +1,2 @@
-<map id="stride::DaysOffSchool" name="stride::DaysOffSchool">
-<area shape="rect" id="node2" href="$d9/da4/a00078.html" title="Interface definition. " alt="" coords="5,5,177,112"/>
+<map id="stride::util::is_iterator&lt; T, ii_detail::void_t&lt; typename std::iterator_traits&lt; T &gt;::iterator_category &gt; &gt;" name="stride::util::is_iterator&lt; T, ii_detail::void_t&lt; typename std::iterator_traits&lt; T &gt;::iterator_category &gt; &gt;">
 </map>

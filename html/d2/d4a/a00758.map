@@ -1,3 +1,4 @@
-<map id="geopop::GeoGridProtoWriter" name="geopop::GeoGridProtoWriter">
-<area shape="rect" id="node2" href="$d6/d5b/a00026.html" title="An interface for writing the GeoGrid to a file, can be implemented with multiple file types..." alt="" coords="22,5,189,97"/>
+<map id="proto::GeoGrid_Location_Coordinate" name="proto::GeoGrid_Location_Coordinate">
+<area shape="rect" id="node2" href="$d8/d41/a00038.html" title="{Message\n||}" alt="" coords="5,5,84,83"/>
+<area shape="rect" id="node4" href="$dc/d84/a00338.html" title="{double\n||}" alt="" coords="328,5,393,83"/>
 </map>

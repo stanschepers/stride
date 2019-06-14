@@ -1,15 +1,14 @@
 var searchData=
 [
-  ['daycare',['Daycare',['../de/de1/a00065.html',1,'stride::AgeBrackets']]],
-  ['daycaregenerator',['DaycareGenerator',['../d7/dec/a00010.html',1,'geopop']]],
-  ['daycarepopulator',['DaycarePopulator',['../da/d45/a00011.html',1,'geopop']]],
-  ['daysoffall',['DaysOffAll',['../d1/d09/a00077.html',1,'stride']]],
-  ['daysoffinterface',['DaysOffInterface',['../d9/da4/a00078.html',1,'stride']]],
-  ['daysoffnone',['DaysOffNone',['../d1/d51/a00079.html',1,'stride']]],
-  ['daysoffschool',['DaysOffSchool',['../da/dec/a00080.html',1,'stride']]],
-  ['daysoffstandard',['DaysOffStandard',['../d8/d53/a00081.html',1,'stride']]],
-  ['defaultpopbuilder',['DefaultPopBuilder',['../d4/d63/a00082.html',1,'stride']]],
-  ['dimension_5ftype',['dimension_type',['../d1/d2b/a00018.html',1,'geopop::geogrid_detail::KdTree2DPoint']]],
-  ['dirs',['Dirs',['../d3/d00/a00113.html',1,'stride::util::FileSys']]],
-  ['diseaseseeder',['DiseaseSeeder',['../d2/d1f/a00083.html',1,'stride']]]
+  ['daycare',['Daycare',['../d2/d79/a00051.html',1,'stride::AgeBrackets']]],
+  ['daysoffall',['DaysOffAll',['../d1/d6f/a00063.html',1,'stride']]],
+  ['daysoffinterface',['DaysOffInterface',['../df/d5f/a00064.html',1,'stride']]],
+  ['daysoffnone',['DaysOffNone',['../de/de1/a00065.html',1,'stride']]],
+  ['daysoffschool',['DaysOffSchool',['../d9/db3/a00066.html',1,'stride']]],
+  ['daysoffstandard',['DaysOffStandard',['../dc/ddf/a00067.html',1,'stride']]],
+  ['defaultpopbuilder',['DefaultPopBuilder',['../da/d24/a00068.html',1,'stride']]],
+  ['dimension_5ftype',['dimension_type',['../dd/d1b/a00015.html',1,'geopop::geogrid_detail::KdTree2DPoint']]],
+  ['dirs',['Dirs',['../da/d74/a00099.html',1,'stride::util::FileSys']]],
+  ['diseaseseeder',['DiseaseSeeder',['../d4/d31/a00069.html',1,'stride']]],
+  ['distributionreader',['DistributionReader',['../d4/dee/a00008.html',1,'geopop']]]
 ];

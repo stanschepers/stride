@@ -1,11 +1,17 @@
 var a00106 =
 [
-    [ "BoxPlotData", "d7/d70/a00106.html#add3e678e6738fbd9b3f1949f8059388f", null ],
-    [ "Calculate", "d7/d70/a00106.html#a25162798845f45f11620427e4c7baf6b", null ],
-    [ "m_total", "d7/d70/a00106.html#a777b86b3f8efb046dc4de8830c720e45", null ],
-    [ "m_min", "d7/d70/a00106.html#a7087ab4e72c5c9a6606d76996bfac882", null ],
-    [ "m_max", "d7/d70/a00106.html#a41acae191d30af298e9bac71d430cc41", null ],
-    [ "m_median", "d7/d70/a00106.html#a9433b5584a47b7cba8c8090f081a2e5c", null ],
-    [ "m_quartile1", "d7/d70/a00106.html#a6a1a8baaa4280bc35b5e58b5185b8471", null ],
-    [ "m_quartile3", "d7/d70/a00106.html#a2ca894900d4879cf4841408c85deaf92", null ]
+    [ "AddGeoPopConfig", "d7/d70/a00106.html#aa5fbf09277757712ae7caff8088e5db5", null ],
+    [ "AddGeoPopDistConfig", "d7/d70/a00106.html#a434bb6bb6d2c966a257527e2fec8916a", null ],
+    [ "CleanConfigFile", "d7/d70/a00106.html#ac2f08ab87856eaeb81a229c6553e9cc8", null ],
+    [ "Create", "d7/d70/a00106.html#ab4007f793a1924a65458824fef455208", null ],
+    [ "CreateNumThreads", "d7/d70/a00106.html#a606cc3b1a5f14bf625ace31eb9f2baf9", null ],
+    [ "FromString", "d7/d70/a00106.html#aff61de3ee9dfe5b0aac9b0b1fb950ebb", null ],
+    [ "ToString", "d7/d70/a00106.html#af968f949efaf2876f48a86da65faa5ca", null ],
+    [ "ToSha1", "d7/d70/a00106.html#a32ec1961852a81d4873a519f6bea1e36", null ],
+    [ "ToShortSha1", "d7/d70/a00106.html#ad91f6d29e307567fdb3b0a2e7c7772c0", null ],
+    [ "CreateBenchInfluenza", "d7/d70/a00106.html#a7014479a2c8efe57b292b9f61435ab61", null ],
+    [ "CreateBenchMeasles", "d7/d70/a00106.html#abf62ab97dafdce994e503296fe5d9394", null ],
+    [ "CreateDefault", "d7/d70/a00106.html#a93470c7c74cc217254876c704fa81a0f", null ],
+    [ "CreateTestsInfluenza", "d7/d70/a00106.html#a61a9ce9ce2d50ffbafa78b2a7f757598", null ],
+    [ "CreateTestsMeasles", "d7/d70/a00106.html#aa430eb71461536d855db5725ebc59cda", null ]
 ];

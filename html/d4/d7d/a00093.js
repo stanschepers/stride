@@ -1,7 +1,8 @@
 var a00093 =
 [
-    [ "InfectedFile", "d4/d7d/a00093.html#a1f9b3fab4125e26c2eebd32ee27dd977", null ],
-    [ "~InfectedFile", "d4/d7d/a00093.html#ab67bfb80c8ca94162f3c33d2c7be3f89", null ],
-    [ "Print", "d4/d7d/a00093.html#ae42038f7696374e29aef434de61d386d", null ],
-    [ "m_fstream", "d4/d7d/a00093.html#ab499185c218c6a1ef08779d8e0ece660", null ]
+    [ "HaveOpenMP", "d4/d7d/a00093.html#ad6fc5f3f3e32a15f059c64b74dfea905", null ],
+    [ "GitRevision", "d4/d7d/a00093.html#aea2c9d397f10f54b7ae47f4b0f181799", null ],
+    [ "GetHostname", "d4/d7d/a00093.html#a502bd4410a3e77792ea575f77f470d41", null ],
+    [ "NumberAvailableThreads", "d4/d7d/a00093.html#a6b4240ce29160e778c69f9e246e1747d", null ],
+    [ "ProcessorCount", "d4/d7d/a00093.html#a9b191149cb109105f73c84df61bebbb6", null ]
 ];

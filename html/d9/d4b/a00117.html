@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: stride::util::LogUtils Class Reference</title>
+<title>Stride Reference Manual: stride::viewers::SummaryFileViewer Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 83289e3</span>
+   &#160;<span id="projectnumber">- generated for commit 33b4fd4</span>
    </div>
   </td>
  </tr>
@@ -107,46 +107,54 @@ $(document).ready(function(){initNavTree('d9/d4b/a00117.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="../../d9/d9a/a00998.html">List of all members</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="../../d8/d19/a00935.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">stride::util::LogUtils Class Reference</div>  </div>
+<div class="title">stride::viewers::SummaryFileViewer Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Utilities for logging (spdlog).  
+<p>Viewer of Simulator for cases output.  
  <a href="../../d9/d4b/a00117.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../dc/d6a/a00261_source.html">LogUtils.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../da/dd4/a00291_source.html">SummaryFileViewer.h</a>&gt;</code></p>
 <div class="dynheader">
-Collaboration diagram for stride::util::LogUtils:</div>
+Collaboration diagram for stride::viewers::SummaryFileViewer:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../de/de2/a00999.gif" border="0" usemap="#stride_1_1util_1_1LogUtils_coll__map" alt="Collaboration graph"/></div>
-<map name="stride_1_1util_1_1LogUtils_coll__map" id="stride_1_1util_1_1LogUtils_coll__map">
+<div class="center"><img src="../../dc/d2b/a00936.gif" border="0" usemap="#stride_1_1viewers_1_1SummaryFileViewer_coll__map" alt="Collaboration graph"/></div>
+<map name="stride_1_1viewers_1_1SummaryFileViewer_coll__map" id="stride_1_1viewers_1_1SummaryFileViewer_coll__map">
+<area shape="rect" id="node2" href="../../d8/d53/a00081.html" title="Produces a file with simulation summary output. " alt="" coords="5,681,204,803"/>
+<area shape="rect" id="node3" title="STL class. " alt="" coords="51,541,159,619"/>
+<area shape="rect" id="node4" title="STL class. " alt="" coords="31,400,179,492"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="33,259,177,351"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="21,132,189,209"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="51,5,158,83"/>
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a106af93dd3f814adf8b87ffaaf3ef3bb"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; spdlog::logger &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4b/a00117.html#a106af93dd3f814adf8b87ffaaf3ef3bb">CreateCliLogger</a> (const std::string &amp;logger_name, const std::string &amp;file_name)</td></tr>
-<tr class="memdesc:a106af93dd3f814adf8b87ffaaf3ef3bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a (not-yet-registered) commandline and file logger, without registering it.  <a href="#a106af93dd3f814adf8b87ffaaf3ef3bb">More...</a><br /></td></tr>
-<tr class="separator:a106af93dd3f814adf8b87ffaaf3ef3bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52920faed22a1733b580a42ea065ed0d"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; spdlog::logger &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4b/a00117.html#a52920faed22a1733b580a42ea065ed0d">CreateFileLogger</a> (const std::string &amp;logger_name, const std::string &amp;file_name)</td></tr>
-<tr class="memdesc:a52920faed22a1733b580a42ea065ed0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a (not-yet-registered) file logger, without registering it.  <a href="#a52920faed22a1733b580a42ea065ed0d">More...</a><br /></td></tr>
-<tr class="separator:a52920faed22a1733b580a42ea065ed0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8edb0cd2ef9049e0347f06e73ae57c2"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; spdlog::logger &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4b/a00117.html#af8edb0cd2ef9049e0347f06e73ae57c2">CreateNullLogger</a> (const std::string &amp;logger_name=&quot;null_logger&quot;)</td></tr>
-<tr class="memdesc:af8edb0cd2ef9049e0347f06e73ae57c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a (not-yet-registered) null logger, without registering it.  <a href="#af8edb0cd2ef9049e0347f06e73ae57c2">More...</a><br /></td></tr>
-<tr class="separator:af8edb0cd2ef9049e0347f06e73ae57c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a137e01100d0d79b122f731bb1292179d"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; spdlog::logger &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4b/a00117.html#a137e01100d0d79b122f731bb1292179d">CreateRotatingLogger</a> (const std::string &amp;logger_name, const std::string &amp;file_name)</td></tr>
-<tr class="memdesc:a137e01100d0d79b122f731bb1292179d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a (not-yet-registered) rotating logger, without registering it.  <a href="#a137e01100d0d79b122f731bb1292179d">More...</a><br /></td></tr>
-<tr class="separator:a137e01100d0d79b122f731bb1292179d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ae32a48e518b0393ca96921802278ecaf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4b/a00117.html#ae32a48e518b0393ca96921802278ecaf">SummaryFileViewer</a> (std::shared_ptr&lt; <a class="el" href="../../db/ddf/a00088.html">SimRunner</a> &gt; runner, const std::string &amp;output_prefix)</td></tr>
+<tr class="memdesc:ae32a48e518b0393ca96921802278ecaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiate cases viewer.  <a href="#ae32a48e518b0393ca96921802278ecaf">More...</a><br /></td></tr>
+<tr class="separator:ae32a48e518b0393ca96921802278ecaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e54b49cad6f7b645668551b08762e28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4b/a00117.html#a1e54b49cad6f7b645668551b08762e28">Update</a> (<a class="el" href="../../d8/df7/a00331.html#ab046b05654e26ef19fd5e4e46c16e836">sim_event::Id</a> id)</td></tr>
+<tr class="memdesc:a1e54b49cad6f7b645668551b08762e28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Let viewer perform update.  <a href="#a1e54b49cad6f7b645668551b08762e28">More...</a><br /></td></tr>
+<tr class="separator:a1e54b49cad6f7b645668551b08762e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad78a0b86893d6f5ef0acb1937482bd06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d53/a00081.html">output::SummaryFile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4b/a00117.html#ad78a0b86893d6f5ef0acb1937482bd06">m_summary_file</a></td></tr>
+<tr class="separator:ad78a0b86893d6f5ef0acb1937482bd06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6728d6ca9828f1f405d8c6eeb3793c2"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="../../db/ddf/a00088.html">SimRunner</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d4b/a00117.html#ad6728d6ca9828f1f405d8c6eeb3793c2">m_runner</a></td></tr>
+<tr class="separator:ad6728d6ca9828f1f405d8c6eeb3793c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Utilities for logging (spdlog). </p>
+<div class="textblock"><p>Viewer of Simulator for cases output. </p>
 
-<p>Definition at line <a class="el" href="../../dc/d6a/a00261_source.html#l00033">33</a> of file <a class="el" href="../../dc/d6a/a00261_source.html">LogUtils.h</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a106af93dd3f814adf8b87ffaaf3ef3bb"></a>
+<p>Definition at line <a class="el" href="../../da/dd4/a00291_source.html#l00033">33</a> of file <a class="el" href="../../da/dd4/a00291_source.html">SummaryFileViewer.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ae32a48e518b0393ca96921802278ecaf"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -154,16 +162,16 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; spdlog::logger &gt; stride::util::LogUtils::CreateCliLogger </td>
+          <td class="memname">stride::viewers::SummaryFileViewer::SummaryFileViewer </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>logger_name</em>, </td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="../../db/ddf/a00088.html">SimRunner</a> &gt;&#160;</td>
+          <td class="paramname"><em>runner</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>file_name</em>&#160;</td>
+          <td class="paramname"><em>output_prefix</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -173,35 +181,67 @@ Static Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return a (not-yet-registered) commandline and file logger, without registering it. </p>
-<p>The file, if it already exits is truncated when opened. Throws iff logger already registered or if spdlog throws. </p>
+<p>Instantiate cases viewer. </p>
 
-<p>Definition at line <a class="el" href="../../dd/dd7/a00260_source.html#l00032">32</a> of file <a class="el" href="../../dd/dd7/a00260_source.html">LogUtils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/dd4/a00291_source.html#l00037">37</a> of file <a class="el" href="../../da/dd4/a00291_source.html">SummaryFileViewer.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d0/d48/a00165_source.html#l00075">stride::ControlHelper::InstallLogger()</a>.</p>
+<p>References <a class="el" href="../../de/d25/a00290_source.html#l00034">Update()</a>.</p>
 
 <p><div class="dynheader">
-Here is the caller graph for this function:</div>
+Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d9/d4b/a00117_a106af93dd3f814adf8b87ffaaf3ef3bb_icgraph.gif" border="0" usemap="#d9/d4b/a00117_a106af93dd3f814adf8b87ffaaf3ef3bb_icgraph" alt=""/></div>
-<map name="d9/d4b/a00117_a106af93dd3f814adf8b87ffaaf3ef3bb_icgraph" id="d9/d4b/a00117_a106af93dd3f814adf8b87ffaaf3ef3bb_icgraph">
-<area shape="rect" id="node2" href="../../db/df8/a00076.html#a49b3d3980626e92e16758d63bd6240a7" title="Make the appropriate logger for cli environment and register as stride_logger. " alt="" coords="197,71,352,112"/>
-<area shape="rect" id="node3" href="../../df/d5d/a00084.html#a9cef30bd849611feee70025cd9270e96" title="Actual run of the simulator. " alt="" coords="400,5,579,47"/>
-<area shape="rect" id="node5" href="../../d4/d3a/a00101.html#acddfa3cafcea42db5c8b18af0410179f" title="Actual run of the simulator. " alt="" coords="413,71,566,112"/>
-<area shape="rect" id="node6" href="../../d5/d1e/a00103.html#a5cc6905d4a31b469d89177de47007dbe" title="Actual run of the simulator. " alt="" coords="410,136,569,177"/>
-<area shape="rect" id="node4" href="../../d7/df2/a00312.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main program of the stride simulator. " alt="" coords="627,78,681,105"/>
+<div class="center"><img src="../../d9/d4b/a00117_ae32a48e518b0393ca96921802278ecaf_cgraph.gif" border="0" usemap="#d9/d4b/a00117_ae32a48e518b0393ca96921802278ecaf_cgraph" alt=""/></div>
+<map name="d9/d4b/a00117_ae32a48e518b0393ca96921802278ecaf_cgraph" id="d9/d4b/a00117_ae32a48e518b0393ca96921802278ecaf_cgraph">
+<area shape="rect" id="node2" href="../../d9/d4b/a00117.html#a1e54b49cad6f7b645668551b08762e28" title="Let viewer perform update. " alt="" coords="271,5,455,47"/>
 </map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a52920faed22a1733b580a42ea065ed0d"></a>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a1e54b49cad6f7b645668551b08762e28"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stride::viewers::SummaryFileViewer::Update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d8/df7/a00331.html#ab046b05654e26ef19fd5e4e46c16e836">sim_event::Id</a>&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Let viewer perform update. </p>
+
+<p>Definition at line <a class="el" href="../../de/d25/a00290_source.html#l00034">34</a> of file <a class="el" href="../../de/d25/a00290_source.html">SummaryFileViewer.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="../../da/d1e/a00149_source.html#l00139">stride::ControlHelper::RegisterViewers()</a>, and <a class="el" href="../../da/dd4/a00291_source.html#l00037">SummaryFileViewer()</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/d4b/a00117_a1e54b49cad6f7b645668551b08762e28_icgraph.gif" border="0" usemap="#d9/d4b/a00117_a1e54b49cad6f7b645668551b08762e28_icgraph" alt=""/></div>
+<map name="d9/d4b/a00117_a1e54b49cad6f7b645668551b08762e28_icgraph" id="d9/d4b/a00117_a1e54b49cad6f7b645668551b08762e28_icgraph">
+<area shape="rect" id="node2" href="../../df/d03/a00062.html#af0131365a6c658898bf3dd49eead3ed7" title="Register the viewers of the SimRunner. " alt="" coords="269,5,423,47"/>
+<area shape="rect" id="node5" href="../../d9/d4b/a00117.html#ae32a48e518b0393ca96921802278ecaf" title="Instantiate cases viewer. " alt="" coords="237,71,455,112"/>
+<area shape="rect" id="node3" href="../../d1/d1e/a00087.html#acddfa3cafcea42db5c8b18af0410179f" title="Control the execution of the simulation. " alt="" coords="503,5,656,47"/>
+<area shape="rect" id="node4" href="../../dd/dfe/a00283.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main program of the stride simulator. " alt="" coords="704,13,759,39"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ad78a0b86893d6f5ef0acb1937482bd06"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -209,38 +249,21 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; spdlog::logger &gt; stride::util::LogUtils::CreateFileLogger </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>logger_name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>file_name</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="memname"><a class="el" href="../../d8/d53/a00081.html">output::SummaryFile</a> stride::viewers::SummaryFileViewer::m_summary_file</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return a (not-yet-registered) file logger, without registering it. </p>
-<p>The file, if it already exits is truncated when opened. Throws iff logger already registered or if spdlog throws. </p>
-
-<p>Definition at line <a class="el" href="../../dd/dd7/a00260_source.html#l00053">53</a> of file <a class="el" href="../../dd/dd7/a00260_source.html">LogUtils.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../da/dd4/a00291_source.html#l00046">46</a> of file <a class="el" href="../../da/dd4/a00291_source.html">SummaryFileViewer.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="af8edb0cd2ef9049e0347f06e73ae57c2"></a>
+<a class="anchor" id="ad6728d6ca9828f1f405d8c6eeb3793c2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -248,104 +271,31 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; logger &gt; stride::util::LogUtils::CreateNullLogger </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>logger_name</em> = <code>&quot;null_logger&quot;</code></td><td>)</td>
-          <td></td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="../../db/ddf/a00088.html">SimRunner</a>&gt; stride::viewers::SummaryFileViewer::m_runner</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return a (not-yet-registered) null logger, without registering it. </p>
-<p>Throws iff logger already registered or if spdlog throws. </p>
-
-<p>Definition at line <a class="el" href="../../dd/dd7/a00260_source.html#l00071">71</a> of file <a class="el" href="../../dd/dd7/a00260_source.html">LogUtils.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="../../de/d76/a00134_source.html#l00033">stride::AbstractPopBuilder::AbstractPopBuilder()</a>, <a class="el" href="../../dd/d86/a00271_source.html#l00047">stride::Population::Create()</a>, <a class="el" href="../../da/d15/a00188_source.html#l00022">geopop::Generator::Generator()</a>, and <a class="el" href="../../d0/d19/a00273_source.html#l00030">geopop::Populator::Populator()</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d9/d4b/a00117_af8edb0cd2ef9049e0347f06e73ae57c2_icgraph.gif" border="0" usemap="#d9/d4b/a00117_af8edb0cd2ef9049e0347f06e73ae57c2_icgraph" alt=""/></div>
-<map name="d9/d4b/a00117_af8edb0cd2ef9049e0347f06e73ae57c2_icgraph" id="d9/d4b/a00117_af8edb0cd2ef9049e0347f06e73ae57c2_icgraph">
-<area shape="rect" id="node2" href="../../d1/d6f/a00063.html#a0dc3493a948b42c70cd879d83c879526" title="Initializing constructor. " alt="" coords="197,5,385,47"/>
-<area shape="rect" id="node3" href="../../d1/d84/a00097.html#a56ed209c60c77e0080a0a653b09b26ce" title="Create a Population initialized by the configuration in property tree. " alt="" coords="225,71,358,112"/>
-<area shape="rect" id="node4" href="../../df/d86/a00012.html#ac9372a526b3a7672b5dca424b3743fd5" title="Constructor with random number manager and logger. " alt="" coords="216,136,367,177"/>
-<area shape="rect" id="node5" href="../../db/d3a/a00040.html#a555413f57e921b72913adb79172abb9d" title="Construct with a RnMan and a logger. " alt="" coords="218,201,365,243"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a137e01100d0d79b122f731bb1292179d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt; logger &gt; stride::util::LogUtils::CreateRotatingLogger </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>logger_name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>file_name</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Return a (not-yet-registered) rotating logger, without registering it. </p>
-<p>Throws iff logger already registered or if spdlog throws. </p>
-
-<p>Definition at line <a class="el" href="../../dd/dd7/a00260_source.html#l00088">88</a> of file <a class="el" href="../../dd/dd7/a00260_source.html">LogUtils.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="../../dd/d86/a00271_source.html#l00047">stride::Population::Create()</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d9/d4b/a00117_a137e01100d0d79b122f731bb1292179d_icgraph.gif" border="0" usemap="#d9/d4b/a00117_a137e01100d0d79b122f731bb1292179d_icgraph" alt=""/></div>
-<map name="d9/d4b/a00117_a137e01100d0d79b122f731bb1292179d_icgraph" id="d9/d4b/a00117_a137e01100d0d79b122f731bb1292179d_icgraph">
-<area shape="rect" id="node2" href="../../d1/d84/a00097.html#a56ed209c60c77e0080a0a653b09b26ce" title="Create a Population initialized by the configuration in property tree. " alt="" coords="223,5,356,47"/>
-</map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="../../da/dd4/a00291_source.html#l00047">47</a> of file <a class="el" href="../../da/dd4/a00291_source.html">SummaryFileViewer.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../dc/d6a/a00261_source.html">LogUtils.h</a></li>
-<li><a class="el" href="../../dd/dd7/a00260_source.html">LogUtils.cpp</a></li>
+<li><a class="el" href="../../da/dd4/a00291_source.html">SummaryFileViewer.h</a></li>
+<li><a class="el" href="../../de/d25/a00290_source.html">SummaryFileViewer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d0/dc3/a00354.html">stride</a></li><li class="navelem"><a class="el" href="../../d7/ddb/a00361.html">util</a></li><li class="navelem"><a class="el" href="../../d9/d4b/a00117.html">LogUtils</a></li>
-    <li class="footer">Generated on Fri Apr 12 2019 20:28:14 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../de/dc8/a00325.html">stride</a></li><li class="navelem"><a class="el" href="../../df/d91/a00335.html">viewers</a></li><li class="navelem"><a class="el" href="../../d9/d4b/a00117.html">SummaryFileViewer</a></li>
+    <li class="footer">Generated on Fri Jun 14 2019 14:41:39 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

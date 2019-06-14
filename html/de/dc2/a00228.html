@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: Id.cpp File Reference</title>
+<title>Stride Reference Manual: KdNode.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 83289e3</span>
+   &#160;<span id="projectnumber">- generated for commit 33b4fd4</span>
    </div>
   </td>
  </tr>
@@ -105,61 +105,108 @@ $(document).ready(function(){initNavTree('de/dc2/a00228.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">Id.cpp File Reference</div>  </div>
+<div class="title">KdNode.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Implementation of EventId.  
-<a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="../../dd/d2d/a00229_source.html">Id.h</a>&quot;</code><br />
-<code>#include &lt;boost/algorithm/string.hpp&gt;</code><br />
-<code>#include &lt;map&gt;</code><br />
+<div class="textblock"><code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for Id.cpp:</div>
+Include dependency graph for KdNode.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d6/d90/a00514.gif" border="0" usemap="#Id_8cpp" alt=""/></div>
-<map name="Id_8cpp" id="Id_8cpp">
-<area shape="rect" id="node2" href="../../dd/d2d/a00229.html" title="Definition of EventId. " alt="" coords="61,80,107,107"/>
+<div class="center"><img src="../../d7/d37/a00505.gif" border="0" usemap="#KdNode_8h" alt=""/></div>
+<map name="KdNode_8h" id="KdNode_8h">
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/d1f/a00506.gif" border="0" usemap="#KdNode_8hdep" alt=""/></div>
+<map name="KdNode_8hdep" id="KdNode_8hdep">
+<area shape="rect" id="node2" href="../../dd/d2d/a00229.html" title="KdTree.h" alt="" coords="2245,80,2321,107"/>
+<area shape="rect" id="node50" href="../../d0/d53/a00232.html" title="KdTree_def.h" alt="" coords="2107,155,2210,181"/>
+<area shape="rect" id="node3" href="../../d8/df1/a00174.html" title="GeoAggregator.h" alt="" coords="3765,229,3896,256"/>
+<area shape="rect" id="node5" href="../../de/df3/a00185.html" title="GeoGridKdTree.h" alt="" coords="2235,155,2363,181"/>
+<area shape="rect" id="node4" href="../../de/d45/a00175.html" title="GeoGrid.cpp" alt="" coords="3765,379,3867,405"/>
+<area shape="rect" id="node6" href="../../d2/d94/a00184.html" title="GeoGridKdTree.cpp" alt="" coords="2087,229,2230,256"/>
+<area shape="rect" id="node7" href="../../d5/de9/a00176.html" title="GeoGrid.h" alt="" coords="2254,229,2341,256"/>
+<area shape="rect" id="node8" href="../../d6/dfb/a00172.html" title="Header for the command line controller. " alt="" coords="3381,379,3541,405"/>
+<area shape="rect" id="node9" href="../../d5/d5b/a00135.html" title="CommutesCSVReader.cpp" alt="" coords="3499,304,3690,331"/>
+<area shape="rect" id="node10" href="../../d0/d81/a00180.html" title="GeoGridJSONReader.cpp" alt="" coords="3565,379,3741,405"/>
+<area shape="rect" id="node11" href="../../d7/d25/a00182.html" title="GeoGridJSONWriter.cpp" alt="" coords="887,304,1055,331"/>
+<area shape="rect" id="node12" href="../../d8/d00/a00186.html" title="GeoGridProtoReader.cpp" alt="" coords="5,379,184,405"/>
+<area shape="rect" id="node13" href="../../da/d15/a00188.html" title="GeoGridProtoWriter.cpp" alt="" coords="1129,304,1300,331"/>
+<area shape="rect" id="node14" href="../../d7/d6e/a00190.html" title="GeoGridReader.cpp" alt="" coords="1324,304,1468,331"/>
+<area shape="rect" id="node15" href="../../d4/d08/a00237.html" title="LocationsReader.h" alt="" coords="3883,304,4021,331"/>
+<area shape="rect" id="node21" href="../../de/db1/a00197.html" title="Initialize populations: implementation. " alt="" coords="2035,453,2178,480"/>
+<area shape="rect" id="node22" href="../../de/d76/a00134.html" title="CollegePopulator.cpp" alt="" coords="1854,304,2010,331"/>
+<area shape="rect" id="node23" href="../../d1/db7/a00157.html" title="DaycarePopulator.cpp" alt="" coords="2035,304,2197,331"/>
+<area shape="rect" id="node24" href="../../d5/df1/a00206.html" title="HouseholdPopulator.cpp" alt="" coords="209,379,386,405"/>
+<area shape="rect" id="node25" href="../../d9/d01/a00227.html" title="K12SchoolPopulator.cpp" alt="" coords="2272,304,2448,331"/>
+<area shape="rect" id="node26" href="../../d0/d3e/a00253.html" title="PreSchoolPopulator.cpp" alt="" coords="2472,304,2645,331"/>
+<area shape="rect" id="node27" href="../../d4/d04/a00255.html" title="PrimaryCommunityPopulator.cpp" alt="" coords="2669,304,2901,331"/>
+<area shape="rect" id="node28" href="../../d5/d42/a00269.html" title="SecondaryCommunityPopulator.cpp" alt="" coords="2925,304,3176,331"/>
+<area shape="rect" id="node29" href="../../d8/d17/a00304.html" title="WorkplacePopulator.cpp" alt="" coords="3200,304,3373,331"/>
+<area shape="rect" id="node30" href="../../d1/de1/a00213.html" title="Initialize populations: implementation. " alt="" coords="410,379,569,405"/>
+<area shape="rect" id="node31" href="../../d0/da7/a00250.html" title="Header file for the core Population class. " alt="" coords="1728,304,1829,331"/>
+<area shape="rect" id="node16" href="../../d7/d40/a00236.html" title="LocationsCSVReader.h" alt="" coords="4037,379,4203,405"/>
+<area shape="rect" id="node19" href="../../dd/dd7/a00260.html" title="ReaderFactory.h" alt="" coords="3891,379,4013,405"/>
+<area shape="rect" id="node17" href="../../d3/d42/a00235.html" title="LocationsCSVReader.cpp" alt="" coords="4126,453,4306,480"/>
+<area shape="rect" id="node18" href="../../d0/d2f/a00259.html" title="ReaderFactory.cpp" alt="" coords="3965,453,4102,480"/>
+<area shape="rect" id="node20" href="../../d9/d90/a00178.html" title="GeoGridConfig.cpp" alt="" coords="3799,453,3940,480"/>
+<area shape="rect" id="node32" href="../../d0/d48/a00165.html" title="Implementation for the DiseaseSeeder class. " alt="" coords="2803,379,2949,405"/>
+<area shape="rect" id="node33" href="../../dd/de3/a00201.html" title="Implementation for HelthSeeder class. " alt="" coords="2973,379,3109,405"/>
+<area shape="rect" id="node34" href="../../d9/d39/a00257.html" title="Implementation for the PublicHealthAgency class. " alt="" coords="3133,379,3307,405"/>
+<area shape="rect" id="node35" href="../../da/d1e/a00149.html" title="Header for the command line controller. " alt="" coords="767,379,903,405"/>
+<area shape="rect" id="node36" href="../../d3/d5e/a00275.html" title="Header for the command line controller. " alt="" coords="927,379,1062,405"/>
+<area shape="rect" id="node37" href="../../d0/dcd/a00280.html" title="Header for the command line controller. " alt="" coords="1086,379,1226,405"/>
+<area shape="rect" id="node38" href="../../d1/d0d/a00171.html" title="Generator.h" alt="" coords="644,379,743,405"/>
+<area shape="rect" id="node40" href="../../dd/dae/a00163.html" title="Initialize populations: implementation. " alt="" coords="1251,379,1413,405"/>
+<area shape="rect" id="node41" href="../../de/dbc/a00249.html" title="Core Population class. " alt="" coords="1438,379,1554,405"/>
+<area shape="rect" id="node42" href="../../d8/d0a/a00292.html" title="Implementation for the SurveySeeder class. " alt="" coords="1579,379,1717,405"/>
+<area shape="rect" id="node43" href="../../dd/d86/a00271.html" title="Implementation for the Simulator class. " alt="" coords="1741,379,1816,405"/>
+<area shape="rect" id="node44" href="../../d6/d4b/a00277.html" title="Implementation for SimRunner. " alt="" coords="1840,379,1957,405"/>
+<area shape="rect" id="node45" href="../../d7/d06/a00131.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="1981,379,2086,405"/>
+<area shape="rect" id="node46" href="../../df/d24/a00217.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="2110,379,2271,405"/>
+<area shape="rect" id="node47" href="../../dd/df3/a00219.html" title="Observer for SimEvents for commandline interface usage. " alt="" coords="2296,379,2437,405"/>
+<area shape="rect" id="node48" href="../../d6/d22/a00245.html" title="Implementation of the CasesFile class. " alt="" coords="2461,379,2581,405"/>
+<area shape="rect" id="node49" href="../../de/d25/a00290.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="2605,379,2779,405"/>
+<area shape="rect" id="node39" href="../../d0/de8/a00133.html" title="CollegeGenerator.cpp" alt="" coords="613,453,773,480"/>
 </map>
 </div>
 </div>
 <p><a href="../../de/dc2/a00228_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:d0/dc3/a00354"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc3/a00354.html">stride</a></td></tr>
-<tr class="memdesc:d0/dc3/a00354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3c/a00028.html">geopop::KdTree&lt; P &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A k-d tree: a k-dimensional generalization of binary search trees This data structure allows for efficient lookup of points and range queries with an Axis-Aligned Bounding Box (when balanced).  <a href="../../dc/d3c/a00028.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d0/d65/a00360"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d65/a00360.html">stride::sim_event</a></td></tr>
-<tr class="memdesc:d0/d65/a00360"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace to manage events signalled by the <a class="el" href="../../d9/dcc/a00102.html" title="The simulation runner drive simulator throufgh time steps. ">SimRunner</a>. <br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d46/a00002.html">geopop::kd::BaseNode&lt; P &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A base class for all instantiations of a <a class="el" href="../../d0/d33/a00027.html" title="A node in the KdTree (parameter P: the type of point, parameter D: dimension this node splits on)...">Node</a> with D.  <a href="../../d7/d46/a00002.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d33/a00027.html">geopop::kd::Node&lt; P, D &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A node in the <a class="el" href="../../dc/d3c/a00028.html" title="A k-d tree: a k-dimensional generalization of binary search trees This data structure allows for effi...">KdTree</a> (parameter P: the type of point, parameter D: dimension this node splits on).  <a href="../../d0/d33/a00027.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a43c0310b3eef6024b540ffaa5c4c39b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d65/a00360.html#a43c0310b3eef6024b540ffaa5c4c39b2">stride::sim_event::IsType</a> (const std::string &amp;s)</td></tr>
-<tr class="memdesc:a43c0310b3eef6024b540ffaa5c4c39b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether string is name of a ContactPoolType::Id.  <a href="../../d0/d65/a00360.html#a43c0310b3eef6024b540ffaa5c4c39b2">More...</a><br /></td></tr>
-<tr class="separator:a43c0310b3eef6024b540ffaa5c4c39b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa54357f0c5b3af4e7905ed503167ede"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d65/a00360.html#aaa54357f0c5b3af4e7905ed503167ede">stride::sim_event::ToString</a> (Id w)</td></tr>
-<tr class="memdesc:aaa54357f0c5b3af4e7905ed503167ede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a ContactPoolType::Id value to corresponding name.  <a href="../../d0/d65/a00360.html#aaa54357f0c5b3af4e7905ed503167ede">More...</a><br /></td></tr>
-<tr class="separator:aaa54357f0c5b3af4e7905ed503167ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac81b85da174b73232cac26f53bd6d3a0"><td class="memItemLeft" align="right" valign="top">Id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d65/a00360.html#ac81b85da174b73232cac26f53bd6d3a0">stride::sim_event::ToType</a> (const std::string &amp;s)</td></tr>
-<tr class="memdesc:ac81b85da174b73232cac26f53bd6d3a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string with name to Id.  <a href="../../d0/d65/a00360.html#ac81b85da174b73232cac26f53bd6d3a0">More...</a><br /></td></tr>
-<tr class="separator:ac81b85da174b73232cac26f53bd6d3a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:d0/d39/a00314"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/a00314.html">geopop</a></td></tr>
+<tr class="memdesc:d0/d39/a00314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:d3/db8/a00316"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/db8/a00316.html">geopop::kd</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implementation of EventId. </p>
-
-<p>Definition in file <a class="el" href="../../de/dc2/a00228_source.html">Id.cpp</a>.</p>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_e5f84963ccc55302ca6163b928f19348.html">sim</a></li><li class="navelem"><a class="el" href="../../dir_3176c632cf0b47b7b3ccddf7a3eb7ed2.html">event</a></li><li class="navelem"><a class="el" href="../../de/dc2/a00228.html">Id.cpp</a></li>
-    <li class="footer">Generated on Fri Apr 12 2019 20:28:13 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_1fafd3a38d53c2ca250f450f6134d22a.html">geo</a></li><li class="navelem"><a class="el" href="../../de/dc2/a00228.html">KdNode.h</a></li>
+    <li class="footer">Generated on Fri Jun 14 2019 14:41:37 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

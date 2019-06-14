@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: GeoGridWriterFactory.cpp File Reference</title>
+<title>Stride Reference Manual: ImportPopBuilder.cpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 83289e3</span>
+   &#160;<span id="projectnumber">- generated for commit 33b4fd4</span>
    </div>
   </td>
  </tr>
@@ -107,30 +107,49 @@ $(document).ready(function(){initNavTree('d1/de1/a00213.html','../../');});
   <div class="summary">
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">GeoGridWriterFactory.cpp File Reference</div>  </div>
+<div class="title">ImportPopBuilder.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d3/dd1/a00214_source.html">GeoGridWriterFactory.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../de/dd2/a00207_source.html">GeoGridProtoWriter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../dd/dc1/a00212_source.html">GeoGridWriter.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../de/df3/a00185_source.html">util/Exception.h</a>&quot;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;filesystem&gt;</code><br />
+
+<p>Initialize populations: implementation.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d3/dd1/a00214_source.html">ImportPopBuilder.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/de9/a00176_source.html">geopop/GeoGrid.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d9/dd0/a00191_source.html">geopop/io/GeoGridReader.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/df4/a00193_source.html">geopop/io/GeoGridReaderFactory.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d0/da7/a00250_source.html">pop/Population.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d0/d27/a00239_source.html">util/LogUtils.h</a>&quot;</code><br />
+<code>#include &lt;boost/property_tree/ptree.hpp&gt;</code><br />
+<code>#include &lt;spdlog/logger.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for GeoGridWriterFactory.cpp:</div>
+Include dependency graph for ImportPopBuilder.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../da/d7e/a00492.gif" border="0" usemap="#GeoGridWriterFactory_8cpp" alt=""/></div>
-<map name="GeoGridWriterFactory_8cpp" id="GeoGridWriterFactory_8cpp">
-<area shape="rect" id="node2" href="../../d3/dd1/a00214.html" title="GeoGridWriterFactory.h" alt="" coords="5,155,172,181"/>
-<area shape="rect" id="node5" href="../../de/dd2/a00207.html" title="GeoGridProtoWriter.h" alt="" coords="445,80,599,107"/>
-<area shape="rect" id="node6" href="../../dd/dc1/a00212.html" title="GeoGridWriter.h" alt="" coords="248,155,369,181"/>
-<area shape="rect" id="node33" href="../../de/df3/a00185.html" title="util/Exception.h" alt="" coords="51,229,169,256"/>
-<area shape="rect" id="node8" href="../../d0/def/a00256.html" title="geopop/Location.h" alt="" coords="1128,155,1268,181"/>
-<area shape="rect" id="node9" href="../../db/ddf/a00164.html" title="Definition of ContactPool Id Type. " alt="" coords="867,311,1031,338"/>
-<area shape="rect" id="node14" href="../../d1/da8/a00230.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="602,229,791,256"/>
-<area shape="rect" id="node19" href="../../dc/de6/a00167.html" title="geopop/Coordinate.h" alt="" coords="1693,229,1849,256"/>
-<area shape="rect" id="node22" href="../../df/d95/a00299.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="1112,229,1284,256"/>
-<area shape="rect" id="node23" href="../../de/d55/a00323.html" title="Interface/Implementation for SVIterator. " alt="" coords="1286,311,1385,338"/>
+<div class="center"><img src="../../db/d8e/a00482.gif" border="0" usemap="#ImportPopBuilder_8cpp" alt=""/></div>
+<map name="ImportPopBuilder_8cpp" id="ImportPopBuilder_8cpp">
+<area shape="rect" id="node2" href="../../d3/dd1/a00214.html" title="Initialize populations. " alt="" coords="288,87,431,114"/>
+<area shape="rect" id="node7" href="../../d5/de9/a00176.html" title="geopop/GeoGrid.h" alt="" coords="958,169,1097,196"/>
+<area shape="rect" id="node26" href="../../d9/dd0/a00191.html" title="geopop/io/GeoGridReader.h" alt="" coords="373,251,569,278"/>
+<area shape="rect" id="node30" href="../../dd/df4/a00193.html" title="geopop/io/GeoGridReaderFactory.h" alt="" coords="1013,333,1255,360"/>
+<area shape="rect" id="node31" href="../../d0/da7/a00250.html" title="Header file for the core Population class. " alt="" coords="1613,87,1743,114"/>
+<area shape="rect" id="node49" href="../../d0/d27/a00239.html" title="Logging (spdlog) utilities. " alt="" coords="2324,87,2432,114"/>
+<area shape="rect" id="node3" href="../../d8/dfa/a00121.html" title="Base Class for PopBuilders. " alt="" coords="173,169,327,196"/>
+<area shape="rect" id="node8" href="../../db/d48/a00148.html" title="Definition of ContactPool Id Type. " alt="" coords="1981,333,2145,360"/>
+<area shape="rect" id="node14" href="../../de/df3/a00185.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="810,251,1018,278"/>
+<area shape="rect" id="node15" href="../../dd/d2d/a00229.html" title="KdTree.h" alt="" coords="811,333,887,360"/>
+<area shape="rect" id="node21" href="../../df/d17/a00231.html" title="KdTree2DPoint.h" alt="" coords="660,333,787,360"/>
+<area shape="rect" id="node16" href="../../df/d6a/a00119.html" title="AABBox.h" alt="" coords="879,415,965,442"/>
+<area shape="rect" id="node17" href="../../de/dc2/a00228.html" title="KdNode.h" alt="" coords="1192,415,1276,442"/>
+<area shape="rect" id="node22" href="../../dd/db2/a00151.html" title="geopop/Coordinate.h" alt="" coords="648,415,804,442"/>
+<area shape="rect" id="node32" href="../../d5/da7/a00144.html" title="Header for the core ContactPool class. " alt="" coords="1818,251,1981,278"/>
+<area shape="rect" id="node35" href="../../d9/db6/a00146.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="2055,169,2242,196"/>
+<area shape="rect" id="node40" href="../../d9/d2a/a00270.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="2477,251,2649,278"/>
+<area shape="rect" id="node44" href="../../d6/d08/a00244.html" title="Header file for the Person class. " alt="" coords="1625,169,1731,196"/>
+<area shape="rect" id="node46" href="../../da/d53/a00265.html" title="Interface of RnMan. " alt="" coords="1387,251,1487,278"/>
+<area shape="rect" id="node33" href="../../d2/d82/a00142.html" title="Header for the ContactLogMode class. " alt="" coords="1762,333,1957,360"/>
+<area shape="rect" id="node36" href="../../da/de7/a00210.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="2211,251,2348,278"/>
+<area shape="rect" id="node41" href="../../d4/d5b/a00294.html" title="Interface/Implementation for SVIterator. " alt="" coords="2826,333,2925,360"/>
+<area shape="rect" id="node45" href="../../d3/db1/a00200.html" title="Header for the Health class. " alt="" coords="1664,251,1793,278"/>
+<area shape="rect" id="node47" href="../../df/da9/a00263.html" title="Interface of RnPcg. " alt="" coords="1664,333,1737,360"/>
 </map>
 </div>
 </div>
@@ -138,17 +157,21 @@ Include dependency graph for GeoGridWriterFactory.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:d0/dc5/a00343"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc5/a00343.html">geopop</a></td></tr>
-<tr class="memdesc:d0/dc5/a00343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
+<tr class="memitem:de/dc8/a00325"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc8/a00325.html">stride</a></td></tr>
+<tr class="memdesc:de/dc8/a00325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Initialize populations: implementation. </p>
+
+<p>Definition in file <a class="el" href="../../d1/de1/a00213_source.html">ImportPopBuilder.cpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_c490ff723361adf09283ce460b26e466.html">io</a></li><li class="navelem"><a class="el" href="../../d1/de1/a00213.html">GeoGridWriterFactory.cpp</a></li>
-    <li class="footer">Generated on Fri Apr 12 2019 20:28:13 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_d174127a4330655b353181aebfd9b441.html">pop</a></li><li class="navelem"><a class="el" href="../../d1/de1/a00213.html">ImportPopBuilder.cpp</a></li>
+    <li class="footer">Generated on Fri Jun 14 2019 14:41:37 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

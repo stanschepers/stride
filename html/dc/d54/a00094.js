@@ -1,8 +1,24 @@
 var a00094 =
 [
-    [ "PersonsFile", "dc/d54/a00094.html#ab2c1e70237152817647dded0f5906c6b", null ],
-    [ "~PersonsFile", "dc/d54/a00094.html#aafacf4448a2354eff812e02d2048e114", null ],
-    [ "Print", "dc/d54/a00094.html#ac72a90d142c34ca2137bdf09760ba2c4", null ],
-    [ "Initialize", "dc/d54/a00094.html#a70798ee06674e243f7dad24ae2dca7fd", null ],
-    [ "m_fstream", "dc/d54/a00094.html#a426f21983cf23767cfa51c0f4b9fb068", null ]
+    [ "CSV", "dc/d54/a00094.html#a7e8326db4a78fcbf21837d61aa4eb201", null ],
+    [ "CSV", "dc/d54/a00094.html#a46bba243855b4fc66c20bf3bc55fdc95", null ],
+    [ "CSV", "dc/d54/a00094.html#a9eb2f114de1548f7447292ead90cf74f", null ],
+    [ "CSV", "dc/d54/a00094.html#abc23be4e1354d6fa3f8717edfee37423", null ],
+    [ "CSV", "dc/d54/a00094.html#a6d4944a529c10da58327ee8351688eca", null ],
+    [ "CSV", "dc/d54/a00094.html#a6aadfb52b95c349f14469a203d21472b", null ],
+    [ "operator==", "dc/d54/a00094.html#a2f700f0aa2b27d664adb69e27a6eb4b1", null ],
+    [ "AddRow", "dc/d54/a00094.html#a1ae467f9599974c0f180c529f8a9f298", null ],
+    [ "AddRows", "dc/d54/a00094.html#a95a803434a1562b71908b536095c532e", null ],
+    [ "AddRow", "dc/d54/a00094.html#a29c1deab9054f5a70d16e3b5dcef4970", null ],
+    [ "AddRow", "dc/d54/a00094.html#a6fb7f772aabba9465da13e8d2abb197a", null ],
+    [ "GetColumnCount", "dc/d54/a00094.html#a63ffba1157ea6381bbce102c430e189b", null ],
+    [ "GetIndexForLabel", "dc/d54/a00094.html#aed99cf47769a6284b45c2815b08d1bd0", null ],
+    [ "Write", "dc/d54/a00094.html#a37f3333bbf84b5babbdd63811ed773c1", null ],
+    [ "GetLabels", "dc/d54/a00094.html#ad153bb329555a2b114defc97e53793ad", null ],
+    [ "ReadFromStream", "dc/d54/a00094.html#a2f3c33a76164f6cbc6e31aab6f8b560d", null ],
+    [ "WriteLabels", "dc/d54/a00094.html#a38b31963922766d5da78dfc5b95e6668", null ],
+    [ "WriteRows", "dc/d54/a00094.html#a8595802615346728b2e76121e1cbda4c", null ],
+    [ "operator<<", "dc/d54/a00094.html#a28ea564a70fdefa611b990e8c8fedd5a", null ],
+    [ "m_labels", "dc/d54/a00094.html#a893717de16de8022736a1ecc92dd694c", null ],
+    [ "m_column_count", "dc/d54/a00094.html#a46f209713ecbcb6b2aeb52974b098b86", null ]
 ];

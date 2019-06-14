@@ -1,3 +1,4 @@
-<map id="geopop::PreSchoolGenerator" name="geopop::PreSchoolGenerator">
-<area shape="rect" id="node2" href="$df/d86/a00012.html" title="An interface base class for generators that provide geo data and apply it onto the GeoGrid..." alt="" coords="37,5,180,141"/>
+<map id="stride::GeoPopBuilder" name="stride::GeoPopBuilder">
+<area shape="rect" id="node2" href="$d2/dee/a00049.html" title="Base Class for PopBuilders. " alt="" coords="185,432,373,539"/>
+<area shape="rect" id="node4" href="$d3/d32/a00105.html" title="{stride::util::RnMan\n||+ RnMan()\l+ RnMan()\l+ operator==()\l+ GetInfo()\l+ GetUniform01Generator()\l+ GetUniformIntGenerator()\l+ GetDiscreteGenerator()\l+ MakeWeightedCoinFlip()\l+ Initialize()\l+ IsEmpty()\l+ Shuffle()\l}" alt="" coords="178,145,381,369"/>
 </map>

@@ -1,10 +1,8 @@
 var a00071 =
 [
-    [ "ContactHandler", "d0/d89/a00071.html#acd8b09e759ed6049412de25662d1301d", null ],
-    [ "operator()", "d0/d89/a00071.html#ac03cd0d69d17bb0a97189c24ed537fdf", null ],
-    [ "HasContactAndTransmission", "d0/d89/a00071.html#a65ae0c571176ea267cf980ce31408f35", null ],
-    [ "HasContact", "d0/d89/a00071.html#a4a6ef10cff06328c9bc5b7f6337339ad", null ],
-    [ "HasTransmission", "d0/d89/a00071.html#a94d8f2bdeff1e99b1e6380060e8fb622", null ],
-    [ "RateToProbability", "d0/d89/a00071.html#a51fd44b433163a1bd2a9fb424a003344", null ],
-    [ "m_uniform01_generator", "d0/d89/a00071.html#ad89329d01eda188d96ac8fea0386cdc4", null ]
+    [ "GeoPopBuilder", "d0/d89/a00071.html#a9159585958c5ab6405e8022c5bbd7421", null ],
+    [ "Build", "d0/d89/a00071.html#a23493e205a9a22922b1511b80e64bc1e", null ],
+    [ "MakeLocations", "d0/d89/a00071.html#a0a67e3e8c4d250509a6f76acb076824e", null ],
+    [ "MakePools", "d0/d89/a00071.html#a6c0a01d2def04c804fff3ef162dfbc4f", null ],
+    [ "MakePersons", "d0/d89/a00071.html#a22327526a0de14f648b2375065527fda", null ]
 ];

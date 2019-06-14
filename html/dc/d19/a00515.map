@@ -1,2 +1,7 @@
-<map id="Id.h" name="Id.h">
+<map id="Location.h" name="Location.h">
+<area shape="rect" id="node2" href="$db/d48/a00148.html" title="Definition of ContactPool Id Type. " alt="" coords="83,162,247,189"/>
+<area shape="rect" id="node8" href="$da/de7/a00210.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="452,80,641,107"/>
+<area shape="rect" id="node13" href="$dd/db2/a00151.html" title="geopop/Coordinate.h" alt="" coords="926,80,1082,107"/>
+<area shape="rect" id="node16" href="$d9/d2a/a00270.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="1106,80,1278,107"/>
+<area shape="rect" id="node17" href="$d4/d5b/a00294.html" title="Interface/Implementation for SVIterator. " alt="" coords="1541,162,1640,189"/>
 </map>

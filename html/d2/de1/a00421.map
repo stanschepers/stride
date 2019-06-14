@@ -1,2 +1,7 @@
-<map id="Coordinate.h" name="Coordinate.h">
+<map id="GenPopController.h" name="GenPopController.h">
+<area shape="rect" id="node2" href="$d9/d7d/a00150.html" title="Header for the command line controller. " alt="" coords="403,87,524,114"/>
+<area shape="rect" id="node3" href="$da/d53/a00265.html" title="Interface of RnMan. " alt="" coords="195,177,295,203"/>
+<area shape="rect" id="node10" href="$dc/dc9/a00282.html" title="Definition of Stopwatch. " alt="" coords="452,177,576,203"/>
+<area shape="rect" id="node4" href="$df/da9/a00263.html" title="Interface of RnPcg. " alt="" coords="8,259,81,285"/>
+<area shape="rect" id="node11" href="$d9/d0d/a00298.html" title="Utilities to tag clocks and reformat clock readout to string. " alt="" coords="503,259,619,285"/>
 </map>

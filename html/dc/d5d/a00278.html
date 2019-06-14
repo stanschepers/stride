@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: PreSchoolPopulator.h File Reference</title>
+<title>Stride Reference Manual: SimRunner.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 83289e3</span>
+   &#160;<span id="projectnumber">- generated for commit 33b4fd4</span>
    </div>
   </td>
  </tr>
@@ -108,28 +108,45 @@ $(document).ready(function(){initNavTree('dc/d5d/a00278.html','../../');});
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">PreSchoolPopulator.h File Reference</div>  </div>
+<div class="title">SimRunner.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../dd/d56/a00274_source.html">Populator.h</a>&quot;</code><br />
+
+<p>Header for the SimRunner class.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d3/de5/a00209_source.html">sim/event/Id.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/d7b/a00286_source.html">sim/event/Subject.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dc/dc9/a00282_source.html">util/Stopwatch.h</a>&quot;</code><br />
+<code>#include &lt;boost/property_tree/ptree.hpp&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for PreSchoolPopulator.h:</div>
+Include dependency graph for SimRunner.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d7/db1/a00590.gif" border="0" usemap="#PreSchoolPopulator_8h" alt=""/></div>
-<map name="PreSchoolPopulator_8h" id="PreSchoolPopulator_8h">
-<area shape="rect" id="node2" href="../../dd/d56/a00274.html" title="Populator.h" alt="" coords="367,80,462,107"/>
-<area shape="rect" id="node3" href="../../db/ddf/a00164.html" title="Definition of ContactPool Id Type. " alt="" coords="135,155,299,181"/>
-<area shape="rect" id="node9" href="../../d8/d0a/a00292.html" title="Interface of RnMan. " alt="" coords="365,155,465,181"/>
-<area shape="rect" id="node10" href="../../de/d25/a00290.html" title="Interface of RnPcg. " alt="" coords="378,229,451,256"/>
+<div class="center"><img src="../../d8/d9b/a00577.gif" border="0" usemap="#SimRunner_8h" alt=""/></div>
+<map name="SimRunner_8h" id="SimRunner_8h">
+<area shape="rect" id="node2" href="../../d3/de5/a00209.html" title="Definition of EventId. " alt="" coords="36,169,148,196"/>
+<area shape="rect" id="node5" href="../../d5/d7b/a00286.html" title="Definition of Subject/Observer for SimEvents. " alt="" coords="25,87,174,114"/>
+<area shape="rect" id="node10" href="../../dc/dc9/a00282.html" title="Definition of Stopwatch. " alt="" coords="263,87,387,114"/>
+<area shape="rect" id="node6" href="../../d6/d7f/a00287.html" title="Interface/Implementation of Subject. " alt="" coords="466,169,571,196"/>
+<area shape="rect" id="node11" href="../../d9/d0d/a00298.html" title="Utilities to tag clocks and reformat clock readout to string. " alt="" coords="274,169,390,196"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d9/dad/a00591.gif" border="0" usemap="#PreSchoolPopulator_8hdep" alt=""/></div>
-<map name="PreSchoolPopulator_8hdep" id="PreSchoolPopulator_8hdep">
-<area shape="rect" id="node2" href="../../d6/d4b/a00277.html" title="PreSchoolPopulator.cpp" alt="" coords="5,80,179,107"/>
-<area shape="rect" id="node3" href="../../d3/dd5/a00215.html" title="Initialize populations: implementation. " alt="" coords="203,80,346,107"/>
+<div class="center"><img src="../../dd/d5c/a00578.gif" border="0" usemap="#SimRunner_8hdep" alt=""/></div>
+<map name="SimRunner_8hdep" id="SimRunner_8hdep">
+<area shape="rect" id="node2" href="../../da/d1e/a00149.html" title="Header for the command line controller. " alt="" coords="454,155,590,181"/>
+<area shape="rect" id="node3" href="../../d3/d5e/a00275.html" title="Header for the command line controller. " alt="" coords="25,80,160,107"/>
+<area shape="rect" id="node4" href="../../d0/dcd/a00280.html" title="Header for the command line controller. " alt="" coords="184,80,324,107"/>
+<area shape="rect" id="node5" href="../../d6/d4b/a00277.html" title="Implementation for SimRunner. " alt="" coords="349,80,466,107"/>
+<area shape="rect" id="node6" href="../../d7/d06/a00131.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="489,80,595,107"/>
+<area shape="rect" id="node7" href="../../df/d24/a00217.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="619,80,780,107"/>
+<area shape="rect" id="node8" href="../../dd/df3/a00219.html" title="Observer for SimEvents for commandline interface usage. " alt="" coords="805,80,946,107"/>
+<area shape="rect" id="node9" href="../../d0/d1f/a00247.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="971,80,1132,107"/>
+<area shape="rect" id="node10" href="../../da/dd4/a00291.html" title="Observer for Persons output. " alt="" coords="1156,80,1315,107"/>
+<area shape="rect" id="node11" href="../../de/d25/a00290.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="1207,155,1381,181"/>
 </map>
 </div>
 </div>
@@ -137,23 +154,27 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db6/a00042.html">geopop::PreSchoolPopulator</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate the PreSchools.  <a href="../../d5/db6/a00042.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/ddf/a00088.html">stride::SimRunner</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The simulation runner drive simulator throufgh time steps.  <a href="../../db/ddf/a00088.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:d0/dc5/a00343"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc5/a00343.html">geopop</a></td></tr>
-<tr class="memdesc:d0/dc5/a00343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
+<tr class="memitem:de/dc8/a00325"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc8/a00325.html">stride</a></td></tr>
+<tr class="memdesc:de/dc8/a00325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Header for the SimRunner class. </p>
+
+<p>Definition in file <a class="el" href="../../dc/d5d/a00278_source.html">SimRunner.h</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_e7e2007abe30c6c76c8a673fdd5d8158.html">populators</a></li><li class="navelem"><a class="el" href="../../dc/d5d/a00278.html">PreSchoolPopulator.h</a></li>
-    <li class="footer">Generated on Fri Apr 12 2019 20:28:13 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_e5f84963ccc55302ca6163b928f19348.html">sim</a></li><li class="navelem"><a class="el" href="../../dc/d5d/a00278.html">SimRunner.h</a></li>
+    <li class="footer">Generated on Fri Jun 14 2019 14:41:38 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

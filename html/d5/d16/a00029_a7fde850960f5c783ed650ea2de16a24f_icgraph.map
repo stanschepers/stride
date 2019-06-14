@@ -1,0 +1,11 @@
+<map id="geopop::Location::GetPopCount" name="geopop::Location::GetPopCount">
+<area shape="rect" id="node2" href="$d5/d16/a00029.html#a2303a7a10dd49e03ac0c527f1a16c754" title="Perform a full comparison with the other location. " alt="" coords="240,13,457,39"/>
+<area shape="rect" id="node3" href="$d7/dd4/a00013.html#a9d40942005a9bc3ad67f8961c5c77aac" title="Gets the K biggest (in population count) locations of this GeoGrid. " alt="" coords="265,63,432,90"/>
+<area shape="rect" id="node7" href="$d1/d2b/a00018.html#a6896def26cc869e0657b37361cbc2af1" title="Create a Boost Property Tree containing all info needed to reconstruct a Location. " alt="" coords="249,115,448,156"/>
+<area shape="rect" id="node9" href="$db/db2/a00020.html#a926c2d6d9381b1b87ff81fb92f598041" title="Create a ProtoBuf Location containing all the info needed to reconstruct a Location. " alt="" coords="249,180,449,221"/>
+<area shape="rect" id="node4" href="$da/da0/a00009.html#af22be8d3066422475ffa15d71289b4b6" title="geopop::Generator::\lApply" alt="" coords="781,5,932,47"/>
+<area shape="rect" id="node5" href="$d7/dd4/a00013.html#adb9b0f349282a7dca217e604799fb606" title="Get the Population associated with this GeoGrid. " alt="" coords="505,63,733,90"/>
+<area shape="rect" id="node6" href="$d0/dc0/a00033.html#a5ef58e6d2a59a356c3993b7f88900a2b" title="geopop::Populator::\lApply" alt="" coords="783,71,930,112"/>
+<area shape="rect" id="node8" href="$d1/d2b/a00018.html#ad29ac72b56a116252620d06921f0365e" title="Write the provided GeoGrid to the proved ostream in JSON format. " alt="" coords="520,115,719,156"/>
+<area shape="rect" id="node10" href="$db/db2/a00020.html#abaddb399f1f826203ae6086858dbfbde" title="Write the GeoGrid to the ostream in Protobuf format. " alt="" coords="519,180,719,221"/>
+</map>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: stride::util::Rn&lt; E &gt; Class Template Reference</title>
+<title>Stride Reference Manual: stride::ContactType::IdSubscriptArray&lt; bool &gt; Class Template Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 83289e3</span>
+   &#160;<span id="projectnumber">- generated for commit 33b4fd4</span>
    </div>
   </td>
  </tr>
@@ -107,221 +107,75 @@ $(document).ready(function(){initNavTree('d4/de8/a00061.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="../../d7/df2/a01000.html">List of all members</a>  </div>
+<a href="../../dc/d41/a00862.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">stride::util::Rn&lt; E &gt; Class Template Reference</div>  </div>
+<div class="title">stride::ContactType::IdSubscriptArray&lt; bool &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Manages random number generation in parallel (OpenMP) calculations.  
+<p>Specialisation of <a class="el" href="../../d3/de7/a00039.html" title="An std::array modified to enable subscripting with the constact pool type indentifiers. ">IdSubscriptArray</a> foor booleans.  
  <a href="../../d4/de8/a00061.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d4/d66/a00289_source.html">Rn.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../da/de7/a00210_source.html">IdSubscriptArray.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for stride::util::Rn&lt; E &gt;:</div>
+Inheritance diagram for stride::ContactType::IdSubscriptArray&lt; bool &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../df/d59/a01001.gif" border="0" usemap="#stride_1_1util_1_1Rn_3_01E_01_4_inherit__map" alt="Inheritance graph"/></div>
-<map name="stride_1_1util_1_1Rn_3_01E_01_4_inherit__map" id="stride_1_1util_1_1Rn_3_01E_01_4_inherit__map">
-<area shape="rect" id="node3" href="../../d4/de8/a00061.html" title="{stride::util::Rn\&lt; pcg64 \&gt;\n|&#45; m_seed_seq_init\l&#45; m_stream_count\l|+ Rn()\l+ Rn()\l+ Rn()\l+ operator=()\l+ operator==()\l+ GetInfo()\l+ GetUniform01Generator()\l+ GetUniformIntGenerator()\l+ GetDiscreteGenerator()\l+ Initialize()\l+ IsEmpty()\l+ Shuffle()\l&#45; Seed()\l}" alt="" coords="15,521,218,789"/>
-<area shape="rect" id="node2" title="STL class. " alt="" coords="5,5,228,112"/>
+<div class="center"><img src="../../d7/d49/a00863.gif" border="0" usemap="#stride_1_1ContactType_1_1IdSubscriptArray_3_01bool_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="stride_1_1ContactType_1_1IdSubscriptArray_3_01bool_01_4_inherit__map" id="stride_1_1ContactType_1_1IdSubscriptArray_3_01bool_01_4_inherit__map">
+<area shape="rect" id="node2" title="STL class. " alt="" coords="5,5,208,83"/>
 </map>
 </div>
 <div class="dynheader">
-Collaboration diagram for stride::util::Rn&lt; E &gt;:</div>
+Collaboration diagram for stride::ContactType::IdSubscriptArray&lt; bool &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d2/dd5/a01002.gif" border="0" usemap="#stride_1_1util_1_1Rn_3_01E_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="stride_1_1util_1_1Rn_3_01E_01_4_coll__map" id="stride_1_1util_1_1Rn_3_01E_01_4_coll__map">
-<area shape="rect" id="node2" title="STL class. " alt="" coords="5,160,228,267"/>
-<area shape="rect" id="node4" title="STL class. " alt="" coords="252,175,339,252"/>
-<area shape="rect" id="node5" title="STL class. " alt="" coords="227,5,364,97"/>
+<div class="center"><img src="../../d7/d1b/a00864.gif" border="0" usemap="#stride_1_1ContactType_1_1IdSubscriptArray_3_01bool_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="stride_1_1ContactType_1_1IdSubscriptArray_3_01bool_01_4_coll__map" id="stride_1_1ContactType_1_1IdSubscriptArray_3_01bool_01_4_coll__map">
+<area shape="rect" id="node2" title="STL class. " alt="" coords="5,5,208,83"/>
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:acbc94b85302213d680d7b7c68b8edbc7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#acbc94b85302213d680d7b7c68b8edbc7">EngineType</a> = E</td></tr>
-<tr class="separator:acbc94b85302213d680d7b7c68b8edbc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33bdc913e6a82dbdc349484dc76cd6f2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#a33bdc913e6a82dbdc349484dc76cd6f2">RnType</a> = randutils::random_generator&lt; E, randutils::seed_seq_fe128 &gt;</td></tr>
-<tr class="separator:a33bdc913e6a82dbdc349484dc76cd6f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d32dc068e7be8c0a6bf003655f0f440"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#a7d32dc068e7be8c0a6bf003655f0f440">ContainerType</a> = std::vector&lt; randutils::random_generator&lt; E, randutils::seed_seq_fe128 &gt;&gt;</td></tr>
-<tr class="separator:a7d32dc068e7be8c0a6bf003655f0f440"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7d9b13e2040c557965d6267554a123be"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#a7d9b13e2040c557965d6267554a123be">Rn</a> ()</td></tr>
-<tr class="memdesc:a7d9b13e2040c557965d6267554a123be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor build empty manager.  <a href="#a7d9b13e2040c557965d6267554a123be">More...</a><br /></td></tr>
-<tr class="separator:a7d9b13e2040c557965d6267554a123be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48b33ab89da0ea8a01e98a7bbf0b6865"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#a48b33ab89da0ea8a01e98a7bbf0b6865">Rn</a> (const <a class="el" href="../../d8/d87/a00118.html">RnInfo</a> &amp;info)</td></tr>
-<tr class="memdesc:a48b33ab89da0ea8a01e98a7bbf0b6865"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes.  <a href="#a48b33ab89da0ea8a01e98a7bbf0b6865">More...</a><br /></td></tr>
-<tr class="separator:a48b33ab89da0ea8a01e98a7bbf0b6865"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ba4bf2aaed3303c1b4bd219e7c354ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#a5ba4bf2aaed3303c1b4bd219e7c354ac">Rn</a> (const <a class="el" href="../../d4/de8/a00061.html">Rn</a> &amp;)=delete</td></tr>
-<tr class="memdesc:a5ba4bf2aaed3303c1b4bd219e7c354ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">No copying.  <a href="#a5ba4bf2aaed3303c1b4bd219e7c354ac">More...</a><br /></td></tr>
-<tr class="separator:a5ba4bf2aaed3303c1b4bd219e7c354ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab63808f8d34717a3054955e43572a111"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/de8/a00061.html">Rn</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#ab63808f8d34717a3054955e43572a111">operator=</a> (const <a class="el" href="../../d4/de8/a00061.html">Rn</a> &amp;)=delete</td></tr>
-<tr class="memdesc:ab63808f8d34717a3054955e43572a111"><td class="mdescLeft">&#160;</td><td class="mdescRight">No copy assignment.  <a href="#ab63808f8d34717a3054955e43572a111">More...</a><br /></td></tr>
-<tr class="separator:ab63808f8d34717a3054955e43572a111"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e78d5d29f6f755a3f98aabef1711cd6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#a2e78d5d29f6f755a3f98aabef1711cd6">operator==</a> (const <a class="el" href="../../d4/de8/a00061.html">Rn</a> &amp;other)</td></tr>
-<tr class="memdesc:a2e78d5d29f6f755a3f98aabef1711cd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality of states.  <a href="#a2e78d5d29f6f755a3f98aabef1711cd6">More...</a><br /></td></tr>
-<tr class="separator:a2e78d5d29f6f755a3f98aabef1711cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2778b5e20db743b9a055fe83ecd66da8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d87/a00118.html">RnInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#a2778b5e20db743b9a055fe83ecd66da8">GetInfo</a> () const </td></tr>
-<tr class="memdesc:a2778b5e20db743b9a055fe83ecd66da8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the state of the random engines.  <a href="#a2778b5e20db743b9a055fe83ecd66da8">More...</a><br /></td></tr>
-<tr class="separator:a2778b5e20db743b9a055fe83ecd66da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ea4f31543886e7d66f647a8193b27b5"><td class="memItemLeft" align="right" valign="top">std::function&lt; <a class="el" href="../../df/dc2/a00367.html">double</a>()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#a7ea4f31543886e7d66f647a8193b27b5">GetUniform01Generator</a> (unsigned int i=0U)</td></tr>
-<tr class="memdesc:a7ea4f31543886e7d66f647a8193b27b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a generator for uniform doubles in [0, 1[ using i-th random engine.  <a href="#a7ea4f31543886e7d66f647a8193b27b5">More...</a><br /></td></tr>
-<tr class="separator:a7ea4f31543886e7d66f647a8193b27b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab30f88933c5b14ad8b5d712ddf80412b"><td class="memItemLeft" align="right" valign="top">std::function&lt; int()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#ab30f88933c5b14ad8b5d712ddf80412b">GetUniformIntGenerator</a> (int a, int b, unsigned int i=0U)</td></tr>
-<tr class="memdesc:ab30f88933c5b14ad8b5d712ddf80412b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a generator for uniform ints in [a, b[ (a &lt; b) using i-th random engine.  <a href="#ab30f88933c5b14ad8b5d712ddf80412b">More...</a><br /></td></tr>
-<tr class="separator:ab30f88933c5b14ad8b5d712ddf80412b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5ad44b71a7761094e2fb214adb503c1"><td class="memItemLeft" align="right" valign="top">std::function&lt; int()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#ad5ad44b71a7761094e2fb214adb503c1">GetDiscreteGenerator</a> (const std::vector&lt; <a class="el" href="../../df/dc2/a00367.html">double</a> &gt; &amp;weights, unsigned int i=0U)</td></tr>
-<tr class="memdesc:ad5ad44b71a7761094e2fb214adb503c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return generator for integers [0, n-1[ with non-negative weights p_j (i=0,..,n-1) using i-th random engine.  <a href="#ad5ad44b71a7761094e2fb214adb503c1">More...</a><br /></td></tr>
-<tr class="separator:ad5ad44b71a7761094e2fb214adb503c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d5445d500ce2a38287a127af3762892"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#a4d5445d500ce2a38287a127af3762892">Initialize</a> (const <a class="el" href="../../d8/d87/a00118.html">RnInfo</a> &amp;info)</td></tr>
-<tr class="memdesc:a4d5445d500ce2a38287a127af3762892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initalize with data in Info.  <a href="#a4d5445d500ce2a38287a127af3762892">More...</a><br /></td></tr>
-<tr class="separator:a4d5445d500ce2a38287a127af3762892"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada37aa7d2f47530a514c24b8c5dfc122"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#ada37aa7d2f47530a514c24b8c5dfc122">IsEmpty</a> () const </td></tr>
-<tr class="memdesc:ada37aa7d2f47530a514c24b8c5dfc122"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this een empty (i.e. non-initialized <a class="el" href="../../d4/de8/a00061.html" title="Manages random number generation in parallel (OpenMP) calculations. ">Rn</a>)?  <a href="#ada37aa7d2f47530a514c24b8c5dfc122">More...</a><br /></td></tr>
-<tr class="separator:ada37aa7d2f47530a514c24b8c5dfc122"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c6efce18c245b7e460e4ad09667dab2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#a6c6efce18c245b7e460e4ad09667dab2">Shuffle</a> (std::vector&lt; unsigned int &gt; &amp;indices, unsigned int i)</td></tr>
-<tr class="memdesc:a6c6efce18c245b7e460e4ad09667dab2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Random shuffle of vector of unsigned int indices using i-th engine.  <a href="#a6c6efce18c245b7e460e4ad09667dab2">More...</a><br /></td></tr>
-<tr class="separator:a6c6efce18c245b7e460e4ad09667dab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:aa7422a9b6a29d401930324bea4d5a0de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#aa7422a9b6a29d401930324bea4d5a0de">Seed</a> (randutils::seed_seq_fe128 &amp;seseq)</td></tr>
-<tr class="memdesc:aa7422a9b6a29d401930324bea4d5a0de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual first-time seeding. Procedure varies according to engine type, see specialisations.  <a href="#aa7422a9b6a29d401930324bea4d5a0de">More...</a><br /></td></tr>
-<tr class="separator:aa7422a9b6a29d401930324bea4d5a0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a6bba1c68c0b6ab97c760897b539b51"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr class="memitem:a2a6bba1c68c0b6ab97c760897b539b51"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#a2a6bba1c68c0b6ab97c760897b539b51">Seed</a> (randutils::seed_seq_fe128 &amp;seseq)</td></tr>
-<tr class="separator:a2a6bba1c68c0b6ab97c760897b539b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a6bba1c68c0b6ab97c760897b539b51"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr class="memitem:a2a6bba1c68c0b6ab97c760897b539b51"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#a2a6bba1c68c0b6ab97c760897b539b51">Seed</a> (randutils::seed_seq_fe128 &amp;seseq)</td></tr>
-<tr class="separator:a2a6bba1c68c0b6ab97c760897b539b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a7f5ed0ad410e42106d340d017f0f61ba"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#a7f5ed0ad410e42106d340d017f0f61ba">m_seed_seq_init</a></td></tr>
-<tr class="memdesc:a7f5ed0ad410e42106d340d017f0f61ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seed sequence initializer used with engines.  <a href="#a7f5ed0ad410e42106d340d017f0f61ba">More...</a><br /></td></tr>
-<tr class="separator:a7f5ed0ad410e42106d340d017f0f61ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a958177dee9a3c09f8d5f9073a8d89284"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#a958177dee9a3c09f8d5f9073a8d89284">m_stream_count</a></td></tr>
-<tr class="memdesc:a958177dee9a3c09f8d5f9073a8d89284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of threads/streams set up with the engine.  <a href="#a958177dee9a3c09f8d5f9073a8d89284">More...</a><br /></td></tr>
-<tr class="separator:a958177dee9a3c09f8d5f9073a8d89284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf1e7645bd2c756f5eaffc15a767441e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#abf1e7645bd2c756f5eaffc15a767441e">IdSubscriptArray</a> (bool t=bool())</td></tr>
+<tr class="memdesc:abf1e7645bd2c756f5eaffc15a767441e"><td class="mdescLeft">&#160;</td><td class="mdescRight">What we 'll use most often and where we can have a default and initialize all array elements to the same value.  <a href="#abf1e7645bd2c756f5eaffc15a767441e">More...</a><br /></td></tr>
+<tr class="separator:abf1e7645bd2c756f5eaffc15a767441e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab50f872bc3116a9ab4b9d9520e25731c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#ab50f872bc3116a9ab4b9d9520e25731c">IdSubscriptArray</a> (std::initializer_list&lt; bool &gt; l)</td></tr>
+<tr class="memdesc:ab50f872bc3116a9ab4b9d9520e25731c"><td class="mdescLeft">&#160;</td><td class="mdescRight">When we want to use an initializer list the elements is the (possibly emty) initializer list are applied to the first elements in order; any remaininig elements are default initialized.  <a href="#ab50f872bc3116a9ab4b9d9520e25731c">More...</a><br /></td></tr>
+<tr class="separator:ab50f872bc3116a9ab4b9d9520e25731c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5fe0f6c6c524f10a8d9fdfe51818637"><td class="memItemLeft" align="right" valign="top">std::bitset&lt; <a class="el" href="../../d4/db5/a00328.html#ae07181484047f7f834d393628788f2f4">NumOfTypes</a>()&gt;::reference&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#ad5fe0f6c6c524f10a8d9fdfe51818637">operator[]</a> (<a class="el" href="../../d4/db5/a00328.html#a61a32e88a50c57e6f5c49f0996b6b462">ContactType::Id</a> id)</td></tr>
+<tr class="memdesc:ad5fe0f6c6c524f10a8d9fdfe51818637"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscripting with pool typ id as argument.  <a href="#ad5fe0f6c6c524f10a8d9fdfe51818637">More...</a><br /></td></tr>
+<tr class="separator:ad5fe0f6c6c524f10a8d9fdfe51818637"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72943f7cebcd7ab3a72bc386350f1cef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#a72943f7cebcd7ab3a72bc386350f1cef">operator[]</a> (<a class="el" href="../../d4/db5/a00328.html#a61a32e88a50c57e6f5c49f0996b6b462">ContactType::Id</a> id) const </td></tr>
+<tr class="memdesc:a72943f7cebcd7ab3a72bc386350f1cef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscripting with pool typ id as argument.  <a href="#a72943f7cebcd7ab3a72bc386350f1cef">More...</a><br /></td></tr>
+<tr class="separator:a72943f7cebcd7ab3a72bc386350f1cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bb18c0410138ca69513bf3d23e14754"><td class="memItemLeft" align="right" valign="top">bitset&lt; <a class="el" href="../../d4/db5/a00328.html#ae07181484047f7f834d393628788f2f4">NumOfTypes</a>()&gt;::reference&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#a2bb18c0410138ca69513bf3d23e14754">at</a> (<a class="el" href="../../d4/db5/a00328.html#a61a32e88a50c57e6f5c49f0996b6b462">ContactType::Id</a> id)</td></tr>
+<tr class="memdesc:a2bb18c0410138ca69513bf3d23e14754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscripting with pool typ id as argument.  <a href="#a2bb18c0410138ca69513bf3d23e14754">More...</a><br /></td></tr>
+<tr class="separator:a2bb18c0410138ca69513bf3d23e14754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24b0248f52ad367c8abad440494853e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de8/a00061.html#a24b0248f52ad367c8abad440494853e6">at</a> (<a class="el" href="../../d4/db5/a00328.html#a61a32e88a50c57e6f5c49f0996b6b462">ContactType::Id</a> id) const </td></tr>
+<tr class="memdesc:a24b0248f52ad367c8abad440494853e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscripting with pool typ id as argument.  <a href="#a24b0248f52ad367c8abad440494853e6">More...</a><br /></td></tr>
+<tr class="separator:a24b0248f52ad367c8abad440494853e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename E&gt;<br />
-class stride::util::Rn&lt; E &gt;</h3>
+<div class="textblock"><h3>template&lt;&gt;<br />
+class stride::ContactType::IdSubscriptArray&lt; bool &gt;</h3>
 
-<p>Manages random number generation in parallel (OpenMP) calculations. </p>
+<p>Specialisation of <a class="el" href="../../d3/de7/a00039.html" title="An std::array modified to enable subscripting with the constact pool type indentifiers. ">IdSubscriptArray</a> foor booleans. </p>
 
-<p>Definition at line <a class="el" href="../../d4/d66/a00289_source.html#l00042">42</a> of file <a class="el" href="../../d4/d66/a00289_source.html">Rn.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="acbc94b85302213d680d7b7c68b8edbc7"></a>
+<p>Definition at line <a class="el" href="../../da/de7/a00210_source.html#l00133">133</a> of file <a class="el" href="../../da/de7/a00210_source.html">IdSubscriptArray.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="abf1e7645bd2c756f5eaffc15a767441e"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename E&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; E &gt;::<a class="el" href="../../d4/de8/a00061.html#acbc94b85302213d680d7b7c68b8edbc7">EngineType</a> =  E</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d4/d66/a00289_source.html#l00045">45</a> of file <a class="el" href="../../d4/d66/a00289_source.html">Rn.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a33bdc913e6a82dbdc349484dc76cd6f2"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename E&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; E &gt;::<a class="el" href="../../d4/de8/a00061.html#a33bdc913e6a82dbdc349484dc76cd6f2">RnType</a> =  randutils::random_generator&lt;E, randutils::seed_seq_fe128&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d4/d66/a00289_source.html#l00046">46</a> of file <a class="el" href="../../d4/d66/a00289_source.html">Rn.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a7d32dc068e7be8c0a6bf003655f0f440"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename E&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; E &gt;::<a class="el" href="../../d4/de8/a00061.html#a7d32dc068e7be8c0a6bf003655f0f440">ContainerType</a> =  std::vector&lt;randutils::random_generator&lt;E, randutils::seed_seq_fe128&gt;&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d4/d66/a00289_source.html#l00047">47</a> of file <a class="el" href="../../d4/d66/a00289_source.html">Rn.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a7d9b13e2040c557965d6267554a123be"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename E&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; E &gt;::<a class="el" href="../../d4/de8/a00061.html">Rn</a> </td>
+          <td class="memname"><a class="el" href="../../d3/de7/a00039.html">stride::ContactType::IdSubscriptArray</a>&lt; bool &gt;::<a class="el" href="../../d3/de7/a00039.html">IdSubscriptArray</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Default constructor build empty manager. </p>
-
-<p>Definition at line <a class="el" href="../../d4/d66/a00289_source.html#l00055">55</a> of file <a class="el" href="../../d4/d66/a00289_source.html">Rn.h</a>.</p>
-
-<p>Referenced by <a class="el" href="../../d4/d66/a00289_source.html#l00058">stride::util::Rn&lt; pcg64 &gt;::Rn()</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d4/de8/a00061_a7d9b13e2040c557965d6267554a123be_icgraph.gif" border="0" usemap="#d4/de8/a00061_a7d9b13e2040c557965d6267554a123be_icgraph" alt=""/></div>
-<map name="d4/de8/a00061_a7d9b13e2040c557965d6267554a123be_icgraph" id="d4/de8/a00061_a7d9b13e2040c557965d6267554a123be_icgraph">
-<area shape="rect" id="node2" href="../../d4/de8/a00061.html#a48b33ab89da0ea8a01e98a7bbf0b6865" title="Initializes. " alt="" coords="187,5,349,47"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a48b33ab89da0ea8a01e98a7bbf0b6865"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename E&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; E &gt;::<a class="el" href="../../d4/de8/a00061.html">Rn</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d8/d87/a00118.html">RnInfo</a> &amp;&#160;</td>
-          <td class="paramname"><em>info</em></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>t</em> = <code>bool()</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -332,166 +186,25 @@ template&lt;typename E&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Initializes. </p>
+<p>What we 'll use most often and where we can have a default and initialize all array elements to the same value. </p>
+<p>e.g. <a class="el" href="../../d4/de8/a00061.html" title="Specialisation of IdSubscriptArray foor booleans. ">IdSubscriptArray&lt;bool&gt;</a> m(true); </p>
 
-<p>Definition at line <a class="el" href="../../d4/d66/a00289_source.html#l00058">58</a> of file <a class="el" href="../../d4/d66/a00289_source.html">Rn.h</a>.</p>
+<p>Definition at line <a class="el" href="../../da/de7/a00210_source.html#l00139">139</a> of file <a class="el" href="../../da/de7/a00210_source.html">IdSubscriptArray.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a5ba4bf2aaed3303c1b4bd219e7c354ac"></a>
+<a class="anchor" id="ab50f872bc3116a9ab4b9d9520e25731c"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename E&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; E &gt;::<a class="el" href="../../d4/de8/a00061.html">Rn</a> </td>
+          <td class="memname"><a class="el" href="../../d3/de7/a00039.html">stride::ContactType::IdSubscriptArray</a>&lt; bool &gt;::<a class="el" href="../../d3/de7/a00039.html">IdSubscriptArray</a> </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d4/de8/a00061.html">Rn</a>&lt; E &gt; &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>No copying. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ab63808f8d34717a3054955e43572a111"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename E&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d4/de8/a00061.html">Rn</a>&amp; <a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; E &gt;::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d4/de8/a00061.html">Rn</a>&lt; E &gt; &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>No copy assignment. </p>
-
-<p>Referenced by <a class="el" href="../../d4/d66/a00289_source.html#l00058">stride::util::Rn&lt; pcg64 &gt;::Rn()</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d4/de8/a00061_ab63808f8d34717a3054955e43572a111_icgraph.gif" border="0" usemap="#d4/de8/a00061_ab63808f8d34717a3054955e43572a111_icgraph" alt=""/></div>
-<map name="d4/de8/a00061_ab63808f8d34717a3054955e43572a111_icgraph" id="d4/de8/a00061_ab63808f8d34717a3054955e43572a111_icgraph">
-<area shape="rect" id="node2" href="../../d4/de8/a00061.html#a48b33ab89da0ea8a01e98a7bbf0b6865" title="Initializes. " alt="" coords="236,5,399,47"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a2e78d5d29f6f755a3f98aabef1711cd6"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename E &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; E &gt;::operator== </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d4/de8/a00061.html">Rn</a>&lt; E &gt; &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Equality of states. </p>
-
-<p>Definition at line <a class="el" href="../../da/ddc/a00288_source.html#l00036">36</a> of file <a class="el" href="../../da/ddc/a00288_source.html">Rn.cpp</a>.</p>
-
-<p>References <a class="el" href="../../d4/d66/a00289_source.html#l00113">stride::util::Rn&lt; E &gt;::m_stream_count</a>.</p>
-
-<p>Referenced by <a class="el" href="../../d4/d66/a00289_source.html#l00058">stride::util::Rn&lt; pcg64 &gt;::Rn()</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d4/de8/a00061_a2e78d5d29f6f755a3f98aabef1711cd6_icgraph.gif" border="0" usemap="#d4/de8/a00061_a2e78d5d29f6f755a3f98aabef1711cd6_icgraph" alt=""/></div>
-<map name="d4/de8/a00061_a2e78d5d29f6f755a3f98aabef1711cd6_icgraph" id="d4/de8/a00061_a2e78d5d29f6f755a3f98aabef1711cd6_icgraph">
-<area shape="rect" id="node2" href="../../d4/de8/a00061.html#a48b33ab89da0ea8a01e98a7bbf0b6865" title="Initializes. " alt="" coords="248,5,411,47"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a2778b5e20db743b9a055fe83ecd66da8"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename E &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/d87/a00118.html">RnInfo</a> <a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; E &gt;::GetInfo </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return the state of the random engines. </p>
-
-<p>Definition at line <a class="el" href="../../da/ddc/a00288_source.html#l00048">48</a> of file <a class="el" href="../../da/ddc/a00288_source.html">Rn.cpp</a>.</p>
-
-<p>References <a class="el" href="../../de/d25/a00290_source.html#l00035">stride::util::RnInfo::m_seed_seq_init</a>, <a class="el" href="../../de/d25/a00290_source.html#l00038">stride::util::RnInfo::m_state</a>, and <a class="el" href="../../de/d25/a00290_source.html#l00039">stride::util::RnInfo::m_stream_count</a>.</p>
-
-<p>Referenced by <a class="el" href="../../d4/d66/a00289_source.html#l00058">stride::util::Rn&lt; pcg64 &gt;::Rn()</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d4/de8/a00061_a2778b5e20db743b9a055fe83ecd66da8_icgraph.gif" border="0" usemap="#d4/de8/a00061_a2778b5e20db743b9a055fe83ecd66da8_icgraph" alt=""/></div>
-<map name="d4/de8/a00061_a2778b5e20db743b9a055fe83ecd66da8_icgraph" id="d4/de8/a00061_a2778b5e20db743b9a055fe83ecd66da8_icgraph">
-<area shape="rect" id="node2" href="../../d4/de8/a00061.html#a48b33ab89da0ea8a01e98a7bbf0b6865" title="Initializes. " alt="" coords="216,5,379,47"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a7ea4f31543886e7d66f647a8193b27b5"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename E&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::function&lt;<a class="el" href="../../df/dc2/a00367.html">double</a>()&gt; <a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; E &gt;::GetUniform01Generator </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>i</em> = <code>0U</code></td><td>)</td>
+          <td class="paramtype">std::initializer_list&lt; bool &gt;&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -502,159 +215,79 @@ template&lt;typename E&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Return a generator for uniform doubles in [0, 1[ using i-th random engine. </p>
+<p>When we want to use an initializer list the elements is the (possibly emty) initializer list are applied to the first elements in order; any remaininig elements are default initialized. </p>
+<p>e.g. <a class="el" href="../../d4/de8/a00061.html" title="Specialisation of IdSubscriptArray foor booleans. ">IdSubscriptArray&lt;bool&gt;</a> mm {true, false, true}; </p>
 
-<p>Definition at line <a class="el" href="../../d4/d66/a00289_source.html#l00078">78</a> of file <a class="el" href="../../d4/d66/a00289_source.html">Rn.h</a>.</p>
+<p>Definition at line <a class="el" href="../../da/de7/a00210_source.html#l00151">151</a> of file <a class="el" href="../../da/de7/a00210_source.html">IdSubscriptArray.h</a>.</p>
 
-</div>
-</div>
-<a class="anchor" id="ab30f88933c5b14ad8b5d712ddf80412b"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename E&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::function&lt;int()&gt; <a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; E &gt;::GetUniformIntGenerator </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>i</em> = <code>0U</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Return a generator for uniform ints in [a, b[ (a &lt; b) using i-th random engine. </p>
-
-<p>Definition at line <a class="el" href="../../d4/d66/a00289_source.html#l00084">84</a> of file <a class="el" href="../../d4/d66/a00289_source.html">Rn.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad5ad44b71a7761094e2fb214adb503c1"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename E&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::function&lt;int()&gt; <a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; E &gt;::GetDiscreteGenerator </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="../../df/dc2/a00367.html">double</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>weights</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>i</em> = <code>0U</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Return generator for integers [0, n-1[ with non-negative weights p_j (i=0,..,n-1) using i-th random engine. </p>
-
-<p>Definition at line <a class="el" href="../../d4/d66/a00289_source.html#l00090">90</a> of file <a class="el" href="../../d4/d66/a00289_source.html">Rn.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a4d5445d500ce2a38287a127af3762892"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename E &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; E &gt;::Initialize </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d8/d87/a00118.html">RnInfo</a> &amp;&#160;</td>
-          <td class="paramname"><em>info</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initalize with data in Info. </p>
-
-<p>Definition at line <a class="el" href="../../da/ddc/a00288_source.html#l00062">62</a> of file <a class="el" href="../../da/ddc/a00288_source.html">Rn.cpp</a>.</p>
-
-<p>References <a class="el" href="../../dd/db3/a00313_source.html#l00036">stride::util::CheckAllDigits()</a>, <a class="el" href="../../de/d25/a00290_source.html#l00035">stride::util::RnInfo::m_seed_seq_init</a>, <a class="el" href="../../de/d25/a00290_source.html#l00038">stride::util::RnInfo::m_state</a>, <a class="el" href="../../de/d25/a00290_source.html#l00039">stride::util::RnInfo::m_stream_count</a>, and <a class="el" href="../../dd/db3/a00313_source.html#l00058">stride::util::Split()</a>.</p>
-
-<p>Referenced by <a class="el" href="../../d4/d66/a00289_source.html#l00090">stride::util::Rn&lt; pcg64 &gt;::GetDiscreteGenerator()</a>, and <a class="el" href="../../d4/d66/a00289_source.html#l00058">stride::util::Rn&lt; pcg64 &gt;::Rn()</a>.</p>
+<p>References <a class="el" href="../../db/d48/a00148_source.html#l00078">stride::ContactType::IdList</a>, and <a class="el" href="../../da/de7/a00210_source.html#l00099">stride::ContactType::IdSubscriptArray&lt; T &gt;::operator[]()</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d4/de8/a00061_a4d5445d500ce2a38287a127af3762892_cgraph.gif" border="0" usemap="#d4/de8/a00061_a4d5445d500ce2a38287a127af3762892_cgraph" alt=""/></div>
-<map name="d4/de8/a00061_a4d5445d500ce2a38287a127af3762892_cgraph" id="d4/de8/a00061_a4d5445d500ce2a38287a127af3762892_cgraph">
-<area shape="rect" id="node2" href="../../d7/ddb/a00361.html#aed0a8c66f95a390d87398e0f2c7c7ceb" title="All characters in string are digits (or string is empty) " alt="" coords="221,5,404,32"/>
-<area shape="rect" id="node3" href="../../d7/ddb/a00361.html#aadef750132d5d399e7ed8a96eab53c4c" title="Split a string (in order of occurence) by splitting it on the given delimiters. " alt="" coords="252,56,373,83"/>
-</map>
-</div>
-</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d4/de8/a00061_a4d5445d500ce2a38287a127af3762892_icgraph.gif" border="0" usemap="#d4/de8/a00061_a4d5445d500ce2a38287a127af3762892_icgraph" alt=""/></div>
-<map name="d4/de8/a00061_a4d5445d500ce2a38287a127af3762892_icgraph" id="d4/de8/a00061_a4d5445d500ce2a38287a127af3762892_icgraph">
-<area shape="rect" id="node2" href="../../d4/de8/a00061.html#ad5ad44b71a7761094e2fb214adb503c1" title="Return generator for integers [0, n&#45;1[ with non&#45;negative weights p_j (i=0,..,n&#45;1) using i&#45;th random e..." alt="" coords="221,5,408,47"/>
-<area shape="rect" id="node3" href="../../d4/de8/a00061.html#a48b33ab89da0ea8a01e98a7bbf0b6865" title="Initializes. " alt="" coords="233,71,396,112"/>
+<div class="center"><img src="../../d4/de8/a00061_ab50f872bc3116a9ab4b9d9520e25731c_cgraph.gif" border="0" usemap="#d4/de8/a00061_ab50f872bc3116a9ab4b9d9520e25731c_cgraph" alt=""/></div>
+<map name="d4/de8/a00061_ab50f872bc3116a9ab4b9d9520e25731c_cgraph" id="d4/de8/a00061_ab50f872bc3116a9ab4b9d9520e25731c_cgraph">
+<area shape="rect" id="node2" href="../../d3/de7/a00039.html#a7f56c8edf0ee529ef125c23f3f2e988c" title="This actually works in itself but interferes annoyingly with the first constructor above and is for p..." alt="" coords="235,5,379,61"/>
 </map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="ada37aa7d2f47530a514c24b8c5dfc122"></a>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ad5fe0f6c6c524f10a8d9fdfe51818637"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename E&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; E &gt;::IsEmpty </td>
+          <td class="memname">std::bitset&lt;<a class="el" href="../../d4/db5/a00328.html#ae07181484047f7f834d393628788f2f4">NumOfTypes</a>()&gt;::reference <a class="el" href="../../d3/de7/a00039.html">stride::ContactType::IdSubscriptArray</a>&lt; bool &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../d4/db5/a00328.html#a61a32e88a50c57e6f5c49f0996b6b462">ContactType::Id</a>&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Subscripting with pool typ id as argument. </p>
+
+<p>Definition at line <a class="el" href="../../da/de7/a00210_source.html#l00165">165</a> of file <a class="el" href="../../da/de7/a00210_source.html">IdSubscriptArray.h</a>.</p>
+
+<p>References <a class="el" href="../../db/d48/a00148_source.html#l00056">stride::ContactType::ToSizeT()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/de8/a00061_ad5fe0f6c6c524f10a8d9fdfe51818637_cgraph.gif" border="0" usemap="#d4/de8/a00061_ad5fe0f6c6c524f10a8d9fdfe51818637_cgraph" alt=""/></div>
+<map name="d4/de8/a00061_ad5fe0f6c6c524f10a8d9fdfe51818637_cgraph" id="d4/de8/a00061_ad5fe0f6c6c524f10a8d9fdfe51818637_cgraph">
+<area shape="rect" id="node2" href="../../d4/db5/a00328.html#a98633b04f7d121e0621c00b6fb9af132" title="Cast to size_t for indexing. " alt="" coords="200,13,344,54"/>
+<area shape="rect" id="node3" href="../../d4/db5/a00328.html#a0c3d076da6b82e6b4d082e1ae58740b6" title="Converts a ContactPoolType::Id value to corresponding name. " alt="" coords="392,13,536,54"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a72943f7cebcd7ab3a72bc386350f1cef"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="../../d3/de7/a00039.html">stride::ContactType::IdSubscriptArray</a>&lt; bool &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/db5/a00328.html#a61a32e88a50c57e6f5c49f0996b6b462">ContactType::Id</a>&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -665,37 +298,38 @@ template&lt;typename E&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Is this een empty (i.e. non-initialized <a class="el" href="../../d4/de8/a00061.html" title="Manages random number generation in parallel (OpenMP) calculations. ">Rn</a>)? </p>
+<p>Subscripting with pool typ id as argument. </p>
 
-<p>Definition at line <a class="el" href="../../d4/d66/a00289_source.html#l00099">99</a> of file <a class="el" href="../../d4/d66/a00289_source.html">Rn.h</a>.</p>
+<p>Definition at line <a class="el" href="../../da/de7/a00210_source.html#l00171">171</a> of file <a class="el" href="../../da/de7/a00210_source.html">IdSubscriptArray.h</a>.</p>
+
+<p>References <a class="el" href="../../db/d48/a00148_source.html#l00056">stride::ContactType::ToSizeT()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/de8/a00061_a72943f7cebcd7ab3a72bc386350f1cef_cgraph.gif" border="0" usemap="#d4/de8/a00061_a72943f7cebcd7ab3a72bc386350f1cef_cgraph" alt=""/></div>
+<map name="d4/de8/a00061_a72943f7cebcd7ab3a72bc386350f1cef_cgraph" id="d4/de8/a00061_a72943f7cebcd7ab3a72bc386350f1cef_cgraph">
+<area shape="rect" id="node2" href="../../d4/db5/a00328.html#a98633b04f7d121e0621c00b6fb9af132" title="Cast to size_t for indexing. " alt="" coords="200,13,344,54"/>
+<area shape="rect" id="node3" href="../../d4/db5/a00328.html#a0c3d076da6b82e6b4d082e1ae58740b6" title="Converts a ContactPoolType::Id value to corresponding name. " alt="" coords="392,13,536,54"/>
+</map>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="a6c6efce18c245b7e460e4ad09667dab2"></a>
+<a class="anchor" id="a2bb18c0410138ca69513bf3d23e14754"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename E&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; E &gt;::Shuffle </td>
+          <td class="memname">bitset&lt;<a class="el" href="../../d4/db5/a00328.html#ae07181484047f7f834d393628788f2f4">NumOfTypes</a>()&gt;::reference <a class="el" href="../../d3/de7/a00039.html">stride::ContactType::IdSubscriptArray</a>&lt; bool &gt;::at </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; unsigned int &gt; &amp;&#160;</td>
-          <td class="paramname"><em>indices</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="../../d4/db5/a00328.html#a61a32e88a50c57e6f5c49f0996b6b462">ContactType::Id</a>&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>i</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -705,174 +339,82 @@ template&lt;typename E&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Random shuffle of vector of unsigned int indices using i-th engine. </p>
+<p>Subscripting with pool typ id as argument. </p>
 
-<p>Definition at line <a class="el" href="../../d4/d66/a00289_source.html#l00102">102</a> of file <a class="el" href="../../d4/d66/a00289_source.html">Rn.h</a>.</p>
+<p>Definition at line <a class="el" href="../../da/de7/a00210_source.html#l00177">177</a> of file <a class="el" href="../../da/de7/a00210_source.html">IdSubscriptArray.h</a>.</p>
 
-</div>
-</div>
-<a class="anchor" id="aa7422a9b6a29d401930324bea4d5a0de"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename E &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; E &gt;::Seed </td>
-          <td>(</td>
-          <td class="paramtype">randutils::seed_seq_fe128 &amp;&#160;</td>
-          <td class="paramname"><em>seseq</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Actual first-time seeding. Procedure varies according to engine type, see specialisations. </p>
-
-<p>Definition at line <a class="el" href="../../da/ddc/a00288_source.html#l00103">103</a> of file <a class="el" href="../../da/ddc/a00288_source.html">Rn.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="../../d4/d66/a00289_source.html#l00102">stride::util::Rn&lt; pcg64 &gt;::Shuffle()</a>.</p>
+<p>References <a class="el" href="../../db/d48/a00148_source.html#l00047">stride::ContactType::NumOfTypes()</a>, and <a class="el" href="../../db/d48/a00148_source.html#l00056">stride::ContactType::ToSizeT()</a>.</p>
 
 <p><div class="dynheader">
-Here is the caller graph for this function:</div>
+Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d4/de8/a00061_aa7422a9b6a29d401930324bea4d5a0de_icgraph.gif" border="0" usemap="#d4/de8/a00061_aa7422a9b6a29d401930324bea4d5a0de_icgraph" alt=""/></div>
-<map name="d4/de8/a00061_aa7422a9b6a29d401930324bea4d5a0de_icgraph" id="d4/de8/a00061_aa7422a9b6a29d401930324bea4d5a0de_icgraph">
-<area shape="rect" id="node2" href="../../d4/de8/a00061.html#a6c6efce18c245b7e460e4ad09667dab2" title="Random shuffle of vector of unsigned int indices using i&#45;th engine. " alt="" coords="204,5,367,47"/>
+<div class="center"><img src="../../d4/de8/a00061_a2bb18c0410138ca69513bf3d23e14754_cgraph.gif" border="0" usemap="#d4/de8/a00061_a2bb18c0410138ca69513bf3d23e14754_cgraph" alt=""/></div>
+<map name="d4/de8/a00061_a2bb18c0410138ca69513bf3d23e14754_cgraph" id="d4/de8/a00061_a2bb18c0410138ca69513bf3d23e14754_cgraph">
+<area shape="rect" id="node2" href="../../d4/db5/a00328.html#ae07181484047f7f834d393628788f2f4" title="Number of ContactPool types. " alt="" coords="200,71,344,112"/>
+<area shape="rect" id="node5" href="../../d4/db5/a00328.html#a98633b04f7d121e0621c00b6fb9af132" title="Cast to size_t for indexing. " alt="" coords="200,136,344,177"/>
+<area shape="rect" id="node3" href="../../d4/db5/a00328.html#ab74302c4c0591098d750ca4e676a7ec1" title="Check whether string is name of a ContactPoolType::Id. " alt="" coords="392,5,536,47"/>
+<area shape="rect" id="node4" href="../../d4/db5/a00328.html#a02e504d5b5a0ca2434971345323be3a2" title="Converts a string with name to Id. " alt="" coords="392,71,536,112"/>
+<area shape="rect" id="node6" href="../../d4/db5/a00328.html#a0c3d076da6b82e6b4d082e1ae58740b6" title="Converts a ContactPoolType::Id value to corresponding name. " alt="" coords="392,136,536,177"/>
 </map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a2a6bba1c68c0b6ab97c760897b539b51"></a>
+<a class="anchor" id="a24b0248f52ad367c8abad440494853e6"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; pcg64 &gt;::Seed </td>
+          <td class="memname">bool <a class="el" href="../../d3/de7/a00039.html">stride::ContactType::IdSubscriptArray</a>&lt; bool &gt;::at </td>
           <td>(</td>
-          <td class="paramtype">randutils::seed_seq_fe128 &amp;&#160;</td>
-          <td class="paramname"><em>seseq</em></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/db5/a00328.html#a61a32e88a50c57e6f5c49f0996b6b462">ContactType::Id</a>&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../da/ddc/a00288_source.html#l00091">91</a> of file <a class="el" href="../../da/ddc/a00288_source.html">Rn.cpp</a>.</p>
+<p>Subscripting with pool typ id as argument. </p>
+
+<p>Definition at line <a class="el" href="../../da/de7/a00210_source.html#l00186">186</a> of file <a class="el" href="../../da/de7/a00210_source.html">IdSubscriptArray.h</a>.</p>
+
+<p>References <a class="el" href="../../db/d48/a00148_source.html#l00047">stride::ContactType::NumOfTypes()</a>, and <a class="el" href="../../db/d48/a00148_source.html#l00056">stride::ContactType::ToSizeT()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d4/de8/a00061_a24b0248f52ad367c8abad440494853e6_cgraph.gif" border="0" usemap="#d4/de8/a00061_a24b0248f52ad367c8abad440494853e6_cgraph" alt=""/></div>
+<map name="d4/de8/a00061_a24b0248f52ad367c8abad440494853e6_cgraph" id="d4/de8/a00061_a24b0248f52ad367c8abad440494853e6_cgraph">
+<area shape="rect" id="node2" href="../../d4/db5/a00328.html#ae07181484047f7f834d393628788f2f4" title="Number of ContactPool types. " alt="" coords="200,71,344,112"/>
+<area shape="rect" id="node5" href="../../d4/db5/a00328.html#a98633b04f7d121e0621c00b6fb9af132" title="Cast to size_t for indexing. " alt="" coords="200,136,344,177"/>
+<area shape="rect" id="node3" href="../../d4/db5/a00328.html#ab74302c4c0591098d750ca4e676a7ec1" title="Check whether string is name of a ContactPoolType::Id. " alt="" coords="392,5,536,47"/>
+<area shape="rect" id="node4" href="../../d4/db5/a00328.html#a02e504d5b5a0ca2434971345323be3a2" title="Converts a string with name to Id. " alt="" coords="392,71,536,112"/>
+<area shape="rect" id="node6" href="../../d4/db5/a00328.html#a0c3d076da6b82e6b4d082e1ae58740b6" title="Converts a ContactPoolType::Id value to corresponding name. " alt="" coords="392,136,536,177"/>
+</map>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="a2a6bba1c68c0b6ab97c760897b539b51"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; pcg64 &gt;::Seed </td>
-          <td>(</td>
-          <td class="paramtype">randutils::seed_seq_fe128 &amp;&#160;</td>
-          <td class="paramname"><em>seseq</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a7f5ed0ad410e42106d340d017f0f61ba"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename E&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string <a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; E &gt;::m_seed_seq_init</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Seed sequence initializer used with engines. </p>
-
-<p>Definition at line <a class="el" href="../../d4/d66/a00289_source.html#l00112">112</a> of file <a class="el" href="../../d4/d66/a00289_source.html">Rn.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a958177dee9a3c09f8d5f9073a8d89284"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename E&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int <a class="el" href="../../d4/de8/a00061.html">stride::util::Rn</a>&lt; E &gt;::m_stream_count</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Number of threads/streams set up with the engine. </p>
-
-<p>Definition at line <a class="el" href="../../d4/d66/a00289_source.html#l00113">113</a> of file <a class="el" href="../../d4/d66/a00289_source.html">Rn.h</a>.</p>
-
-<p>Referenced by <a class="el" href="../../d4/d66/a00289_source.html#l00099">stride::util::Rn&lt; pcg64 &gt;::IsEmpty()</a>, and <a class="el" href="../../da/ddc/a00288_source.html#l00036">stride::util::Rn&lt; E &gt;::operator==()</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d4/d66/a00289_source.html">Rn.h</a></li>
-<li><a class="el" href="../../da/ddc/a00288_source.html">Rn.cpp</a></li>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="../../da/de7/a00210_source.html">IdSubscriptArray.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d0/dc3/a00354.html">stride</a></li><li class="navelem"><a class="el" href="../../d7/ddb/a00361.html">util</a></li><li class="navelem"><a class="el" href="../../d4/de8/a00061.html">Rn</a></li>
-    <li class="footer">Generated on Fri Apr 12 2019 20:28:14 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../de/dc8/a00325.html">stride</a></li><li class="navelem"><a class="el" href="../../d4/db5/a00328.html">ContactType</a></li><li class="navelem"><a class="el" href="../../d4/de8/a00061.html">IdSubscriptArray&lt; bool &gt;</a></li>
+    <li class="footer">Generated on Fri Jun 14 2019 14:41:38 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

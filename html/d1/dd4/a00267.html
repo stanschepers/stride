@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: PersonsFile.cpp File Reference</title>
+<title>Stride Reference Manual: RunConfigManager.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 83289e3</span>
+   &#160;<span id="projectnumber">- generated for commit 33b4fd4</span>
    </div>
   </td>
  </tr>
@@ -105,68 +105,67 @@ $(document).ready(function(){initNavTree('d1/dd4/a00267.html','../../');});
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">PersonsFile.cpp File Reference</div>  </div>
+<div class="title">RunConfigManager.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Implementation of the CasesFile class.  
+<p>Produce run config ptree.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="../../db/d12/a00268_source.html">PersonsFile.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d9/dd6/a00272_source.html">pop/Population.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d6/daa/a00187_source.html">util/FileSys.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../de/d14/a00139_source.html">util/ConfigInfo.h</a>&quot;</code><br />
+<code>#include &lt;boost/property_tree/ptree_fwd.hpp&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for PersonsFile.cpp:</div>
+Include dependency graph for RunConfigManager.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d4/dbe/a00574.gif" border="0" usemap="#PersonsFile_8cpp" alt=""/></div>
-<map name="PersonsFile_8cpp" id="PersonsFile_8cpp">
-<area shape="rect" id="node2" href="../../db/d12/a00268.html" title="Header for the PersonFile class. " alt="" coords="22,319,127,345"/>
-<area shape="rect" id="node6" href="../../d9/dd6/a00272.html" title="Header file for the core Population class. " alt="" coords="1169,80,1298,107"/>
-<area shape="rect" id="node48" href="../../d6/daa/a00187.html" title="Interface for install directory queries. " alt="" coords="2314,80,2414,107"/>
-<area shape="rect" id="node7" href="../../de/d38/a00160.html" title="Header for the core ContactPool class. " alt="" coords="1476,244,1639,271"/>
-<area shape="rect" id="node9" href="../../db/ddf/a00164.html" title="Definition of ContactPool Id Type. " alt="" coords="1159,319,1323,345"/>
-<area shape="rect" id="node15" href="../../db/d44/a00162.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="959,162,1145,189"/>
-<area shape="rect" id="node21" href="../../df/d95/a00299.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="503,244,675,271"/>
-<area shape="rect" id="node28" href="../../dc/d57/a00194.html" title="geopop/GeoGrid.h" alt="" coords="1888,162,2027,189"/>
-<area shape="rect" id="node42" href="../../d5/d35/a00266.html" title="Header file for the Person class. " alt="" coords="1232,162,1339,189"/>
-<area shape="rect" id="node44" href="../../d8/d0a/a00292.html" title="Interface of RnMan. " alt="" coords="1677,244,1777,271"/>
-<area shape="rect" id="node8" href="../../d6/db8/a00158.html" title="Header for the ContactLogMode class. " alt="" coords="1348,319,1543,345"/>
-<area shape="rect" id="node16" href="../../d1/da8/a00230.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="917,244,1054,271"/>
-<area shape="rect" id="node22" href="../../de/d55/a00323.html" title="Interface/Implementation for SVIterator. " alt="" coords="253,319,352,345"/>
-<area shape="rect" id="node29" href="../../de/d79/a00203.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="2052,244,2260,271"/>
-<area shape="rect" id="node30" href="../../d3/d1a/a00251.html" title="KdTree.h" alt="" coords="2253,319,2329,345"/>
-<area shape="rect" id="node35" href="../../d0/d3e/a00253.html" title="KdTree2DPoint.h" alt="" coords="2053,319,2179,345"/>
-<area shape="rect" id="node31" href="../../d0/de8/a00133.html" title="AABBox.h" alt="" coords="2128,401,2213,427"/>
-<area shape="rect" id="node32" href="../../d0/da7/a00250.html" title="KdNode.h" alt="" coords="2289,401,2373,427"/>
-<area shape="rect" id="node36" href="../../dc/de6/a00167.html" title="geopop/Coordinate.h" alt="" coords="1715,401,1871,427"/>
-<area shape="rect" id="node43" href="../../dc/d9a/a00218.html" title="Header for the Health class. " alt="" coords="1221,244,1350,271"/>
-<area shape="rect" id="node45" href="../../de/d25/a00290.html" title="Interface of RnPcg. " alt="" coords="1697,319,1770,345"/>
+<div class="center"><img src="../../d2/d50/a00561.gif" border="0" usemap="#RunConfigManager_8h" alt=""/></div>
+<map name="RunConfigManager_8h" id="RunConfigManager_8h">
+<area shape="rect" id="node2" href="../../de/d14/a00139.html" title="Info on configuration. " alt="" coords="5,87,125,114"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d2f/a00562.gif" border="0" usemap="#RunConfigManager_8hdep" alt=""/></div>
+<map name="RunConfigManager_8hdep" id="RunConfigManager_8hdep">
+<area shape="rect" id="node2" href="../../dd/dfe/a00283.html" title="Main program: command line handling. " alt="" coords="5,80,91,107"/>
+<area shape="rect" id="node3" href="../../de/dbc/a00249.html" title="Core Population class. " alt="" coords="115,80,231,107"/>
+<area shape="rect" id="node4" href="../../dd/d86/a00271.html" title="Implementation for the Simulator class. " alt="" coords="256,80,331,107"/>
+<area shape="rect" id="node5" href="../../d5/d35/a00266.html" title="Implementation of ptree utils. " alt="" coords="354,80,521,107"/>
 </map>
 </div>
 </div>
 <p><a href="../../d1/dd4/a00267_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d70/a00106.html">stride::util::RunConfigManager</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Produce run config ptree.  <a href="../../d7/d70/a00106.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:d0/dc3/a00354"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc3/a00354.html">stride</a></td></tr>
-<tr class="memdesc:d0/dc3/a00354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
+<tr class="memitem:de/dc8/a00325"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc8/a00325.html">stride</a></td></tr>
+<tr class="memdesc:de/dc8/a00325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:df/d73/a00358"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d73/a00358.html">stride::output</a></td></tr>
-<tr class="memdesc:df/d73/a00358"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utilities for the output files. <br /></td></tr>
+<tr class="memitem:dc/d50/a00332"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d50/a00332.html">stride::util</a></td></tr>
+<tr class="memdesc:dc/d50/a00332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utilities for the project. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implementation of the CasesFile class. </p>
+<div class="textblock"><p>Produce run config ptree. </p>
 
-<p>Definition in file <a class="el" href="../../d1/dd4/a00267_source.html">PersonsFile.cpp</a>.</p>
+<p>Definition in file <a class="el" href="../../d1/dd4/a00267_source.html">RunConfigManager.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_2ae6c1d5e4b832eb120eff875630c108.html">viewers</a></li><li class="navelem"><a class="el" href="../../d1/dd4/a00267.html">PersonsFile.cpp</a></li>
-    <li class="footer">Generated on Fri Apr 12 2019 20:28:13 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_cf56009b1fcb470adac12e74ab7406a1.html">util</a></li><li class="navelem"><a class="el" href="../../d1/dd4/a00267.html">RunConfigManager.h</a></li>
+    <li class="footer">Generated on Fri Jun 14 2019 14:41:38 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

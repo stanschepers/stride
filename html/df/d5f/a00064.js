@@ -1,6 +1,6 @@
 var a00064 =
 [
-    [ "HasAge", "df/d5f/a00064.html#a9da586fa49f908053a05ce521e904d27", null ],
-    [ "m_lower", "df/d5f/a00064.html#a029109d3a8bf8ca7e5d7ad04800c5daf", null ],
-    [ "m_upper", "df/d5f/a00064.html#a7ff124dd1641223d7e51a4c6b8c6356b", null ]
+    [ "~DaysOffInterface", "df/d5f/a00064.html#afec638f8fcc3e653e389f47bd30d63e1", null ],
+    [ "IsWorkOff", "df/d5f/a00064.html#a2ae431c15cddca106e2a0753fde99f83", null ],
+    [ "IsSchoolOff", "df/d5f/a00064.html#a747d7b072b24545437aa9326ba024185", null ]
 ];

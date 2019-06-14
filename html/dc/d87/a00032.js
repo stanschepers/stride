@@ -1,5 +1,8 @@
 var a00032 =
 [
-    [ "Apply", "dc/d87/a00032.html#a2680aab8fbdbd51f3657b317a70b25c3", null ],
-    [ "AddPools", "dc/d87/a00032.html#a4d47c12ded22f0f6c94a8fb5dcbee452", null ]
+    [ "Args", "dc/d87/a00032.html#a5468ac31eae54f8b993ffd14a62927d7", null ],
+    [ "PolygonPolicy", "dc/d87/a00032.html#a9f6a7862371bdb5991a62af32bfc44fe", null ],
+    [ "GetBoundingBox", "dc/d87/a00032.html#a37ead64e0fc7096f4d71ee2c2b5ce8d0", null ],
+    [ "Contains", "dc/d87/a00032.html#aa76a2a2617b5fd1ae1ff45891adf65b5", null ],
+    [ "m_poly", "dc/d87/a00032.html#a69ddb55e11e6fa42222646a21432bfb1", null ]
 ];

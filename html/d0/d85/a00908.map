@@ -1,4 +1,5 @@
-<map id="stride::GeoPopBuilder" name="stride::GeoPopBuilder">
-<area shape="rect" id="node2" href="$d1/d6f/a00063.html" title="Base Class for PopBuilders. " alt="" coords="185,417,373,524"/>
-<area shape="rect" id="node4" href="$df/d6a/a00119.html" title="{stride::util::RnMan\n||+ RnMan()\l+ RnMan()\l+ operator==()\l+ GetInfo()\l+ GetUniform01Generator()\l+ GetUniformIntGenerator()\l+ GetDiscreteGenerator()\l+ Initialize()\l+ IsEmpty()\l+ Shuffle()\l}" alt="" coords="178,145,381,355"/>
+<map id="stride::util::SegmentedVector&lt; T, N, Safe &gt;" name="stride::util::SegmentedVector&lt; T, N, Safe &gt;">
+<area shape="rect" id="node2" href="$d9/dad/a00394.html" title="{size_t\n||}" alt="" coords="25,285,83,363"/>
+<area shape="rect" id="node4" href="$d3/dd6/a00624.html" title="{Chunk *\n||}" alt="" coords="99,145,172,223"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="196,145,323,223"/>
 </map>

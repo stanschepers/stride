@@ -1,6 +1,4 @@
-<map id="HouseholdPopulator.h" name="HouseholdPopulator.h">
-<area shape="rect" id="node2" href="$dd/d56/a00274.html" title="Populator.h" alt="" coords="367,80,462,107"/>
-<area shape="rect" id="node3" href="$db/ddf/a00164.html" title="Definition of ContactPool Id Type. " alt="" coords="135,155,299,181"/>
-<area shape="rect" id="node9" href="$d8/d0a/a00292.html" title="Interface of RnMan. " alt="" coords="365,155,465,181"/>
-<area shape="rect" id="node10" href="$de/d25/a00290.html" title="Interface of RnPcg. " alt="" coords="378,229,451,256"/>
+<map id="KdTree2DPoint.h" name="KdTree2DPoint.h">
+<area shape="rect" id="node2" href="$df/d6a/a00119.html" title="AABBox.h" alt="" coords="5,87,91,114"/>
+<area shape="rect" id="node3" href="$dd/db2/a00151.html" title="geopop/Coordinate.h" alt="" coords="115,87,271,114"/>
 </map>

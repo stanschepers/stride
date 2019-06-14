@@ -1,14 +1,12 @@
 var a00109 =
 [
-    [ "CSVRow", "dd/d42/a00109.html#ab60a313ff2e75d0ae07bc7624c27a861", null ],
-    [ "CSVRow", "dd/d42/a00109.html#a63cf8ebc530e40cda52b9f15fb751a6f", null ],
-    [ "operator=", "dd/d42/a00109.html#ae4c1879e5f84f6b0e07dbda48be67589", null ],
-    [ "GetValue", "dd/d42/a00109.html#a6462fb781526ce386453ea4ee8e353e5", null ],
-    [ "GetValue", "dd/d42/a00109.html#a70dfc26893fa920410a7e4a049a1578a", null ],
-    [ "operator==", "dd/d42/a00109.html#a8bec120b3295f500c637c4219ec5f873", null ],
-    [ "GetValue", "dd/d42/a00109.html#a65777e0c58ce4632c96009ce1180250a", null ],
-    [ "GetValue", "dd/d42/a00109.html#a03e8149406514c601f7095c55460977d", null ],
-    [ "operator<<", "dd/d42/a00109.html#a0ec2f92503adc2a968a848d3fddf087d", null ],
-    [ "m_parent", "dd/d42/a00109.html#aa89bb5ef10f89f4eae23cc0536bf01c1", null ],
-    [ "m_values", "dd/d42/a00109.html#a6e59d67d64bb1bf8681d7718be92d74f", null ]
+    [ "EventType", "dd/d42/a00109.html#ac4fa78f455203ba23ab4442d14822895", null ],
+    [ "CallbackType", "dd/d42/a00109.html#a3face8040dba107d2ddcfc5f766aa58d", null ],
+    [ "Subject", "dd/d42/a00109.html#a4853b1d31d30e83840a9ab9a01d460dd", null ],
+    [ "~Subject", "dd/d42/a00109.html#ade16fa2818574a0a42874b5f15b1d3ec", null ],
+    [ "Register", "dd/d42/a00109.html#acddc520ab930ec98e120790b91fb8021", null ],
+    [ "Unregister", "dd/d42/a00109.html#aaa38f379243ec0d27b47b5bd110ebe75", null ],
+    [ "UnregisterAll", "dd/d42/a00109.html#a8e0f20cb6cc045cf215f5d5a0963046f", null ],
+    [ "Notify", "dd/d42/a00109.html#a9496d626bbde63eb55836f0af402522c", null ],
+    [ "m_observers", "dd/d42/a00109.html#a3d7c672aaa180fc9b0a8c272639bd821", null ]
 ];

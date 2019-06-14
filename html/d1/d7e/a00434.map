@@ -1,6 +1,11 @@
-<map id="DaycarePopulator.h" name="DaycarePopulator.h">
-<area shape="rect" id="node2" href="$dd/d56/a00274.html" title="Populator.h" alt="" coords="367,80,462,107"/>
-<area shape="rect" id="node3" href="$db/ddf/a00164.html" title="Definition of ContactPool Id Type. " alt="" coords="135,155,299,181"/>
-<area shape="rect" id="node9" href="$d8/d0a/a00292.html" title="Interface of RnMan. " alt="" coords="365,155,465,181"/>
-<area shape="rect" id="node10" href="$de/d25/a00290.html" title="Interface of RnPcg. " alt="" coords="378,229,451,256"/>
+<map id="GeoGridJSONReader.h" name="GeoGridJSONReader.h">
+<area shape="rect" id="node2" href="$d9/dd0/a00191.html" title="GeoGridReader.h" alt="" coords="123,169,252,196"/>
+<area shape="rect" id="node8" href="$d5/da7/a00144.html" title="Header for the core ContactPool class. " alt="" coords="533,169,695,196"/>
+<area shape="rect" id="node11" href="$db/d48/a00148.html" title="Definition of ContactPool Id Type. " alt="" coords="779,251,943,278"/>
+<area shape="rect" id="node16" href="$da/d31/a00234.html" title="geopop/Location.h" alt="" coords="1067,87,1207,114"/>
+<area shape="rect" id="node9" href="$d2/d82/a00142.html" title="Header for the ContactLogMode class. " alt="" coords="509,251,703,278"/>
+<area shape="rect" id="node17" href="$da/de7/a00210.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="973,169,1162,196"/>
+<area shape="rect" id="node22" href="$dd/db2/a00151.html" title="geopop/Coordinate.h" alt="" coords="1607,169,1763,196"/>
+<area shape="rect" id="node25" href="$d9/d2a/a00270.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="2007,169,2179,196"/>
+<area shape="rect" id="node26" href="$d4/d5b/a00294.html" title="Interface/Implementation for SVIterator. " alt="" coords="2187,251,2286,278"/>
 </map>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: stride::util::TimeStamp Class Reference</title>
+<title>Stride Reference Manual: AgeContactProfile.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 83289e3</span>
+   &#160;<span id="projectnumber">- generated for commit 33b4fd4</span>
    </div>
   </td>
  </tr>
@@ -48,8 +48,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
-      <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
-      <li><a href="../../files.html"><span>Files</span></a></li>
+      <li><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -70,10 +70,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="../../annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="../../classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="../../inherits.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
+      <li><a href="../../files.html"><span>File&#160;List</span></a></li>
+      <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -107,157 +105,77 @@ $(document).ready(function(){initNavTree('dc/dfe/a00125.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="../../d5/dfb/a01021.html">List of all members</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">stride::util::TimeStamp Class Reference</div>  </div>
+<div class="title">AgeContactProfile.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Provides wall-clock time stamp using the time call.  
- <a href="../../dc/dfe/a00125.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="../../de/dc8/a00325_source.html">TimeStamp.h</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for stride::util::TimeStamp:</div>
+<p>Contact profile.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../db/d48/a00148_source.html">ContactType.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../df/dc8/a00122_source.html">pop/Age.h</a>&quot;</code><br />
+<code>#include &lt;boost/property_tree/ptree_fwd.hpp&gt;</code><br />
+<code>#include &lt;array&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for AgeContactProfile.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d1/dd8/a01022.gif" border="0" usemap="#stride_1_1util_1_1TimeStamp_coll__map" alt="Collaboration graph"/></div>
-<map name="stride_1_1util_1_1TimeStamp_coll__map" id="stride_1_1util_1_1TimeStamp_coll__map">
+<div class="center"><img src="../../d1/dc6/a00347.gif" border="0" usemap="#AgeContactProfile_8h" alt=""/></div>
+<map name="AgeContactProfile_8h" id="AgeContactProfile_8h">
+<area shape="rect" id="node2" href="../../db/d48/a00148.html" title="Definition of ContactPool Id Type. " alt="" coords="177,87,289,114"/>
+<area shape="rect" id="node8" href="../../df/dc8/a00122.html" title="Helpers for age. " alt="" coords="313,87,400,114"/>
 </map>
 </div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d03/a00348.gif" border="0" usemap="#AgeContactProfile_8hdep" alt=""/></div>
+<map name="AgeContactProfile_8hdep" id="AgeContactProfile_8hdep">
+<area shape="rect" id="node2" href="../../da/d72/a00124.html" title="Contact profile. " alt="" coords="625,80,787,107"/>
+<area shape="rect" id="node3" href="../../d7/d12/a00126.html" title="Contact profiles stored in simulator. " alt="" coords="811,80,966,107"/>
+<area shape="rect" id="node15" href="../../d0/d24/a00222.html" title="Header for the Infector class. " alt="" coords="1212,80,1293,107"/>
+<area shape="rect" id="node4" href="../../d9/dd6/a00272.html" title="Header for the Simulator class. " alt="" coords="749,155,807,181"/>
+<area shape="rect" id="node5" href="../../d3/d5e/a00275.html" title="Header for the command line controller. " alt="" coords="5,229,140,256"/>
+<area shape="rect" id="node6" href="../../d0/dcd/a00280.html" title="Header for the command line controller. " alt="" coords="164,229,304,256"/>
+<area shape="rect" id="node7" href="../../dd/d86/a00271.html" title="Implementation for the Simulator class. " alt="" coords="329,229,403,256"/>
+<area shape="rect" id="node8" href="../../d0/d19/a00273.html" title="Implementation for the SimBuilder class. " alt="" coords="1433,229,1550,256"/>
+<area shape="rect" id="node9" href="../../d6/d4b/a00277.html" title="Implementation for SimRunner. " alt="" coords="427,229,545,256"/>
+<area shape="rect" id="node10" href="../../d7/d06/a00131.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="568,229,673,256"/>
+<area shape="rect" id="node11" href="../../df/d24/a00217.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="697,229,859,256"/>
+<area shape="rect" id="node12" href="../../dd/df3/a00219.html" title="Observer for SimEvents for commandline interface usage. " alt="" coords="883,229,1025,256"/>
+<area shape="rect" id="node13" href="../../d0/d1f/a00247.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="1049,229,1211,256"/>
+<area shape="rect" id="node14" href="../../de/d25/a00290.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="1235,229,1409,256"/>
+<area shape="rect" id="node16" href="../../dd/d52/a00221.html" title="Implementation of Infector algorithms. " alt="" coords="1205,155,1301,181"/>
+<area shape="rect" id="node17" href="../../d5/ddf/a00224.html" title="Header for the InfectorMap. " alt="" coords="1381,155,1490,181"/>
+</map>
+</div>
+</div>
+<p><a href="../../dc/dfe/a00125_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a13a61188e51c4e05d05a91e459c33ffc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfe/a00125.html#a13a61188e51c4e05d05a91e459c33ffc">TimeStamp</a> ()</td></tr>
-<tr class="memdesc:a13a61188e51c4e05d05a91e459c33ffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor marks the current time for the time stamp.  <a href="#a13a61188e51c4e05d05a91e459c33ffc">More...</a><br /></td></tr>
-<tr class="separator:a13a61188e51c4e05d05a91e459c33ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea42ff56713aa57c0aafe5efc92f29e5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfe/a00125.html#aea42ff56713aa57c0aafe5efc92f29e5">ToString</a> () const </td></tr>
-<tr class="memdesc:aea42ff56713aa57c0aafe5efc92f29e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns string with the time stamp after eliminating newline.  <a href="#aea42ff56713aa57c0aafe5efc92f29e5">More...</a><br /></td></tr>
-<tr class="separator:aea42ff56713aa57c0aafe5efc92f29e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f6eefbc6871a229b1c45dbbd98b41fe"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfe/a00125.html#a5f6eefbc6871a229b1c45dbbd98b41fe">ToTag</a> () const </td></tr>
-<tr class="memdesc:a5f6eefbc6871a229b1c45dbbd98b41fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns string with the time stamp after eliminating newline.  <a href="#a5f6eefbc6871a229b1c45dbbd98b41fe">More...</a><br /></td></tr>
-<tr class="separator:a5f6eefbc6871a229b1c45dbbd98b41fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d6d/a00055.html">stride::AgeContactProfile</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contact rates as a function of age.  <a href="../../d4/d6d/a00055.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a04acbf03cad1f6a0f62dd3e1128726b6"><td class="memItemLeft" align="right" valign="top">std::chrono::system_clock::time_point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfe/a00125.html#a04acbf03cad1f6a0f62dd3e1128726b6">m_tp</a></td></tr>
-<tr class="separator:a04acbf03cad1f6a0f62dd3e1128726b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:de/dc8/a00325"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc8/a00325.html">stride</a></td></tr>
+<tr class="memdesc:de/dc8/a00325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Provides wall-clock time stamp using the time call. </p>
-<p>The time is that of the constructor call. </p>
+<div class="textblock"><p>Contact profile. </p>
 
-<p>Definition at line <a class="el" href="../../de/dc8/a00325_source.html#l00034">34</a> of file <a class="el" href="../../de/dc8/a00325_source.html">TimeStamp.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a13a61188e51c4e05d05a91e459c33ffc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">stride::util::TimeStamp::TimeStamp </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Constructor marks the current time for the time stamp. </p>
-
-<p>Definition at line <a class="el" href="../../d4/d8f/a00324_source.html#l00031">31</a> of file <a class="el" href="../../d4/d8f/a00324_source.html">TimeStamp.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aea42ff56713aa57c0aafe5efc92f29e5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string stride::util::TimeStamp::ToString </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns string with the time stamp after eliminating newline. </p>
-
-<p>Definition at line <a class="el" href="../../d4/d8f/a00324_source.html#l00033">33</a> of file <a class="el" href="../../d4/d8f/a00324_source.html">TimeStamp.cpp</a>.</p>
-
-<p>References <a class="el" href="../../de/dc8/a00325_source.html#l00047">m_tp</a>.</p>
-
-<p>Referenced by <a class="el" href="../../de/dc8/a00325_source.html#l00053">stride::util::operator&lt;&lt;()</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../dc/dfe/a00125_aea42ff56713aa57c0aafe5efc92f29e5_icgraph.gif" border="0" usemap="#dc/dfe/a00125_aea42ff56713aa57c0aafe5efc92f29e5_icgraph" alt=""/></div>
-<map name="dc/dfe/a00125_aea42ff56713aa57c0aafe5efc92f29e5_icgraph" id="dc/dfe/a00125_aea42ff56713aa57c0aafe5efc92f29e5_icgraph">
-<area shape="rect" id="node2" href="../../d7/ddb/a00361.html#a93f9f2ea967f7688a4ed4ef10852b566" title="TimeStamp helper inserts string representation in output stream. " alt="" coords="220,13,391,39"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a5f6eefbc6871a229b1c45dbbd98b41fe"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string stride::util::TimeStamp::ToTag </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns string with the time stamp after eliminating newline. </p>
-
-<p>Definition at line <a class="el" href="../../d4/d8f/a00324_source.html#l00041">41</a> of file <a class="el" href="../../d4/d8f/a00324_source.html">TimeStamp.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a04acbf03cad1f6a0f62dd3e1128726b6"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::chrono::system_clock::time_point stride::util::TimeStamp::m_tp</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../de/dc8/a00325_source.html#l00047">47</a> of file <a class="el" href="../../de/dc8/a00325_source.html">TimeStamp.h</a>.</p>
-
-<p>Referenced by <a class="el" href="../../d4/d8f/a00324_source.html#l00033">ToString()</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../de/dc8/a00325_source.html">TimeStamp.h</a></li>
-<li><a class="el" href="../../d4/d8f/a00324_source.html">TimeStamp.cpp</a></li>
-</ul>
-</div><!-- contents -->
+<p>Definition in file <a class="el" href="../../dc/dfe/a00125_source.html">AgeContactProfile.h</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d0/dc3/a00354.html">stride</a></li><li class="navelem"><a class="el" href="../../d7/ddb/a00361.html">util</a></li><li class="navelem"><a class="el" href="../../dc/dfe/a00125.html">TimeStamp</a></li>
-    <li class="footer">Generated on Fri Apr 12 2019 20:28:14 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_d006795525347f4aaca311cb4e45f0bc.html">contact</a></li><li class="navelem"><a class="el" href="../../dc/dfe/a00125.html">AgeContactProfile.h</a></li>
+    <li class="footer">Generated on Fri Jun 14 2019 14:41:37 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

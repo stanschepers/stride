@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: Assert.h File Reference</title>
+<title>Stride Reference Manual: ContactLogMode.cpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 83289e3</span>
+   &#160;<span id="projectnumber">- generated for commit 33b4fd4</span>
    </div>
   </td>
  </tr>
@@ -106,42 +106,23 @@ $(document).ready(function(){initNavTree('d5/d4e/a00141.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Assert.h File Reference</div>  </div>
+<div class="title">ContactLogMode.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Definition of .  
+<p>Implementation of ContactLogMode.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="../../de/df3/a00185_source.html">util/Exception.h</a>&quot;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;spdlog/logger.h&gt;</code><br />
-<code>#include &lt;sstream&gt;</code><br />
-<code>#include &lt;string&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d2/d82/a00142_source.html">ContactLogMode.h</a>&quot;</code><br />
+<code>#include &lt;boost/algorithm/string.hpp&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for Assert.h:</div>
+Include dependency graph for ContactLogMode.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d8/ddd/a00380.gif" border="0" usemap="#Assert_8h" alt=""/></div>
-<map name="Assert_8h" id="Assert_8h">
-<area shape="rect" id="node2" href="../../de/df3/a00185.html" title="util/Exception.h" alt="" coords="5,80,124,107"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../de/d08/a00381.gif" border="0" usemap="#Assert_8hdep" alt=""/></div>
-<map name="Assert_8hdep" id="Assert_8hdep">
-<area shape="rect" id="node2" href="../../df/d24/a00217.html" title="Implementation for the Health class. " alt="" coords="5,80,96,107"/>
-<area shape="rect" id="node3" href="../../dd/df3/a00219.html" title="Implementation for HelthSeeder class. " alt="" coords="120,80,256,107"/>
-<area shape="rect" id="node4" href="../../d0/d4a/a00147.html" title="CollegeGenerator.cpp" alt="" coords="280,80,440,107"/>
-<area shape="rect" id="node5" href="../../d2/d82/a00279.html" title="PrimaryCommunityGenerator.cpp" alt="" coords="463,80,699,107"/>
-<area shape="rect" id="node6" href="../../d9/d5e/a00295.html" title="SecondaryCommunityGenerator.cpp" alt="" coords="723,80,978,107"/>
-<area shape="rect" id="node7" href="../../dd/dbb/a00330.html" title="WorkplaceGenerator.cpp" alt="" coords="1002,80,1179,107"/>
-<area shape="rect" id="node8" href="../../da/d1e/a00149.html" title="CollegePopulator.cpp" alt="" coords="1203,80,1359,107"/>
-<area shape="rect" id="node9" href="../../dc/d50/a00332.html" title="WorkplacePopulator.cpp" alt="" coords="1384,80,1557,107"/>
-<area shape="rect" id="node10" href="../../dd/d86/a00271.html" title="Core Population class. " alt="" coords="1582,80,1698,107"/>
+<div class="center"><img src="../../dc/de3/a00373.gif" border="0" usemap="#ContactLogMode_8cpp" alt=""/></div>
+<map name="ContactLogMode_8cpp" id="ContactLogMode_8cpp">
+<area shape="rect" id="node2" href="../../d2/d82/a00142.html" title="Header for the ContactLogMode class. " alt="" coords="5,80,148,107"/>
 </map>
 </div>
 </div>
@@ -149,107 +130,33 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:d0/dc3/a00354"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc3/a00354.html">stride</a></td></tr>
-<tr class="memdesc:d0/dc3/a00354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
+<tr class="memitem:de/dc8/a00325"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc8/a00325.html">stride</a></td></tr>
+<tr class="memdesc:de/dc8/a00325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d7/ddb/a00361"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/a00361.html">stride::util</a></td></tr>
-<tr class="memdesc:d7/ddb/a00361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utilities for the project. <br /></td></tr>
+<tr class="memitem:d8/dfc/a00327"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dfc/a00327.html">stride::ContactLogMode</a></td></tr>
+<tr class="memdesc:d8/dfc/a00327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum specifiying the level of logging required: <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:abb9b6f8dbf5a3b5559684d8a9095ed9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4e/a00141.html#abb9b6f8dbf5a3b5559684d8a9095ed9a">AssertLog</a>(CONDITION,  MESSAGE,  LOGGER)&#160;&#160;&#160;((void)0)</td></tr>
-<tr class="separator:abb9b6f8dbf5a3b5559684d8a9095ed9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a904cea5d50cd8499f36a9befdf774a0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4e/a00141.html#a904cea5d50cd8499f36a9befdf774a0b">AssertThrow</a>(CONDITION,  MESSAGE,  LOGGER)&#160;&#160;&#160;((void)0)</td></tr>
-<tr class="separator:a904cea5d50cd8499f36a9befdf774a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad34dca6a7a235cc5935cf931efe19fec"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ddb/a00361.html#ad34dca6a7a235cc5935cf931efe19fec">stride::util::AssertMessage</a> (const char *condition, const std::string &amp;message, const std::shared_ptr&lt; spdlog::logger &gt; &amp;logger, const char *file, int line)</td></tr>
-<tr class="separator:ad34dca6a7a235cc5935cf931efe19fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a025f9ff3cf2df8c0c8b95e48724d9b7c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dfc/a00327.html#a025f9ff3cf2df8c0c8b95e48724d9b7c">stride::ContactLogMode::ToString</a> (ContactLogMode::Id w)</td></tr>
+<tr class="memdesc:a025f9ff3cf2df8c0c8b95e48724d9b7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a LogMode value to corresponding name.  <a href="../../d8/dfc/a00327.html#a025f9ff3cf2df8c0c8b95e48724d9b7c">More...</a><br /></td></tr>
+<tr class="separator:a025f9ff3cf2df8c0c8b95e48724d9b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12707c23b43baa1a0f5bed51db72756d"><td class="memItemLeft" align="right" valign="top">Id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dfc/a00327.html#a12707c23b43baa1a0f5bed51db72756d">stride::ContactLogMode::ToMode</a> (const std::string &amp;s)</td></tr>
+<tr class="memdesc:a12707c23b43baa1a0f5bed51db72756d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string with name to LogMode value.  <a href="../../d8/dfc/a00327.html#a12707c23b43baa1a0f5bed51db72756d">More...</a><br /></td></tr>
+<tr class="separator:a12707c23b43baa1a0f5bed51db72756d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Definition of . </p>
+<div class="textblock"><p>Implementation of ContactLogMode. </p>
 
-<p>Definition in file <a class="el" href="../../d5/d4e/a00141_source.html">Assert.h</a>.</p>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="abb9b6f8dbf5a3b5559684d8a9095ed9a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define AssertLog</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">CONDITION, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">MESSAGE, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">LOGGER&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((void)0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d5/d4e/a00141_source.html#l00067">67</a> of file <a class="el" href="../../d5/d4e/a00141_source.html">Assert.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a904cea5d50cd8499f36a9befdf774a0b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define AssertThrow</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">CONDITION, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">MESSAGE, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">LOGGER&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((void)0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d5/d4e/a00141_source.html#l00068">68</a> of file <a class="el" href="../../d5/d4e/a00141_source.html">Assert.h</a>.</p>
-
-<p>Referenced by <a class="el" href="../../d0/d4a/a00147_source.html#l00031">geopop::CollegeGenerator::Apply()</a>, <a class="el" href="../../dd/dbb/a00330_source.html#l00031">geopop::WorkplaceGenerator::Apply()</a>, <a class="el" href="../../d2/d82/a00279_source.html#l00035">geopop::PrimaryCommunityGenerator::Apply()</a>, <a class="el" href="../../d9/d5e/a00295_source.html#l00035">geopop::SecondaryCommunityGenerator::Apply()</a>, <a class="el" href="../../da/d1e/a00149_source.html#l00032">geopop::CollegePopulator::Apply()</a>, <a class="el" href="../../dc/d50/a00332_source.html#l00104">geopop::WorkplacePopulator::CommutingLocations()</a>, <a class="el" href="../../dd/df3/a00219_source.html#l00036">stride::HealthSeeder::HealthSeeder()</a>, <a class="el" href="../../df/d24/a00217_source.html#l00035">stride::Health::StartInfection()</a>, and <a class="el" href="../../df/d24/a00217_source.html#l00042">stride::Health::StopInfection()</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+<p>Definition in file <a class="el" href="../../d5/d4e/a00141_source.html">ContactLogMode.cpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_cf56009b1fcb470adac12e74ab7406a1.html">util</a></li><li class="navelem"><a class="el" href="../../d5/d4e/a00141.html">Assert.h</a></li>
-    <li class="footer">Generated on Fri Apr 12 2019 20:28:13 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_d006795525347f4aaca311cb4e45f0bc.html">contact</a></li><li class="navelem"><a class="el" href="../../d5/d4e/a00141.html">ContactLogMode.cpp</a></li>
+    <li class="footer">Generated on Fri Jun 14 2019 14:41:37 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

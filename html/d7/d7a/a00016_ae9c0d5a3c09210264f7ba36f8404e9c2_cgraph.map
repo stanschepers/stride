@@ -1,0 +1,5 @@
+<map id="geopop::GeoGridConfig::SetDistributionData" name="geopop::GeoGridConfig::SetDistributionData">
+<area shape="rect" id="node2" href="$d4/d8c/a00035.html#a41ec5cc704e6d7bab756e11f21ce6283" title="Create a DistributionReader based on the filename relative to the data directory. ..." alt="" coords="224,29,415,71"/>
+<area shape="rect" id="node3" href="$d1/d44/a00098.html#adf7673eaecc73f8e0b1ac635c23a8d3f" title="/// Return data dir (only relevant when use_install_dirs mode is active) " alt="" coords="463,29,599,71"/>
+<area shape="rect" id="node4" href="$d1/d44/a00098.html#a811a1d113f57785952045d9541c95db5" title="Return paths. " alt="" coords="647,37,813,63"/>
+</map>

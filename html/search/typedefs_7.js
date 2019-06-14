@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['person',['Person',['../d1/dea/a00054.html#afffd60fc3e9fad4e152b3fd8bc89bec9',1,'proto::GeoGrid']]],
-  ['pointer',['pointer',['../da/d72/a00124.html#a53edbe0a7ae756f95ea7a3916bde783e',1,'stride::util::SVIterator']]]
+  ['k12schoolgenerator',['K12SchoolGenerator',['../d0/d39/a00314.html#a48bfe8eb2625a1931061f5ded504b059',1,'geopop']]],
+  ['k12schoolpopulator',['K12SchoolPopulator',['../d0/d39/a00314.html#a8712aa90adda94eec41ca84601402504',1,'geopop']]]
 ];

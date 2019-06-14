@@ -1,7 +1,9 @@
 var a00118 =
 [
-    [ "RnInfo", "d8/d87/a00118.html#a6ac1617ee5c2de2c334ea8ea830d40df", null ],
-    [ "m_seed_seq_init", "d8/d87/a00118.html#a334598325775ca657f4c8406a4aee71b", null ],
-    [ "m_state", "d8/d87/a00118.html#a7c366e03a8697e8d23fbc0166c1d6a91", null ],
-    [ "m_stream_count", "d8/d87/a00118.html#ac6a2c4349ae8202a0668b43982afb80f", null ]
+    [ "PROTOBUF_SECTION_VARIABLE", "d8/d87/a00118.html#adb95088fb677be84100b82414b6c460d", null ],
+    [ "PROTOBUF_SECTION_VARIABLE", "d8/d87/a00118.html#ac48357e89549fe4cce91a7cda00a1535", null ],
+    [ "PROTOBUF_SECTION_VARIABLE", "d8/d87/a00118.html#a601dfa94bfbe18955d33f8b660985720", null ],
+    [ "field_metadata", "d8/d87/a00118.html#a9a8e9e93c507543eb7899332656b706d", null ],
+    [ "serialization_table", "d8/d87/a00118.html#a5bd363cc6c43ac962af44d0a3a51f8cc", null ],
+    [ "offsets", "d8/d87/a00118.html#a98f3abc503157caec7b549c1fc4e2633", null ]
 ];

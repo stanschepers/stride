@@ -1,3 +1,3 @@
-<map id="geopop::DaycarePopulator" name="geopop::DaycarePopulator">
-<area shape="rect" id="node2" href="$db/d3a/a00040.html" title="Interface for populators. " alt="" coords="26,5,177,156"/>
+<map id="geopop::Populator&lt; ID &gt;" name="geopop::Populator&lt; ID &gt;">
+<area shape="rect" id="node3" href="$d3/d32/a00105.html" title="{stride::util::RnMan\n||+ RnMan()\l+ RnMan()\l+ operator==()\l+ GetInfo()\l+ GetUniform01Generator()\l+ GetUniformIntGenerator()\l+ GetDiscreteGenerator()\l+ MakeWeightedCoinFlip()\l+ Initialize()\l+ IsEmpty()\l+ Shuffle()\l}" alt="" coords="178,145,381,369"/>
 </map>

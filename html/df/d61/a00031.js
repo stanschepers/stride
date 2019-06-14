@@ -1,6 +1,7 @@
 var a00031 =
 [
-    [ "HouseholdReader", "df/d61/a00031.html#a176ab97c6e6fecf6f866a3acc173c82d", null ],
-    [ "~HouseholdReader", "df/d61/a00031.html#a1a0b479e10e4bbcaa57bc0a4955df946", null ],
-    [ "SetReferenceHouseholds", "df/d61/a00031.html#ae8f72e3d2cf0cda493fdb3fe17f90da7", null ]
+    [ "LocationsReader", "df/d61/a00031.html#a08a0a0bee6983e75de99b46132e26eaa", null ],
+    [ "~LocationsReader", "df/d61/a00031.html#adf7cb185f3d39194f4065707da23e0d6", null ],
+    [ "FillGeoGrid", "df/d61/a00031.html#ad94de2ea05242ef43ac6ea9723fbc591", null ],
+    [ "m_inputStream", "df/d61/a00031.html#ad1bd8f33fd74070b9b606734e6c8d2de", null ]
 ];

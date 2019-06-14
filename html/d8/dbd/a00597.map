@@ -1,4 +1,9 @@
-<map id="PrimaryCommunityPopulator.h" name="PrimaryCommunityPopulator.h">
-<area shape="rect" id="node2" href="$d2/d04/a00281.html" title="PrimaryCommunityPopulator.cpp" alt="" coords="5,80,237,107"/>
-<area shape="rect" id="node3" href="$d3/dd5/a00215.html" title="Initialize populations: implementation. " alt="" coords="262,80,405,107"/>
+<map id="SummaryFileViewer.h" name="SummaryFileViewer.h">
+<area shape="rect" id="node2" href="$d4/d66/a00289.html" title="Header for the SummaryFile class. " alt="" coords="173,80,291,107"/>
+<area shape="rect" id="node6" href="$dc/d5d/a00278.html" title="Header for the SimRunner class. " alt="" coords="634,80,763,107"/>
+<area shape="rect" id="node7" href="$d3/de5/a00209.html" title="Definition of EventId. " alt="" coords="699,244,811,271"/>
+<area shape="rect" id="node9" href="$d5/d7b/a00286.html" title="Definition of Subject/Observer for SimEvents. " alt="" coords="792,162,941,189"/>
+<area shape="rect" id="node14" href="$dc/dc9/a00282.html" title="Definition of Stopwatch. " alt="" coords="347,162,471,189"/>
+<area shape="rect" id="node10" href="$d6/d7f/a00287.html" title="Interface/Implementation of Subject. " alt="" coords="835,244,941,271"/>
+<area shape="rect" id="node15" href="$d9/d0d/a00298.html" title="Utilities to tag clocks and reformat clock readout to string. " alt="" coords="326,244,442,271"/>
 </map>

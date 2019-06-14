@@ -1,5 +1,9 @@
 var a00049 =
 [
-    [ "Apply", "d2/dee/a00049.html#afee876de43bafdc378a264305bd0f231", null ],
-    [ "AddPools", "d2/dee/a00049.html#a55c16a3aa5962b6b57f668b76dfff5a9", null ]
+    [ "AbstractPopBuilder", "d2/dee/a00049.html#a0dc3493a948b42c70cd879d83c879526", null ],
+    [ "~AbstractPopBuilder", "d2/dee/a00049.html#a938da421d2a2d203e7cb90ead7b91807", null ],
+    [ "Build", "d2/dee/a00049.html#a864865f7e88c7b737ad91a245f49f466", null ],
+    [ "m_config", "d2/dee/a00049.html#a34a81e371e1bf73c2a75fd9d2df21353", null ],
+    [ "m_rn_man", "d2/dee/a00049.html#a2a438798c37f82817665369d725a3a34", null ],
+    [ "m_stride_logger", "d2/dee/a00049.html#a6aa42972b4d340a04b0366af0a889b5e", null ]
 ];
