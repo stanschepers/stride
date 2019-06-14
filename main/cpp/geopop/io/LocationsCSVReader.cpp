@@ -34,12 +34,13 @@ void LocationsCSVReader::FillGeoGrid(GeoGrid& geoGrid) const
         auto totalPopulation = 0U;
 
         for (const CSVRow& row : reader) {
-                // In file: id,province,population,x_coord,y_coord,latitude,longitude,name
+                // In file: id,province,population,x_coord,y_coord,latitude,longitude,name, population_id
                 // Ignore x and y, we do not use them,
                 // In Coordinate constructor switch order of latitude and longitude
                 const auto loc = make_shared<Location>(row.GetValue<int>(0), row.GetValue<int>(1),
                                                        Coordinate(row.GetValue<double>(6), row.GetValue<double>(5)),
                                                        row.GetValue(7));
+                loc->SetHouseHoldType(static_cast<unsigned int>(stoi(row.GetValue(8))));
                 geoGrid.AddLocation(loc);
                 locations.emplace_back(loc, row.GetValue<int>(2));
                 totalPopulation += row.GetValue<int>(2);

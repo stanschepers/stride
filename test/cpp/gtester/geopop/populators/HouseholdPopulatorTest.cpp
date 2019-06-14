@@ -91,23 +91,36 @@ TEST_F(HouseholdPopulatorTest, FiveHouseholdsTest)
 
 TEST_F(HouseholdPopulatorTest, MultipleHouseholdTypesTest)
 {
+        ReferenceHouseHold refHH1;
+        ReferenceHouseHold refHH2;
+        refHH1.ages = vector<vector<unsigned int>>{{18U}, {12U, 56U}};
+        refHH2.ages = vector<vector<unsigned int>>{{32U}, {80U, 12U}};
+        m_gg_config.refHHperHHType.emplace(0, refHH1);
+        m_gg_config.refHHperHHType.emplace(1, refHH2);
         m_gg_config.refHH.ages = vector<vector<unsigned int>>{{18U}, {12U, 56U}};
 
-        const auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
+
+        const auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500, 0);
+        const auto loc2 = make_shared<Location>(1, 4, Coordinate(0, 0), "Hasselt", 2500, 1);
         m_household_generator.AddPools(*loc1, m_pop.get(), m_gg_config);
-        m_household_generator.AddPools(*loc1, m_pop.get(), m_gg_config);
+        m_household_generator.AddPools(*loc2, m_pop.get(), m_gg_config);
 
         m_geo_grid.AddLocation(loc1);
+        m_geo_grid.AddLocation(loc2);
         m_household_populator.Apply(m_geo_grid, m_gg_config);
 
-        const auto& hPools = loc1->RefPools(Id::Household);
-        const auto& pool1  = *hPools[0];
-        const auto& pool2  = *hPools[1];
+        const auto& hPools1 = loc1->RefPools(Id::Household);
+        const auto& pool11  = *hPools1[0];
 
-        ASSERT_EQ(hPools.size(), 2);
-        ASSERT_EQ(pool1.size(), 1);
-        EXPECT_EQ(pool1[0]->GetAge(), 18);
-        ASSERT_EQ(pool2.size(), 2);
-        EXPECT_EQ(pool2[0]->GetAge(), 12);
-        EXPECT_EQ(pool2[1]->GetAge(), 56);
+        const auto& hPools2 = loc2->RefPools(Id::Household);
+        const auto& pool21  = *hPools2[0];
+
+        ASSERT_EQ(hPools1.size(), 1);
+        ASSERT_EQ(pool11.size(), 1);
+        EXPECT_EQ(pool11[0]->GetAge(), 18);
+
+        ASSERT_EQ(hPools2.size(), 1);
+        ASSERT_EQ(pool21.size(), 2);
+        EXPECT_EQ(pool21[0]->GetAge(), 80);
+        EXPECT_EQ(pool21[1]->GetAge(), 12);
 }

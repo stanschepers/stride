@@ -126,10 +126,11 @@ string RunConfigManager::CreateBenchInfluenza()
         <num_days>10</num_days>
         <num_participants_survey>10</num_participants_survey>
         <num_threads>1</num_threads>
-        <output_prefix></output_prefix>
+        <output_prefix>BenchRuns</output_prefix>
         <population_file>pop_flanders600.csv</population_file>
         <population_type>default</geopopulation_type>
-        <rng_seed>1097253,2387652,9963540,4730214</rng_seed>
+        <rng_seed>343869</rng_seed>
+        <rng_type>mrg2</rng_type>
         <r0>1.5</r0>
         <seeding_rate>0.001</seeding_rate>
         <seeding_age_min>1</seeding_age_min>
@@ -158,16 +159,17 @@ string RunConfigManager::CreateBenchMeasles()
         <num_days>30</num_days>
         <num_participants_survey>10</num_participants_survey>
         <num_threads>1</num_threads>
-        <output_prefix></output_prefix>
+        <output_prefix>bench</output_prefix>
         <population_file>pop_flanders600.csv</population_file>
         <population_type>default</geopopulation_type>
-        <rng_seed>1097253,2387652,9963540,4730214</rng_seed>
+        <rng_seed>1</rng_seed>
+        <rng_type>mrg2</rng_type>
         <r0>16</r0>
         <seeding_age_max>99</seeding_age_max>
         <seeding_age_min>1</seeding_age_min>
         <seeding_rate>0.05</seeding_rate>
         <start_date>2017-01-01</start_date>
-        <stride_log_level>info</stride_log_level>
+        <stride_log_level>critical</stride_log_level>
         <track_index_case>false</track_index_case>
         <use_install_dirs>true</use_install_dirs>
         <vaccine_link_probability>0</vaccine_link_probability>
@@ -200,13 +202,14 @@ string RunConfigManager::CreateDefault()
         <output_summary>false</output_summary>
         <population_file>pop_flanders600.csv</population_file>
         <population_type>default</geopopulation_type>
-        <rng_seed>1097253,2387652,9963540,4730214</rng_seed>
+        <rng_seed>1</rng_seed>
+        <rng_type>mrg2</rng_type>
         <r0>11</r0>
         <seeding_age_max>99</seeding_age_max>
         <seeding_age_min>1</seeding_age_min>
         <seeding_rate>0.003</seeding_rate>
         <start_date>2017-01-01</start_date>
-        <stride_log_level>info</stride_log_level>
+        <stride_log_level>critical</stride_log_level>
         <track_index_case>false</track_index_case>
         <use_install_dirs>true</use_install_dirs>
         <vaccine_link_probability>0</vaccine_link_probability>
@@ -264,10 +267,11 @@ string RunConfigManager::CreateTestsInfluenza()
         <num_days>30</num_days>
         <num_participants_survey>10</num_participants_survey>
         <num_threads>1</num_threads>
-        <output_prefix></output_prefix>
+        <output_prefix>BenchRuns</output_prefix>
         <population_file>pop_flanders600.csv</population_file>
         <population_type>default</geopopulation_type>
-        <rng_seed>1097253,2387652,9963540,4730214</rng_seed>
+        <rng_seed>2015</rng_seed>
+        <rng_type>mrg2</rng_type>
         <r0>3</r0>
         <seeding_rate>0.00089999999999999998</seeding_rate>
         <seeding_age_min>1</seeding_age_min>
@@ -296,10 +300,11 @@ string RunConfigManager::CreateTestsMeasles()
         <num_days>50</num_days>
         <num_participants_survey>10</num_participants_survey>
         <num_threads>1</num_threads>
-        <output_prefix></output_prefix>
+        <output_prefix>BenchRuns</output_prefix>
         <population_file>pop_flanders600.csv</population_file>
         <population_type>default</geopopulation_type>
-        <rng_seed>1097253,2387652,9963540,4730214</rng_seed>
+        <rng_seed>1</rng_seed>
+        <rng_type>mrg2</rng_type>
         <seeding_age_max>99</seeding_age_max>
         <seeding_age_min>1</seeding_age_min>
         <seeding_rate>0.002</seeding_rate>
@@ -318,7 +323,7 @@ ptree RunConfigManager::FromString(const string& s)
 {
         ptree         pt;
         istringstream is(s);
-        read_xml(is, pt, trim_whitespace);
+        read_xml(is, pt);
         return pt;
 }
 

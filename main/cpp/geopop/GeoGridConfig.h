@@ -23,10 +23,54 @@
 
 #include <memory>
 #include <ostream>
+#include <map>
 
 namespace geopop {
 
 class GeoGrid;
+
+
+// -----------------------------------------------------------------------------------------
+// The reference Households used to generate the population by random draws.
+// -----------------------------------------------------------------------------------------
+struct ReferenceHouseHold
+{
+        /// Number of persons in the reference household set.
+        unsigned int person_count = 0U;
+
+        /// Age profile per reference household.
+        std::vector<std::vector<unsigned int>> ages{};
+
+        /// Young/Old fraction of reference household
+        double young_old_fraction = 1.0;
+};
+
+// -----------------------------------------------------------------------------------------
+// These are numbers derived from the reference households, the target size of the generated
+// population and the input parameters relating participation school and worplace.
+// These numbers are used as targets in the poggen process and are reproduced (to very close
+// approximation) in the generated population.
+// -----------------------------------------------------------------------------------------
+struct PopulationInfo
+{
+        /// Number of individuals in Daycare.
+        unsigned int popcount_daycare;
+
+        /// Number of individuals in PreSchool.
+        unsigned int popcount_preschool;
+
+        /// Number of individuals in K12School.
+        unsigned int popcount_k12school;
+
+        /// Number of individuals in College.
+        unsigned int popcount_college;
+
+        /// Number of individuals in Workplace.
+        unsigned int popcount_workplace;
+
+        /// Number of households.
+        unsigned int count_households;
+};
 
 /**
  * Configuration data mostly for generating a population, but also for computing
@@ -82,53 +126,21 @@ public:
                 std::vector<std::tuple<double, unsigned int, unsigned int>> work_distribution;
         } param;
 
-        // -----------------------------------------------------------------------------------------
-        // The reference Households used to generate the population by random draws.
-        // -----------------------------------------------------------------------------------------
-        struct
-        {
-                /// Number of persons in the reference household set.
-                unsigned int person_count = 0U;
+        ReferenceHouseHold refHH;
 
-                /// Age profile per reference household.
-                std::vector<std::vector<unsigned int>> ages{};
-        } refHH;
+        PopulationInfo info;
 
-        // -----------------------------------------------------------------------------------------
-        // These are numbers derived from the reference households, the target size of the generated
-        // population and the input parameters relating participation in college and workplace.
-        // These numbers are used as targets in the population generation process and are reproduced
-        // (to very close approximation) in the generated population.
-        // The numbers are set by the SetData method.
-        // -----------------------------------------------------------------------------------------
-        struct
-        {
-                /// Number of individuals in Daycare.
-                unsigned int popcount_daycare;
+        std::map<unsigned int, ReferenceHouseHold> refHHperHHType;
 
-                /// Number of individuals in PreSchool.
-                unsigned int popcount_preschool;
-
-                /// Number of individuals in K12School.
-                unsigned int popcount_k12school;
-
-                /// Number of individuals in College.
-                unsigned int popcount_college;
-
-                /// Number of individuals in Workplace.
-                unsigned int popcount_workplace;
-
-                /// The number of households.
-                unsigned int count_households;
-
-                /// The number of workplaces.
-                unsigned int count_workplaces;
-        } info;
+        std::map<unsigned int, PopulationInfo> popInfoperHHtype;
 
         // -----------------------------------------------------------------------------------------
         /// Read the househould data file, parse it and set data.
         // -----------------------------------------------------------------------------------------
         void SetData(const std::string& householdsFileName);
+
+        void SetData(const std::map<unsigned int, std::string> &householdsFileNamePerId);
+
 
         // -----------------------------------------------------------------------------------------
         /// Read the workplace distribution data file, parse it and set data.

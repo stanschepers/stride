@@ -43,7 +43,7 @@ using namespace boost::property_tree;
 
 namespace stride {
 
-StanController::StanController(const ptree& config, const string& name) : ControlHelper(config, name) {}
+StanController::StanController(const ptree& config) : ControlHelper("Stancontoller", config) {}
 
 void StanController::Control()
 {
@@ -60,16 +60,11 @@ void StanController::Control()
         // -----------------------------------------------------------------------------------------
         const auto           stanCount = m_config.get<unsigned int>("run.stan_count");
         random_device        rd;
-        vector<unsigned int> rd_values;
-        vector<string>       seeds;
-        for (unsigned int i = 0; i < 4 * stanCount; i++) {
-                rd_values.emplace_back(rd());
-        }
+        vector<unsigned int> seeds;
         for (unsigned int i = 0; i < stanCount; i++) {
-                seeds.emplace_back(ToString(rd_values[2 * i]) + "," + ToString(rd_values[2 * i + 1]) + ","
-                                   + ToString(rd_values[2 * i + 2]) + "," + ToString(rd_values[2 * i + 3]));
+                seeds.emplace_back(rd());
         }
-        vector<vector<unsigned int>> results(stanCount);
+        vector<vector<unsigned int>> results(seeds.size());
 
         // -----------------------------------------------------------------------------------------
         // Instantiate simRunners & run, once for each seed.
@@ -78,16 +73,17 @@ void StanController::Control()
         m_config.put("run.num_threads", 1);
 
 #pragma omp parallel for num_threads(ConfigInfo::NumberAvailableThreads())
-        for (unsigned int i = 0U; i < stanCount; ++i) {
+        for (unsigned int i = 0U; i < seeds.size(); ++i) {
 
                 // ---------------------------------------------------------------------------------
                 // Stan scenario: step 2, build a single stream random number manager for each run.
                 // ---------------------------------------------------------------------------------
                 ptree configPt(m_config);
                 configPt.put("run.rng_seed", seeds[i]);
-                RnMan rnMan{RnInfo{seeds[i], "", 1U}};
+                RnMan rnMan{RnInfo{configPt.get<string>("run.rng_seed"), "", 1U}};
 
-                m_stride_logger->info("Starting run using seed {}", seeds[i]);
+                m_stride_logger->info("Starting run using seed {}", configPt.get<string>("run.rng_seed"));
+
                 // ---------------------------------------------------------------------------------
                 // Stan scenario: step 3, build a population as specified in config.
                 // ---------------------------------------------------------------------------------
@@ -108,7 +104,7 @@ void StanController::Control()
                 results[i] = iViewer->GetInfectionCounts();
         }
 
-        for (unsigned int i = 0U; i < stanCount; ++i) {
+        for (unsigned int i = 0U; i < seeds.size(); ++i) {
                 m_stride_logger->info("For run with seed {} final infected count is: {}", seeds[i], results[i].back());
         }
 
@@ -116,7 +112,7 @@ void StanController::Control()
         // Stan scenario: step 6, output to file.
         // -----------------------------------------------------------------------------------------
         const auto numDays = m_config.get<unsigned int>("run.num_days");
-        CSV        csv(stanCount);
+        CSV        csv(seeds.begin(), seeds.end());
         for (unsigned int i = 0U; i < numDays + 1; ++i) {
                 vector<unsigned int> v;
                 for (const auto& res : results) {
@@ -125,6 +121,12 @@ void StanController::Control()
                 csv.AddRow(v.begin(), v.end());
         }
         csv.Write(FileSys::BuildPath(m_config.get<string>("run.output_prefix"), "stan_infected.csv"));
+
+        // -----------------------------------------------------------------------------------------
+        // Done, shutdown.
+        // -----------------------------------------------------------------------------------------
+        LogShutdown();
+        spdlog::drop_all();
 }
 
 } // namespace stride

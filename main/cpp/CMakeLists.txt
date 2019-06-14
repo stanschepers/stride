@@ -73,7 +73,7 @@ set(STRIDE_SRC
     geopop/geo/KdTree2DPoint.cpp
     #---
     geopop/generators/CollegeGenerator.cpp
-    geopop/generators/HouseholdGenerator.cpp
+        geopop/generators/HouseholdGenerator.cpp
     geopop/generators/K12SchoolGenerator.cpp
     geopop/generators/PrimaryCommunityGenerator.cpp
     geopop/generators/SecondaryCommunityGenerator.cpp
@@ -97,11 +97,10 @@ set(STRIDE_SRC
     geopop/io/HouseholdCSVReader.cpp
     geopop/io/WorkplaceCSVReader.cpp
     geopop/io/ReaderFactory.cpp
-    #---
     geopop/populators/CollegePopulator.cpp
     geopop/populators/HouseholdPopulator.cpp
     geopop/populators/K12SchoolPopulator.cpp
-    geopop/populators/PrimaryCommunityPopulator.cpp
+        geopop/populators/PrimaryCommunityPopulator.cpp
     geopop/populators/SecondaryCommunityPopulator.cpp
     geopop/populators/WorkplacePopulator.cpp
     geopop/populators/DaycarePopulator.cpp
@@ -154,9 +153,9 @@ target_compile_definitions(libstride PUBLIC "-DSTRIDE_GIT_HASH=${STRIDE_WC_REVIS
 target_compile_definitions(libstride PUBLIC "-DPROCCOUNT=${PROCCOUNT}")
 target_link_libraries(libstride PRIVATE ${LIBS})
 if(Protobuf_FOUND)
-    target_link_libraries(libstride PUBLIC ${Protobuf_LIBRARIES})
+    target_link_libraries(libstride PRIVATE ${Protobuf_LIBRARIES})
 else()
-    target_link_libraries(libstride PUBLIC libprotobuf)
+    target_link_libraries(libstride PRIVATE libprotobuf)
 endif()
 set_target_properties(libstride
     PROPERTIES

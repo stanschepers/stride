@@ -35,7 +35,7 @@ void Generator<stride::ContactType::Id::K12School>::Apply(GeoGrid& geoGrid, cons
 
         vector<double> weights;
         for (const auto& loc : geoGrid) {
-                weights.push_back(loc->GetPopFraction());
+                weights.push_back(loc->GetPopFraction() * loc->GetYoungOldFraction());
         }
 
         if (weights.empty()) {
