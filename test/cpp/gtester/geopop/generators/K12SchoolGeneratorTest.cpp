@@ -73,7 +73,7 @@ TEST_F(K12SchoolGeneratorTest, OneLocationLargeYOFractionTest)
 
         auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
         loc1->SetYoungOldFraction(100.0);
-        m_gg_config.AddLocation(loc1);
+        m_geo_grid.AddLocation(loc1);
 
         m_k12school_generator.Apply(m_geo_grid, m_gg_config);
 

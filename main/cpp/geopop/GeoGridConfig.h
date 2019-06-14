@@ -95,9 +95,9 @@ public:
         /// definition of the enumeration must be respected!
         stride::ContactType::IdSubscriptArray<unsigned int> pools {1U, 1U, 10U, 25U, 20U, 1U, 1U, 1U};
 
-        // -----------------------------------------------------------------------------------------
-        // Parameters set by constructor with configuration property tree.
-        // -----------------------------------------------------------------------------------------
+        /// -----------------------------------------------------------------------------------------
+        /// Parameters set by constructor with configuration property tree.
+        /// -----------------------------------------------------------------------------------------
         struct
         {
                 /// Participation of daycare (fraction of people of daycare age going to daycare).
@@ -131,49 +131,9 @@ public:
 
         std::map<unsigned int, PopulationInfo> popInfoperHHtype;
 
-        // -----------------------------------------------------------------------------------------
-        // The reference Households used to generate the population by random draws.
-        // -----------------------------------------------------------------------------------------
-        struct
-        {
-                /// Number of persons in the reference household set.
-                unsigned int person_count = 0U;
-
-                /// Age profile per reference household.
-                std::vector<std::vector<unsigned int>> ages{};
-        } refHH;
-
-        // -----------------------------------------------------------------------------------------
-        // These are numbers derived from the reference households, the target size of the generated
-        // population and the input parameters relating participation in college and workplace.
-        // These numbers are used as targets in the population generation process and are reproduced
-        // (to very close approximation) in the generated population.
-        // The numbers are set by the SetData method.
-        // -----------------------------------------------------------------------------------------
-        struct
-        {
-                /// Number of individuals in Daycare.
-                unsigned int popcount_daycare;
-
-                /// Number of individuals in PreSchool.
-                unsigned int popcount_preschool;
-
-                /// Number of individuals in K12School.
-                unsigned int popcount_k12school;
-
-                /// Number of individuals in College.
-                unsigned int popcount_college;
-
-                /// Number of individuals in Workplace.
-                unsigned int popcount_workplace;
-
-                /// The number of households.
-                unsigned int count_households;
-        } info;
-
-        // -----------------------------------------------------------------------------------------
+        /// -----------------------------------------------------------------------------------------
         /// Read the househould data file, parse it and set data.
-        // -----------------------------------------------------------------------------------------
+        /// -----------------------------------------------------------------------------------------
         void SetData(const std::string& householdsFileName);
 
         void SetData(const std::map<unsigned int, std::string> &householdsFileNamePerId);

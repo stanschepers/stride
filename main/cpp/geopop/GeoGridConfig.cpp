@@ -149,7 +149,7 @@ void GeoGridConfig::SetData(const std::map<unsigned int, std::string> &household
                 refHH.young_old_fraction += youngOldFraction;
 
         }
-        const auto popSize = input.pop_size;
+        const auto popSize = param.pop_size;
 
         refHH.young_old_fraction = refHH.young_old_fraction / static_cast<double>(refHHperHHType.size()); // average
 
@@ -201,20 +201,20 @@ void GeoGridConfig::SetData(const std::map<unsigned int, std::string> &household
         const auto age_count_college = static_cast<unsigned int>(floor(popSize * fraction_college_age));
         const auto age_count_workplace = static_cast<unsigned int>(floor(popSize * fraction_workplace_age));
 
-        popInfo.popcount_daycare = static_cast<unsigned int>(floor(input.participation_daycare * age_count_daycare));
+        info.popcount_daycare = static_cast<unsigned int>(floor(param.participation_daycare * age_count_daycare));
 
-        popInfo.popcount_preschool =
-                static_cast<unsigned int>(floor(input.participation_preschool * age_count_preschool));
+        info.popcount_preschool =
+                static_cast<unsigned int>(floor(param.participation_preschool * age_count_preschool));
 
-        popInfo.popcount_k12school = age_count_k12school;
+        info.popcount_k12school = age_count_k12school;
 
-        popInfo.popcount_college = static_cast<unsigned int>(floor(
-                input.participation_college * age_count_college));
+        info.popcount_college = static_cast<unsigned int>(floor(
+                param.participation_college * age_count_college));
 
-        popInfo.popcount_workplace = static_cast<unsigned int>(
-                floor(input.participation_workplace * (age_count_workplace - popInfo.popcount_college)));
+        info.popcount_workplace = static_cast<unsigned int>(
+                floor(param.participation_workplace * (age_count_workplace - info.popcount_college)));
 
-        popInfo.count_households = static_cast<unsigned int>(floor(
+        info.count_households = static_cast<unsigned int>(floor(
                 static_cast<double>(popSize) / averageHhSize));
 }
 
@@ -222,7 +222,7 @@ ostream& operator<<(ostream& out, const GeoGridConfig& config)
 {
         const int w = 53;
         out.setf(std::ios_base::left, std::ios_base::adjustfield);
-        out << "Input:" << endl;
+        out << "param:" << endl;
         out << setw(w) << "Fraction college commuters:" << config.param.fraction_college_commuters << "\n";
         out << setw(w) << "Fraction workplace commuters:" << config.param.fraction_workplace_commuters << "\n";
         out << setw(w) << "Participation fraction of daycare:" << config.param.participation_daycare << "\n";

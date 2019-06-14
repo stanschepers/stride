@@ -67,17 +67,17 @@ TEST_F(PreSchoolGeneratorTest, OneLocationTest)
 // Check that generator can handle one Location with a large young/old fraction.
 TEST_F(PreSchoolGeneratorTest, OneLocationLargeYOFractionTest)
 {
-        m_geogrid_config.input.pop_size = 10000;
-        m_geogrid_config.popInfo.popcount_preschool = 2000;
+        m_gg_config.param.pop_size = 10000;
+        m_gg_config.info.popcount_preschool = 2000;
 
         auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
         loc1->SetYoungOldFraction(100.0);
         m_geo_grid.AddLocation(loc1);
 
-        m_preschool_generator.Apply(m_geo_grid, m_geogrid_config);
+        m_preschool_generator.Apply(m_geo_grid, m_gg_config);
 
         const auto &poolsOfLoc1 = loc1->CRefPools(Id::PreSchool);
-        EXPECT_EQ(poolsOfLoc1.size(), 10 * m_geogrid_config.pools.pools_per_preschool);
+        EXPECT_EQ(poolsOfLoc1.size(), 10 * m_pppre);
 }
 
 // Check that generator can handle empty GeoGrid.

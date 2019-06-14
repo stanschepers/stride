@@ -77,7 +77,7 @@ TEST_F(DaycareGeneratorTest, OneLocationLargeYOFractionTest)
         m_daycare_generator.Apply(m_geo_grid, m_gg_config);
 
         const auto &poolsOfLoc1 = loc1->CRefPools(Id::Daycare);
-        EXPECT_EQ(poolsOfLoc1.size(), 223 * m_gg_config.pools.pools_per_daycare);
+        EXPECT_EQ(poolsOfLoc1.size(), 223 * m_ppday);
 }
 
 
@@ -126,8 +126,8 @@ TEST_F(DaycareGeneratorTest, FiveLocationsTest)
 // Check that a larger or smaller y/o fraction lets to respectively more and less instances in that city.
 TEST_F(DaycareGeneratorTest, FiveLocationsYOFractionTest)
 {
-    m_geogrid_config.input.pop_size             = 10000;
-    m_geogrid_config.popInfo.popcount_daycare   = 1000;
+    m_gg_config.param.pop_size             = 10000;
+    m_gg_config.info.popcount_daycare   = 1000;
 
     auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 500);
     auto loc2 = make_shared<Location>(1, 4, Coordinate(0, 0), "Vlaams-Brabant", 200);
@@ -145,20 +145,20 @@ TEST_F(DaycareGeneratorTest, FiveLocationsYOFractionTest)
     unsigned int        i = 0U;
     for (const shared_ptr<Location>& loc : m_geo_grid) {
             loc->SetPopFraction(static_cast<double>(loc->GetPopCount()) /
-                                static_cast<double>(m_geogrid_config.input.pop_size));
+                                static_cast<double>(m_gg_config.param.pop_size));
             loc->SetYoungOldFraction(fractions[i]);
             i++;
     }
 
-    m_daycare_generator.Apply(m_geo_grid, m_geogrid_config);
+    m_daycare_generator.Apply(m_geo_grid, m_gg_config);
 
     vector<unsigned int> normalSizes{54, 28, 9, 16, 5};
     for (size_t i = 0; i < normalSizes.size(); i++) {
             if(fractions[i] <= 1.0){
-                    EXPECT_GT(normalSizes[i] * m_geogrid_config.pools.pools_per_daycare,
+                    EXPECT_GT(normalSizes[i] * m_ppday,
                               m_geo_grid[i]->CRefPools(Id::Daycare).size());
             } else {
-                    EXPECT_LT(normalSizes[i] * m_geogrid_config.pools.pools_per_daycare,
+                    EXPECT_LT(normalSizes[i] * m_ppday,
                               m_geo_grid[i]->CRefPools(Id::Daycare).size());
             }
     }

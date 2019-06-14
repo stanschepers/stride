@@ -80,6 +80,15 @@ std::function<int()> RnMan::GetDiscreteGenerator(const vector<double>& weights, 
         return m_rn->GetDiscreteGenerator(weights, i);
 }
 
+bool RnMan::MakeWeightedCoinFlip(double fraction, unsigned int i)
+{
+        vector<double> weights{ 1.0 - fraction, fraction};
+        // -> 0, return is false -> not part of the fraction
+        // -> 1, return is true -> part of the fraction
+        auto dist = m_rn->GetDiscreteGenerator(weights, i);
+        return static_cast<bool>(dist());
+}
+
 void RnMan::Initialize(const RnInfo& info) { m_rn->Initialize(info); }
 
 bool RnMan::IsEmpty() const { return m_rn->IsEmpty(); }
