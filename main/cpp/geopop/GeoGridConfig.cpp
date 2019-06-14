@@ -17,6 +17,7 @@
 
 #include "contact/AgeBrackets.h"
 #include "contact/ContactType.h"
+#include "geopop/io/DistributionReader.h"
 #include "geopop/io/HouseholdReader.h"
 #include "geopop/io/ReaderFactory.h"
 #include "util/StringUtils.h"
@@ -37,24 +38,26 @@ GeoGridConfig::GeoGridConfig() : param{}, refHH{}, info{} {}
 
 GeoGridConfig::GeoGridConfig(const ptree& configPt) : GeoGridConfig()
 {
-        const auto pt = configPt.get_child("run.geopop_gen");
-        param.pop_size                     = configPt.get<unsigned int>("run.geopop_gen.population_size");
-        param.fraction_college_commuters   = configPt.get<double>("run.geopop_gen.fraction_college_commuters");
-        param.fraction_workplace_commuters = configPt.get<double>("run.geopop_gen.fraction_workplace_commuters");
+        const auto pt                      = configPt.get_child("run.geopop_gen");
+        param.pop_size                     = pt.get<unsigned int>("run.geopop_gen.population_size");
+        param.fraction_college_commuters   = pt.get<double>("run.geopop_gen.fraction_college_commuters");
+        param.fraction_workplace_commuters = pt.get<double>("run.geopop_gen.fraction_workplace_commuters");
 
-        param.participation_daycare        = configPt.get<double>("run.geopop_gen.participation_daycare");
-        param.participation_preschool      = configPt.get<double>("run.geopop_gen.participation_preschool");
-        param.participation_college        = configPt.get<double>("run.geopop_gen.participation_college");
-        param.participation_workplace      = configPt.get<double>("run.geopop_gen.participation_workplace");
+        param.participation_daycare   = pt.get<double>("run.geopop_gen.participation_daycare");
+        param.participation_preschool = pt.get<double>("run.geopop_gen.participation_preschool");
+        param.participation_college   = pt.get<double>("run.geopop_gen.participation_college");
+        param.participation_workplace = pt.get<double>("run.geopop_gen.participation_workplace");
 
-        people[Id::K12School]              = pt.get<unsigned int>("people_per_K12School", 500U);
-        people[Id::College]                = pt.get<unsigned int>("people_per_College", 3000U);
-        people[Id::Workplace]              = pt.get<unsigned int>("people_per_Workplace", 20U);
-        people[Id::PrimaryCommunity]       = pt.get<unsigned int>("people_per_PrimaryCommunity", 2000U);
-        people[Id::SecondaryCommunity]     = pt.get<unsigned int>("people_per_SecondaryCommunity", 2000U);
+        people[Id::Daycare]            = pt.get<unsigned int>("people_per_Daycare", 9U);
+        people[Id::PreSchool]          = pt.get<unsigned int>("people_per_PreSchool", 200U);
+        people[Id::K12School]          = pt.get<unsigned int>("people_per_K12School", 500U);
+        people[Id::College]            = pt.get<unsigned int>("people_per_College", 3000U);
+        people[Id::Workplace]          = pt.get<unsigned int>("people_per_Workplace", 20U);
+        people[Id::PrimaryCommunity]   = pt.get<unsigned int>("people_per_PrimaryCommunity", 2000U);
+        people[Id::SecondaryCommunity] = pt.get<unsigned int>("people_per_SecondaryCommunity", 2000U);
 
-        pools[Id::K12School]              = pt.get<unsigned int>("pools_per_K12School", 25U);
-        pools[Id::College]                = pt.get<unsigned int>("pools_per_College", 20U);
+        pools[Id::K12School] = pt.get<unsigned int>("pools_per_K12School", 25U);
+        pools[Id::College]   = pt.get<unsigned int>("pools_per_College", 20U);
 }
 
 void GeoGridConfig::SetData(const string& householdsFileName)
@@ -122,6 +125,15 @@ void GeoGridConfig::SetData(const string& householdsFileName)
 
         info.count_households = static_cast<unsigned int>(floor(static_cast<double>(popSize) / averageHhSize));
 }
+
+void GeoGridConfig::SetDistributionData(const std::string &distributionFileName)
+{
+        //STILL NEED TO CHECK RATIOS AND SIZES
+
+        auto distributionReader = ReaderFactory::CreateDistributionReader(distributionFileName);
+        distributionReader->SetWorkDistribution(param.work_distribution);
+}
+
 
 ostream& operator<<(ostream& out, const GeoGridConfig& config)
 {

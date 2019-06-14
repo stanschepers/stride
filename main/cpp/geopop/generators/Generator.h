@@ -52,14 +52,16 @@ public:
         void Apply(GeoGrid&, const GeoGridConfig&) {}
 
         /// Create a given number ContactPools in the GeoGrid.
-        void AddPools(Location& loc, stride::Population* pop, const GeoGridConfig& ggConfig)
+        void AddPools(Location& loc, stride::Population* pop, const GeoGridConfig& ggConfig,
+                 unsigned int limit = std::numeric_limits<unsigned int>::infinity())
         {
                 auto& poolSys = pop->RefPoolSys();
                 for (auto i = 0U; i < ggConfig.pools[ID]; ++i) {
-                        const auto p = poolSys.CreateContactPool(ID);
+                        const auto p = poolSys.CreateContactPool(ID, limit);
                         loc.RegisterPool<ID>(p);
                 }
         }
+
 
 protected:
         stride::util::RnMan             m_rn_man; ///< RnManager used by generators.
@@ -67,8 +69,10 @@ protected:
 };
 
 // ---------------------------------------------------------------
-// Declare specializations (implemntation in separate .cpp files).
+// Declare specializations (implementation in separate .cpp files).
 // ---------------------------------------------------------------
+
+// Apply functions
 template<>
 void Generator<stride::ContactType::Id::Daycare>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig);
 
@@ -92,6 +96,10 @@ void Generator<stride::ContactType::Id::PrimaryCommunity>::Apply(GeoGrid& geoGri
 
 template<>
 void Generator<stride::ContactType::Id::SecondaryCommunity>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig);
+
+// AddPools functions
+template<>
+void Generator<stride::ContactType::Id::Workplace>::AddPools(Location& loc, stride::Population* pop, const GeoGridConfig& ggConfig, unsigned int limit);
 
 // ---------------------------------------------------------------
 // Shorthand definitions.

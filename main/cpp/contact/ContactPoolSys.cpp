@@ -33,9 +33,15 @@ ContactPoolSys::ContactPoolSys() : m_currentContactPoolId(), m_sys()
         }
 }
 
-ContactPool* ContactPoolSys::CreateContactPool(ContactType::Id typeId)
+ContactPool* ContactPoolSys::CreateContactPool(ContactType::Id typeId, unsigned int limit)
 {
-        return m_sys[typeId].emplace_back(m_currentContactPoolId[typeId]++, typeId);
+        return m_sys[typeId].emplace_back(m_currentContactPoolId[typeId]++, typeId, limit);
 }
+
+//template <>
+//ContactPool* ContactPoolSys<ContactType::Id::Workplace>::CreateContactPool(unsigned int limit){
+//
+//}
+
 
 } // namespace stride

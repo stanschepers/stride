@@ -139,6 +139,14 @@ TEST_P(RunsGeoPop, geopop_multi)
 }
 #endif
 
+//#ifdef _OPENMP
+//TEST_P(RunsGeoPop, geopop_distribution)
+//{
+//        const string testTag = GetParam();
+//        RunTest(testTag, ScenarioData::Get(testTag + "_geopop_dist"), ConfigInfo::NumberAvailableThreads());
+//}
+//#endif
+
 namespace {
 
 const char* tags_influenza[] = {"influenza_a", "influenza_b", "influenza_c"};

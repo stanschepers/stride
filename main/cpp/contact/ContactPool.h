@@ -25,6 +25,8 @@
 
 #include <tuple>
 #include <vector>
+#include <limits>
+
 
 namespace stride {
 
@@ -39,13 +41,19 @@ class ContactPool
 {
 public:
         /// Initializing constructor.
-        ContactPool(unsigned int poolId, ContactType::Id type);
+        ContactPool(unsigned int poolId, ContactType::Id type, unsigned int limit = std::numeric_limits<unsigned int>::infinity());
 
         /// Default will do.
         ~ContactPool() = default;
 
         /// Add the given Person.
         void AddMember(Person* p);
+
+        /// Check if pool has reached its Limit
+        bool CheckLimit();
+
+        /// Get the pool limit
+        unsigned int GetLimit() const { return m_limit; }
 
         /// Get the pool id
         unsigned int GetId() const { return m_pool_id; }
@@ -88,6 +96,7 @@ private:
         unsigned int         m_pool_id;      ///< The ID of the ContactPool (for logging purposes).
         ContactType::Id      m_pool_type;    ///< The type of the ContactPool (for logging and testing purposes).
         std::vector<Person*> m_members;      ///< Pointers to contactpool members (raw pointers intentional).
+        unsigned int         m_limit;        ///< Limit for the number of contactpool members (distribution purposes).
 };
 
 } // namespace stride

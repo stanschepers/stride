@@ -64,7 +64,7 @@ TEST_F(WorkplacePopulatorTest, NoActive)
         MakeGeoGrid(m_gg_config, 3, 100, 3, 33, 3, m_pop.get());
 
         m_gg_config.param.participation_workplace = 0;
-        m_gg_config.param.participation_college  = 1;
+        m_gg_config.param.participation_college   = 1;
 
         // Nobody works, everybody in the student age bracket goes to college: so workplace is empty.
         // Brasschaat and Schoten are close to each other. There is no commuting, but they are so close
@@ -166,8 +166,8 @@ TEST_F(WorkplacePopulatorTest, OnlyCommuting)
         m_gg_config.param.fraction_workplace_commuters = 0;
         m_gg_config.param.fraction_workplace_commuters = 1;
         m_gg_config.param.fraction_college_commuters   = 0;
-        m_gg_config.info.popcount_workplace         = 1;
-        m_gg_config.param.participation_workplace       = 1;
+        m_gg_config.info.popcount_workplace            = 1;
+        m_gg_config.param.participation_workplace      = 1;
         m_gg_config.param.participation_college        = 0.5;
 
         // only commuting
@@ -226,8 +226,8 @@ TEST_F(WorkplacePopulatorTest, NoCommutingAvailable)
         m_gg_config.param.fraction_workplace_commuters = 0;
         m_gg_config.param.fraction_workplace_commuters = 1;
         m_gg_config.param.fraction_college_commuters   = 0;
-        m_gg_config.info.popcount_workplace         = 1;
-        m_gg_config.param.participation_workplace       = 1;
+        m_gg_config.info.popcount_workplace            = 1;
+        m_gg_config.param.participation_workplace      = 1;
         m_gg_config.param.participation_college        = 0.5;
 
         auto brasschaat = *m_geo_grid.begin();
@@ -293,6 +293,70 @@ TEST_F(WorkplacePopulatorTest, NoCommutingAvailable)
                         } else {
                                 EXPECT_EQ(0, workId);
                         }
+                }
+        }
+}
+
+// Check populator can handle empty distribution.
+TEST_F(WorkplacePopulatorTest, ZeroDistributionTest)
+{
+        // Sample population and locations, to populate
+        MakeGeoGrid(m_gg_config, 3, 100, 3, 33, 3, m_pop.get());
+        m_gg_config.info.popcount_workplace = 10;
+        m_gg_config.param.work_distribution = {};
+
+        auto brasschaat = *m_geo_grid.begin();
+        brasschaat->SetCoordinate(Coordinate(51.29227, 4.49419));
+        m_workplace_generator.AddPools(*brasschaat, m_pop.get(), m_gg_config);
+
+        auto schoten = *(m_geo_grid.begin() + 1);
+        schoten->SetCoordinate(Coordinate(51.2497532, 4.4977063));
+        m_workplace_generator.AddPools(*schoten, m_pop.get(), m_gg_config);
+
+        auto kortrijk = *(m_geo_grid.begin() + 2);
+        kortrijk->SetCoordinate(Coordinate(50.82900246, 3.264406009));
+        m_workplace_generator.AddPools(*kortrijk, m_pop.get(), m_gg_config);
+
+        m_workplace_generator.Apply(m_geo_grid, m_gg_config);
+        m_geo_grid.Finalize();
+        m_workplace_populator.Apply(m_geo_grid, m_gg_config);
+
+        for (auto& loc : m_geo_grid) {
+                for (auto& pool : loc.get()->RefPools(Id::Workplace)) {
+                        EXPECT_EQ(pool->GetLimit(), std::numeric_limits<unsigned int>::infinity());
+                }
+        }
+}
+
+// Populate workplaces through distribution file.
+TEST_F(WorkplacePopulatorTest, DistributionTest)
+{
+        // Sample population and locations, to populate
+        MakeGeoGrid(m_gg_config, 3, 100, 3, 33, 3, m_pop.get());
+        m_gg_config.info.popcount_workplace = 10;
+        m_gg_config.param.work_distribution = {std::make_tuple(0.32, 1, 9), std::make_tuple(0.68, 1, 50)};
+
+        auto brasschaat = *m_geo_grid.begin();
+        brasschaat->SetCoordinate(Coordinate(51.29227, 4.49419));
+        m_workplace_generator.AddPools(*brasschaat, m_pop.get(), m_gg_config, 2);
+
+        auto schoten = *(m_geo_grid.begin() + 1);
+        schoten->SetCoordinate(Coordinate(51.2497532, 4.4977063));
+        m_workplace_generator.AddPools(*schoten, m_pop.get(), m_gg_config, 3);
+
+        auto kortrijk = *(m_geo_grid.begin() + 2);
+        kortrijk->SetCoordinate(Coordinate(50.82900246, 3.264406009));
+        m_workplace_generator.AddPools(*kortrijk, m_pop.get(), m_gg_config, 5);
+
+        m_workplace_generator.Apply(m_geo_grid, m_gg_config);
+        m_geo_grid.Finalize();
+        m_workplace_populator.Apply(m_geo_grid, m_gg_config);
+
+        for (auto& loc : m_geo_grid) {
+                for (auto& pool : loc.get()->RefPools(Id::Workplace)) {
+                        EXPECT_NE(pool->GetLimit(), std::numeric_limits<unsigned int>::infinity());
+                        EXPECT_NE(pool->GetLimit(), 0U);
+                        EXPECT_LE(pool->size(), pool->GetLimit());
                 }
         }
 }

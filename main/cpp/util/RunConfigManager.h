@@ -38,6 +38,9 @@ public:
         /// Adapt the configuration by adding the gengeopop data items.
         static void AddGeoPopConfig(boost::property_tree::ptree& pt);
 
+        /// Adapt the configuration by adding the gengeopop data items + distribution file.
+        static void AddGeoPopDistConfig(boost::property_tree::ptree& pt);
+
         /// Clean (i.e. indent, sort and produde the sha1) the ptree config file.
         static void CleanConfigFile(boost::property_tree::ptree pt);
 

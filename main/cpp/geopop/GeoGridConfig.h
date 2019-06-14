@@ -77,6 +77,9 @@ public:
 
                 /// Target population size for the generated population.
                 unsigned int pop_size;
+
+                /// Distribution of pool-sizes for workplaces
+                std::vector<std::tuple<double, unsigned int, unsigned int>> work_distribution;
         } param;
 
         // -----------------------------------------------------------------------------------------
@@ -117,12 +120,21 @@ public:
 
                 /// The number of households.
                 unsigned int count_households;
+
+                /// The number of workplaces.
+                unsigned int count_workplaces;
         } info;
 
         // -----------------------------------------------------------------------------------------
         /// Read the househould data file, parse it and set data.
         // -----------------------------------------------------------------------------------------
         void SetData(const std::string& householdsFileName);
+
+        // -----------------------------------------------------------------------------------------
+        /// Read the workplace distribution data file, parse it and set data.
+        // -----------------------------------------------------------------------------------------
+        void SetDistributionData(const std::string& distributionFileName);
+
 };
 
 } // namespace geopop

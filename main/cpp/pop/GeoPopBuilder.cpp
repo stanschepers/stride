@@ -59,6 +59,13 @@ shared_ptr<Population> GeoPopBuilder::Build(shared_ptr<Population> pop)
         // ------------------------------------------------------------
         GeoGridConfig ggConfig(m_config);
         ggConfig.SetData(m_config.get<string>("run.geopop_gen.household_file"));
+        try {
+                ggConfig.SetDistributionData(m_config.get<string>("run.geopop_gen.distribution_file"));
+                m_stride_logger->trace("Detected work distribution file.");
+        } catch (ptree_bad_path& e){
+                m_stride_logger->trace("No distribution file detected.");
+        }
+
 
         // ------------------------------------------------------------
         // Get GeoGrid associated with 'pop'.
