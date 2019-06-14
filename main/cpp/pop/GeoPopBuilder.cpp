@@ -15,7 +15,8 @@
 
 /**
  * @file
- * Initialize populations: implementation.
+ * Initialize populations: implementation. NOTICE: WorkplacePopulator logic
+ * requires that CollegePopulator is executed prior to WorkplacePopulator.
  */
 
 #include "GeoPopBuilder.h"
@@ -134,6 +135,9 @@ void GeoPopBuilder::MakePools(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConf
 
 void GeoPopBuilder::MakePersons(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& geoGridConfig)
 {
+        // NOTICE: WorkplacePopulator logic requires that CollegePopulator
+        // has been executed prior to WorkplacePopulator.
+
         HouseholdPopulator(m_rn_man, m_stride_logger).Apply(geoGrid, geoGridConfig);
 
         K12SchoolPopulator(m_rn_man, m_stride_logger).Apply(geoGrid, geoGridConfig);
