@@ -83,18 +83,26 @@ set(STRIDE_SRC
     #---
     geopop/io/LocationsCSVReader.cpp
     geopop/io/CommutesCSVReader.cpp
-    #geopop/io/GeoGridJSONReader.cpp
-    #geopop/io/GeoGridJSONWriter.cpp
+    geopop/io/GeoGridJSONReader.cpp
+    geopop/io/GeoGridJSONWriter.cpp
     geopop/io/GeoGridProtoReader.cpp
     geopop/io/GeoGridProtoReader.h
     geopop/io/GeoGridProtoWriter.cpp
     geopop/io/GeoGridProtoWriter.h
     geopop/io/GeoGridReader.cpp
+    geopop/io/GeoGridReader.h
+    geopop/io/GeoGridStreamReader.cpp
+    geopop/io/GeoGridStreamReader.h
+    geopop/io/GeoGridFileReader.cpp
+    geopop/io/GeoGridFileReader.h
+    geopop/io/GeoGridReader.cpp
+    geopop/io/GeoGridReader.h
     geopop/io/GeoGridReaderFactory.cpp
     geopop/io/GeoGridReaderFactory.h
     geopop/io/GeoGridWriterFactory.cpp
     geopop/io/GeoGridWriterFactory.h
     geopop/io/HouseholdCSVReader.cpp
+    geopop/io/HouseholdJSONReader.cpp
     geopop/io/WorkplaceCSVReader.cpp
     geopop/io/ReaderFactory.cpp
     #---
@@ -149,7 +157,7 @@ set(STRIDE_SRC
 #============================================================================
 # Build the Stride library.
 #============================================================================
-add_library(libstride ${STRIDE_SRC})
+add_library(libstride STATIC ${STRIDE_SRC})
 target_compile_definitions(libstride PUBLIC "-DSTRIDE_GIT_HASH=${STRIDE_WC_REVISION_HASH}")
 target_compile_definitions(libstride PUBLIC "-DPROCCOUNT=${PROCCOUNT}")
 target_link_libraries(libstride PRIVATE ${LIBS})

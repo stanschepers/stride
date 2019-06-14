@@ -13,24 +13,13 @@
  *  Copyright 2018, Jan Broeckhove and Bistromatics group.
  */
 
-#include "GeoGridReader.h"
-
-#include "geopop/GeoGrid.h"
-#include "geopop/Location.h"
+#include "GeoGridFileReader.h"
 
 namespace geopop {
 
-GeoGridReader::GeoGridReader(stride::Population* pop) : m_people(), m_commutes(), m_population(pop) {}
-
-void GeoGridReader::AddCommutes(GeoGrid& geoGrid)
+GeoGridFileReader::GeoGridFileReader(std::string inputFilePath, stride::Population* pop)
+    : GeoGridReader(pop), m_inputFilePath(std::move(inputFilePath))
 {
-        for (const auto& commute_tuple : m_commutes) {
-                const auto a      = geoGrid.GetById(std::get<0>(commute_tuple));
-                const auto b      = geoGrid.GetById(std::get<1>(commute_tuple));
-                const auto amount = std::get<2>(commute_tuple);
-                a->AddOutgoingCommute(b, amount);
-                b->AddIncomingCommute(a, amount);
-        }
 }
 
 } // namespace geopop

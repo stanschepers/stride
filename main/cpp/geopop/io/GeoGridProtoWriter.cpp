@@ -33,9 +33,12 @@ using namespace std;
 using namespace stride::util;
 using namespace stride::ContactType;
 
-GeoGridProtoWriter::GeoGridProtoWriter() : m_persons_found() {}
+GeoGridProtoWriter::GeoGridProtoWriter(shared_ptr<ostream> stream)
+    : GeoGridStreamWriter(move(stream)), m_persons_found()
+{
+}
 
-void GeoGridProtoWriter::Write(GeoGrid& geoGrid, ostream& stream)
+void GeoGridProtoWriter::Write(GeoGrid& geoGrid)
 {
         GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -48,11 +51,11 @@ void GeoGridProtoWriter::Write(GeoGrid& geoGrid, ostream& stream)
         }
 
         m_persons_found.clear();
-        if (!protoGrid.SerializeToOstream(&stream)) {
+        if (!protoGrid.SerializeToOstream(m_stream.get())) {
                 throw stride::util::Exception("There was an error writing the GeoGrid to the file.");
         }
         google::protobuf::ShutdownProtobufLibrary();
-        stream.flush();
+        m_stream->flush();
 }
 
 void GeoGridProtoWriter::WriteContactPools(Id typeId, SegmentedVector<stride::ContactPool*>& contactPools,

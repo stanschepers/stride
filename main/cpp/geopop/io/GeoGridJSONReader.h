@@ -15,12 +15,12 @@
 
 #pragma once
 
-#include "GeoGridReader.h"
+#include "GeoGridStreamReader.h"
 #include "contact/ContactPool.h"
 #include "contact/ContactType.h"
 #include "geopop/Location.h"
-
-#include <boost/property_tree/ptree_fwd.hpp>
+#include <nlohmann/json.hpp>
+#include <spdlog/logger.h>
 
 namespace geopop {
 
@@ -30,7 +30,7 @@ class GeoGrid;
  * An implementation of the GeoGridReader using JSON.
  * This class is used to read a GeoGrid from a JSON file.
  */
-class GeoGridJSONReader : public GeoGridReader
+class GeoGridJSONReader : public GeoGridStreamReader
 {
 public:
         /// Construct the GeoGridJSONReader with the istream which contains the JSON.
@@ -46,20 +46,18 @@ public:
         void Read() override;
 
 private:
-        /// Create a ContactCenter based on the information stored in the provided boost property tree.
-        std::shared_ptr<ContactCenter> ParseContactCenter(boost::property_tree::ptree& contactCenter);
-
-        /// Create a ContactCenter based on the information stored in the provided boost property tree.
-        stride::ContactPool* ParseContactPool(boost::property_tree::ptree& contactPool, stride::ContactType::Id typeId);
-
-        /// Create a Coordinate based on the information stored in the provided boost property tree.
-        Coordinate ParseCoordinate(boost::property_tree::ptree& coordinate);
-
-        /// Create a Location based on the information stored in the provided boost property tree.
-        std::shared_ptr<Location> ParseLocation(boost::property_tree::ptree& location);
-
-        /// Create a Person based on the information stored in the provided boost property tree.
-        stride::Person* ParsePerson(boost::property_tree::ptree& person);
+        /// Create a Person based on the information stored in the provided JSON.
+        stride::Person* ParsePerson(const nlohmann::json& person);
+        /// Create a Location based on the information stored in the provided JSON.
+        std::shared_ptr<Location> ParseLocation(const nlohmann::json& location);
+        /// Create a Coordinate based on the information stored in the provided JSON.
+        Coordinate ParseCoordinate(const nlohmann::json& coordinate);
+        /// Create a ContactPool based on the information stored in the provided JSON.
+        void ParseContactPool(const std::shared_ptr<Location>& location, const nlohmann::json& contactPool,
+                              stride::ContactType::Id type);
+        /// Parse value of type T
+        template <typename T>
+        T ParseValue(const nlohmann::json& value) const;
 };
 
 } // namespace geopop

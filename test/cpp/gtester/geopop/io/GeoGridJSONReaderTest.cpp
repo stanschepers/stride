@@ -13,41 +13,112 @@
  *  Copyright 2018, Jan Broeckhove and Bistromatics group.
  */
 
-#include "geopop/io/GeoGridJSONReader.h"
-
-#include "contact/ContactType.h"
-#include "geopop/ContactCenter.h"
-#include "geopop/GeoGrid.h"
-#include "pop/Population.h"
-#include "util/Exception.h"
-#include "util/FileSys.h"
-
-#include <fstream>
 #include <gtest/gtest.h>
-#include <memory>
+
+#include "GeoGridIOUtils.h"
+#include "contact/ContactType.h"
+#include "geopop/GeoGridConfig.h"
+#include "geopop/io/GeoGridJSONReader.h"
+#include "pop/Population.h"
 
 using namespace std;
 using namespace geopop;
 using namespace stride;
 using namespace stride::ContactType;
-using namespace stride::util;
-
-using boost::geometry::get;
 
 namespace {
 
-void getGeoGridFromFile(const string& filename, Population* pop)
+void getGeoGridFromJSON(const string& jsonString, shared_ptr<Population> pop)
 {
-        auto file = make_unique<ifstream>();
-        file->open(FileSys::GetTestsDir().string() + "/testdata/GeoGridJSON/" + filename);
-        GeoGridJSONReader geoGridJSONReader(move(file), pop);
+        auto instream = make_unique<istringstream>(jsonString);
+
+        GeoGridJSONReader geoGridJSONReader(move(instream), pop.get());
+
         geoGridJSONReader.Read();
 }
 
-TEST(GeoGridJSONReaderTest, locationsTest)
+void runPeopleTest(shared_ptr<Population> pop)
 {
+        auto& geoGrid  = pop->RefGeoGrid();
+        auto  location = geoGrid[0];
+
+        string cpTypes[8] = {"Household", "K12School",        "College",
+                             "Workplace", "PrimaryCommunity", "SecondaryCommunity"};
+
+        EXPECT_EQ(location->GetID(), 1);
+        EXPECT_EQ(location->GetName(), "Bavikhove");
+        EXPECT_EQ(location->GetProvince(), 4);
+        EXPECT_EQ(location->GetPopCount(), 2500);
+        EXPECT_EQ(get<0>(location->GetCoordinate()), 0);
+        EXPECT_EQ(get<1>(location->GetCoordinate()), 0);
+
+        vector<ContactPool*> pools;
+        for (Id typ : IdList) {
+                for (const auto& p : location->RefPools(typ)) {
+                        pools.emplace_back(p);
+                }
+        }
+
+        unsigned int contacPoolCounter = 0;
+        for (const auto& pool : pools) {
+                auto person = *(pool->begin());
+                EXPECT_EQ(cpTypes[contacPoolCounter++], ToString(pool->GetType()));
+                EXPECT_EQ(person->GetId(), 0);
+                EXPECT_EQ(person->GetAge(), 18);
+                EXPECT_EQ(person->GetPoolId(Id::K12School), 1);
+                EXPECT_EQ(person->GetPoolId(Id::College), 1);
+                EXPECT_EQ(person->GetPoolId(Id::Household), 1);
+                EXPECT_EQ(person->GetPoolId(Id::Workplace), 1);
+                EXPECT_EQ(person->GetPoolId(Id::PrimaryCommunity), 1);
+                EXPECT_EQ(person->GetPoolId(Id::SecondaryCommunity), 1);
+        }
+}
+
+TEST(GeoGridJSONReaderTest, readLocationsTest)
+{
+        string jsonString = R"(
+        {
+          "locations": [
+            {
+              "id": "1",
+              "name": "Bavikhove",
+              "province": "4",
+              "population": "2500",
+              "coordinate": {
+                "longitude": "0",
+                "latitude": "0"
+              },
+              "contactPools": ""
+            },
+            {
+              "id": "2",
+              "name": "Gent",
+              "province": "3",
+              "population": "5000",
+              "coordinate": {
+                "longitude": "0",
+                "latitude": "0"
+              },
+              "contactPools": ""
+            },
+            {
+              "id": "3",
+              "name": "Mons",
+              "province": "2",
+              "population": "2500",
+              "coordinate": {
+                "longitude": "0",
+                "latitude": "0"
+              },
+              "contactPools": ""
+            }
+          ],
+          "persons": ""
+        }
+        )";
+
         auto pop = Population::Create();
-        getGeoGridFromFile("test0.json", pop.get());
+        getGeoGridFromJSON(jsonString, pop);
         auto& geoGrid = pop->RefGeoGrid();
 
         map<unsigned int, shared_ptr<Location>> locations;
@@ -81,10 +152,69 @@ TEST(GeoGridJSONReaderTest, locationsTest)
         EXPECT_EQ(get<1>(location3->GetCoordinate()), 0);
 }
 
-TEST(GeoGridJSONReaderTest, commutesTest)
+TEST(GeoGridJSONReaderTest, readCommutesTest)
 {
+
+        string jsonString = R"(
+        {
+            "locations": [
+                {
+                    "id": "3",
+                    "name": "Mons",
+                    "province": "4",
+                    "population": "2500",
+                    "coordinate": {
+                        "longitude": "0",
+                        "latitude": "0"
+                    }
+                },
+                {
+                    "id": "2",
+                    "name": "Gent",
+                    "province": "4",
+                    "population": "2500",
+                    "coordinate": {
+                        "longitude": "0",
+                        "latitude": "0"
+                    },
+                    "commutes": [
+                        {
+                            "to": 1,
+                            "proportion": 0.75
+                        },
+                        {
+                            "to": 3,
+                            "proportion": 0.5
+                        }
+                    ]
+                },
+                {
+                    "id": "1",
+                    "name": "Bavikhove",
+                    "province": "4",
+                    "population": "2500",
+                    "coordinate": {
+                        "longitude": "0",
+                        "latitude": "0"
+                    },
+                    "commutes": [
+                        {
+                            "to": 2,
+                            "proportion": 0.5
+                        },
+                        {
+                            "to": 3,
+                            "proportion": 0.25
+                        }
+                    ]
+                }
+            ],
+            "persons": ""
+        }
+        )";
+
         auto pop = Population::Create();
-        getGeoGridFromFile("test7.json", pop.get());
+        getGeoGridFromJSON(jsonString, pop);
         auto& geoGrid = pop->RefGeoGrid();
 
         map<unsigned int, shared_ptr<Location>> locations;
@@ -145,17 +275,84 @@ TEST(GeoGridJSONReaderTest, commutesTest)
         }
 }
 
-TEST(GeoGridJSONReaderTest, contactCentersTest)
+TEST(GeoGridJSONReaderTest, readContactPoolsTest)
 {
+
+        string jsonString = R"(
+        {
+            "locations": [
+                {
+                    "id": "1",
+                    "name": "Bavikhove",
+                    "province": "4",
+                    "population": "2500",
+                    "coordinate": {
+                        "longitude": "0",
+                        "latitude": "0"
+                    },
+                    "contactPools": [
+                        {
+                            "class": "K12School",
+                            "pools": [
+                                {
+                                    "id": 1,
+                                    "people": ""
+                                }
+                            ]
+                        },
+                        {
+                            "class": "PrimaryCommunity",
+                            "pools": [
+                                {
+                                    "id": 2,
+                                    "people": ""
+                                }
+                            ]
+                        },
+                        {
+                            "class": "College",
+                            "pools": [
+                                {
+                                    "id": 3,
+                                    "people": ""
+                                }
+                            ]
+                        },
+                        {
+                            "class": "Household",
+                            "pools": [
+                                {
+                                    "id": 4,
+                                    "people": ""
+                                }
+                            ]
+                        },
+                        {
+                            "class": "Workplace",
+                            "pools": [
+                                {
+                                    "id": 5,
+                                    "people": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "persons": ""
+        }
+        )";
+
         auto pop = Population::Create();
-        getGeoGridFromFile("test1.json", pop.get());
+        getGeoGridFromJSON(jsonString, pop);
         auto& geoGrid  = pop->RefGeoGrid();
         auto  location = geoGrid[0];
 
-        vector<shared_ptr<ContactCenter>> centers;
+        vector<ContactPool*> pools;
+
         for (Id typ : IdList) {
-                for (const auto& p : location->RefCenters(typ)) {
-                        centers.emplace_back(p);
+                for (const auto& p : location->CRefPools(typ)) {
+                        pools.emplace_back(p);
                 }
         }
 
@@ -168,83 +365,331 @@ TEST(GeoGridJSONReaderTest, contactCentersTest)
                                {Id::Workplace, false}};
 
         for (unsigned int i = 0; i < 7; i++) {
-                EXPECT_FALSE(found[centers[i]->GetContactPoolType()]);
-                found[centers[i]->GetContactPoolType()] = true;
+                EXPECT_FALSE(found[pools[i]->GetType()]);
+                found[pools[i]->GetType()] = true;
         }
         for (auto& type : found) {
                 EXPECT_TRUE(type.second);
         }
 }
 
-void runPeopleTest(const string& filename)
+TEST(GeoGridJSONReaderTest, readPeopleTest)
 {
-        auto pop = Population::Create();
-        getGeoGridFromFile(filename, pop.get());
-        auto& geoGrid  = pop->RefGeoGrid();
-        auto  location = geoGrid[0];
 
-        map<int, string> ids = {{0, "K12School"}, {1, "PrimaryCommunity"}, {2, "SecondaryCommunity"}, {3, "College"},
-                                {4, "Household"}, {5, "Workplace"}, {6, "Daycare"}, {7, "PreSchool"}};
-
-        EXPECT_EQ(location->GetID(), 1);
-        EXPECT_EQ(location->GetName(), "Bavikhove");
-        EXPECT_EQ(location->GetProvince(), 4);
-        EXPECT_EQ(location->GetPopCount(), 2500);
-        EXPECT_EQ(get<0>(location->GetCoordinate()), 0);
-        EXPECT_EQ(get<1>(location->GetCoordinate()), 0);
-
-        vector<shared_ptr<ContactCenter>> centers;
-        for (Id typ : IdList) {
-                for (const auto& p : location->RefCenters(typ)) {
-                        centers.emplace_back(p);
+        string jsonString = R"(
+        {
+          "locations": [
+            {
+              "id": "1",
+              "name": "Bavikhove",
+              "province": "4",
+              "population": "2500",
+              "coordinate": {
+                "longitude": "0",
+                "latitude": "0"
+              },
+              "contactPools": [
+                {
+                  "class": "K12School",
+                  "pools": [
+                    {
+                      "id": "2",
+                      "people": [
+                        "0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "class": "PrimaryCommunity",
+                  "pools": [
+                    {
+                      "id": "3",
+                      "people": [
+                        "0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "class": "SecondaryCommunity",
+                  "pools": [
+                    {
+                      "id": "7",
+                      "people": [
+                        "0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "class": "College",
+                  "pools": [
+                    {
+                      "id": "4",
+                      "people": [
+                        "0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "class": "Household",
+                  "pools": [
+                    {
+                      "id": "5",
+                      "people": [
+                        "0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "class": "Workplace",
+                  "pools": [
+                    {
+                      "id": "6",
+                      "people": [
+                        "0"
+                      ]
+                    }
+                  ]
                 }
+              ]
+            }
+          ],
+          "persons": [
+            {
+              "id": "0",
+              "age": "18",
+              "K12School": "2",
+              "College": "4",
+              "Household": "5",
+              "Workplace": "6",
+              "PrimaryCommunity": "3",
+              "SecondaryCommunity": "7"
+            }
+          ]
         }
+        )";
 
-        for (const auto& center : centers) {
-                auto pool   = (*center)[0];
-                auto person = *(pool->begin());
-                EXPECT_EQ(ids[center->GetId()], ToString(center->GetContactPoolType()));
-                EXPECT_EQ(person->GetId(), 0);
-                EXPECT_EQ(person->GetAge(), 18);
-                EXPECT_EQ(person->GetPoolId(Id::Daycare), 8);
-                EXPECT_EQ(person->GetPoolId(Id::PreSchool), 9);
-                EXPECT_EQ(person->GetPoolId(Id::K12School), 2);
-                EXPECT_EQ(person->GetPoolId(Id::College), 4);
-                EXPECT_EQ(person->GetPoolId(Id::Household), 5);
-                EXPECT_EQ(person->GetPoolId(Id::Workplace), 6);
-                EXPECT_EQ(person->GetPoolId(Id::PrimaryCommunity), 3);
-                EXPECT_EQ(person->GetPoolId(Id::SecondaryCommunity), 7);
+        auto pop = Population::Create();
+        getGeoGridFromJSON(jsonString, pop);
+        runPeopleTest(pop);
+}
+
+TEST(GeoGridJSONReaderTest, emptyFileTest)
+{
+        string jsonString = R"()";
+        auto   pop        = Population::Create();
+        EXPECT_THROW(getGeoGridFromJSON(jsonString, pop), runtime_error);
+}
+
+TEST(GeoGridJSONReaderTest, invalidTypesTest)
+{
+
+        string jsonString = R"(
+        {
+          "locations": [
+            {
+              "id": 1,
+              "name": "Bavikhove",
+              "province": 4,
+              "population": 2500,
+              "coordinate": {
+                "longitude": 0,
+                "latitude": 0
+              },
+              "contactPools": [
+                {
+                  "class": "K12School",
+                  "pools": [
+                    {
+                      "id": 2,
+                      "people": [
+                        0
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "class": "PrimaryCommunity",
+                  "pools": [
+                    {
+                      "id": 3,
+                      "people": [
+                        0
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "class": "SecondaryCommunity",
+                  "pools": [
+                    {
+                      "id": 7,
+                      "people": [
+                        0
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "class": "College",
+                  "pools": [
+                    {
+                      "id": 4,
+                      "people": [
+                        0
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "class": "Household",
+                  "pools": [
+                    {
+                      "id": 5,
+                      "people": [
+                        0
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "class": "Workplace",
+                  "pools": [
+                    {
+                      "id": 6,
+                      "people": [
+                        0
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "persons": [
+            {
+              "id": 0,
+              "age": 18,
+              "K12School": 2,
+              "College": 4,
+              "Household": 5,
+              "Workplace": 6,
+              "PrimaryCommunity": 3,
+              "SecondaryCommunity": 7
+            }
+          ]
         }
-}
+        )";
 
-TEST(GeoGridJSONReaderTest, peopleTest) { runPeopleTest("test2.json"); }
-
-TEST(GeoGridJSONReaderTest, intTest) { runPeopleTest("test3.json"); }
-
-TEST(GeoGridJSONReaderTest, emptyStreamTest)
-{
-        auto              instream = make_unique<istringstream>("");
-        auto              pop      = Population::Create();
-        GeoGridJSONReader geoGridJSONReader(move(instream), pop.get());
-        EXPECT_THROW(geoGridJSONReader.Read(), Exception);
-}
-
-TEST(GeoGridJSONReaderTest, invalidTypeTest)
-{
         auto pop = Population::Create();
-        EXPECT_THROW(getGeoGridFromFile("test4.json", pop.get()), Exception);
-}
-
-TEST(GeoGridJSONReaderTest, invalidPersonTest)
-{
-        auto pop = Population::Create();
-        EXPECT_THROW(getGeoGridFromFile("test5.json", pop.get()), Exception);
+        getGeoGridFromJSON(jsonString, pop);
+        runPeopleTest(pop);
 }
 
 TEST(GeoGridJSONReaderTest, invalidJSONTest)
 {
-        auto pop = Population::Create();
-        EXPECT_THROW(getGeoGridFromFile("test6.json", pop.get()), Exception);
-}
+        string jsonString = R"(
 
+          "locations": [
+            {
+              "id": 1,
+              "name": "Bavikhove",
+              "province": 4,
+              "population": 2500,
+              "coordinate": {
+                "longitude": 0,
+                "latitude": 0
+              },
+              "contactPools": [
+                {
+                  "class": "K12School",
+                  "pools": [
+                    {
+                      "id": 2,
+                      "people": [
+                        0
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "class": "PrimaryCommunity",
+                  "pools": [
+                    {
+                      "id": 3,
+                      "people": [
+                        0
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "class": "SecondaryCommunity",
+                  "pools": [
+                    {
+                      "id": 7,
+                      "people": [
+                        0
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "class": "College",
+                  "pools": [
+                    {
+                      "id": 4,
+                      "people": [
+                        0
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "class": "Household",
+                  "pools": [
+                    {
+                      "id": 5,
+                      "people": [
+                        0
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "class": "Workplace",
+                  "pools": [
+                    {
+                      "id": 6,
+                      "people": [
+                        0
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+          "persons: [
+            {
+              "id": 0,
+              "age": 18,
+              "K12School": 2,
+              "College": 4,
+              "Household": 5,
+              "Workplace": 6,
+              "PrimaryCommunity": 3,
+              "SecondaryCommunity": 7
+            }
+          ]
+        }
+        )";
+
+        auto pop = Population::Create();
+        EXPECT_THROW(getGeoGridFromJSON(jsonString, pop), runtime_error);
+}
 } // namespace
