@@ -13,8 +13,7 @@
  *  Copyright 2018, 2019, Jan Broeckhove and Bistromatics group.
  */
 
-#include <geopop/GeoGridConfig.h>
-#include "PreSchoolPopulator.h"
+#include "Populator.h"
 
 #include "contact/AgeBrackets.h"
 #include "contact/ContactPool.h"
@@ -24,11 +23,12 @@
 
 namespace geopop {
 
-    using namespace std;
-    using namespace stride;
-    using namespace stride::ContactType;
+using namespace std;
+using namespace stride;
+using namespace stride::ContactType;
 
-void PreSchoolPopulator::Apply(GeoGrid &geoGrid, const GeoGridConfig& geoGridConfig)
+template<>
+void Populator<stride::ContactType::Id::PreSchool>::Apply(GeoGrid &geoGrid, const GeoGridConfig& ggConfig)
 {
         m_logger->trace("Starting to populate PreSchools");
 
@@ -38,7 +38,7 @@ void PreSchoolPopulator::Apply(GeoGrid &geoGrid, const GeoGridConfig& geoGridCon
                 }
 
                 // 1. find all schools in an area of 10-k*10 km
-                const vector<ContactPool*>& classes = GetNearbyPools(Id::PreSchool, geoGrid, *loc);
+                const vector<ContactPool*>& classes = geoGrid.GetNearbyPools(Id::PreSchool, *loc);
 
                 auto dist = m_rn_man.GetUniformIntGenerator(0, static_cast<int>(classes.size()), 0U);
 
@@ -46,7 +46,7 @@ void PreSchoolPopulator::Apply(GeoGrid &geoGrid, const GeoGridConfig& geoGridCon
                 for (const auto& pool : loc->RefPools(Id::Household)) {
                         for (Person* p : *pool) {
                                 if (AgeBrackets::PreSchool::HasAge(p->GetAge()) &&
-                                    MakeChoice(geoGridConfig.input.participation_preschool)) {
+                                m_rn_man.MakeWeightedCoinFlip(ggConfig.param.participation_preschool)) {
                                         auto& c = classes[dist()];
                                         c->AddMember(p);
                                         p->SetPoolId(Id::PreSchool, c->GetId());
