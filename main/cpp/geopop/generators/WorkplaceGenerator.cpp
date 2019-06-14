@@ -107,6 +107,8 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
         }
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-parameter"
 template <>
 void Generator<stride::ContactType::Id::Workplace>::AddPools(Location& loc, stride::Population* pop,
                                                              const GeoGridConfig& ggConfig, unsigned int limit)
@@ -115,5 +117,6 @@ void Generator<stride::ContactType::Id::Workplace>::AddPools(Location& loc, stri
         const auto p       = poolSys.CreateContactPool(stride::ContactType::Id::Workplace, limit);
         loc.RegisterPool<stride::ContactType::Id::Workplace>(p);
 }
+#pragma clang diagnostic pop
 
 } // namespace geopop
