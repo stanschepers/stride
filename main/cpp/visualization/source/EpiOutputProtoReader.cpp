@@ -28,7 +28,7 @@ namespace visualization {
 
 EpiOutputProtoReader::EpiOutputProtoReader(std::unique_ptr<std::istream> inputStream,
                                            geopop::GeoGrid<EpiOutput>*   epiOutput)
-    : EpiOutputReader(move(inputStream), epiOutput)
+    : EpiOutputReader(epiOutput), m_inputStream(move(inputStream))
 {
 }
 
@@ -46,7 +46,7 @@ void EpiOutputProtoReader::Read()
                 for (int i = 0; i < protoDay.locations_size(); i++) {
                         const auto& protoLoc  = protoDay.locations(i);
                         const auto& protoCoor = protoLoc.coordinate();
-                        if(protoDay.day() == 0) {
+                        if (protoDay.day() == 0) {
                                 geoGrid.AddLocation(std::make_shared<geopop::Location<EpiOutput>>(
                                     protoLoc.id(), protoLoc.province(), std::make_shared<EpiOutput>(),
                                     geopop::Coordinate(protoCoor.longitude(), protoCoor.latitude()), protoLoc.name()));
@@ -56,7 +56,9 @@ void EpiOutputProtoReader::Read()
                                 const auto& protoAgeBracket = protoLoc.agebrackets(j);
                                 for (int k = 0; k < protoAgeBracket.healthstatuses_size(); k++) {
                                         const auto& protoHealthStatus = protoAgeBracket.healthstatuses(k);
-                                                geoGrid[i]->GetContent()->epiOutput[protoAgeBracket.type()][protoHealthStatus.type()][protoDay.day()] = protoHealthStatus.percentage();
+                                        geoGrid[i]->GetContent()->epiOutput[protoAgeBracket.type()]
+                                                                           [protoHealthStatus.type()][protoDay.day()] =
+                                            protoHealthStatus.percentage();
                                 }
                         }
                 }
