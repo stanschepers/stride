@@ -113,6 +113,8 @@ std::shared_ptr<Location> GeoGridJSONReader::ParseLocation(const json& location)
                         const auto type = ParseValue<string>(contactPool["class"]);
 
                         static const map<string, Id> types = {{"K12School", Id::K12School},
+                                                              {"Daycare", Id::Daycare},
+                                                              {"PreSchool", Id::PreSchool},
                                                               {"PrimaryCommunity", Id::PrimaryCommunity},
                                                               {"SecondaryCommunity", Id::SecondaryCommunity},
                                                               {"College", Id::College},
