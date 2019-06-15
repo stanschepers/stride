@@ -83,6 +83,9 @@ set(STRIDE_SRC
         geopop/io/EpiOutputWriter.h
         geopop/io/EpiOutputWriterFactory.cpp
         geopop/io/EpiOutputWriterFactory.h
+#        geopop/io/EpiOutputJSONWriter.cpp
+        geopop/io/EpiOutputHDF5Writer.cpp
+        geopop/io/EpiOutputHDF5Writer.h
         geopop/io/EpiOutputJSONWriter.cpp
         geopop/io/EpiOutputJSONWriter.h
         geopop/io/EpiOutputProtoWriter.cpp
@@ -91,6 +94,8 @@ set(STRIDE_SRC
         geopop/io/CommutesCSVReader.cpp
         #geopop/io/GeoGridJSONReader.cpp
         #geopop/io/GeoGridJSONWriter.cpp
+        geopop/io/H5Utils.cpp
+        geopop/io/H5Utils.h
         geopop/io/GeoGridProtoReader.cpp
         geopop/io/GeoGridProtoReader.h
         geopop/io/GeoGridProtoWriter.cpp
@@ -179,6 +184,11 @@ if(Protobuf_FOUND)
     target_link_libraries(libstride PUBLIC ${Protobuf_LIBRARIES})
 else()
     target_link_libraries(libstride PUBLIC libprotobuf)
+endif()
+if(HDF5_FOUND)
+    target_link_libraries(libstride PRIVATE ${HDF5_CXX_LIBRARIES} ${HDF5_CXX_HL_LIBRARIES})
+else()
+    target_link_libraries(libstride PRIVATE hdf5-static hdf5_hl-static hdf5_cpp-static hdf5_hl_cpp-static)
 endif()
 set_target_properties(libstride
         PROPERTIES
