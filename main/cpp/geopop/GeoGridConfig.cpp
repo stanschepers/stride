@@ -39,14 +39,14 @@ GeoGridConfig::GeoGridConfig() : param{}, refHH{}, info{} {}
 GeoGridConfig::GeoGridConfig(const ptree& configPt) : GeoGridConfig()
 {
         const auto pt                      = configPt.get_child("run.geopop_gen");
-        param.pop_size                     = pt.get<unsigned int>("run.geopop_gen.population_size");
-        param.fraction_college_commuters   = pt.get<double>("run.geopop_gen.fraction_college_commuters");
-        param.fraction_workplace_commuters = pt.get<double>("run.geopop_gen.fraction_workplace_commuters");
+        param.pop_size                     = pt.get<unsigned int>("population_size");
+        param.fraction_college_commuters   = pt.get<double>("fraction_college_commuters");
+        param.fraction_workplace_commuters = pt.get<double>("fraction_workplace_commuters");
 
-        param.participation_daycare   = pt.get<double>("run.geopop_gen.participation_daycare");
-        param.participation_preschool = pt.get<double>("run.geopop_gen.participation_preschool");
-        param.participation_college   = pt.get<double>("run.geopop_gen.participation_college");
-        param.participation_workplace = pt.get<double>("run.geopop_gen.participation_workplace");
+        param.participation_daycare   = pt.get<double>("participation_daycare");
+        param.participation_preschool = pt.get<double>("participation_preschool");
+        param.participation_college   = pt.get<double>("participation_college");
+        param.participation_workplace = pt.get<double>("participation_workplace");
 
         people[Id::Daycare]            = pt.get<unsigned int>("people_per_Daycare", 9U);
         people[Id::PreSchool]          = pt.get<unsigned int>("people_per_PreSchool", 200U);
@@ -115,8 +115,7 @@ void GeoGridConfig::SetData(const string& householdsFileName)
 
         info.popcount_daycare = static_cast<unsigned int>(floor(param.participation_daycare * age_count_daycare));
 
-        info.popcount_preschool =
-           static_cast<unsigned int>(floor(param.participation_preschool * age_count_preschool));
+        info.popcount_preschool = static_cast<unsigned int>(floor(param.participation_preschool * age_count_preschool));
 
         info.popcount_k12school = age_count_k12school;
 
