@@ -14,13 +14,13 @@
  */
 
 #include "geopop/io/CommutesCSVReader.h"
-//#include "geopop/GeoGrid.h"
+#include "geopop/GeoGrid.h"
 #include "geopop/Location.h"
-//#include "geopop/io/HouseholdCSVReader.h"
+#include "geopop/io/HouseholdCSVReader.h"
 #include "pop/Population.h"
 
 #include <gtest/gtest.h>
-//#include <memory>
+#include <memory>
 
 using namespace std;
 using namespace geopop;
@@ -70,19 +70,14 @@ shared_ptr<Population> getExpectedGeoGrid()
 
 TEST(CommutesCSVReaderTest, test1)
 {
-//        string csvString = "id_21,id_22,id_23,id_24\n"
-//                           "550,366,668,425\n" // to 21
-//                           "141,761,0,705\n"   // to 22
-//                           "487,700,462,0\n"   // to 23
-//                           "0,611,0,0\n";      // to 24
+        string csvString = "id_21,id_22,id_23,id_24\n"
+                           "550,366,668,425\n" // to 21
+                           "141,761,0,705\n"   // to 22
+                           "487,700,462,0\n"   // to 23
+                           "0,611,0,0\n";      // to 24
 
-        string csvString = R"(id_21,id_22,id_23,id_24
-550,366,668,425
-141,761,0,705
-487,700,462,0
-0,611,0,0)";
-
-        auto&      expectedGeoGrid = getExpectedGeoGrid()->RefGeoGrid();
+        auto       expectedPop     = getExpectedGeoGrid();
+        auto&      expectedGeoGrid = expectedPop->RefGeoGrid();
         const auto pop             = Population::Create();
         auto&      geoGrid         = pop->RefGeoGrid();
 
