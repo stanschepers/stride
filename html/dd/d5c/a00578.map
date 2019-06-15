@@ -1,12 +1,7 @@
-<map id="SimRunner.h" name="SimRunner.h">
-<area shape="rect" id="node2" href="$da/d1e/a00149.html" title="Header for the command line controller. " alt="" coords="454,155,590,181"/>
-<area shape="rect" id="node3" href="$d3/d5e/a00275.html" title="Header for the command line controller. " alt="" coords="25,80,160,107"/>
-<area shape="rect" id="node4" href="$d0/dcd/a00280.html" title="Header for the command line controller. " alt="" coords="184,80,324,107"/>
-<area shape="rect" id="node5" href="$d6/d4b/a00277.html" title="Implementation for SimRunner. " alt="" coords="349,80,466,107"/>
-<area shape="rect" id="node6" href="$d7/d06/a00131.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="489,80,595,107"/>
-<area shape="rect" id="node7" href="$df/d24/a00217.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="619,80,780,107"/>
-<area shape="rect" id="node8" href="$dd/df3/a00219.html" title="Observer for SimEvents for commandline interface usage. " alt="" coords="805,80,946,107"/>
-<area shape="rect" id="node9" href="$d0/d1f/a00247.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="971,80,1132,107"/>
-<area shape="rect" id="node10" href="$da/dd4/a00291.html" title="Observer for Persons output. " alt="" coords="1156,80,1315,107"/>
-<area shape="rect" id="node11" href="$de/d25/a00290.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="1207,155,1381,181"/>
+<map id="SimController.h" name="SimController.h">
+<area shape="rect" id="node2" href="$d3/d65/a00154.html" title="Header for the command line controller. " alt="" coords="403,87,524,114"/>
+<area shape="rect" id="node3" href="$d5/d42/a00269.html" title="Interface of RnMan. " alt="" coords="195,177,295,203"/>
+<area shape="rect" id="node10" href="$d5/d7b/a00286.html" title="Definition of Stopwatch. " alt="" coords="452,177,576,203"/>
+<area shape="rect" id="node4" href="$d1/dd4/a00267.html" title="Interface of RnPcg. " alt="" coords="8,259,81,285"/>
+<area shape="rect" id="node11" href="$d0/d61/a00302.html" title="Utilities to tag clocks and reformat clock readout to string. " alt="" coords="503,259,619,285"/>
 </map>

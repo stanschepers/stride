@@ -1,4 +1,4 @@
-<map id="SimController.h" name="SimController.h">
-<area shape="rect" id="node2" href="$d3/d5e/a00275.html" title="Header for the command line controller. " alt="" coords="5,80,140,107"/>
-<area shape="rect" id="node3" href="$dd/dfe/a00283.html" title="Main program: command line handling. " alt="" coords="165,80,250,107"/>
+<map id="SimBuilder.h" name="SimBuilder.h">
+<area shape="rect" id="node2" href="$d5/d42/a00269.html" title="Interface of RnMan. " alt="" coords="241,87,341,114"/>
+<area shape="rect" id="node3" href="$d1/dd4/a00267.html" title="Interface of RnPcg. " alt="" coords="55,169,128,196"/>
 </map>

@@ -1,5 +1,3 @@
-<map id="stride::AbstractPopBuilder" name="stride::AbstractPopBuilder">
-<area shape="rect" id="node2" href="$da/d24/a00068.html" title="Initializes Population objects. " alt="" coords="5,211,185,303"/>
-<area shape="rect" id="node3" href="$d0/d89/a00071.html" title="Builds poulation of a geographic grid. " alt="" coords="210,189,370,325"/>
-<area shape="rect" id="node4" href="$d9/da5/a00075.html" title="Initializes Population objects. " alt="" coords="394,219,570,296"/>
+<map id="proto::GeoGrid_Location_Coordinate" name="proto::GeoGrid_Location_Coordinate">
+<area shape="rect" id="node2" href="$db/d3a/a00040.html" title="{Message\n||}" alt="" coords="90,5,169,83"/>
 </map>

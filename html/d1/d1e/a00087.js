@@ -1,7 +1,17 @@
 var a00087 =
 [
-    [ "SimController", "d1/d1e/a00087.html#a2498438d1f7ab84d8dc7d1d0e46755a9", null ],
-    [ "Control", "d1/d1e/a00087.html#acddfa3cafcea42db5c8b18af0410179f", null ],
-    [ "GetSim", "d1/d1e/a00087.html#a7612605be8f6961c0d32ce03292da00d", null ],
-    [ "m_simulator", "d1/d1e/a00087.html#a78301ba22b7fb25fef413a0ccfb66dad", null ]
+    [ "Population", "d1/d1e/a00087.html#a23ca2c3c5ef45fe26a11e0bc47cbe8ca", null ],
+    [ "Create", "d1/d1e/a00087.html#a56ed209c60c77e0080a0a653b09b26ce", null ],
+    [ "Create", "d1/d1e/a00087.html#ac2702b7b600edd1ce81bc24dac173c7e", null ],
+    [ "Create", "d1/d1e/a00087.html#a7cfcedae698db0dc471770044de4834d", null ],
+    [ "CreatePerson", "d1/d1e/a00087.html#aaf54d07535aa1549886affe493dd632e", null ],
+    [ "GetInfectedCount", "d1/d1e/a00087.html#a5ffab38c3407832dcc0f1ecbf4e11cbd", null ],
+    [ "CRefPoolSys", "d1/d1e/a00087.html#a70b16fe667a40360d247e32c9422ad44", null ],
+    [ "CRefGeoGrid", "d1/d1e/a00087.html#a3eeacceb199c4b26b7c7687fe5cdcfb0", null ],
+    [ "RefContactLogger", "d1/d1e/a00087.html#a4db3f0bf4c302b0f5d4b2bb1e8cc24fc", null ],
+    [ "RefPoolSys", "d1/d1e/a00087.html#aa3cce01ca781a43bc67620e798c3b484", null ],
+    [ "RefGeoGrid", "d1/d1e/a00087.html#aed61b0a0c312dba5b64733e21be7a1b2", null ],
+    [ "m_pool_sys", "d1/d1e/a00087.html#ac21ecf3db6ee91694eec6b13ffef5144", null ],
+    [ "m_contact_logger", "d1/d1e/a00087.html#aa24a679c5885bb18710a77700bbaeeca", null ],
+    [ "m_geo_grid", "d1/d1e/a00087.html#a94db0ae08c7091b0aba6db69d9fbf67b", null ]
 ];

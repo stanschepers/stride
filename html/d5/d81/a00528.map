@@ -1,5 +1,27 @@
-<map id="Person.h" name="Person.h">
-<area shape="rect" id="node2" href="$db/d48/a00148.html" title="Definition of ContactPool Id Type. " alt="" coords="92,155,256,181"/>
-<area shape="rect" id="node8" href="$da/de7/a00210.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="294,80,483,107"/>
-<area shape="rect" id="node13" href="$d3/db1/a00200.html" title="Header for the Health class. " alt="" coords="508,80,637,107"/>
+<map id="LogUtils.h" name="LogUtils.h">
+<area shape="rect" id="node2" href="$de/d53/a00169.html" title="Implementation for the DiseaseSeeder class. " alt="" coords="866,80,1011,107"/>
+<area shape="rect" id="node3" href="$da/d01/a00153.html" title="Header for the command line controller. " alt="" coords="1036,80,1172,107"/>
+<area shape="rect" id="node4" href="$de/d45/a00175.html" title="Generator.h" alt="" coords="1196,80,1295,107"/>
+<area shape="rect" id="node14" href="$d4/d04/a00255.html" title="Populator.h" alt="" coords="2211,80,2306,107"/>
+<area shape="rect" id="node23" href="$da/d72/a00124.html" title="Initialize populations: implementation. " alt="" coords="2331,80,2501,107"/>
+<area shape="rect" id="node24" href="$df/d24/a00217.html" title="Initialize populations: implementation. " alt="" coords="2526,80,2685,107"/>
+<area shape="rect" id="node25" href="$d0/d3e/a00253.html" title="Core Population class. " alt="" coords="2709,80,2825,107"/>
+<area shape="rect" id="node26" href="$d2/dc8/a00242.html" title="Implementation of file utils. " alt="" coords="2849,80,2949,107"/>
+<area shape="rect" id="node5" href="$d2/df5/a00137.html" title="CollegeGenerator.cpp" alt="" coords="5,155,165,181"/>
+<area shape="rect" id="node6" href="$de/d38/a00160.html" title="DaycareGenerator.cpp" alt="" coords="190,155,357,181"/>
+<area shape="rect" id="node7" href="$d3/de5/a00209.html" title="HouseholdGenerator.cpp" alt="" coords="381,155,563,181"/>
+<area shape="rect" id="node8" href="$d1/da8/a00230.html" title="K12SchoolGenerator.cpp" alt="" coords="587,155,767,181"/>
+<area shape="rect" id="node9" href="$d0/def/a00256.html" title="PreSchoolGenerator.cpp" alt="" coords="791,155,969,181"/>
+<area shape="rect" id="node10" href="$d7/d2f/a00258.html" title="PrimaryCommunityGenerator.cpp" alt="" coords="993,155,1229,181"/>
+<area shape="rect" id="node11" href="$d9/dd6/a00272.html" title="SecondaryCommunityGenerator.cpp" alt="" coords="1253,155,1507,181"/>
+<area shape="rect" id="node12" href="$d0/da2/a00307.html" title="WorkplaceGenerator.cpp" alt="" coords="1531,155,1709,181"/>
+<area shape="rect" id="node13" href="$dd/de3/a00201.html" title="Initialize populations: implementation. " alt="" coords="1733,155,1875,181"/>
+<area shape="rect" id="node15" href="$d4/ddd/a00138.html" title="CollegePopulator.cpp" alt="" coords="1899,155,2055,181"/>
+<area shape="rect" id="node16" href="$d6/d7d/a00161.html" title="DaycarePopulator.cpp" alt="" coords="2080,155,2243,181"/>
+<area shape="rect" id="node17" href="$da/de7/a00210.html" title="HouseholdPopulator.cpp" alt="" coords="2267,155,2445,181"/>
+<area shape="rect" id="node18" href="$df/d17/a00231.html" title="K12SchoolPopulator.cpp" alt="" coords="2469,155,2645,181"/>
+<area shape="rect" id="node19" href="$d9/d39/a00257.html" title="PreSchoolPopulator.cpp" alt="" coords="2669,155,2843,181"/>
+<area shape="rect" id="node20" href="$d0/d2f/a00259.html" title="PrimaryCommunityPopulator.cpp" alt="" coords="2867,155,3099,181"/>
+<area shape="rect" id="node21" href="$d0/d19/a00273.html" title="SecondaryCommunityPopulator.cpp" alt="" coords="3123,155,3373,181"/>
+<area shape="rect" id="node22" href="$d5/d0f/a00308.html" title="WorkplacePopulator.cpp" alt="" coords="3397,155,3571,181"/>
 </map>

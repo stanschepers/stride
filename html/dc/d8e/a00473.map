@@ -1,8 +1,4 @@
-<map id="HouseholdReader.h" name="HouseholdReader.h">
-<area shape="rect" id="node2" href="$d9/d90/a00178.html" title="GeoGridConfig.cpp" alt="" coords="544,155,685,181"/>
-<area shape="rect" id="node3" href="$d1/d72/a00204.html" title="HouseholdCSVReader.h" alt="" coords="195,80,367,107"/>
-<area shape="rect" id="node6" href="$dd/dd7/a00260.html" title="ReaderFactory.h" alt="" coords="392,80,515,107"/>
-<area shape="rect" id="node4" href="$de/d79/a00203.html" title="HouseholdCSVReader.cpp" alt="" coords="5,155,192,181"/>
-<area shape="rect" id="node5" href="$d0/d2f/a00259.html" title="ReaderFactory.cpp" alt="" coords="217,155,354,181"/>
-<area shape="rect" id="node7" href="$de/db1/a00197.html" title="Initialize populations: implementation. " alt="" coords="378,155,521,181"/>
+<map id="HouseholdCSVReader.h" name="HouseholdCSVReader.h">
+<area shape="rect" id="node2" href="$de/dd2/a00207.html" title="HouseholdCSVReader.cpp" alt="" coords="5,80,192,107"/>
+<area shape="rect" id="node3" href="$df/da9/a00263.html" title="ReaderFactory.cpp" alt="" coords="217,80,354,107"/>
 </map>

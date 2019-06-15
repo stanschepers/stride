@@ -1,7 +1,8 @@
 var a00097 =
 [
-    [ "Exception", "d1/d84/a00097.html#ada9a96369897608bd84b0fdb33c23a7f", null ],
-    [ "~Exception", "d1/d84/a00097.html#a1c14e1f62d8cf7c69a4c6c08ec296a83", null ],
-    [ "what", "d1/d84/a00097.html#ad933b798ce411d1acfe2ff86f178f219", null ],
-    [ "m_msg", "d1/d84/a00097.html#a5f5e43370eb477d14fe94f0e1b452629", null ]
+    [ "HaveOpenMP", "d1/d84/a00097.html#ad6fc5f3f3e32a15f059c64b74dfea905", null ],
+    [ "GitRevision", "d1/d84/a00097.html#aea2c9d397f10f54b7ae47f4b0f181799", null ],
+    [ "GetHostname", "d1/d84/a00097.html#a502bd4410a3e77792ea575f77f470d41", null ],
+    [ "NumberAvailableThreads", "d1/d84/a00097.html#a6b4240ce29160e778c69f9e246e1747d", null ],
+    [ "ProcessorCount", "d1/d84/a00097.html#a9b191149cb109105f73c84df61bebbb6", null ]
 ];

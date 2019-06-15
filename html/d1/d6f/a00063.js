@@ -1,6 +1,13 @@
 var a00063 =
 [
-    [ "DaysOffAll", "d1/d6f/a00063.html#a8804c46ae3703253cb96e5f81f92251b", null ],
-    [ "IsWorkOff", "d1/d6f/a00063.html#a61f87cc93335185f90d9d772f168b1bb", null ],
-    [ "IsSchoolOff", "d1/d6f/a00063.html#a12a699d750a9b0a640db4ea47df0b11c", null ]
+    [ "ContactPoolSys", "d1/d6f/a00063.html#a3234f77279a728449333679b51d72498", null ],
+    [ "CreateContactPool", "d1/d6f/a00063.html#ac8e6932adc8cb0269357c033c6630bff", null ],
+    [ "CreateContactPool", "d1/d6f/a00063.html#a976a718b023257fb4c47028f860e58e6", null ],
+    [ "CRefPools", "d1/d6f/a00063.html#abec2451157774964a5008679b66b8b48", null ],
+    [ "CRefPools", "d1/d6f/a00063.html#a016fd427c95b26c2fe8b542b6a7d6963", null ],
+    [ "RefPools", "d1/d6f/a00063.html#ad484960db6d8795971580e635f6da030", null ],
+    [ "DefaultPopBuilder", "d1/d6f/a00063.html#aa79c86f4bdecaefcfc763c2b2f5bee37", null ],
+    [ "Sim", "d1/d6f/a00063.html#a9ee783cf11d4fb4f556c985020efd7db", null ],
+    [ "m_currentContactPoolId", "d1/d6f/a00063.html#ab59431e05f466c3828738407e37660b4", null ],
+    [ "m_sys", "d1/d6f/a00063.html#a3c592b3099ba8d56ae60edf74497d814", null ]
 ];

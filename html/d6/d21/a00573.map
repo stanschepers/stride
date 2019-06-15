@@ -1,30 +1,12 @@
-<map id="SimController.cpp" name="SimController.cpp">
-<area shape="rect" id="node2" href="$dc/d28/a00276.html" title="Header for the command line controller. " alt="" coords="2413,80,2533,107"/>
-<area shape="rect" id="node15" href="$d0/da7/a00250.html" title="Header file for the core Population class. " alt="" coords="1425,80,1554,107"/>
-<area shape="rect" id="node40" href="$d9/dd6/a00272.html" title="Header for the Simulator class. " alt="" coords="1995,80,2082,107"/>
-<area shape="rect" id="node47" href="$dc/d5d/a00278.html" title="Header for the SimRunner class. " alt="" coords="2991,80,3121,107"/>
-<area shape="rect" id="node3" href="$d9/d7d/a00150.html" title="Header for the command line controller. " alt="" coords="2413,155,2534,181"/>
-<area shape="rect" id="node4" href="$da/d53/a00265.html" title="Interface of RnMan. " alt="" coords="2245,237,2345,263"/>
-<area shape="rect" id="node11" href="$dc/dc9/a00282.html" title="Definition of Stopwatch. " alt="" coords="3034,237,3158,263"/>
-<area shape="rect" id="node5" href="$df/da9/a00263.html" title="Interface of RnPcg. " alt="" coords="2097,326,2170,353"/>
-<area shape="rect" id="node16" href="$d5/da7/a00144.html" title="Header for the core ContactPool class. " alt="" coords="489,237,652,263"/>
-<area shape="rect" id="node18" href="$db/d48/a00148.html" title="Definition of ContactPool Id Type. " alt="" coords="917,326,1081,353"/>
-<area shape="rect" id="node23" href="$d9/db6/a00146.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="652,155,839,181"/>
-<area shape="rect" id="node27" href="$d9/d2a/a00270.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="293,237,465,263"/>
-<area shape="rect" id="node33" href="$d5/de9/a00176.html" title="geopop/GeoGrid.h" alt="" coords="1420,237,1559,263"/>
-<area shape="rect" id="node37" href="$d6/d08/a00244.html" title="Header file for the Person class. " alt="" coords="952,155,1059,181"/>
-<area shape="rect" id="node17" href="$d2/d82/a00142.html" title="Header for the ContactLogMode class. " alt="" coords="1388,326,1583,353"/>
-<area shape="rect" id="node24" href="$da/de7/a00210.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="677,237,814,263"/>
-<area shape="rect" id="node28" href="$d4/d5b/a00294.html" title="Interface/Implementation for SVIterator. " alt="" coords="192,326,291,353"/>
-<area shape="rect" id="node34" href="$de/df3/a00185.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="1156,326,1364,353"/>
-<area shape="rect" id="node38" href="$d3/db1/a00200.html" title="Header for the Health class. " alt="" coords="941,237,1070,263"/>
-<area shape="rect" id="node41" href="$d7/d12/a00126.html" title="Contact profiles stored in simulator. " alt="" coords="1195,155,1402,181"/>
-<area shape="rect" id="node43" href="$d5/db1/a00140.html" title="Header for the ContactHandler class. " alt="" coords="1735,237,1921,263"/>
-<area shape="rect" id="node44" href="$dc/d28/a00223.html" title="Header for the InfectorExec class. " alt="" coords="1837,155,2001,181"/>
-<area shape="rect" id="node45" href="$db/da2/a00300.html" title="Header for the TransmissionProfile class. " alt="" coords="2558,155,2765,181"/>
-<area shape="rect" id="node46" href="$d7/d2f/a00258.html" title="Header for the PublicHealthAgency class. " alt="" coords="2177,155,2388,181"/>
-<area shape="rect" id="node42" href="$dc/dfe/a00125.html" title="Contact profile. " alt="" coords="1145,237,1345,263"/>
-<area shape="rect" id="node48" href="$d3/de5/a00209.html" title="Definition of EventId. " alt="" coords="3181,237,3293,263"/>
-<area shape="rect" id="node49" href="$d5/d7b/a00286.html" title="Definition of Subject/Observer for SimEvents. " alt="" coords="3093,155,3243,181"/>
-<area shape="rect" id="node50" href="$d6/d7f/a00287.html" title="Interface/Implementation of Subject. " alt="" coords="2853,237,2958,263"/>
+<map id="Sim.h" name="Sim.h">
+<area shape="rect" id="node2" href="$d2/d82/a00279.html" title="Header for the command line controller. " alt="" coords="5,80,140,107"/>
+<area shape="rect" id="node3" href="$db/dc3/a00284.html" title="Header for the command line controller. " alt="" coords="164,80,304,107"/>
+<area shape="rect" id="node4" href="$d3/d5e/a00275.html" title="Implementation for the Simulator class. " alt="" coords="329,80,403,107"/>
+<area shape="rect" id="node5" href="$d6/d4b/a00277.html" title="Implementation for the SimBuilder class. " alt="" coords="427,80,545,107"/>
+<area shape="rect" id="node6" href="$d2/d04/a00281.html" title="Implementation for SimRunner. " alt="" coords="569,80,686,107"/>
+<area shape="rect" id="node7" href="$d5/d5b/a00135.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="709,80,815,107"/>
+<area shape="rect" id="node8" href="$dd/d52/a00221.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="839,80,1000,107"/>
+<area shape="rect" id="node9" href="$dc/d28/a00223.html" title="Observer for SimEvents for commandline interface usage. " alt="" coords="1025,80,1166,107"/>
+<area shape="rect" id="node10" href="$d3/d1a/a00251.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="1191,80,1352,107"/>
+<area shape="rect" id="node11" href="$d4/d5b/a00294.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="1377,80,1550,107"/>
 </map>

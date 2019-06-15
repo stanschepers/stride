@@ -1,2 +1,22 @@
-<map id="PtreeUtils.h" name="PtreeUtils.h">
+<map id="PreSchoolGenerator.cpp" name="PreSchoolGenerator.cpp">
+<area shape="rect" id="node2" href="$de/d45/a00175.html" title="Generator.h" alt="" coords="2036,80,2134,107"/>
+<area shape="rect" id="node3" href="$d7/d9a/a00152.html" title="Definition of ContactPool Id Type. " alt="" coords="1360,401,1524,427"/>
+<area shape="rect" id="node9" href="$dc/d52/a00183.html" title="geopop/GeoGridConfig.h" alt="" coords="1413,155,1592,181"/>
+<area shape="rect" id="node32" href="$da/d2e/a00238.html" title="geopop/Location.h" alt="" coords="1036,237,1176,263"/>
+<area shape="rect" id="node40" href="$d7/d03/a00254.html" title="Header file for the core Population class. " alt="" coords="2020,155,2150,181"/>
+<area shape="rect" id="node46" href="$d5/d42/a00269.html" title="Interface of RnMan. " alt="" coords="2459,319,2559,345"/>
+<area shape="rect" id="node49" href="$d6/d82/a00243.html" title="Logging (spdlog) utilities. " alt="" coords="2652,155,2760,181"/>
+<area shape="rect" id="node10" href="$db/d48/a00148.html" title="Header for the core ContactPool class. " alt="" coords="1888,319,2050,345"/>
+<area shape="rect" id="node14" href="$d3/dd1/a00214.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="702,319,892,345"/>
+<area shape="rect" id="node19" href="$dd/dd7/a00248.html" title="Header file for the Person class. " alt="" coords="1862,237,1969,263"/>
+<area shape="rect" id="node22" href="$dd/d56/a00274.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="916,319,1088,345"/>
+<area shape="rect" id="node11" href="$d9/db6/a00146.html" title="Header for the ContactLogMode class. " alt="" coords="1861,401,2056,427"/>
+<area shape="rect" id="node20" href="$d1/d72/a00204.html" title="Header for the Health class. " alt="" coords="1566,319,1695,345"/>
+<area shape="rect" id="node23" href="$d9/d0d/a00298.html" title="Interface/Implementation for SVIterator. " alt="" coords="984,401,1082,427"/>
+<area shape="rect" id="node33" href="$d3/df8/a00155.html" title="geopop/Coordinate.h" alt="" coords="252,319,408,345"/>
+<area shape="rect" id="node41" href="$d9/d7d/a00150.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="1652,237,1838,263"/>
+<area shape="rect" id="node42" href="$d0/d81/a00180.html" title="geopop/GeoGrid.h" alt="" coords="2094,237,2233,263"/>
+<area shape="rect" id="node43" href="$da/deb/a00189.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="2226,319,2434,345"/>
+<area shape="rect" id="node44" href="$d6/de1/a00233.html" title="KdTree.h" alt="" coords="2280,401,2356,427"/>
+<area shape="rect" id="node47" href="$d1/dd4/a00267.html" title="Interface of RnPcg. " alt="" coords="2080,401,2154,427"/>
 </map>

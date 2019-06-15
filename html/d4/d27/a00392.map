@@ -1,9 +1,2 @@
-<map id="CSV.h" name="CSV.h">
-<area shape="rect" id="node2" href="$d0/dcd/a00280.html" title="Header for the command line controller. " alt="" coords="5,80,145,107"/>
-<area shape="rect" id="node3" href="$d5/d5b/a00135.html" title="CommutesCSVReader.cpp" alt="" coords="169,80,360,107"/>
-<area shape="rect" id="node4" href="$de/d79/a00203.html" title="HouseholdCSVReader.cpp" alt="" coords="385,80,571,107"/>
-<area shape="rect" id="node5" href="$d3/d42/a00235.html" title="LocationsCSVReader.cpp" alt="" coords="596,80,776,107"/>
-<area shape="rect" id="node6" href="$da/d50/a00301.html" title="WorkplaceCSVReader.cpp" alt="" coords="800,80,983,107"/>
-<area shape="rect" id="node7" href="$d7/d9a/a00152.html" title="Source file of csv. " alt="" coords="1007,80,1082,107"/>
-<area shape="rect" id="node8" href="$d3/d65/a00154.html" title="Source file of CSVRow. " alt="" coords="1106,80,1205,107"/>
+<map id="Coordinate.h" name="Coordinate.h">
 </map>

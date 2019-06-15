@@ -1,3 +1,4 @@
-<map id="stride::AbstractPopBuilder" name="stride::AbstractPopBuilder">
-<area shape="rect" id="node3" href="$d3/d32/a00105.html" title="{stride::util::RnMan\n||+ RnMan()\l+ RnMan()\l+ operator==()\l+ GetInfo()\l+ GetUniform01Generator()\l+ GetUniformIntGenerator()\l+ GetDiscreteGenerator()\l+ MakeWeightedCoinFlip()\l+ Initialize()\l+ IsEmpty()\l+ Shuffle()\l}" alt="" coords="178,145,381,369"/>
+<map id="proto::GeoGrid_Location_Coordinate" name="proto::GeoGrid_Location_Coordinate">
+<area shape="rect" id="node2" href="$db/d3a/a00040.html" title="{Message\n||}" alt="" coords="5,5,84,83"/>
+<area shape="rect" id="node4" href="$d2/d45/a00342.html" title="{double\n||}" alt="" coords="328,5,393,83"/>
 </map>

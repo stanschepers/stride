@@ -1,6 +1,6 @@
 var a00029 =
 [
-    [ "Location", "d5/d16/a00029.html#a9836a46f8135be0d446bff0dd102a4b6", null ],
+    [ "Location", "d5/d16/a00029.html#ab1dff8f467fd2bd5bd4bb0cc129c9833", null ],
     [ "operator==", "d5/d16/a00029.html#a2303a7a10dd49e03ac0c527f1a16c754", null ],
     [ "AddIncomingCommute", "d5/d16/a00029.html#a89410f6b3f9215c5b3ee45f059377cc6", null ],
     [ "AddOutgoingCommute", "d5/d16/a00029.html#a18bcffa0e1e714061db4a324b17d73e2", null ],
@@ -13,9 +13,13 @@ var a00029 =
     [ "GetPopCount", "d5/d16/a00029.html#a7fde850960f5c783ed650ea2de16a24f", null ],
     [ "GetProvince", "d5/d16/a00029.html#a3921cf045293c04cddcd32920121b870", null ],
     [ "GetPopFraction", "d5/d16/a00029.html#a4117d7579640419c0985113b170e493f", null ],
+    [ "GetHouseHoldType", "d5/d16/a00029.html#aef3a31bf68f5758e9c7d3e7f64745b75", null ],
+    [ "GetYoungOldFraction", "d5/d16/a00029.html#ae3deef6730740f75b67fec27c26cd19c", null ],
     [ "SetCoordinate", "d5/d16/a00029.html#abc019a04150652170e27c6c8468cc527", null ],
     [ "SetPopCount", "d5/d16/a00029.html#ace411e83d3564f986938f7ee3fe20d3f", null ],
     [ "SetPopFraction", "d5/d16/a00029.html#a15ecafbacc2310a1742dca11c462d65a", null ],
+    [ "SetHouseHoldType", "d5/d16/a00029.html#a40cc046cfa4cbc5701f335dd219a650c", null ],
+    [ "SetYoungOldFraction", "d5/d16/a00029.html#ae4233897294fb0d13b8747a48a4606a2", null ],
     [ "CRefPools", "d5/d16/a00029.html#a4c0c7cc6e193238c3fb3e777e7620e40", null ],
     [ "CRefPools", "d5/d16/a00029.html#a594d0565570ee2c71319068e84a6af68", null ],
     [ "RefPools", "d5/d16/a00029.html#af5d17516db20d693a8c8f3395e869659", null ],
@@ -30,6 +34,8 @@ var a00029 =
     [ "m_pop_count", "d5/d16/a00029.html#a3062d609e6b2190b4bd188a1278cdd31", null ],
     [ "m_pop_fraction", "d5/d16/a00029.html#a6b9b65fc7d04543a014ac2641c5c2c1b", null ],
     [ "m_province", "d5/d16/a00029.html#adc3b4aba4295de3c877827f5f0f7d936", null ],
+    [ "m_household_type", "d5/d16/a00029.html#a75b999dc4e8714888ab452ac250ce28f", null ],
+    [ "m_young_old_fraction", "d5/d16/a00029.html#a6e430eff74e78794719f65f061fd502a", null ],
     [ "m_inCommutes", "d5/d16/a00029.html#a268052bde24a256c5827c54afe0da076", null ],
     [ "m_outCommutes", "d5/d16/a00029.html#a28541461cedeb9b0458c94c73e5dca64", null ],
     [ "m_pool_index", "d5/d16/a00029.html#ad0f81bd1ab2b99eb3799c99981b71bd2", null ]

@@ -1,21 +1,9 @@
-<map id="GeoGridConfig.cpp" name="GeoGridConfig.cpp">
-<area shape="rect" id="node2" href="$db/dd9/a00179.html" title="GeoGridConfig.h" alt="" coords="742,169,869,196"/>
-<area shape="rect" id="node6" href="$db/d48/a00148.html" title="Definition of ContactPool Id Type. " alt="" coords="682,408,846,435"/>
-<area shape="rect" id="node30" href="$de/d36/a00123.html" title="contact/AgeBrackets.h" alt="" coords="897,87,1063,114"/>
-<area shape="rect" id="node31" href="$dc/de6/a00167.html" title="geopop/io/DistributionReader.h" alt="" coords="1238,251,1455,278"/>
-<area shape="rect" id="node32" href="$de/dd2/a00207.html" title="geopop/io/HouseholdReader.h" alt="" coords="951,251,1163,278"/>
-<area shape="rect" id="node33" href="$dd/dd7/a00260.html" title="geopop/io/ReaderFactory.h" alt="" coords="1291,87,1480,114"/>
-<area shape="rect" id="node44" href="$db/dc3/a00284.html" title="Miscellaneous string utilities. " alt="" coords="2563,87,2685,114"/>
-<area shape="rect" id="node3" href="$d5/da7/a00144.html" title="Header for the core ContactPool class. " alt="" coords="1224,333,1387,360"/>
-<area shape="rect" id="node13" href="$da/de7/a00210.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="291,333,480,360"/>
-<area shape="rect" id="node18" href="$d6/d08/a00244.html" title="Header file for the Person class. " alt="" coords="332,251,439,278"/>
-<area shape="rect" id="node21" href="$d9/d2a/a00270.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="971,333,1143,360"/>
-<area shape="rect" id="node4" href="$d2/d82/a00142.html" title="Header for the ContactLogMode class. " alt="" coords="1945,408,2140,435"/>
-<area shape="rect" id="node19" href="$d3/db1/a00200.html" title="Header for the Health class. " alt="" coords="137,333,266,360"/>
-<area shape="rect" id="node22" href="$d4/d5b/a00294.html" title="Interface/Implementation for SVIterator. " alt="" coords="921,408,1020,435"/>
-<area shape="rect" id="node34" href="$d2/df5/a00137.html" title="CommutesReader.h" alt="" coords="1453,169,1601,196"/>
-<area shape="rect" id="node36" href="$d4/d08/a00237.html" title="LocationsReader.h" alt="" coords="1788,169,1927,196"/>
-<area shape="rect" id="node37" href="$d5/de9/a00176.html" title="geopop/GeoGrid.h" alt="" coords="1967,251,2105,278"/>
-<area shape="rect" id="node41" href="$da/d31/a00234.html" title="geopop/Location.h" alt="" coords="1727,251,1867,278"/>
-<area shape="rect" id="node38" href="$de/df3/a00185.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="1932,333,2140,360"/>
+<map id="GeoGrid.h" name="GeoGrid.h">
+<area shape="rect" id="node2" href="$d7/d9a/a00152.html" title="Definition of ContactPool Id Type. " alt="" coords="122,80,286,107"/>
+<area shape="rect" id="node8" href="$da/deb/a00189.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="446,80,654,107"/>
+<area shape="rect" id="node9" href="$d6/de1/a00233.html" title="KdTree.h" alt="" coords="480,155,556,181"/>
+<area shape="rect" id="node16" href="$d3/d42/a00235.html" title="KdTree2DPoint.h" alt="" coords="705,155,832,181"/>
+<area shape="rect" id="node10" href="$de/d36/a00123.html" title="AABBox.h" alt="" coords="646,237,731,263"/>
+<area shape="rect" id="node11" href="$d0/d53/a00232.html" title="KdNode.h" alt="" coords="436,237,520,263"/>
+<area shape="rect" id="node17" href="$d3/df8/a00155.html" title="geopop/Coordinate.h" alt="" coords="806,237,962,263"/>
 </map>

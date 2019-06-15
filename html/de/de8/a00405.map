@@ -1,21 +1,4 @@
-<map id="DefaultPopBuilder.cpp" name="DefaultPopBuilder.cpp">
-<area shape="rect" id="node2" href="$db/ddf/a00164.html" title="Initialize populations. " alt="" coords="207,87,353,114"/>
-<area shape="rect" id="node7" href="$d2/d82/a00142.html" title="Header for the ContactLogMode class. " alt="" coords="1991,333,2185,360"/>
-<area shape="rect" id="node9" href="$db/d48/a00148.html" title="Definition of ContactPool Id Type. " alt="" coords="1023,333,1187,360"/>
-<area shape="rect" id="node14" href="$da/de7/a00210.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="695,251,884,278"/>
-<area shape="rect" id="node19" href="$d0/da7/a00250.html" title="Header file for the core Population class. " alt="" coords="998,87,1127,114"/>
-<area shape="rect" id="node36" href="$da/d53/a00265.html" title="Interface of RnMan. " alt="" coords="1829,169,1929,196"/>
-<area shape="rect" id="node40" href="$d6/d82/a00293.html" title="Header file for the SurveySeeder class. " alt="" coords="369,169,519,196"/>
-<area shape="rect" id="node41" href="$d5/dcb/a00170.html" title="Interface for install directory queries. " alt="" coords="1969,169,2069,196"/>
-<area shape="rect" id="node43" href="$db/dc3/a00284.html" title="Miscellaneous string utilities. " alt="" coords="2260,333,2383,360"/>
-<area shape="rect" id="node3" href="$d8/dfa/a00121.html" title="Base Class for PopBuilders. " alt="" coords="88,169,243,196"/>
-<area shape="rect" id="node20" href="$d5/da7/a00144.html" title="Header for the core ContactPool class. " alt="" coords="1359,251,1521,278"/>
-<area shape="rect" id="node23" href="$d9/db6/a00146.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="748,169,935,196"/>
-<area shape="rect" id="node24" href="$d9/d2a/a00270.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="498,251,670,278"/>
-<area shape="rect" id="node29" href="$d5/de9/a00176.html" title="geopop/GeoGrid.h" alt="" coords="1545,251,1684,278"/>
-<area shape="rect" id="node33" href="$d6/d08/a00244.html" title="Header file for the Person class. " alt="" coords="1009,169,1116,196"/>
-<area shape="rect" id="node25" href="$d4/d5b/a00294.html" title="Interface/Implementation for SVIterator. " alt="" coords="88,333,187,360"/>
-<area shape="rect" id="node30" href="$de/df3/a00185.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="1559,333,1767,360"/>
-<area shape="rect" id="node34" href="$d3/db1/a00200.html" title="Header for the Health class. " alt="" coords="1154,251,1283,278"/>
-<area shape="rect" id="node37" href="$df/da9/a00263.html" title="Interface of RnPcg. " alt="" coords="1842,333,1915,360"/>
+<map id="DaysOffNone.h" name="DaysOffNone.h">
+<area shape="rect" id="node2" href="$de/d76/a00134.html" title="Header file for the Calendar class. " alt="" coords="289,80,439,107"/>
+<area shape="rect" id="node9" href="$dd/dae/a00163.html" title="Interface for DaysOff classes. " alt="" coords="462,80,661,107"/>
 </map>

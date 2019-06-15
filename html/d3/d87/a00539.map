@@ -1,14 +1,4 @@
-<map id="Populator.h" name="Populator.h">
-<area shape="rect" id="node2" href="$db/d48/a00148.html" title="Definition of ContactPool Id Type. " alt="" coords="103,319,267,345"/>
-<area shape="rect" id="node8" href="$d5/da7/a00144.html" title="Header for the core ContactPool class. " alt="" coords="307,244,470,271"/>
-<area shape="rect" id="node12" href="$db/dd9/a00179.html" title="geopop/GeoGridConfig.h" alt="" coords="905,80,1083,107"/>
-<area shape="rect" id="node30" href="$d0/d27/a00239.html" title="Logging (spdlog) utilities. " alt="" coords="1776,244,1884,271"/>
-<area shape="rect" id="node32" href="$da/d53/a00265.html" title="Interface of RnMan. " alt="" coords="1252,244,1352,271"/>
-<area shape="rect" id="node9" href="$d2/d82/a00142.html" title="Header for the ContactLogMode class. " alt="" coords="291,319,486,345"/>
-<area shape="rect" id="node13" href="$da/de7/a00210.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="562,244,751,271"/>
-<area shape="rect" id="node18" href="$d6/d08/a00244.html" title="Header file for the Person class. " alt="" coords="721,162,827,189"/>
-<area shape="rect" id="node21" href="$d9/d2a/a00270.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="1053,244,1225,271"/>
-<area shape="rect" id="node19" href="$d3/db1/a00200.html" title="Header for the Health class. " alt="" coords="776,244,905,271"/>
-<area shape="rect" id="node22" href="$d4/d5b/a00294.html" title="Interface/Implementation for SVIterator. " alt="" coords="1422,319,1521,345"/>
-<area shape="rect" id="node33" href="$df/da9/a00263.html" title="Interface of RnPcg. " alt="" coords="1324,319,1397,345"/>
+<map id="PersonsFileViewer.h" name="PersonsFileViewer.h">
+<area shape="rect" id="node2" href="$da/d01/a00153.html" title="Header for the command line controller. " alt="" coords="5,80,141,107"/>
+<area shape="rect" id="node3" href="$d3/d1a/a00251.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="166,80,327,107"/>
 </map>

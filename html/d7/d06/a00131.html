@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: CliViewer.cpp File Reference</title>
+<title>Stride Reference Manual: Assert.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 33b4fd4</span>
+   &#160;<span id="projectnumber">- generated for commit c050058</span>
    </div>
   </td>
  </tr>
@@ -105,52 +105,43 @@ $(document).ready(function(){initNavTree('d7/d06/a00131.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">CliViewer.cpp File Reference</div>  </div>
+<div class="title">Assert.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Definition of Observer for SimEvents for commandline interface usage.  
+<p>Definition of .  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d5/deb/a00132_source.html">CliViewer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d6/db3/a00130_source.html">calendar/Calendar.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d0/da7/a00250_source.html">pop/Population.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d9/dd6/a00272_source.html">sim/Sim.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../dc/d5d/a00278_source.html">sim/SimRunner.h</a>&quot;</code><br />
-<code>#include &lt;boost/property_tree/xml_parser.hpp&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d6/dfb/a00172_source.html">util/Exception.h</a>&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;spdlog/logger.h&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for CliViewer.cpp:</div>
+Include dependency graph for Assert.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../df/d73/a00358.gif" border="0" usemap="#CliViewer_8cpp" alt=""/></div>
-<map name="CliViewer_8cpp" id="CliViewer_8cpp">
-<area shape="rect" id="node2" href="../../d5/deb/a00132.html" title="Observer for SimEvents for commandline interface usage. " alt="" coords="1836,177,1927,203"/>
-<area shape="rect" id="node7" href="../../d6/db3/a00130.html" title="Header file for the Calendar class. " alt="" coords="572,87,721,114"/>
-<area shape="rect" id="node14" href="../../d0/da7/a00250.html" title="Header file for the core Population class. " alt="" coords="1401,87,1530,114"/>
-<area shape="rect" id="node39" href="../../d9/dd6/a00272.html" title="Header for the Simulator class. " alt="" coords="2339,87,2426,114"/>
-<area shape="rect" id="node46" href="../../dc/d5d/a00278.html" title="Header for the SimRunner class. " alt="" coords="2374,177,2503,203"/>
-<area shape="rect" id="node3" href="../../d3/de5/a00209.html" title="Definition of EventId. " alt="" coords="2055,348,2167,375"/>
-<area shape="rect" id="node15" href="../../d5/da7/a00144.html" title="Header for the core ContactPool class. " alt="" coords="1268,266,1431,293"/>
-<area shape="rect" id="node17" href="../../db/d48/a00148.html" title="Definition of ContactPool Id Type. " alt="" coords="1150,348,1314,375"/>
-<area shape="rect" id="node23" href="../../d9/db6/a00146.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="1009,177,1196,203"/>
-<area shape="rect" id="node27" href="../../d9/d2a/a00270.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="757,266,929,293"/>
-<area shape="rect" id="node30" href="../../d5/de9/a00176.html" title="geopop/GeoGrid.h" alt="" coords="364,266,503,293"/>
-<area shape="rect" id="node34" href="../../d6/d08/a00244.html" title="Header file for the Person class. " alt="" coords="1503,177,1609,203"/>
-<area shape="rect" id="node36" href="../../da/d53/a00265.html" title="Interface of RnMan. " alt="" coords="2010,266,2110,293"/>
-<area shape="rect" id="node16" href="../../d2/d82/a00142.html" title="Header for the ContactLogMode class. " alt="" coords="2191,348,2385,375"/>
-<area shape="rect" id="node24" href="../../da/de7/a00210.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="1055,266,1193,293"/>
-<area shape="rect" id="node28" href="../../d4/d5b/a00294.html" title="Interface/Implementation for SVIterator. " alt="" coords="504,348,603,375"/>
-<area shape="rect" id="node31" href="../../de/df3/a00185.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="221,348,429,375"/>
-<area shape="rect" id="node35" href="../../d3/db1/a00200.html" title="Header for the Health class. " alt="" coords="1455,266,1585,293"/>
-<area shape="rect" id="node37" href="../../df/da9/a00263.html" title="Interface of RnPcg. " alt="" coords="1957,348,2030,375"/>
-<area shape="rect" id="node40" href="../../d7/d12/a00126.html" title="Contact profiles stored in simulator. " alt="" coords="1221,177,1427,203"/>
-<area shape="rect" id="node41" href="../../d5/db1/a00140.html" title="Header for the ContactHandler class. " alt="" coords="2833,266,3018,293"/>
-<area shape="rect" id="node42" href="../../dc/d28/a00223.html" title="Header for the InfectorExec class. " alt="" coords="1951,177,2115,203"/>
-<area shape="rect" id="node43" href="../../db/da2/a00300.html" title="Header for the TransmissionProfile class. " alt="" coords="2579,177,2786,203"/>
-<area shape="rect" id="node45" href="../../d7/d2f/a00258.html" title="Header for the PublicHealthAgency class. " alt="" coords="2140,177,2351,203"/>
-<area shape="rect" id="node47" href="../../d5/d7b/a00286.html" title="Definition of Subject/Observer for SimEvents. " alt="" coords="2236,266,2385,293"/>
-<area shape="rect" id="node48" href="../../dc/dc9/a00282.html" title="Definition of Stopwatch. " alt="" coords="2461,266,2585,293"/>
+<div class="center"><img src="../../d3/dc9/a00355.gif" border="0" usemap="#Assert_8h" alt=""/></div>
+<map name="Assert_8h" id="Assert_8h">
+<area shape="rect" id="node2" href="../../d6/dfb/a00172.html" title="util/Exception.h" alt="" coords="5,80,124,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/de1/a00356.gif" border="0" usemap="#Assert_8hdep" alt=""/></div>
+<map name="Assert_8hdep" id="Assert_8hdep">
+<area shape="rect" id="node2" href="../../de/d79/a00203.html" title="Implementation for the Health class. " alt="" coords="5,80,96,107"/>
+<area shape="rect" id="node3" href="../../d5/d13/a00205.html" title="Implementation for HelthSeeder class. " alt="" coords="120,80,256,107"/>
+<area shape="rect" id="node4" href="../../d2/df5/a00137.html" title="CollegeGenerator.cpp" alt="" coords="280,80,440,107"/>
+<area shape="rect" id="node5" href="../../d7/d2f/a00258.html" title="PrimaryCommunityGenerator.cpp" alt="" coords="463,80,699,107"/>
+<area shape="rect" id="node6" href="../../d9/dd6/a00272.html" title="SecondaryCommunityGenerator.cpp" alt="" coords="723,80,978,107"/>
+<area shape="rect" id="node7" href="../../d0/da2/a00307.html" title="WorkplaceGenerator.cpp" alt="" coords="1002,80,1179,107"/>
+<area shape="rect" id="node8" href="../../d4/ddd/a00138.html" title="CollegePopulator.cpp" alt="" coords="1203,80,1359,107"/>
+<area shape="rect" id="node9" href="../../d5/d0f/a00308.html" title="WorkplacePopulator.cpp" alt="" coords="1384,80,1557,107"/>
+<area shape="rect" id="node10" href="../../d0/d3e/a00253.html" title="Core Population class. " alt="" coords="1582,80,1698,107"/>
 </map>
 </div>
 </div>
@@ -158,24 +149,107 @@ Include dependency graph for CliViewer.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:de/dc8/a00325"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc8/a00325.html">stride</a></td></tr>
-<tr class="memdesc:de/dc8/a00325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
+<tr class="memitem:dd/d4e/a00329"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d4e/a00329.html">stride</a></td></tr>
+<tr class="memdesc:dd/d4e/a00329"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:df/d91/a00335"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d91/a00335.html">stride::viewers</a></td></tr>
-<tr class="memdesc:df/d91/a00335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for MVC-viewers that may be registered with <a class="el" href="../../db/ddf/a00088.html" title="The simulation runner drive simulator throufgh time steps. ">SimRunner</a>. <br /></td></tr>
+<tr class="memitem:dd/d1d/a00336"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d1d/a00336.html">stride::util</a></td></tr>
+<tr class="memdesc:dd/d1d/a00336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utilities for the project. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:abb9b6f8dbf5a3b5559684d8a9095ed9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#abb9b6f8dbf5a3b5559684d8a9095ed9a">AssertLog</a>(CONDITION,  MESSAGE,  LOGGER)&#160;&#160;&#160;((void)0)</td></tr>
+<tr class="separator:abb9b6f8dbf5a3b5559684d8a9095ed9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a904cea5d50cd8499f36a9befdf774a0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d06/a00131.html#a904cea5d50cd8499f36a9befdf774a0b">AssertThrow</a>(CONDITION,  MESSAGE,  LOGGER)&#160;&#160;&#160;((void)0)</td></tr>
+<tr class="separator:a904cea5d50cd8499f36a9befdf774a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ad34dca6a7a235cc5935cf931efe19fec"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d1d/a00336.html#ad34dca6a7a235cc5935cf931efe19fec">stride::util::AssertMessage</a> (const char *condition, const std::string &amp;message, const std::shared_ptr&lt; spdlog::logger &gt; &amp;logger, const char *file, int line)</td></tr>
+<tr class="separator:ad34dca6a7a235cc5935cf931efe19fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Definition of Observer for SimEvents for commandline interface usage. </p>
+<div class="textblock"><p>Definition of . </p>
 
-<p>Definition in file <a class="el" href="../../d7/d06/a00131_source.html">CliViewer.cpp</a>.</p>
-</div></div><!-- contents -->
+<p>Definition in file <a class="el" href="../../d7/d06/a00131_source.html">Assert.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="abb9b6f8dbf5a3b5559684d8a9095ed9a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AssertLog</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">CONDITION, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">MESSAGE, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">LOGGER&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((void)0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d06/a00131_source.html#l00067">67</a> of file <a class="el" href="../../d7/d06/a00131_source.html">Assert.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a904cea5d50cd8499f36a9befdf774a0b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AssertThrow</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">CONDITION, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">MESSAGE, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">LOGGER&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((void)0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d06/a00131_source.html#l00068">68</a> of file <a class="el" href="../../d7/d06/a00131_source.html">Assert.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d2/df5/a00137_source.html#l00027">geopop::Generator&lt; ID &gt;::Apply()</a>, <a class="el" href="../../d4/ddd/a00138_source.html#l00033">geopop::Populator&lt; ID &gt;::Apply()</a>, <a class="el" href="../../d5/d13/a00205_source.html#l00036">stride::HealthSeeder::HealthSeeder()</a>, <a class="el" href="../../de/d79/a00203_source.html#l00035">stride::Health::StartInfection()</a>, and <a class="el" href="../../de/d79/a00203_source.html#l00042">stride::Health::StopInfection()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_2ae6c1d5e4b832eb120eff875630c108.html">viewers</a></li><li class="navelem"><a class="el" href="../../d7/d06/a00131.html">CliViewer.cpp</a></li>
-    <li class="footer">Generated on Fri Jun 14 2019 14:41:37 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_cf56009b1fcb470adac12e74ab7406a1.html">util</a></li><li class="navelem"><a class="el" href="../../d7/d06/a00131.html">Assert.h</a></li>
+    <li class="footer">Generated on Sat Jun 15 2019 18:37:00 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

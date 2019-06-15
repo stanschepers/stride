@@ -5,7 +5,7 @@
 <area shape="rect" id="node9" href="$db/db2/a00020.html#a926c2d6d9381b1b87ff81fb92f598041" title="Create a ProtoBuf Location containing all the info needed to reconstruct a Location. " alt="" coords="249,180,449,221"/>
 <area shape="rect" id="node4" href="$da/da0/a00009.html#af22be8d3066422475ffa15d71289b4b6" title="geopop::Generator::\lApply" alt="" coords="781,5,932,47"/>
 <area shape="rect" id="node5" href="$d7/dd4/a00013.html#adb9b0f349282a7dca217e604799fb606" title="Get the Population associated with this GeoGrid. " alt="" coords="505,63,733,90"/>
-<area shape="rect" id="node6" href="$d0/dc0/a00033.html#a5ef58e6d2a59a356c3993b7f88900a2b" title="geopop::Populator::\lApply" alt="" coords="783,71,930,112"/>
+<area shape="rect" id="node6" href="$db/df3/a00034.html#a5ef58e6d2a59a356c3993b7f88900a2b" title="geopop::Populator::\lApply" alt="" coords="783,71,930,112"/>
 <area shape="rect" id="node8" href="$d1/d2b/a00018.html#ad29ac72b56a116252620d06921f0365e" title="Write the provided GeoGrid to the proved ostream in JSON format. " alt="" coords="520,115,719,156"/>
 <area shape="rect" id="node10" href="$db/db2/a00020.html#abaddb399f1f826203ae6086858dbfbde" title="Write the GeoGrid to the ostream in Protobuf format. " alt="" coords="519,180,719,221"/>
 </map>

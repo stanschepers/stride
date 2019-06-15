@@ -1,3 +1,10 @@
-<map id="geopop::LocationsCSVReader" name="geopop::LocationsCSVReader">
-<area shape="rect" id="node2" href="$df/d61/a00031.html" title="Create an abstract Reader which fills a GeoGrid with the cities found in file. " alt="" coords="19,5,202,112"/>
+<map id="geopop::Location" name="geopop::Location">
+<area shape="rect" id="node2" href="$d2/d45/a00342.html" title="{double\n||}" alt="" coords="5,789,71,866"/>
+<area shape="rect" id="node4" href="$dd/d32/a00041.html" title="{stride::ContactType\l::IdSubscriptArray\&lt;\l stride::util::stride\l::util::SegmentedVector\l\&lt; stride::stride::ContactPool * \&gt; \&gt;\n||+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ operator[]()\l+ operator[]()\l+ at()\l+ at()\l}" alt="" coords="229,708,471,947"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="66,261,263,397"/>
+<area shape="rect" id="node8" title="STL class. " alt="" coords="201,153,416,230"/>
+<area shape="rect" id="node13" title="STL class. " alt="" coords="440,153,567,230"/>
+<area shape="rect" id="node7" href="$dd/d32/a00041.html" title="An std::array modified to enable subscripting with the constact pool type indentifiers. " alt="" coords="209,421,381,616"/>
+<area shape="rect" id="node9" title="STL class. " alt="" coords="665,789,752,866"/>
+<area shape="rect" id="node10" title="STL class. " alt="" coords="640,473,777,565"/>
 </map>

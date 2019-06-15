@@ -1,8 +1,0 @@
-<map id="geopop::GeoGridConfig" name="geopop::GeoGridConfig">
-<area shape="rect" id="node2" href="$dc/d84/a00338.html" title="{double\n||}" alt="" coords="91,818,157,895"/>
-<area shape="rect" id="node5" title="STL class. " alt="" coords="349,153,475,230"/>
-<area shape="rect" id="node8" title="STL class. " alt="" coords="833,261,989,353"/>
-<area shape="rect" id="node10" title="STL class. " alt="" coords="938,153,1153,230"/>
-<area shape="rect" id="node7" href="$d3/de7/a00039.html" title="{stride::ContactType\l::IdSubscriptArray\&lt;\l unsigned int \&gt;\n||+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ operator[]()\l+ operator[]()\l+ at()\l+ at()\l}" alt="" coords="793,752,945,961"/>
-<area shape="rect" id="node9" href="$d3/de7/a00039.html" title="An std::array modified to enable subscripting with the constact pool type indentifiers. " alt="" coords="959,377,1131,572"/>
-</map>

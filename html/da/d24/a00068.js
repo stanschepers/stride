@@ -1,5 +1,6 @@
 var a00068 =
 [
-    [ "Build", "da/d24/a00068.html#a8c1071f808ade6b38dd14a74024e64d4", null ],
-    [ "MakePersons", "da/d24/a00068.html#a3738040e683004b9ecefc9ba7608eba4", null ]
+    [ "~DaysOffInterface", "da/d24/a00068.html#afec638f8fcc3e653e389f47bd30d63e1", null ],
+    [ "IsWorkOff", "da/d24/a00068.html#a2ae431c15cddca106e2a0753fde99f83", null ],
+    [ "IsSchoolOff", "da/d24/a00068.html#a747d7b072b24545437aa9326ba024185", null ]
 ];

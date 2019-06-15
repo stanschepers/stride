@@ -1,22 +1,14 @@
-<map id="PrimaryCommunityGenerator.cpp" name="PrimaryCommunityGenerator.cpp">
-<area shape="rect" id="node2" href="$d1/d0d/a00171.html" title="Generator.h" alt="" coords="1307,80,1405,107"/>
-<area shape="rect" id="node48" href="$df/dcd/a00127.html" title="Definition of . " alt="" coords="2556,237,2655,263"/>
-<area shape="rect" id="node3" href="$db/d48/a00148.html" title="Definition of ContactPool Id Type. " alt="" coords="989,401,1153,427"/>
-<area shape="rect" id="node9" href="$db/dd9/a00179.html" title="geopop/GeoGridConfig.h" alt="" coords="247,155,425,181"/>
-<area shape="rect" id="node31" href="$da/d31/a00234.html" title="geopop/Location.h" alt="" coords="1674,237,1814,263"/>
-<area shape="rect" id="node39" href="$d0/da7/a00250.html" title="Header file for the core Population class. " alt="" coords="985,155,1114,181"/>
-<area shape="rect" id="node42" href="$da/d53/a00265.html" title="Interface of RnMan. " alt="" coords="1189,237,1289,263"/>
-<area shape="rect" id="node46" href="$d0/d27/a00239.html" title="Logging (spdlog) utilities. " alt="" coords="1383,155,1491,181"/>
-<area shape="rect" id="node10" href="$d5/da7/a00144.html" title="Header for the core ContactPool class. " alt="" coords="867,319,1029,345"/>
-<area shape="rect" id="node14" href="$da/de7/a00210.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="253,319,443,345"/>
-<area shape="rect" id="node19" href="$d6/d08/a00244.html" title="Header file for the Person class. " alt="" coords="268,237,375,263"/>
-<area shape="rect" id="node22" href="$d9/d2a/a00270.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="467,319,639,345"/>
-<area shape="rect" id="node11" href="$d2/d82/a00142.html" title="Header for the ContactLogMode class. " alt="" coords="1876,401,2071,427"/>
-<area shape="rect" id="node20" href="$d3/db1/a00200.html" title="Header for the Health class. " alt="" coords="99,319,229,345"/>
-<area shape="rect" id="node23" href="$d4/d5b/a00294.html" title="Interface/Implementation for SVIterator. " alt="" coords="503,401,601,427"/>
-<area shape="rect" id="node32" href="$dd/db2/a00151.html" title="geopop/Coordinate.h" alt="" coords="2193,319,2349,345"/>
-<area shape="rect" id="node40" href="$d9/db6/a00146.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="724,237,911,263"/>
-<area shape="rect" id="node41" href="$d5/de9/a00176.html" title="geopop/GeoGrid.h" alt="" coords="1511,237,1649,263"/>
-<area shape="rect" id="node43" href="$df/da9/a00263.html" title="Interface of RnPcg. " alt="" coords="2095,401,2169,427"/>
-<area shape="rect" id="node49" href="$dd/da7/a00168.html" title="util/Exception.h" alt="" coords="2618,319,2737,345"/>
+<map id="Populator.h" name="Populator.h">
+<area shape="rect" id="node2" href="$d7/d9a/a00152.html" title="Definition of ContactPool Id Type. " alt="" coords="103,319,267,345"/>
+<area shape="rect" id="node8" href="$db/d48/a00148.html" title="Header for the core ContactPool class. " alt="" coords="307,244,470,271"/>
+<area shape="rect" id="node12" href="$dc/d52/a00183.html" title="geopop/GeoGridConfig.h" alt="" coords="935,80,1114,107"/>
+<area shape="rect" id="node31" href="$d6/d82/a00243.html" title="Logging (spdlog) utilities. " alt="" coords="1776,244,1884,271"/>
+<area shape="rect" id="node33" href="$d5/d42/a00269.html" title="Interface of RnMan. " alt="" coords="1288,244,1388,271"/>
+<area shape="rect" id="node9" href="$d9/db6/a00146.html" title="Header for the ContactLogMode class. " alt="" coords="291,319,486,345"/>
+<area shape="rect" id="node13" href="$d3/dd1/a00214.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="550,244,739,271"/>
+<area shape="rect" id="node18" href="$dd/dd7/a00248.html" title="Header file for the Person class. " alt="" coords="682,162,789,189"/>
+<area shape="rect" id="node21" href="$dd/d56/a00274.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="1069,244,1241,271"/>
+<area shape="rect" id="node19" href="$d1/d72/a00204.html" title="Header for the Health class. " alt="" coords="764,244,893,271"/>
+<area shape="rect" id="node22" href="$d9/d0d/a00298.html" title="Interface/Implementation for SVIterator. " alt="" coords="1422,319,1521,345"/>
+<area shape="rect" id="node34" href="$d1/dd4/a00267.html" title="Interface of RnPcg. " alt="" coords="1324,319,1397,345"/>
 </map>

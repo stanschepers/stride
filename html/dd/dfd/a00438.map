@@ -1,3 +1,11 @@
-<map id="GeoGridJSONWriter.h" name="GeoGridJSONWriter.h">
-<area shape="rect" id="node2" href="$d7/d25/a00182.html" title="GeoGridJSONWriter.cpp" alt="" coords="5,80,173,107"/>
+<map id="GeoGridJSONReader.h" name="GeoGridJSONReader.h">
+<area shape="rect" id="node2" href="$d3/d2a/a00195.html" title="GeoGridReader.h" alt="" coords="123,169,252,196"/>
+<area shape="rect" id="node8" href="$db/d48/a00148.html" title="Header for the core ContactPool class. " alt="" coords="533,169,695,196"/>
+<area shape="rect" id="node11" href="$d7/d9a/a00152.html" title="Definition of ContactPool Id Type. " alt="" coords="779,251,943,278"/>
+<area shape="rect" id="node16" href="$da/d2e/a00238.html" title="geopop/Location.h" alt="" coords="1067,87,1207,114"/>
+<area shape="rect" id="node9" href="$d9/db6/a00146.html" title="Header for the ContactLogMode class. " alt="" coords="509,251,703,278"/>
+<area shape="rect" id="node17" href="$d3/dd1/a00214.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="973,169,1162,196"/>
+<area shape="rect" id="node22" href="$d3/df8/a00155.html" title="geopop/Coordinate.h" alt="" coords="1607,169,1763,196"/>
+<area shape="rect" id="node25" href="$dd/d56/a00274.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="2007,169,2179,196"/>
+<area shape="rect" id="node26" href="$d9/d0d/a00298.html" title="Interface/Implementation for SVIterator. " alt="" coords="2187,251,2286,278"/>
 </map>

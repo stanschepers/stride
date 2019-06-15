@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: google::protobuf Namespace Reference</title>
+<title>Stride Reference Manual: geopop Namespace Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 33b4fd4</span>
+   &#160;<span id="projectnumber">- generated for commit c050058</span>
    </div>
   </td>
  </tr>
@@ -105,205 +105,503 @@ $(document).ready(function(){initNavTree('d2/d41/a00318.html','../../');});
 
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">google::protobuf Namespace Reference</div>  </div>
+<div class="title">geopop Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Namespace for the geographic and demograhic classes.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:de/dab/a00319"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dab/a00319.html">geogrid_detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:dd/de2/a00320"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de2/a00320.html">kd</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc6/a00037.html">is_proto_enum&lt; ::proto::GeoGrid_Location_ContactPools_Type &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d7c/a00003.html">AABBox</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">AxisAlignedBoundingBox (hyperrectangle defined by lower and upper bound for every dimension).  <a href="../../d1/d7c/a00003.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d0b/a00004.html">BoxPolicy</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d7/dec/a00010.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time...">GeoAggregator</a> Policy that aggregates over an axis aligned bounding box.  <a href="../../d0/d0b/a00004.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html">Collector</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggregates into a vector that must should remain alive for the usage duration of the <a class="el" href="../../dd/dad/a00005.html" title="Aggregates into a vector that must should remain alive for the usage duration of the Collector...">Collector</a>.  <a href="../../dd/dad/a00005.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html">CommutesCSVReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a Reader that fills a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> with the commute info from CSV file.  <a href="../../de/d21/a00006.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d5e/a00007.html">CommutesReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an abstract Reader that fills a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> with the commute info from file.  <a href="../../de/d5e/a00007.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dee/a00008.html">DistributionReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the reference distribution profiles from file.  <a href="../../d4/dee/a00008.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da0/a00009.html">Generator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../da/da0/a00009.html" title="Generator uses geo &amp; pop data to construct ContactPools in the GeoGrid. ">Generator</a> uses geo &amp; pop data to construct ContactPools in the <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a>.  <a href="../../da/da0/a00009.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dec/a00010.html">GeoAggregator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="../../d7/dec/a00010.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time...">GeoAggregator</a> can either be instantiated with a functor, or be called with one every time.  <a href="../../d7/dec/a00010.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html">GeoAggregator&lt; Policy &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="../../d7/dec/a00010.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time...">GeoAggregator</a> that has to be called with a functor.  <a href="../../da/d45/a00011.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d86/a00012.html">GeoAggregator&lt; Policy, F &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="../../d7/dec/a00010.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time...">GeoAggregator</a> constructed with a functor.  <a href="../../df/d86/a00012.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dd4/a00013.html">GeoGrid</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Geographic grid of simulation region contains Locations that in turn contain an index to the ContactPools situated at that <a class="el" href="../../d5/d16/a00029.html" title="Location for use within the GeoGrid, contains Coordinate and index to ContactPools. ">Location</a>.  <a href="../../d7/dd4/a00013.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d7a/a00016.html">GeoGridConfig</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration data mostly for generating a population, but also for computing the required number of schools, workplaces, communities etc.  <a href="../../d7/d7a/a00016.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d51/a00017.html">GeoGridJSONReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An implementation of the <a class="el" href="../../de/d11/a00021.html" title="An abstract base class for creating a GeoGrid that was read from a file, can be implemented using mul...">GeoGridReader</a> using JSON.  <a href="../../d4/d51/a00017.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d2b/a00018.html">GeoGridJSONWriter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> to a JSON file.  <a href="../../d1/d2b/a00018.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/da2/a00019.html">GeoGridProtoReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An implementation of the <a class="el" href="../../de/d11/a00021.html" title="An abstract base class for creating a GeoGrid that was read from a file, can be implemented using mul...">GeoGridReader</a> using Protocol Buffers.  <a href="../../dd/da2/a00019.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html">GeoGridProtoWriter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An implementation of the <a class="el" href="../../d3/d52/a00023.html" title="An interface for writing the GeoGrid to a file, can be implemented with multiple file types...">GeoGridWriter</a> using Protocol Buffers This class is used to write a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> to a Proto file.  <a href="../../db/db2/a00020.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d11/a00021.html">GeoGridReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An abstract base class for creating a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> that was read from a file, can be implemented using multiple file types (proto and json are currently implemented)  <a href="../../de/d11/a00021.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de0/a00022.html">GeoGridReaderFactory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Factory for creating the correct implementation of a <a class="el" href="../../de/d11/a00021.html" title="An abstract base class for creating a GeoGrid that was read from a file, can be implemented using mul...">GeoGridReader</a> based on the filename extension.  <a href="../../d7/de0/a00022.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d52/a00023.html">GeoGridWriter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An interface for writing the <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> to a file, can be implemented with multiple file types.  <a href="../../d3/d52/a00023.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/de2/a00024.html">GeoGridWriterFactory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory creates the correct implementation of a <a class="el" href="../../d3/d52/a00023.html" title="An interface for writing the GeoGrid to a file, can be implemented with multiple file types...">GeoGridWriter</a> based on the filename extension.  <a href="../../dc/de2/a00024.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dfe/a00025.html">HouseholdCSVReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a Reader that retrieves the different Household profiles from a given CSV file.  <a href="../../d3/dfe/a00025.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d5b/a00026.html">HouseholdReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the reference Household profiles from file.  <a href="../../d6/d5b/a00026.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3c/a00028.html">KdTree</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A k-d tree: a k-dimensional generalization of binary search trees This data structure allows for efficient lookup of points and range queries with an Axis-Aligned Bounding Box (when balanced).  <a href="../../dc/d3c/a00028.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d16/a00029.html">Location</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d5/d16/a00029.html" title="Location for use within the GeoGrid, contains Coordinate and index to ContactPools. ">Location</a> for use within the <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a>, contains Coordinate and index to ContactPools.  <a href="../../d5/d16/a00029.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d79/a00030.html">LocationsCSVReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a Reader that fills a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> with the <a class="el" href="../../d5/d16/a00029.html" title="Location for use within the GeoGrid, contains Coordinate and index to ContactPools. ">Location</a> data found in a CSV input stream.  <a href="../../d5/d79/a00030.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d61/a00031.html">LocationsReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an abstract Reader which fills a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> with the cities found in file.  <a href="../../df/d61/a00031.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d87/a00032.html">PolygonPolicy</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="../../d7/dec/a00010.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time...">GeoAggregator</a> Policy that aggregates over a (clockwise) polygon.  <a href="../../dc/d87/a00032.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc0/a00033.html">PopulationInfo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/df3/a00034.html">Populator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../db/df3/a00034.html" title="Populator uses geo &amp; pop data to populate ContactPools in the GeoGrid. ">Populator</a> uses geo &amp; pop data to populate ContactPools in the <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a>.  <a href="../../db/df3/a00034.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d8c/a00035.html">RadiusPolicy</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d7/dec/a00010.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time...">GeoAggregator</a> Policy that aggregates locations within a radius (in km) of a center point.  <a href="../../d4/d8c/a00035.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8c/a00036.html">ReaderFactory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Factory for creating the correct implementation of the different Readers which parse the information needed to construct a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a>, based on the file extension.  <a href="../../de/d8c/a00036.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc6/a00037.html">ReferenceHouseHold</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/a00038.html">WorkplaceCSVReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a Reader that retrieves the different distributions for workplaces from a given CSV file.  <a href="../../d8/d41/a00038.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ad853921c138e9ecb23181946c1d066c4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#ad853921c138e9ecb23181946c1d066c4">Coordinate</a> = boost::geometry::model::point&lt; <a class="el" href="../../d2/d45/a00342.html">double</a>, 2, boost::geometry::cs::geographic&lt; boost::geometry::degree &gt;&gt;</td></tr>
+<tr class="separator:ad853921c138e9ecb23181946c1d066c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a224a254419af65e01ef57d26d1ff2840"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#a224a254419af65e01ef57d26d1ff2840">DaycareGenerator</a> = <a class="el" href="../../da/da0/a00009.html">Generator</a>&lt; <a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462ac963279bf39ce72ce90d9b3f30b27e1c">stride::ContactType::Id::Daycare</a> &gt;</td></tr>
+<tr class="separator:a224a254419af65e01ef57d26d1ff2840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ec87d966ec7ae71e24f29307aeeaf34"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#a7ec87d966ec7ae71e24f29307aeeaf34">PreSchoolGenerator</a> = <a class="el" href="../../da/da0/a00009.html">Generator</a>&lt; <a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462a56f85dc5a583f3ab5eb472b68f3e117e">stride::ContactType::Id::PreSchool</a> &gt;</td></tr>
+<tr class="separator:a7ec87d966ec7ae71e24f29307aeeaf34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48bfe8eb2625a1931061f5ded504b059"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#a48bfe8eb2625a1931061f5ded504b059">K12SchoolGenerator</a> = <a class="el" href="../../da/da0/a00009.html">Generator</a>&lt; <a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462ab055a361403830ea4fa7bd1c8519b38e">stride::ContactType::Id::K12School</a> &gt;</td></tr>
+<tr class="separator:a48bfe8eb2625a1931061f5ded504b059"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ba1add9254d4557270e33a1ba2a11cb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#a5ba1add9254d4557270e33a1ba2a11cb">CollegeGenerator</a> = <a class="el" href="../../da/da0/a00009.html">Generator</a>&lt; <a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462a2806259c227f694c678ec9444aec2042">stride::ContactType::Id::College</a> &gt;</td></tr>
+<tr class="separator:a5ba1add9254d4557270e33a1ba2a11cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada94d818a65e861f57e5c4d46d77de87"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#ada94d818a65e861f57e5c4d46d77de87">WorkplaceGenerator</a> = <a class="el" href="../../da/da0/a00009.html">Generator</a>&lt; <a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462a45c6a290fcb4fad167ee4b610eeea878">stride::ContactType::Id::Workplace</a> &gt;</td></tr>
+<tr class="separator:ada94d818a65e861f57e5c4d46d77de87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb47a72474c597c8ea5dddd33ec6ac62"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#adb47a72474c597c8ea5dddd33ec6ac62">HouseholdGenerator</a> = <a class="el" href="../../da/da0/a00009.html">Generator</a>&lt; <a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462aea4be67641b70cfa3fec0f86ea7f239b">stride::ContactType::Id::Household</a> &gt;</td></tr>
+<tr class="separator:adb47a72474c597c8ea5dddd33ec6ac62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82415b798dc63b69bdc6ba25302c2c9c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#a82415b798dc63b69bdc6ba25302c2c9c">PrimaryCommunityGenerator</a> = <a class="el" href="../../da/da0/a00009.html">Generator</a>&lt; <a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462a96ebabb1132dcba9eed74dd06579a2a6">stride::ContactType::Id::PrimaryCommunity</a> &gt;</td></tr>
+<tr class="separator:a82415b798dc63b69bdc6ba25302c2c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa934d3959deda800f3c144f5c7ee82b8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#aa934d3959deda800f3c144f5c7ee82b8">SecondaryCommunityGenerator</a> = <a class="el" href="../../da/da0/a00009.html">Generator</a>&lt; <a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462ad2006cfdd93c83f8b174ad02e71eb1d9">stride::ContactType::Id::SecondaryCommunity</a> &gt;</td></tr>
+<tr class="separator:aa934d3959deda800f3c144f5c7ee82b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa68c8e0466bb47cfd27bcba14b979c52"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#aa68c8e0466bb47cfd27bcba14b979c52">GeoGridKdTree</a> = <a class="el" href="../../dc/d3c/a00028.html">KdTree</a>&lt; <a class="el" href="../../d2/de7/a00014.html">geogrid_detail::KdTree2DPoint</a> &gt;</td></tr>
+<tr class="separator:aa68c8e0466bb47cfd27bcba14b979c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19c856887211d86cfda63b37ba1acef3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#a19c856887211d86cfda63b37ba1acef3">DaycarePopulator</a> = <a class="el" href="../../db/df3/a00034.html">Populator</a>&lt; <a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462ac963279bf39ce72ce90d9b3f30b27e1c">stride::ContactType::Id::Daycare</a> &gt;</td></tr>
+<tr class="separator:a19c856887211d86cfda63b37ba1acef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a113e865f063094cbb8ded86210146b71"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#a113e865f063094cbb8ded86210146b71">PreSchoolPopulator</a> = <a class="el" href="../../db/df3/a00034.html">Populator</a>&lt; <a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462a56f85dc5a583f3ab5eb472b68f3e117e">stride::ContactType::Id::PreSchool</a> &gt;</td></tr>
+<tr class="separator:a113e865f063094cbb8ded86210146b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8712aa90adda94eec41ca84601402504"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#a8712aa90adda94eec41ca84601402504">K12SchoolPopulator</a> = <a class="el" href="../../db/df3/a00034.html">Populator</a>&lt; <a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462ab055a361403830ea4fa7bd1c8519b38e">stride::ContactType::Id::K12School</a> &gt;</td></tr>
+<tr class="separator:a8712aa90adda94eec41ca84601402504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c975b7c3492fac588a8ca1073eebb53"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#a4c975b7c3492fac588a8ca1073eebb53">CollegePopulator</a> = <a class="el" href="../../db/df3/a00034.html">Populator</a>&lt; <a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462a2806259c227f694c678ec9444aec2042">stride::ContactType::Id::College</a> &gt;</td></tr>
+<tr class="separator:a4c975b7c3492fac588a8ca1073eebb53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d3fc9a082a3feb890bf04d3db4ef518"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#a5d3fc9a082a3feb890bf04d3db4ef518">WorkplacePopulator</a> = <a class="el" href="../../db/df3/a00034.html">Populator</a>&lt; <a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462a45c6a290fcb4fad167ee4b610eeea878">stride::ContactType::Id::Workplace</a> &gt;</td></tr>
+<tr class="separator:a5d3fc9a082a3feb890bf04d3db4ef518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fe1aa1d8e6c72754e9cb7a102c14f51"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#a0fe1aa1d8e6c72754e9cb7a102c14f51">HouseholdPopulator</a> = <a class="el" href="../../db/df3/a00034.html">Populator</a>&lt; <a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462aea4be67641b70cfa3fec0f86ea7f239b">stride::ContactType::Id::Household</a> &gt;</td></tr>
+<tr class="separator:a0fe1aa1d8e6c72754e9cb7a102c14f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a293a1308dfa74642d0c47d9866f2daf0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#a293a1308dfa74642d0c47d9866f2daf0">PrimaryCommunityPopulator</a> = <a class="el" href="../../db/df3/a00034.html">Populator</a>&lt; <a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462a96ebabb1132dcba9eed74dd06579a2a6">stride::ContactType::Id::PrimaryCommunity</a> &gt;</td></tr>
+<tr class="separator:a293a1308dfa74642d0c47d9866f2daf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70a6f0464fbde62721a9fa263a3209c0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#a70a6f0464fbde62721a9fa263a3209c0">SecondaryCommunityPopulator</a> = <a class="el" href="../../db/df3/a00034.html">Populator</a>&lt; <a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462ad2006cfdd93c83f8b174ad02e71eb1d9">stride::ContactType::Id::SecondaryCommunity</a> &gt;</td></tr>
+<tr class="separator:a70a6f0464fbde62721a9fa263a3209c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab514fb17aa78c035022c33b3c9b429d7"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr class="memitem:ab514fb17aa78c035022c33b3c9b429d7"><td class="memTemplItemLeft" align="right" valign="top">::<a class="el" href="../../db/d3a/a00040.html">proto::GeoGrid</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#ab514fb17aa78c035022c33b3c9b429d7">Arena::CreateMaybeMessage&lt;::proto::GeoGrid &gt;</a> (Arena *)</td></tr>
-<tr class="separator:ab514fb17aa78c035022c33b3c9b429d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4e392d727052546b31558e6deb3809d"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr class="memitem:ad4e392d727052546b31558e6deb3809d"><td class="memTemplItemLeft" align="right" valign="top">::<a class="el" href="../../dd/d32/a00041.html">proto::GeoGrid_Location</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#ad4e392d727052546b31558e6deb3809d">Arena::CreateMaybeMessage&lt;::proto::GeoGrid_Location &gt;</a> (Arena *)</td></tr>
-<tr class="separator:ad4e392d727052546b31558e6deb3809d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bb6fc6f35925281e7940749832acf3d"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr class="memitem:a7bb6fc6f35925281e7940749832acf3d"><td class="memTemplItemLeft" align="right" valign="top">::<a class="el" href="../../d5/db6/a00042.html">proto::GeoGrid_Location_Commute</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#a7bb6fc6f35925281e7940749832acf3d">Arena::CreateMaybeMessage&lt;::proto::GeoGrid_Location_Commute &gt;</a> (Arena *)</td></tr>
-<tr class="separator:a7bb6fc6f35925281e7940749832acf3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac6297990d49dc07a5f19948046fc9bb"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr class="memitem:aac6297990d49dc07a5f19948046fc9bb"><td class="memTemplItemLeft" align="right" valign="top">::<a class="el" href="../../d6/d42/a00043.html">proto::GeoGrid_Location_ContactPools</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#aac6297990d49dc07a5f19948046fc9bb">Arena::CreateMaybeMessage&lt;::proto::GeoGrid_Location_ContactPools &gt;</a> (Arena *)</td></tr>
-<tr class="separator:aac6297990d49dc07a5f19948046fc9bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5cbf81bb62e7098fe363f7c0c2ad35d"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr class="memitem:ab5cbf81bb62e7098fe363f7c0c2ad35d"><td class="memTemplItemLeft" align="right" valign="top">::<a class="el" href="../../d5/df9/a00044.html">proto::GeoGrid_Location_ContactPools_ContactPool</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#ab5cbf81bb62e7098fe363f7c0c2ad35d">Arena::CreateMaybeMessage&lt;::proto::GeoGrid_Location_ContactPools_ContactPool &gt;</a> (Arena *)</td></tr>
-<tr class="separator:ab5cbf81bb62e7098fe363f7c0c2ad35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae61086405036600aa5d8c9809a14e077"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr class="memitem:ae61086405036600aa5d8c9809a14e077"><td class="memTemplItemLeft" align="right" valign="top">::<a class="el" href="../../d6/d97/a00045.html">proto::GeoGrid_Location_Coordinate</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#ae61086405036600aa5d8c9809a14e077">Arena::CreateMaybeMessage&lt;::proto::GeoGrid_Location_Coordinate &gt;</a> (Arena *)</td></tr>
-<tr class="separator:ae61086405036600aa5d8c9809a14e077"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e10704a77c25bd1ff340257fd06a7b6"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr class="memitem:a7e10704a77c25bd1ff340257fd06a7b6"><td class="memTemplItemLeft" align="right" valign="top">::<a class="el" href="../../d3/dea/a00046.html">proto::GeoGrid_Person</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#a7e10704a77c25bd1ff340257fd06a7b6">Arena::CreateMaybeMessage&lt;::proto::GeoGrid_Person &gt;</a> (Arena *)</td></tr>
-<tr class="separator:a7e10704a77c25bd1ff340257fd06a7b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c592f0848fc199820b01fb3a38f05cf"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr class="memitem:a8c592f0848fc199820b01fb3a38f05cf"><td class="memTemplItemLeft" align="right" valign="top">const EnumDescriptor *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#a8c592f0848fc199820b01fb3a38f05cf">GetEnumDescriptor&lt; ::proto::GeoGrid_Location_ContactPools_Type &gt;</a> ()</td></tr>
-<tr class="separator:a8c592f0848fc199820b01fb3a38f05cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad29105dc339e24a7c92af01763abce35"><td class="memTemplParams" colspan="2">template&lt;typename InsertIter , typename T  = typename InsertIter::container_type::value_type&gt; </td></tr>
+<tr class="memitem:ad29105dc339e24a7c92af01763abce35"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dd/dad/a00005.html">Collector</a>&lt; InsertIter, T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#ad29105dc339e24a7c92af01763abce35">MakeCollector</a> (const InsertIter &amp;ins)</td></tr>
+<tr class="memdesc:ad29105dc339e24a7c92af01763abce35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a <a class="el" href="../../dd/dad/a00005.html" title="Aggregates into a vector that must should remain alive for the usage duration of the Collector...">Collector</a>, useful for type inference.  <a href="#ad29105dc339e24a7c92af01763abce35">More...</a><br /></td></tr>
+<tr class="separator:ad29105dc339e24a7c92af01763abce35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fc64dadc855a12d7876804ce7d22624"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html#a7fc64dadc855a12d7876804ce7d22624">operator&lt;&lt;</a> (ostream &amp;out, const <a class="el" href="../../d7/d7a/a00016.html">GeoGridConfig</a> &amp;config)</td></tr>
+<tr class="separator:a7fc64dadc855a12d7876804ce7d22624"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Namespace for the geographic and demograhic classes. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="ad853921c138e9ecb23181946c1d066c4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d41/a00318.html#ad853921c138e9ecb23181946c1d066c4">geopop::Coordinate</a> = typedef boost::geometry::model::point&lt;<a class="el" href="../../d2/d45/a00342.html">double</a>, 2, boost::geometry::cs::geographic&lt;boost::geometry::degree&gt;&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/df8/a00155_source.html#l00023">23</a> of file <a class="el" href="../../d3/df8/a00155_source.html">Coordinate.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a224a254419af65e01ef57d26d1ff2840"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d41/a00318.html#a224a254419af65e01ef57d26d1ff2840">geopop::DaycareGenerator</a> = typedef <a class="el" href="../../da/da0/a00009.html">Generator</a>&lt;<a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462ac963279bf39ce72ce90d9b3f30b27e1c">stride::ContactType::Id::Daycare</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d45/a00175_source.html#l00107">107</a> of file <a class="el" href="../../de/d45/a00175_source.html">Generator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7ec87d966ec7ae71e24f29307aeeaf34"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d41/a00318.html#a7ec87d966ec7ae71e24f29307aeeaf34">geopop::PreSchoolGenerator</a> = typedef <a class="el" href="../../da/da0/a00009.html">Generator</a>&lt;<a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462a56f85dc5a583f3ab5eb472b68f3e117e">stride::ContactType::Id::PreSchool</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d45/a00175_source.html#l00108">108</a> of file <a class="el" href="../../de/d45/a00175_source.html">Generator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a48bfe8eb2625a1931061f5ded504b059"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d41/a00318.html#a48bfe8eb2625a1931061f5ded504b059">geopop::K12SchoolGenerator</a> = typedef <a class="el" href="../../da/da0/a00009.html">Generator</a>&lt;<a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462ab055a361403830ea4fa7bd1c8519b38e">stride::ContactType::Id::K12School</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d45/a00175_source.html#l00109">109</a> of file <a class="el" href="../../de/d45/a00175_source.html">Generator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5ba1add9254d4557270e33a1ba2a11cb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d41/a00318.html#a5ba1add9254d4557270e33a1ba2a11cb">geopop::CollegeGenerator</a> = typedef <a class="el" href="../../da/da0/a00009.html">Generator</a>&lt;<a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462a2806259c227f694c678ec9444aec2042">stride::ContactType::Id::College</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d45/a00175_source.html#l00110">110</a> of file <a class="el" href="../../de/d45/a00175_source.html">Generator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ada94d818a65e861f57e5c4d46d77de87"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d41/a00318.html#ada94d818a65e861f57e5c4d46d77de87">geopop::WorkplaceGenerator</a> = typedef <a class="el" href="../../da/da0/a00009.html">Generator</a>&lt;<a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462a45c6a290fcb4fad167ee4b610eeea878">stride::ContactType::Id::Workplace</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d45/a00175_source.html#l00111">111</a> of file <a class="el" href="../../de/d45/a00175_source.html">Generator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adb47a72474c597c8ea5dddd33ec6ac62"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d41/a00318.html#adb47a72474c597c8ea5dddd33ec6ac62">geopop::HouseholdGenerator</a> = typedef <a class="el" href="../../da/da0/a00009.html">Generator</a>&lt;<a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462aea4be67641b70cfa3fec0f86ea7f239b">stride::ContactType::Id::Household</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d45/a00175_source.html#l00112">112</a> of file <a class="el" href="../../de/d45/a00175_source.html">Generator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a82415b798dc63b69bdc6ba25302c2c9c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d41/a00318.html#a82415b798dc63b69bdc6ba25302c2c9c">geopop::PrimaryCommunityGenerator</a> = typedef <a class="el" href="../../da/da0/a00009.html">Generator</a>&lt;<a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462a96ebabb1132dcba9eed74dd06579a2a6">stride::ContactType::Id::PrimaryCommunity</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d45/a00175_source.html#l00113">113</a> of file <a class="el" href="../../de/d45/a00175_source.html">Generator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa934d3959deda800f3c144f5c7ee82b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d41/a00318.html#aa934d3959deda800f3c144f5c7ee82b8">geopop::SecondaryCommunityGenerator</a> = typedef <a class="el" href="../../da/da0/a00009.html">Generator</a>&lt;<a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462ad2006cfdd93c83f8b174ad02e71eb1d9">stride::ContactType::Id::SecondaryCommunity</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../de/d45/a00175_source.html#l00114">114</a> of file <a class="el" href="../../de/d45/a00175_source.html">Generator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa68c8e0466bb47cfd27bcba14b979c52"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d41/a00318.html#aa68c8e0466bb47cfd27bcba14b979c52">geopop::GeoGridKdTree</a> = typedef <a class="el" href="../../dc/d3c/a00028.html">KdTree</a>&lt;<a class="el" href="../../d2/de7/a00014.html">geogrid_detail::KdTree2DPoint</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/deb/a00189_source.html#l00025">25</a> of file <a class="el" href="../../da/deb/a00189_source.html">GeoGridKdTree.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a19c856887211d86cfda63b37ba1acef3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d41/a00318.html#a19c856887211d86cfda63b37ba1acef3">geopop::DaycarePopulator</a> = typedef <a class="el" href="../../db/df3/a00034.html">Populator</a>&lt;<a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462ac963279bf39ce72ce90d9b3f30b27e1c">stride::ContactType::Id::Daycare</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d04/a00255_source.html#l00088">88</a> of file <a class="el" href="../../d4/d04/a00255_source.html">Populator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a113e865f063094cbb8ded86210146b71"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d41/a00318.html#a113e865f063094cbb8ded86210146b71">geopop::PreSchoolPopulator</a> = typedef <a class="el" href="../../db/df3/a00034.html">Populator</a>&lt;<a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462a56f85dc5a583f3ab5eb472b68f3e117e">stride::ContactType::Id::PreSchool</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d04/a00255_source.html#l00089">89</a> of file <a class="el" href="../../d4/d04/a00255_source.html">Populator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8712aa90adda94eec41ca84601402504"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d41/a00318.html#a8712aa90adda94eec41ca84601402504">geopop::K12SchoolPopulator</a> = typedef <a class="el" href="../../db/df3/a00034.html">Populator</a>&lt;<a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462ab055a361403830ea4fa7bd1c8519b38e">stride::ContactType::Id::K12School</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d04/a00255_source.html#l00090">90</a> of file <a class="el" href="../../d4/d04/a00255_source.html">Populator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4c975b7c3492fac588a8ca1073eebb53"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d41/a00318.html#a4c975b7c3492fac588a8ca1073eebb53">geopop::CollegePopulator</a> = typedef <a class="el" href="../../db/df3/a00034.html">Populator</a>&lt;<a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462a2806259c227f694c678ec9444aec2042">stride::ContactType::Id::College</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d04/a00255_source.html#l00091">91</a> of file <a class="el" href="../../d4/d04/a00255_source.html">Populator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d3fc9a082a3feb890bf04d3db4ef518"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d41/a00318.html#a5d3fc9a082a3feb890bf04d3db4ef518">geopop::WorkplacePopulator</a> = typedef <a class="el" href="../../db/df3/a00034.html">Populator</a>&lt;<a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462a45c6a290fcb4fad167ee4b610eeea878">stride::ContactType::Id::Workplace</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d04/a00255_source.html#l00092">92</a> of file <a class="el" href="../../d4/d04/a00255_source.html">Populator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0fe1aa1d8e6c72754e9cb7a102c14f51"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d41/a00318.html#a0fe1aa1d8e6c72754e9cb7a102c14f51">geopop::HouseholdPopulator</a> = typedef <a class="el" href="../../db/df3/a00034.html">Populator</a>&lt;<a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462aea4be67641b70cfa3fec0f86ea7f239b">stride::ContactType::Id::Household</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d04/a00255_source.html#l00093">93</a> of file <a class="el" href="../../d4/d04/a00255_source.html">Populator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a293a1308dfa74642d0c47d9866f2daf0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d41/a00318.html#a293a1308dfa74642d0c47d9866f2daf0">geopop::PrimaryCommunityPopulator</a> = typedef <a class="el" href="../../db/df3/a00034.html">Populator</a>&lt;<a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462a96ebabb1132dcba9eed74dd06579a2a6">stride::ContactType::Id::PrimaryCommunity</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d04/a00255_source.html#l00094">94</a> of file <a class="el" href="../../d4/d04/a00255_source.html">Populator.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a70a6f0464fbde62721a9fa263a3209c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d2/d41/a00318.html#a70a6f0464fbde62721a9fa263a3209c0">geopop::SecondaryCommunityPopulator</a> = typedef <a class="el" href="../../db/df3/a00034.html">Populator</a>&lt;<a class="el" href="../../dc/d50/a00332.html#a61a32e88a50c57e6f5c49f0996b6b462ad2006cfdd93c83f8b174ad02e71eb1d9">stride::ContactType::Id::SecondaryCommunity</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d4/d04/a00255_source.html#l00095">95</a> of file <a class="el" href="../../d4/d04/a00255_source.html">Populator.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ab514fb17aa78c035022c33b3c9b429d7"></a>
+<a class="anchor" id="ad29105dc339e24a7c92af01763abce35"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;&gt; </div>
+template&lt;typename InsertIter , typename T  = typename InsertIter::container_type::value_type&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">::<a class="el" href="../../db/d3a/a00040.html">proto::GeoGrid</a>* google::protobuf::Arena::CreateMaybeMessage&lt;::<a class="el" href="../../db/d3a/a00040.html">proto::GeoGrid</a> &gt; </td>
+          <td class="memname"><a class="el" href="../../dd/dad/a00005.html">Collector</a>&lt;InsertIter, T&gt; geopop::MakeCollector </td>
           <td>(</td>
-          <td class="paramtype">Arena *&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const InsertIter &amp;&#160;</td>
+          <td class="paramname"><em>ins</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Build a <a class="el" href="../../dd/dad/a00005.html" title="Aggregates into a vector that must should remain alive for the usage duration of the Collector...">Collector</a>, useful for type inference. </p>
+
+<p>Definition at line <a class="el" href="../../d9/d90/a00178_source.html#l00059">59</a> of file <a class="el" href="../../d9/d90/a00178_source.html">GeoAggregator.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../db/dd9/a00179_source.html#l00077">geopop::GeoGrid::LocationsInBox()</a>, and <a class="el" href="../../db/dd9/a00179_source.html#l00098">geopop::GeoGrid::LocationsInRadius()</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d41/a00318_ad29105dc339e24a7c92af01763abce35_icgraph.gif" border="0" usemap="#d2/d41/a00318_ad29105dc339e24a7c92af01763abce35_icgraph" alt=""/></div>
+<map name="d2/d41/a00318_ad29105dc339e24a7c92af01763abce35_icgraph" id="d2/d41/a00318_ad29105dc339e24a7c92af01763abce35_icgraph">
+<area shape="rect" id="node2" href="../../d7/dd4/a00013.html#a54759924264d5047ea81defa57d6eef3" title="Gets the locations in a rectangle determined by the two coordinates (long1, lat1) and (long2..." alt="" coords="221,57,420,99"/>
+<area shape="rect" id="node7" href="../../d7/dd4/a00013.html#a819fba3f0ca0af029cc913aaf7729b0b" title="Search for locations in radius (in km) around start. " alt="" coords="221,123,420,164"/>
+<area shape="rect" id="node3" href="../../d7/dd4/a00013.html#a1bf11fca7ce661a42d21e40fb00c30aa" title="Gets the location in a rectangle defined by the two Locations. " alt="" coords="472,5,671,47"/>
+<area shape="rect" id="node4" href="../../d7/dd4/a00013.html#adb9b0f349282a7dca217e604799fb606" title="Get the Population associated with this GeoGrid. " alt="" coords="723,122,951,149"/>
+<area shape="rect" id="node5" href="../../da/da0/a00009.html#af22be8d3066422475ffa15d71289b4b6" title="geopop::Generator::\lApply" alt="" coords="999,81,1149,123"/>
+<area shape="rect" id="node6" href="../../db/df3/a00034.html#a5ef58e6d2a59a356c3993b7f88900a2b" title="geopop::Populator::\lApply" alt="" coords="1001,147,1147,188"/>
+<area shape="rect" id="node8" href="../../d7/dd4/a00013.html#aa5a265994b7e58a089a5f6cccc546e63" title="Find contactpools in startRadius (in km) around start and, if none are found, double the radius and s..." alt="" coords="468,173,675,215"/>
+</map>
+</div>
+</p>
+
 </div>
 </div>
-<a class="anchor" id="ad4e392d727052546b31558e6deb3809d"></a>
+<a class="anchor" id="a7fc64dadc855a12d7876804ce7d22624"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">::<a class="el" href="../../dd/d32/a00041.html">proto::GeoGrid_Location</a>* google::protobuf::Arena::CreateMaybeMessage&lt;::<a class="el" href="../../dd/d32/a00041.html">proto::GeoGrid_Location</a> &gt; </td>
+          <td class="memname">ostream&amp; geopop::operator&lt;&lt; </td>
           <td>(</td>
-          <td class="paramtype">Arena *&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="../../d7/d7a/a00016.html">GeoGridConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="a7bb6fc6f35925281e7940749832acf3d"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">::<a class="el" href="../../d5/db6/a00042.html">proto::GeoGrid_Location_Commute</a>* google::protobuf::Arena::CreateMaybeMessage&lt;::<a class="el" href="../../d5/db6/a00042.html">proto::GeoGrid_Location_Commute</a> &gt; </td>
-          <td>(</td>
-          <td class="paramtype">Arena *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Definition at line <a class="el" href="../../d7/d25/a00182_source.html#l00232">232</a> of file <a class="el" href="../../d7/d25/a00182_source.html">GeoGridConfig.cpp</a>.</p>
 
-</div>
-</div>
-<a class="anchor" id="aac6297990d49dc07a5f19948046fc9bb"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">::<a class="el" href="../../d6/d42/a00043.html">proto::GeoGrid_Location_ContactPools</a>* google::protobuf::Arena::CreateMaybeMessage&lt;::<a class="el" href="../../d6/d42/a00043.html">proto::GeoGrid_Location_ContactPools</a> &gt; </td>
-          <td>(</td>
-          <td class="paramtype">Arena *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ab5cbf81bb62e7098fe363f7c0c2ad35d"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">::<a class="el" href="../../d5/df9/a00044.html">proto::GeoGrid_Location_ContactPools_ContactPool</a>* google::protobuf::Arena::CreateMaybeMessage&lt;::<a class="el" href="../../d5/df9/a00044.html">proto::GeoGrid_Location_ContactPools_ContactPool</a> &gt; </td>
-          <td>(</td>
-          <td class="paramtype">Arena *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ae61086405036600aa5d8c9809a14e077"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">::<a class="el" href="../../d6/d97/a00045.html">proto::GeoGrid_Location_Coordinate</a>* google::protobuf::Arena::CreateMaybeMessage&lt;::<a class="el" href="../../d6/d97/a00045.html">proto::GeoGrid_Location_Coordinate</a> &gt; </td>
-          <td>(</td>
-          <td class="paramtype">Arena *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a7e10704a77c25bd1ff340257fd06a7b6"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">::<a class="el" href="../../d3/dea/a00046.html">proto::GeoGrid_Person</a>* google::protobuf::Arena::CreateMaybeMessage&lt;::<a class="el" href="../../d3/dea/a00046.html">proto::GeoGrid_Person</a> &gt; </td>
-          <td>(</td>
-          <td class="paramtype">Arena *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a8c592f0848fc199820b01fb3a38f05cf"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const EnumDescriptor* google::protobuf::GetEnumDescriptor&lt; ::<a class="el" href="../../de/dab/a00319.html#ad4ae099290da11db94f2d5bdfa0d081e">proto::GeoGrid_Location_ContactPools_Type</a> &gt; </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../dd/d4c/a00177_source.html#l01597">1597</a> of file <a class="el" href="../../dd/d4c/a00177_source.html">geogrid.pb.h</a>.</p>
-
-<p>References <a class="el" href="../../de/dab/a00319.html#a709bb90b7db5960ab0c653bb9f044b59">proto::GeoGrid_Location_ContactPools_Type_descriptor()</a>.</p>
+<p>References <a class="el" href="../../dc/d52/a00183_source.html#l00117">geopop::GeoGridConfig::fraction_college_commuters</a>, <a class="el" href="../../dc/d52/a00183_source.html#l00120">geopop::GeoGridConfig::fraction_workplace_commuters</a>, <a class="el" href="../../dc/d52/a00183_source.html#l00131">geopop::GeoGridConfig::info</a>, <a class="el" href="../../da/ddc/a00288_source.html#l00173">stride::util::intToDottedString()</a>, <a class="el" href="../../d7/d7a/a00016.html#a94643f701d8a4359bf23a937ce33ee1e">geopop::GeoGridConfig::param</a>, <a class="el" href="../../dc/d52/a00183_source.html#l00110">geopop::GeoGridConfig::participation_college</a>, <a class="el" href="../../dc/d52/a00183_source.html#l00104">geopop::GeoGridConfig::participation_daycare</a>, <a class="el" href="../../dc/d52/a00183_source.html#l00107">geopop::GeoGridConfig::participation_preschool</a>, <a class="el" href="../../dc/d52/a00183_source.html#l00114">geopop::GeoGridConfig::participation_workplace</a>, <a class="el" href="../../dc/d52/a00183_source.html#l00123">geopop::GeoGridConfig::pop_size</a>, <a class="el" href="../../dc/d52/a00183_source.html#l00066">geopop::PopulationInfo::popcount_college</a>, <a class="el" href="../../dc/d52/a00183_source.html#l00057">geopop::PopulationInfo::popcount_daycare</a>, <a class="el" href="../../dc/d52/a00183_source.html#l00063">geopop::PopulationInfo::popcount_k12school</a>, <a class="el" href="../../dc/d52/a00183_source.html#l00060">geopop::PopulationInfo::popcount_preschool</a>, and <a class="el" href="../../dc/d52/a00183_source.html#l00069">geopop::PopulationInfo::popcount_workplace</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d2/d41/a00318_a8c592f0848fc199820b01fb3a38f05cf_cgraph.gif" border="0" usemap="#d2/d41/a00318_a8c592f0848fc199820b01fb3a38f05cf_cgraph" alt=""/></div>
-<map name="d2/d41/a00318_a8c592f0848fc199820b01fb3a38f05cf_cgraph" id="d2/d41/a00318_a8c592f0848fc199820b01fb3a38f05cf_cgraph">
-<area shape="rect" id="node2" href="../../de/dab/a00319.html#a709bb90b7db5960ab0c653bb9f044b59" title="proto::GeoGrid_Location\l_ContactPools_Type_descriptor" alt="" coords="277,13,496,54"/>
+<div class="center"><img src="../../d2/d41/a00318_a7fc64dadc855a12d7876804ce7d22624_cgraph.gif" border="0" usemap="#d2/d41/a00318_a7fc64dadc855a12d7876804ce7d22624_cgraph" alt=""/></div>
+<map name="d2/d41/a00318_a7fc64dadc855a12d7876804ce7d22624_cgraph" id="d2/d41/a00318_a7fc64dadc855a12d7876804ce7d22624_cgraph">
+<area shape="rect" id="node2" href="../../dd/d1d/a00336.html#a19fc82f584acd29930d95cb07ddd9e5f" title="stride::util::intToDotted\lString" alt="" coords="208,5,375,47"/>
 </map>
 </div>
 </p>
@@ -315,8 +613,8 @@ Here is the call graph for this function:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../da/de0/a00317.html">google</a></li><li class="navelem"><a class="el" href="../../d2/d41/a00318.html">protobuf</a></li>
-    <li class="footer">Generated on Fri Jun 14 2019 14:41:38 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../d2/d41/a00318.html">geopop</a></li>
+    <li class="footer">Generated on Sat Jun 15 2019 18:37:00 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>
