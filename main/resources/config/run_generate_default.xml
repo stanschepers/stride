@@ -16,7 +16,7 @@
     <output_summary>false</output_summary>
     <epi_output>
         <stride>25</stride>
-        <file_type>json</file_type>
+        <file_type>h5</file_type>
     </epi_output>
     <population_file>genpop.proto</population_file>
     <population_type>generate</population_type>

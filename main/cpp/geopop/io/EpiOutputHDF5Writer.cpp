@@ -63,8 +63,8 @@ void EpiOutputHDF5Writer::Update(GeoGrid<Epidemiologic>& geoGrid, unsigned int d
                 WriteAttribute(loc->GetName(), "name", locData);
                 WriteAttribute(loc->GetProvince(), "province", locData);
                 WriteAttribute(loc->GetContent()->GetPopCount(), "population", locData);
-                WriteAttribute(loc->get<0>(), "longitude", locData);
-                WriteAttribute(loc->get<1>(), "latitude", locData);
+                WriteAttribute(loc->get<0>(), "latitude", locData);
+                WriteAttribute(loc->get<1>(), "longitude", locData);
                 WriteAttribute(dataset_size, "size", locData);
 
                 auto                epiOutput = loc->GetContent()->GenerateEpiOutput();

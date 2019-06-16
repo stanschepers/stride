@@ -19,7 +19,6 @@
 #include "geopop/Location.h"
 
 #include <H5Cpp.h>
-#include <fstream>
 
 namespace geopop {
 
@@ -41,7 +40,7 @@ public:
 private:
         H5::H5File   m_output;         ///< HDF5 file
         unsigned int m_day_count;      ///< Used to set day_count attribute in HDF5 file
-        unsigned int m_location_count; ///< Used to set location attribute in HDF5 file
+        unsigned int m_location_count; ///< Used to set location_count attribute in HDF5 file
 };
 
 } // namespace geopop
