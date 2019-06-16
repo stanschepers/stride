@@ -29,8 +29,6 @@ TEST(EpiOutputHDF5ReaderTest, twoLocationsFiveDayTest) { EXPECT_TRUE(true); }
 
 TEST(EpiOutputHDF5ReaderTest, emptyStreamTest) { EXPECT_TRUE(true); }
 
-TEST(EpiOutputHDF5ReaderTest, invalidTypeTest) { EXPECT_TRUE(true); }
-
 TEST(EpiOutputHDF5ReaderTest, invalidHDF5Test) { EXPECT_TRUE(true); }
 
 } // namespace

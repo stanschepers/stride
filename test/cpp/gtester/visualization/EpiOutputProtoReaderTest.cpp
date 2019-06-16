@@ -184,9 +184,6 @@ TEST(EpiOutputProtoReaderTest, emptyStreamTest) {
         EXPECT_THROW(compareOutput(FileSys::GetTestsDir().string() + "/testdata/EpiOutputProto/epiOutputTestEmpty.proto", GeoGrid<Epidemiologic>(nullptr), 0), runtime_error);
 }
 
-/// Checks if the epi-output protobuf reader is able to handle invalid input
-TEST(EpiOutputProtoReaderTest, invalidTypeTest) { EXPECT_TRUE(true); }  // TODO: How to?
-
 /// Checks if the epi-output protobuf reader throws an exception when the protobuf is invalid
 TEST(EpiOutputProtoReaderTest, invalidJSONTest) {
         EXPECT_THROW(compareOutput(FileSys::GetTestsDir().string() + "/testdata/EpiOutputProto/epiOutputTestInvalid.proto", GeoGrid<Epidemiologic>(nullptr), 0), runtime_error);
