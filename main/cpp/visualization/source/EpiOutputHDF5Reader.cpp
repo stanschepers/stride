@@ -31,7 +31,7 @@ using namespace H5Utils;
 using namespace geopop;
 
 EpiOutputHDF5Reader::EpiOutputHDF5Reader(const string& filename, GeoGrid<EpiOutput>* epiOutput)
-    : EpiOutputReader(epiOutput)
+    : EpiOutputReader(epiOutput), m_input()
 {
         if (!filename.empty()) {
                 m_input = H5File(filename, H5F_ACC_RDONLY);
