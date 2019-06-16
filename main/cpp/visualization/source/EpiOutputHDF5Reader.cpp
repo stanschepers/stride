@@ -57,7 +57,7 @@ void EpiOutputHDF5Reader::Read()
 void EpiOutputHDF5Reader::ReadDay(const Group& day, GeoGrid<EpiOutput>& grid)
 {
         unsigned int day_num;
-        unsigned int location_count;
+        unsigned long location_count;
 
         ReadAttribute(day_num, "day_num", day);
         ReadAttribute(location_count, "location_count", day);
