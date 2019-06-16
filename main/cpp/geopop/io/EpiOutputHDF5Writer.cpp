@@ -32,7 +32,7 @@ using namespace stride;
 using namespace H5;
 using namespace H5Utils;
 
-EpiOutputHDF5Writer::EpiOutputHDF5Writer(string const& filename) : m_day_count(0), m_location_count(0)
+EpiOutputHDF5Writer::EpiOutputHDF5Writer(string const& filename) : m_output(), m_day_count(0), m_location_count(0)
 {
         if (!filename.empty()) {
                 m_output = H5File(filename, H5F_ACC_TRUNC);
