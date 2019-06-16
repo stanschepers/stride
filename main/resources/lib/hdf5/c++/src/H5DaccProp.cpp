@@ -13,13 +13,13 @@
 
 #include <string>
 
-#include "H5DaccProp.h"
-#include "H5DataSpace.h"
+#include "H5Include.h"
 #include "H5Exception.h"
 #include "H5IdComponent.h"
-#include "H5Include.h"
-#include "H5LaccProp.h"
+#include "H5DataSpace.h"
 #include "H5PropList.h"
+#include "H5LaccProp.h"
+#include "H5DaccProp.h"
 
 namespace H5 {
 
@@ -45,21 +45,21 @@ DSetAccPropList* DSetAccPropList::DEFAULT_ = 0;
 //--------------------------------------------------------------------------
 DSetAccPropList* DSetAccPropList::getConstant()
 {
-        // Tell the C library not to clean up, H5Library::termH5cpp will call
-        // H5close - more dependency if use H5Library::dontAtExit()
-        if (!IdComponent::H5dontAtexit_called) {
-                (void)H5dont_atexit();
-                IdComponent::H5dontAtexit_called = true;
-        }
+    // Tell the C library not to clean up, H5Library::termH5cpp will call
+    // H5close - more dependency if use H5Library::dontAtExit()
+    if (!IdComponent::H5dontAtexit_called)
+    {
+        (void) H5dont_atexit();
+        IdComponent::H5dontAtexit_called = true;
+    }
 
-        // If the constant pointer is not allocated, allocate it. Otherwise,
-        // throw because it shouldn't be.
-        if (DEFAULT_ == 0)
-                DEFAULT_ = new DSetAccPropList(H5P_DATASET_ACCESS);
-        else
-                throw PropListIException("DSetAccPropList::getConstant",
-                                         "DSetAccPropList::getConstant is being invoked on an allocated DEFAULT_");
-        return (DEFAULT_);
+    // If the constant pointer is not allocated, allocate it. Otherwise,
+    // throw because it shouldn't be.
+    if (DEFAULT_ == 0)
+        DEFAULT_ = new DSetAccPropList(H5P_DATASET_ACCESS);
+    else
+        throw PropListIException("DSetAccPropList::getConstant", "DSetAccPropList::getConstant is being invoked on an allocated DEFAULT_");
+    return(DEFAULT_);
 }
 
 //--------------------------------------------------------------------------
@@ -70,8 +70,8 @@ DSetAccPropList* DSetAccPropList::getConstant()
 //--------------------------------------------------------------------------
 void DSetAccPropList::deleteConstants()
 {
-        if (DEFAULT_ != 0)
-                delete DEFAULT_;
+    if (DEFAULT_ != 0)
+        delete DEFAULT_;
 }
 
 //--------------------------------------------------------------------------
@@ -124,10 +124,11 @@ DSetAccPropList::DSetAccPropList(const hid_t plist_id) : LinkAccPropList(plist_i
 //--------------------------------------------------------------------------
 void DSetAccPropList::setChunkCache(size_t rdcc_nslots, size_t rdcc_nbytes, double rdcc_w0) const
 {
-        herr_t ret_value = H5Pset_chunk_cache(id, rdcc_nslots, rdcc_nbytes, rdcc_w0);
-        if (ret_value < 0) {
-                throw PropListIException("DSetAccPropList::setChunkCache", "H5Pset_chunk_cache failed");
-        }
+    herr_t ret_value = H5Pset_chunk_cache(id, rdcc_nslots, rdcc_nbytes, rdcc_w0);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetAccPropList::setChunkCache", "H5Pset_chunk_cache failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -142,12 +143,13 @@ void DSetAccPropList::setChunkCache(size_t rdcc_nslots, size_t rdcc_nbytes, doub
 ///             the HDF5 C Reference Manual.
 // July 2018
 //--------------------------------------------------------------------------
-void DSetAccPropList::getChunkCache(size_t& rdcc_nslots, size_t& rdcc_nbytes, double& rdcc_w0) const
+void  DSetAccPropList::getChunkCache(size_t &rdcc_nslots, size_t &rdcc_nbytes, double &rdcc_w0) const
 {
-        herr_t ret_value = H5Pget_chunk_cache(id, &rdcc_nslots, &rdcc_nbytes, &rdcc_w0);
-        if (ret_value < 0) {
-                throw PropListIException("DSetAccPropList::getChunkCache", "H5Pget_chunk_cache failed");
-        }
+    herr_t ret_value = H5Pget_chunk_cache(id, &rdcc_nslots, &rdcc_nbytes, &rdcc_w0);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetAccPropList::getChunkCache", "H5Pget_chunk_cache failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -157,4 +159,4 @@ void DSetAccPropList::getChunkCache(size_t& rdcc_nslots, size_t& rdcc_nbytes, do
 //--------------------------------------------------------------------------
 DSetAccPropList::~DSetAccPropList() {}
 
-} // namespace H5
+} // end namespace

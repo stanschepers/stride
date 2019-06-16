@@ -22,9 +22,8 @@ namespace H5 {
     compound datatypes.
 */
 //  Inheritance: DataType -> H5Object -> H5Location -> IdComponent
-class H5_DLLCPP CompType : public DataType
-{
-public:
+class H5_DLLCPP CompType : public DataType {
+   public:
         // Default constructor
         CompType();
 
@@ -35,7 +34,7 @@ public:
         CompType(size_t size); // H5Tcreate
 
         // Gets the compound datatype of the specified dataset
-        CompType(const DataSet& dataset); // H5Dget_type
+        CompType(const DataSet& dataset);  // H5Dget_type
 
         // Copy constructor - same as the original CompType.
         CompType(const CompType& original);
@@ -108,12 +107,12 @@ public:
         void setSize(size_t size) const;
 
         ///\brief Returns this class name.
-        virtual H5std_string fromClass() const { return ("CompType"); }
+        virtual H5std_string fromClass () const { return("CompType"); }
 
         // Noop destructor.
         virtual ~CompType();
 
-private:
+   private:
         // Contains common code that is used by the member functions
         // getMemberXxxType
         hid_t p_get_member_type(unsigned member_num) const;

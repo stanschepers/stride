@@ -22,9 +22,8 @@ namespace H5 {
     wrappers for the HDF5 dataset memory and transfer property list.
 */
 //  Inheritance: PropList -> IdComponent
-class H5_DLLCPP DSetMemXferPropList : public PropList
-{
-public:
+class H5_DLLCPP DSetMemXferPropList : public PropList {
+   public:
         ///\brief Default dataset memory and transfer property list.
         static const DSetMemXferPropList& DEFAULT;
 
@@ -51,7 +50,7 @@ public:
         void setDataTransform(const H5std_string& expression) const;
 
         // Gets data transform expression.
-        ssize_t      getDataTransform(char* exp, size_t buf_size = 0) const;
+        ssize_t getDataTransform(char* exp, size_t buf_size=0) const;
         H5std_string getDataTransform() const;
 
         // Sets the dataset transfer property list status to TRUE or FALSE.
@@ -61,14 +60,15 @@ public:
         bool getPreserve() const;
 
         // Sets an exception handling callback for datatype conversion.
-        void setTypeConvCB(H5T_conv_except_func_t op, void* user_data) const;
+        void setTypeConvCB(H5T_conv_except_func_t op, void *user_data) const;
 
         // Gets the exception handling callback for datatype conversion.
-        void getTypeConvCB(H5T_conv_except_func_t* op, void** user_data) const;
+        void getTypeConvCB(H5T_conv_except_func_t *op, void **user_data) const;
 
         // Sets the memory manager for variable-length datatype
         // allocation in H5Dread and H5Dvlen_reclaim.
-        void setVlenMemManager(H5MM_allocate_t alloc, void* alloc_info, H5MM_free_t free, void* free_info) const;
+        void setVlenMemManager(H5MM_allocate_t alloc, void* alloc_info,
+                               H5MM_free_t free, void* free_info) const;
 
         // alloc and free are set to NULL, indicating that system
         // malloc and free are to be used.
@@ -76,7 +76,8 @@ public:
 
         // Gets the memory manager for variable-length datatype
         // allocation in H5Dread and H5Tvlen_reclaim.
-        void getVlenMemManager(H5MM_allocate_t& alloc, void** alloc_info, H5MM_free_t& free, void** free_info) const;
+        void getVlenMemManager(H5MM_allocate_t& alloc, void** alloc_info,
+                               H5MM_free_t& free, void** free_info) const;
 
         // Sets the size of a contiguous block reserved for small data.
         void setSmallDataBlockSize(hsize_t size) const;
@@ -99,7 +100,7 @@ public:
         H5Z_EDC_t getEDCCheck() const;
 
         ///\brief Returns this class name.
-        virtual H5std_string fromClass() const { return ("DSetMemXferPropList"); }
+        virtual H5std_string fromClass () const { return("DSetMemXferPropList"); }
 
         // Copy constructor - same as the original DSetMemXferPropList.
         DSetMemXferPropList(const DSetMemXferPropList& orig);
@@ -116,7 +117,7 @@ public:
         // Deletes the global constant, should only be used by the library
         static void deleteConstants();
 
-private:
+    private:
         static DSetMemXferPropList* DEFAULT_;
 
         // Creates the global constant, should only be used by the library

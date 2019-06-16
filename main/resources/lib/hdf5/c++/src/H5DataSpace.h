@@ -22,9 +22,8 @@ namespace H5 {
      the HDF5's dataspaces.
 */
 //  Inheritance: IdComponent
-class H5_DLLCPP DataSpace : public IdComponent
-{
-public:
+class H5_DLLCPP DataSpace : public IdComponent {
+   public:
         ///\brief Default DataSpace objects
         static const DataSpace& ALL;
 
@@ -32,7 +31,7 @@ public:
         DataSpace(H5S_class_t type = H5S_SCALAR);
 
         // Creates a simple dataspace
-        DataSpace(int rank, const hsize_t* dims, const hsize_t* maxdims = NULL);
+        DataSpace(int rank, const hsize_t * dims, const hsize_t * maxdims = NULL);
 
         // Creates a DataSpace object using an existing dataspace id.
         DataSpace(const hid_t space_id);
@@ -52,7 +51,7 @@ public:
         // Copies the extent of this dataspace.
         void extentCopy(const DataSpace& dest_space) const;
         // removed from 1.8.18 and 1.10.1
-        // void extentCopy(DataSpace& dest_space) const;
+        //void extentCopy(DataSpace& dest_space) const;
 
         // Gets the bounding box containing the current selection.
         void getSelectBounds(hsize_t* start, hsize_t* end) const;
@@ -61,10 +60,10 @@ public:
         hssize_t getSelectElemNpoints() const;
 
         // Retrieves the list of element points currently selected.
-        void getSelectElemPointlist(hsize_t startpoint, hsize_t numpoints, hsize_t* buf) const;
+        void getSelectElemPointlist(hsize_t startpoint, hsize_t numpoints, hsize_t *buf) const;
 
         // Gets the list of hyperslab blocks currently selected.
-        void getSelectHyperBlocklist(hsize_t startblock, hsize_t numblocks, hsize_t* buf) const;
+        void getSelectHyperBlocklist(hsize_t startblock, hsize_t numblocks, hsize_t *buf) const;
 
         // Get number of hyperslab blocks.
         hssize_t getSelectHyperNblocks() const;
@@ -73,7 +72,7 @@ public:
         hssize_t getSelectNpoints() const;
 
         // Retrieves dataspace dimension size and maximum size.
-        int getSimpleExtentDims(hsize_t* dims, hsize_t* maxdims = NULL) const;
+        int getSimpleExtentDims(hsize_t *dims, hsize_t *maxdims = NULL) const;
 
         // Gets the dimensionality of this dataspace.
         int getSimpleExtentNdims() const;
@@ -96,11 +95,10 @@ public:
 
         // Selects array elements to be included in the selection for
         // this dataspace.
-        void selectElements(H5S_seloper_t op, const size_t num_elements, const hsize_t* coord) const;
+        void selectElements(H5S_seloper_t op, const size_t num_elements, const hsize_t *coord) const;
 
         // Selects a hyperslab region to add to the current selected region.
-        void selectHyperslab(H5S_seloper_t op, const hsize_t* count, const hsize_t* start, const hsize_t* stride = NULL,
-                             const hsize_t* block = NULL) const;
+        void selectHyperslab(H5S_seloper_t op, const hsize_t *count, const hsize_t *start, const hsize_t *stride = NULL, const hsize_t *block = NULL) const;
 
         // Resets the selection region to include no elements.
         void selectNone() const;
@@ -112,10 +110,10 @@ public:
         void setExtentNone() const;
 
         // Sets or resets the size of this dataspace.
-        void setExtentSimple(int rank, const hsize_t* current_size, const hsize_t* maximum_size = NULL) const;
+        void setExtentSimple(int rank, const hsize_t *current_size, const hsize_t *maximum_size = NULL) const;
 
         ///\brief Returns this class name.
-        virtual H5std_string fromClass() const { return ("DataSpace"); }
+        virtual H5std_string fromClass () const { return("DataSpace"); }
 
         // Gets the dataspace id.
         virtual hid_t getId() const;
@@ -128,14 +126,14 @@ public:
 
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
 
-protected:
+   protected:
         // Sets the dataspace id.
         virtual void p_setId(const hid_t new_id);
 
 #endif // DOXYGEN_SHOULD_SKIP_THIS
 
-private:
-        hid_t id; // HDF5 dataspace id
+   private:
+        hid_t id;       // HDF5 dataspace id
 
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
 
@@ -145,7 +143,7 @@ private:
         static DataSpace* getConstant();
 
         // Friend function to set DataSpace id.  For library use only.
-        friend void f_DataSpace_setId(DataSpace* dspace, hid_t new_id);
+        friend void f_DataSpace_setId(DataSpace *dspace, hid_t new_id);
 
 #endif // DOXYGEN_SHOULD_SKIP_THIS
 

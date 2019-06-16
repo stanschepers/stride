@@ -13,24 +13,24 @@
 
 #include <string>
 
-#include "H5AbstractDs.h"
-#include "H5Alltypes.h"
-#include "H5CommonFG.h"
-#include "H5DaccProp.h"
-#include "H5DataSet.h"
-#include "H5DataSpace.h"
-#include "H5DcreatProp.h"
-#include "H5DxferProp.h"
+#include "H5private.h"             // for HDstrcpy
+#include "H5Include.h"
 #include "H5Exception.h"
 #include "H5IdComponent.h"
-#include "H5Include.h"
-#include "H5LaccProp.h"
+#include "H5DataSpace.h"
+#include "H5PropList.h"
+#include "H5DxferProp.h"
+#include "H5OcreatProp.h"
+#include "H5DcreatProp.h"
 #include "H5LcreatProp.h"
+#include "H5LaccProp.h"
+#include "H5DaccProp.h"
 #include "H5Location.h"
 #include "H5Object.h"
-#include "H5OcreatProp.h"
-#include "H5PropList.h"
-#include "H5private.h" // for HDstrcpy
+#include "H5Alltypes.h"
+#include "H5AbstractDs.h"
+#include "H5DataSet.h"
+#include "H5CommonFG.h"
 
 // There are a few comments that are common to most of the functions
 // defined in this file so they are listed here.
@@ -57,18 +57,18 @@ namespace H5 {
 //--------------------------------------------------------------------------
 DataType CommonFG::openDataType(const char* name) const
 {
-        // Call C function H5Topen2 to open the named datatype in this group,
-        // given either the file or group id
-        hid_t type_id = H5Topen2(getLocId(), name, H5P_DEFAULT);
+    // Call C function H5Topen2 to open the named datatype in this group,
+    // given either the file or group id
+    hid_t type_id = H5Topen2(getLocId(), name, H5P_DEFAULT);
 
-        // If the datatype's opening failed, throw an exception
-        if (type_id < 0)
-                throwException("openDataType", "H5Topen2 failed");
+    // If the datatype's opening failed, throw an exception
+    if (type_id < 0)
+        throwException("openDataType", "H5Topen2 failed");
 
-        // No failure, create and return the DataType object
-        DataType data_type;
-        f_DataType_setId(&data_type, type_id);
-        return (data_type);
+    // No failure, create and return the DataType object
+    DataType data_type;
+    f_DataType_setId(&data_type, type_id);
+    return(data_type);
 }
 
 //--------------------------------------------------------------------------
@@ -78,7 +78,10 @@ DataType CommonFG::openDataType(const char* name) const
 ///             \c H5std_string for \a name.
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-DataType CommonFG::openDataType(const H5std_string& name) const { return (openDataType(name.c_str())); }
+DataType CommonFG::openDataType(const H5std_string& name) const
+{
+    return(openDataType(name.c_str()));
+}
 
 //--------------------------------------------------------------------------
 // Function:    CommonFG::openArrayType
@@ -90,18 +93,18 @@ DataType CommonFG::openDataType(const H5std_string& name) const { return (openDa
 //--------------------------------------------------------------------------
 ArrayType CommonFG::openArrayType(const char* name) const
 {
-        // Call C function H5Topen2 to open the named datatype in this group,
-        // given either the file or group id
-        hid_t type_id = H5Topen2(getLocId(), name, H5P_DEFAULT);
+    // Call C function H5Topen2 to open the named datatype in this group,
+    // given either the file or group id
+    hid_t type_id = H5Topen2(getLocId(), name, H5P_DEFAULT);
 
-        // If the datatype's opening failed, throw an exception
-        if (type_id < 0)
-                throwException("openArrayType", "H5Topen2 failed");
+    // If the datatype's opening failed, throw an exception
+    if (type_id < 0)
+        throwException("openArrayType", "H5Topen2 failed");
 
-        // No failure, create and return the ArrayType object
-        ArrayType array_type;
-        f_DataType_setId(&array_type, type_id);
-        return (array_type);
+    // No failure, create and return the ArrayType object
+    ArrayType array_type;
+    f_DataType_setId(&array_type, type_id);
+    return(array_type);
 }
 
 //--------------------------------------------------------------------------
@@ -111,7 +114,10 @@ ArrayType CommonFG::openArrayType(const char* name) const
 ///             \c H5std_string for \a name.
 // Programmer   Binh-Minh Ribler - Jul, 2005
 //--------------------------------------------------------------------------
-ArrayType CommonFG::openArrayType(const H5std_string& name) const { return (openArrayType(name.c_str())); }
+ArrayType CommonFG::openArrayType(const H5std_string& name) const
+{
+    return(openArrayType(name.c_str()));
+}
 
 //--------------------------------------------------------------------------
 // Function:    CommonFG::openCompType
@@ -123,18 +129,18 @@ ArrayType CommonFG::openArrayType(const H5std_string& name) const { return (open
 //--------------------------------------------------------------------------
 CompType CommonFG::openCompType(const char* name) const
 {
-        // Call C function H5Topen2 to open the named datatype in this group,
-        // given either the file or group id
-        hid_t type_id = H5Topen2(getLocId(), name, H5P_DEFAULT);
+    // Call C function H5Topen2 to open the named datatype in this group,
+    // given either the file or group id
+    hid_t type_id = H5Topen2(getLocId(), name, H5P_DEFAULT);
 
-        // If the datatype's opening failed, throw an exception
-        if (type_id < 0)
-                throwException("openCompType", "H5Topen2 failed");
+    // If the datatype's opening failed, throw an exception
+    if (type_id < 0)
+        throwException("openCompType", "H5Topen2 failed");
 
-        // No failure, create and return the CompType object
-        CompType comp_type;
-        f_DataType_setId(&comp_type, type_id);
-        return (comp_type);
+    // No failure, create and return the CompType object
+    CompType comp_type;
+    f_DataType_setId(&comp_type, type_id);
+    return(comp_type);
 }
 
 //--------------------------------------------------------------------------
@@ -144,7 +150,10 @@ CompType CommonFG::openCompType(const char* name) const
 ///             \c H5std_string for \a name.
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-CompType CommonFG::openCompType(const H5std_string& name) const { return (openCompType(name.c_str())); }
+CompType CommonFG::openCompType(const H5std_string& name) const
+{
+    return(openCompType(name.c_str()));
+}
 
 //--------------------------------------------------------------------------
 // Function:    CommonFG::openEnumType
@@ -156,18 +165,18 @@ CompType CommonFG::openCompType(const H5std_string& name) const { return (openCo
 //--------------------------------------------------------------------------
 EnumType CommonFG::openEnumType(const char* name) const
 {
-        // Call C function H5Topen2 to open the named datatype in this group,
-        // given either the file or group id
-        hid_t type_id = H5Topen2(getLocId(), name, H5P_DEFAULT);
+    // Call C function H5Topen2 to open the named datatype in this group,
+    // given either the file or group id
+    hid_t type_id = H5Topen2(getLocId(), name, H5P_DEFAULT);
 
-        // If the datatype's opening failed, throw an exception
-        if (type_id < 0)
-                throwException("openEnumType", "H5Topen2 failed");
+    // If the datatype's opening failed, throw an exception
+    if (type_id < 0)
+        throwException("openEnumType", "H5Topen2 failed");
 
-        // No failure, create and return the EnumType object
-        EnumType enum_type;
-        f_DataType_setId(&enum_type, type_id);
-        return (enum_type);
+    // No failure, create and return the EnumType object
+    EnumType enum_type;
+    f_DataType_setId(&enum_type, type_id);
+    return(enum_type);
 }
 
 //--------------------------------------------------------------------------
@@ -177,7 +186,10 @@ EnumType CommonFG::openEnumType(const char* name) const
 ///             \c H5std_string for \a name.
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-EnumType CommonFG::openEnumType(const H5std_string& name) const { return (openEnumType(name.c_str())); }
+EnumType CommonFG::openEnumType(const H5std_string& name) const
+{
+    return(openEnumType(name.c_str()));
+}
 
 //--------------------------------------------------------------------------
 // Function:    CommonFG::openIntType
@@ -189,18 +201,18 @@ EnumType CommonFG::openEnumType(const H5std_string& name) const { return (openEn
 //--------------------------------------------------------------------------
 IntType CommonFG::openIntType(const char* name) const
 {
-        // Call C function H5Topen2 to open the named datatype in this group,
-        // given either the file or group id
-        hid_t type_id = H5Topen2(getLocId(), name, H5P_DEFAULT);
+    // Call C function H5Topen2 to open the named datatype in this group,
+    // given either the file or group id
+    hid_t type_id = H5Topen2(getLocId(), name, H5P_DEFAULT);
 
-        // If the datatype's opening failed, throw an exception
-        if (type_id < 0)
-                throwException("openIntType", "H5Topen2 failed");
+    // If the datatype's opening failed, throw an exception
+    if (type_id < 0)
+        throwException("openIntType", "H5Topen2 failed");
 
-        // No failure, create and return the IntType object
-        IntType int_type;
-        f_DataType_setId(&int_type, type_id);
-        return (int_type);
+    // No failure, create and return the IntType object
+    IntType int_type;
+    f_DataType_setId(&int_type, type_id);
+    return(int_type);
 }
 
 //--------------------------------------------------------------------------
@@ -210,7 +222,10 @@ IntType CommonFG::openIntType(const char* name) const
 ///             \c H5std_string for \a name.
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-IntType CommonFG::openIntType(const H5std_string& name) const { return (openIntType(name.c_str())); }
+IntType CommonFG::openIntType(const H5std_string& name) const
+{
+    return(openIntType(name.c_str()));
+}
 
 //--------------------------------------------------------------------------
 // Function:    CommonFG::openFloatType
@@ -222,18 +237,18 @@ IntType CommonFG::openIntType(const H5std_string& name) const { return (openIntT
 //--------------------------------------------------------------------------
 FloatType CommonFG::openFloatType(const char* name) const
 {
-        // Call C function H5Topen2 to open the named datatype in this group,
-        // given either the file or group id
-        hid_t type_id = H5Topen2(getLocId(), name, H5P_DEFAULT);
+    // Call C function H5Topen2 to open the named datatype in this group,
+    // given either the file or group id
+    hid_t type_id = H5Topen2(getLocId(), name, H5P_DEFAULT);
 
-        // If the datatype's opening failed, throw an exception
-        if (type_id < 0)
-                throwException("openFloatType", "H5Topen2 failed");
+    // If the datatype's opening failed, throw an exception
+    if (type_id < 0)
+        throwException("openFloatType", "H5Topen2 failed");
 
-        // No failure, create and return the FloatType object
-        FloatType float_type;
-        f_DataType_setId(&float_type, type_id);
-        return (float_type);
+    // No failure, create and return the FloatType object
+    FloatType float_type;
+    f_DataType_setId(&float_type, type_id);
+    return(float_type);
 }
 
 //--------------------------------------------------------------------------
@@ -243,7 +258,10 @@ FloatType CommonFG::openFloatType(const char* name) const
 ///             \c H5std_string for \a name.
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-FloatType CommonFG::openFloatType(const H5std_string& name) const { return (openFloatType(name.c_str())); }
+FloatType CommonFG::openFloatType(const H5std_string& name) const
+{
+    return(openFloatType(name.c_str()));
+}
 
 //--------------------------------------------------------------------------
 // Function:    CommonFG::openStrType
@@ -255,18 +273,18 @@ FloatType CommonFG::openFloatType(const H5std_string& name) const { return (open
 //--------------------------------------------------------------------------
 StrType CommonFG::openStrType(const char* name) const
 {
-        // Call C function H5Topen2 to open the named datatype in this group,
-        // given either the file or group id
-        hid_t type_id = H5Topen2(getLocId(), name, H5P_DEFAULT);
+    // Call C function H5Topen2 to open the named datatype in this group,
+    // given either the file or group id
+    hid_t type_id = H5Topen2(getLocId(), name, H5P_DEFAULT);
 
-        // If the datatype's opening failed, throw an exception
-        if (type_id < 0)
-                throwException("openStrType", "H5Topen2 failed");
+    // If the datatype's opening failed, throw an exception
+    if (type_id < 0)
+        throwException("openStrType", "H5Topen2 failed");
 
-        // No failure, create and return the StrType object
-        StrType str_type;
-        f_DataType_setId(&str_type, type_id);
-        return (str_type);
+    // No failure, create and return the StrType object
+    StrType str_type;
+    f_DataType_setId(&str_type, type_id);
+    return(str_type);
 }
 
 //--------------------------------------------------------------------------
@@ -276,7 +294,10 @@ StrType CommonFG::openStrType(const char* name) const
 ///             \c H5std_string for \a name.
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-StrType CommonFG::openStrType(const H5std_string& name) const { return (openStrType(name.c_str())); }
+StrType CommonFG::openStrType(const H5std_string& name) const
+{
+    return(openStrType(name.c_str()));
+}
 
 //--------------------------------------------------------------------------
 // Function:    CommonFG::openVarLenType
@@ -288,18 +309,18 @@ StrType CommonFG::openStrType(const H5std_string& name) const { return (openStrT
 //--------------------------------------------------------------------------
 VarLenType CommonFG::openVarLenType(const char* name) const
 {
-        // Call C function H5Topen2 to open the named datatype in this group,
-        // given either the file or group id
-        hid_t type_id = H5Topen2(getLocId(), name, H5P_DEFAULT);
+    // Call C function H5Topen2 to open the named datatype in this group,
+    // given either the file or group id
+    hid_t type_id = H5Topen2(getLocId(), name, H5P_DEFAULT);
 
-        // If the datatype's opening failed, throw an exception
-        if (type_id < 0)
-                throwException("openVarLenType", "H5Topen2 failed");
+    // If the datatype's opening failed, throw an exception
+    if (type_id < 0)
+        throwException("openVarLenType", "H5Topen2 failed");
 
-        // No failure, create and return the VarLenType object
-        VarLenType varlen_type;
-        f_DataType_setId(&varlen_type, type_id);
-        return (varlen_type);
+    // No failure, create and return the VarLenType object
+    VarLenType varlen_type;
+    f_DataType_setId(&varlen_type, type_id);
+    return(varlen_type);
 }
 
 //--------------------------------------------------------------------------
@@ -309,7 +330,10 @@ VarLenType CommonFG::openVarLenType(const char* name) const
 ///             \c H5std_string for \a name.
 // Programmer   Binh-Minh Ribler - Jul, 2005
 //--------------------------------------------------------------------------
-VarLenType CommonFG::openVarLenType(const H5std_string& name) const { return (openVarLenType(name.c_str())); }
+VarLenType CommonFG::openVarLenType(const H5std_string& name) const
+{
+    return(openVarLenType(name.c_str()));
+}
 
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
 //--------------------------------------------------------------------------
@@ -336,7 +360,10 @@ CommonFG::~CommonFG() {}
 // param        new_id - IN: New id to set
 // Programmer   Binh-Minh Ribler - 2015
 //--------------------------------------------------------------------------
-void f_DataType_setId(DataType* dtype, hid_t new_id) { dtype->p_setId(new_id); }
+void f_DataType_setId(DataType* dtype, hid_t new_id)
+{
+    dtype->p_setId(new_id);
+}
 
 //--------------------------------------------------------------------------
 // Function:    f_DataSet_setId - friend
@@ -348,8 +375,11 @@ void f_DataType_setId(DataType* dtype, hid_t new_id) { dtype->p_setId(new_id); }
 // param        new_id - IN: New id to set
 // Programmer   Binh-Minh Ribler - 2015
 //--------------------------------------------------------------------------
-void f_DataSet_setId(DataSet* dset, hid_t new_id) { dset->p_setId(new_id); }
+void f_DataSet_setId(DataSet* dset, hid_t new_id)
+{
+    dset->p_setId(new_id);
+}
 
 #endif // DOXYGEN_SHOULD_SKIP_THIS
 
-} // namespace H5
+} // end namespace

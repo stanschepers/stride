@@ -22,9 +22,8 @@ namespace H5 {
     wrappers for the HDF5 dataset access property functions.
 */
 //  Inheritance: LinkAccPropList -> PropList -> IdComponent
-class H5_DLLCPP DSetAccPropList : public LinkAccPropList
-{
-public:
+class H5_DLLCPP DSetAccPropList : public LinkAccPropList {
+   public:
         ///\brief Default dataset creation property list.
         static const DSetAccPropList& DEFAULT;
 
@@ -35,10 +34,10 @@ public:
         void setChunkCache(size_t rdcc_nslots, size_t rdcc_nbytes, double rdcc_w0) const;
 
         // Retrieves the raw data chunk cache parameters.
-        void getChunkCache(size_t& rdcc_nslots, size_t& rdcc_nbytes, double& rdcc_w0) const;
+        void getChunkCache(size_t &rdcc_nslots, size_t &rdcc_nbytes, double &rdcc_w0) const;
 
         ///\brief Returns this class name.
-        virtual H5std_string fromClass() const { return ("DSetAccPropList"); }
+        virtual H5std_string fromClass () const { return("DSetAccPropList"); }
 
         // Copy constructor - same as the original DSetAccPropList.
         DSetAccPropList(const DSetAccPropList& orig);
@@ -55,7 +54,7 @@ public:
         // Deletes the global constant, should only be used by the library
         static void deleteConstants();
 
-private:
+    private:
         static DSetAccPropList* DEFAULT_;
 
         // Creates the global constant, should only be used by the library

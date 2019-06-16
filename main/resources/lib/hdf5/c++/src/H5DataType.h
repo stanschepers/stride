@@ -25,9 +25,8 @@ namespace H5 {
     and VarLenType.
 */
 //  Inheritance: DataType -> H5Object -> H5Location -> IdComponent
-class H5_DLLCPP DataType : public H5Object
-{
-public:
+class H5_DLLCPP DataType : public H5Object {
+   public:
         // Creates a datatype given its class and size
         DataType(const H5T_class_t type_class, size_t size);
 
@@ -42,10 +41,8 @@ public:
         DataType(const H5Location& loc, const H5std_string& name);
 
         // Creates a datatype by way of dereference.
-        DataType(const H5Location& loc, const void* ref, H5R_type_t ref_type = H5R_OBJECT,
-                 const PropList& plist = PropList::DEFAULT);
-        //        DataType(const Attribute& attr, const void* ref, H5R_type_t ref_type = H5R_OBJECT, const PropList&
-        //        plist = PropList::DEFAULT);
+        DataType(const H5Location& loc, const void* ref, H5R_type_t ref_type = H5R_OBJECT, const PropList& plist = PropList::DEFAULT);
+//        DataType(const Attribute& attr, const void* ref, H5R_type_t ref_type = H5R_OBJECT, const PropList& plist = PropList::DEFAULT);
 
         // Closes this datatype.
         virtual void close();
@@ -73,8 +70,8 @@ public:
 
         // These two overloaded functions are kept for backward compatibility
         // only; they missed the const - removed from 1.8.18 and 1.10.1
-        // void commit(H5Location& loc, const char* name);
-        // void commit(H5Location& loc, const H5std_string& name);
+        //void commit(H5Location& loc, const char* name);
+        //void commit(H5Location& loc, const H5std_string& name);
 
         // Determines whether this datatype is a named datatype or
         // a transient datatype.
@@ -82,11 +79,10 @@ public:
 
         // Finds a conversion function that can handle the conversion
         // this datatype to the given datatype, dest.
-        H5T_conv_t find(const DataType& dest, H5T_cdata_t** pcdata) const;
+        H5T_conv_t find(const DataType& dest, H5T_cdata_t **pcdata) const;
 
         // Converts data from between specified datatypes.
-        void convert(const DataType& dest, size_t nelmts, void* buf, void* background,
-                     const PropList& plist = PropList::DEFAULT) const;
+        void convert(const DataType& dest, size_t nelmts, void *buf, void *background, const PropList& plist=PropList::DEFAULT) const;
 
         // Assignment operator
         DataType& operator=(const DataType& rhs);
@@ -123,7 +119,7 @@ public:
         H5std_string getTag() const;
 
         // Checks whether this datatype contains (or is) a certain type class.
-        bool        detectClass(H5T_class_t cls) const;
+        bool detectClass(H5T_class_t cls) const;
         static bool detectClass(const PredType& pred_type, H5T_class_t cls);
 
         // Checks whether this datatype is a variable-length string.
@@ -133,7 +129,7 @@ public:
         PropList getCreatePlist() const;
 
         ///\brief Returns this class name.
-        virtual H5std_string fromClass() const { return ("DataType"); }
+        virtual H5std_string fromClass () const { return("DataType"); }
 
         // Creates a copy of an existing DataType using its id
         DataType(const hid_t type_id);
@@ -150,9 +146,9 @@ public:
         // Destructor: properly terminates access to this datatype.
         virtual ~DataType();
 
-protected:
+   protected:
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
-        hid_t id; // HDF5 datatype id
+        hid_t id;    // HDF5 datatype id
 
         // Returns an id of a type by decoding the binary object
         // description of this datatype.
@@ -166,11 +162,11 @@ protected:
 
 #endif // DOXYGEN_SHOULD_SKIP_THIS
 
-private:
+   private:
         // Buffer for binary object description of this datatype, allocated
         // in DataType::encode and used in DataType::decode
-        unsigned char* encoded_buf;
-        size_t         buf_size;
+        unsigned char *encoded_buf;
+        size_t buf_size;
 
         // Friend function to set DataType id.  For library use only.
         friend void f_DataType_setId(DataType* dtype, hid_t new_id);

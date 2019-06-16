@@ -18,28 +18,28 @@
 #endif
 #include <string>
 
-#include "H5AbstractDs.h"
-#include "H5AtomType.h"
-#include "H5Attribute.h"
-#include "H5DaccProp.h"
-#include "H5DataSet.h"
-#include "H5DataSpace.h"
-#include "H5DataType.h"
-#include "H5DcreatProp.h"
-#include "H5DxferProp.h"
+#include "H5Include.h"
 #include "H5Exception.h"
+#include "H5IdComponent.h"
+#include "H5DataSpace.h"
+#include "H5PropList.h"
 #include "H5FaccProp.h"
 #include "H5FcreatProp.h"
-#include "H5IdComponent.h"
-#include "H5Include.h"
-#include "H5LaccProp.h"
+#include "H5OcreatProp.h"
+#include "H5DcreatProp.h"
+#include "H5DxferProp.h"
 #include "H5LcreatProp.h"
+#include "H5LaccProp.h"
+#include "H5DaccProp.h"
 #include "H5Location.h"
 #include "H5Object.h"
-#include "H5OcreatProp.h"
+#include "H5DataType.h"
+#include "H5AtomType.h"
 #include "H5PredType.h"
-#include "H5PropList.h"
 #include "H5private.h"
+#include "H5AbstractDs.h"
+#include "H5DataSet.h"
+#include "H5Attribute.h"
 
 namespace H5 {
 using std::cerr;
@@ -67,7 +67,7 @@ DataType::DataType() : H5Object(), id(H5I_INVALID_HID), encoded_buf(NULL), buf_s
 //--------------------------------------------------------------------------
 DataType::DataType(const hid_t existing_id) : H5Object(), id(existing_id), encoded_buf(NULL), buf_size(0)
 {
-        incRefCount(); // increment number of references to this id
+    incRefCount(); // increment number of references to this id
 }
 
 //--------------------------------------------------------------------------
@@ -80,11 +80,12 @@ DataType::DataType(const hid_t existing_id) : H5Object(), id(existing_id), encod
 //--------------------------------------------------------------------------
 DataType::DataType(const H5T_class_t type_class, size_t size) : H5Object(), encoded_buf(NULL), buf_size(0)
 {
-        // Call C routine to create the new datatype
-        id = H5Tcreate(type_class, size);
-        if (id < 0) {
-                throw DataTypeIException("DataType constructor", "H5Tcreate failed");
-        }
+    // Call C routine to create the new datatype
+    id = H5Tcreate(type_class, size);
+    if (id < 0)
+    {
+        throw DataTypeIException("DataType constructor", "H5Tcreate failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -98,10 +99,9 @@ DataType::DataType(const H5T_class_t type_class, size_t size) : H5Object(), enco
 ///\exception   H5::ReferenceException
 // Programmer   Binh-Minh Ribler - Oct, 2006
 //--------------------------------------------------------------------------
-DataType::DataType(const H5Location& loc, const void* ref, H5R_type_t ref_type, const PropList& plist)
-    : H5Object(), encoded_buf(NULL), buf_size(0)
+DataType::DataType(const H5Location& loc, const void* ref, H5R_type_t ref_type, const PropList& plist) : H5Object(), encoded_buf(NULL), buf_size(0)
 {
-        id = H5Location::p_dereference(loc.getId(), ref, ref_type, plist, "constructor - by dereference");
+    id = H5Location::p_dereference(loc.getId(), ref, ref_type, plist, "constructor - by dereference");
 }
 
 //--------------------------------------------------------------------------
@@ -118,12 +118,11 @@ DataType::DataType(const H5Location& loc, const void* ref, H5R_type_t ref_type, 
 //        Jul, 2008
 //              Added for application convenience.
 //--------------------------------------------------------------------------
-/* DataType::DataType(const Attribute& attr, const void* ref, H5R_type_t ref_type, const PropList& plist) : H5Object(),
-id(H5I_INVALID_HID), encoded_buf(NULL), buf_size(0)
+ /* DataType::DataType(const Attribute& attr, const void* ref, H5R_type_t ref_type, const PropList& plist) : H5Object(), id(H5I_INVALID_HID), encoded_buf(NULL), buf_size(0)
 {
-   id = H5Location::p_dereference(attr.getId(), ref, ref_type, plist, "constructor - by dereference");
+    id = H5Location::p_dereference(attr.getId(), ref, ref_type, plist, "constructor - by dereference");
 }
-*/
+ */ 
 
 //--------------------------------------------------------------------------
 // Function:    DataType copy constructor
@@ -132,7 +131,7 @@ id(H5I_INVALID_HID), encoded_buf(NULL), buf_size(0)
 //--------------------------------------------------------------------------
 DataType::DataType(const DataType& original) : H5Object(), id(original.id), encoded_buf(NULL), buf_size(0)
 {
-        incRefCount(); // increment number of references to this id
+    incRefCount(); // increment number of references to this id
 }
 
 //--------------------------------------------------------------------------
@@ -150,10 +149,10 @@ DataType::DataType(const DataType& original) : H5Object(), id(original.id), enco
 //--------------------------------------------------------------------------
 DataType::DataType(const PredType& pred_type) : H5Object(), encoded_buf(NULL), buf_size(0)
 {
-        // Call C routine to copy the datatype
-        id = H5Tcopy(pred_type.getId());
-        if (id < 0)
-                throw DataTypeIException("DataType constructor", "H5Tcopy failed");
+    // Call C routine to copy the datatype
+    id = H5Tcopy(pred_type.getId());
+    if (id < 0)
+        throw DataTypeIException("DataType constructor", "H5Tcopy failed");
 }
 
 //--------------------------------------------------------------------------
@@ -170,9 +169,9 @@ DataType::DataType(const PredType& pred_type) : H5Object(), encoded_buf(NULL), b
 //              improve usability.
 //              -BMR, Dec 2016
 //--------------------------------------------------------------------------
-DataType::DataType(const H5Location& loc, const char* dtype_name) : H5Object(), encoded_buf(NULL), buf_size(0)
+DataType::DataType(const H5Location& loc, const char *dtype_name) : H5Object(), encoded_buf(NULL), buf_size(0)
 {
-        id = p_opentype(loc, dtype_name);
+    id = p_opentype(loc, dtype_name);
 }
 
 //--------------------------------------------------------------------------
@@ -191,7 +190,7 @@ DataType::DataType(const H5Location& loc, const char* dtype_name) : H5Object(), 
 //--------------------------------------------------------------------------
 DataType::DataType(const H5Location& loc, const H5std_string& dtype_name) : H5Object(), encoded_buf(NULL), buf_size(0)
 {
-        id = p_opentype(loc, dtype_name.c_str());
+    id = p_opentype(loc, dtype_name.c_str());
 }
 
 //--------------------------------------------------------------------------
@@ -208,17 +207,18 @@ DataType::DataType(const H5Location& loc, const H5std_string& dtype_name) : H5Ob
 //--------------------------------------------------------------------------
 void DataType::copy(const DataType& like_type)
 {
-        // close the current data type before copying like_type to this object
-        try {
-                close();
-        } catch (Exception& close_error) {
-                throw DataTypeIException(inMemFunc("copy"), close_error.getDetailMsg());
-        }
+    // close the current data type before copying like_type to this object
+    try {
+        close();
+    }
+    catch (Exception& close_error) {
+        throw DataTypeIException(inMemFunc("copy"), close_error.getDetailMsg());
+    }
 
-        // call C routine to copy the datatype
-        id = H5Tcopy(like_type.getId());
-        if (id < 0)
-                throw DataTypeIException(inMemFunc("copy"), "H5Tcopy failed");
+    // call C routine to copy the datatype
+    id = H5Tcopy(like_type.getId());
+    if (id < 0)
+        throw DataTypeIException(inMemFunc("copy"), "H5Tcopy failed");
 }
 
 //--------------------------------------------------------------------------
@@ -232,17 +232,18 @@ void DataType::copy(const DataType& like_type)
 //--------------------------------------------------------------------------
 void DataType::copy(const DataSet& dset)
 {
-        // close the current data type before copying dset's datatype to this object
-        try {
-                close();
-        } catch (Exception& close_error) {
-                throw DataTypeIException(inMemFunc("copy"), close_error.getDetailMsg());
-        }
+    // close the current data type before copying dset's datatype to this object
+    try {
+        close();
+    }
+    catch (Exception& close_error) {
+        throw DataTypeIException(inMemFunc("copy"), close_error.getDetailMsg());
+    }
 
-        // call C routine to copy the datatype
-        id = H5Tcopy(dset.getId());
-        if (id < 0)
-                throw DataTypeIException(inMemFunc("copy"), "H5Tcopy failed");
+    // call C routine to copy the datatype
+    id = H5Tcopy(dset.getId());
+    if (id < 0)
+        throw DataTypeIException(inMemFunc("copy"), "H5Tcopy failed");
 }
 
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
@@ -255,20 +256,24 @@ void DataType::copy(const DataSet& dset)
 //--------------------------------------------------------------------------
 hid_t DataType::p_decode() const
 {
-        // Make sure that the buffer can be decoded
-        if (encoded_buf == NULL) {
-                throw DataTypeIException("DataType::p_decode", "No encoded buffer");
-        }
+    // Make sure that the buffer can be decoded
+    if (encoded_buf == NULL)
+    {
+        throw DataTypeIException("DataType::p_decode", "No encoded buffer");
+    }
 
-        // Call C function to decode the binary object description
-        hid_t encoded_dtype_id = H5Tdecode(encoded_buf);
+    // Call C function to decode the binary object description
+    hid_t encoded_dtype_id = H5Tdecode(encoded_buf);
 
-        // If H5Tdecode fails, raise exception
-        if (encoded_dtype_id < 0) {
-                throw DataTypeIException("DataType::p_decode", "H5Tdecode failed");
-        } else {
-                return (encoded_dtype_id);
-        }
+    // If H5Tdecode fails, raise exception
+    if (encoded_dtype_id < 0)
+    {
+        throw DataTypeIException("DataType::p_decode", "H5Tdecode failed");
+    }
+    else
+    {
+        return(encoded_dtype_id);
+    }
 }
 #endif // DOXYGEN_SHOULD_SKIP_THIS
 
@@ -282,15 +287,16 @@ hid_t DataType::p_decode() const
 //--------------------------------------------------------------------------
 DataType* DataType::decode() const
 {
-        hid_t encoded_dtype_id = H5I_INVALID_HID;
-        try {
-                encoded_dtype_id = p_decode();
-        } catch (DataTypeIException& err) {
-                throw;
-        }
-        DataType* encoded_dtype = new DataType;
-        encoded_dtype->p_setId(encoded_dtype_id);
-        return (encoded_dtype);
+    hid_t encoded_dtype_id = H5I_INVALID_HID;
+    try {
+        encoded_dtype_id = p_decode();
+    }
+    catch (DataTypeIException &err) {
+        throw;
+    }
+    DataType *encoded_dtype = new DataType;
+    encoded_dtype->p_setId(encoded_dtype_id);
+    return(encoded_dtype);
 }
 
 //--------------------------------------------------------------------------
@@ -302,22 +308,27 @@ DataType* DataType::decode() const
 //--------------------------------------------------------------------------
 void DataType::encode()
 {
-        // Call H5Tencode passing in null to determine the size of the buffer
-        herr_t ret_value = H5Tencode(id, NULL, &buf_size);
-        if (ret_value < 0) {
-                throw DataTypeIException("DataType::encode", "Failed to get buf_size");
-        }
+    // Call H5Tencode passing in null to determine the size of the buffer
+    herr_t ret_value = H5Tencode(id, NULL, &buf_size);
+    if (ret_value < 0)
+    {
+        throw DataTypeIException("DataType::encode", "Failed to get buf_size");
+    }
 
-        // Allocate buffer and call C function again to encode
-        if (buf_size > 0) {
-                encoded_buf = (unsigned char*)HDcalloc((size_t)1, buf_size);
-                ret_value   = H5Tencode(id, encoded_buf, &buf_size);
-                if (ret_value < 0) {
-                        throw DataTypeIException("DataType::encode", "H5Tencode failed");
-                }
-        } else {
-                throw DataTypeIException("DataType::encode", "Failed to allocate buffer for encoding");
+    // Allocate buffer and call C function again to encode
+    if (buf_size > 0)
+    {
+        encoded_buf = (unsigned char *)HDcalloc((size_t)1, buf_size);
+        ret_value = H5Tencode(id, encoded_buf, &buf_size);
+        if (ret_value < 0)
+        {
+            throw DataTypeIException("DataType::encode", "H5Tencode failed");
         }
+    }
+    else
+    {
+        throw DataTypeIException("DataType::encode", "Failed to allocate buffer for encoding");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -330,10 +341,10 @@ void DataType::encode()
 //--------------------------------------------------------------------------
 bool DataType::hasBinaryDesc() const
 {
-        if (encoded_buf != NULL)
-                return true;
-        else
-                return false;
+    if (encoded_buf != NULL)
+        return true;
+    else
+        return false;
 }
 
 //--------------------------------------------------------------------------
@@ -357,10 +368,11 @@ bool DataType::hasBinaryDesc() const
 //--------------------------------------------------------------------------
 DataType& DataType::operator=(const DataType& rhs)
 {
-        if (this != &rhs) {
-                setId(rhs.id);
-        }
-        return (*this);
+    if (this != &rhs)
+    {
+        setId(rhs.id);
+    }
+    return(*this);
 }
 
 //--------------------------------------------------------------------------
@@ -374,16 +386,17 @@ DataType& DataType::operator=(const DataType& rhs)
 //--------------------------------------------------------------------------
 bool DataType::operator==(const DataType& compared_type) const
 {
-        // Call C routine H5Tequal to determines whether two datatype
-        // identifiers refer to the same datatype
-        htri_t ret_value = H5Tequal(id, compared_type.getId());
-        if (ret_value > 0)
-                return true;
-        else if (ret_value == 0)
-                return false;
-        else {
-                throw DataTypeIException(inMemFunc("operator=="), "H5Tequal returns negative value");
-        }
+    // Call C routine H5Tequal to determines whether two datatype
+    // identifiers refer to the same datatype
+    htri_t ret_value = H5Tequal(id, compared_type.getId());
+    if (ret_value > 0)
+        return true;
+    else if (ret_value == 0)
+        return false;
+    else
+    {
+        throw DataTypeIException(inMemFunc("operator=="), "H5Tequal returns negative value");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -395,7 +408,10 @@ bool DataType::operator==(const DataType& compared_type) const
 ///\exception   H5::DataTypeIException
 // July, 2018
 //--------------------------------------------------------------------------
-bool DataType::operator!=(const DataType& compared_type) const { return !operator==(compared_type); }
+bool DataType::operator!=(const DataType& compared_type) const
+{
+    return !operator==(compared_type);
+}
 
 //--------------------------------------------------------------------------
 // Function:    DataType::p_commit (private)
@@ -413,10 +429,10 @@ bool DataType::operator!=(const DataType& compared_type) const { return !operato
 //--------------------------------------------------------------------------
 void DataType::p_commit(hid_t loc_id, const char* name)
 {
-        // Call C routine to commit the transient datatype
-        herr_t ret_value = H5Tcommit2(loc_id, name, id, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
-        if (ret_value < 0)
-                throw DataTypeIException(inMemFunc("p_commit"), "H5Tcommit2 failed");
+    // Call C routine to commit the transient datatype
+    herr_t ret_value = H5Tcommit2(loc_id, name, id, H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
+    if (ret_value < 0)
+        throw DataTypeIException(inMemFunc("p_commit"), "H5Tcommit2 failed");
 }
 
 //--------------------------------------------------------------------------
@@ -428,7 +444,10 @@ void DataType::p_commit(hid_t loc_id, const char* name)
 ///\exception   H5::DataTypeIException
 // Programmer   Binh-Minh Ribler - Jan, 2007
 //--------------------------------------------------------------------------
-void DataType::commit(const H5Location& loc, const char* name) { p_commit(loc.getId(), name); }
+void DataType::commit(const H5Location& loc, const char* name)
+{
+    p_commit(loc.getId(), name);
+}
 
 //--------------------------------------------------------------------------
 // Function:    DataType::commit
@@ -444,7 +463,7 @@ void DataType::commit(const H5Location& loc, const char* name) { p_commit(loc.ge
 //              Removed from documentation. -BMR, 2016/03/07 1.8.17 and 1.10.0
 //              Removed from code. -BMR, 2016/08/11 1.8.18 and 1.10.1
 //--------------------------------------------------------------------------
-// void DataType::commit(H5Location& loc, const char* name)
+//void DataType::commit(H5Location& loc, const char* name)
 //{
 //   p_commit(loc.getId(), name);
 //}
@@ -456,7 +475,10 @@ void DataType::commit(const H5Location& loc, const char* name) { p_commit(loc.ge
 ///             argument \a name.
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-void DataType::commit(const H5Location& loc, const H5std_string& name) { p_commit(loc.getId(), name.c_str()); }
+void DataType::commit(const H5Location& loc, const H5std_string& name)
+{
+    p_commit(loc.getId(), name.c_str());
+}
 
 //--------------------------------------------------------------------------
 // Function:    DataType::commit
@@ -472,7 +494,7 @@ void DataType::commit(const H5Location& loc, const H5std_string& name) { p_commi
 //              Removed from documentation. -BMR, 2016/03/07 1.8.17 and 1.10.0
 //              Removed from code. -BMR, 2016/08/11 1.8.18 and 1.10.1
 //--------------------------------------------------------------------------
-// void DataType::commit(H5Location& loc, const H5std_string& name)
+//void DataType::commit(H5Location& loc, const H5std_string& name)
 //{
 //   p_commit(loc.getId(), name.c_str());
 //}
@@ -488,15 +510,16 @@ void DataType::commit(const H5Location& loc, const H5std_string& name) { p_commi
 //--------------------------------------------------------------------------
 bool DataType::committed() const
 {
-        // Call C function to determine if a datatype is a named one
-        htri_t is_committed = H5Tcommitted(id);
-        if (is_committed > 0)
-                return true;
-        else if (is_committed == 0)
-                return false;
-        else {
-                throw DataTypeIException(inMemFunc("committed"), "H5Tcommitted return negative value");
-        }
+    // Call C function to determine if a datatype is a named one
+    htri_t is_committed = H5Tcommitted(id);
+    if (is_committed > 0)
+        return true;
+    else if (is_committed == 0)
+        return false;
+    else
+    {
+        throw DataTypeIException(inMemFunc("committed"), "H5Tcommitted return negative value");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -509,14 +532,15 @@ bool DataType::committed() const
 ///\exception   H5::DataTypeIException
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-H5T_conv_t DataType::find(const DataType& dest, H5T_cdata_t** pcdata) const
+H5T_conv_t DataType::find(const DataType& dest, H5T_cdata_t **pcdata) const
 {
-        // Call C routine to find the conversion function
-        H5T_conv_t func = H5Tfind(id, dest.getId(), pcdata);
-        if (func == NULL) {
-                throw DataTypeIException(inMemFunc("find"), "H5Tfind returns a NULL function");
-        }
-        return (func);
+    // Call C routine to find the conversion function
+    H5T_conv_t func = H5Tfind(id, dest.getId(), pcdata);
+    if (func == NULL)
+    {
+        throw DataTypeIException(inMemFunc("find"), "H5Tfind returns a NULL function");
+    }
+    return(func);
 }
 
 //--------------------------------------------------------------------------
@@ -532,18 +556,19 @@ H5T_conv_t DataType::find(const DataType& dest, H5T_cdata_t** pcdata) const
 ///\exception   H5::DataTypeIException
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-void DataType::convert(const DataType& dest, size_t nelmts, void* buf, void* background, const PropList& plist) const
+void DataType::convert(const DataType& dest, size_t nelmts, void *buf, void *background, const PropList& plist) const
 {
-        // Get identifiers for C API
-        hid_t dest_id  = dest.getId();
-        hid_t plist_id = plist.getId();
+    // Get identifiers for C API
+    hid_t dest_id = dest.getId();
+    hid_t plist_id = plist.getId();
 
-        // Call C routine H5Tconvert to convert the data
-        herr_t ret_value;
-        ret_value = H5Tconvert(id, dest_id, nelmts, buf, background, plist_id);
-        if (ret_value < 0) {
-                throw DataTypeIException(inMemFunc("convert"), "H5Tconvert failed");
-        }
+    // Call C routine H5Tconvert to convert the data
+    herr_t ret_value;
+    ret_value = H5Tconvert(id, dest_id, nelmts, buf, background, plist_id);
+    if (ret_value < 0)
+    {
+        throw DataTypeIException(inMemFunc("convert"), "H5Tconvert failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -562,11 +587,12 @@ void DataType::convert(const DataType& dest, size_t nelmts, void* buf, void* bac
 //--------------------------------------------------------------------------
 void DataType::lock() const
 {
-        // Call C routine to lock the datatype
-        herr_t ret_value = H5Tlock(id);
-        if (ret_value < 0) {
-                throw DataTypeIException(inMemFunc("lock"), "H5Tlock failed");
-        }
+    // Call C routine to lock the datatype
+    herr_t ret_value = H5Tlock(id);
+    if (ret_value < 0)
+    {
+        throw DataTypeIException(inMemFunc("lock"), "H5Tlock failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -578,13 +604,14 @@ void DataType::lock() const
 //--------------------------------------------------------------------------
 H5T_class_t DataType::getClass() const
 {
-        H5T_class_t type_class = H5Tget_class(id);
+    H5T_class_t type_class = H5Tget_class(id);
 
-        // Return datatype class identifier if successful
-        if (type_class == H5T_NO_CLASS) {
-                throw DataTypeIException(inMemFunc("getClass"), "H5Tget_class returns H5T_NO_CLASS");
-        }
-        return (type_class);
+    // Return datatype class identifier if successful
+    if (type_class == H5T_NO_CLASS)
+    {
+        throw DataTypeIException(inMemFunc("getClass"), "H5Tget_class returns H5T_NO_CLASS");
+    }
+    return(type_class);
 }
 
 //--------------------------------------------------------------------------
@@ -596,13 +623,13 @@ H5T_class_t DataType::getClass() const
 //--------------------------------------------------------------------------
 size_t DataType::getSize() const
 {
-        // Call C routine to get the datatype size
-        size_t type_size = H5Tget_size(id);
-        if (type_size <= 0) // valid data types are never zero size
-        {
-                throw DataTypeIException(inMemFunc("getSize"), "H5Tget_size returns invalid datatype size");
-        }
-        return (type_size);
+    // Call C routine to get the datatype size
+    size_t type_size = H5Tget_size(id);
+    if (type_size <= 0)    // valid data types are never zero size
+    {
+        throw DataTypeIException(inMemFunc("getSize"), "H5Tget_size returns invalid datatype size");
+    }
+    return(type_size);
 }
 
 //--------------------------------------------------------------------------
@@ -614,19 +641,22 @@ size_t DataType::getSize() const
 //--------------------------------------------------------------------------
 DataType DataType::getSuper() const
 {
-        // Call C routine to get the base datatype from which the specified
-        // datatype is derived.
-        hid_t base_type_id = H5Tget_super(id);
+    // Call C routine to get the base datatype from which the specified
+    // datatype is derived.
+    hid_t base_type_id = H5Tget_super(id);
 
-        // If H5Tget_super returns a valid datatype id, create and return
-        // the base type, otherwise, raise exception
-        if (base_type_id > 0) {
-                DataType base_type;
-                base_type.p_setId(base_type_id);
-                return (base_type);
-        } else {
-                throw DataTypeIException(inMemFunc("getSuper"), "H5Tget_super failed");
-        }
+    // If H5Tget_super returns a valid datatype id, create and return
+    // the base type, otherwise, raise exception
+    if (base_type_id > 0)
+    {
+        DataType base_type;
+        base_type.p_setId(base_type_id);
+        return(base_type);
+    }
+    else
+    {
+        throw DataTypeIException(inMemFunc("getSuper"), "H5Tget_super failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -647,13 +677,14 @@ DataType DataType::getSuper() const
 //--------------------------------------------------------------------------
 void DataType::registerFunc(H5T_pers_t pers, const char* name, const DataType& dest, H5T_conv_t func) const
 {
-        hid_t dest_id = dest.getId(); // get id of the destination datatype
+    hid_t dest_id = dest.getId();  // get id of the destination datatype
 
-        // Call C routine H5Tregister to register the conversion function
-        herr_t ret_value = H5Tregister(pers, name, id, dest_id, func);
-        if (ret_value < 0) {
-                throw DataTypeIException(inMemFunc("registerFunc"), "H5Tregister failed");
-        }
+    // Call C routine H5Tregister to register the conversion function
+    herr_t ret_value = H5Tregister(pers, name, id, dest_id, func);
+    if (ret_value < 0)
+    {
+        throw DataTypeIException(inMemFunc("registerFunc"), "H5Tregister failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -665,7 +696,7 @@ void DataType::registerFunc(H5T_pers_t pers, const char* name, const DataType& d
 //--------------------------------------------------------------------------
 void DataType::registerFunc(H5T_pers_t pers, const H5std_string& name, const DataType& dest, H5T_conv_t func) const
 {
-        registerFunc(pers, name.c_str(), dest, func);
+    registerFunc(pers, name.c_str(), dest, func);
 }
 
 //--------------------------------------------------------------------------
@@ -683,13 +714,14 @@ void DataType::registerFunc(H5T_pers_t pers, const H5std_string& name, const Dat
 //--------------------------------------------------------------------------
 void DataType::unregister(H5T_pers_t pers, const char* name, const DataType& dest, H5T_conv_t func) const
 {
-        hid_t dest_id = dest.getId(); // get id of the dest datatype for C API
+    hid_t dest_id = dest.getId();  // get id of the dest datatype for C API
 
-        // Call C routine H5Tunregister to remove the conversion function
-        herr_t ret_value = H5Tunregister(pers, name, id, dest_id, func);
-        if (ret_value < 0) {
-                throw DataTypeIException(inMemFunc("unregister"), "H5Tunregister failed");
-        }
+    // Call C routine H5Tunregister to remove the conversion function
+    herr_t ret_value = H5Tunregister(pers, name, id, dest_id, func);
+    if (ret_value < 0)
+    {
+        throw DataTypeIException(inMemFunc("unregister"), "H5Tunregister failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -701,7 +733,7 @@ void DataType::unregister(H5T_pers_t pers, const char* name, const DataType& des
 //--------------------------------------------------------------------------
 void DataType::unregister(H5T_pers_t pers, const H5std_string& name, const DataType& dest, H5T_conv_t func) const
 {
-        unregister(pers, name.c_str(), dest, func);
+    unregister(pers, name.c_str(), dest, func);
 }
 
 //--------------------------------------------------------------------------
@@ -714,11 +746,12 @@ void DataType::unregister(H5T_pers_t pers, const H5std_string& name, const DataT
 //--------------------------------------------------------------------------
 void DataType::setTag(const char* tag) const
 {
-        // Call C routine H5Tset_tag to tag an opaque datatype.
-        herr_t ret_value = H5Tset_tag(id, tag);
-        if (ret_value < 0) {
-                throw DataTypeIException(inMemFunc("setTag"), "H5Tset_tag failed");
-        }
+    // Call C routine H5Tset_tag to tag an opaque datatype.
+    herr_t ret_value = H5Tset_tag(id, tag);
+    if (ret_value < 0)
+    {
+        throw DataTypeIException(inMemFunc("setTag"), "H5Tset_tag failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -728,7 +761,10 @@ void DataType::setTag(const char* tag) const
 ///             argument \a name.
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-void DataType::setTag(const H5std_string& tag) const { setTag(tag.c_str()); }
+void DataType::setTag(const H5std_string& tag) const
+{
+    setTag(tag.c_str());
+}
 
 //--------------------------------------------------------------------------
 // Function:    DataType::getTag
@@ -739,17 +775,20 @@ void DataType::setTag(const H5std_string& tag) const { setTag(tag.c_str()); }
 //--------------------------------------------------------------------------
 H5std_string DataType::getTag() const
 {
-        char* tag_Cstr = H5Tget_tag(id);
+    char* tag_Cstr = H5Tget_tag(id);
 
-        // if the tag C-string returned is not NULL, convert it to C++ string
-        // and return it, otherwise, raise an exception
-        if (tag_Cstr != NULL) {
-                H5std_string tag = H5std_string(tag_Cstr); // C string to string object
-                H5free_memory(tag_Cstr);                   // free the C string
-                return (tag);                              // return the tag
-        } else {
-                throw DataTypeIException(inMemFunc("getTag"), "H5Tget_tag returns NULL for tag");
-        }
+    // if the tag C-string returned is not NULL, convert it to C++ string
+    // and return it, otherwise, raise an exception
+    if (tag_Cstr != NULL)
+    {
+        H5std_string tag = H5std_string(tag_Cstr); // C string to string object
+        H5free_memory(tag_Cstr); // free the C string
+        return (tag); // return the tag
+    }
+    else
+    {
+        throw DataTypeIException(inMemFunc("getTag"), "H5Tget_tag returns NULL for tag");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -763,14 +802,16 @@ H5std_string DataType::getTag() const
 //--------------------------------------------------------------------------
 bool DataType::detectClass(H5T_class_t cls) const
 {
-        htri_t ret_value = H5Tdetect_class(id, cls);
-        if (ret_value > 0)
-                return true;
-        else if (ret_value == 0)
-                return false;
-        else {
-                throw DataTypeIException(inMemFunc("detectClass"), "H5Tdetect_class returns negative value");
-        }
+    htri_t ret_value = H5Tdetect_class(id, cls);
+    if (ret_value > 0)
+        return true;
+    else if (ret_value == 0)
+        return false;
+    else
+    {
+        throw DataTypeIException(inMemFunc("detectClass"),
+            "H5Tdetect_class returns negative value");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -783,14 +824,16 @@ bool DataType::detectClass(H5T_class_t cls) const
 //--------------------------------------------------------------------------
 bool DataType::detectClass(const PredType& pred_type, H5T_class_t cls)
 {
-        htri_t ret_value = H5Tdetect_class(pred_type.getId(), cls);
-        if (ret_value > 0)
-                return true;
-        else if (ret_value == 0)
-                return false;
-        else {
-                throw DataTypeIException("detectClass on PredType", "H5Tdetect_class returns negative value");
-        }
+    htri_t ret_value = H5Tdetect_class(pred_type.getId(), cls);
+    if (ret_value > 0)
+        return true;
+    else if (ret_value == 0)
+        return false;
+    else
+    {
+        throw DataTypeIException("detectClass on PredType",
+            "H5Tdetect_class returns negative value");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -803,14 +846,16 @@ bool DataType::detectClass(const PredType& pred_type, H5T_class_t cls)
 //--------------------------------------------------------------------------
 bool DataType::isVariableStr() const
 {
-        htri_t is_varlen_str = H5Tis_variable_str(id);
-        if (is_varlen_str == 1)
-                return true;
-        else if (is_varlen_str == 0)
-                return false;
-        else {
-                throw DataTypeIException(inMemFunc("isVariableStr"), "H5Tis_variable_str returns negative value");
-        }
+    htri_t is_varlen_str = H5Tis_variable_str(id);
+    if (is_varlen_str == 1)
+        return true;
+    else if (is_varlen_str == 0)
+        return false;
+    else
+    {
+        throw DataTypeIException(inMemFunc("isVariableStr"),
+            "H5Tis_variable_str returns negative value");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -826,14 +871,16 @@ bool DataType::isVariableStr() const
 //--------------------------------------------------------------------------
 PropList DataType::getCreatePlist() const
 {
-        hid_t create_plist_id = H5Tget_create_plist(id);
-        if (create_plist_id < 0) {
-                throw DataTypeIException(inMemFunc("getCreatePlist"), "H5Tget_create_plist returns negative value");
-        }
-        // create and return the DSetCreatPropList object
-        PropList create_plist;
-        f_PropList_setId(&create_plist, create_plist_id);
-        return (create_plist);
+    hid_t create_plist_id = H5Tget_create_plist(id);
+    if (create_plist_id < 0)
+    {
+        throw DataTypeIException(inMemFunc("getCreatePlist"),
+            "H5Tget_create_plist returns negative value");
+    }
+    // create and return the DSetCreatPropList object
+    PropList create_plist;
+    f_PropList_setId(&create_plist, create_plist_id);
+    return(create_plist);
 }
 
 //--------------------------------------------------------------------------
@@ -848,7 +895,10 @@ PropList DataType::getCreatePlist() const
 //              IdComponent::getId now becomes pure virtual function.
 // Programmer   Binh-Minh Ribler - May, 2008
 //--------------------------------------------------------------------------
-hid_t DataType::getId() const { return (id); }
+hid_t DataType::getId() const
+{
+    return(id);
+}
 
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
 //--------------------------------------------------------------------------
@@ -862,13 +912,13 @@ hid_t DataType::getId() const { return (id); }
 //              This function was introduced in 1.10.1 to be used by the new
 //              XxxType constructors that open a datatype. -BMR, Dec 2016
 //--------------------------------------------------------------------------
-hid_t DataType::p_opentype(const H5Location& loc, const char* dtype_name) const
+hid_t DataType::p_opentype(const H5Location& loc, const char *dtype_name) const
 {
-        // Call C function to open the named datatype at this location
-        hid_t ret_value = H5Topen2(loc.getId(), dtype_name, H5P_DEFAULT);
-        if (ret_value < 0)
-                throw DataTypeIException(inMemFunc("constructor"), "H5Topen2 failed");
-        return (ret_value);
+    // Call C function to open the named datatype at this location
+    hid_t ret_value = H5Topen2(loc.getId(), dtype_name, H5P_DEFAULT);
+    if (ret_value < 0)
+        throw DataTypeIException(inMemFunc("constructor"), "H5Topen2 failed");
+    return(ret_value);
 }
 
 //--------------------------------------------------------------------------
@@ -885,14 +935,15 @@ hid_t DataType::p_opentype(const H5Location& loc, const char* dtype_name) const
 //--------------------------------------------------------------------------
 void DataType::p_setId(const hid_t new_id)
 {
-        // handling references to this old id
-        try {
-                close();
-        } catch (Exception& close_error) {
-                throw DataTypeIException(inMemFunc("p_setId"), close_error.getDetailMsg());
-        }
-        // reset object's id to the given id
-        id = new_id;
+    // handling references to this old id
+    try {
+        close();
+    }
+    catch (Exception& close_error) {
+        throw DataTypeIException(inMemFunc("p_setId"), close_error.getDetailMsg());
+    }
+    // reset object's id to the given id
+    id = new_id;
 }
 #endif // DOXYGEN_SHOULD_SKIP_THIS
 
@@ -905,20 +956,23 @@ void DataType::p_setId(const hid_t new_id)
 //--------------------------------------------------------------------------
 void DataType::close()
 {
-        if (p_valid_id(id)) {
-                herr_t ret_value = H5Tclose(id);
-                if (ret_value < 0) {
-                        throw DataTypeIException(inMemFunc("close"), "H5Tclose failed");
-                }
-                // Reset the id
-                id = H5I_INVALID_HID;
-
-                // Free and reset buffer of encoded object description if it's been used
-                if (encoded_buf != NULL) {
-                        HDfree(encoded_buf);
-                        buf_size = 0;
-                }
+    if (p_valid_id(id))
+    {
+        herr_t ret_value = H5Tclose(id);
+        if (ret_value < 0)
+        {
+            throw DataTypeIException(inMemFunc("close"), "H5Tclose failed");
         }
+        // Reset the id
+        id = H5I_INVALID_HID;
+
+        // Free and reset buffer of encoded object description if it's been used
+        if (encoded_buf != NULL)
+        {
+            HDfree(encoded_buf);
+            buf_size = 0;
+        }
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -941,11 +995,13 @@ void DataType::close()
 //--------------------------------------------------------------------------
 DataType::~DataType()
 {
-        try {
-                close();
-        } catch (Exception& close_error) {
-                cerr << inMemFunc("~DataType - ") << close_error.getDetailMsg() << endl;
-        }
+    try
+    {
+        close();
+    }
+    catch (Exception& close_error) {
+        cerr << inMemFunc("~DataType - ") << close_error.getDetailMsg() << endl;
+    }
 }
 
-} // namespace H5
+} // end namespace
