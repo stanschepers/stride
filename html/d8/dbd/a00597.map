@@ -1,14 +1,2 @@
-<map id="Sim.h" name="Sim.h">
-<area shape="rect" id="node2" href="$d5/d5b/a00135.html" title="Contact profiles stored in simulator. " alt="" coords="398,80,605,107"/>
-<area shape="rect" id="node17" href="$da/d1e/a00149.html" title="Header for the ContactHandler class. " alt="" coords="790,80,975,107"/>
-<area shape="rect" id="node20" href="$dd/db2/a00151.html" title="Header for the ContactLogMode class. " alt="" coords="1757,80,1952,107"/>
-<area shape="rect" id="node21" href="$d9/d21/a00240.html" title="Header for the InfectorExec class. " alt="" coords="1286,80,1450,107"/>
-<area shape="rect" id="node23" href="$da/de0/a00317.html" title="Header for the TransmissionProfile class. " alt="" coords="1526,80,1733,107"/>
-<area shape="rect" id="node25" href="$d3/d5e/a00275.html" title="Header for the PublicHealthAgency class. " alt="" coords="1000,80,1211,107"/>
-<area shape="rect" id="node3" href="$d1/db7/a00157.html" title="Definition of ContactPool Id Type. " alt="" coords="369,251,481,278"/>
-<area shape="rect" id="node9" href="$d9/d01/a00227.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="486,162,623,189"/>
-<area shape="rect" id="node14" href="$de/d76/a00134.html" title="Contact profile. " alt="" coords="211,162,411,189"/>
-<area shape="rect" id="node15" href="$d7/d06/a00131.html" title="Helpers for age. " alt="" coords="179,251,266,278"/>
-<area shape="rect" id="node26" href="$dc/dc9/a00282.html" title="Interface of RnMan. " alt="" coords="1023,162,1123,189"/>
-<area shape="rect" id="node27" href="$d0/dcd/a00280.html" title="Interface of RnPcg. " alt="" coords="1037,251,1110,278"/>
+<map id="PtreeUtils.h" name="PtreeUtils.h">
 </map>

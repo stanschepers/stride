@@ -1,13 +1,12 @@
 var a00019 =
 [
-    [ "GeoGridJSONReader", "dd/da2/a00019.html#af1a416909c5768271bc0c33c452b38a0", null ],
-    [ "GeoGridJSONReader", "dd/da2/a00019.html#aabf14c2a5629bc0d8e797256bdc67e43", null ],
-    [ "operator=", "dd/da2/a00019.html#a457112a2f1c4ae1feb9218b4c3176980", null ],
-    [ "Read", "dd/da2/a00019.html#a0b6a6032beee9c1bdb5536e8aa3d87f7", null ],
-    [ "ParsePerson", "dd/da2/a00019.html#af8795723624c96ea0b6cb0c9914b08e4", null ],
-    [ "ParseLocation", "dd/da2/a00019.html#afe6709c6c7d7006438865bd53a40d03f", null ],
-    [ "ParseCoordinate", "dd/da2/a00019.html#aec53dfd238343a9744e93a17a4b1abed", null ],
-    [ "ParseContactPool", "dd/da2/a00019.html#aff5bcf59f7a496aef2179614bb41adce", null ],
-    [ "ParseValue", "dd/da2/a00019.html#a3271609b7cfed23b47a51ceb81b1e2f7", null ],
-    [ "ParseValue", "dd/da2/a00019.html#a03f217116b74c9c26a7268b2c4bbfd8d", null ]
+    [ "GeoGridHDF5Reader", "dd/da2/a00019.html#ae1b34f00b428d119e1fd34706b23ff58", null ],
+    [ "GeoGridHDF5Reader", "dd/da2/a00019.html#abe6fc24d793bfdbb0b8620aebb035264", null ],
+    [ "operator=", "dd/da2/a00019.html#a034b83f415b937fbd7c0555dbea3cdde", null ],
+    [ "Read", "dd/da2/a00019.html#a7c475566a30e6dc1626463ef5bff1b6e", null ],
+    [ "ReadPeople", "dd/da2/a00019.html#a135374ea55ab69dbad3d00711acded97", null ],
+    [ "ReadPerson", "dd/da2/a00019.html#a2994bdfe011fb64f062d411336cbff94", null ],
+    [ "ReadLocations", "dd/da2/a00019.html#a9fc58126c17749621ecfb9ecc29313c4", null ],
+    [ "ReadLocation", "dd/da2/a00019.html#a44b9bcb40b65211ba5cffc8da2e5afd9", null ],
+    [ "ReadContactPool", "dd/da2/a00019.html#ae96709b15428009e94c824f7792976c8", null ]
 ];

@@ -1,6 +1,6 @@
 var a00031 =
 [
-    [ "HouseholdReader", "df/d61/a00031.html#a176ab97c6e6fecf6f866a3acc173c82d", null ],
-    [ "~HouseholdReader", "df/d61/a00031.html#a1a0b479e10e4bbcaa57bc0a4955df946", null ],
-    [ "SetReferenceHouseholds", "df/d61/a00031.html#a0e8bb2daa7b7f17d123c71cf89e65c1d", null ]
+    [ "HouseholdCSVReader", "df/d61/a00031.html#aa83f488af915c290a9d6ffb03712d244", null ],
+    [ "SetReferenceHouseholds", "df/d61/a00031.html#a8a21ac5457e881540e6065735f869e34", null ],
+    [ "m_input_stream", "df/d61/a00031.html#a5571f6cc645370732f5c00f78e5821a1", null ]
 ];

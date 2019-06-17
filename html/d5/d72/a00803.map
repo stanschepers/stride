@@ -1,3 +1,8 @@
-<map id="proto::GeoGrid_Location_Coordinate" name="proto::GeoGrid_Location_Coordinate">
-<area shape="rect" id="node2" href="$d6/d97/a00045.html" title="{Message\n||}" alt="" coords="90,5,169,83"/>
+<map id="geopop::WorkplaceCSVReader" name="geopop::WorkplaceCSVReader">
+<area shape="rect" id="node2" href="$d4/dee/a00008.html" title="Retrieves the reference distribution profiles from file. " alt="" coords="5,553,200,660"/>
+<area shape="rect" id="node4" title="STL class. " alt="" coords="167,413,265,491"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="147,259,285,351"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="132,132,300,209"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="163,5,269,83"/>
+<area shape="rect" id="node8" title="STL class. " alt="" coords="289,413,444,491"/>
 </map>

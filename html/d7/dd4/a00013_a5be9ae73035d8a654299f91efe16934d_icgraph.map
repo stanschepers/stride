@@ -1,10 +1,11 @@
 <map id="geopop::GeoGrid::CheckFinalized" name="geopop::GeoGrid::CheckFinalized">
-<area shape="rect" id="node2" href="$d7/dd4/a00013.html#a54759924264d5047ea81defa57d6eef3" title="Gets the locations in a rectangle determined by the two coordinates (long1, lat1) and (long2..." alt="" coords="284,28,483,70"/>
-<area shape="rect" id="node7" href="$d7/dd4/a00013.html#a819fba3f0ca0af029cc913aaf7729b0b" title="Search for locations in radius (in km) around start. " alt="" coords="284,94,483,135"/>
-<area shape="rect" id="node9" href="$d7/dd4/a00013.html#ae61efee2bf342aa8ac955e8d9e2a6d2e" title="Gets current size of Location storage. " alt="" coords="302,160,465,186"/>
-<area shape="rect" id="node3" href="$d7/dd4/a00013.html#adb9b0f349282a7dca217e604799fb606" title="Get the Population associated with this GeoGrid. " alt="" coords="785,97,1013,124"/>
+<area shape="rect" id="node2" href="$d7/dd4/a00013.html#a54759924264d5047ea81defa57d6eef3" title="Gets the locations in a rectangle determined by the two coordinates (long1, lat1) and (long2..." alt="" coords="284,31,483,72"/>
+<area shape="rect" id="node7" href="$d7/dd4/a00013.html#a819fba3f0ca0af029cc913aaf7729b0b" title="Search for locations in radius (in km) around start. " alt="" coords="284,123,483,164"/>
+<area shape="rect" id="node9" href="$d7/dd4/a00013.html#ae61efee2bf342aa8ac955e8d9e2a6d2e" title="Gets current size of Location storage. " alt="" coords="302,191,465,218"/>
+<area shape="rect" id="node3" href="$d7/dd4/a00013.html#adb9b0f349282a7dca217e604799fb606" title="Get the Population associated with this GeoGrid. " alt="" coords="785,97,1013,123"/>
 <area shape="rect" id="node6" href="$d7/dd4/a00013.html#a1bf11fca7ce661a42d21e40fb00c30aa" title="Gets the location in a rectangle defined by the two Locations. " alt="" coords="535,31,733,72"/>
-<area shape="rect" id="node4" href="$da/da0/a00009.html#af22be8d3066422475ffa15d71289b4b6" title="geopop::Generator::\lApply" alt="" coords="1061,56,1212,98"/>
-<area shape="rect" id="node5" href="$d3/de7/a00039.html#a5ef58e6d2a59a356c3993b7f88900a2b" title="geopop::Populator::\lApply" alt="" coords="1063,122,1210,163"/>
-<area shape="rect" id="node8" href="$d7/dd4/a00013.html#aa5a265994b7e58a089a5f6cccc546e63" title="Find contactpools in startRadius (in km) around start and, if none are found, double the radius and s..." alt="" coords="531,148,737,190"/>
+<area shape="rect" id="node4" href="$da/da0/a00009.html#af22be8d3066422475ffa15d71289b4b6" title="geopop::Generator::\lApply" alt="" coords="1061,56,1212,97"/>
+<area shape="rect" id="node5" href="$dd/d32/a00041.html#a5ef58e6d2a59a356c3993b7f88900a2b" title="geopop::Populator::\lApply" alt="" coords="1063,121,1210,163"/>
+<area shape="rect" id="node8" href="$d7/dd4/a00013.html#aa5a265994b7e58a089a5f6cccc546e63" title="Find contactpools in startRadius (in km) around start and, if none are found, double the radius and s..." alt="" coords="531,148,737,189"/>
+<area shape="rect" id="node10" href="$db/db2/a00020.html#a37c5f82d2b07fc977a794301db1c25d1" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="533,213,735,255"/>
 </map>

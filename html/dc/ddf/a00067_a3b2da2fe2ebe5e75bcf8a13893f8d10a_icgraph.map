@@ -1,4 +1,0 @@
-<map id="stride::ContactPool::GetId" name="stride::ContactPool::GetId">
-<area shape="rect" id="node2" href="$db/db2/a00020.html#a67d19b0ec28b5258056ef8b4d042112c" title="Create a JSON object containing all info needed to reconstruct a ContactPool. " alt="" coords="197,5,395,47"/>
-<area shape="rect" id="node3" href="$d7/de0/a00022.html#a015dcfc0716f0ffe586fe4d927809435" title="Create a ProtoBuf ContactPool containing all the info needed to reconstruct a ContactPool. " alt="" coords="196,71,396,112"/>
-</map>

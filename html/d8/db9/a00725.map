@@ -1,6 +1,0 @@
-<map id="geopop::GeoGridReader" name="geopop::GeoGridReader">
-<area shape="rect" id="node2" href="$d4/d51/a00017.html" title="An abstract base class for creating a GeoGrid that was read from a stream, can be implemented using m..." alt="" coords="5,233,200,369"/>
-<area shape="rect" id="node3" href="$d3/dfe/a00025.html" title="An abstract base class for creating a GeoGrid that was read from a stream, can be implemented using m..." alt="" coords="225,233,447,369"/>
-<area shape="rect" id="node4" href="$dd/da2/a00019.html" title="An implementation of the GeoGridReader using JSON. " alt="" coords="117,417,323,627"/>
-<area shape="rect" id="node5" href="$de/d11/a00021.html" title="An implementation of the GeoGridReader using Protocol Buffers. " alt="" coords="348,425,556,619"/>
-</map>

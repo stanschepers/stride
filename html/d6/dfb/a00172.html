@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: DefaultPopBuilder.cpp File Reference</title>
+<title>Stride Reference Manual: DaysOffAll.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit ca704c9</span>
+   &#160;<span id="projectnumber">- generated for commit 01075df</span>
    </div>
   </td>
  </tr>
@@ -105,71 +105,51 @@ $(document).ready(function(){initNavTree('d6/dfb/a00172.html','../../');});
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">DefaultPopBuilder.cpp File Reference</div>  </div>
+<div class="title">DaysOffAll.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Initialize populations: implementation.  
+<p>DaysOffAll class: everybody gets the day off.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d7/d3f/a00173_source.html">DefaultPopBuilder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../dd/db2/a00151_source.html">contact/ContactLogMode.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d1/db7/a00157_source.html">contact/ContactType.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d9/d01/a00227_source.html">contact/IdSubscriptArray.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d1/dd4/a00267_source.html">pop/Population.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d1/d67/a00310_source.html">pop/SurveySeeder.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../db/dd9/a00179_source.html">util/FileSys.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../dc/dc9/a00282_source.html">util/RnMan.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../da/d50/a00301_source.html">util/StringUtils.h</a>&quot;</code><br />
-<code>#include &lt;boost/property_tree/ptree.hpp&gt;</code><br />
-<code>#include &lt;fstream&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d7/d3f/a00173_source.html">DaysOffInterface.h</a>&quot;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for DefaultPopBuilder.cpp:</div>
+Include dependency graph for DaysOffAll.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../db/d43/a00422.gif" border="0" usemap="#DefaultPopBuilder_8cpp" alt=""/></div>
-<map name="DefaultPopBuilder_8cpp" id="DefaultPopBuilder_8cpp">
-<area shape="rect" id="node2" href="../../d7/d3f/a00173.html" title="Initialize populations. " alt="" coords="207,87,353,114"/>
-<area shape="rect" id="node7" href="../../dd/db2/a00151.html" title="Header for the ContactLogMode class. " alt="" coords="1991,333,2185,360"/>
-<area shape="rect" id="node9" href="../../d1/db7/a00157.html" title="Definition of ContactPool Id Type. " alt="" coords="1023,333,1187,360"/>
-<area shape="rect" id="node14" href="../../d9/d01/a00227.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="695,251,884,278"/>
-<area shape="rect" id="node19" href="../../d1/dd4/a00267.html" title="Header file for the core Population class. " alt="" coords="998,87,1127,114"/>
-<area shape="rect" id="node36" href="../../dc/dc9/a00282.html" title="Interface of RnMan. " alt="" coords="1829,169,1929,196"/>
-<area shape="rect" id="node40" href="../../d1/d67/a00310.html" title="Header file for the SurveySeeder class. " alt="" coords="369,169,519,196"/>
-<area shape="rect" id="node41" href="../../db/dd9/a00179.html" title="Interface for install directory queries. " alt="" coords="1969,169,2069,196"/>
-<area shape="rect" id="node43" href="../../da/d50/a00301.html" title="Miscellaneous string utilities. " alt="" coords="2260,333,2383,360"/>
-<area shape="rect" id="node3" href="../../d6/db3/a00130.html" title="Base Class for PopBuilders. " alt="" coords="88,169,243,196"/>
-<area shape="rect" id="node20" href="../../da/d01/a00153.html" title="Header for the core ContactPool class. " alt="" coords="1359,251,1521,278"/>
-<area shape="rect" id="node23" href="../../d3/df8/a00155.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="748,169,935,196"/>
-<area shape="rect" id="node24" href="../../d6/d7f/a00287.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="498,251,670,278"/>
-<area shape="rect" id="node29" href="../../de/df3/a00185.html" title="geopop/GeoGrid.h" alt="" coords="1545,251,1684,278"/>
-<area shape="rect" id="node33" href="../../dc/d6a/a00261.html" title="Header file for the Person class. " alt="" coords="1009,169,1116,196"/>
-<area shape="rect" id="node25" href="../../d1/d5d/a00311.html" title="Interface/Implementation for SVIterator. " alt="" coords="88,333,187,360"/>
-<area shape="rect" id="node30" href="../../de/db1/a00197.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="1559,333,1767,360"/>
-<area shape="rect" id="node34" href="../../d3/dd5/a00215.html" title="Header for the Health class. " alt="" coords="1154,251,1283,278"/>
-<area shape="rect" id="node37" href="../../d0/dcd/a00280.html" title="Interface of RnPcg. " alt="" coords="1842,333,1915,360"/>
+<div class="center"><img src="../../d4/d53/a00429.gif" border="0" usemap="#DaysOffAll_8h" alt=""/></div>
+<map name="DaysOffAll_8h" id="DaysOffAll_8h">
+<area shape="rect" id="node2" href="../../d7/d3f/a00173.html" title="Interface for DaysOff classes. " alt="" coords="5,80,145,107"/>
 </map>
 </div>
 </div>
 <p><a href="../../d6/dfb/a00172_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/a00077.html">stride::DaysOffAll</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">No days off work or school.  <a href="../../d1/d09/a00077.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:d2/d45/a00342"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/a00342.html">stride</a></td></tr>
-<tr class="memdesc:d2/d45/a00342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
+<tr class="memitem:d3/dc9/a00355"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dc9/a00355.html">stride</a></td></tr>
+<tr class="memdesc:d3/dc9/a00355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Initialize populations: implementation. </p>
+<div class="textblock"><p>DaysOffAll class: everybody gets the day off. </p>
 
-<p>Definition in file <a class="el" href="../../d6/dfb/a00172_source.html">DefaultPopBuilder.cpp</a>.</p>
+<p>Definition in file <a class="el" href="../../d6/dfb/a00172_source.html">DaysOffAll.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_d174127a4330655b353181aebfd9b441.html">pop</a></li><li class="navelem"><a class="el" href="../../d6/dfb/a00172.html">DefaultPopBuilder.cpp</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 09:18:53 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_479f5232607056a987532404314b00ea.html">calendar</a></li><li class="navelem"><a class="el" href="../../d6/dfb/a00172.html">DaysOffAll.h</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 10:47:37 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

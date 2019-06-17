@@ -1,6 +1,4 @@
-<map id="stride::DaysOffInterface" name="stride::DaysOffInterface">
-<area shape="rect" id="node2" href="$d6/d2c/a00072.html" title="No days off work or school. " alt="" coords="5,160,136,267"/>
-<area shape="rect" id="node3" href="$db/db6/a00074.html" title="No days off work or school. " alt="" coords="161,160,311,267"/>
-<area shape="rect" id="node4" href="$d9/da5/a00075.html" title="Schools closed. " alt="" coords="335,160,494,267"/>
-<area shape="rect" id="node5" href="$db/df8/a00076.html" title="Standard situation for days off from work and school. " alt="" coords="518,160,693,267"/>
+<map id="proto::GeoGrid_Location_Commute" name="proto::GeoGrid_Location_Commute">
+<area shape="rect" id="node2" href="$d6/d2d/a00047.html" title="{Message\n||}" alt="" coords="5,5,84,83"/>
+<area shape="rect" id="node4" href="$d8/d21/a00368.html" title="{double\n||}" alt="" coords="331,5,396,83"/>
 </map>

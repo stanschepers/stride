@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['young',['Young',['../d1/d6f/a00063.html',1,'stride::AgeBrackets']]]
+  ['young',['Young',['../da/d24/a00068.html',1,'stride::AgeBrackets']]]
 ];

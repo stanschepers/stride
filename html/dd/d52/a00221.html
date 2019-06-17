@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: HouseholdJSONReader.cpp File Reference</title>
+<title>Stride Reference Manual: GeoGridWriterFactory.cpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit ca704c9</span>
+   &#160;<span id="projectnumber">- generated for commit 01075df</span>
    </div>
   </td>
  </tr>
@@ -107,22 +107,37 @@ $(document).ready(function(){initNavTree('dd/d52/a00221.html','../../');});
   <div class="summary">
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">HouseholdJSONReader.cpp File Reference</div>  </div>
+<div class="title">GeoGridWriterFactory.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d0/d24/a00222_source.html">HouseholdJSONReader.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d5/deb/a00132_source.html">contact/AgeBrackets.h</a>&quot;</code><br />
-<code>#include &lt;boost/lexical_cast.hpp&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d0/d24/a00222_source.html">GeoGridWriterFactory.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/df1/a00206_source.html">GeoGridJSONWriter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/d53/a00202_source.html">GeoGridHDF5Writer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/dc1/a00212_source.html">GeoGridProtoWriter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/d0b/a00220_source.html">GeoGridWriter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/d25/a00182_source.html">util/Exception.h</a>&quot;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;filesystem&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for HouseholdJSONReader.cpp:</div>
+Include dependency graph for GeoGridWriterFactory.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d4/d1e/a00497.gif" border="0" usemap="#HouseholdJSONReader_8cpp" alt=""/></div>
-<map name="HouseholdJSONReader_8cpp" id="HouseholdJSONReader_8cpp">
-<area shape="rect" id="node2" href="../../d0/d24/a00222.html" title="HouseholdJSONReader.h" alt="" coords="191,80,368,107"/>
-<area shape="rect" id="node18" href="../../d5/deb/a00132.html" title="contact/AgeBrackets.h" alt="" coords="392,80,559,107"/>
-<area shape="rect" id="node3" href="../../d5/ddf/a00224.html" title="HouseholdReader.h" alt="" coords="207,155,352,181"/>
-<area shape="rect" id="node4" href="../../d6/d7f/a00287.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="253,229,425,256"/>
-<area shape="rect" id="node5" href="../../d1/d5d/a00311.html" title="Interface/Implementation for SVIterator. " alt="" coords="143,304,242,331"/>
+<div class="center"><img src="../../d7/d37/a00505.gif" border="0" usemap="#GeoGridWriterFactory_8cpp" alt=""/></div>
+<map name="GeoGridWriterFactory_8cpp" id="GeoGridWriterFactory_8cpp">
+<area shape="rect" id="node2" href="../../d0/d24/a00222.html" title="GeoGridWriterFactory.h" alt="" coords="1867,229,2034,256"/>
+<area shape="rect" id="node5" href="../../d5/df1/a00206.html" title="GeoGridJSONWriter.h" alt="" coords="326,80,479,107"/>
+<area shape="rect" id="node8" href="../../d5/d0b/a00220.html" title="GeoGridWriter.h" alt="" coords="25,229,146,256"/>
+<area shape="rect" id="node35" href="../../db/d53/a00202.html" title="GeoGridHDF5Writer.h" alt="" coords="818,80,974,107"/>
+<area shape="rect" id="node37" href="../../d7/d25/a00182.html" title="util/Exception.h" alt="" coords="2001,155,2119,181"/>
+<area shape="rect" id="node39" href="../../dd/dc1/a00212.html" title="GeoGridProtoWriter.h" alt="" coords="572,80,727,107"/>
+<area shape="rect" id="node6" href="../../dd/df3/a00219.html" title="GeoGridStreamWriter.h" alt="" coords="195,155,365,181"/>
+<area shape="rect" id="node9" href="../../d9/d8d/a00262.html" title="geopop/Location.h" alt="" coords="759,155,899,181"/>
+<area shape="rect" id="node10" href="../../db/d44/a00162.html" title="Definition of ContactPool Id Type. " alt="" coords="1473,311,1637,338"/>
+<area shape="rect" id="node15" href="../../da/d2e/a00238.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="1653,229,1843,256"/>
+<area shape="rect" id="node20" href="../../d0/d48/a00165.html" title="geopop/Coordinate.h" alt="" coords="1094,229,1250,256"/>
+<area shape="rect" id="node23" href="../../d9/d0d/a00298.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="795,229,967,256"/>
+<area shape="rect" id="node24" href="../../de/de9/a00322.html" title="Interface/Implementation for SVIterator. " alt="" coords="532,311,631,338"/>
+<area shape="rect" id="node36" href="../../d7/ded/a00196.html" title="GeoGridFileWriter.h" alt="" coords="541,155,683,181"/>
 </map>
 </div>
 </div>
@@ -130,8 +145,8 @@ Include dependency graph for HouseholdJSONReader.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:d8/df7/a00331"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/df7/a00331.html">geopop</a></td></tr>
-<tr class="memdesc:d8/df7/a00331"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
+<tr class="memitem:d2/d45/a00342"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/a00342.html">geopop</a></td></tr>
+<tr class="memdesc:d2/d45/a00342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
@@ -139,8 +154,8 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_c490ff723361adf09283ce460b26e466.html">io</a></li><li class="navelem"><a class="el" href="../../dd/d52/a00221.html">HouseholdJSONReader.cpp</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 09:18:53 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_c490ff723361adf09283ce460b26e466.html">io</a></li><li class="navelem"><a class="el" href="../../dd/d52/a00221.html">GeoGridWriterFactory.cpp</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 10:47:37 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

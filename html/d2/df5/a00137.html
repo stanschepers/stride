@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: BoxPlotData.h File Reference</title>
+<title>Stride Reference Manual: AgeBrackets.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit ca704c9</span>
+   &#160;<span id="projectnumber">- generated for commit 01075df</span>
    </div>
   </td>
  </tr>
@@ -108,30 +108,22 @@ $(document).ready(function(){initNavTree('d2/df5/a00137.html','../../');});
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">BoxPlotData.h File Reference</div>  </div>
+<div class="title">AgeBrackets.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Header file for BoxPlotData.  
-<a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
-<code>#include &lt;cassert&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;numeric&gt;</code><br />
-<code>#include &lt;vector&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for BoxPlotData.h:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d3/d30/a00370.gif" border="0" usemap="#BoxPlotData_8h" alt=""/></div>
-<map name="BoxPlotData_8h" id="BoxPlotData_8h">
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
+<div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d6/d80/a00371.gif" border="0" usemap="#BoxPlotData_8hdep" alt=""/></div>
-<map name="BoxPlotData_8hdep" id="BoxPlotData_8hdep">
-<area shape="rect" id="node2" href="../../d3/d4a/a00297.html" title="Header for the command line controller. " alt="" coords="5,80,145,107"/>
+<div class="center"><img src="../../dd/dcb/a00375.gif" border="0" usemap="#AgeBrackets_8hdep" alt=""/></div>
+<map name="AgeBrackets_8hdep" id="AgeBrackets_8hdep">
+<area shape="rect" id="node2" href="../../dd/da2/a00192.html" title="GeoGridConfig.cpp" alt="" coords="5,80,147,107"/>
+<area shape="rect" id="node3" href="../../dd/d2d/a00229.html" title="HouseholdCSVReader.cpp" alt="" coords="171,80,357,107"/>
+<area shape="rect" id="node4" href="../../d0/d53/a00232.html" title="HouseholdJSONReader.cpp" alt="" coords="381,80,573,107"/>
+<area shape="rect" id="node5" href="../../db/d48/a00148.html" title="CollegePopulator.cpp" alt="" coords="598,80,754,107"/>
+<area shape="rect" id="node6" href="../../d1/d0d/a00171.html" title="DaycarePopulator.cpp" alt="" coords="779,80,941,107"/>
+<area shape="rect" id="node7" href="../../d4/d04/a00255.html" title="K12SchoolPopulator.cpp" alt="" coords="965,80,1141,107"/>
+<area shape="rect" id="node8" href="../../d2/d04/a00281.html" title="PreSchoolPopulator.cpp" alt="" coords="1165,80,1339,107"/>
+<area shape="rect" id="node9" href="../../dc/d50/a00332.html" title="WorkplacePopulator.cpp" alt="" coords="1363,80,1536,107"/>
 </map>
 </div>
 </div>
@@ -139,30 +131,44 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3a/a00101.html">stride::util::BoxPlotData&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d4/d3a/a00101.html" title="BoxPlotData calculates total, minimum, maximum, median, lower and upper quartile of the values in the...">BoxPlotData</a> calculates total, minimum, maximum, median, lower and upper quartile of the values in the vector.  <a href="../../d4/d3a/a00101.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6f/a00063.html">stride::AgeBrackets::Daycare</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">DayCare with lower (inclusive) and upper (exclusive) age bracket..  <a href="../../d1/d6f/a00063.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db3/a00066.html">stride::AgeBrackets::PreSchool</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preschool with lower (inclusive) and upper (exclusive) age bracket.  <a href="../../d9/db3/a00066.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5f/a00064.html">stride::AgeBrackets::K12School</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">K12school with lower (inclusive) and upper (exclusive) age bracket.  <a href="../../df/d5f/a00064.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00062.html">stride::AgeBrackets::College</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../df/d03/a00062.html" title="College with lower (inclusive) and upper (exclusive) age bracket. ">College</a> with lower (inclusive) and upper (exclusive) age bracket.  <a href="../../df/d03/a00062.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/ddf/a00067.html">stride::AgeBrackets::Workplace</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../df/d03/a00062.html" title="College with lower (inclusive) and upper (exclusive) age bracket. ">College</a> with lower (inclusive) and upper (exclusive) age bracket.  <a href="../../dc/ddf/a00067.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d24/a00068.html">stride::AgeBrackets::Young</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../da/d24/a00068.html" title="Young with lower (inclusive) and upper (exclusive) age bracket. ">Young</a> with lower (inclusive) and upper (exclusive) age bracket.  <a href="../../da/d24/a00068.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/de1/a00065.html">stride::AgeBrackets::Old</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../de/de1/a00065.html" title="Old with lower (inclusive) and upper (exclusive) age bracket. ">Old</a> with lower (inclusive) and upper (exclusive) age bracket.  <a href="../../de/de1/a00065.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:d2/d45/a00342"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/a00342.html">stride</a></td></tr>
-<tr class="memdesc:d2/d45/a00342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
+<tr class="memitem:d3/dc9/a00355"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dc9/a00355.html">stride</a></td></tr>
+<tr class="memdesc:d3/dc9/a00355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d7/dfc/a00349"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dfc/a00349.html">stride::util</a></td></tr>
-<tr class="memdesc:d7/dfc/a00349"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utilities for the project. <br /></td></tr>
+<tr class="memitem:d6/de1/a00356"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/de1/a00356.html">stride::AgeBrackets</a></td></tr>
+<tr class="memdesc:d6/de1/a00356"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d6/de1/a00356.html" title="AgeBrackets that determine participation in type of ContactPool. ">AgeBrackets</a> that determine participation in type of <a class="el" href="../../d6/d2c/a00072.html" title="A group of Persons that potentially have contacts with one another. ">ContactPool</a>. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Header file for BoxPlotData. </p>
-
-<p>Definition in file <a class="el" href="../../d2/df5/a00137_source.html">BoxPlotData.h</a>.</p>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_cf56009b1fcb470adac12e74ab7406a1.html">util</a></li><li class="navelem"><a class="el" href="../../d2/df5/a00137.html">BoxPlotData.h</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 09:18:53 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_d006795525347f4aaca311cb4e45f0bc.html">contact</a></li><li class="navelem"><a class="el" href="../../d2/df5/a00137.html">AgeBrackets.h</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 10:47:37 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

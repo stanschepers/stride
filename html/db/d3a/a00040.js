@@ -1,9 +1,9 @@
 var a00040 =
 [
-    [ "Args", "db/d3a/a00040.html#accda57e4be842861b37817e9372067fb", null ],
-    [ "RadiusPolicy", "db/d3a/a00040.html#aa869fa4c0225f7d6a14d35702edae08f", null ],
-    [ "GetBoundingBox", "db/d3a/a00040.html#ae11ddb7976888e32a96f5567d7ee0c9e", null ],
-    [ "Contains", "db/d3a/a00040.html#abba48a42260870f97e6d307e234254e6", null ],
-    [ "m_center", "db/d3a/a00040.html#a6812dfb6d144028b7224a5422c762f49", null ],
-    [ "m_radius", "db/d3a/a00040.html#a821d856a8ec37727229092ae9227cc90", null ]
+    [ "popcount_daycare", "db/d3a/a00040.html#adbb87cbde5cee5ef68b6bf1fb7a4a712", null ],
+    [ "popcount_preschool", "db/d3a/a00040.html#a6b3b6238336293faa050715aca04806a", null ],
+    [ "popcount_k12school", "db/d3a/a00040.html#a6b6db87f6ccaa00a624242cadd695eb9", null ],
+    [ "popcount_college", "db/d3a/a00040.html#ab7663bf22dbfe6d56f5e07af064d6498", null ],
+    [ "popcount_workplace", "db/d3a/a00040.html#ae5d13fc961c7c5c701465ec97bcef05d", null ],
+    [ "count_households", "db/d3a/a00040.html#adc88b873dc378a2d31e317018f12f2c8", null ]
 ];

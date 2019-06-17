@@ -1,4 +1,0 @@
-<map id="geopop::HouseholdReader" name="geopop::HouseholdReader">
-<area shape="rect" id="node2" href="$d5/d16/a00029.html" title="Creates a Reader that retrieves the different Household profiles from a given CSV file..." alt="" coords="5,167,223,259"/>
-<area shape="rect" id="node3" href="$d5/d79/a00030.html" title="Creates a Reader that retrieves the different Household profiles from a given JSON file..." alt="" coords="247,160,469,267"/>
-</map>

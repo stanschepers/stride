@@ -1,9 +1,4 @@
-<map id="Infector.h" name="Infector.h">
-<area shape="rect" id="node2" href="$dd/db2/a00151.html" title="Header for the ContactLogMode class. " alt="" coords="22,80,165,107"/>
-<area shape="rect" id="node4" href="$da/de0/a00317.html" title="Header for the TransmissionProfile class. " alt="" coords="983,80,1137,107"/>
-<area shape="rect" id="node6" href="$de/d14/a00139.html" title="Header file for the Calendar class. " alt="" coords="740,80,889,107"/>
-<area shape="rect" id="node13" href="$de/d76/a00134.html" title="Contact profile. " alt="" coords="247,80,447,107"/>
-<area shape="rect" id="node20" href="$da/d1e/a00149.html" title="Header for the ContactHandler class. " alt="" coords="1162,80,1347,107"/>
-<area shape="rect" id="node14" href="$d1/db7/a00157.html" title="Definition of ContactPool Id Type. " alt="" coords="72,162,184,189"/>
-<area shape="rect" id="node18" href="$d7/d06/a00131.html" title="Helpers for age. " alt="" coords="209,162,295,189"/>
+<map id="HouseholdReader.h" name="HouseholdReader.h">
+<area shape="rect" id="node2" href="$d9/d0d/a00298.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="341,80,513,107"/>
+<area shape="rect" id="node3" href="$de/de9/a00322.html" title="Interface/Implementation for SVIterator. " alt="" coords="479,155,577,181"/>
 </map>

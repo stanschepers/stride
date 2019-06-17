@@ -1,0 +1,29 @@
+<map id="geopop::GeoGridHDF5Writer::Write" name="geopop::GeoGridHDF5Writer::Write">
+<area shape="rect" id="node2" href="$d7/dd4/a00013.html#ae61efee2bf342aa8ac955e8d9e2a6d2e" title="Gets current size of Location storage. " alt="" coords="274,9,437,36"/>
+<area shape="rect" id="node4" href="$df/d03/a00348.html#abf460078744fdb2a5679c70dd7073055" title="H5Utils::WriteAttribute" alt="" coords="815,165,977,192"/>
+<area shape="rect" id="node7" href="$db/db2/a00020.html#a3b4bd0fd7e724b111319db479626aaab" title="geopop::GeoGridHDF5Writer\l::WriteLocation" alt="" coords="255,399,456,441"/>
+<area shape="rect" id="node27" href="$db/db2/a00020.html#a42fe8af0e0a6071fda128824e437de4a" title="geopop::GeoGridHDF5Writer\l::WritePeople" alt="" coords="520,57,721,98"/>
+<area shape="rect" id="node3" href="$d7/dd4/a00013.html#a5be9ae73035d8a654299f91efe16934d" title="&lt; Checks whether the GeoGrid is finalized i.e. certain operations can(not) be used. " alt="" coords="505,5,736,32"/>
+<area shape="rect" id="node5" href="$df/d03/a00348.html#a9129e552cdda5f75bb4d0038058e918a" title="H5Utils::HDF5Type" alt="" coords="1065,165,1203,192"/>
+<area shape="rect" id="node6" href="$df/d03/a00348.html#aaff3c46ac4cda2de0cf124ac1f1e6e96" title="H5Utils::CreateSpace" alt="" coords="1055,216,1213,243"/>
+<area shape="rect" id="node8" href="$de/d8c/a00036.html#aff45be35ed8e0f7e3c0951ee70057f63" title="Gets ID of this Location. " alt="" coords="533,457,709,484"/>
+<area shape="rect" id="node11" href="$de/d8c/a00036.html#a03bce2c9b91adf113d2f1f9611ae73da" title="Gets the name. " alt="" coords="519,588,722,615"/>
+<area shape="rect" id="node13" href="$de/d8c/a00036.html#a3921cf045293c04cddcd32920121b870" title="Gets the province. " alt="" coords="512,639,729,665"/>
+<area shape="rect" id="node15" href="$de/d8c/a00036.html#a7fde850960f5c783ed650ea2de16a24f" title="Gets the absolute population. " alt="" coords="527,690,714,731"/>
+<area shape="rect" id="node16" href="$de/d8c/a00036.html#a01914e7628a0b84613e155fcaa7155dd" title="Gets the Coordinate of this Location. " alt="" coords="504,224,737,251"/>
+<area shape="rect" id="node17" href="$de/d8c/a00036.html#a470e42db21a7417ce4ecf8167eb1bb05" title="References outgoing commute Locations + fraction of commutes to that Location. " alt="" coords="507,275,734,317"/>
+<area shape="rect" id="node18" href="$db/db2/a00020.html#a816d3ea4faa22eb8cfacccd1fc850c24" title="geopop::GeoGridHDF5Writer\l::WriteCommutes" alt="" coords="520,341,721,382"/>
+<area shape="rect" id="node20" href="$de/d8c/a00036.html#af5d17516db20d693a8c8f3395e869659" title="Access through reference to ContactPools of type &#39;id&#39;. " alt="" coords="524,407,717,433"/>
+<area shape="rect" id="node21" href="$db/db2/a00020.html#a599467553181db5ec29bfcdaa7645c7a" title="geopop::GeoGridHDF5Writer\l::WriteContactPool" alt="" coords="520,522,721,563"/>
+<area shape="rect" id="node9" href="$de/d8c/a00036.html#ad4f791dc4b7209db83b7c30079b903ff" title="Calculates number of incomming commuters, given the fraction of the population that commutes..." alt="" coords="785,333,1007,374"/>
+<area shape="rect" id="node10" href="$de/d8c/a00036.html#a05ebaf47b892c8dca868ab48bc262e23" title="Gets the number of people infected in the contactpools at this location. " alt="" coords="789,398,1003,439"/>
+<area shape="rect" id="node12" href="$de/d8c/a00036.html#a0a5e86820deb8f0aa8e409e870be96fa" title="Calculates number of outgoing commuters, given the fraction of the population that commutes..." alt="" coords="785,777,1007,818"/>
+<area shape="rect" id="node14" href="$de/d8c/a00036.html#a4117d7579640419c0985113b170e493f" title="Get Location&#39;s population fraction (of the total populaion count). " alt="" coords="803,842,989,883"/>
+<area shape="rect" id="node19" href="$df/d03/a00348.html#a81d86b3c29a5e0ca5712f7dab6ab31c8" title="H5Utils::GetCompoundType\l\&lt; H5Commute \&gt;" alt="" coords="797,267,995,309"/>
+<area shape="rect" id="node22" href="$df/d03/a00348.html#a3dd16e9ed848fe257fe5b65bc0418cd1" title="H5Utils::GetCompoundType\l\&lt; H5PoolPerson \&gt;" alt="" coords="797,463,995,505"/>
+<area shape="rect" id="node23" href="$d6/d2c/a00072.html#a2c357e530f204c4ba1e686f4903f40ad" title="Gets current size of Location storage. " alt="" coords="825,529,967,570"/>
+<area shape="rect" id="node24" href="$d6/d2c/a00072.html#a3b2da2fe2ebe5e75bcf8a13893f8d10a" title="Get the pool id. " alt="" coords="825,711,967,753"/>
+<area shape="rect" id="node26" href="$df/df1/a00357.html#a025f9ff3cf2df8c0c8b95e48724d9b7c" title="Converts a LogMode value to corresponding name. " alt="" coords="809,646,983,687"/>
+<area shape="rect" id="node25" href="$d6/d2c/a00072.html#acd38806272aa6ee77aae82edaf1224ba" title="Get Infected count. " alt="" coords="1063,711,1205,753"/>
+<area shape="rect" id="node28" href="$df/d03/a00348.html#acac829dc3fb928cc284ca97a2d1d9e05" title="H5Utils::GetCompoundType\l\&lt; H5Person \&gt;" alt="" coords="797,49,995,90"/>
+</map>

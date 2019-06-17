@@ -1,10 +1,5 @@
-<map id="GeoGridProtoWriter.h" name="GeoGridProtoWriter.h">
-<area shape="rect" id="node2" href="$dc/d31/a00208.html" title="GeoGridStreamWriter.h" alt="" coords="57,80,227,107"/>
-<area shape="rect" id="node6" href="$d3/d1a/a00251.html" title="geopop/Location.h" alt="" coords="1333,80,1473,107"/>
-<area shape="rect" id="node5" href="$d3/de5/a00209.html" title="GeoGridWriter.h" alt="" coords="32,155,153,181"/>
-<area shape="rect" id="node7" href="$d1/db7/a00157.html" title="Definition of ContactPool Id Type. " alt="" coords="1049,237,1213,263"/>
-<area shape="rect" id="node13" href="$d9/d01/a00227.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="1037,155,1226,181"/>
-<area shape="rect" id="node18" href="$de/d38/a00160.html" title="geopop/Coordinate.h" alt="" coords="533,155,689,181"/>
-<area shape="rect" id="node21" href="$d6/d7f/a00287.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="1405,155,1577,181"/>
-<area shape="rect" id="node22" href="$d1/d5d/a00311.html" title="Interface/Implementation for SVIterator. " alt="" coords="1579,237,1678,263"/>
+<map id="GeoGridFileWriter.h" name="GeoGridFileWriter.h">
+<area shape="rect" id="node2" href="$db/d53/a00202.html" title="GeoGridHDF5Writer.h" alt="" coords="113,80,269,107"/>
+<area shape="rect" id="node3" href="$dd/de3/a00201.html" title="GeoGridHDF5Writer.cpp" alt="" coords="5,155,176,181"/>
+<area shape="rect" id="node4" href="$dd/d52/a00221.html" title="GeoGridWriterFactory.cpp" alt="" coords="200,155,381,181"/>
 </map>

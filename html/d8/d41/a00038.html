@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: geopop::PopulationInfo Struct Reference</title>
+<title>Stride Reference Manual: geopop::LocationsReader Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit ca704c9</span>
+   &#160;<span id="projectnumber">- generated for commit 01075df</span>
    </div>
   </td>
  </tr>
@@ -107,165 +107,219 @@ $(document).ready(function(){initNavTree('d8/d41/a00038.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="../../df/d5f/a00762.html">List of all members</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="../../d0/d7d/a00786.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">geopop::PopulationInfo Struct Reference</div>  </div>
+<div class="title">geopop::LocationsReader Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="../../da/d15/a00188_source.html">GeoGridConfig.h</a>&gt;</code></p>
+<p>Create an abstract Reader which fills a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> with the cities found in file.  
+ <a href="../../d8/d41/a00038.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../da/d53/a00265_source.html">LocationsReader.h</a>&gt;</code></p>
 <div class="dynheader">
-Collaboration diagram for geopop::PopulationInfo:</div>
+Inheritance diagram for geopop::LocationsReader:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d3/de3/a00763.gif" border="0" usemap="#geopop_1_1PopulationInfo_coll__map" alt="Collaboration graph"/></div>
-<map name="geopop_1_1PopulationInfo_coll__map" id="geopop_1_1PopulationInfo_coll__map">
+<div class="center"><img src="../../d8/d7f/a00787.gif" border="0" usemap="#geopop_1_1LocationsReader_inherit__map" alt="Inheritance graph"/></div>
+<map name="geopop_1_1LocationsReader_inherit__map" id="geopop_1_1LocationsReader_inherit__map">
+<area shape="rect" id="node2" href="../../d1/dc6/a00037.html" title="Create a Reader that fills a GeoGrid with the Location data found in a CSV input stream. " alt="" coords="5,160,216,252"/>
+</map>
+</div>
+<div class="dynheader">
+Collaboration diagram for geopop::LocationsReader:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d0c/a00788.gif" border="0" usemap="#geopop_1_1LocationsReader_coll__map" alt="Collaboration graph"/></div>
+<map name="geopop_1_1LocationsReader_coll__map" id="geopop_1_1LocationsReader_coll__map">
+<area shape="rect" id="node3" title="STL class. " alt="" coords="40,413,139,491"/>
+<area shape="rect" id="node4" title="STL class. " alt="" coords="20,259,159,351"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="5,132,173,209"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="36,5,143,83"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="163,413,317,491"/>
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:adbb87cbde5cee5ef68b6bf1fb7a4a712"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/a00038.html#adbb87cbde5cee5ef68b6bf1fb7a4a712">popcount_daycare</a></td></tr>
-<tr class="memdesc:adbb87cbde5cee5ef68b6bf1fb7a4a712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of individuals in Daycare.  <a href="#adbb87cbde5cee5ef68b6bf1fb7a4a712">More...</a><br /></td></tr>
-<tr class="separator:adbb87cbde5cee5ef68b6bf1fb7a4a712"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b3b6238336293faa050715aca04806a"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/a00038.html#a6b3b6238336293faa050715aca04806a">popcount_preschool</a></td></tr>
-<tr class="memdesc:a6b3b6238336293faa050715aca04806a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of individuals in PreSchool.  <a href="#a6b3b6238336293faa050715aca04806a">More...</a><br /></td></tr>
-<tr class="separator:a6b3b6238336293faa050715aca04806a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b6db87f6ccaa00a624242cadd695eb9"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/a00038.html#a6b6db87f6ccaa00a624242cadd695eb9">popcount_k12school</a></td></tr>
-<tr class="memdesc:a6b6db87f6ccaa00a624242cadd695eb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of individuals in K12School.  <a href="#a6b6db87f6ccaa00a624242cadd695eb9">More...</a><br /></td></tr>
-<tr class="separator:a6b6db87f6ccaa00a624242cadd695eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7663bf22dbfe6d56f5e07af064d6498"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/a00038.html#ab7663bf22dbfe6d56f5e07af064d6498">popcount_college</a></td></tr>
-<tr class="memdesc:ab7663bf22dbfe6d56f5e07af064d6498"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of individuals in College.  <a href="#ab7663bf22dbfe6d56f5e07af064d6498">More...</a><br /></td></tr>
-<tr class="separator:ab7663bf22dbfe6d56f5e07af064d6498"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5d13fc961c7c5c701465ec97bcef05d"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/a00038.html#ae5d13fc961c7c5c701465ec97bcef05d">popcount_workplace</a></td></tr>
-<tr class="memdesc:ae5d13fc961c7c5c701465ec97bcef05d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of individuals in Workplace.  <a href="#ae5d13fc961c7c5c701465ec97bcef05d">More...</a><br /></td></tr>
-<tr class="separator:ae5d13fc961c7c5c701465ec97bcef05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc88b873dc378a2d31e317018f12f2c8"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/a00038.html#adc88b873dc378a2d31e317018f12f2c8">count_households</a></td></tr>
-<tr class="memdesc:adc88b873dc378a2d31e317018f12f2c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of households.  <a href="#adc88b873dc378a2d31e317018f12f2c8">More...</a><br /></td></tr>
-<tr class="separator:adc88b873dc378a2d31e317018f12f2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a08a0a0bee6983e75de99b46132e26eaa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/a00038.html#a08a0a0bee6983e75de99b46132e26eaa">LocationsReader</a> (std::unique_ptr&lt; std::istream &gt; inputStream)</td></tr>
+<tr class="memdesc:a08a0a0bee6983e75de99b46132e26eaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the CitiesReader with an istream containing the file content.  <a href="#a08a0a0bee6983e75de99b46132e26eaa">More...</a><br /></td></tr>
+<tr class="separator:a08a0a0bee6983e75de99b46132e26eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf7cb185f3d39194f4065707da23e0d6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/a00038.html#adf7cb185f3d39194f4065707da23e0d6">~LocationsReader</a> ()=default</td></tr>
+<tr class="memdesc:adf7cb185f3d39194f4065707da23e0d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#adf7cb185f3d39194f4065707da23e0d6">More...</a><br /></td></tr>
+<tr class="separator:adf7cb185f3d39194f4065707da23e0d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad94de2ea05242ef43ac6ea9723fbc591"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/a00038.html#ad94de2ea05242ef43ac6ea9723fbc591">FillGeoGrid</a> (<a class="el" href="../../d7/dd4/a00013.html">GeoGrid</a> &amp;) const =0</td></tr>
+<tr class="memdesc:ad94de2ea05242ef43ac6ea9723fbc591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the locations to the <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a>.  <a href="#ad94de2ea05242ef43ac6ea9723fbc591">More...</a><br /></td></tr>
+<tr class="separator:ad94de2ea05242ef43ac6ea9723fbc591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ad1bd8f33fd74070b9b606734e6c8d2de"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; std::istream &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/a00038.html#ad1bd8f33fd74070b9b606734e6c8d2de">m_inputStream</a></td></tr>
+<tr class="memdesc:ad1bd8f33fd74070b9b606734e6c8d2de"><td class="mdescLeft">&#160;</td><td class="mdescRight">The istream with the file content.  <a href="#ad1bd8f33fd74070b9b606734e6c8d2de">More...</a><br /></td></tr>
+<tr class="separator:ad1bd8f33fd74070b9b606734e6c8d2de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="../../da/d15/a00188_source.html#l00054">54</a> of file <a class="el" href="../../da/d15/a00188_source.html">GeoGridConfig.h</a>.</p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="adbb87cbde5cee5ef68b6bf1fb7a4a712"></a>
+<div class="textblock"><p>Create an abstract Reader which fills a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> with the cities found in file. </p>
+<p>This can be implemented using different input types. Currently CSV is implemented. </p>
+
+<p>Definition at line <a class="el" href="../../da/d53/a00265_source.html#l00031">31</a> of file <a class="el" href="../../da/d53/a00265_source.html">LocationsReader.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a08a0a0bee6983e75de99b46132e26eaa"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int geopop::PopulationInfo::popcount_daycare</td>
+          <td class="memname">geopop::LocationsReader::LocationsReader </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; std::istream &gt;&#160;</td>
+          <td class="paramname"><em>inputStream</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Number of individuals in Daycare. </p>
+<p>Construct the CitiesReader with an istream containing the file content. </p>
 
-<p>Definition at line <a class="el" href="../../da/d15/a00188_source.html#l00057">57</a> of file <a class="el" href="../../da/d15/a00188_source.html">GeoGridConfig.h</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d53/a00265_source.html#l00035">35</a> of file <a class="el" href="../../da/d53/a00265_source.html">LocationsReader.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d0/d48/a00165_source.html#l00025">geopop::Generator&lt; ID &gt;::Apply()</a>, <a class="el" href="../../d6/daa/a00187_source.html#l00232">geopop::operator&lt;&lt;()</a>, and <a class="el" href="../../d6/daa/a00187_source.html#l00063">geopop::GeoGridConfig::SetData()</a>.</p>
+<p>References <a class="el" href="../../d8/d41/a00038.html#ad94de2ea05242ef43ac6ea9723fbc591">FillGeoGrid()</a>, and <a class="el" href="../../d8/d41/a00038.html#adf7cb185f3d39194f4065707da23e0d6">~LocationsReader()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d41/a00038_a08a0a0bee6983e75de99b46132e26eaa_cgraph.gif" border="0" usemap="#d8/d41/a00038_a08a0a0bee6983e75de99b46132e26eaa_cgraph" alt=""/></div>
+<map name="d8/d41/a00038_a08a0a0bee6983e75de99b46132e26eaa_cgraph" id="d8/d41/a00038_a08a0a0bee6983e75de99b46132e26eaa_cgraph">
+<area shape="rect" id="node2" href="../../d8/d41/a00038.html#ad94de2ea05242ef43ac6ea9723fbc591" title="Add the locations to the GeoGrid. " alt="" coords="236,5,419,47"/>
+<area shape="rect" id="node3" href="../../d8/d41/a00038.html#adf7cb185f3d39194f4065707da23e0d6" title="Default destructor. " alt="" coords="236,71,419,112"/>
+</map>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="a6b3b6238336293faa050715aca04806a"></a>
+<a class="anchor" id="adf7cb185f3d39194f4065707da23e0d6"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int geopop::PopulationInfo::popcount_preschool</td>
+          <td class="memname">virtual geopop::LocationsReader::~LocationsReader </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Number of individuals in PreSchool. </p>
+<p>Default destructor. </p>
 
-<p>Definition at line <a class="el" href="../../da/d15/a00188_source.html#l00060">60</a> of file <a class="el" href="../../da/d15/a00188_source.html">GeoGridConfig.h</a>.</p>
+<p>Referenced by <a class="el" href="../../da/d53/a00265_source.html#l00035">LocationsReader()</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d5/d42/a00269_source.html#l00025">geopop::Generator&lt; ID &gt;::Apply()</a>, <a class="el" href="../../d6/daa/a00187_source.html#l00232">geopop::operator&lt;&lt;()</a>, and <a class="el" href="../../d6/daa/a00187_source.html#l00063">geopop::GeoGridConfig::SetData()</a>.</p>
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d41/a00038_adf7cb185f3d39194f4065707da23e0d6_icgraph.gif" border="0" usemap="#d8/d41/a00038_adf7cb185f3d39194f4065707da23e0d6_icgraph" alt=""/></div>
+<map name="d8/d41/a00038_adf7cb185f3d39194f4065707da23e0d6_icgraph" id="d8/d41/a00038_adf7cb185f3d39194f4065707da23e0d6_icgraph">
+<area shape="rect" id="node2" href="../../d8/d41/a00038.html#a08a0a0bee6983e75de99b46132e26eaa" title="Construct the CitiesReader with an istream containing the file content. " alt="" coords="236,5,419,47"/>
+</map>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="a6b6db87f6ccaa00a624242cadd695eb9"></a>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ad94de2ea05242ef43ac6ea9723fbc591"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int geopop::PopulationInfo::popcount_k12school</td>
+          <td class="memname">virtual void geopop::LocationsReader::FillGeoGrid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/dd4/a00013.html">GeoGrid</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Number of individuals in K12School. </p>
+<p>Add the locations to the <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a>. </p>
 
-<p>Definition at line <a class="el" href="../../da/d15/a00188_source.html#l00063">63</a> of file <a class="el" href="../../da/d15/a00188_source.html">GeoGridConfig.h</a>.</p>
+<p>Implemented in <a class="el" href="../../d1/dc6/a00037.html#a37d5fefcf5e36a282e471d46fd082ad2">geopop::LocationsCSVReader</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d6/d82/a00243_source.html#l00025">geopop::Generator&lt; ID &gt;::Apply()</a>, <a class="el" href="../../d6/daa/a00187_source.html#l00232">geopop::operator&lt;&lt;()</a>, and <a class="el" href="../../d6/daa/a00187_source.html#l00063">geopop::GeoGridConfig::SetData()</a>.</p>
+<p>Referenced by <a class="el" href="../../da/d53/a00265_source.html#l00035">LocationsReader()</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d41/a00038_ad94de2ea05242ef43ac6ea9723fbc591_icgraph.gif" border="0" usemap="#d8/d41/a00038_ad94de2ea05242ef43ac6ea9723fbc591_icgraph" alt=""/></div>
+<map name="d8/d41/a00038_ad94de2ea05242ef43ac6ea9723fbc591_icgraph" id="d8/d41/a00038_ad94de2ea05242ef43ac6ea9723fbc591_icgraph">
+<area shape="rect" id="node2" href="../../d8/d41/a00038.html#a08a0a0bee6983e75de99b46132e26eaa" title="Construct the CitiesReader with an istream containing the file content. " alt="" coords="236,5,419,47"/>
+</map>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="ab7663bf22dbfe6d56f5e07af064d6498"></a>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ad1bd8f33fd74070b9b606734e6c8d2de"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int geopop::PopulationInfo::popcount_college</td>
+          <td class="memname">std::unique_ptr&lt;std::istream&gt; geopop::LocationsReader::m_inputStream</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Number of individuals in College. </p>
+<p>The istream with the file content. </p>
 
-<p>Definition at line <a class="el" href="../../da/d15/a00188_source.html#l00066">66</a> of file <a class="el" href="../../da/d15/a00188_source.html">GeoGridConfig.h</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d53/a00265_source.html#l00044">44</a> of file <a class="el" href="../../da/d53/a00265_source.html">LocationsReader.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d2/d82/a00142_source.html#l00027">geopop::Generator&lt; ID &gt;::Apply()</a>, <a class="el" href="../../db/d53/a00321_source.html#l00036">geopop::Populator&lt; ID &gt;::Apply()</a>, <a class="el" href="../../d6/daa/a00187_source.html#l00232">geopop::operator&lt;&lt;()</a>, and <a class="el" href="../../d6/daa/a00187_source.html#l00063">geopop::GeoGridConfig::SetData()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae5d13fc961c7c5c701465ec97bcef05d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int geopop::PopulationInfo::popcount_workplace</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Number of individuals in Workplace. </p>
-
-<p>Definition at line <a class="el" href="../../da/d15/a00188_source.html#l00069">69</a> of file <a class="el" href="../../da/d15/a00188_source.html">GeoGridConfig.h</a>.</p>
-
-<p>Referenced by <a class="el" href="../../dd/de2/a00320_source.html#l00028">geopop::Generator&lt; ID &gt;::Apply()</a>, <a class="el" href="../../db/d53/a00321_source.html#l00036">geopop::Populator&lt; ID &gt;::Apply()</a>, <a class="el" href="../../d6/daa/a00187_source.html#l00232">geopop::operator&lt;&lt;()</a>, and <a class="el" href="../../d6/daa/a00187_source.html#l00063">geopop::GeoGridConfig::SetData()</a>.</p>
+<p>Referenced by <a class="el" href="../../df/da9/a00263_source.html#l00028">geopop::LocationsCSVReader::FillGeoGrid()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="adc88b873dc378a2d31e317018f12f2c8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int geopop::PopulationInfo::count_households</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Number of households. </p>
-
-<p>Definition at line <a class="el" href="../../da/d15/a00188_source.html#l00072">72</a> of file <a class="el" href="../../da/d15/a00188_source.html">GeoGridConfig.h</a>.</p>
-
-<p>Referenced by <a class="el" href="../../d5/d0b/a00220_source.html#l00025">geopop::Generator&lt; ID &gt;::Apply()</a>, and <a class="el" href="../../d6/daa/a00187_source.html#l00063">geopop::GeoGridConfig::SetData()</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="../../da/d15/a00188_source.html">GeoGridConfig.h</a></li>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="../../da/d53/a00265_source.html">LocationsReader.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d8/df7/a00331.html">geopop</a></li><li class="navelem"><a class="el" href="../../d8/d41/a00038.html">PopulationInfo</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 09:18:53 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../d2/d45/a00342.html">geopop</a></li><li class="navelem"><a class="el" href="../../d8/d41/a00038.html">LocationsReader</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 10:47:38 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

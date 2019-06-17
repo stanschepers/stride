@@ -1,8 +1,4 @@
-<map id="geopop::HouseholdJSONReader" name="geopop::HouseholdJSONReader">
-<area shape="rect" id="node2" href="$df/d61/a00031.html" title="Retrieves the reference Household profiles from file. " alt="" coords="5,553,212,660"/>
-<area shape="rect" id="node4" title="STL class. " alt="" coords="178,413,277,491"/>
-<area shape="rect" id="node5" title="STL class. " alt="" coords="158,259,297,351"/>
-<area shape="rect" id="node6" title="STL class. " alt="" coords="143,132,311,209"/>
-<area shape="rect" id="node7" title="STL class. " alt="" coords="174,5,281,83"/>
-<area shape="rect" id="node8" title="STL class. " alt="" coords="301,413,455,491"/>
+<map id="geopop::GeoGridJSONWriter" name="geopop::GeoGridJSONWriter">
+<area shape="rect" id="node2" href="$dc/d3c/a00028.html" title="An interface for writing the GeoGrid to an output stream, can be implemented with multiple file types..." alt="" coords="5,160,220,296"/>
+<area shape="rect" id="node3" href="$d5/d16/a00029.html" title="An interface for writing the GeoGrid. " alt="" coords="29,5,196,112"/>
 </map>

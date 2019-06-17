@@ -1,0 +1,6 @@
+<map id="geopop::GeoGridJSONReader::ParseLocation" name="geopop::GeoGridJSONReader::ParseLocation">
+<area shape="rect" id="node2" href="$de/d11/a00021.html#aff5bcf59f7a496aef2179614bb41adce" title="Create a ContactPool based on the information stored in the provided JSON. " alt="" coords="260,37,467,79"/>
+<area shape="rect" id="node5" href="$de/d11/a00021.html#aec53dfd238343a9744e93a17a4b1abed" title="Create a Coordinate based on the information stored in the provided JSON. " alt="" coords="260,103,467,144"/>
+<area shape="rect" id="node3" href="$d1/d84/a00097.html#aa3cce01ca781a43bc67620e798c3b484" title="Reference the ContactPoolSys of the Population. " alt="" coords="531,5,665,47"/>
+<area shape="rect" id="node4" href="$d1/d6e/a00073.html#ac8e6932adc8cb0269357c033c6630bff" title="Create a new contact pool of a given type. " alt="" coords="515,71,681,112"/>
+</map>

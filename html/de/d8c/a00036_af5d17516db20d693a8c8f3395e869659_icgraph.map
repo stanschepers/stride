@@ -1,0 +1,5 @@
+<map id="geopop::Location::RefPools" name="geopop::Location::RefPools">
+<area shape="rect" id="node2" href="$db/db2/a00020.html#a3b4bd0fd7e724b111319db479626aaab" title="geopop::GeoGridHDF5Writer\l::WriteLocation" alt="" coords="247,5,448,47"/>
+<area shape="rect" id="node4" href="$dc/de2/a00024.html#a926c2d6d9381b1b87ff81fb92f598041" title="Create a ProtoBuf Location containing all the info needed to reconstruct a Location. " alt="" coords="247,71,447,112"/>
+<area shape="rect" id="node3" href="$db/db2/a00020.html#a37c5f82d2b07fc977a794301db1c25d1" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="496,5,697,47"/>
+</map>

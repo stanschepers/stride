@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: is_iterator.h File Reference</title>
+<title>Stride Reference Manual: ImportPopBuilder.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit ca704c9</span>
+   &#160;<span id="projectnumber">- generated for commit 01075df</span>
    </div>
   </td>
  </tr>
@@ -106,37 +106,30 @@ $(document).ready(function(){initNavTree('d2/dc8/a00242.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">is_iterator.h File Reference</div>  </div>
+<div class="title">ImportPopBuilder.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Interface/Implementation of is_iterator.  
+<p>Initialize populations.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;iterator&gt;</code><br />
-<code>#include &lt;type_traits&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d5/d5b/a00135_source.html">AbstractPopBuilder.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for is_iterator.h:</div>
+Include dependency graph for ImportPopBuilder.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../da/d7e/a00530.gif" border="0" usemap="#is__iterator_8h" alt=""/></div>
-<map name="is__iterator_8h" id="is__iterator_8h">
+<div class="center"><img src="../../d7/d84/a00535.gif" border="0" usemap="#ImportPopBuilder_8h" alt=""/></div>
+<map name="ImportPopBuilder_8h" id="ImportPopBuilder_8h">
+<area shape="rect" id="node2" href="../../d5/d5b/a00135.html" title="Base Class for PopBuilders. " alt="" coords="140,80,295,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d0/d2a/a00531.gif" border="0" usemap="#is__iterator_8hdep" alt=""/></div>
-<map name="is__iterator_8hdep" id="is__iterator_8hdep">
-<area shape="rect" id="node2" href="../../db/d44/a00162.html" title="Header file of base class for config that needs to be read from a file. " alt="" coords="657,80,715,107"/>
-<area shape="rect" id="node3" href="../../d3/d4a/a00297.html" title="Header for the command line controller. " alt="" coords="5,155,145,181"/>
-<area shape="rect" id="node4" href="../../d5/da7/a00144.html" title="CommutesCSVReader.cpp" alt="" coords="169,155,360,181"/>
-<area shape="rect" id="node5" href="../../dc/d9a/a00218.html" title="HouseholdCSVReader.cpp" alt="" coords="385,155,571,181"/>
-<area shape="rect" id="node6" href="../../dc/ded/a00252.html" title="LocationsCSVReader.cpp" alt="" coords="596,155,776,181"/>
-<area shape="rect" id="node7" href="../../d2/d41/a00318.html" title="WorkplaceCSVReader.cpp" alt="" coords="800,155,983,181"/>
-<area shape="rect" id="node8" href="../../d6/d7d/a00161.html" title="Source file of csv. " alt="" coords="1007,155,1082,181"/>
-<area shape="rect" id="node9" href="../../dd/dae/a00163.html" title="Source file of CSVRow. " alt="" coords="1106,155,1205,181"/>
+<div class="center"><img src="../../d4/d33/a00536.gif" border="0" usemap="#ImportPopBuilder_8hdep" alt=""/></div>
+<map name="ImportPopBuilder_8hdep" id="ImportPopBuilder_8hdep">
+<area shape="rect" id="node2" href="../../d6/db6/a00241.html" title="Initialize populations: implementation. " alt="" coords="5,80,164,107"/>
+<area shape="rect" id="node3" href="../../d6/d4b/a00277.html" title="Core Population class. " alt="" coords="188,80,304,107"/>
 </map>
 </div>
 </div>
@@ -144,43 +137,27 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d42/a00109.html">stride::util::ii_detail::make_void&lt; Ts &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d81/a00110.html">stride::util::is_iterator&lt; T, class &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">When it 's not an iterator.  <a href="../../d4/d81/a00110.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d6d/a00111.html">stride::util::is_iterator&lt; T, ii_detail::void_t&lt; typename std::iterator_traits&lt; T &gt;::iterator_category &gt; &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">When it is an iterator.  <a href="../../dd/d6d/a00111.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dab/a00089.html">stride::ImportPopBuilder</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes <a class="el" href="../../d1/d84/a00097.html" title="Key Data structure: container for (a) all individuals in the population (b) the ContactPoolSys wchich...">Population</a> objects.  <a href="../../db/dab/a00089.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:d2/d45/a00342"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/a00342.html">stride</a></td></tr>
-<tr class="memdesc:d2/d45/a00342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
+<tr class="memitem:d3/dc9/a00355"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dc9/a00355.html">stride</a></td></tr>
+<tr class="memdesc:d3/dc9/a00355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d7/dfc/a00349"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dfc/a00349.html">stride::util</a></td></tr>
-<tr class="memdesc:d7/dfc/a00349"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utilities for the project. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d0/d48/a00351"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d48/a00351.html">stride::util::ii_detail</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a5548d91f3cf721a08ab97267e8dd80ec"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
-<tr class="memitem:a5548d91f3cf721a08ab97267e8dd80ec"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d48/a00351.html#a5548d91f3cf721a08ab97267e8dd80ec">stride::util::ii_detail::void_t</a> = typename make_void&lt; Ts... &gt;::type</td></tr>
-<tr class="separator:a5548d91f3cf721a08ab97267e8dd80ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Interface/Implementation of is_iterator. </p>
+<div class="textblock"><p>Initialize populations. </p>
 
-<p>Definition in file <a class="el" href="../../d2/dc8/a00242_source.html">is_iterator.h</a>.</p>
+<p>Definition in file <a class="el" href="../../d2/dc8/a00242_source.html">ImportPopBuilder.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_cf56009b1fcb470adac12e74ab7406a1.html">util</a></li><li class="navelem"><a class="el" href="../../d2/dc8/a00242.html">is_iterator.h</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 09:18:53 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_d174127a4330655b353181aebfd9b441.html">pop</a></li><li class="navelem"><a class="el" href="../../d2/dc8/a00242.html">ImportPopBuilder.h</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 10:47:37 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

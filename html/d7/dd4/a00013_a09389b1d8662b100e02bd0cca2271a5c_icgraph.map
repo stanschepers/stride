@@ -1,3 +1,6 @@
 <map id="geopop::GeoGrid::AddLocation" name="geopop::GeoGrid::AddLocation">
-<area shape="rect" id="node2" href="$d4/d8c/a00035.html#a37d5fefcf5e36a282e471d46fd082ad2" title="Add the locations read to the GeoGrid. " alt="" coords="271,5,481,47"/>
+<area shape="rect" id="node2" href="$d1/dc6/a00037.html#a37d5fefcf5e36a282e471d46fd082ad2" title="Add the locations read to the GeoGrid. " alt="" coords="271,5,481,47"/>
+<area shape="rect" id="node3" href="$dd/da2/a00019.html#a44b9bcb40b65211ba5cffc8da2e5afd9" title="geopop::GeoGridHDF5Reader\l::ReadLocation" alt="" coords="271,71,481,112"/>
+<area shape="rect" id="node4" href="$dd/da2/a00019.html#a9fc58126c17749621ecfb9ecc29313c4" title="Locations. " alt="" coords="529,71,739,112"/>
+<area shape="rect" id="node5" href="$dd/da2/a00019.html#a7c475566a30e6dc1626463ef5bff1b6e" title="Actually perform the read. " alt="" coords="787,71,996,112"/>
 </map>

@@ -1,4 +1,5 @@
 var a00084 =
 [
-    [ "Build", "df/d5d/a00084.html#a78076cb42a88b90e4183bfb805d8361f", null ]
+    [ "GenPopController", "df/d5d/a00084.html#a5585b723dfd364bbe94361148be98799", null ],
+    [ "Control", "df/d5d/a00084.html#a9cef30bd849611feee70025cd9270e96", null ]
 ];

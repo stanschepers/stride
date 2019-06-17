@@ -1,4 +1,4 @@
-<map id="SummaryFileViewer.h" name="SummaryFileViewer.h">
-<area shape="rect" id="node2" href="$d6/db8/a00158.html" title="Header for the command line controller. " alt="" coords="5,80,141,107"/>
-<area shape="rect" id="node3" href="$d0/da2/a00307.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="165,80,339,107"/>
+<map id="SimController.h" name="SimController.h">
+<area shape="rect" id="node2" href="$dc/d0f/a00303.html" title="Header for the command line controller. " alt="" coords="5,80,140,107"/>
+<area shape="rect" id="node3" href="$d1/d5d/a00311.html" title="Main program: command line handling. " alt="" coords="165,80,250,107"/>
 </map>

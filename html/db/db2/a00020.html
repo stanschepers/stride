@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: geopop::GeoGridJSONWriter Class Reference</title>
+<title>Stride Reference Manual: geopop::GeoGridHDF5Writer Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit ca704c9</span>
+   &#160;<span id="projectnumber">- generated for commit 01075df</span>
    </div>
   </td>
  </tr>
@@ -110,101 +110,106 @@ $(document).ready(function(){initNavTree('db/db2/a00020.html','../../');});
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="../../df/d96/a00714.html">List of all members</a>  </div>
+<a href="../../dd/db2/a00737.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">geopop::GeoGridJSONWriter Class Reference</div>  </div>
+<div class="title">geopop::GeoGridHDF5Writer Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Writes a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> to a JSON file.  
+<p>An implementation of the <a class="el" href="../../d1/d2b/a00018.html" title="An interface for writing the GeoGrid to a filelocated at inputFilePath, can be implemented with multi...">GeoGridFileWriter</a> using HDF5 This class is used to write a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> to an HDF5 file.  
  <a href="../../db/db2/a00020.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../d3/d2a/a00195_source.html">GeoGridJSONWriter.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../db/d53/a00202_source.html">GeoGridHDF5Writer.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for geopop::GeoGridJSONWriter:</div>
+Inheritance diagram for geopop::GeoGridHDF5Writer:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d3/d3b/a00715.gif" border="0" usemap="#geopop_1_1GeoGridJSONWriter_inherit__map" alt="Inheritance graph"/></div>
-<map name="geopop_1_1GeoGridJSONWriter_inherit__map" id="geopop_1_1GeoGridJSONWriter_inherit__map">
-<area shape="rect" id="node2" href="../../d6/d5b/a00026.html" title="An interface for writing the GeoGrid to an output stream, can be implemented with multiple file types..." alt="" coords="5,160,220,296"/>
-<area shape="rect" id="node3" href="../../d0/d33/a00027.html" title="An interface for writing the GeoGrid. " alt="" coords="29,5,196,112"/>
+<div class="center"><img src="../../d1/da6/a00738.gif" border="0" usemap="#geopop_1_1GeoGridHDF5Writer_inherit__map" alt="Inheritance graph"/></div>
+<map name="geopop_1_1GeoGridHDF5Writer_inherit__map" id="geopop_1_1GeoGridHDF5Writer_inherit__map">
+<area shape="rect" id="node2" href="../../d1/d2b/a00018.html" title="An interface for writing the GeoGrid to a filelocated at inputFilePath, can be implemented with multi..." alt="" coords="13,160,199,296"/>
+<area shape="rect" id="node3" href="../../d5/d16/a00029.html" title="An interface for writing the GeoGrid. " alt="" coords="23,5,189,112"/>
 </map>
 </div>
 <div class="dynheader">
-Collaboration diagram for geopop::GeoGridJSONWriter:</div>
+Collaboration diagram for geopop::GeoGridHDF5Writer:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d3/d82/a00717.gif" border="0" usemap="#geopop_1_1GeoGridJSONWriter_coll__map" alt="Collaboration graph"/></div>
-<map name="geopop_1_1GeoGridJSONWriter_coll__map" id="geopop_1_1GeoGridJSONWriter_coll__map">
-<area shape="rect" id="node2" href="../../d6/d5b/a00026.html" title="An interface for writing the GeoGrid to an output stream, can be implemented with multiple file types..." alt="" coords="177,315,392,451"/>
-<area shape="rect" id="node3" href="../../d0/d33/a00027.html" title="An interface for writing the GeoGrid. " alt="" coords="5,145,172,252"/>
-<area shape="rect" id="node7" title="STL class. " alt="" coords="551,160,659,237"/>
+<div class="center"><img src="../../dc/dce/a00740.gif" border="0" usemap="#geopop_1_1GeoGridHDF5Writer_coll__map" alt="Collaboration graph"/></div>
+<map name="geopop_1_1GeoGridHDF5Writer_coll__map" id="geopop_1_1GeoGridHDF5Writer_coll__map">
+<area shape="rect" id="node2" href="../../d1/d2b/a00018.html" title="An interface for writing the GeoGrid to a filelocated at inputFilePath, can be implemented with multi..." alt="" coords="15,329,202,465"/>
+<area shape="rect" id="node3" href="../../d5/d16/a00029.html" title="An interface for writing the GeoGrid. " alt="" coords="5,160,172,267"/>
+<area shape="rect" id="node4" title="STL class. " alt="" coords="196,175,283,252"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="171,5,308,97"/>
+<area shape="rect" id="node9" title="STL class. " alt="" coords="409,175,517,252"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a81cc9d59dd3594f4b8a87d02707611d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#a81cc9d59dd3594f4b8a87d02707611d8">GeoGridJSONWriter</a> ()=delete</td></tr>
-<tr class="memdesc:a81cc9d59dd3594f4b8a87d02707611d8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../db/db2/a00020.html" title="Writes a GeoGrid to a JSON file. ">GeoGridJSONWriter</a> cannot be instantiated without stream.  <a href="#a81cc9d59dd3594f4b8a87d02707611d8">More...</a><br /></td></tr>
-<tr class="separator:a81cc9d59dd3594f4b8a87d02707611d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e7524e79b4875e25de205dc36875a69"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#a2e7524e79b4875e25de205dc36875a69">GeoGridJSONWriter</a> (std::shared_ptr&lt; std::ostream &gt; stream)</td></tr>
-<tr class="memdesc:a2e7524e79b4875e25de205dc36875a69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct <a class="el" href="../../d7/de0/a00022.html" title="An implementation of the GeoGridWriter using Protocol Buffers This class is used to write a GeoGrid t...">GeoGridProtoWriter</a> referencing given stream.  <a href="#a2e7524e79b4875e25de205dc36875a69">More...</a><br /></td></tr>
-<tr class="separator:a2e7524e79b4875e25de205dc36875a69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05d4bc66b6f7ddfefe70d010b67c5d26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#a05d4bc66b6f7ddfefe70d010b67c5d26">Write</a> (<a class="el" href="../../d7/dd4/a00013.html">GeoGrid</a> &amp;geoGrid) override</td></tr>
-<tr class="memdesc:a05d4bc66b6f7ddfefe70d010b67c5d26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the provided <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> to the proved ostream in JSON format.  <a href="#a05d4bc66b6f7ddfefe70d010b67c5d26">More...</a><br /></td></tr>
-<tr class="separator:a05d4bc66b6f7ddfefe70d010b67c5d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a00026"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00026')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d6/d5b/a00026.html">geopop::GeoGridStreamWriter</a></td></tr>
-<tr class="memitem:a8005b00d7c0166a378b7e7ca5bd48ded inherit pub_methods_a00026"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d5b/a00026.html#a8005b00d7c0166a378b7e7ca5bd48ded">GeoGridStreamWriter</a> ()=delete</td></tr>
-<tr class="memdesc:a8005b00d7c0166a378b7e7ca5bd48ded inherit pub_methods_a00026"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d6/d5b/a00026.html" title="An interface for writing the GeoGrid to an output stream, can be implemented with multiple file types...">GeoGridStreamWriter</a> cannot be instantiated without stream.  <a href="#a8005b00d7c0166a378b7e7ca5bd48ded">More...</a><br /></td></tr>
-<tr class="separator:a8005b00d7c0166a378b7e7ca5bd48ded inherit pub_methods_a00026"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09578f2776586c4d00222911ce6e8b9f inherit pub_methods_a00026"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d5b/a00026.html#a09578f2776586c4d00222911ce6e8b9f">GeoGridStreamWriter</a> (std::shared_ptr&lt; std::ostream &gt; stream)</td></tr>
-<tr class="memdesc:a09578f2776586c4d00222911ce6e8b9f inherit pub_methods_a00026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct <a class="el" href="../../d6/d5b/a00026.html" title="An interface for writing the GeoGrid to an output stream, can be implemented with multiple file types...">GeoGridStreamWriter</a> referencing given stream.  <a href="#a09578f2776586c4d00222911ce6e8b9f">More...</a><br /></td></tr>
-<tr class="separator:a09578f2776586c4d00222911ce6e8b9f inherit pub_methods_a00026"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8976fd28009afbc8fb0ae43148604bbf inherit pub_methods_a00026"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d5b/a00026.html#a8976fd28009afbc8fb0ae43148604bbf">~GeoGridStreamWriter</a> () override=default</td></tr>
-<tr class="memdesc:a8976fd28009afbc8fb0ae43148604bbf inherit pub_methods_a00026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#a8976fd28009afbc8fb0ae43148604bbf">More...</a><br /></td></tr>
-<tr class="separator:a8976fd28009afbc8fb0ae43148604bbf inherit pub_methods_a00026"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3caad39937bafe28aa7d9d596e5dd8b8 inherit pub_methods_a00026"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; std::ostream &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d5b/a00026.html#a3caad39937bafe28aa7d9d596e5dd8b8">StreamRef</a> ()</td></tr>
-<tr class="memdesc:a3caad39937bafe28aa7d9d596e5dd8b8 inherit pub_methods_a00026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return reference to output stream.  <a href="#a3caad39937bafe28aa7d9d596e5dd8b8">More...</a><br /></td></tr>
-<tr class="separator:a3caad39937bafe28aa7d9d596e5dd8b8 inherit pub_methods_a00026"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_a00027"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00027')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d0/d33/a00027.html">geopop::GeoGridWriter</a></td></tr>
-<tr class="memitem:a4147ecb78a89b6e1666d61c85c475a51 inherit pub_methods_a00027"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d33/a00027.html#a4147ecb78a89b6e1666d61c85c475a51">GeoGridWriter</a> ()=default</td></tr>
-<tr class="memdesc:a4147ecb78a89b6e1666d61c85c475a51 inherit pub_methods_a00027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default construtor.  <a href="#a4147ecb78a89b6e1666d61c85c475a51">More...</a><br /></td></tr>
-<tr class="separator:a4147ecb78a89b6e1666d61c85c475a51 inherit pub_methods_a00027"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac39b3553fa52b22d47cd5972d5e1c4b8 inherit pub_methods_a00027"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d33/a00027.html#ac39b3553fa52b22d47cd5972d5e1c4b8">~GeoGridWriter</a> ()=default</td></tr>
-<tr class="memdesc:ac39b3553fa52b22d47cd5972d5e1c4b8 inherit pub_methods_a00027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual destrutor to make class abstract.  <a href="#ac39b3553fa52b22d47cd5972d5e1c4b8">More...</a><br /></td></tr>
-<tr class="separator:ac39b3553fa52b22d47cd5972d5e1c4b8 inherit pub_methods_a00027"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa463813707c18e0cfefdf8392a9fc434"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#aa463813707c18e0cfefdf8392a9fc434">GeoGridHDF5Writer</a> ()=delete</td></tr>
+<tr class="memdesc:aa463813707c18e0cfefdf8392a9fc434"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../dc/de2/a00024.html" title="An implementation of the GeoGridWriter using Protocol Buffers This class is used to write a GeoGrid t...">GeoGridProtoWriter</a> cannot be instantiated without providing a file name.  <a href="#aa463813707c18e0cfefdf8392a9fc434">More...</a><br /></td></tr>
+<tr class="separator:aa463813707c18e0cfefdf8392a9fc434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b18cb04dd346975960eb34b5d47a52"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#af8b18cb04dd346975960eb34b5d47a52">GeoGridHDF5Writer</a> (std::string fileName)</td></tr>
+<tr class="memdesc:af8b18cb04dd346975960eb34b5d47a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct <a class="el" href="../../db/db2/a00020.html" title="An implementation of the GeoGridFileWriter using HDF5 This class is used to write a GeoGrid to an HDF...">GeoGridHDF5Writer</a> for provided file name.  <a href="#af8b18cb04dd346975960eb34b5d47a52">More...</a><br /></td></tr>
+<tr class="separator:af8b18cb04dd346975960eb34b5d47a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7be9361856ea223fbf2719fe60620984"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#a7be9361856ea223fbf2719fe60620984">~GeoGridHDF5Writer</a> () override=default</td></tr>
+<tr class="memdesc:a7be9361856ea223fbf2719fe60620984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#a7be9361856ea223fbf2719fe60620984">More...</a><br /></td></tr>
+<tr class="separator:a7be9361856ea223fbf2719fe60620984"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37c5f82d2b07fc977a794301db1c25d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#a37c5f82d2b07fc977a794301db1c25d1">Write</a> (<a class="el" href="../../d7/dd4/a00013.html">GeoGrid</a> &amp;geoGrid) override</td></tr>
+<tr class="memdesc:a37c5f82d2b07fc977a794301db1c25d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> to the file in HDF5 format.  <a href="#a37c5f82d2b07fc977a794301db1c25d1">More...</a><br /></td></tr>
+<tr class="separator:a37c5f82d2b07fc977a794301db1c25d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a00018"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00018')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d1/d2b/a00018.html">geopop::GeoGridFileWriter</a></td></tr>
+<tr class="memitem:aaaf02789f79f90b1084a2a51eaf6e6bd inherit pub_methods_a00018"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d2b/a00018.html#aaaf02789f79f90b1084a2a51eaf6e6bd">GeoGridFileWriter</a> ()=delete</td></tr>
+<tr class="memdesc:aaaf02789f79f90b1084a2a51eaf6e6bd inherit pub_methods_a00018"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d1/d2b/a00018.html" title="An interface for writing the GeoGrid to a filelocated at inputFilePath, can be implemented with multi...">GeoGridFileWriter</a> cannot be instantiated without filename.  <a href="#aaaf02789f79f90b1084a2a51eaf6e6bd">More...</a><br /></td></tr>
+<tr class="separator:aaaf02789f79f90b1084a2a51eaf6e6bd inherit pub_methods_a00018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80f2f11d4c077444ba241d99f2d4ff59 inherit pub_methods_a00018"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d2b/a00018.html#a80f2f11d4c077444ba241d99f2d4ff59">GeoGridFileWriter</a> (std::string fileName)</td></tr>
+<tr class="memdesc:a80f2f11d4c077444ba241d99f2d4ff59 inherit pub_methods_a00018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct <a class="el" href="../../d1/d2b/a00018.html" title="An interface for writing the GeoGrid to a filelocated at inputFilePath, can be implemented with multi...">GeoGridFileWriter</a> referencing given filename.  <a href="#a80f2f11d4c077444ba241d99f2d4ff59">More...</a><br /></td></tr>
+<tr class="separator:a80f2f11d4c077444ba241d99f2d4ff59 inherit pub_methods_a00018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6be425f47128d363f7bd855803c03465 inherit pub_methods_a00018"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d2b/a00018.html#a6be425f47128d363f7bd855803c03465">~GeoGridFileWriter</a> () override=default</td></tr>
+<tr class="memdesc:a6be425f47128d363f7bd855803c03465 inherit pub_methods_a00018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#a6be425f47128d363f7bd855803c03465">More...</a><br /></td></tr>
+<tr class="separator:a6be425f47128d363f7bd855803c03465 inherit pub_methods_a00018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42a93d37349055632786bb821fa60c98 inherit pub_methods_a00018"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d2b/a00018.html#a42a93d37349055632786bb821fa60c98">FileName</a> ()</td></tr>
+<tr class="memdesc:a42a93d37349055632786bb821fa60c98 inherit pub_methods_a00018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return file name.  <a href="#a42a93d37349055632786bb821fa60c98">More...</a><br /></td></tr>
+<tr class="separator:a42a93d37349055632786bb821fa60c98 inherit pub_methods_a00018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a00029"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00029')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../d5/d16/a00029.html">geopop::GeoGridWriter</a></td></tr>
+<tr class="memitem:a4147ecb78a89b6e1666d61c85c475a51 inherit pub_methods_a00029"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d16/a00029.html#a4147ecb78a89b6e1666d61c85c475a51">GeoGridWriter</a> ()=default</td></tr>
+<tr class="memdesc:a4147ecb78a89b6e1666d61c85c475a51 inherit pub_methods_a00029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default construtor.  <a href="#a4147ecb78a89b6e1666d61c85c475a51">More...</a><br /></td></tr>
+<tr class="separator:a4147ecb78a89b6e1666d61c85c475a51 inherit pub_methods_a00029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac39b3553fa52b22d47cd5972d5e1c4b8 inherit pub_methods_a00029"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d16/a00029.html#ac39b3553fa52b22d47cd5972d5e1c4b8">~GeoGridWriter</a> ()=default</td></tr>
+<tr class="memdesc:ac39b3553fa52b22d47cd5972d5e1c4b8 inherit pub_methods_a00029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destrutor to make class abstract.  <a href="#ac39b3553fa52b22d47cd5972d5e1c4b8">More...</a><br /></td></tr>
+<tr class="separator:ac39b3553fa52b22d47cd5972d5e1c4b8 inherit pub_methods_a00029"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a67d19b0ec28b5258056ef8b4d042112c"><td class="memItemLeft" align="right" valign="top">nlohmann::json&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#a67d19b0ec28b5258056ef8b4d042112c">WriteContactPool</a> (const <a class="el" href="../../dc/ddf/a00067.html">stride::ContactPool</a> *contactPool)</td></tr>
-<tr class="memdesc:a67d19b0ec28b5258056ef8b4d042112c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a JSON object containing all info needed to reconstruct a ContactPool.  <a href="#a67d19b0ec28b5258056ef8b4d042112c">More...</a><br /></td></tr>
-<tr class="separator:a67d19b0ec28b5258056ef8b4d042112c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47b00429c8b6da4cfd67494f3247ebf4"><td class="memItemLeft" align="right" valign="top">nlohmann::json&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#a47b00429c8b6da4cfd67494f3247ebf4">WriteCoordinate</a> (const <a class="el" href="../../d8/df7/a00331.html#ad853921c138e9ecb23181946c1d066c4">Coordinate</a> &amp;coordinate)</td></tr>
-<tr class="memdesc:a47b00429c8b6da4cfd67494f3247ebf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a JSON object containing all info needed to reconstruct a Coordinate.  <a href="#a47b00429c8b6da4cfd67494f3247ebf4">More...</a><br /></td></tr>
-<tr class="separator:a47b00429c8b6da4cfd67494f3247ebf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af57d746af60011f0a69e74423027152c"><td class="memItemLeft" align="right" valign="top">nlohmann::json&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#af57d746af60011f0a69e74423027152c">WriteLocation</a> (const <a class="el" href="../../db/df3/a00034.html">Location</a> &amp;location)</td></tr>
-<tr class="memdesc:af57d746af60011f0a69e74423027152c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a JSON object containing all info needed to reconstruct a <a class="el" href="../../db/df3/a00034.html" title="Location for use within the GeoGrid, contains Coordinate and index to ContactPools. ">Location</a>.  <a href="#af57d746af60011f0a69e74423027152c">More...</a><br /></td></tr>
-<tr class="separator:af57d746af60011f0a69e74423027152c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac76d8a5db270181e67b1b561bfe55650"><td class="memItemLeft" align="right" valign="top">nlohmann::json&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#ac76d8a5db270181e67b1b561bfe55650">WritePerson</a> (<a class="el" href="../../da/d82/a00091.html">stride::Person</a> *person)</td></tr>
-<tr class="memdesc:ac76d8a5db270181e67b1b561bfe55650"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a JSON object containing all info needed to reconstruct a Person.  <a href="#ac76d8a5db270181e67b1b561bfe55650">More...</a><br /></td></tr>
-<tr class="separator:ac76d8a5db270181e67b1b561bfe55650"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b4bd0fd7e724b111319db479626aaab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#a3b4bd0fd7e724b111319db479626aaab">WriteLocation</a> (<a class="el" href="../../de/d8c/a00036.html">geopop::Location</a> &amp;loc, H5::Group &amp;locsGroup)</td></tr>
+<tr class="separator:a3b4bd0fd7e724b111319db479626aaab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a816d3ea4faa22eb8cfacccd1fc850c24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#a816d3ea4faa22eb8cfacccd1fc850c24">WriteCommutes</a> (const std::vector&lt; std::pair&lt; <a class="el" href="../../de/d8c/a00036.html">Location</a> *, <a class="el" href="../../d8/d21/a00368.html">double</a> &gt;&gt; &amp;commutes, H5::Group &amp;locGroup)</td></tr>
+<tr class="separator:a816d3ea4faa22eb8cfacccd1fc850c24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a599467553181db5ec29bfcdaa7645c7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#a599467553181db5ec29bfcdaa7645c7a">WriteContactPool</a> (const <a class="el" href="../../d6/d2c/a00072.html">stride::ContactPool</a> &amp;pool, <a class="el" href="../../df/d73/a00358.html#a61a32e88a50c57e6f5c49f0996b6b462">stride::ContactType::Id</a> type, H5::Group &amp;cpGroup)</td></tr>
+<tr class="separator:a599467553181db5ec29bfcdaa7645c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42fe8af0e0a6071fda128824e437de4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#a42fe8af0e0a6071fda128824e437de4a">WritePeople</a> (H5::Group &amp;rootGroup)</td></tr>
+<tr class="separator:a42fe8af0e0a6071fda128824e437de4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a5863ac0a15fdacd33ebbadc0af6ba77a"><td class="memItemLeft" align="right" valign="top">std::set&lt; <a class="el" href="../../da/d82/a00091.html">stride::Person</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#a5863ac0a15fdacd33ebbadc0af6ba77a">m_persons_found</a></td></tr>
-<tr class="memdesc:a5863ac0a15fdacd33ebbadc0af6ba77a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The persons found when looping over the ContactPools.  <a href="#a5863ac0a15fdacd33ebbadc0af6ba77a">More...</a><br /></td></tr>
-<tr class="separator:a5863ac0a15fdacd33ebbadc0af6ba77a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2a0200ec646f1452939827ddfcbd9e3"><td class="memItemLeft" align="right" valign="top">std::set&lt; <a class="el" href="../../d9/df8/a00096.html">stride::Person</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#aa2a0200ec646f1452939827ddfcbd9e3">m_persons_found</a></td></tr>
+<tr class="memdesc:aa2a0200ec646f1452939827ddfcbd9e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The persons found when looping over the ContactPools.  <a href="#aa2a0200ec646f1452939827ddfcbd9e3">More...</a><br /></td></tr>
+<tr class="separator:aa2a0200ec646f1452939827ddfcbd9e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afff927af2d7ce1a804f69811657fc32e"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#afff927af2d7ce1a804f69811657fc32e">m_location_counter</a></td></tr>
+<tr class="separator:afff927af2d7ce1a804f69811657fc32e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a955d2db57bd5ba5cba33ad1dce8b6e2b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/db2/a00020.html#a955d2db57bd5ba5cba33ad1dce8b6e2b">m_pool_counter</a></td></tr>
+<tr class="separator:a955d2db57bd5ba5cba33ad1dce8b6e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_attribs_a00026"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00026')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d6/d5b/a00026.html">geopop::GeoGridStreamWriter</a></td></tr>
-<tr class="memitem:ae4bcb1ea49a62c03f85c872fbadfe704 inherit pro_attribs_a00026"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; std::ostream &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d5b/a00026.html#ae4bcb1ea49a62c03f85c872fbadfe704">m_stream</a></td></tr>
-<tr class="separator:ae4bcb1ea49a62c03f85c872fbadfe704 inherit pro_attribs_a00026"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_a00018"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00018')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d1/d2b/a00018.html">geopop::GeoGridFileWriter</a></td></tr>
+<tr class="memitem:ac3edef387b76880f011b7f7f2ee40851 inherit pro_attribs_a00018"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d2b/a00018.html#ac3edef387b76880f011b7f7f2ee40851">m_file_name</a></td></tr>
+<tr class="separator:ac3edef387b76880f011b7f7f2ee40851 inherit pro_attribs_a00018"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Writes a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> to a JSON file. </p>
+<div class="textblock"><p>An implementation of the <a class="el" href="../../d1/d2b/a00018.html" title="An interface for writing the GeoGrid to a filelocated at inputFilePath, can be implemented with multi...">GeoGridFileWriter</a> using HDF5 This class is used to write a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> to an HDF5 file. </p>
 
-<p>Definition at line <a class="el" href="../../d3/d2a/a00195_source.html#l00036">36</a> of file <a class="el" href="../../d3/d2a/a00195_source.html">GeoGridJSONWriter.h</a>.</p>
+<p>Definition at line <a class="el" href="../../db/d53/a00202_source.html#l00035">35</a> of file <a class="el" href="../../db/d53/a00202_source.html">GeoGridHDF5Writer.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a81cc9d59dd3594f4b8a87d02707611d8"></a>
+<a class="anchor" id="aa463813707c18e0cfefdf8392a9fc434"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -212,7 +217,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">geopop::GeoGridJSONWriter::GeoGridJSONWriter </td>
+          <td class="memname">geopop::GeoGridHDF5Writer::GeoGridHDF5Writer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -225,11 +230,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="../../db/db2/a00020.html" title="Writes a GeoGrid to a JSON file. ">GeoGridJSONWriter</a> cannot be instantiated without stream. </p>
+<p><a class="el" href="../../dc/de2/a00024.html" title="An implementation of the GeoGridWriter using Protocol Buffers This class is used to write a GeoGrid t...">GeoGridProtoWriter</a> cannot be instantiated without providing a file name. </p>
 
 </div>
 </div>
-<a class="anchor" id="a2e7524e79b4875e25de205dc36875a69"></a>
+<a class="anchor" id="af8b18cb04dd346975960eb34b5d47a52"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -237,10 +242,10 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">geopop::GeoGridJSONWriter::GeoGridJSONWriter </td>
+          <td class="memname">geopop::GeoGridHDF5Writer::GeoGridHDF5Writer </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; std::ostream &gt;&#160;</td>
-          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -251,12 +256,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct <a class="el" href="../../d7/de0/a00022.html" title="An implementation of the GeoGridWriter using Protocol Buffers This class is used to write a GeoGrid t...">GeoGridProtoWriter</a> referencing given stream. </p>
+<p>Construct <a class="el" href="../../db/db2/a00020.html" title="An implementation of the GeoGridFileWriter using HDF5 This class is used to write a GeoGrid to an HDF...">GeoGridHDF5Writer</a> for provided file name. </p>
+
+<p>Definition at line <a class="el" href="../../dd/de3/a00201_source.html#l00033">33</a> of file <a class="el" href="../../dd/de3/a00201_source.html">GeoGridHDF5Writer.cpp</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a05d4bc66b6f7ddfefe70d010b67c5d26"></a>
+<a class="anchor" id="a7be9361856ea223fbf2719fe60620984"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -264,7 +270,33 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void geopop::GeoGridJSONWriter::Write </td>
+          <td class="memname">geopop::GeoGridHDF5Writer::~GeoGridHDF5Writer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default destructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a37c5f82d2b07fc977a794301db1c25d1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void geopop::GeoGridHDF5Writer::Write </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d7/dd4/a00013.html">GeoGrid</a> &amp;&#160;</td>
           <td class="paramname"><em>geoGrid</em></td><td>)</td>
@@ -278,57 +310,53 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Write the provided <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> to the proved ostream in JSON format. </p>
+<p>Write the <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> to the file in HDF5 format. </p>
 
-<p>Implements <a class="el" href="../../d6/d5b/a00026.html#aa8b7dd6c90a858d257c96ca789e313e3">geopop::GeoGridStreamWriter</a>.</p>
+<p>Implements <a class="el" href="../../d1/d2b/a00018.html#a77041a19007be18168964789d4733c30">geopop::GeoGridFileWriter</a>.</p>
 
-<p>Definition at line <a class="el" href="../../dc/d57/a00194_source.html#l00036">36</a> of file <a class="el" href="../../dc/d57/a00194_source.html">GeoGridJSONWriter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/de3/a00201_source.html#l00038">38</a> of file <a class="el" href="../../dd/de3/a00201_source.html">GeoGridHDF5Writer.cpp</a>.</p>
 
-</div>
-</div>
-<a class="anchor" id="a67d19b0ec28b5258056ef8b4d042112c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">nlohmann::json geopop::GeoGridJSONWriter::WriteContactPool </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../dc/ddf/a00067.html">stride::ContactPool</a> *&#160;</td>
-          <td class="paramname"><em>contactPool</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Create a JSON object containing all info needed to reconstruct a ContactPool. </p>
-
-<p>Definition at line <a class="el" href="../../dc/d57/a00194_source.html#l00097">97</a> of file <a class="el" href="../../dc/d57/a00194_source.html">GeoGridJSONWriter.cpp</a>.</p>
-
-<p>References <a class="el" href="../../da/d01/a00153_source.html#l00059">stride::ContactPool::GetId()</a>, and <a class="el" href="../../da/d01/a00153_source.html#l00065">stride::ContactPool::GetPool()</a>.</p>
+<p>References <a class="el" href="../../d7/ded/a00196_source.html#l00052">geopop::GeoGridFileWriter::m_file_name</a>, <a class="el" href="../../db/d53/a00202_source.html#l00060">m_persons_found</a>, <a class="el" href="../../d7/d6e/a00190_source.html#l00124">geopop::GeoGrid::size()</a>, <a class="el" href="../../d3/db1/a00200_source.html#l00067">H5Utils::WriteAttribute()</a>, <a class="el" href="../../dd/de3/a00201_source.html#l00064">WriteLocation()</a>, and <a class="el" href="../../dd/de3/a00201_source.html#l00129">WritePeople()</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../db/db2/a00020_a67d19b0ec28b5258056ef8b4d042112c_cgraph.gif" border="0" usemap="#db/db2/a00020_a67d19b0ec28b5258056ef8b4d042112c_cgraph" alt=""/></div>
-<map name="db/db2/a00020_a67d19b0ec28b5258056ef8b4d042112c_cgraph" id="db/db2/a00020_a67d19b0ec28b5258056ef8b4d042112c_cgraph">
-<area shape="rect" id="node2" href="../../dc/ddf/a00067.html#a3b2da2fe2ebe5e75bcf8a13893f8d10a" title="Get the pool id. " alt="" coords="252,5,395,47"/>
-<area shape="rect" id="node4" href="../../dc/ddf/a00067.html#afb9a65718e51a5afa72e9f34724f1fe0" title="Get the entire pool of members. " alt="" coords="252,71,395,112"/>
-<area shape="rect" id="node3" href="../../dc/ddf/a00067.html#acd38806272aa6ee77aae82edaf1224ba" title="Get Infected count. " alt="" coords="443,5,585,47"/>
+<div class="center"><img src="../../db/db2/a00020_a37c5f82d2b07fc977a794301db1c25d1_cgraph.gif" border="0" usemap="#db/db2/a00020_a37c5f82d2b07fc977a794301db1c25d1_cgraph" alt=""/></div>
+<map name="db/db2/a00020_a37c5f82d2b07fc977a794301db1c25d1_cgraph" id="db/db2/a00020_a37c5f82d2b07fc977a794301db1c25d1_cgraph">
+<area shape="rect" id="node2" href="../../d7/dd4/a00013.html#ae61efee2bf342aa8ac955e8d9e2a6d2e" title="Gets current size of Location storage. " alt="" coords="274,9,437,36"/>
+<area shape="rect" id="node4" href="../../df/d03/a00348.html#abf460078744fdb2a5679c70dd7073055" title="H5Utils::WriteAttribute" alt="" coords="815,165,977,192"/>
+<area shape="rect" id="node7" href="../../db/db2/a00020.html#a3b4bd0fd7e724b111319db479626aaab" title="geopop::GeoGridHDF5Writer\l::WriteLocation" alt="" coords="255,399,456,441"/>
+<area shape="rect" id="node27" href="../../db/db2/a00020.html#a42fe8af0e0a6071fda128824e437de4a" title="geopop::GeoGridHDF5Writer\l::WritePeople" alt="" coords="520,57,721,98"/>
+<area shape="rect" id="node3" href="../../d7/dd4/a00013.html#a5be9ae73035d8a654299f91efe16934d" title="&lt; Checks whether the GeoGrid is finalized i.e. certain operations can(not) be used. " alt="" coords="505,5,736,32"/>
+<area shape="rect" id="node5" href="../../df/d03/a00348.html#a9129e552cdda5f75bb4d0038058e918a" title="H5Utils::HDF5Type" alt="" coords="1065,165,1203,192"/>
+<area shape="rect" id="node6" href="../../df/d03/a00348.html#aaff3c46ac4cda2de0cf124ac1f1e6e96" title="H5Utils::CreateSpace" alt="" coords="1055,216,1213,243"/>
+<area shape="rect" id="node8" href="../../de/d8c/a00036.html#aff45be35ed8e0f7e3c0951ee70057f63" title="Gets ID of this Location. " alt="" coords="533,457,709,484"/>
+<area shape="rect" id="node11" href="../../de/d8c/a00036.html#a03bce2c9b91adf113d2f1f9611ae73da" title="Gets the name. " alt="" coords="519,588,722,615"/>
+<area shape="rect" id="node13" href="../../de/d8c/a00036.html#a3921cf045293c04cddcd32920121b870" title="Gets the province. " alt="" coords="512,639,729,665"/>
+<area shape="rect" id="node15" href="../../de/d8c/a00036.html#a7fde850960f5c783ed650ea2de16a24f" title="Gets the absolute population. " alt="" coords="527,690,714,731"/>
+<area shape="rect" id="node16" href="../../de/d8c/a00036.html#a01914e7628a0b84613e155fcaa7155dd" title="Gets the Coordinate of this Location. " alt="" coords="504,224,737,251"/>
+<area shape="rect" id="node17" href="../../de/d8c/a00036.html#a470e42db21a7417ce4ecf8167eb1bb05" title="References outgoing commute Locations + fraction of commutes to that Location. " alt="" coords="507,275,734,317"/>
+<area shape="rect" id="node18" href="../../db/db2/a00020.html#a816d3ea4faa22eb8cfacccd1fc850c24" title="geopop::GeoGridHDF5Writer\l::WriteCommutes" alt="" coords="520,341,721,382"/>
+<area shape="rect" id="node20" href="../../de/d8c/a00036.html#af5d17516db20d693a8c8f3395e869659" title="Access through reference to ContactPools of type &#39;id&#39;. " alt="" coords="524,407,717,433"/>
+<area shape="rect" id="node21" href="../../db/db2/a00020.html#a599467553181db5ec29bfcdaa7645c7a" title="geopop::GeoGridHDF5Writer\l::WriteContactPool" alt="" coords="520,522,721,563"/>
+<area shape="rect" id="node9" href="../../de/d8c/a00036.html#ad4f791dc4b7209db83b7c30079b903ff" title="Calculates number of incomming commuters, given the fraction of the population that commutes..." alt="" coords="785,333,1007,374"/>
+<area shape="rect" id="node10" href="../../de/d8c/a00036.html#a05ebaf47b892c8dca868ab48bc262e23" title="Gets the number of people infected in the contactpools at this location. " alt="" coords="789,398,1003,439"/>
+<area shape="rect" id="node12" href="../../de/d8c/a00036.html#a0a5e86820deb8f0aa8e409e870be96fa" title="Calculates number of outgoing commuters, given the fraction of the population that commutes..." alt="" coords="785,777,1007,818"/>
+<area shape="rect" id="node14" href="../../de/d8c/a00036.html#a4117d7579640419c0985113b170e493f" title="Get Location&#39;s population fraction (of the total populaion count). " alt="" coords="803,842,989,883"/>
+<area shape="rect" id="node19" href="../../df/d03/a00348.html#a81d86b3c29a5e0ca5712f7dab6ab31c8" title="H5Utils::GetCompoundType\l\&lt; H5Commute \&gt;" alt="" coords="797,267,995,309"/>
+<area shape="rect" id="node22" href="../../df/d03/a00348.html#a3dd16e9ed848fe257fe5b65bc0418cd1" title="H5Utils::GetCompoundType\l\&lt; H5PoolPerson \&gt;" alt="" coords="797,463,995,505"/>
+<area shape="rect" id="node23" href="../../d6/d2c/a00072.html#a2c357e530f204c4ba1e686f4903f40ad" title="Gets current size of Location storage. " alt="" coords="825,529,967,570"/>
+<area shape="rect" id="node24" href="../../d6/d2c/a00072.html#a3b2da2fe2ebe5e75bcf8a13893f8d10a" title="Get the pool id. " alt="" coords="825,711,967,753"/>
+<area shape="rect" id="node26" href="../../df/df1/a00357.html#a025f9ff3cf2df8c0c8b95e48724d9b7c" title="Converts a LogMode value to corresponding name. " alt="" coords="809,646,983,687"/>
+<area shape="rect" id="node25" href="../../d6/d2c/a00072.html#acd38806272aa6ee77aae82edaf1224ba" title="Get Infected count. " alt="" coords="1063,711,1205,753"/>
+<area shape="rect" id="node28" href="../../df/d03/a00348.html#acac829dc3fb928cc284ca97a2d1d9e05" title="H5Utils::GetCompoundType\l\&lt; H5Person \&gt;" alt="" coords="797,49,995,90"/>
 </map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a47b00429c8b6da4cfd67494f3247ebf4"></a>
+<a class="anchor" id="a3b4bd0fd7e724b111319db479626aaab"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -336,11 +364,21 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">nlohmann::json geopop::GeoGridJSONWriter::WriteCoordinate </td>
+          <td class="memname">void geopop::GeoGridHDF5Writer::WriteLocation </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d8/df7/a00331.html#ad853921c138e9ecb23181946c1d066c4">Coordinate</a> &amp;&#160;</td>
-          <td class="paramname"><em>coordinate</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../de/d8c/a00036.html">geopop::Location</a> &amp;&#160;</td>
+          <td class="paramname"><em>loc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">H5::Group &amp;&#160;</td>
+          <td class="paramname"><em>locsGroup</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -349,65 +387,59 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Create group for location</p>
+<p>Set location attributes </p>
 
-<p>Create a JSON object containing all info needed to reconstruct a Coordinate. </p>
+<p>Definition at line <a class="el" href="../../dd/de3/a00201_source.html#l00064">64</a> of file <a class="el" href="../../dd/de3/a00201_source.html">GeoGridHDF5Writer.cpp</a>.</p>
 
-<p>Definition at line <a class="el" href="../../dc/d57/a00194_source.html#l00087">87</a> of file <a class="el" href="../../dc/d57/a00194_source.html">GeoGridJSONWriter.cpp</a>.</p>
+<p>References <a class="el" href="../../d9/d8d/a00262_source.html#l00162">geopop::Location::CRefOutgoingCommutes()</a>, <a class="el" href="../../d9/d8d/a00262_source.html#l00061">geopop::Location::GetCoordinate()</a>, <a class="el" href="../../d9/d8d/a00262_source.html#l00064">geopop::Location::GetID()</a>, <a class="el" href="../../d9/d8d/a00262_source.html#l00073">geopop::Location::GetName()</a>, <a class="el" href="../../d9/d8d/a00262_source.html#l00079">geopop::Location::GetPopCount()</a>, <a class="el" href="../../d9/d8d/a00262_source.html#l00082">geopop::Location::GetProvince()</a>, <a class="el" href="../../db/d44/a00162_source.html#l00078">stride::ContactType::IdList</a>, <a class="el" href="../../db/d53/a00202_source.html#l00061">m_location_counter</a>, <a class="el" href="../../db/d53/a00202_source.html#l00062">m_pool_counter</a>, <a class="el" href="../../d9/d8d/a00262_source.html#l00129">geopop::Location::RefPools()</a>, <a class="el" href="../../d3/db1/a00200_source.html#l00067">H5Utils::WriteAttribute()</a>, <a class="el" href="../../dd/de3/a00201_source.html#l00090">WriteCommutes()</a>, and <a class="el" href="../../dd/de3/a00201_source.html#l00108">WriteContactPool()</a>.</p>
 
-</div>
-</div>
-<a class="anchor" id="af57d746af60011f0a69e74423027152c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">nlohmann::json geopop::GeoGridJSONWriter::WriteLocation </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../db/df3/a00034.html">Location</a> &amp;&#160;</td>
-          <td class="paramname"><em>location</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Create a JSON object containing all info needed to reconstruct a <a class="el" href="../../db/df3/a00034.html" title="Location for use within the GeoGrid, contains Coordinate and index to ContactPools. ">Location</a>. </p>
-
-<p>Definition at line <a class="el" href="../../dc/d57/a00194_source.html#l00053">53</a> of file <a class="el" href="../../dc/d57/a00194_source.html">GeoGridJSONWriter.cpp</a>.</p>
-
-<p>References <a class="el" href="../../d3/d1a/a00251_source.html#l00162">geopop::Location::CRefOutgoingCommutes()</a>, <a class="el" href="../../d3/d1a/a00251_source.html#l00112">geopop::Location::CRefPools()</a>, <a class="el" href="../../d3/d1a/a00251_source.html#l00061">geopop::Location::GetCoordinate()</a>, <a class="el" href="../../d3/d1a/a00251_source.html#l00064">geopop::Location::GetID()</a>, <a class="el" href="../../d3/d1a/a00251_source.html#l00073">geopop::Location::GetName()</a>, <a class="el" href="../../d3/d1a/a00251_source.html#l00079">geopop::Location::GetPopCount()</a>, <a class="el" href="../../d3/d1a/a00251_source.html#l00082">geopop::Location::GetProvince()</a>, <a class="el" href="../../d1/db7/a00157_source.html#l00078">stride::ContactType::IdList</a>, and <a class="el" href="../../d9/d7d/a00150_source.html#l00032">stride::ContactLogMode::ToString()</a>.</p>
+<p>Referenced by <a class="el" href="../../dd/de3/a00201_source.html#l00038">Write()</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../db/db2/a00020_af57d746af60011f0a69e74423027152c_cgraph.gif" border="0" usemap="#db/db2/a00020_af57d746af60011f0a69e74423027152c_cgraph" alt=""/></div>
-<map name="db/db2/a00020_af57d746af60011f0a69e74423027152c_cgraph" id="db/db2/a00020_af57d746af60011f0a69e74423027152c_cgraph">
-<area shape="rect" id="node2" href="../../db/df3/a00034.html#a470e42db21a7417ce4ecf8167eb1bb05" title="References outgoing commute Locations + fraction of commutes to that Location. " alt="" coords="255,5,482,47"/>
-<area shape="rect" id="node3" href="../../db/df3/a00034.html#a4c0c7cc6e193238c3fb3e777e7620e40" title="Access through const reference to ContactPools of type &#39;id&#39;. " alt="" coords="267,71,470,98"/>
-<area shape="rect" id="node4" href="../../db/df3/a00034.html#a01914e7628a0b84613e155fcaa7155dd" title="Gets the Coordinate of this Location. " alt="" coords="252,122,485,149"/>
-<area shape="rect" id="node5" href="../../db/df3/a00034.html#aff45be35ed8e0f7e3c0951ee70057f63" title="Gets ID of this Location. " alt="" coords="281,173,457,199"/>
-<area shape="rect" id="node8" href="../../db/df3/a00034.html#a03bce2c9b91adf113d2f1f9611ae73da" title="Gets the name. " alt="" coords="267,223,470,250"/>
-<area shape="rect" id="node10" href="../../db/df3/a00034.html#a7fde850960f5c783ed650ea2de16a24f" title="Gets the absolute population. " alt="" coords="275,275,462,316"/>
-<area shape="rect" id="node11" href="../../db/df3/a00034.html#a3921cf045293c04cddcd32920121b870" title="Gets the province. " alt="" coords="260,341,477,367"/>
-<area shape="rect" id="node13" href="../../d8/d8e/a00344.html#a025f9ff3cf2df8c0c8b95e48724d9b7c" title="Converts a LogMode value to corresponding name. " alt="" coords="281,392,456,433"/>
-<area shape="rect" id="node6" href="../../db/df3/a00034.html#ad4f791dc4b7209db83b7c30079b903ff" title="Calculates number of incomming commuters, given the fraction of the population that commutes..." alt="" coords="533,100,755,141"/>
-<area shape="rect" id="node7" href="../../db/df3/a00034.html#a05ebaf47b892c8dca868ab48bc262e23" title="Gets the number of people infected in the contactpools at this location. " alt="" coords="537,165,751,207"/>
-<area shape="rect" id="node9" href="../../db/df3/a00034.html#a0a5e86820deb8f0aa8e409e870be96fa" title="Calculates number of outgoing commuters, given the fraction of the population that commutes..." alt="" coords="533,231,755,272"/>
-<area shape="rect" id="node12" href="../../db/df3/a00034.html#a4117d7579640419c0985113b170e493f" title="Get Location&#39;s population fraction (of the total populaion count). " alt="" coords="551,333,737,375"/>
+<div class="center"><img src="../../db/db2/a00020_a3b4bd0fd7e724b111319db479626aaab_cgraph.gif" border="0" usemap="#db/db2/a00020_a3b4bd0fd7e724b111319db479626aaab_cgraph" alt=""/></div>
+<map name="db/db2/a00020_a3b4bd0fd7e724b111319db479626aaab_cgraph" id="db/db2/a00020_a3b4bd0fd7e724b111319db479626aaab_cgraph">
+<area shape="rect" id="node2" href="../../de/d8c/a00036.html#a470e42db21a7417ce4ecf8167eb1bb05" title="References outgoing commute Locations + fraction of commutes to that Location. " alt="" coords="258,5,485,47"/>
+<area shape="rect" id="node3" href="../../de/d8c/a00036.html#a01914e7628a0b84613e155fcaa7155dd" title="Gets the Coordinate of this Location. " alt="" coords="255,71,488,98"/>
+<area shape="rect" id="node4" href="../../de/d8c/a00036.html#aff45be35ed8e0f7e3c0951ee70057f63" title="Gets ID of this Location. " alt="" coords="283,122,459,149"/>
+<area shape="rect" id="node7" href="../../de/d8c/a00036.html#a03bce2c9b91adf113d2f1f9611ae73da" title="Gets the name. " alt="" coords="270,173,473,199"/>
+<area shape="rect" id="node9" href="../../de/d8c/a00036.html#a7fde850960f5c783ed650ea2de16a24f" title="Gets the absolute population. " alt="" coords="278,224,465,265"/>
+<area shape="rect" id="node10" href="../../de/d8c/a00036.html#a3921cf045293c04cddcd32920121b870" title="Gets the province. " alt="" coords="263,290,480,317"/>
+<area shape="rect" id="node12" href="../../de/d8c/a00036.html#af5d17516db20d693a8c8f3395e869659" title="Access through reference to ContactPools of type &#39;id&#39;. " alt="" coords="275,341,468,367"/>
+<area shape="rect" id="node13" href="../../df/d03/a00348.html#abf460078744fdb2a5679c70dd7073055" title="H5Utils::WriteAttribute" alt="" coords="565,391,728,418"/>
+<area shape="rect" id="node16" href="../../db/db2/a00020.html#a816d3ea4faa22eb8cfacccd1fc850c24" title="geopop::GeoGridHDF5Writer\l::WriteCommutes" alt="" coords="271,443,472,484"/>
+<area shape="rect" id="node18" href="../../db/db2/a00020.html#a599467553181db5ec29bfcdaa7645c7a" title="geopop::GeoGridHDF5Writer\l::WriteContactPool" alt="" coords="271,617,472,659"/>
+<area shape="rect" id="node5" href="../../de/d8c/a00036.html#ad4f791dc4b7209db83b7c30079b903ff" title="Calculates number of incomming commuters, given the fraction of the population that commutes..." alt="" coords="536,49,757,91"/>
+<area shape="rect" id="node6" href="../../de/d8c/a00036.html#a05ebaf47b892c8dca868ab48bc262e23" title="Gets the number of people infected in the contactpools at this location. " alt="" coords="539,115,754,156"/>
+<area shape="rect" id="node8" href="../../de/d8c/a00036.html#a0a5e86820deb8f0aa8e409e870be96fa" title="Calculates number of outgoing commuters, given the fraction of the population that commutes..." alt="" coords="536,180,757,221"/>
+<area shape="rect" id="node11" href="../../de/d8c/a00036.html#a4117d7579640419c0985113b170e493f" title="Get Location&#39;s population fraction (of the total populaion count). " alt="" coords="553,283,740,324"/>
+<area shape="rect" id="node14" href="../../df/d03/a00348.html#a9129e552cdda5f75bb4d0038058e918a" title="H5Utils::HDF5Type" alt="" coords="815,391,954,418"/>
+<area shape="rect" id="node15" href="../../df/d03/a00348.html#aaff3c46ac4cda2de0cf124ac1f1e6e96" title="H5Utils::CreateSpace" alt="" coords="805,442,964,469"/>
+<area shape="rect" id="node17" href="../../df/d03/a00348.html#a81d86b3c29a5e0ca5712f7dab6ab31c8" title="H5Utils::GetCompoundType\l\&lt; H5Commute \&gt;" alt="" coords="548,493,745,535"/>
+<area shape="rect" id="node19" href="../../df/d03/a00348.html#a3dd16e9ed848fe257fe5b65bc0418cd1" title="H5Utils::GetCompoundType\l\&lt; H5PoolPerson \&gt;" alt="" coords="548,676,745,717"/>
+<area shape="rect" id="node20" href="../../d6/d2c/a00072.html#a2c357e530f204c4ba1e686f4903f40ad" title="Gets current size of Location storage. " alt="" coords="575,741,718,783"/>
+<area shape="rect" id="node21" href="../../d6/d2c/a00072.html#a3b2da2fe2ebe5e75bcf8a13893f8d10a" title="Get the pool id. " alt="" coords="575,807,718,848"/>
+<area shape="rect" id="node23" href="../../df/df1/a00357.html#a025f9ff3cf2df8c0c8b95e48724d9b7c" title="Converts a LogMode value to corresponding name. " alt="" coords="559,559,734,600"/>
+<area shape="rect" id="node22" href="../../d6/d2c/a00072.html#acd38806272aa6ee77aae82edaf1224ba" title="Get Infected count. " alt="" coords="813,807,956,848"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/db2/a00020_a3b4bd0fd7e724b111319db479626aaab_icgraph.gif" border="0" usemap="#db/db2/a00020_a3b4bd0fd7e724b111319db479626aaab_icgraph" alt=""/></div>
+<map name="db/db2/a00020_a3b4bd0fd7e724b111319db479626aaab_icgraph" id="db/db2/a00020_a3b4bd0fd7e724b111319db479626aaab_icgraph">
+<area shape="rect" id="node2" href="../../db/db2/a00020.html#a37c5f82d2b07fc977a794301db1c25d1" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="255,5,456,47"/>
 </map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="ac76d8a5db270181e67b1b561bfe55650"></a>
+<a class="anchor" id="a816d3ea4faa22eb8cfacccd1fc850c24"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -415,10 +447,151 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">nlohmann::json geopop::GeoGridJSONWriter::WritePerson </td>
+          <td class="memname">void geopop::GeoGridHDF5Writer::WriteCommutes </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../da/d82/a00091.html">stride::Person</a> *&#160;</td>
-          <td class="paramname"><em>person</em></td><td>)</td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; <a class="el" href="../../de/d8c/a00036.html">Location</a> *, <a class="el" href="../../d8/d21/a00368.html">double</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>commutes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5::Group &amp;&#160;</td>
+          <td class="paramname"><em>locGroup</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Create compound datatype</p>
+<p>Create dataset </p>
+
+<p>Definition at line <a class="el" href="../../dd/de3/a00201_source.html#l00090">90</a> of file <a class="el" href="../../dd/de3/a00201_source.html">GeoGridHDF5Writer.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d8/d72/a00199_source.html#l00057">H5Utils::CreateSpace()</a>, <a class="el" href="../../d8/d72/a00199_source.html#l00024">H5Utils::GetCompoundType&lt; H5Commute &gt;()</a>, and <a class="el" href="../../d3/db1/a00200_source.html#l00067">H5Utils::WriteAttribute()</a>.</p>
+
+<p>Referenced by <a class="el" href="../../dd/de3/a00201_source.html#l00064">WriteLocation()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/db2/a00020_a816d3ea4faa22eb8cfacccd1fc850c24_cgraph.gif" border="0" usemap="#db/db2/a00020_a816d3ea4faa22eb8cfacccd1fc850c24_cgraph" alt=""/></div>
+<map name="db/db2/a00020_a816d3ea4faa22eb8cfacccd1fc850c24_cgraph" id="db/db2/a00020_a816d3ea4faa22eb8cfacccd1fc850c24_cgraph">
+<area shape="rect" id="node2" href="../../df/d03/a00348.html#aaff3c46ac4cda2de0cf124ac1f1e6e96" title="H5Utils::CreateSpace" alt="" coords="500,5,659,32"/>
+<area shape="rect" id="node3" href="../../df/d03/a00348.html#a81d86b3c29a5e0ca5712f7dab6ab31c8" title="H5Utils::GetCompoundType\l\&lt; H5Commute \&gt;" alt="" coords="255,23,452,65"/>
+<area shape="rect" id="node4" href="../../df/d03/a00348.html#abf460078744fdb2a5679c70dd7073055" title="H5Utils::WriteAttribute" alt="" coords="272,89,435,116"/>
+<area shape="rect" id="node5" href="../../df/d03/a00348.html#a9129e552cdda5f75bb4d0038058e918a" title="H5Utils::HDF5Type" alt="" coords="510,89,649,116"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/db2/a00020_a816d3ea4faa22eb8cfacccd1fc850c24_icgraph.gif" border="0" usemap="#db/db2/a00020_a816d3ea4faa22eb8cfacccd1fc850c24_icgraph" alt=""/></div>
+<map name="db/db2/a00020_a816d3ea4faa22eb8cfacccd1fc850c24_icgraph" id="db/db2/a00020_a816d3ea4faa22eb8cfacccd1fc850c24_icgraph">
+<area shape="rect" id="node2" href="../../db/db2/a00020.html#a3b4bd0fd7e724b111319db479626aaab" title="geopop::GeoGridHDF5Writer\l::WriteLocation" alt="" coords="255,5,456,47"/>
+<area shape="rect" id="node3" href="../../db/db2/a00020.html#a37c5f82d2b07fc977a794301db1c25d1" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="504,5,705,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a599467553181db5ec29bfcdaa7645c7a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void geopop::GeoGridHDF5Writer::WriteContactPool </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d6/d2c/a00072.html">stride::ContactPool</a> &amp;&#160;</td>
+          <td class="paramname"><em>pool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../df/d73/a00358.html#a61a32e88a50c57e6f5c49f0996b6b462">stride::ContactType::Id</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">H5::Group &amp;&#160;</td>
+          <td class="paramname"><em>cpGroup</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Create dataset </p>
+
+<p>Definition at line <a class="el" href="../../dd/de3/a00201_source.html#l00108">108</a> of file <a class="el" href="../../dd/de3/a00201_source.html">GeoGridHDF5Writer.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d8/d72/a00199_source.html#l00057">H5Utils::CreateSpace()</a>, <a class="el" href="../../d8/d72/a00199_source.html#l00033">H5Utils::GetCompoundType&lt; H5PoolPerson &gt;()</a>, <a class="el" href="../../d6/db8/a00158_source.html#l00059">stride::ContactPool::GetId()</a>, <a class="el" href="../../db/d53/a00202_source.html#l00060">m_persons_found</a>, <a class="el" href="../../db/d53/a00202_source.html#l00062">m_pool_counter</a>, <a class="el" href="../../d6/db8/a00158_source.html#l00081">stride::ContactPool::size()</a>, <a class="el" href="../../d3/df8/a00155_source.html#l00032">stride::ContactLogMode::ToString()</a>, and <a class="el" href="../../d3/db1/a00200_source.html#l00067">H5Utils::WriteAttribute()</a>.</p>
+
+<p>Referenced by <a class="el" href="../../dd/de3/a00201_source.html#l00064">WriteLocation()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/db2/a00020_a599467553181db5ec29bfcdaa7645c7a_cgraph.gif" border="0" usemap="#db/db2/a00020_a599467553181db5ec29bfcdaa7645c7a_cgraph" alt=""/></div>
+<map name="db/db2/a00020_a599467553181db5ec29bfcdaa7645c7a_cgraph" id="db/db2/a00020_a599467553181db5ec29bfcdaa7645c7a_cgraph">
+<area shape="rect" id="node2" href="../../df/d03/a00348.html#aaff3c46ac4cda2de0cf124ac1f1e6e96" title="H5Utils::CreateSpace" alt="" coords="500,203,659,230"/>
+<area shape="rect" id="node3" href="../../df/d03/a00348.html#a3dd16e9ed848fe257fe5b65bc0418cd1" title="H5Utils::GetCompoundType\l\&lt; H5PoolPerson \&gt;" alt="" coords="255,71,452,112"/>
+<area shape="rect" id="node4" href="../../d6/d2c/a00072.html#a3b2da2fe2ebe5e75bcf8a13893f8d10a" title="Get the pool id. " alt="" coords="282,5,425,47"/>
+<area shape="rect" id="node6" href="../../d6/d2c/a00072.html#a2c357e530f204c4ba1e686f4903f40ad" title="Gets current size of Location storage. " alt="" coords="282,188,425,229"/>
+<area shape="rect" id="node7" href="../../df/df1/a00357.html#a025f9ff3cf2df8c0c8b95e48724d9b7c" title="Converts a LogMode value to corresponding name. " alt="" coords="266,253,441,295"/>
+<area shape="rect" id="node8" href="../../df/d03/a00348.html#abf460078744fdb2a5679c70dd7073055" title="H5Utils::WriteAttribute" alt="" coords="272,319,435,346"/>
+<area shape="rect" id="node5" href="../../d6/d2c/a00072.html#acd38806272aa6ee77aae82edaf1224ba" title="Get Infected count. " alt="" coords="508,5,651,47"/>
+<area shape="rect" id="node9" href="../../df/d03/a00348.html#a9129e552cdda5f75bb4d0038058e918a" title="H5Utils::HDF5Type" alt="" coords="510,319,649,346"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/db2/a00020_a599467553181db5ec29bfcdaa7645c7a_icgraph.gif" border="0" usemap="#db/db2/a00020_a599467553181db5ec29bfcdaa7645c7a_icgraph" alt=""/></div>
+<map name="db/db2/a00020_a599467553181db5ec29bfcdaa7645c7a_icgraph" id="db/db2/a00020_a599467553181db5ec29bfcdaa7645c7a_icgraph">
+<area shape="rect" id="node2" href="../../db/db2/a00020.html#a3b4bd0fd7e724b111319db479626aaab" title="geopop::GeoGridHDF5Writer\l::WriteLocation" alt="" coords="255,5,456,47"/>
+<area shape="rect" id="node3" href="../../db/db2/a00020.html#a37c5f82d2b07fc977a794301db1c25d1" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="504,5,705,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a42fe8af0e0a6071fda128824e437de4a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void geopop::GeoGridHDF5Writer::WritePeople </td>
+          <td>(</td>
+          <td class="paramtype">H5::Group &amp;&#160;</td>
+          <td class="paramname"><em>rootGroup</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -428,21 +601,34 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Create compound datatype</p>
+<p>Create dataset </p>
 
-<p>Create a JSON object containing all info needed to reconstruct a Person. </p>
+<p>Definition at line <a class="el" href="../../dd/de3/a00201_source.html#l00129">129</a> of file <a class="el" href="../../dd/de3/a00201_source.html">GeoGridHDF5Writer.cpp</a>.</p>
 
-<p>Definition at line <a class="el" href="../../dc/d57/a00194_source.html#l00112">112</a> of file <a class="el" href="../../dc/d57/a00194_source.html">GeoGridJSONWriter.cpp</a>.</p>
+<p>References <a class="el" href="../../d8/d72/a00199_source.html#l00057">H5Utils::CreateSpace()</a>, <a class="el" href="../../d8/d72/a00199_source.html#l00041">H5Utils::GetCompoundType&lt; H5Person &gt;()</a>, <a class="el" href="../../db/d53/a00202_source.html#l00060">m_persons_found</a>, and <a class="el" href="../../d3/db1/a00200_source.html#l00067">H5Utils::WriteAttribute()</a>.</p>
 
-<p>References <a class="el" href="../../dc/d6a/a00261_source.html#l00054">stride::Person::GetAge()</a>, <a class="el" href="../../dc/d6a/a00261_source.html#l00063">stride::Person::GetId()</a>, and <a class="el" href="../../dc/d6a/a00261_source.html#l00066">stride::Person::GetPoolId()</a>.</p>
+<p>Referenced by <a class="el" href="../../dd/de3/a00201_source.html#l00038">Write()</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../db/db2/a00020_ac76d8a5db270181e67b1b561bfe55650_cgraph.gif" border="0" usemap="#db/db2/a00020_ac76d8a5db270181e67b1b561bfe55650_cgraph" alt=""/></div>
-<map name="db/db2/a00020_ac76d8a5db270181e67b1b561bfe55650_cgraph" id="db/db2/a00020_ac76d8a5db270181e67b1b561bfe55650_cgraph">
-<area shape="rect" id="node2" href="../../da/d82/a00091.html#a943e2b69a52ca335ecbc636dff8e7e4e" title="Get the age. " alt="" coords="258,5,425,32"/>
-<area shape="rect" id="node3" href="../../da/d82/a00091.html#afab3ab2a1a33004f9e25d4873c3c1921" title="Get the id. " alt="" coords="265,56,417,83"/>
-<area shape="rect" id="node4" href="../../da/d82/a00091.html#aebd3f273ac67e7db18d2db9aa0bdda2d" title="Get ID of contactpool_type. " alt="" coords="252,107,431,133"/>
+<div class="center"><img src="../../db/db2/a00020_a42fe8af0e0a6071fda128824e437de4a_cgraph.gif" border="0" usemap="#db/db2/a00020_a42fe8af0e0a6071fda128824e437de4a_cgraph" alt=""/></div>
+<map name="db/db2/a00020_a42fe8af0e0a6071fda128824e437de4a_cgraph" id="db/db2/a00020_a42fe8af0e0a6071fda128824e437de4a_cgraph">
+<area shape="rect" id="node2" href="../../df/d03/a00348.html#aaff3c46ac4cda2de0cf124ac1f1e6e96" title="H5Utils::CreateSpace" alt="" coords="500,5,659,32"/>
+<area shape="rect" id="node3" href="../../df/d03/a00348.html#acac829dc3fb928cc284ca97a2d1d9e05" title="H5Utils::GetCompoundType\l\&lt; H5Person \&gt;" alt="" coords="255,23,452,65"/>
+<area shape="rect" id="node4" href="../../df/d03/a00348.html#abf460078744fdb2a5679c70dd7073055" title="H5Utils::WriteAttribute" alt="" coords="272,89,435,116"/>
+<area shape="rect" id="node5" href="../../df/d03/a00348.html#a9129e552cdda5f75bb4d0038058e918a" title="H5Utils::HDF5Type" alt="" coords="510,89,649,116"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/db2/a00020_a42fe8af0e0a6071fda128824e437de4a_icgraph.gif" border="0" usemap="#db/db2/a00020_a42fe8af0e0a6071fda128824e437de4a_icgraph" alt=""/></div>
+<map name="db/db2/a00020_a42fe8af0e0a6071fda128824e437de4a_icgraph" id="db/db2/a00020_a42fe8af0e0a6071fda128824e437de4a_icgraph">
+<area shape="rect" id="node2" href="../../db/db2/a00020.html#a37c5f82d2b07fc977a794301db1c25d1" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="255,5,456,47"/>
 </map>
 </div>
 </p>
@@ -450,7 +636,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a5863ac0a15fdacd33ebbadc0af6ba77a"></a>
+<a class="anchor" id="aa2a0200ec646f1452939827ddfcbd9e3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -458,7 +644,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::set&lt;<a class="el" href="../../da/d82/a00091.html">stride::Person</a>*&gt; geopop::GeoGridJSONWriter::m_persons_found</td>
+          <td class="memname">std::set&lt;<a class="el" href="../../d9/df8/a00096.html">stride::Person</a>*&gt; geopop::GeoGridHDF5Writer::m_persons_found</td>
         </tr>
       </table>
   </td>
@@ -470,21 +656,71 @@ Here is the call graph for this function:</div>
 
 <p>The persons found when looping over the ContactPools. </p>
 
-<p>Definition at line <a class="el" href="../../d3/d2a/a00195_source.html#l00062">62</a> of file <a class="el" href="../../d3/d2a/a00195_source.html">GeoGridJSONWriter.h</a>.</p>
+<p>Definition at line <a class="el" href="../../db/d53/a00202_source.html#l00060">60</a> of file <a class="el" href="../../db/d53/a00202_source.html">GeoGridHDF5Writer.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../dd/de3/a00201_source.html#l00038">Write()</a>, <a class="el" href="../../dd/de3/a00201_source.html#l00108">WriteContactPool()</a>, and <a class="el" href="../../dd/de3/a00201_source.html#l00129">WritePeople()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afff927af2d7ce1a804f69811657fc32e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int geopop::GeoGridHDF5Writer::m_location_counter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d53/a00202_source.html#l00061">61</a> of file <a class="el" href="../../db/d53/a00202_source.html">GeoGridHDF5Writer.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../dd/de3/a00201_source.html#l00064">WriteLocation()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a955d2db57bd5ba5cba33ad1dce8b6e2b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int geopop::GeoGridHDF5Writer::m_pool_counter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d53/a00202_source.html#l00062">62</a> of file <a class="el" href="../../db/d53/a00202_source.html">GeoGridHDF5Writer.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../dd/de3/a00201_source.html#l00108">WriteContactPool()</a>, and <a class="el" href="../../dd/de3/a00201_source.html#l00064">WriteLocation()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d3/d2a/a00195_source.html">GeoGridJSONWriter.h</a></li>
-<li><a class="el" href="../../dc/d57/a00194_source.html">GeoGridJSONWriter.cpp</a></li>
+<li><a class="el" href="../../db/d53/a00202_source.html">GeoGridHDF5Writer.h</a></li>
+<li><a class="el" href="../../dd/de3/a00201_source.html">GeoGridHDF5Writer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d8/df7/a00331.html">geopop</a></li><li class="navelem"><a class="el" href="../../db/db2/a00020.html">GeoGridJSONWriter</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 09:18:53 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../d2/d45/a00342.html">geopop</a></li><li class="navelem"><a class="el" href="../../db/db2/a00020.html">GeoGridHDF5Writer</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 10:47:38 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

@@ -1,10 +1,7 @@
-<map id="HouseholdReader.h" name="HouseholdReader.h">
-<area shape="rect" id="node2" href="$d6/daa/a00187.html" title="GeoGridConfig.cpp" alt="" coords="5,155,147,181"/>
-<area shape="rect" id="node3" href="$dd/df3/a00219.html" title="HouseholdCSVReader.h" alt="" coords="338,80,510,107"/>
-<area shape="rect" id="node6" href="$d0/d24/a00222.html" title="HouseholdJSONReader.h" alt="" coords="534,80,711,107"/>
-<area shape="rect" id="node8" href="$d6/d4b/a00277.html" title="ReaderFactory.h" alt="" coords="183,80,305,107"/>
-<area shape="rect" id="node4" href="$dc/d9a/a00218.html" title="HouseholdCSVReader.cpp" alt="" coords="337,155,524,181"/>
-<area shape="rect" id="node5" href="$dc/d28/a00276.html" title="ReaderFactory.cpp" alt="" coords="549,155,686,181"/>
-<area shape="rect" id="node7" href="$dd/d52/a00221.html" title="HouseholdJSONReader.cpp" alt="" coords="711,155,903,181"/>
-<area shape="rect" id="node9" href="$dd/dc1/a00212.html" title="Initialize populations: implementation. " alt="" coords="170,155,313,181"/>
+<map id="GeoGridStreamWriter.h" name="GeoGridStreamWriter.h">
+<area shape="rect" id="node2" href="$d5/df1/a00206.html" title="GeoGridJSONWriter.h" alt="" coords="122,80,275,107"/>
+<area shape="rect" id="node5" href="$dd/dc1/a00212.html" title="GeoGridProtoWriter.h" alt="" coords="300,80,455,107"/>
+<area shape="rect" id="node3" href="$d5/d13/a00205.html" title="GeoGridJSONWriter.cpp" alt="" coords="5,155,173,181"/>
+<area shape="rect" id="node4" href="$dd/d52/a00221.html" title="GeoGridWriterFactory.cpp" alt="" coords="197,155,379,181"/>
+<area shape="rect" id="node6" href="$dd/ded/a00211.html" title="GeoGridProtoWriter.cpp" alt="" coords="403,155,573,181"/>
 </map>

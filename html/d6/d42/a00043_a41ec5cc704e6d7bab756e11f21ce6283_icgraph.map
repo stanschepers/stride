@@ -1,0 +1,7 @@
+<map id="geopop::ReaderFactory::CreateDistributionReader" name="geopop::ReaderFactory::CreateDistributionReader">
+<area shape="rect" id="node2" href="$d7/d7a/a00016.html#ae9c0d5a3c09210264f7ba36f8404e9c2" title="Read the workplace distribution data file, parse it and set data. " alt="" coords="244,39,415,80"/>
+<area shape="rect" id="node3" href="$df/d13/a00085.html#a23493e205a9a22922b1511b80e64bc1e" title="Generates a synthetic population. " alt="" coords="463,39,623,80"/>
+<area shape="rect" id="node4" href="$df/d5d/a00084.html#a9cef30bd849611feee70025cd9270e96" title="Actual run of the simulator. " alt="" coords="671,5,849,47"/>
+<area shape="rect" id="node6" href="$d1/d84/a00097.html#a56ed209c60c77e0080a0a653b09b26ce" title="Create a Population initialized by the configuration in property tree. " alt="" coords="693,71,827,112"/>
+<area shape="rect" id="node5" href="$d1/d5d/a00311.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main program of the stride simulator. " alt="" coords="897,13,952,39"/>
+</map>

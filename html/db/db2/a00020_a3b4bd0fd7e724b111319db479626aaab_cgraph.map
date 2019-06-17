@@ -1,0 +1,24 @@
+<map id="geopop::GeoGridHDF5Writer::WriteLocation" name="geopop::GeoGridHDF5Writer::WriteLocation">
+<area shape="rect" id="node2" href="$de/d8c/a00036.html#a470e42db21a7417ce4ecf8167eb1bb05" title="References outgoing commute Locations + fraction of commutes to that Location. " alt="" coords="258,5,485,47"/>
+<area shape="rect" id="node3" href="$de/d8c/a00036.html#a01914e7628a0b84613e155fcaa7155dd" title="Gets the Coordinate of this Location. " alt="" coords="255,71,488,98"/>
+<area shape="rect" id="node4" href="$de/d8c/a00036.html#aff45be35ed8e0f7e3c0951ee70057f63" title="Gets ID of this Location. " alt="" coords="283,122,459,149"/>
+<area shape="rect" id="node7" href="$de/d8c/a00036.html#a03bce2c9b91adf113d2f1f9611ae73da" title="Gets the name. " alt="" coords="270,173,473,199"/>
+<area shape="rect" id="node9" href="$de/d8c/a00036.html#a7fde850960f5c783ed650ea2de16a24f" title="Gets the absolute population. " alt="" coords="278,224,465,265"/>
+<area shape="rect" id="node10" href="$de/d8c/a00036.html#a3921cf045293c04cddcd32920121b870" title="Gets the province. " alt="" coords="263,290,480,317"/>
+<area shape="rect" id="node12" href="$de/d8c/a00036.html#af5d17516db20d693a8c8f3395e869659" title="Access through reference to ContactPools of type &#39;id&#39;. " alt="" coords="275,341,468,367"/>
+<area shape="rect" id="node13" href="$df/d03/a00348.html#abf460078744fdb2a5679c70dd7073055" title="H5Utils::WriteAttribute" alt="" coords="565,391,728,418"/>
+<area shape="rect" id="node16" href="$db/db2/a00020.html#a816d3ea4faa22eb8cfacccd1fc850c24" title="geopop::GeoGridHDF5Writer\l::WriteCommutes" alt="" coords="271,443,472,484"/>
+<area shape="rect" id="node18" href="$db/db2/a00020.html#a599467553181db5ec29bfcdaa7645c7a" title="geopop::GeoGridHDF5Writer\l::WriteContactPool" alt="" coords="271,617,472,659"/>
+<area shape="rect" id="node5" href="$de/d8c/a00036.html#ad4f791dc4b7209db83b7c30079b903ff" title="Calculates number of incomming commuters, given the fraction of the population that commutes..." alt="" coords="536,49,757,91"/>
+<area shape="rect" id="node6" href="$de/d8c/a00036.html#a05ebaf47b892c8dca868ab48bc262e23" title="Gets the number of people infected in the contactpools at this location. " alt="" coords="539,115,754,156"/>
+<area shape="rect" id="node8" href="$de/d8c/a00036.html#a0a5e86820deb8f0aa8e409e870be96fa" title="Calculates number of outgoing commuters, given the fraction of the population that commutes..." alt="" coords="536,180,757,221"/>
+<area shape="rect" id="node11" href="$de/d8c/a00036.html#a4117d7579640419c0985113b170e493f" title="Get Location&#39;s population fraction (of the total populaion count). " alt="" coords="553,283,740,324"/>
+<area shape="rect" id="node14" href="$df/d03/a00348.html#a9129e552cdda5f75bb4d0038058e918a" title="H5Utils::HDF5Type" alt="" coords="815,391,954,418"/>
+<area shape="rect" id="node15" href="$df/d03/a00348.html#aaff3c46ac4cda2de0cf124ac1f1e6e96" title="H5Utils::CreateSpace" alt="" coords="805,442,964,469"/>
+<area shape="rect" id="node17" href="$df/d03/a00348.html#a81d86b3c29a5e0ca5712f7dab6ab31c8" title="H5Utils::GetCompoundType\l\&lt; H5Commute \&gt;" alt="" coords="548,493,745,535"/>
+<area shape="rect" id="node19" href="$df/d03/a00348.html#a3dd16e9ed848fe257fe5b65bc0418cd1" title="H5Utils::GetCompoundType\l\&lt; H5PoolPerson \&gt;" alt="" coords="548,676,745,717"/>
+<area shape="rect" id="node20" href="$d6/d2c/a00072.html#a2c357e530f204c4ba1e686f4903f40ad" title="Gets current size of Location storage. " alt="" coords="575,741,718,783"/>
+<area shape="rect" id="node21" href="$d6/d2c/a00072.html#a3b2da2fe2ebe5e75bcf8a13893f8d10a" title="Get the pool id. " alt="" coords="575,807,718,848"/>
+<area shape="rect" id="node23" href="$df/df1/a00357.html#a025f9ff3cf2df8c0c8b95e48724d9b7c" title="Converts a LogMode value to corresponding name. " alt="" coords="559,559,734,600"/>
+<area shape="rect" id="node22" href="$d6/d2c/a00072.html#acd38806272aa6ee77aae82edaf1224ba" title="Get Infected count. " alt="" coords="813,807,956,848"/>
+</map>

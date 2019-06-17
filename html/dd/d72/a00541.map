@@ -1,6 +1,4 @@
-<map id="KdTree_def.h" name="KdTree_def.h">
-<area shape="rect" id="node2" href="$d4/d9a/a00246.html" title="KdTree.h" alt="" coords="300,80,376,107"/>
-<area shape="rect" id="node3" href="$d1/d88/a00128.html" title="AABBox.h" alt="" coords="53,155,138,181"/>
-<area shape="rect" id="node4" href="$d6/d22/a00245.html" title="KdNode.h" alt="" coords="374,155,458,181"/>
-<area shape="rect" id="node10" href="$d7/d2f/a00258.html" title="Median.h" alt="" coords="620,80,700,107"/>
+<map id="InfectedFileViewer.h" name="InfectedFileViewer.h">
+<area shape="rect" id="node2" href="$d6/d08/a00244.html" title="Header for the InfectedFile class. " alt="" coords="81,80,186,107"/>
+<area shape="rect" id="node6" href="$d4/d08/a00237.html" title="Definition of EventId. " alt="" coords="209,80,321,107"/>
 </map>

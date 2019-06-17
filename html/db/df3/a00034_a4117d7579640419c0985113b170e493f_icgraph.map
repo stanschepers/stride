@@ -1,6 +1,0 @@
-<map id="geopop::Location::GetPopFraction" name="geopop::Location::GetPopFraction">
-<area shape="rect" id="node2" href="$db/df3/a00034.html#a3921cf045293c04cddcd32920121b870" title="Gets the province. " alt="" coords="240,64,457,91"/>
-<area shape="rect" id="node3" href="$db/df3/a00034.html#a2303a7a10dd49e03ac0c527f1a16c754" title="Perform a full comparison with the other location. " alt="" coords="505,5,723,32"/>
-<area shape="rect" id="node4" href="$db/db2/a00020.html#af57d746af60011f0a69e74423027152c" title="Create a JSON object containing all info needed to reconstruct a Location. " alt="" coords="515,57,713,98"/>
-<area shape="rect" id="node5" href="$d7/de0/a00022.html#a926c2d6d9381b1b87ff81fb92f598041" title="Create a ProtoBuf Location containing all the info needed to reconstruct a Location. " alt="" coords="514,122,714,163"/>
-</map>

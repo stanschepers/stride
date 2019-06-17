@@ -1,22 +1,21 @@
-<map id="Generator.h" name="Generator.h">
-<area shape="rect" id="node2" href="$d1/db7/a00157.html" title="Definition of ContactPool Id Type. " alt="" coords="479,319,643,345"/>
-<area shape="rect" id="node8" href="$da/d15/a00188.html" title="geopop/GeoGridConfig.h" alt="" coords="606,80,785,107"/>
-<area shape="rect" id="node31" href="$d3/d1a/a00251.html" title="geopop/Location.h" alt="" coords="1143,162,1283,189"/>
-<area shape="rect" id="node39" href="$d1/dd4/a00267.html" title="Header file for the core Population class. " alt="" coords="1420,80,1549,107"/>
-<area shape="rect" id="node46" href="$dc/dc9/a00282.html" title="Interface of RnMan. " alt="" coords="2125,244,2225,271"/>
-<area shape="rect" id="node49" href="$d0/def/a00256.html" title="Logging (spdlog) utilities. " alt="" coords="2291,80,2399,107"/>
-<area shape="rect" id="node9" href="$da/d01/a00153.html" title="Header for the core ContactPool class. " alt="" coords="1587,244,1750,271"/>
-<area shape="rect" id="node13" href="$d9/d01/a00227.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="253,244,442,271"/>
-<area shape="rect" id="node18" href="$dc/d6a/a00261.html" title="Header file for the Person class. " alt="" coords="425,162,531,189"/>
-<area shape="rect" id="node21" href="$d6/d7f/a00287.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="767,244,939,271"/>
-<area shape="rect" id="node10" href="$dd/db2/a00151.html" title="Header for the ContactLogMode class. " alt="" coords="1374,319,1569,345"/>
-<area shape="rect" id="node19" href="$d3/dd5/a00215.html" title="Header for the Health class. " alt="" coords="29,244,159,271"/>
-<area shape="rect" id="node22" href="$d1/d5d/a00311.html" title="Interface/Implementation for SVIterator. " alt="" coords="819,319,918,345"/>
-<area shape="rect" id="node32" href="$de/d38/a00160.html" title="geopop/Coordinate.h" alt="" coords="1855,393,2011,420"/>
-<area shape="rect" id="node40" href="$d3/df8/a00155.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="881,162,1067,189"/>
-<area shape="rect" id="node41" href="$de/df3/a00185.html" title="geopop/GeoGrid.h" alt="" coords="1453,162,1591,189"/>
-<area shape="rect" id="node42" href="$de/db1/a00197.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="1875,244,2083,271"/>
-<area shape="rect" id="node43" href="$d4/d9a/a00246.html" title="KdTree.h" alt="" coords="1927,319,2003,345"/>
-<area shape="rect" id="node45" href="$dd/dd7/a00248.html" title="KdTree2DPoint.h" alt="" coords="2027,319,2153,345"/>
-<area shape="rect" id="node47" href="$d0/dcd/a00280.html" title="Interface of RnPcg. " alt="" coords="993,319,1067,345"/>
+<map id="DefaultPopBuilder.cpp" name="DefaultPopBuilder.cpp">
+<area shape="rect" id="node2" href="$d9/d90/a00178.html" title="Initialize populations. " alt="" coords="207,87,353,114"/>
+<area shape="rect" id="node7" href="$d2/d34/a00156.html" title="Header for the ContactLogMode class. " alt="" coords="1991,333,2185,360"/>
+<area shape="rect" id="node9" href="$db/d44/a00162.html" title="Definition of ContactPool Id Type. " alt="" coords="1023,333,1187,360"/>
+<area shape="rect" id="node14" href="$da/d2e/a00238.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="695,251,884,278"/>
+<area shape="rect" id="node19" href="$dc/d5d/a00278.html" title="Header file for the core Population class. " alt="" coords="998,87,1127,114"/>
+<area shape="rect" id="node36" href="$d6/d82/a00293.html" title="Interface of RnMan. " alt="" coords="1829,169,1929,196"/>
+<area shape="rect" id="node40" href="$db/d53/a00321.html" title="Header file for the SurveySeeder class. " alt="" coords="369,169,519,196"/>
+<area shape="rect" id="node41" href="$d2/d94/a00184.html" title="Interface for install directory queries. " alt="" coords="1969,169,2069,196"/>
+<area shape="rect" id="node43" href="$d7/df2/a00312.html" title="Miscellaneous string utilities. " alt="" coords="2260,333,2383,360"/>
+<area shape="rect" id="node3" href="$d5/d5b/a00135.html" title="Base Class for PopBuilders. " alt="" coords="88,169,243,196"/>
+<area shape="rect" id="node20" href="$d6/db8/a00158.html" title="Header for the core ContactPool class. " alt="" coords="1359,251,1521,278"/>
+<area shape="rect" id="node23" href="$de/d38/a00160.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="748,169,935,196"/>
+<area shape="rect" id="node24" href="$d9/d0d/a00298.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="498,251,670,278"/>
+<area shape="rect" id="node29" href="$d7/d6e/a00190.html" title="geopop/GeoGrid.h" alt="" coords="1545,251,1684,278"/>
+<area shape="rect" id="node33" href="$d9/dd6/a00272.html" title="Header file for the Person class. " alt="" coords="1009,169,1116,196"/>
+<area shape="rect" id="node25" href="$de/de9/a00322.html" title="Interface/Implementation for SVIterator. " alt="" coords="88,333,187,360"/>
+<area shape="rect" id="node30" href="$dc/d31/a00208.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="1559,333,1767,360"/>
+<area shape="rect" id="node34" href="$dc/d55/a00226.html" title="Header for the Health class. " alt="" coords="1154,251,1283,278"/>
+<area shape="rect" id="node37" href="$da/dd4/a00291.html" title="Interface of RnPcg. " alt="" coords="1842,333,1915,360"/>
 </map>

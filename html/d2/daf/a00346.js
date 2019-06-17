@@ -1,6 +1,4 @@
 var a00346 =
 [
-    [ "InfectedFile", "db/ddf/a00088.html", "db/ddf/a00088" ],
-    [ "PersonsFile", "db/dab/a00089.html", "db/dab/a00089" ],
-    [ "SummaryFile", "d9/dec/a00090.html", "d9/dec/a00090" ]
+    [ "is_proto_enum< ::proto::GeoGrid_Location_ContactPools_Type >", "d3/dea/a00046.html", null ]
 ];
