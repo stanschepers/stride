@@ -42,7 +42,7 @@ bool compareOutput(string expected, string actual)
         return expected == actual;
 }
 
-TEST(GeoGridJSONReaderTest, writeLocationsTest)
+TEST(GeoGridJSOWriterTest, writeLocationsTest)
 {
         string expectedOutput = R"({
             "locations": [
@@ -51,6 +51,14 @@ TEST(GeoGridJSONReaderTest, writeLocationsTest)
                     "contactPools": [
                         {
                             "class": "Household",
+                            "pools": []
+                        },
+                        {
+                            "class": "Daycare",
+                            "pools": []
+                        },
+                        {
+                            "class": "PreSchool",
                             "pools": []
                         },
                         {
@@ -91,6 +99,14 @@ TEST(GeoGridJSONReaderTest, writeLocationsTest)
                             "pools": []
                         },
                         {
+                            "class": "Daycare",
+                            "pools": []
+                        },
+                        {
+                            "class": "PreSchool",
+                            "pools": []
+                        },
+                        {
                             "class": "K12School",
                             "pools": []
                         },
@@ -125,6 +141,14 @@ TEST(GeoGridJSONReaderTest, writeLocationsTest)
                     "contactPools": [
                         {
                             "class": "Household",
+                            "pools": []
+                        },
+                        {
+                            "class": "Daycare",
+                            "pools": []
+                        },
+                        {
+                            "class": "PreSchool",
                             "pools": []
                         },
                         {
@@ -174,7 +198,7 @@ TEST(GeoGridJSONReaderTest, writeLocationsTest)
         EXPECT_TRUE(compareOutput(expectedOutput, ss->str()));
 }
 
-TEST(GeoGridJSONReaderTest, writePeopleTest)
+TEST(GeoGridJSOWriterTest, writePeopleTest)
 {
         string expectedOutput = R"({
             "locations": [
@@ -192,6 +216,28 @@ TEST(GeoGridJSONReaderTest, writePeopleTest)
                                 }
                             ]
                         },
+                         {
+                             "class": "Daycare",
+                             "pools": [
+                                 {
+                                     "id": 1,
+                                     "people": [
+                                         0
+                                     ]
+                                 }
+                             ]
+                         },
+                         {
+                             "class": "PreSchool",
+                             "pools": [
+                                 {
+                                     "id": 1,
+                                     "people": [
+                                         0
+                                     ]
+                                 }
+                             ]
+                         },
                         {
                             "class": "K12School",
                             "pools": [
@@ -282,7 +328,7 @@ TEST(GeoGridJSONReaderTest, writePeopleTest)
         EXPECT_TRUE(compareOutput(expectedOutput, ss->str()));
 }
 
-TEST(GeoGridJSONReaderTest, writeContactPoolsTest)
+TEST(GeoGridJSOWriterTest, writeContactPoolsTest)
 {
         string expectedOutput = R"({
             "locations": [
@@ -291,6 +337,24 @@ TEST(GeoGridJSONReaderTest, writeContactPoolsTest)
                     "contactPools": [
                         {
                             "class": "Household",
+                            "pools": [
+                                {
+                                    "id": 1,
+                                    "people": []
+                                }
+                            ]
+                        },
+                        {
+                            "class": "Daycare",
+                            "pools": [
+                                {
+                                    "id": 1,
+                                    "people": []
+                                }
+                            ]
+                        },
+                        {
+                            "class": "PreSchool",
                             "pools": [
                                 {
                                     "id": 1,
@@ -375,7 +439,7 @@ TEST(GeoGridJSONReaderTest, writeContactPoolsTest)
         EXPECT_TRUE(compareOutput(expectedOutput, ss->str()));
 }
 
-TEST(GeoGridJSONReaderTest, writeCommutesTest)
+TEST(GeoGridJSOWriterTest, writeCommutesTest)
 {
         string expectedOutput = R"({
             "locations": [
@@ -393,6 +457,14 @@ TEST(GeoGridJSONReaderTest, writeCommutesTest)
                     "contactPools": [
                         {
                             "class": "Household",
+                            "pools": []
+                        },
+                        {
+                            "class": "Daycare",
+                            "pools": []
+                        },
+                        {
+                            "class": "PreSchool",
                             "pools": []
                         },
                         {
@@ -442,6 +514,14 @@ TEST(GeoGridJSONReaderTest, writeCommutesTest)
                             "pools": []
                         },
                         {
+                            "class": "Daycare",
+                            "pools": []
+                        },
+                        {
+                            "class": "PreSchool",
+                            "pools": []
+                        },
+                        {
                             "class": "K12School",
                             "pools": []
                         },
@@ -476,6 +556,14 @@ TEST(GeoGridJSONReaderTest, writeCommutesTest)
                     "contactPools": [
                         {
                             "class": "Household",
+                            "pools": []
+                        },
+                        {
+                            "class": "Daycare",
+                            "pools": []
+                        },
+                        {
+                            "class": "PreSchool",
                             "pools": []
                         },
                         {
