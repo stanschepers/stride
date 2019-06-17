@@ -1,5 +1,4 @@
-<map id="stride::ControlHelper" name="stride::ControlHelper">
-<area shape="rect" id="node2" href="$db/db6/a00074.html" title="Controls a geo&#45;population generation run initiated with the command line interface (cli)..." alt="" coords="5,307,184,399"/>
-<area shape="rect" id="node3" href="$da/d82/a00091.html" title="Controls a simulation run initiated with the command line interface (cli). " alt="" coords="209,307,362,399"/>
-<area shape="rect" id="node4" href="$d4/d7d/a00093.html" title="Runs a simulation multiple times, with different random engine seeds. " alt="" coords="386,307,545,399"/>
+<map id="geopop::kd::Node&lt; P, D &gt;" name="geopop::kd::Node&lt; P, D &gt;">
+<area shape="rect" id="node2" href="$d7/d46/a00002.html" title="A base class for all instantiations of a Node with D. " alt="" coords="163,5,368,156"/>
+<area shape="rect" id="node4" title="STL class. " alt="" coords="5,255,160,333"/>
 </map>

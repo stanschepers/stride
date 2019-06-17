@@ -1,8 +1,6 @@
 var a00073 =
 [
-    [ "DiseaseSeeder", "d1/d6e/a00073.html#a66cbeee60e72d2a8f5ec2836abeae9c9", null ],
-    [ "Seed", "d1/d6e/a00073.html#adc5b1f152367382afe3dade9421357da", null ],
-    [ "Vaccinate", "d1/d6e/a00073.html#adddf4de9a6ae831d6e46d2f047309504", null ],
-    [ "m_config", "d1/d6e/a00073.html#a7f897725d29dc459e6fda6c0fef91f37", null ],
-    [ "m_rn_man", "d1/d6e/a00073.html#aeee28660d3988b645ebc1c26f6d82b2a", null ]
+    [ "~DaysOffInterface", "d1/d6e/a00073.html#afec638f8fcc3e653e389f47bd30d63e1", null ],
+    [ "IsWorkOff", "d1/d6e/a00073.html#a2ae431c15cddca106e2a0753fde99f83", null ],
+    [ "IsSchoolOff", "d1/d6e/a00073.html#a747d7b072b24545437aa9326ba024185", null ]
 ];

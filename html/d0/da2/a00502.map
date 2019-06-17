@@ -1,14 +1,10 @@
-<map id="InfectorExec.h" name="InfectorExec.h">
-<area shape="rect" id="node2" href="$de/dc2/a00228.html" title="Header for the InfectorMap. " alt="" coords="24,80,133,107"/>
-<area shape="rect" id="node4" href="$dc/d28/a00276.html" title="Header for the Simulator class. " alt="" coords="667,80,725,107"/>
-<area shape="rect" id="node7" href="$d3/d5e/a00275.html" title="Implementation for the Simulator class. " alt="" coords="147,155,221,181"/>
-<area shape="rect" id="node3" href="$d6/d4b/a00277.html" title="Implementation for the SimBuilder class. " alt="" coords="5,155,123,181"/>
-<area shape="rect" id="node5" href="$d2/d82/a00279.html" title="Header for the command line controller. " alt="" coords="629,155,763,181"/>
-<area shape="rect" id="node6" href="$db/dc3/a00284.html" title="Header for the command line controller. " alt="" coords="787,155,927,181"/>
-<area shape="rect" id="node8" href="$d2/d04/a00281.html" title="Implementation for SimRunner. " alt="" coords="952,155,1069,181"/>
-<area shape="rect" id="node9" href="$d5/d5b/a00135.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="1093,155,1198,181"/>
-<area shape="rect" id="node10" href="$dd/d52/a00221.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="1222,155,1383,181"/>
-<area shape="rect" id="node11" href="$dc/d28/a00223.html" title="Observer for SimEvents for commandline interface usage. " alt="" coords="1408,155,1549,181"/>
-<area shape="rect" id="node12" href="$d3/d1a/a00251.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="245,155,406,181"/>
-<area shape="rect" id="node13" href="$d4/d5b/a00294.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="431,155,604,181"/>
+<map id="HouseholdReader.h" name="HouseholdReader.h">
+<area shape="rect" id="node2" href="$d6/daa/a00187.html" title="GeoGridConfig.cpp" alt="" coords="5,155,147,181"/>
+<area shape="rect" id="node3" href="$dd/df3/a00219.html" title="HouseholdCSVReader.h" alt="" coords="338,80,510,107"/>
+<area shape="rect" id="node6" href="$d0/d24/a00222.html" title="HouseholdJSONReader.h" alt="" coords="534,80,711,107"/>
+<area shape="rect" id="node8" href="$d6/d4b/a00277.html" title="ReaderFactory.h" alt="" coords="183,80,305,107"/>
+<area shape="rect" id="node4" href="$dc/d9a/a00218.html" title="HouseholdCSVReader.cpp" alt="" coords="337,155,524,181"/>
+<area shape="rect" id="node5" href="$dc/d28/a00276.html" title="ReaderFactory.cpp" alt="" coords="549,155,686,181"/>
+<area shape="rect" id="node7" href="$dd/d52/a00221.html" title="HouseholdJSONReader.cpp" alt="" coords="711,155,903,181"/>
+<area shape="rect" id="node9" href="$dd/dc1/a00212.html" title="Initialize populations: implementation. " alt="" coords="170,155,313,181"/>
 </map>

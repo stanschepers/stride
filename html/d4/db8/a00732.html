@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 9261888</span>
+   &#160;<span id="projectnumber">- generated for commit ca704c9</span>
    </div>
   </td>
  </tr>
@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('d8/d41/a00038.html','../../');});
+$(document).ready(function(){initNavTree('d6/d5b/a00026.html','../../');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -107,23 +107,26 @@ $(document).ready(function(){initNavTree('d8/d41/a00038.html','../../');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">geopop::WorkplaceCSVReader Member List</div>  </div>
+<div class="title">geopop::GeoGridStreamWriter Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="../../d8/d41/a00038.html">geopop::WorkplaceCSVReader</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="../../d6/d5b/a00026.html">geopop::GeoGridStreamWriter</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="../../d4/dee/a00008.html#a340c27ac40d9788816e156f84ec0910c">DistributionReader</a>()=default</td><td class="entry"><a class="el" href="../../d4/dee/a00008.html">geopop::DistributionReader</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="../../d8/d41/a00038.html#a2b5bdb458511a36b6e2cceee59c8cba0">m_input_stream</a></td><td class="entry"><a class="el" href="../../d8/d41/a00038.html">geopop::WorkplaceCSVReader</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../d8/d41/a00038.html#a7d62236d42befa1b866ece1d4cbdf28f">SetWorkDistribution</a>(std::vector&lt; std::tuple&lt; double, unsigned int, unsigned int &gt;&gt; &amp;work_distribution) override</td><td class="entry"><a class="el" href="../../d8/d41/a00038.html">geopop::WorkplaceCSVReader</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="../../d8/d41/a00038.html#a36cce0d2064a1e65520c72d4c474c73b">WorkplaceCSVReader</a>(std::unique_ptr&lt; std::istream &gt; inputStream)</td><td class="entry"><a class="el" href="../../d8/d41/a00038.html">geopop::WorkplaceCSVReader</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../d4/dee/a00008.html#aab6765c211192dccbe696e9fb8e4dbe9">~DistributionReader</a>()=default</td><td class="entry"><a class="el" href="../../d4/dee/a00008.html">geopop::DistributionReader</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d6/d5b/a00026.html#a8005b00d7c0166a378b7e7ca5bd48ded">GeoGridStreamWriter</a>()=delete</td><td class="entry"><a class="el" href="../../d6/d5b/a00026.html">geopop::GeoGridStreamWriter</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../d6/d5b/a00026.html#a09578f2776586c4d00222911ce6e8b9f">GeoGridStreamWriter</a>(std::shared_ptr&lt; std::ostream &gt; stream)</td><td class="entry"><a class="el" href="../../d6/d5b/a00026.html">geopop::GeoGridStreamWriter</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d0/d33/a00027.html#a4147ecb78a89b6e1666d61c85c475a51">GeoGridWriter</a>()=default</td><td class="entry"><a class="el" href="../../d0/d33/a00027.html">geopop::GeoGridWriter</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../d6/d5b/a00026.html#ae4bcb1ea49a62c03f85c872fbadfe704">m_stream</a></td><td class="entry"><a class="el" href="../../d6/d5b/a00026.html">geopop::GeoGridStreamWriter</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d6/d5b/a00026.html#a3caad39937bafe28aa7d9d596e5dd8b8">StreamRef</a>()</td><td class="entry"><a class="el" href="../../d6/d5b/a00026.html">geopop::GeoGridStreamWriter</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="../../d6/d5b/a00026.html#aa8b7dd6c90a858d257c96ca789e313e3">Write</a>(GeoGrid &amp;geoGrid) override=0</td><td class="entry"><a class="el" href="../../d6/d5b/a00026.html">geopop::GeoGridStreamWriter</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d6/d5b/a00026.html#a8976fd28009afbc8fb0ae43148604bbf">~GeoGridStreamWriter</a>() override=default</td><td class="entry"><a class="el" href="../../d6/d5b/a00026.html">geopop::GeoGridStreamWriter</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../d0/d33/a00027.html#ac39b3553fa52b22d47cd5972d5e1c4b8">~GeoGridWriter</a>()=default</td><td class="entry"><a class="el" href="../../d0/d33/a00027.html">geopop::GeoGridWriter</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Jun 15 2019 20:23:28 for Stride Reference Manual by
+    <li class="footer">Generated on Mon Jun 17 2019 09:18:53 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

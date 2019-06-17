@@ -1,7 +1,4 @@
-<map id="stride::output::SummaryFile" name="stride::output::SummaryFile">
-<area shape="rect" id="node2" title="STL class. " alt="" coords="51,541,159,619"/>
-<area shape="rect" id="node3" title="STL class. " alt="" coords="31,400,179,492"/>
-<area shape="rect" id="node4" title="STL class. " alt="" coords="33,259,177,351"/>
-<area shape="rect" id="node5" title="STL class. " alt="" coords="21,132,189,209"/>
-<area shape="rect" id="node6" title="STL class. " alt="" coords="51,5,158,83"/>
+<map id="stride::SimRunner" name="stride::SimRunner">
+<area shape="rect" id="node2" href="$d8/d87/a00118.html" title="{stride::util::Subject\l\&lt; stride::sim_event::Id \&gt;\n|&#45; m_observers\l|+ Subject()\l+ ~Subject()\l+ Register()\l+ Unregister()\l+ UnregisterAll()\l+ Notify()\l}" alt="" coords="5,233,187,399"/>
+<area shape="rect" id="node3" href="$d8/d87/a00118.html" title="Template for Subject/Observer (or Publish/Subscribe). " alt="" coords="7,5,185,156"/>
 </map>

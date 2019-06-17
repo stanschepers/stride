@@ -1,6 +1,9 @@
 var a00026 =
 [
-    [ "HouseholdReader", "d6/d5b/a00026.html#a176ab97c6e6fecf6f866a3acc173c82d", null ],
-    [ "~HouseholdReader", "d6/d5b/a00026.html#a1a0b479e10e4bbcaa57bc0a4955df946", null ],
-    [ "SetReferenceHouseholds", "d6/d5b/a00026.html#a0e8bb2daa7b7f17d123c71cf89e65c1d", null ]
+    [ "GeoGridStreamWriter", "d6/d5b/a00026.html#a8005b00d7c0166a378b7e7ca5bd48ded", null ],
+    [ "GeoGridStreamWriter", "d6/d5b/a00026.html#a09578f2776586c4d00222911ce6e8b9f", null ],
+    [ "~GeoGridStreamWriter", "d6/d5b/a00026.html#a8976fd28009afbc8fb0ae43148604bbf", null ],
+    [ "Write", "d6/d5b/a00026.html#aa8b7dd6c90a858d257c96ca789e313e3", null ],
+    [ "StreamRef", "d6/d5b/a00026.html#a3caad39937bafe28aa7d9d596e5dd8b8", null ],
+    [ "m_stream", "d6/d5b/a00026.html#ae4bcb1ea49a62c03f85c872fbadfe704", null ]
 ];

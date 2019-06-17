@@ -1,12 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: ":_abcdefghiklmnopqrstuvwy~",
+  0: ":_abcdefghijklmnopqrstuvwy~",
   1: "abcdefghiklmnoprstwy",
   2: "gps",
   3: "abcdefghiklmnprstuw",
   4: "abcdefghiklmnopqrstuvw~",
   5: "_acdfghiklmnoprstuwy",
-  6: "acdeghiklprstvw",
+  6: "acdeghijklprstvw",
   7: "ghi",
   8: "acdefghiknprstw",
   9: ":dikos",

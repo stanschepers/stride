@@ -1,8 +1,4 @@
-<map id="GeoGridWriter.h" name="GeoGridWriter.h">
-<area shape="rect" id="node2" href="$d5/de9/a00176.html" title="Header for the command line controller. " alt="" coords="5,80,165,107"/>
-<area shape="rect" id="node3" href="$d6/daa/a00187.html" title="GeoGridJSONWriter.h" alt="" coords="190,80,343,107"/>
-<area shape="rect" id="node5" href="$dd/df4/a00193.html" title="GeoGridProtoWriter.h" alt="" coords="368,80,523,107"/>
-<area shape="rect" id="node7" href="$d8/d72/a00199.html" title="GeoGridWriterFactory.cpp" alt="" coords="533,155,715,181"/>
-<area shape="rect" id="node4" href="$d8/d00/a00186.html" title="GeoGridJSONWriter.cpp" alt="" coords="147,155,315,181"/>
-<area shape="rect" id="node6" href="$dd/da2/a00192.html" title="GeoGridProtoWriter.cpp" alt="" coords="339,155,509,181"/>
+<map id="GeoGridJSONWriter.h" name="GeoGridJSONWriter.h">
+<area shape="rect" id="node2" href="$dc/d57/a00194.html" title="GeoGridJSONWriter.cpp" alt="" coords="5,80,173,107"/>
+<area shape="rect" id="node3" href="$da/de7/a00210.html" title="GeoGridWriterFactory.cpp" alt="" coords="197,80,379,107"/>
 </map>

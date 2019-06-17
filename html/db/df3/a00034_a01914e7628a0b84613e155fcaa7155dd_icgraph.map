@@ -1,0 +1,6 @@
+<map id="geopop::Location::GetCoordinate" name="geopop::Location::GetCoordinate">
+<area shape="rect" id="node2" href="$d7/dd4/a00013.html#a1bf11fca7ce661a42d21e40fb00c30aa" title="Gets the location in a rectangle defined by the two Locations. " alt="" coords="296,5,495,47"/>
+<area shape="rect" id="node3" href="$db/df3/a00034.html#a2303a7a10dd49e03ac0c527f1a16c754" title="Perform a full comparison with the other location. " alt="" coords="287,71,504,98"/>
+<area shape="rect" id="node4" href="$db/db2/a00020.html#af57d746af60011f0a69e74423027152c" title="Create a JSON object containing all info needed to reconstruct a Location. " alt="" coords="296,123,495,164"/>
+<area shape="rect" id="node5" href="$d7/de0/a00022.html#a926c2d6d9381b1b87ff81fb92f598041" title="Create a ProtoBuf Location containing all the info needed to reconstruct a Location. " alt="" coords="295,188,495,229"/>
+</map>

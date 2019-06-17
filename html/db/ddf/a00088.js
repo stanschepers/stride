@@ -1,8 +1,7 @@
 var a00088 =
 [
-    [ "PublicHealthAgency", "db/ddf/a00088.html#a03ebd97271af159e0831b61b43e6e62f", null ],
-    [ "Exec", "db/ddf/a00088.html#a5096270693bc78b306cc236d6dcfb747", null ],
-    [ "Initialize", "db/ddf/a00088.html#a96febde4c86b8e16590d782130058533", null ],
-    [ "PerformCaseFinding", "db/ddf/a00088.html#a009d5f79aa598d721d252c4470411237", null ],
-    [ "m_detection_probability", "db/ddf/a00088.html#a4511cc382abab53cdea308741ce59a43", null ]
+    [ "InfectedFile", "db/ddf/a00088.html#a1f9b3fab4125e26c2eebd32ee27dd977", null ],
+    [ "~InfectedFile", "db/ddf/a00088.html#ab67bfb80c8ca94162f3c33d2c7be3f89", null ],
+    [ "Print", "db/ddf/a00088.html#ae42038f7696374e29aef434de61d386d", null ],
+    [ "m_fstream", "db/ddf/a00088.html#ab499185c218c6a1ef08779d8e0ece660", null ]
 ];

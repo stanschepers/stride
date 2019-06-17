@@ -1,9 +1,4 @@
-<map id="SummaryFileViewer.h" name="SummaryFileViewer.h">
-<area shape="rect" id="node2" href="$d6/d82/a00293.html" title="Header for the SummaryFile class. " alt="" coords="173,80,291,107"/>
-<area shape="rect" id="node6" href="$dc/dc9/a00282.html" title="Header for the SimRunner class. " alt="" coords="634,80,763,107"/>
-<area shape="rect" id="node7" href="$d1/de1/a00213.html" title="Definition of EventId. " alt="" coords="699,244,811,271"/>
-<area shape="rect" id="node9" href="$de/d25/a00290.html" title="Definition of Subject/Observer for SimEvents. " alt="" coords="792,162,941,189"/>
-<area shape="rect" id="node14" href="$d5/d7b/a00286.html" title="Definition of Stopwatch. " alt="" coords="347,162,471,189"/>
-<area shape="rect" id="node10" href="$da/dd4/a00291.html" title="Interface/Implementation of Subject. " alt="" coords="835,244,941,271"/>
-<area shape="rect" id="node15" href="$d0/d61/a00302.html" title="Utilities to tag clocks and reformat clock readout to string. " alt="" coords="326,244,442,271"/>
+<map id="SimBuilder.h" name="SimBuilder.h">
+<area shape="rect" id="node2" href="$da/ddc/a00288.html" title="Implementation for the Simulator class. " alt="" coords="5,80,80,107"/>
+<area shape="rect" id="node3" href="$de/d25/a00290.html" title="Implementation for the SimBuilder class. " alt="" coords="104,80,221,107"/>
 </map>

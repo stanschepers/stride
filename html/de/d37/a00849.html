@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 9261888</span>
+   &#160;<span id="projectnumber">- generated for commit ca704c9</span>
    </div>
   </td>
  </tr>
@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('dc/d54/a00094.html','../../');});
+$(document).ready(function(){initNavTree('da/dec/a00080.html','../../');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -107,22 +107,28 @@ $(document).ready(function(){initNavTree('dc/d54/a00094.html','../../');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">stride::SurveySeeder Member List</div>  </div>
+<div class="title">stride::GeoPopBuilder Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="../../dc/d54/a00094.html">stride::SurveySeeder</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="../../da/dec/a00080.html">stride::GeoPopBuilder</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d54/a00094.html#ab7c91ff2c4cbefb84a9e8fb98dc00f93">m_config</a></td><td class="entry"><a class="el" href="../../dc/d54/a00094.html">stride::SurveySeeder</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d54/a00094.html#a4ad3f25a83c627f7c3c009ab4ffda171">m_rn_man</a></td><td class="entry"><a class="el" href="../../dc/d54/a00094.html">stride::SurveySeeder</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="../../dc/d54/a00094.html#a81b191380f9a2c93768ff0efcec47f6b">Seed</a>(std::shared_ptr&lt; Population &gt; pop)</td><td class="entry"><a class="el" href="../../dc/d54/a00094.html">stride::SurveySeeder</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="../../dc/d54/a00094.html#aaab0b9475ab5ae90ba02931f0fc3ba6c">SurveySeeder</a>(const boost::property_tree::ptree &amp;config, util::RnMan &amp;rnMan)</td><td class="entry"><a class="el" href="../../dc/d54/a00094.html">stride::SurveySeeder</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d9/d2e/a00056.html#a0dc3493a948b42c70cd879d83c879526">AbstractPopBuilder</a>(const boost::property_tree::ptree &amp;config, util::RnMan &amp;rnMan, std::shared_ptr&lt; spdlog::logger &gt; strideLogger=nullptr)</td><td class="entry"><a class="el" href="../../d9/d2e/a00056.html">stride::AbstractPopBuilder</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../da/dec/a00080.html#a23493e205a9a22922b1511b80e64bc1e">Build</a>(std::shared_ptr&lt; Population &gt; pop) override</td><td class="entry"><a class="el" href="../../da/dec/a00080.html">stride::GeoPopBuilder</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../da/dec/a00080.html#a9159585958c5ab6405e8022c5bbd7421">GeoPopBuilder</a>(const boost::property_tree::ptree &amp;config, util::RnMan &amp;rnMan, std::shared_ptr&lt; spdlog::logger &gt; strideLogger=nullptr)</td><td class="entry"><a class="el" href="../../da/dec/a00080.html">stride::GeoPopBuilder</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="../../d9/d2e/a00056.html#a34a81e371e1bf73c2a75fd9d2df21353">m_config</a></td><td class="entry"><a class="el" href="../../d9/d2e/a00056.html">stride::AbstractPopBuilder</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../d9/d2e/a00056.html#a2a438798c37f82817665369d725a3a34">m_rn_man</a></td><td class="entry"><a class="el" href="../../d9/d2e/a00056.html">stride::AbstractPopBuilder</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="../../d9/d2e/a00056.html#a6aa42972b4d340a04b0366af0a889b5e">m_stride_logger</a></td><td class="entry"><a class="el" href="../../d9/d2e/a00056.html">stride::AbstractPopBuilder</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../da/dec/a00080.html#a0a67e3e8c4d250509a6f76acb076824e">MakeLocations</a>(geopop::GeoGrid &amp;geoGrid, const geopop::GeoGridConfig &amp;geoGridConfig, const std::string &amp;citiesFileName, const std::string &amp;commutingFileName)</td><td class="entry"><a class="el" href="../../da/dec/a00080.html">stride::GeoPopBuilder</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="../../da/dec/a00080.html#a22327526a0de14f648b2375065527fda">MakePersons</a>(geopop::GeoGrid &amp;geoGrid, const geopop::GeoGridConfig &amp;geoGridConfig)</td><td class="entry"><a class="el" href="../../da/dec/a00080.html">stride::GeoPopBuilder</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="../../da/dec/a00080.html#a6c0a01d2def04c804fff3ef162dfbc4f">MakePools</a>(geopop::GeoGrid &amp;geoGrid, const geopop::GeoGridConfig &amp;geoGridConfig)</td><td class="entry"><a class="el" href="../../da/dec/a00080.html">stride::GeoPopBuilder</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="../../d9/d2e/a00056.html#a938da421d2a2d203e7cb90ead7b91807">~AbstractPopBuilder</a>()=default</td><td class="entry"><a class="el" href="../../d9/d2e/a00056.html">stride::AbstractPopBuilder</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Jun 15 2019 20:23:28 for Stride Reference Manual by
+    <li class="footer">Generated on Mon Jun 17 2019 09:18:53 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

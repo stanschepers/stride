@@ -1,13 +1,6 @@
 var a00063 =
 [
-    [ "ContactPoolSys", "d1/d6f/a00063.html#a3234f77279a728449333679b51d72498", null ],
-    [ "CreateContactPool", "d1/d6f/a00063.html#ac8e6932adc8cb0269357c033c6630bff", null ],
-    [ "CreateContactPool", "d1/d6f/a00063.html#a976a718b023257fb4c47028f860e58e6", null ],
-    [ "CRefPools", "d1/d6f/a00063.html#abec2451157774964a5008679b66b8b48", null ],
-    [ "CRefPools", "d1/d6f/a00063.html#a016fd427c95b26c2fe8b542b6a7d6963", null ],
-    [ "RefPools", "d1/d6f/a00063.html#ad484960db6d8795971580e635f6da030", null ],
-    [ "DefaultPopBuilder", "d1/d6f/a00063.html#aa79c86f4bdecaefcfc763c2b2f5bee37", null ],
-    [ "Sim", "d1/d6f/a00063.html#a9ee783cf11d4fb4f556c985020efd7db", null ],
-    [ "m_currentContactPoolId", "d1/d6f/a00063.html#ab59431e05f466c3828738407e37660b4", null ],
-    [ "m_sys", "d1/d6f/a00063.html#a3c592b3099ba8d56ae60edf74497d814", null ]
+    [ "HasAge", "d1/d6f/a00063.html#ad3518a20600e9b447894ee409a367248", null ],
+    [ "m_lower", "d1/d6f/a00063.html#a423adb18ab18c3254a79240d2360f3c3", null ],
+    [ "m_upper", "d1/d6f/a00063.html#af8df44b6c50d277841c2461d20cdbaa7", null ]
 ];

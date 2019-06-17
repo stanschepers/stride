@@ -1,11 +1,7 @@
-<map id="Populator.h" name="Populator.h">
-<area shape="rect" id="node2" href="$d4/ddd/a00138.html" title="CollegePopulator.cpp" alt="" coords="5,80,161,107"/>
-<area shape="rect" id="node3" href="$d6/d7d/a00161.html" title="DaycarePopulator.cpp" alt="" coords="186,80,349,107"/>
-<area shape="rect" id="node4" href="$da/de7/a00210.html" title="HouseholdPopulator.cpp" alt="" coords="373,80,551,107"/>
-<area shape="rect" id="node5" href="$df/d17/a00231.html" title="K12SchoolPopulator.cpp" alt="" coords="575,80,751,107"/>
-<area shape="rect" id="node6" href="$d9/d39/a00257.html" title="PreSchoolPopulator.cpp" alt="" coords="775,80,949,107"/>
-<area shape="rect" id="node7" href="$d0/d2f/a00259.html" title="PrimaryCommunityPopulator.cpp" alt="" coords="973,80,1205,107"/>
-<area shape="rect" id="node8" href="$d0/d19/a00273.html" title="SecondaryCommunityPopulator.cpp" alt="" coords="1229,80,1479,107"/>
-<area shape="rect" id="node9" href="$d5/d0f/a00308.html" title="WorkplacePopulator.cpp" alt="" coords="1503,80,1677,107"/>
-<area shape="rect" id="node10" href="$dd/de3/a00201.html" title="Initialize populations: implementation. " alt="" coords="1701,80,1844,107"/>
+<map id="Location.h" name="Location.h">
+<area shape="rect" id="node2" href="$d1/db7/a00157.html" title="Definition of ContactPool Id Type. " alt="" coords="83,162,247,189"/>
+<area shape="rect" id="node8" href="$d9/d01/a00227.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="452,80,641,107"/>
+<area shape="rect" id="node13" href="$de/d38/a00160.html" title="geopop/Coordinate.h" alt="" coords="926,80,1082,107"/>
+<area shape="rect" id="node16" href="$d6/d7f/a00287.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="1106,80,1278,107"/>
+<area shape="rect" id="node17" href="$d1/d5d/a00311.html" title="Interface/Implementation for SVIterator. " alt="" coords="1541,162,1640,189"/>
 </map>

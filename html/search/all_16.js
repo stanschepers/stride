@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['vaccinate',['Vaccinate',['../d1/d6e/a00073.html#adddf4de9a6ae831d6e46d2f047309504',1,'stride::DiseaseSeeder']]],
-  ['value_5ftype',['value_type',['../d5/de0/a00050.html#a7882e74f6cb8dd40fe7f359daf0376c3',1,'stride::util::SegmentedVector::value_type()'],['../d8/d17/a00114.html#a19491e9889942ecc009a6bf9cddcbf11',1,'stride::util::SVIterator::value_type()']]],
-  ['void_5ft',['void_t',['../dc/d84/a00338.html#a5548d91f3cf721a08ab97267e8dd80ec',1,'stride::util::ii_detail']]]
+  ['subject_2eh',['Subject.h',['../d8/d17/a00304.html',1,'']]],
+  ['unregister',['Unregister',['../d8/d87/a00118.html#aaa38f379243ec0d27b47b5bd110ebe75',1,'stride::util::Subject']]],
+  ['unregisterall',['UnregisterAll',['../d8/d87/a00118.html#a8e0f20cb6cc045cf215f5d5a0963046f',1,'stride::util::Subject']]],
+  ['update',['Update',['../d8/d53/a00081.html#a26b7fd4e8c9107413d09592734bae3ce',1,'stride::Health::Update()'],['../da/d82/a00091.html#abeed34b336b17866bb881b77237c76c4',1,'stride::Person::Update()'],['../df/dc8/a00122.html#a9f3a2f9efda499fa6a80f3871c7298d7',1,'stride::viewers::CliViewer::Update()'],['../de/d36/a00123.html#a8128b6620992860cad456275e2173b16',1,'stride::viewers::InfectedFileViewer::Update()'],['../da/d72/a00124.html#ac539c7549cc8c19530813f0bdb35a14d',1,'stride::viewers::InfectedViewer::Update()'],['../dc/dfe/a00125.html#ae2840bec7fc5f76db6e79130b61fff19',1,'stride::viewers::PersonsFileViewer::Update()'],['../d7/d12/a00126.html#a1e54b49cad6f7b645668551b08762e28',1,'stride::viewers::SummaryFileViewer::Update()']]],
+  ['upper',['upper',['../d1/d7c/a00003.html#a9536df35bbe6719b45619dc7031ee17e',1,'geopop::AABBox']]]
 ];

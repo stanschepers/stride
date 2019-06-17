@@ -1,12 +1,9 @@
 var a00017 =
 [
-    [ "GeoGridJSONReader", "d4/d51/a00017.html#af1a416909c5768271bc0c33c452b38a0", null ],
-    [ "GeoGridJSONReader", "d4/d51/a00017.html#aabf14c2a5629bc0d8e797256bdc67e43", null ],
-    [ "operator=", "d4/d51/a00017.html#a457112a2f1c4ae1feb9218b4c3176980", null ],
-    [ "Read", "d4/d51/a00017.html#a0b6a6032beee9c1bdb5536e8aa3d87f7", null ],
-    [ "ParseContactCenter", "d4/d51/a00017.html#abaeef4e66bbc02c415a8c9235a2eb908", null ],
-    [ "ParseContactPool", "d4/d51/a00017.html#a54f28880557331abe18038f0627738c3", null ],
-    [ "ParseCoordinate", "d4/d51/a00017.html#ad72dfb7c01de362ee7ba10324ad76ac5", null ],
-    [ "ParseLocation", "d4/d51/a00017.html#a6d75cabadab49fcffe00d193dc7da4a6", null ],
-    [ "ParsePerson", "d4/d51/a00017.html#ad0a3616bc2e064fee78d65dc172a3d81", null ]
+    [ "GeoGridFileReader", "d4/d51/a00017.html#a24889e94fe98a43340c410bd3e388f66", null ],
+    [ "GeoGridFileReader", "d4/d51/a00017.html#a71568e6a8a031ed1b85ef64f7c6544ae", null ],
+    [ "~GeoGridFileReader", "d4/d51/a00017.html#abeedab6cc0d0395c61a08f9c61d87fb8", null ],
+    [ "operator=", "d4/d51/a00017.html#a63a01de8231ad616cf3996208a34bb01", null ],
+    [ "Read", "d4/d51/a00017.html#a226774b94934d792fe7ff232b0947906", null ],
+    [ "m_inputFilePath", "d4/d51/a00017.html#abbfec69212a6b5fe42765e2a1a24128d", null ]
 ];

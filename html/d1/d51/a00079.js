@@ -1,4 +1,5 @@
 var a00079 =
 [
-    [ "Build", "d1/d51/a00079.html#a78076cb42a88b90e4183bfb805d8361f", null ]
+    [ "GenPopController", "d1/d51/a00079.html#a5585b723dfd364bbe94361148be98799", null ],
+    [ "Control", "d1/d51/a00079.html#a9cef30bd849611feee70025cd9270e96", null ]
 ];

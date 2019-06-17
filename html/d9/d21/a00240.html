@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: LocationsCSVReader.h File Reference</title>
+<title>Stride Reference Manual: InfectorExec.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 9261888</span>
+   &#160;<span id="projectnumber">- generated for commit ca704c9</span>
    </div>
   </td>
  </tr>
@@ -105,64 +105,68 @@ $(document).ready(function(){initNavTree('d9/d21/a00240.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
-<div class="title">LocationsCSVReader.h File Reference</div>  </div>
+<div class="title">InfectorExec.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d6/db6/a00241_source.html">LocationsReader.h</a>&quot;</code><br />
+
+<p>Header for the InfectorExec class.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;spdlog/spdlog.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for LocationsCSVReader.h:</div>
+Include dependency graph for InfectorExec.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d8/d14/a00522.gif" border="0" usemap="#LocationsCSVReader_8h" alt=""/></div>
-<map name="LocationsCSVReader_8h" id="LocationsCSVReader_8h">
-<area shape="rect" id="node2" href="../../d6/db6/a00241.html" title="LocationsReader.h" alt="" coords="1280,80,1418,107"/>
-<area shape="rect" id="node3" href="../../d0/d81/a00180.html" title="geopop/GeoGrid.h" alt="" coords="800,155,938,181"/>
-<area shape="rect" id="node25" href="../../da/d2e/a00238.html" title="geopop/Location.h" alt="" coords="1279,155,1419,181"/>
-<area shape="rect" id="node4" href="../../d7/d9a/a00152.html" title="Definition of ContactPool Id Type. " alt="" coords="1662,304,1826,331"/>
-<area shape="rect" id="node10" href="../../da/deb/a00189.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="460,229,668,256"/>
-<area shape="rect" id="node11" href="../../d6/de1/a00233.html" title="KdTree.h" alt="" coords="218,304,294,331"/>
-<area shape="rect" id="node18" href="../../d3/d42/a00235.html" title="KdTree2DPoint.h" alt="" coords="520,304,647,331"/>
-<area shape="rect" id="node12" href="../../de/d36/a00123.html" title="AABBox.h" alt="" coords="396,386,481,413"/>
-<area shape="rect" id="node13" href="../../d0/d53/a00232.html" title="KdNode.h" alt="" coords="186,386,270,413"/>
-<area shape="rect" id="node19" href="../../d3/df8/a00155.html" title="geopop/Coordinate.h" alt="" coords="946,386,1102,413"/>
-<area shape="rect" id="node26" href="../../d3/dd1/a00214.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="1668,229,1857,256"/>
-<area shape="rect" id="node31" href="../../dd/d56/a00274.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="1162,229,1334,256"/>
-<area shape="rect" id="node32" href="../../d9/d0d/a00298.html" title="Interface/Implementation for SVIterator. " alt="" coords="1198,304,1297,331"/>
+<div class="center"><img src="../../d0/d35/a00526.gif" border="0" usemap="#InfectorExec_8h" alt=""/></div>
+<map name="InfectorExec_8h" id="InfectorExec_8h">
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d0/de7/a00523.gif" border="0" usemap="#LocationsCSVReader_8hdep" alt=""/></div>
-<map name="LocationsCSVReader_8hdep" id="LocationsCSVReader_8hdep">
-<area shape="rect" id="node2" href="../../d0/d27/a00239.html" title="LocationsCSVReader.cpp" alt="" coords="5,80,185,107"/>
-<area shape="rect" id="node3" href="../../df/da9/a00263.html" title="ReaderFactory.cpp" alt="" coords="209,80,347,107"/>
+<div class="center"><img src="../../d9/d44/a00527.gif" border="0" usemap="#InfectorExec_8hdep" alt=""/></div>
+<map name="InfectorExec_8hdep" id="InfectorExec_8hdep">
+<area shape="rect" id="node2" href="../../d6/db6/a00241.html" title="Header for the InfectorMap. " alt="" coords="24,80,133,107"/>
+<area shape="rect" id="node4" href="../../d4/d66/a00289.html" title="Header for the Simulator class. " alt="" coords="667,80,725,107"/>
+<area shape="rect" id="node7" href="../../da/ddc/a00288.html" title="Implementation for the Simulator class. " alt="" coords="147,155,221,181"/>
+<area shape="rect" id="node3" href="../../de/d25/a00290.html" title="Implementation for the SimBuilder class. " alt="" coords="5,155,123,181"/>
+<area shape="rect" id="node5" href="../../d8/d0a/a00292.html" title="Header for the command line controller. " alt="" coords="629,155,763,181"/>
+<area shape="rect" id="node6" href="../../d3/d4a/a00297.html" title="Header for the command line controller. " alt="" coords="787,155,927,181"/>
+<area shape="rect" id="node8" href="../../d4/d5b/a00294.html" title="Implementation for SimRunner. " alt="" coords="952,155,1069,181"/>
+<area shape="rect" id="node9" href="../../d5/db1/a00140.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="1093,155,1198,181"/>
+<area shape="rect" id="node10" href="../../da/d31/a00234.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="1222,155,1383,181"/>
+<area shape="rect" id="node11" href="../../d7/d40/a00236.html" title="Observer for SimEvents for commandline interface usage. " alt="" coords="1408,155,1549,181"/>
+<area shape="rect" id="node12" href="../../d3/dcc/a00264.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="245,155,406,181"/>
+<area shape="rect" id="node13" href="../../d0/da2/a00307.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="431,155,604,181"/>
 </map>
 </div>
 </div>
 <p><a href="../../d9/d21/a00240_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d79/a00030.html">geopop::LocationsCSVReader</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a Reader that fills a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> with the <a class="el" href="../../d5/d16/a00029.html" title="Location for use within the GeoGrid, contains Coordinate and index to ContactPools. ">Location</a> data found in a CSV input stream.  <a href="../../d5/d79/a00030.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:d2/d41/a00318"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html">geopop</a></td></tr>
-<tr class="memdesc:d2/d41/a00318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
+<tr class="memitem:d2/d45/a00342"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/a00342.html">stride</a></td></tr>
+<tr class="memdesc:d2/d45/a00342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a5e7b27e9cd0a9f422bfc9f310bc5f13d"><td class="memItemLeft" align="right" valign="top">typedef void(&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/a00342.html#a5e7b27e9cd0a9f422bfc9f310bc5f13d">stride::InfectorExec</a>) (ContactPool &amp;pool, const AgeContactProfile &amp;profile, const TransmissionProfile &amp;trans_profile, ContactHandler &amp;c_handler, unsigned short int sim_day, std::shared_ptr&lt; spdlog::logger &gt; c_logger)</td></tr>
+<tr class="memdesc:a5e7b27e9cd0a9f422bfc9f310bc5f13d"><td class="mdescLeft">&#160;</td><td class="mdescRight">For use in the <a class="el" href="../../d1/d1e/a00087.html" title="Mechanism to select the appropriate Infector template to execute. ">InfectorMap</a> and <a class="el" href="../../dc/d54/a00094.html" title="Simulator can time step and reveal some of the key data. ">Sim</a>; executes infector.  <a href="../../d2/d45/a00342.html#a5e7b27e9cd0a9f422bfc9f310bc5f13d">More...</a><br /></td></tr>
+<tr class="separator:a5e7b27e9cd0a9f422bfc9f310bc5f13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Header for the InfectorExec class. </p>
+
+<p>Definition in file <a class="el" href="../../d9/d21/a00240_source.html">InfectorExec.h</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_c490ff723361adf09283ce460b26e466.html">io</a></li><li class="navelem"><a class="el" href="../../d9/d21/a00240.html">LocationsCSVReader.h</a></li>
-    <li class="footer">Generated on Sat Jun 15 2019 20:23:27 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_d006795525347f4aaca311cb4e45f0bc.html">contact</a></li><li class="navelem"><a class="el" href="../../d9/d21/a00240.html">InfectorExec.h</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 09:18:53 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

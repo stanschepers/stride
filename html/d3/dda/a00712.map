@@ -1,0 +1,4 @@
+<map id="geopop::GeoGridJSONReader" name="geopop::GeoGridJSONReader">
+<area shape="rect" id="node2" href="$d3/dfe/a00025.html" title="An abstract base class for creating a GeoGrid that was read from a stream, can be implemented using m..." alt="" coords="5,233,228,369"/>
+<area shape="rect" id="node3" href="$d3/d52/a00023.html" title="An abstract base class for creating a GeoGrid that was read from a file, can be implemented using mul..." alt="" coords="29,5,204,185"/>
+</map>

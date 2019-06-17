@@ -1,3 +1,2 @@
-<map id="geopop::Generator&lt; ID &gt;" name="geopop::Generator&lt; ID &gt;">
-<area shape="rect" id="node3" href="$dd/d42/a00109.html" title="{stride::util::RnMan\n||+ RnMan()\l+ RnMan()\l+ operator==()\l+ GetInfo()\l+ GetUniform01Generator()\l+ GetUniformIntGenerator()\l+ GetDiscreteGenerator()\l+ MakeWeightedCoinFlip()\l+ Initialize()\l+ IsEmpty()\l+ Shuffle()\l}" alt="" coords="178,145,381,369"/>
+<map id="random_generator&lt; pcg64, randutils::seed_seq_fe128 &gt;" name="random_generator&lt; pcg64, randutils::seed_seq_fe128 &gt;">
 </map>

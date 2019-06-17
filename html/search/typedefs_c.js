@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['tclock',['TClock',['../db/d57/a00112.html#aedbb343fde64ffebcdb371dd862aae7f',1,'stride::util::Stopwatch']]],
-  ['type',['Type',['../d6/d97/a00045.html#a4aaf8c000b5dee2ed0f32eadae9406d0',1,'proto::GeoGrid_Location_ContactPools::Type()'],['../dd/d1b/a00015.html#af301c9d0d60f687fad02d840a4496905',1,'geopop::geogrid_detail::KdTree2DPoint::dimension_type::type()'],['../d0/dc2/a00104.html#a4183f045c6086dabede526dea8e6cedb',1,'stride::util::ii_detail::make_void::type()']]]
+  ['secondarycommunitygenerator',['SecondaryCommunityGenerator',['../d8/df7/a00331.html#aa934d3959deda800f3c144f5c7ee82b8',1,'geopop']]],
+  ['secondarycommunitypopulator',['SecondaryCommunityPopulator',['../d8/df7/a00331.html#a70a6f0464fbde62721a9fa263a3209c0',1,'geopop']]],
+  ['self_5ftype',['self_type',['../d4/d6d/a00055.html#aa72e1f8f1437134e2ead160ca23c35bd',1,'stride::util::SegmentedVector::self_type()'],['../df/d6a/a00119.html#acf4391226c3334af2ab02fdbfcbe81c8',1,'stride::util::SVIterator::self_type()']]],
+  ['size_5ftype',['size_type',['../d4/d6d/a00055.html#a4344636a6d7dea3aff481c178b5ff008',1,'stride::util::SegmentedVector']]]
 ];

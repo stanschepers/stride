@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: is_iterator.h File Reference</title>
+<title>Stride Reference Manual: Immunizer.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 9261888</span>
+   &#160;<span id="projectnumber">- generated for commit ca704c9</span>
    </div>
   </td>
  </tr>
@@ -106,37 +106,38 @@ $(document).ready(function(){initNavTree('dd/d2d/a00229.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">is_iterator.h File Reference</div>  </div>
+<div class="title">Immunizer.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Interface/Implementation of is_iterator.  
+<p>Header for the Immunizer class.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;iterator&gt;</code><br />
-<code>#include &lt;type_traits&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../da/d01/a00153_source.html">contact/ContactPool.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dc/dc9/a00282_source.html">util/RnMan.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d7f/a00287_source.html">util/SegmentedVector.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for is_iterator.h:</div>
+Include dependency graph for Immunizer.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d7/d37/a00505.gif" border="0" usemap="#is__iterator_8h" alt=""/></div>
-<map name="is__iterator_8h" id="is__iterator_8h">
+<div class="center"><img src="../../df/db6/a00509.gif" border="0" usemap="#Immunizer_8h" alt=""/></div>
+<map name="Immunizer_8h" id="Immunizer_8h">
+<area shape="rect" id="node2" href="../../da/d01/a00153.html" title="Header for the core ContactPool class. " alt="" coords="579,80,742,107"/>
+<area shape="rect" id="node12" href="../../dc/dc9/a00282.html" title="Interface of RnMan. " alt="" coords="177,80,277,107"/>
+<area shape="rect" id="node16" href="../../d6/d7f/a00287.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="1061,80,1233,107"/>
+<area shape="rect" id="node3" href="../../dd/db2/a00151.html" title="Header for the ContactLogMode class. " alt="" coords="414,155,609,181"/>
+<area shape="rect" id="node5" href="../../d1/db7/a00157.html" title="Definition of ContactPool Id Type. " alt="" coords="844,155,1008,181"/>
+<area shape="rect" id="node13" href="../../d0/dcd/a00280.html" title="Interface of RnPcg. " alt="" coords="316,155,389,181"/>
+<area shape="rect" id="node17" href="../../d1/d5d/a00311.html" title="Interface/Implementation for SVIterator. " alt="" coords="1185,155,1283,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d4/d1f/a00506.gif" border="0" usemap="#is__iterator_8hdep" alt=""/></div>
-<map name="is__iterator_8hdep" id="is__iterator_8hdep">
-<area shape="rect" id="node2" href="../../d1/db7/a00157.html" title="Header file of base class for config that needs to be read from a file. " alt="" coords="657,80,715,107"/>
-<area shape="rect" id="node3" href="../../db/dc3/a00284.html" title="Header for the command line controller. " alt="" coords="5,155,145,181"/>
-<area shape="rect" id="node4" href="../../de/d14/a00139.html" title="CommutesCSVReader.cpp" alt="" coords="169,155,360,181"/>
-<area shape="rect" id="node5" href="../../de/dd2/a00207.html" title="HouseholdCSVReader.cpp" alt="" coords="385,155,571,181"/>
-<area shape="rect" id="node6" href="../../d0/d27/a00239.html" title="LocationsCSVReader.cpp" alt="" coords="596,155,776,181"/>
-<area shape="rect" id="node7" href="../../d3/d07/a00305.html" title="WorkplaceCSVReader.cpp" alt="" coords="800,155,983,181"/>
-<area shape="rect" id="node8" href="../../d2/d34/a00156.html" title="Source file of csv. " alt="" coords="1007,155,1082,181"/>
-<area shape="rect" id="node9" href="../../d6/db8/a00158.html" title="Source file of CSVRow. " alt="" coords="1106,155,1205,181"/>
+<div class="center"><img src="../../d6/d52/a00510.gif" border="0" usemap="#Immunizer_8hdep" alt=""/></div>
+<map name="Immunizer_8hdep" id="Immunizer_8hdep">
+<area shape="rect" id="node2" href="../../d8/df1/a00174.html" title="Implementation for the DiseaseSeeder class. " alt="" coords="5,80,151,107"/>
+<area shape="rect" id="node3" href="../../de/dc2/a00228.html" title="Implementation for the Immunizer class. " alt="" coords="175,80,291,107"/>
 </map>
 </div>
 </div>
@@ -144,43 +145,27 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc2/a00104.html">stride::util::ii_detail::make_void&lt; Ts &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d32/a00105.html">stride::util::is_iterator&lt; T, class &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">When it 's not an iterator.  <a href="../../d3/d32/a00105.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d70/a00106.html">stride::util::is_iterator&lt; T, ii_detail::void_t&lt; typename std::iterator_traits&lt; T &gt;::iterator_category &gt; &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">When it is an iterator.  <a href="../../d7/d70/a00106.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1f/a00083.html">stride::Immunizer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deals with immunization strategies.  <a href="../../d2/d1f/a00083.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:dd/d4e/a00329"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d4e/a00329.html">stride</a></td></tr>
-<tr class="memdesc:dd/d4e/a00329"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
+<tr class="memitem:d2/d45/a00342"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/a00342.html">stride</a></td></tr>
+<tr class="memdesc:d2/d45/a00342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:dd/d1d/a00336"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d1d/a00336.html">stride::util</a></td></tr>
-<tr class="memdesc:dd/d1d/a00336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utilities for the project. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:dc/d84/a00338"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d84/a00338.html">stride::util::ii_detail</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a5548d91f3cf721a08ab97267e8dd80ec"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
-<tr class="memitem:a5548d91f3cf721a08ab97267e8dd80ec"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d84/a00338.html#a5548d91f3cf721a08ab97267e8dd80ec">stride::util::ii_detail::void_t</a> = typename make_void&lt; Ts... &gt;::type</td></tr>
-<tr class="separator:a5548d91f3cf721a08ab97267e8dd80ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Interface/Implementation of is_iterator. </p>
+<div class="textblock"><p>Header for the Immunizer class. </p>
 
-<p>Definition in file <a class="el" href="../../dd/d2d/a00229_source.html">is_iterator.h</a>.</p>
+<p>Definition in file <a class="el" href="../../dd/d2d/a00229_source.html">Immunizer.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_cf56009b1fcb470adac12e74ab7406a1.html">util</a></li><li class="navelem"><a class="el" href="../../dd/d2d/a00229.html">is_iterator.h</a></li>
-    <li class="footer">Generated on Sat Jun 15 2019 20:23:27 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_64952374cc5fce1bffc8f3e140afcfae.html">disease</a></li><li class="navelem"><a class="el" href="../../dd/d2d/a00229.html">Immunizer.h</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 09:18:53 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

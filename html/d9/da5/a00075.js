@@ -1,8 +1,7 @@
 var a00075 =
 [
-    [ "GeoPopBuilder", "d9/da5/a00075.html#a9159585958c5ab6405e8022c5bbd7421", null ],
-    [ "Build", "d9/da5/a00075.html#a23493e205a9a22922b1511b80e64bc1e", null ],
-    [ "MakeLocations", "d9/da5/a00075.html#a0a67e3e8c4d250509a6f76acb076824e", null ],
-    [ "MakePools", "d9/da5/a00075.html#a6c0a01d2def04c804fff3ef162dfbc4f", null ],
-    [ "MakePersons", "d9/da5/a00075.html#a22327526a0de14f648b2375065527fda", null ]
+    [ "DaysOffSchool", "d9/da5/a00075.html#ab77c78d8d9b00fe50c8f845fe459a657", null ],
+    [ "IsWorkOff", "d9/da5/a00075.html#a633453bbe4892b56891c42a4f4ac72fd", null ],
+    [ "IsSchoolOff", "d9/da5/a00075.html#a709acf6d0cec5722e20760a797ae35bb", null ],
+    [ "m_calendar", "d9/da5/a00075.html#a5ac5b045ac4db6ae397d91d7dd663784", null ]
 ];

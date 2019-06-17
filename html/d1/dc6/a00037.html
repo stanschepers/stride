@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: geopop::ReferenceHouseHold Struct Reference</title>
+<title>Stride Reference Manual: geopop::PolygonPolicy Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 9261888</span>
+   &#160;<span id="projectnumber">- generated for commit ca704c9</span>
    </div>
   </td>
  </tr>
@@ -107,104 +107,194 @@ $(document).ready(function(){initNavTree('d1/dc6/a00037.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="../../d2/db1/a00730.html">List of all members</a>  </div>
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="../../d8/db4/a00760.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">geopop::ReferenceHouseHold Struct Reference</div>  </div>
+<div class="title">geopop::PolygonPolicy Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="../../dc/d52/a00183_source.html">GeoGridConfig.h</a>&gt;</code></p>
+<p>A <a class="el" href="../../d7/dec/a00010.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time...">GeoAggregator</a> Policy that aggregates over a (clockwise) polygon.  
+ <a href="../../d1/dc6/a00037.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../dc/d52/a00183_source.html">GeoAggregator.h</a>&gt;</code></p>
 <div class="dynheader">
-Collaboration diagram for geopop::ReferenceHouseHold:</div>
+Collaboration diagram for geopop::PolygonPolicy:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../df/df7/a00731.gif" border="0" usemap="#geopop_1_1ReferenceHouseHold_coll__map" alt="Collaboration graph"/></div>
-<map name="geopop_1_1ReferenceHouseHold_coll__map" id="geopop_1_1ReferenceHouseHold_coll__map">
-<area shape="rect" id="node2" href="../../d2/d45/a00342.html" title="{double\n||}" alt="" coords="5,447,71,525"/>
-<area shape="rect" id="node6" title="STL class. " alt="" coords="348,145,475,223"/>
+<div class="center"><img src="../../d3/d4f/a00761.gif" border="0" usemap="#geopop_1_1PolygonPolicy_coll__map" alt="Collaboration graph"/></div>
+<map name="geopop_1_1PolygonPolicy_coll__map" id="geopop_1_1PolygonPolicy_coll__map">
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a7125fdd06f0ba926f2b2e88211d8ceca"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc6/a00037.html#a7125fdd06f0ba926f2b2e88211d8ceca">person_count</a> = 0U</td></tr>
-<tr class="memdesc:a7125fdd06f0ba926f2b2e88211d8ceca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of persons in the reference household set.  <a href="#a7125fdd06f0ba926f2b2e88211d8ceca">More...</a><br /></td></tr>
-<tr class="separator:a7125fdd06f0ba926f2b2e88211d8ceca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e6b29d7547a918b6258ea6c4eb1acb1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; unsigned int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc6/a00037.html#a7e6b29d7547a918b6258ea6c4eb1acb1">ages</a> {}</td></tr>
-<tr class="memdesc:a7e6b29d7547a918b6258ea6c4eb1acb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Age profile per reference household.  <a href="#a7e6b29d7547a918b6258ea6c4eb1acb1">More...</a><br /></td></tr>
-<tr class="separator:a7e6b29d7547a918b6258ea6c4eb1acb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae71fb52c6b2c47ed2d6ac87823880740"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d45/a00342.html">double</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc6/a00037.html#ae71fb52c6b2c47ed2d6ac87823880740">young_old_fraction</a> = 1.0</td></tr>
-<tr class="memdesc:ae71fb52c6b2c47ed2d6ac87823880740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Young/Old fraction of reference household.  <a href="#ae71fb52c6b2c47ed2d6ac87823880740">More...</a><br /></td></tr>
-<tr class="separator:ae71fb52c6b2c47ed2d6ac87823880740"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a5468ac31eae54f8b993ffd14a62927d7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc6/a00037.html#a5468ac31eae54f8b993ffd14a62927d7">Args</a> = boost::geometry::model::polygon&lt; <a class="el" href="../../d8/df7/a00331.html#ad853921c138e9ecb23181946c1d066c4">Coordinate</a>, true &gt;</td></tr>
+<tr class="separator:a5468ac31eae54f8b993ffd14a62927d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a9f6a7862371bdb5991a62af32bfc44fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc6/a00037.html#a9f6a7862371bdb5991a62af32bfc44fe">PolygonPolicy</a> (boost::geometry::model::polygon&lt; <a class="el" href="../../d8/df7/a00331.html#ad853921c138e9ecb23181946c1d066c4">Coordinate</a>, true &gt; args)</td></tr>
+<tr class="separator:a9f6a7862371bdb5991a62af32bfc44fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37ead64e0fc7096f4d71ee2c2b5ce8d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d7c/a00003.html">AABBox</a>&lt; <a class="el" href="../../d2/de7/a00014.html">geogrid_detail::KdTree2DPoint</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc6/a00037.html#a37ead64e0fc7096f4d71ee2c2b5ce8d0">GetBoundingBox</a> () const </td></tr>
+<tr class="separator:a37ead64e0fc7096f4d71ee2c2b5ce8d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa76a2a2617b5fd1ae1ff45891adf65b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc6/a00037.html#aa76a2a2617b5fd1ae1ff45891adf65b5">Contains</a> (const <a class="el" href="../../d2/de7/a00014.html">geogrid_detail::KdTree2DPoint</a> &amp;pt) const </td></tr>
+<tr class="separator:aa76a2a2617b5fd1ae1ff45891adf65b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a69ddb55e11e6fa42222646a21432bfb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/dc6/a00037.html#a5468ac31eae54f8b993ffd14a62927d7">Args</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc6/a00037.html#a69ddb55e11e6fa42222646a21432bfb1">m_poly</a></td></tr>
+<tr class="separator:a69ddb55e11e6fa42222646a21432bfb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="../../dc/d52/a00183_source.html#l00036">36</a> of file <a class="el" href="../../dc/d52/a00183_source.html">GeoGridConfig.h</a>.</p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a7125fdd06f0ba926f2b2e88211d8ceca"></a>
+<div class="textblock"><p>A <a class="el" href="../../d7/dec/a00010.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time...">GeoAggregator</a> Policy that aggregates over a (clockwise) polygon. </p>
+
+<p>Definition at line <a class="el" href="../../dc/d52/a00183_source.html#l00196">196</a> of file <a class="el" href="../../dc/d52/a00183_source.html">GeoAggregator.h</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="a5468ac31eae54f8b993ffd14a62927d7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int geopop::ReferenceHouseHold::person_count = 0U</td>
+          <td class="memname">using <a class="el" href="../../d1/dc6/a00037.html#a5468ac31eae54f8b993ffd14a62927d7">geopop::PolygonPolicy::Args</a> =  boost::geometry::model::polygon&lt;<a class="el" href="../../d8/df7/a00331.html#ad853921c138e9ecb23181946c1d066c4">Coordinate</a>, true&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Number of persons in the reference household set. </p>
-
-<p>Definition at line <a class="el" href="../../dc/d52/a00183_source.html#l00039">39</a> of file <a class="el" href="../../dc/d52/a00183_source.html">GeoGridConfig.h</a>.</p>
-
-<p>Referenced by <a class="el" href="../../d7/d25/a00182_source.html#l00063">geopop::GeoGridConfig::SetData()</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/d52/a00183_source.html#l00199">199</a> of file <a class="el" href="../../dc/d52/a00183_source.html">GeoAggregator.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a7e6b29d7547a918b6258ea6c4eb1acb1"></a>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a9f6a7862371bdb5991a62af32bfc44fe"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::vector&lt;unsigned int&gt; &gt; geopop::ReferenceHouseHold::ages {}</td>
+          <td class="memname">geopop::PolygonPolicy::PolygonPolicy </td>
+          <td>(</td>
+          <td class="paramtype">boost::geometry::model::polygon&lt; <a class="el" href="../../d8/df7/a00331.html#ad853921c138e9ecb23181946c1d066c4">Coordinate</a>, true &gt;&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Age profile per reference household. </p>
-
-<p>Definition at line <a class="el" href="../../dc/d52/a00183_source.html#l00042">42</a> of file <a class="el" href="../../dc/d52/a00183_source.html">GeoGridConfig.h</a>.</p>
-
-<p>Referenced by <a class="el" href="../../da/de7/a00210_source.html#l00030">geopop::Populator&lt; ID &gt;::Apply()</a>, and <a class="el" href="../../d7/d25/a00182_source.html#l00063">geopop::GeoGridConfig::SetData()</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/d52/a00183_source.html#l00201">201</a> of file <a class="el" href="../../dc/d52/a00183_source.html">GeoAggregator.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae71fb52c6b2c47ed2d6ac87823880740"></a>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a37ead64e0fc7096f4d71ee2c2b5ce8d0"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d2/d45/a00342.html">double</a> geopop::ReferenceHouseHold::young_old_fraction = 1.0</td>
+          <td class="memname"><a class="el" href="../../d1/d7c/a00003.html">AABBox</a>&lt;<a class="el" href="../../d2/de7/a00014.html">geogrid_detail::KdTree2DPoint</a>&gt; geopop::PolygonPolicy::GetBoundingBox </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Young/Old fraction of reference household. </p>
+<p>Definition at line <a class="el" href="../../dc/d52/a00183_source.html#l00203">203</a> of file <a class="el" href="../../dc/d52/a00183_source.html">GeoAggregator.h</a>.</p>
 
-<p>Definition at line <a class="el" href="../../dc/d52/a00183_source.html#l00045">45</a> of file <a class="el" href="../../dc/d52/a00183_source.html">GeoGridConfig.h</a>.</p>
-
-<p>Referenced by <a class="el" href="../../d7/d25/a00182_source.html#l00063">geopop::GeoGridConfig::SetData()</a>.</p>
+<p>References <a class="el" href="../../d1/d88/a00128_source.html#l00027">geopop::AABBox&lt; P &gt;::lower</a>, and <a class="el" href="../../d1/d88/a00128_source.html#l00029">geopop::AABBox&lt; P &gt;::upper</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="../../dc/d52/a00183_source.html">GeoGridConfig.h</a></li>
+<a class="anchor" id="aa76a2a2617b5fd1ae1ff45891adf65b5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool geopop::PolygonPolicy::Contains </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d2/de7/a00014.html">geogrid_detail::KdTree2DPoint</a> &amp;&#160;</td>
+          <td class="paramname"><em>pt</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d52/a00183_source.html#l00213">213</a> of file <a class="el" href="../../dc/d52/a00183_source.html">GeoAggregator.h</a>.</p>
+
+<p>References <a class="el" href="../../dd/dd7/a00248_source.html#l00072">geopop::geogrid_detail::KdTree2DPoint::GetPoint()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/dc6/a00037_aa76a2a2617b5fd1ae1ff45891adf65b5_cgraph.gif" border="0" usemap="#d1/dc6/a00037_aa76a2a2617b5fd1ae1ff45891adf65b5_cgraph" alt=""/></div>
+<map name="d1/dc6/a00037_aa76a2a2617b5fd1ae1ff45891adf65b5_cgraph" id="d1/dc6/a00037_aa76a2a2617b5fd1ae1ff45891adf65b5_cgraph">
+<area shape="rect" id="node2" href="../../d2/de7/a00014.html#a3b5330463d70e33c9759a02ab68ffc27" title="Get the coordinate for this Location. " alt="" coords="217,39,403,80"/>
+<area shape="rect" id="node3" href="../../d2/de7/a00014.html#a95b74e013a8d4d2c6c5366e27fd3d951" title="geopop::geogrid_detail\l::KdTree2DPoint::InBox" alt="" coords="458,5,626,47"/>
+<area shape="rect" id="node4" href="../../d2/de7/a00014.html#a6b85c29413257e2c0400e376241e91a3" title="Does the point lie within radius km from start? " alt="" coords="451,71,633,112"/>
+<area shape="rect" id="node5" href="../../d2/de7/a00014.html#a1ebd0d0592ea210885f32f110d8ec0de" title="Distance in kilometers, following great circle distance on a speroid earth. " alt="" coords="681,71,868,112"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a69ddb55e11e6fa42222646a21432bfb1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/dc6/a00037.html#a5468ac31eae54f8b993ffd14a62927d7">Args</a> geopop::PolygonPolicy::m_poly</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d52/a00183_source.html#l00219">219</a> of file <a class="el" href="../../dc/d52/a00183_source.html">GeoAggregator.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="../../dc/d52/a00183_source.html">GeoAggregator.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d2/d41/a00318.html">geopop</a></li><li class="navelem"><a class="el" href="../../d1/dc6/a00037.html">ReferenceHouseHold</a></li>
-    <li class="footer">Generated on Sat Jun 15 2019 20:23:28 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../d8/df7/a00331.html">geopop</a></li><li class="navelem"><a class="el" href="../../d1/dc6/a00037.html">PolygonPolicy</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 09:18:53 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

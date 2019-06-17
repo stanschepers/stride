@@ -1,4 +1,33 @@
-<map id="geopop::ReferenceHouseHold" name="geopop::ReferenceHouseHold">
-<area shape="rect" id="node2" href="$d2/d45/a00342.html" title="{double\n||}" alt="" coords="5,447,71,525"/>
-<area shape="rect" id="node6" title="STL class. " alt="" coords="348,145,475,223"/>
+<map id="geopop::GeoGridStreamReader" name="geopop::GeoGridStreamReader">
+<area shape="rect" id="node2" href="$d3/d52/a00023.html" title="An abstract base class for creating a GeoGrid that was read from a file, can be implemented using mul..." alt="" coords="2523,3236,2698,3387"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="2975,421,3107,498"/>
+<area shape="rect" id="node41" title="STL class. " alt="" coords="2023,413,2175,505"/>
+<area shape="rect" id="node14" title="STL class. " alt="" coords="2122,733,2249,811"/>
+<area shape="rect" id="node19" title="STL class. " alt="" coords="2350,544,2506,636"/>
+<area shape="rect" id="node21" title="STL class. " alt="" coords="2415,421,2630,498"/>
+<area shape="rect" id="node23" title="STL class. " alt="" coords="2642,529,2819,651"/>
+<area shape="rect" id="node35" title="STL class. " alt="" coords="545,421,700,498"/>
+<area shape="rect" id="node9" href="$d1/dc1/a00092.html" title="Key Data structure: container for (a) all individuals in the population (b) the ContactPoolSys wchich..." alt="" coords="2043,2949,2203,3173"/>
+<area shape="rect" id="node24" href="$d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac..." alt="" coords="1702,2648,1863,2887"/>
+<area shape="rect" id="node10" href="$d4/d6d/a00055.html" title="{stride::util::SegmentedVector\l\&lt; Person \&gt;\n||+ SegmentedVector()\l+ SegmentedVector()\l+ SegmentedVector()\l+ SegmentedVector()\l+ SegmentedVector()\l+ operator=()\l+ operator=()\l+ ~SegmentedVector()\l+ at()\l+ at()\land 23 more...\l&#45; get_chunk()\l}" alt="" coords="1925,1729,2134,1983"/>
+<area shape="rect" id="node11" href="$d2/db6/a00411.html" title="{size_t\n||}" alt="" coords="1425,1042,1484,1119"/>
+<area shape="rect" id="node15" href="$d4/d6d/a00055.html" title="Container that stores objects &quot;almost contiguously&quot; (in a chain of blocks) and guarantees that pointe..." alt="" coords="1837,1413,2046,1667"/>
+<area shape="rect" id="node25" href="$d0/dc0/a00033.html" title="{geopop::KdTree\&lt; geogrid\l_detail::KdTree2DPoint \&gt;\n||+ KdTree()\l+ Apply()\l+ Apply()\l+ Contains()\l+ Empty()\l+ GetHeight()\l+ Insert()\l+ Query()\l+ Size()\l+ Build()\l&#45; Construct()\l}" alt="" coords="1407,2347,1590,2585"/>
+<area shape="rect" id="node30" href="$d2/de7/a00014.html" title="KdTree for some more information on methods. " alt="" coords="1080,1428,1248,1652"/>
+<area shape="rect" id="node36" href="$d0/dc0/a00033.html" title="A k&#45;d tree: a k&#45;dimensional generalization of binary search trees This data structure allows for effi..." alt="" coords="1170,2045,1329,2269"/>
+<area shape="rect" id="node13" href="$de/ddd/a00653.html" title="{Chunk *\n||}" alt="" coords="1990,733,2063,811"/>
+<area shape="rect" id="node17" href="$da/d24/a00068.html" title="ContactPoolSys contains for each of the type of pools (Household, K12School, ...) a vector of with al..." alt="" coords="2341,1465,2507,1615"/>
+<area shape="rect" id="node18" href="$d3/dea/a00046.html" title="{stride::ContactType\l::IdSubscriptArray\&lt;\l unsigned int \&gt;\n||+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ operator[]()\l+ operator[]()\l+ at()\l+ at()\l}" alt="" coords="2348,976,2500,1185"/>
+<area shape="rect" id="node20" href="$d3/dea/a00046.html" title="An std::array modified to enable subscripting with the constact pool type indentifiers. " alt="" coords="2466,675,2638,869"/>
+<area shape="rect" id="node22" href="$d3/dea/a00046.html" title="{stride::ContactType\l::IdSubscriptArray\&lt;\l util::stride::util::\lSegmentedVector\&lt; stride\l::ContactPool \&gt; \&gt;\n||+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ operator[]()\l+ operator[]()\l+ at()\l+ at()\l}" alt="" coords="2524,961,2713,1200"/>
+<area shape="rect" id="node27" href="$dc/d87/a00032.html" title="{geopop::kd::Node\&lt; geogrid\l_detail::KdTree2DPoint, 0 \&gt;\n||+ Node()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="901,1773,1099,1939"/>
+<area shape="rect" id="node28" href="$d7/d46/a00002.html" title="{geopop::kd::BaseNode\l\&lt; geogrid_detail::KdTree2DPoint \&gt;\n||+ ~BaseNode()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="879,1224,1121,1389"/>
+<area shape="rect" id="node29" href="$d7/d46/a00002.html" title="A base class for all instantiations of a Node with D. " alt="" coords="756,697,961,847"/>
+<area shape="rect" id="node34" href="$dc/d87/a00032.html" title="A node in the KdTree (parameter P: the type of point, parameter D: dimension this node splits on)..." alt="" coords="558,1005,749,1156"/>
+<area shape="rect" id="node38" href="$dc/d87/a00032.html" title="{geopop::kd::Node\&lt; P, 0 \&gt;\n||+ Node()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="403,1465,592,1615"/>
+<area shape="rect" id="node31" href="$db/df3/a00034.html" title="Location for use within the GeoGrid, contains Coordinate and index to ContactPools. " alt="" coords="1170,969,1401,1193"/>
+<area shape="rect" id="node47" title="STL class. " alt="" coords="40,421,139,498"/>
+<area shape="rect" id="node48" title="STL class. " alt="" coords="20,259,159,351"/>
+<area shape="rect" id="node49" title="STL class. " alt="" coords="5,132,173,209"/>
+<area shape="rect" id="node50" title="STL class. " alt="" coords="36,5,143,83"/>
 </map>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: WorkplaceCSVReader.h File Reference</title>
+<title>Stride Reference Manual: SummaryFile.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 9261888</span>
+   &#160;<span id="projectnumber">- generated for commit ca704c9</span>
    </div>
   </td>
  </tr>
@@ -108,28 +108,31 @@ $(document).ready(function(){initNavTree('d1/de3/a00306.html','../../');});
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">WorkplaceCSVReader.h File Reference</div>  </div>
+<div class="title">SummaryFile.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d1/d0d/a00171_source.html">DistributionReader.h</a>&quot;</code><br />
-<code>#include &lt;vector&gt;</code><br />
+
+<p>Header for the SummaryFile class.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;boost/property_tree/ptree_fwd.hpp&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for WorkplaceCSVReader.h:</div>
+Include dependency graph for SummaryFile.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../de/d85/a00618.gif" border="0" usemap="#WorkplaceCSVReader_8h" alt=""/></div>
-<map name="WorkplaceCSVReader_8h" id="WorkplaceCSVReader_8h">
-<area shape="rect" id="node2" href="../../d1/d0d/a00171.html" title="DistributionReader.h" alt="" coords="205,80,356,107"/>
-<area shape="rect" id="node3" href="../../dd/d56/a00274.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="253,155,425,181"/>
-<area shape="rect" id="node4" href="../../d9/d0d/a00298.html" title="Interface/Implementation for SVIterator. " alt="" coords="143,229,242,256"/>
+<div class="center"><img src="../../df/d6f/a00623.gif" border="0" usemap="#SummaryFile_8h" alt=""/></div>
+<map name="SummaryFile_8h" id="SummaryFile_8h">
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d6/d6a/a00619.gif" border="0" usemap="#WorkplaceCSVReader_8hdep" alt=""/></div>
-<map name="WorkplaceCSVReader_8hdep" id="WorkplaceCSVReader_8hdep">
-<area shape="rect" id="node2" href="../../df/da9/a00263.html" title="ReaderFactory.cpp" alt="" coords="5,80,143,107"/>
-<area shape="rect" id="node3" href="../../d3/d07/a00305.html" title="WorkplaceCSVReader.cpp" alt="" coords="167,80,349,107"/>
+<div class="center"><img src="../../d3/dd6/a00624.gif" border="0" usemap="#SummaryFile_8hdep" alt=""/></div>
+<map name="SummaryFile_8hdep" id="SummaryFile_8hdep">
+<area shape="rect" id="node2" href="../../d3/d07/a00305.html" title="Implementation of the SummaryFile class. " alt="" coords="5,80,137,107"/>
+<area shape="rect" id="node3" href="../../d5/d0f/a00308.html" title="Observer for Persons output. " alt="" coords="161,80,320,107"/>
+<area shape="rect" id="node4" href="../../d6/db8/a00158.html" title="Header for the command line controller. " alt="" coords="83,155,219,181"/>
+<area shape="rect" id="node5" href="../../d0/da2/a00307.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="243,155,417,181"/>
 </map>
 </div>
 </div>
@@ -137,26 +140,30 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d41/a00038.html">geopop::WorkplaceCSVReader</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a Reader that retrieves the different distributions for workplaces from a given CSV file.  <a href="../../d8/d41/a00038.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dec/a00090.html">stride::output::SummaryFile</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Produces a file with simulation summary output.  <a href="../../d9/dec/a00090.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:dd/d4e/a00329"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d4e/a00329.html">stride</a></td></tr>
-<tr class="memdesc:dd/d4e/a00329"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
+<tr class="memitem:d2/d45/a00342"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/a00342.html">stride</a></td></tr>
+<tr class="memdesc:d2/d45/a00342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d2/d41/a00318"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d41/a00318.html">geopop</a></td></tr>
-<tr class="memdesc:d2/d41/a00318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
+<tr class="memitem:d2/daf/a00346"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/daf/a00346.html">stride::output</a></td></tr>
+<tr class="memdesc:d2/daf/a00346"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utilities for the output files. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Header for the SummaryFile class. </p>
+
+<p>Definition in file <a class="el" href="../../d1/de3/a00306_source.html">SummaryFile.h</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_c490ff723361adf09283ce460b26e466.html">io</a></li><li class="navelem"><a class="el" href="../../d1/de3/a00306.html">WorkplaceCSVReader.h</a></li>
-    <li class="footer">Generated on Sat Jun 15 2019 20:23:27 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_2ae6c1d5e4b832eb120eff875630c108.html">viewers</a></li><li class="navelem"><a class="el" href="../../d1/de3/a00306.html">SummaryFile.h</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 09:18:53 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

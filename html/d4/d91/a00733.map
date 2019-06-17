@@ -1,3 +1,5 @@
-<map id="geopop::WorkplaceCSVReader" name="geopop::WorkplaceCSVReader">
-<area shape="rect" id="node2" href="$d4/dee/a00008.html" title="Retrieves the reference distribution profiles from file. " alt="" coords="15,5,209,112"/>
+<map id="geopop::GeoGridStreamWriter" name="geopop::GeoGridStreamWriter">
+<area shape="rect" id="node3" href="$db/db2/a00020.html" title="Writes a GeoGrid to a JSON file. " alt="" coords="5,351,204,517"/>
+<area shape="rect" id="node4" href="$d7/de0/a00022.html" title="An implementation of the GeoGridWriter using Protocol Buffers This class is used to write a GeoGrid t..." alt="" coords="227,344,427,524"/>
+<area shape="rect" id="node2" href="$d0/d33/a00027.html" title="An interface for writing the GeoGrid. " alt="" coords="132,5,299,112"/>
 </map>

@@ -1,0 +1,5 @@
+<map id="stride::ContactPool::GetInfectedCount" name="stride::ContactPool::GetInfectedCount">
+<area shape="rect" id="node2" href="$dc/ddf/a00067.html#a3b2da2fe2ebe5e75bcf8a13893f8d10a" title="Get the pool id. " alt="" coords="196,39,339,80"/>
+<area shape="rect" id="node3" href="$db/db2/a00020.html#a67d19b0ec28b5258056ef8b4d042112c" title="Create a JSON object containing all info needed to reconstruct a ContactPool. " alt="" coords="387,5,586,47"/>
+<area shape="rect" id="node4" href="$d7/de0/a00022.html#a015dcfc0716f0ffe586fe4d927809435" title="Create a ProtoBuf ContactPool containing all the info needed to reconstruct a ContactPool. " alt="" coords="387,71,587,112"/>
+</map>

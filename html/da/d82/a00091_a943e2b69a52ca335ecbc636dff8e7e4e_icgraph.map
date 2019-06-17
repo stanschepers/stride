@@ -1,0 +1,10 @@
+<map id="stride::Person::GetAge" name="stride::Person::GetAge">
+<area shape="rect" id="node2" href="$d2/d1f/a00083.html#ac187b34c18ec3cd1efccaf8f197766fc" title="Random immunization. " alt="" coords="249,71,391,112"/>
+<area shape="rect" id="node5" href="$d9/da4/a00078.html#adc5b1f152367382afe3dade9421357da" title="Build the simulator. " alt="" coords="679,115,841,156"/>
+<area shape="rect" id="node7" href="$da/d74/a00099.html#a81b191380f9a2c93768ff0efcec47f6b" title="Seeds the population with survey participants. " alt="" coords="682,180,838,221"/>
+<area shape="rect" id="node8" href="$db/db2/a00020.html#ac76d8a5db270181e67b1b561bfe55650" title="Create a JSON object containing all info needed to reconstruct a Person. " alt="" coords="221,239,419,280"/>
+<area shape="rect" id="node9" href="$d7/de0/a00022.html#a86db40bd91910ffd9d795c4320f980a0" title="Create a ProtoBuf Person containing all the info needed to reconstruct a Person. " alt="" coords="220,304,420,345"/>
+<area shape="rect" id="node3" href="$d2/d1f/a00083.html#a9cf69f9df2b2b2e357fab3d3ed48b64a" title="stride::Immunizer::\lImmunizer" alt="" coords="478,5,621,47"/>
+<area shape="rect" id="node4" href="$d9/da4/a00078.html#adddf4de9a6ae831d6e46d2f047309504" title="Seed for vaccination/natural immunity. " alt="" coords="468,71,631,112"/>
+<area shape="rect" id="node6" href="$d9/d77/a00095.html#a1f32dd929e6e21eabd41f7f7246a7aa1" title="Build the simulator and return it afterwards. " alt="" coords="889,148,1024,189"/>
+</map>
