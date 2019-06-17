@@ -13,6 +13,7 @@
  */
 
 #include "HouseholdJSONReader.h"
+#include "contact/AgeBrackets.h"
 
 #include <boost/lexical_cast.hpp>
 
@@ -20,6 +21,7 @@ namespace geopop {
 
 using namespace std;
 using namespace stride::util;
+using namespace stride;
 using json = nlohmann::json;
 
 HouseholdJSONReader::HouseholdJSONReader(std::unique_ptr<std::istream> inputStream)
@@ -37,7 +39,8 @@ unsigned int HouseholdJSONReader::parseAge(const nlohmann::json& age) const
 }
 
 void HouseholdJSONReader::SetReferenceHouseholds(unsigned int&                           ref_person_count,
-                                                 std::vector<std::vector<unsigned int>>& ref_ages)
+                                                 std::vector<std::vector<unsigned int>>& ref_ages,
+                                                 double&                                 ref_young_old_fraction)
 {
         json data;
 
@@ -49,6 +52,8 @@ void HouseholdJSONReader::SetReferenceHouseholds(unsigned int&                  
         }
 
         unsigned int p_count = 0U;
+        unsigned int p_young = 0U;
+        unsigned int p_old   = 0U;
 
         for (const json& household : data["householdsList"]) {
 
@@ -57,12 +62,19 @@ void HouseholdJSONReader::SetReferenceHouseholds(unsigned int&                  
 
                 for (const auto& age : household) {
                         parsedHH.push_back(parseAge(age));
+                        if (AgeBrackets::Young::HasAge(parseAge(age))) {
+                                p_young++;
+                        }
+                        if (AgeBrackets::Old::HasAge(parseAge(age))) {
+                                p_old++;
+                        }
                 }
 
                 p_count += household.size();
                 ref_ages.emplace_back(parsedHH);
         }
         ref_person_count = p_count;
+        ref_young_old_fraction = static_cast<double>(p_young) / static_cast<double>(p_old);
 }
 
 } // namespace geopop

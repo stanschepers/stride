@@ -16,8 +16,8 @@
 
 #include "HouseholdReader.h"
 
-#include <vector>
 #include <nlohmann/json.hpp>
+#include <vector>
 
 namespace stride {
 
@@ -38,8 +38,8 @@ public:
         explicit HouseholdJSONReader(std::unique_ptr<std::istream> inputStream);
 
         /// Add the locations to the GeoGrid.
-        void SetReferenceHouseholds(unsigned int&                           ref_person_count,
-                                    std::vector<std::vector<unsigned int>>& ref_ages) override;
+        void SetReferenceHouseholds(unsigned int& ref_person_count, std::vector<std::vector<unsigned int>>& ref_ages,
+                                    double& ref_young_old_fraction) override;
 
 private:
         /// Input stream  connected to input data file.

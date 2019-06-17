@@ -32,7 +32,7 @@ shared_ptr<GeoGridConfig> readHouseholdsAndCreateGeoGridConfig(string jsonString
         auto                      instream = make_unique<istringstream>(jsonString);
         HouseholdJSONReader       reader(move(instream));
 
-        reader.SetReferenceHouseholds(ggPtr->refHH.person_count, ggPtr->refHH.ages);
+        reader.SetReferenceHouseholds(ggPtr->refHH.person_count, ggPtr->refHH.ages, ggPtr->refHH.young_old_fraction);
 
         return ggPtr;
 }
