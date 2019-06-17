@@ -87,9 +87,9 @@ void GeoGridHDF5Reader::ReadPeople(const DataSet& people)
 
 void GeoGridHDF5Reader::ReadPerson(const H5Person& person)
 {
-        auto stridePerson =
-            m_population->CreatePerson(person.id, person.age, person.Household, person.K12School, person.College,
-                                       person.Workplace, person.PrimaryCommunity, person.SecondaryCommunity);
+        auto stridePerson = m_population->CreatePerson(
+            person.id, person.age, person.Household, person.Daycare, person.PreSchool, person.K12School, person.College,
+            person.Workplace, person.PrimaryCommunity, person.SecondaryCommunity);
 
         m_people[stridePerson->GetId()] = stridePerson;
 }
@@ -161,6 +161,8 @@ void GeoGridHDF5Reader::ReadContactPool(const H5::DataSet& pool, const shared_pt
                                               {"SecondaryCommunity", Id::SecondaryCommunity},
                                               {"College", Id::College},
                                               {"Household", Id::Household},
+                                              {"Daycare", Id::Daycare},
+                                              {"PreSchool", Id::PreSchool},
                                               {"Workplace", Id::Workplace}};
 
         size_t size;

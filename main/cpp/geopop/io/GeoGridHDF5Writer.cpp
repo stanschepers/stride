@@ -142,6 +142,8 @@ void GeoGridHDF5Writer::WritePeople(Group& rootGroup)
                 people[y].id                 = p->GetId();
                 people[y].age                = p->GetAge();
                 people[y].Household          = p->GetPoolId(Id::Household);
+                people[y].Daycare            = p->GetPoolId(Id::Daycare);
+                people[y].PreSchool          = p->GetPoolId(Id::PreSchool);
                 people[y].K12School          = p->GetPoolId(Id::K12School);
                 people[y].College            = p->GetPoolId(Id::College);
                 people[y].Workplace          = p->GetPoolId(Id::Workplace);
