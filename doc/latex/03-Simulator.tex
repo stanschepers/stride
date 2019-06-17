@@ -28,6 +28,8 @@ Compilation and installation of the software creates the following files and dir
        		\item $run\_import\_default.xml$: default configuration file for Stride to first import a population and geographical grid and then perform a Nassau Simulation.
         		\item $run\_miami\_weekend.xml$: configuration file for Stride to perform Miami simulations with uniform social contact rates in the community clusters.
 			\item $wrapper\_miami.json$: default configuration file for the wrapper\_sim binary to perform Miami simulations with different attack rates.
+			\item $run\_belgium.xml$: default configuration file for Stride to perform a simulation in Belgium with 10 provinces and the Brussels Region.
+			\item $run\_flandsers.xml$: default configuration file for Stride to perform a simualtion in Flanders with th 5 Flemish provinces.
         		\item \ldots
         \end{compactitem}
 %        
@@ -139,3 +141,17 @@ will start the simulator with each configuration in the file.
 It is important to note the input notation: values given inside brackets can be extended (e.g., ``rng\_seeds''=[1,2,3]) but single values can only be replaced by one other value (e.g., ``days'': 100).
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Demographic Profile
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Using multiple household references for different locations}
+
+The user can choose to use one household file as its reference or it can assign for each different location its respective household reference when generation a population.
+The first can be achieved by declaring the name of the household file between the $household\_file$ tags in the $genpop$ tags of the config file.
+An example of this configuration can be found in $run\_default.xml$.
+
+
+The second can be achieved by declaring $households$ tags in $genpop$ tags. Between these tags declare for each different household reference $household$ tags.
+In this $household$ tag there should be a tag named $household\_id$ containing a unique integer and a tag named $household\_file$ containing the name of the household file.
+The locations should get from its input file an extra attribute $household\_id$ containing which reference household should be used when generating and populating.
+An example of this configuration can be found in $run\_belgium.xml$.
