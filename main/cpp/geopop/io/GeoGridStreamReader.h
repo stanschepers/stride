@@ -30,8 +30,8 @@ namespace geopop {
 class GeoGrid;
 
 /**
- * An abstract base class for creating a GeoGrid that was read from a stream, can be implemented
- * using multiple file types (proto and json are currently implemented)
+ * An abstract base class for creating a GeoGrid that was read from a stream,
+ * can be implemented using multiple file types (proto and json are currently implemented)
  */
 class GeoGridStreamReader : public GeoGridReader
 {

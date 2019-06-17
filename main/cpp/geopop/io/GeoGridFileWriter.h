@@ -27,8 +27,8 @@ namespace geopop {
 class GeoGrid;
 
 /**
- * An interface for writing the GeoGrid to a file, can be implemented with multiple file types.
- * HDF5 is currently implemented.
+ * An interface for writing the GeoGrid to a filelocated at inputFilePath,
+ * can be implemented with multiple file types. HDF5 is currently implemented.
  */
 class GeoGridFileWriter : public GeoGridWriter
 {

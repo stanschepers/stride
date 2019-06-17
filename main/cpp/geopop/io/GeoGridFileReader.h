@@ -27,8 +27,8 @@ namespace geopop {
 class GeoGrid;
 
 /**
- * An abstract base class for creating a GeoGrid that was read from a stream, can be implemented
- * using multiple file types (hdf5 is currently implemented)
+ * An abstract base class for creating a GeoGrid that was read from a file located at inputFilePath,
+ * can be implemented using multiple file types (hdf5 is currently implemented)
  */
 class GeoGridFileReader : public GeoGridReader
 {

@@ -25,8 +25,8 @@ namespace geopop {
 class GeoGrid;
 
 /**
- * An interface for writing the GeoGrid to an output stream, can be implemented with multiple file types.
- * Protobuf and json are currently implemented.
+ * An interface for writing the GeoGrid to an output stream,
+ * can be implemented with multiple file types. Protobuf and json are currently implemented.
  */
 class GeoGridStreamWriter : public GeoGridWriter
 {

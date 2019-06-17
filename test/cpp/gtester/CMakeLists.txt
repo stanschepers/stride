@@ -62,12 +62,14 @@ set(SRC
     geopop/io/GeoGridIOUtils.cpp
     geopop/io/GeoGridJSONReaderTest.cpp
     geopop/io/GeoGridJSONWriterTest.cpp
+    geopop/io/GeoGridHDF5ReaderTest.cpp
+    geopop/io/GeoGridHDF5WriterTest.cpp
     geopop/io/GeoGridProtoReaderTest.cpp
     geopop/io/GeoGridProtoWriterTest.cpp
     geopop/io/HouseholdCSVReaderTest.cpp
     geopop/io/HouseholdJSONReaderTest.cpp
     geopop/io/ReaderFactoryTest.cpp
-        geopop/io/WorkplaceCSVReaderTest.cpp
+    geopop/io/WorkplaceCSVReaderTest.cpp
     #---
     geopop/kdtree.cpp
     #---
@@ -86,7 +88,8 @@ set(SRC
     myhayai/class_delivery.cpp
     myhayai/flex_delivery.cpp
     #---
-    main.cpp)
+    main.cpp
+)
 
 #if (OPENMP_FOUND)
 #        set(SRC ${SRC} ParallelRuns.cpp)

@@ -73,7 +73,7 @@ set(STRIDE_SRC
     geopop/geo/KdTree2DPoint.cpp
     #---
     geopop/generators/CollegeGenerator.cpp
-        geopop/generators/HouseholdGenerator.cpp
+    geopop/generators/HouseholdGenerator.cpp
     geopop/generators/K12SchoolGenerator.cpp
     geopop/generators/PrimaryCommunityGenerator.cpp
     geopop/generators/SecondaryCommunityGenerator.cpp
@@ -85,6 +85,12 @@ set(STRIDE_SRC
     geopop/io/CommutesCSVReader.cpp
     geopop/io/GeoGridJSONReader.cpp
     geopop/io/GeoGridJSONWriter.cpp
+    geopop/io/GeoGridHDF5Reader.cpp
+    geopop/io/GeoGridHDF5Reader.h
+    geopop/io/GeoGridHDF5Writer.cpp
+    geopop/io/GeoGridHDF5Writer.h
+    geopop/io/GeoGridHDF5Utils.cpp
+    geopop/io/GeoGridHDF5Utils.h
     geopop/io/GeoGridProtoReader.cpp
     geopop/io/GeoGridProtoReader.h
     geopop/io/GeoGridProtoWriter.cpp
@@ -105,10 +111,11 @@ set(STRIDE_SRC
     geopop/io/HouseholdJSONReader.cpp
     geopop/io/WorkplaceCSVReader.cpp
     geopop/io/ReaderFactory.cpp
+    #---
     geopop/populators/CollegePopulator.cpp
     geopop/populators/HouseholdPopulator.cpp
     geopop/populators/K12SchoolPopulator.cpp
-        geopop/populators/PrimaryCommunityPopulator.cpp
+    geopop/populators/PrimaryCommunityPopulator.cpp
     geopop/populators/SecondaryCommunityPopulator.cpp
     geopop/populators/WorkplacePopulator.cpp
     geopop/populators/DaycarePopulator.cpp
@@ -161,9 +168,14 @@ target_compile_definitions(libstride PUBLIC "-DSTRIDE_GIT_HASH=${STRIDE_WC_REVIS
 target_compile_definitions(libstride PUBLIC "-DPROCCOUNT=${PROCCOUNT}")
 target_link_libraries(libstride PRIVATE ${LIBS})
 if(Protobuf_FOUND)
-    target_link_libraries(libstride PRIVATE ${Protobuf_LIBRARIES})
+    target_link_libraries(libstride PUBLIC ${Protobuf_LIBRARIES})
 else()
     target_link_libraries(libstride PRIVATE libprotobuf)
+endif()
+if(HDF5_FOUND)
+    target_link_libraries(libstride PRIVATE ${HDF5_CXX_LIBRARIES} ${HDF5_CXX_HL_LIBRARIES})
+else()
+    target_link_libraries(libstride PRIVATE hdf5-static hdf5_hl-static hdf5_cpp-static hdf5_hl_cpp-static)
 endif()
 set_target_properties(libstride
     PROPERTIES

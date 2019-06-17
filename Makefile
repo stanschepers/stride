@@ -74,7 +74,9 @@ endif
 ifneq ($(STRIDE_FORCE_NO_PYHTON),)
 	CMAKE_ARGS += -DSTRIDE_FORCE_NO_PYTHON:BOOL=$(STRIDE_FORCE_NO_PYTHON)
 endif
-
+ifneq ($(STRIDE_FORCE_NO_HDF5),)
+	CMAKE_ARGS += -DSTRIDE_FORCE_NO_HDF5:BOOL=$(STRIDE_FORCE_NO_HDF5)
+endif
 #============================================================================
 #   Build directory.
 #============================================================================
@@ -101,6 +103,7 @@ help:
 	@ $(CMAKE) -E echo "   CMAKE_INSTALL_PREFIX          : " $(CMAKE_INSTALL_PREFIX)
 	@ $(CMAKE) -E echo " "
 	@ $(CMAKE) -E echo "   STRIDE_INCLUDE_DOC            : " $(STRIDE_INCLUDE_DOC)
+	@ $(CMAKE) -E echo "   STRIDE_FORCE_NO_HDF5          : " $(STRIDE_FORCE_NO_HDF5)
 	@ $(CMAKE) -E echo "   STRIDE_FORCE_NO_BOOST         : " $(STRIDE_FORCE_NO_BOOST)
 	@ $(CMAKE) -E echo "   BOOST_NO_SYSTEM_PATHS         : " $(BOOST_NO_SYSTEM_PATHS)
 	@ $(CMAKE) -E echo "   STRIDE_FORCE_NO_OPENMP        : " $(STRIDE_FORCE_NO_OPENMP)
