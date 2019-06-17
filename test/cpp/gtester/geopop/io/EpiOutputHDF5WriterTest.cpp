@@ -84,7 +84,7 @@ void validateDayAttributes(unsigned int day_num, unsigned long location_count, c
         ReadAttribute(read_location_count, "location_count", day);
 
         EXPECT_EQ(day_num, read_day_num);
-        EXPECT_EQ(day_num, read_day_num);
+        EXPECT_EQ(location_count, read_location_count);
 }
 
 void validateLocationAttributes(double lat, double lon, string name, unsigned int id, unsigned int province,
