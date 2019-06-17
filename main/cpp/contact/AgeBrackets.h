@@ -66,5 +66,23 @@ struct Workplace
         static bool HasAge(double age) { return age >= m_lower && age < m_upper; }
 };
 
+/// Young with lower (inclusive) and upper (exclusive) age bracket.
+struct Young
+{
+        constexpr static inline double m_lower = 15U;
+        constexpr static inline double m_upper = 25u;
+
+        static bool HasAge(double age) { return age >= m_lower && age < m_upper; }
+};
+
+/// Old with lower (inclusive) and upper (exclusive) age bracket.
+struct Old
+{
+        constexpr static inline double m_lower = 55U;
+        constexpr static inline double m_upper = 65u;
+
+        static bool HasAge(double age) { return age >= m_lower && age < m_upper; }
+};
+
 } // namespace AgeBrackets
 } // namespace stride

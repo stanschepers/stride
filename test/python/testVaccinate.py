@@ -18,7 +18,6 @@ def check(simulator, event):
 
 # Configure simulation
 controller = PyController(config_path="../config/run_default.xml")
-controller.runConfig.setParameter("output_prefix", "pytest_Vaccinate/")
 # Register callbacks
 controller.registerCallback(vaccinate, EventType.Stepped)
 controller.registerCallback(check, EventType.Stepped)

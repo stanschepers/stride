@@ -16,6 +16,7 @@
 #include "Generator.h"
 
 #include "util/Assert.h"
+#include "util/RnMan.h"
 
 namespace geopop {
 

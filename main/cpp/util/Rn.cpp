@@ -70,10 +70,9 @@ void Rn<E>::Initialize(const RnInfo& info)
         auto state = info.m_state;
         if (state.empty()) {
                 std::vector<unsigned int> seseq_init_vec;
-                const auto string_vec{Split(m_seed_seq_init, ",")};
                 for (const auto& e : Split(m_seed_seq_init, ",")) {
                         if (!CheckAllDigits(e)) {
-                                throw std::runtime_error("Rn::Seed> Error in seeding definiton: " + e);
+                                throw std::runtime_error("Rn::Seed> Error in seeding definiton.");
                         }
                         seseq_init_vec.push_back(FromString<unsigned int>(e));
                 }

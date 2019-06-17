@@ -1,17 +1,17 @@
 /*
-*  This is free software: you can redistribute it and/or modify it
-*  under the terms of the GNU General Public License as published by
-*  the Free Software Foundation, either version 3 of the License, or
-*  any later version.
-*  The software is distributed in the hope that it will be useful,
-*  but WITHOUT ANY WARRANTY; without even the implied warranty of
-*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-*  GNU General Public License for more details.
-*  You should have received a copy of the GNU General Public License
-*  along with the software. If not, see <http://www.gnu.org/licenses/>.
-*
-*  Copyright 2019, Jan Broeckhove.
-*/
+ *  This is free software: you can redistribute it and/or modify it
+ *  under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  any later version.
+ *  The software is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License
+ *  along with the software. If not, see <http://www.gnu.org/licenses/>.
+ *
+ *  Copyright 2019, Jan Broeckhove.
+ */
 
 #include "geopop/generators/Generator.h"
 
@@ -31,11 +31,12 @@ using namespace stride::util;
 
 namespace {
 
-class DaycareGeneratorTest : public testing::Test {
+class DaycareGeneratorTest : public testing::Test
+{
 public:
         DaycareGeneratorTest()
-        : m_rn_man(RnInfo()), m_daycare_generator(m_rn_man), m_gg_config(), m_pop(Population::Create()),
-          m_geo_grid(m_pop.get())
+            : m_rn_man(RnInfo()), m_daycare_generator(m_rn_man), m_gg_config(), m_pop(Population::Create()),
+              m_geo_grid(m_pop.get())
         {
         }
 
@@ -51,10 +52,10 @@ protected:
 // Check that generator can handle one Location.
 TEST_F(DaycareGeneratorTest, OneLocationTest)
 {
-        m_gg_config.param.pop_size          = 10000;
-        m_gg_config.info.popcount_daycare   = 2000;
+        m_gg_config.param.pop_size        = 10000;
+        m_gg_config.info.popcount_daycare = 2000;
 
-        auto loc1    = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
+        auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
         m_geo_grid.AddLocation(loc1);
 
         m_daycare_generator.Apply(m_geo_grid, m_gg_config);
@@ -63,11 +64,28 @@ TEST_F(DaycareGeneratorTest, OneLocationTest)
         EXPECT_EQ(poolsOfLoc1.size(), 223 * m_ppday);
 }
 
+// Check that generator can handle one Location with a large young/old fraction.
+TEST_F(DaycareGeneratorTest, OneLocationLargeYOFractionTest)
+{
+        m_gg_config.param.pop_size = 10000;
+        m_gg_config.info.popcount_daycare = 2000;
+
+        auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
+        loc1->SetYoungOldFraction(100.0);
+        m_geo_grid.AddLocation(loc1);
+
+        m_daycare_generator.Apply(m_geo_grid, m_gg_config);
+
+        const auto &poolsOfLoc1 = loc1->CRefPools(Id::Daycare);
+        EXPECT_EQ(poolsOfLoc1.size(), 223 * m_ppday);
+}
+
+
 // Check that generator can handle empty GeoGrid.
 TEST_F(DaycareGeneratorTest, ZeroLocationTest)
 {
-        m_gg_config.param.pop_size             = 10000;
-        m_gg_config.info.popcount_daycare   = 2000;
+        m_gg_config.param.pop_size        = 10000;
+        m_gg_config.info.popcount_daycare = 2000;
 
         m_daycare_generator.Apply(m_geo_grid, m_gg_config);
 
@@ -77,8 +95,8 @@ TEST_F(DaycareGeneratorTest, ZeroLocationTest)
 // Check that generator can handle five Locations.
 TEST_F(DaycareGeneratorTest, FiveLocationsTest)
 {
-        m_gg_config.param.pop_size         = 37542 * 100;
-        m_gg_config.info.popcount_daycare   = 750840;
+        m_gg_config.param.pop_size        = 37542 * 100;
+        m_gg_config.info.popcount_daycare = 750840;
 
         auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 10150 * 100);
         auto loc2 = make_shared<Location>(1, 4, Coordinate(0, 0), "Vlaams-Brabant", 10040 * 100);
@@ -101,8 +119,49 @@ TEST_F(DaycareGeneratorTest, FiveLocationsTest)
 
         vector<unsigned int> sizes{24254, 23844, 17652, 7778, 9899};
         for (size_t i = 0; i < sizes.size(); i++) {
-                EXPECT_EQ(sizes[i] * m_ppday, m_geo_grid[i]->CRefPools(Id::Daycare).size() );
+                EXPECT_EQ(sizes[i] * m_ppday, m_geo_grid[i]->CRefPools(Id::Daycare).size());
         }
+}
+
+// Check that a larger or smaller y/o fraction lets to respectively more and less instances in that city.
+TEST_F(DaycareGeneratorTest, FiveLocationsYOFractionTest)
+{
+    m_gg_config.param.pop_size             = 10000;
+    m_gg_config.info.popcount_daycare   = 1000;
+
+    auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 500);
+    auto loc2 = make_shared<Location>(1, 4, Coordinate(0, 0), "Vlaams-Brabant", 200);
+    auto loc3 = make_shared<Location>(1, 4, Coordinate(0, 0), "Henegouwen", 100);
+    auto loc4 = make_shared<Location>(1, 4, Coordinate(0, 0), "Limburg", 150);
+    auto loc5 = make_shared<Location>(1, 4, Coordinate(0, 0), "Luxemburg", 50);
+
+    m_geo_grid.AddLocation(loc1);
+    m_geo_grid.AddLocation(loc2);
+    m_geo_grid.AddLocation(loc3);
+    m_geo_grid.AddLocation(loc4);
+    m_geo_grid.AddLocation(loc5);
+
+    vector<double>      fractions{2.0, 1.0, 1.75, 0.75, 0.5};
+    unsigned int        i = 0U;
+    for (const shared_ptr<Location>& loc : m_geo_grid) {
+            loc->SetPopFraction(static_cast<double>(loc->GetPopCount()) /
+                                static_cast<double>(m_gg_config.param.pop_size));
+            loc->SetYoungOldFraction(fractions[i]);
+            i++;
+    }
+
+    m_daycare_generator.Apply(m_geo_grid, m_gg_config);
+
+    vector<unsigned int> normalSizes{54, 28, 9, 16, 5};
+    for (size_t i = 0; i < normalSizes.size(); i++) {
+            if(fractions[i] <= 1.0){
+                    EXPECT_GT(normalSizes[i] * m_ppday,
+                              m_geo_grid[i]->CRefPools(Id::Daycare).size());
+            } else {
+                    EXPECT_LT(normalSizes[i] * m_ppday,
+                              m_geo_grid[i]->CRefPools(Id::Daycare).size());
+            }
+    }
 }
 
 } // namespace
