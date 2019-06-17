@@ -30,8 +30,8 @@
     <vaccine_profile>Random</vaccine_profile>
     <vaccine_rate>0.8</vaccine_rate>
     <geopop_gen>
-        <cities_file>belgium_population_provinces.csv</cities_file>
-        <commuting_file>belgium_commuting.csv</commuting_file>
+        <cities_file>flanders_cities_provinces.csv</cities_file>
+        <commuting_file>flanders_commuting.csv</commuting_file>
         <fraction_college_commuters>0.5</fraction_college_commuters>
         <fraction_workplace_commuters>0.5</fraction_workplace_commuters>
         <households>
@@ -60,8 +60,8 @@
         <participation_preschool>0.99</participation_preschool>
         <participation_college>0.5</participation_college>
         <participation_workplace>0.75</participation_workplace>
-        <distribution_file>workplace_size_distribution_belgium.csv</distribution_file>
-        <population_size>1100000</population_size>
+        <distribution_file>workplace_size_distribution_flanders.csv</distribution_file>
+        <population_size>6500000</population_size>
     </geopop_gen>
 </run>
 
