@@ -39,6 +39,21 @@ void CommutesCSVReader::FillGeoGrid(GeoGrid& geoGrid) const
         // represents the location id for column x
         vector<unsigned int> header;
 
+        if(reader.GetLabels().size() == 3){
+                for (const CSVRow& row : reader) {
+                        auto cityId1 = row.GetValue<int>(0);
+                        auto cityId2 = row.GetValue<int>(1);
+                        auto proportion = row.GetValue<double>(2);
+
+                        const auto &locFrom = geoGrid.GetById(cityId1);
+                        const auto &locTo = geoGrid.GetById(cityId2);
+
+                        locFrom->AddOutgoingCommute(locTo, proportion);
+                        locTo->AddIncomingCommute(locFrom, proportion);
+                }
+                return;
+        }
+
         for (const string& label : reader.GetLabels()) {
                 header.push_back(static_cast<unsigned int>(stoi(label.substr(3))));
         }
