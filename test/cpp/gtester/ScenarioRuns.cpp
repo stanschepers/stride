@@ -78,8 +78,9 @@ void RunTest(const string& testTag, tuple<ptree, unsigned int, double> d, unsign
         const auto target = get<1>(d);
         const auto margin = get<2>(d);
         config.put("run.num_threads", numThreads);
-        config.put("run.output_prefix", string("tests/gtester_")
-                   + ::testing::UnitTest::GetInstance()->current_test_info()->name() + "_" + testTag);
+        config.put("run.output_prefix", string("tests/gtester_") +
+                                            ::testing::UnitTest::GetInstance()->current_test_info()->name() + "_" +
+                                            testTag);
 
         // -----------------------------------------------------------------------------------------
         // Actual simulator run.
@@ -111,28 +112,28 @@ void RunTest(const string& testTag, tuple<ptree, unsigned int, double> d, unsign
         }
 }
 
-//TEST_P(RunsDefault, defaultpop_single)
+// TEST_P(RunsDefault, defaultpop_single)
 //{
 //        const string testTag = GetParam();
 //        RunTest(testTag, ScenarioData::Get(testTag), 1U);
 //}
 //
 //#ifdef _OPENMP
-//TEST_P(RunsDefault, defaultpop_multi)
+// TEST_P(RunsDefault, defaultpop_multi)
 //{
 //        const string testTag = GetParam();
 //        RunTest(testTag, ScenarioData::Get(testTag), ConfigInfo::NumberAvailableThreads());
 //}
 //#endif
 //
-//TEST_P(RunsGeoPop, geopop_single)
+// TEST_P(RunsGeoPop, geopop_single)
 //{
 //        const string testTag = GetParam();
 //        RunTest(testTag, ScenarioData::Get(testTag + "_geopop"), 1U);
 //}
 //
 //#ifdef _OPENMP
-//TEST_P(RunsGeoPop, geopop_multi)
+// TEST_P(RunsGeoPop, geopop_multi)
 //{
 //        const string testTag = GetParam();
 //        RunTest(testTag, ScenarioData::Get(testTag + "_geopop"), ConfigInfo::NumberAvailableThreads());

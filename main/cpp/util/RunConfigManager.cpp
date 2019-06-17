@@ -95,7 +95,7 @@ void RunConfigManager::AddGeoPopDistConfig(ptree& pt)
         <fraction_college_commuters>0.5</fraction_college_commuters>
         <fraction_workplace_commuters>0.5</fraction_workplace_commuters>
         <household_file>households_flanders.csv</household_file>
-        <distribution_file>workplace_size_distribution.csv</distribution_file>
+        <distribution_file>workplace_size_distribution_flanders.csv</distribution_file>
         <participation_college>0.5</participation_college>
         <particpation_workplace>0.75</particpation_workplace>
         <population_size>600000</population_size>
