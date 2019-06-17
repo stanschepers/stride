@@ -113,7 +113,7 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid<Epidemiologic>
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-parameter"
 template <>
-void Generator<stride::ContactType::Id::Workplace>::AddPools(Location& loc, stride::Population* pop,
+void Generator<stride::ContactType::Id::Workplace>::AddPools(Location<Epidemiologic>& loc, stride::Population* pop,
                                                              const GeoGridConfig& ggConfig, unsigned int limit)
 {
         auto&      poolSys = pop->RefPoolSys();

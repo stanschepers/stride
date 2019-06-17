@@ -35,7 +35,7 @@ void Generator<stride::ContactType::Id::K12School>::Apply(GeoGrid<Epidemiologic>
 
         vector<double> weights;
         for (const auto& loc : geoGrid) {
-                weights.push_back(loc->GetContent()->GetPopFraction() * loc->GetYoungOldFraction());
+                weights.push_back(loc->GetContent()->GetPopFraction() * loc->GetContent()->GetYoungOldFraction());
         }
 
         if (weights.empty()) {

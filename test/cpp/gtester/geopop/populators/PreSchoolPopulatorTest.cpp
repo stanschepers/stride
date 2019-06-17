@@ -46,18 +46,18 @@ public:
         }
 
 protected:
-        RnMan                  m_rn_man;
-        PreSchoolPopulator     m_preschool_populator;
-        GeoGridConfig          m_gg_config;
-        shared_ptr<Population> m_pop;
-        GeoGrid&               m_geo_grid;
-        PreSchoolGenerator     m_preschool_generator;
-        const unsigned int     m_pppre = m_gg_config.pools[Id::PreSchool];
+        RnMan                   m_rn_man;
+        PreSchoolPopulator      m_preschool_populator;
+        GeoGridConfig           m_gg_config;
+        shared_ptr<Population>  m_pop;
+        GeoGrid<Epidemiologic>& m_geo_grid;
+        PreSchoolGenerator      m_preschool_generator;
+        const unsigned int      m_pppre = m_gg_config.pools[Id::PreSchool];
 };
 
 TEST_F(PreSchoolPopulatorTest, NoPopulation)
 {
-        m_geo_grid.AddLocation(make_shared<Location>(0, 0, Coordinate(0.0, 0.0), "", 0));
+        m_geo_grid.AddLocation(make_shared<Location<Epidemiologic>>(0, 0, Coordinate(0.0, 0.0), "", 0));
         m_geo_grid.Finalize();
 
         EXPECT_NO_THROW(m_preschool_populator.Apply(m_geo_grid, m_gg_config));
@@ -86,7 +86,7 @@ TEST_F(PreSchoolPopulatorTest, OneLocationTest)
             {121, 0}, {122, 1}, {123, 0}, {124, 0}, {125, 0}};
 
         auto  location = *m_geo_grid.begin();
-        auto& prePools = location->RefPools(Id::PreSchool);
+        auto& prePools = location->GetContent()->RefPools(Id::PreSchool);
 
         ASSERT_EQ(prePools.size(), 5 * m_pppre);
         for (auto& pool : prePools) {
@@ -154,9 +154,9 @@ TEST_F(PreSchoolPopulatorTest, TwoLocationTest)
         m_gg_config.param.participation_preschool = 1;
         m_preschool_populator.Apply(m_geo_grid, m_gg_config);
 
-        auto& prePools1 = brasschaat->RefPools(Id::PreSchool);
-        auto& prePools2 = schoten->RefPools(Id::PreSchool);
-        auto& prePools3 = kortrijk->RefPools(Id::PreSchool);
+        auto& prePools1 = brasschaat->GetContent()->RefPools(Id::PreSchool);
+        auto& prePools2 = schoten->GetContent()->RefPools(Id::PreSchool);
+        auto& prePools3 = kortrijk->GetContent()->RefPools(Id::PreSchool);
 
         // Check number of pools corresponding to 3 K12Schools per location.
         EXPECT_EQ(prePools1.size(), 3 * m_pppre);

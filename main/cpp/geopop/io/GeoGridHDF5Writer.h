@@ -45,12 +45,12 @@ public:
         ~GeoGridHDF5Writer() override = default;
 
         /// Write the GeoGrid to the file in HDF5 format.
-        void Write(GeoGrid& geoGrid) override;
+        void Write(GeoGrid<Epidemiologic>& geoGrid) override;
 
 private:
-        void WriteLocation(geopop::Location& loc, H5::Group& locsGroup);
+        void WriteLocation(geopop::Location<Epidemiologic>& loc, H5::Group& locsGroup);
 
-        void WriteCommutes(const std::vector<std::pair<Location*, double>>& commutes, H5::Group& locGroup);
+        void WriteCommutes(const vector<pair<Epidemiologic*, double>>& commutes, H5::Group& locGroup);
 
         void WriteContactPool(const stride::ContactPool& pool, stride::ContactType::Id type, H5::Group& cpGroup);
 
@@ -61,6 +61,5 @@ private:
         unsigned int              m_location_counter;
         unsigned int              m_pool_counter;
 };
-
 
 } // namespace geopop

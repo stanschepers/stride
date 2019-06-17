@@ -42,13 +42,13 @@ public:
         }
 
 protected:
-        RnMan                  m_rn_man;
-        WorkplacePopulator     m_workplace_populator;
-        GeoGridConfig          m_gg_config;
-        shared_ptr<Population> m_pop;
-        GeoGrid<Epidemiologic>&               m_geo_grid;
-        WorkplaceGenerator     m_workplace_generator;
-        const unsigned int     m_ppwp = m_gg_config.pools[Id::Workplace];
+        RnMan                   m_rn_man;
+        WorkplacePopulator      m_workplace_populator;
+        GeoGridConfig           m_gg_config;
+        shared_ptr<Population>  m_pop;
+        GeoGrid<Epidemiologic>& m_geo_grid;
+        WorkplaceGenerator      m_workplace_generator;
+        const unsigned int      m_ppwp = m_gg_config.pools[Id::Workplace];
 };
 
 TEST_F(WorkplacePopulatorTest, NoPopulation)
@@ -182,10 +182,10 @@ TEST_F(WorkplacePopulatorTest, OnlyCommuting)
         m_workplace_generator.AddPools(*kortrijk, m_pop.get(), m_gg_config);
         m_workplace_generator.AddPools(*kortrijk, m_pop.get(), m_gg_config);
 
-    schoten->GetContent()->AddOutgoingCommute(kortrijk->GetContent(), 0.5);
-    kortrijk->GetContent()->AddIncomingCommute(schoten->GetContent(), 0.5);
-    kortrijk->GetContent()->AddOutgoingCommute(schoten->GetContent(), 0.5);
-    schoten->GetContent()->AddIncomingCommute(kortrijk->GetContent(), 0.5);
+        schoten->GetContent()->AddOutgoingCommute(kortrijk->GetContent(), 0.5);
+        kortrijk->GetContent()->AddIncomingCommute(schoten->GetContent(), 0.5);
+        kortrijk->GetContent()->AddOutgoingCommute(schoten->GetContent(), 0.5);
+        schoten->GetContent()->AddIncomingCommute(kortrijk->GetContent(), 0.5);
 
         m_geo_grid.Finalize();
         m_workplace_populator.Apply(m_geo_grid, m_gg_config);
@@ -246,10 +246,10 @@ TEST_F(WorkplacePopulatorTest, NoCommutingAvailable)
         m_workplace_generator.AddPools(*kortrijk, m_pop.get(), m_gg_config);
 
         // test case is only commuting but between nobody is commuting from or to Brasschaat
-    schoten->GetContent()->AddOutgoingCommute(kortrijk->GetContent(), 0.5);
-    kortrijk->GetContent()->AddIncomingCommute(schoten->GetContent(), 0.5);
-    kortrijk->GetContent()->AddOutgoingCommute(schoten->GetContent(), 0.5);
-    schoten->GetContent()->AddIncomingCommute(kortrijk->GetContent(), 0.5);
+        schoten->GetContent()->AddOutgoingCommute(kortrijk->GetContent(), 0.5);
+        kortrijk->GetContent()->AddIncomingCommute(schoten->GetContent(), 0.5);
+        kortrijk->GetContent()->AddOutgoingCommute(schoten->GetContent(), 0.5);
+        schoten->GetContent()->AddIncomingCommute(kortrijk->GetContent(), 0.5);
 
         m_geo_grid.Finalize();
         m_workplace_populator.Apply(m_geo_grid, m_gg_config);
@@ -322,7 +322,7 @@ TEST_F(WorkplacePopulatorTest, ZeroDistributionTest)
         m_workplace_populator.Apply(m_geo_grid, m_gg_config);
 
         for (auto& loc : m_geo_grid) {
-                for (auto& pool : loc.get()->RefPools(Id::Workplace)) {
+                for (auto& pool : loc.get()->GetContent()->RefPools(Id::Workplace)) {
                         EXPECT_EQ(pool->GetLimit(), std::numeric_limits<unsigned int>::infinity());
                 }
         }
@@ -353,7 +353,7 @@ TEST_F(WorkplacePopulatorTest, DistributionTest)
         m_workplace_populator.Apply(m_geo_grid, m_gg_config);
 
         for (auto& loc : m_geo_grid) {
-                for (auto& pool : loc.get()->RefPools(Id::Workplace)) {
+                for (auto& pool : loc.get()->GetContent()->RefPools(Id::Workplace)) {
                         EXPECT_NE(pool->GetLimit(), std::numeric_limits<unsigned int>::infinity());
                         EXPECT_NE(pool->GetLimit(), 0U);
                         EXPECT_LE(pool->size(), pool->GetLimit());

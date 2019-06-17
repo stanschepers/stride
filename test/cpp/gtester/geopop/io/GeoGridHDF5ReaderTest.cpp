@@ -41,7 +41,7 @@ TEST(GeoGridHDF5ReaderTest, readLocationsTest)
         {
                 auto loc = geogrid[0];
                 EXPECT_EQ(1, loc->GetID());
-                EXPECT_EQ(2500, loc->GetPopCount());
+                EXPECT_EQ(2500, loc->GetContent()->GetPopCount());
                 EXPECT_EQ(4, loc->GetProvince());
                 EXPECT_EQ("Bavikhove", loc->GetName());
                 EXPECT_EQ(coordinate.get<0>(), loc->GetCoordinate().get<0>());
@@ -51,7 +51,7 @@ TEST(GeoGridHDF5ReaderTest, readLocationsTest)
         {
                 auto loc = geogrid[1];
                 EXPECT_EQ(2, loc->GetID());
-                EXPECT_EQ(5000, loc->GetPopCount());
+                EXPECT_EQ(5000, loc->GetContent()->GetPopCount());
                 EXPECT_EQ(3, loc->GetProvince());
                 EXPECT_EQ("Gent", loc->GetName());
                 EXPECT_EQ(coordinate.get<0>(), loc->GetCoordinate().get<0>());
@@ -61,7 +61,7 @@ TEST(GeoGridHDF5ReaderTest, readLocationsTest)
         {
                 auto loc = geogrid[2];
                 EXPECT_EQ(3, loc->GetID());
-                EXPECT_EQ(2500, loc->GetPopCount());
+                EXPECT_EQ(2500, loc->GetContent()->GetPopCount());
                 EXPECT_EQ(2, loc->GetProvince());
                 EXPECT_EQ("Mons", loc->GetName());
                 EXPECT_EQ(coordinate.get<0>(), loc->GetCoordinate().get<0>());
@@ -76,19 +76,19 @@ TEST(GeoGridHDF5ReaderTest, readCommutesTest)
 
         auto& geogrid = pop->RefGeoGrid();
         // Bavikhove
-        auto& commutes = geogrid[0]->CRefOutgoingCommutes();
+        auto& commutes = geogrid[0]->GetContent()->CRefOutgoingCommutes();
         EXPECT_EQ(2, commutes[0].first->GetID());
         EXPECT_EQ(0.5, commutes[0].second);
         EXPECT_EQ(3, commutes[1].first->GetID());
         EXPECT_EQ(0.25, commutes[1].second);
         // Gent
-        auto& commutes1 = geogrid[1]->CRefOutgoingCommutes();
+        auto& commutes1 = geogrid[1]->GetContent()->CRefOutgoingCommutes();
         EXPECT_EQ(1, commutes1[0].first->GetID());
         EXPECT_EQ(0.75, commutes1[0].second);
         EXPECT_EQ(3, commutes1[1].first->GetID());
         EXPECT_EQ(0.5, commutes1[1].second);
         // Mons
-        auto& commutes2 = geogrid[2]->CRefOutgoingCommutes();
+        auto& commutes2 = geogrid[2]->GetContent()->CRefOutgoingCommutes();
         EXPECT_EQ(0, commutes2.size());
 }
 TEST(GeoGridHDF5ReaderTest, readContactPoolTest)
@@ -102,7 +102,7 @@ TEST(GeoGridHDF5ReaderTest, readContactPoolTest)
         // Bavikhove
         auto loc = geogrid[0];
         for (Id type : IdList) {
-                EXPECT_EQ(1, loc->CRefPools(type).size());
+                EXPECT_EQ(1, loc->GetContent()->CRefPools(type).size());
         }
 }
 TEST(GeoGridHDF5ReaderTest, readPeopleTest)
@@ -119,7 +119,7 @@ TEST(GeoGridHDF5ReaderTest, readPeopleTest)
         EXPECT_EQ(18.0, person.GetAge());
         for (Id type : IdList) {
                 EXPECT_EQ(1, person.GetPoolId(type));
-                EXPECT_EQ(1, loc->CRefPools(type).at(0)->GetId());
+                EXPECT_EQ(1, loc->GetContent()->CRefPools(type).at(0)->GetId());
         }
 }
 TEST(GeoGridHDF5ReaderTest, emptyFileTest)

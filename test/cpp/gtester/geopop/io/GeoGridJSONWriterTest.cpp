@@ -186,10 +186,10 @@ TEST(GeoGridJSOWriterTest, writeLocationsTest)
         })";
 
         auto pop     = Population::Create();
-        auto geoGrid = GeoGrid(pop.get());
-        geoGrid.AddLocation(make_shared<Location>(1, 4, Coordinate(0, 0), "Bavikhove", 2500));
-        geoGrid.AddLocation(make_shared<Location>(2, 3, Coordinate(0, 0), "Gent", 5000));
-        geoGrid.AddLocation(make_shared<Location>(3, 2, Coordinate(0, 0), "Mons", 2500));
+        auto geoGrid = GeoGrid<Epidemiologic>(pop.get());
+        geoGrid.AddLocation(make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Bavikhove", 2500));
+        geoGrid.AddLocation(make_shared<Location<Epidemiologic>>(2, 3, Coordinate(0, 0), "Gent", 5000));
+        geoGrid.AddLocation(make_shared<Location<Epidemiologic>>(3, 2, Coordinate(0, 0), "Mons", 2500));
 
         shared_ptr<stringstream> ss = make_shared<stringstream>();
         GeoGridJSONWriter        writer(ss);
@@ -422,12 +422,12 @@ TEST(GeoGridJSOWriterTest, writeContactPoolsTest)
         })";
 
         auto pop      = Population::Create();
-        auto geoGrid  = GeoGrid(pop.get());
-        auto location = make_shared<Location>(1, 4, Coordinate(0, 0), "Bavikhove", 2500);
+        auto geoGrid  = GeoGrid<Epidemiologic>(pop.get());
+        auto location = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Bavikhove", 2500);
 
         for (auto type : IdList) {
                 auto contactPoolPtr = pop->RefPoolSys().CreateContactPool(type);
-                location->RefPools(type).emplace_back(contactPoolPtr);
+                location->GetContent()->RefPools(type).emplace_back(contactPoolPtr);
         }
 
         geoGrid.AddLocation(location);

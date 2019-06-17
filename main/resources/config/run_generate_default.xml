@@ -14,10 +14,6 @@
     <output_persons>false</output_persons>
     <output_prefix></output_prefix>
     <output_summary>false</output_summary>
-    <epi_output>
-        <stride>25</stride>
-        <file_type>h5</file_type>
-    </epi_output>
     <population_file>gengeopop.proto</population_file>
     <population_type>generate</population_type>
     <rng_seed>1097253,2387652,9963540,4730214</rng_seed>

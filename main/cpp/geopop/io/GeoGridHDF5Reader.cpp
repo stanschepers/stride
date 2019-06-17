@@ -94,7 +94,7 @@ void GeoGridHDF5Reader::ReadPerson(const H5Person& person)
         m_people[stridePerson->GetId()] = stridePerson;
 }
 
-void GeoGridHDF5Reader::ReadLocations(Group const& locations, GeoGrid& grid)
+void GeoGridHDF5Reader::ReadLocations(Group const& locations, GeoGrid<Epidemiologic>& grid)
 {
         size_t size;
         ReadAttribute(size, "size", locations);
@@ -107,7 +107,7 @@ void GeoGridHDF5Reader::ReadLocations(Group const& locations, GeoGrid& grid)
         }
 }
 
-void GeoGridHDF5Reader::ReadLocation(const H5::Group& location, GeoGrid& grid)
+void GeoGridHDF5Reader::ReadLocation(const H5::Group& location, GeoGrid<Epidemiologic>& grid)
 {
         /// Location
         unsigned int id, pop_count, province;
@@ -121,7 +121,8 @@ void GeoGridHDF5Reader::ReadLocation(const H5::Group& location, GeoGrid& grid)
         ReadAttribute(latitude, "latitude", location);
         ReadAttribute(name, "name", location);
 
-        auto locationPtr = make_shared<Location>(id, province, Coordinate(longitude, latitude), name, pop_count);
+        auto locationPtr =
+            make_shared<Location<Epidemiologic>>(id, province, Coordinate(longitude, latitude), name, pop_count);
 
         /// Contact Pools
         Group        contact_pools(location.openGroup("ContactPools"));
@@ -154,7 +155,7 @@ void GeoGridHDF5Reader::ReadLocation(const H5::Group& location, GeoGrid& grid)
         grid.AddLocation(locationPtr);
 }
 
-void GeoGridHDF5Reader::ReadContactPool(const H5::DataSet& pool, const shared_ptr<Location>& location)
+void GeoGridHDF5Reader::ReadContactPool(const H5::DataSet& pool, const shared_ptr<Location<Epidemiologic>>& location)
 {
         static const map<string, Id> types = {{"K12School", Id::K12School},
                                               {"PrimaryCommunity", Id::PrimaryCommunity},
@@ -177,7 +178,7 @@ void GeoGridHDF5Reader::ReadContactPool(const H5::DataSet& pool, const shared_pt
 
         // Don't use the id of the ContactPool but the let the Population create an id
         auto contactPoolPtr = m_population->RefPoolSys().CreateContactPool(type_id);
-        location->RefPools(type_id).emplace_back(contactPoolPtr);
+        location->GetContent()->RefPools(type_id).emplace_back(contactPoolPtr);
 
         if (size > 0) {
                 for (auto p : pool_data) {

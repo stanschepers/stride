@@ -71,13 +71,13 @@ TEST_F(K12SchoolGeneratorTest, OneLocationLargeYOFractionTest)
         m_gg_config.param.pop_size = 10000;
         m_gg_config.info.popcount_k12school = 2000;
 
-        auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
-        loc1->SetYoungOldFraction(100.0);
+        auto loc1 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
+        loc1->GetContent()->SetYoungOldFraction(100.0);
         m_geo_grid.AddLocation(loc1);
 
         m_k12school_generator.Apply(m_geo_grid, m_gg_config);
 
-        const auto &poolsOfLoc1 = loc1->CRefPools(Id::K12School);
+        const auto &poolsOfLoc1 = loc1->GetContent()->CRefPools(Id::K12School);
         EXPECT_EQ(poolsOfLoc1.size(), 4 * m_ppk12);
 }
 

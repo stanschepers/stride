@@ -14,7 +14,7 @@
  */
 
 #include "GeoGridHDF5Writer.h"
-#include "GeoGridHDF5Utils.h"
+#include "H5Utils.h"
 
 #include "contact/ContactPool.h"
 #include "contact/ContactType.h"
@@ -35,7 +35,7 @@ GeoGridHDF5Writer::GeoGridHDF5Writer(string fileName)
 {
 }
 
-void GeoGridHDF5Writer::Write(GeoGrid& geoGrid)
+void GeoGridHDF5Writer::Write(GeoGrid<Epidemiologic>& geoGrid)
 {
         try {
                 // Turn off the auto-printing when failure occurs so that we can
@@ -61,7 +61,7 @@ void GeoGridHDF5Writer::Write(GeoGrid& geoGrid)
         }
 }
 
-void GeoGridHDF5Writer::WriteLocation(Location& loc, Group& locsGroup)
+void GeoGridHDF5Writer::WriteLocation(Location<Epidemiologic>& loc, Group& locsGroup)
 {
         /// Create group for location
 
@@ -70,16 +70,16 @@ void GeoGridHDF5Writer::WriteLocation(Location& loc, Group& locsGroup)
         WriteAttribute(loc.GetID(), "id", locGroup);
         WriteAttribute(loc.GetName(), "name", locGroup);
         WriteAttribute(loc.GetProvince(), "province", locGroup);
-        WriteAttribute(loc.GetPopCount(), "pop_count", locGroup);
+        WriteAttribute(loc.GetContent()->GetPopCount(), "pop_count", locGroup);
         WriteAttribute(loc.GetCoordinate().get<0>(), "longitude", locGroup);
         WriteAttribute(loc.GetCoordinate().get<1>(), "latitude", locGroup);
 
-        auto commutes = loc.CRefOutgoingCommutes();
+        auto commutes = loc.GetContent()->CRefOutgoingCommutes();
         WriteCommutes(commutes, locGroup);
 
         Group cpGroup(locGroup.createGroup("ContactPools"));
         for (Id type : IdList) {
-                for (auto pool : loc.RefPools(type)) {
+                for (auto pool : loc.GetContent()->RefPools(type)) {
                         WriteContactPool(*pool, type, cpGroup);
                 }
         }
@@ -87,7 +87,7 @@ void GeoGridHDF5Writer::WriteLocation(Location& loc, Group& locsGroup)
         m_pool_counter = 0;
 }
 
-void GeoGridHDF5Writer::WriteCommutes(const vector<pair<Location*, double>>& commutes, Group& locGroup)
+void GeoGridHDF5Writer::WriteCommutes(const vector<pair<Epidemiologic*, double>>& commutes, Group& locGroup)
 {
         /// Create compound datatype
         CompType commute_t = GetCompoundType<H5Commute>();
@@ -98,7 +98,7 @@ void GeoGridHDF5Writer::WriteCommutes(const vector<pair<Location*, double>>& com
 
         vector<H5Commute> comms(commutes.size());
         for (unsigned long i = 0; i < commutes.size(); ++i) {
-                comms[i].to         = commutes[i].first->GetID();
+                comms[i].to         = commutes[i].first->GetLocation()->GetID();
                 comms[i].proportion = commutes[i].second;
         }
 

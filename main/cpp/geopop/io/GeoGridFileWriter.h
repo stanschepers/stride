@@ -24,6 +24,7 @@
 
 namespace geopop {
 
+template <class LocationContent>
 class GeoGrid;
 
 /**
@@ -43,7 +44,7 @@ public:
         ~GeoGridFileWriter() override = default;
 
         /// Write the GeoGrid to file.
-        void Write(GeoGrid& geoGrid) override = 0;
+        void Write(GeoGrid<Epidemiologic>& geoGrid) override = 0;
 
         /// Return file name
         std::string FileName() { return m_file_name; }

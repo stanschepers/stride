@@ -22,6 +22,7 @@
 
 namespace geopop {
 
+template<class LocationContent>
 class GeoGrid;
 
 /**
@@ -41,7 +42,7 @@ public:
         ~GeoGridStreamWriter() override = default;
 
         /// Write the GeoGrid to ostream.
-        void Write(GeoGrid& geoGrid) override = 0;
+        void Write(GeoGrid<Epidemiologic>& geoGrid) override = 0;
 
         /// Return reference to output stream
         std::shared_ptr<std::ostream> StreamRef() { return m_stream; }

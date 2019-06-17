@@ -29,8 +29,10 @@ namespace geopop {
 using namespace std;
 using namespace stride::ContactType;
 
-Epidemiologic::Epidemiologic(Location<Epidemiologic>* location, unsigned int popCount)
-    : m_pop_count(popCount), m_pop_fraction(0.0), m_location(location), m_inCommutes(), m_outCommutes(), m_pool_index()
+Epidemiologic::Epidemiologic(Location<Epidemiologic>* location, unsigned int popCount, unsigned int householdType,
+                             double youngOldFraction)
+    : m_pop_count(popCount), m_pop_fraction(0.0), m_location(location), m_household_type(householdType),
+      m_young_old_fraction(youngOldFraction), m_inCommutes(), m_outCommutes(), m_pool_index()
 {
 }
 
@@ -41,7 +43,8 @@ bool Epidemiologic::operator==(const Epidemiologic& other) const
                 temp = temp && (CRefPools(typ) == other.CRefPools(typ));
         }
         return temp && GetPopCount() == other.GetPopCount() && CRefIncomingCommutes() == other.CRefIncomingCommutes() &&
-               CRefOutgoingCommutes() == other.CRefOutgoingCommutes();
+               CRefOutgoingCommutes() == other.CRefOutgoingCommutes() &&
+               GetHouseHoldType() == other.GetHouseHoldType() && GetYoungOldFraction() == other.GetYoungOldFraction();
 }
 
 void Epidemiologic::AddIncomingCommute(shared_ptr<Epidemiologic> otherLocation, double fraction)

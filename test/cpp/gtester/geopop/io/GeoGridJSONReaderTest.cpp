@@ -48,13 +48,13 @@ void runPeopleTest(shared_ptr<Population> pop)
         EXPECT_EQ(location->GetID(), 1);
         EXPECT_EQ(location->GetName(), "Bavikhove");
         EXPECT_EQ(location->GetProvince(), 4);
-        EXPECT_EQ(location->GetPopCount(), 2500);
+        EXPECT_EQ(location->GetContent()->GetPopCount(), 2500);
         EXPECT_EQ(get<0>(location->GetCoordinate()), 0);
         EXPECT_EQ(get<1>(location->GetCoordinate()), 0);
 
         vector<ContactPool*> pools;
         for (Id typ : IdList) {
-                for (const auto& p : location->RefPools(typ)) {
+                for (const auto& p : location->GetContent()->RefPools(typ)) {
                         pools.emplace_back(p);
                 }
         }
@@ -123,7 +123,7 @@ TEST(GeoGridJSONReaderTest, readLocationsTest)
         getGeoGridFromJSON(jsonString, pop);
         auto& geoGrid = pop->RefGeoGrid();
 
-        map<unsigned int, shared_ptr<Location>> locations;
+        map<unsigned int, shared_ptr<Location<Epidemiologic>>> locations;
         locations[geoGrid[0]->GetID()] = geoGrid[0];
         locations[geoGrid[1]->GetID()] = geoGrid[1];
         locations[geoGrid[2]->GetID()] = geoGrid[2];
@@ -135,21 +135,21 @@ TEST(GeoGridJSONReaderTest, readLocationsTest)
         EXPECT_EQ(location1->GetID(), 1);
         EXPECT_EQ(location1->GetName(), "Bavikhove");
         EXPECT_EQ(location1->GetProvince(), 4);
-        EXPECT_EQ(location1->GetPopCount(), 2500);
+        EXPECT_EQ(location1->GetContent()->GetPopCount(), 2500);
         EXPECT_EQ(get<0>(location1->GetCoordinate()), 0);
         EXPECT_EQ(get<1>(location1->GetCoordinate()), 0);
 
         EXPECT_EQ(location2->GetID(), 2);
         EXPECT_EQ(location2->GetName(), "Gent");
         EXPECT_EQ(location2->GetProvince(), 3);
-        EXPECT_EQ(location2->GetPopCount(), 5000);
+        EXPECT_EQ(location2->GetContent()->GetPopCount(), 5000);
         EXPECT_EQ(get<0>(location2->GetCoordinate()), 0);
         EXPECT_EQ(get<1>(location2->GetCoordinate()), 0);
 
         EXPECT_EQ(location3->GetID(), 3);
         EXPECT_EQ(location3->GetName(), "Mons");
         EXPECT_EQ(location3->GetProvince(), 2);
-        EXPECT_EQ(location3->GetPopCount(), 2500);
+        EXPECT_EQ(location3->GetContent()->GetPopCount(), 2500);
         EXPECT_EQ(get<0>(location3->GetCoordinate()), 0);
         EXPECT_EQ(get<1>(location3->GetCoordinate()), 0);
 }
@@ -219,7 +219,7 @@ TEST(GeoGridJSONReaderTest, readCommutesTest)
         getGeoGridFromJSON(jsonString, pop);
         auto& geoGrid = pop->RefGeoGrid();
 
-        map<unsigned int, shared_ptr<Location>> locations;
+        map<unsigned int, shared_ptr<Location<Epidemiologic>>> locations;
 
         locations[geoGrid[0]->GetID()] = geoGrid[0];
         locations[geoGrid[1]->GetID()] = geoGrid[1];
@@ -229,16 +229,17 @@ TEST(GeoGridJSONReaderTest, readCommutesTest)
         auto location2 = locations[2];
         auto location3 = locations[3];
 
-        auto sortLoc = [](vector<pair<Location*, double>> loc) {
-                sort(begin(loc), end(loc), [](const pair<Location*, double>& a, const pair<Location*, double>& b) {
-                        return a.first->GetID() < b.first->GetID();
-                });
+        auto sortLoc = [](vector<pair<Epidemiologic*, double>> loc) {
+                sort(begin(loc), end(loc),
+                     [](const pair<Epidemiologic*, double>& a, const pair<Epidemiologic*, double>& b) {
+                             return a.first->GetLocation()->GetID() < b.first->GetLocation()->GetID();
+                     });
                 return loc;
         };
 
         {
-                auto commuting_in  = sortLoc(location1->CRefIncomingCommutes());
-                auto commuting_out = sortLoc(location1->CRefOutgoingCommutes());
+                auto commuting_in  = sortLoc(location1->GetContent()->CRefIncomingCommutes());
+                auto commuting_out = sortLoc(location1->GetContent()->CRefOutgoingCommutes());
                 EXPECT_EQ(commuting_in.size(), 1);
                 EXPECT_EQ(commuting_out.size(), 2);
 
@@ -251,8 +252,8 @@ TEST(GeoGridJSONReaderTest, readCommutesTest)
                 EXPECT_DOUBLE_EQ(commuting_out[1].second, 0.25);
         }
         {
-                auto commuting_in  = sortLoc(location2->CRefIncomingCommutes());
-                auto commuting_out = sortLoc(location2->CRefOutgoingCommutes());
+                auto commuting_in  = sortLoc(location2->GetContent()->CRefIncomingCommutes());
+                auto commuting_out = sortLoc(location2->GetContent()->CRefOutgoingCommutes());
                 EXPECT_EQ(commuting_out.size(), 2);
                 EXPECT_EQ(commuting_in.size(), 1);
 
@@ -265,8 +266,8 @@ TEST(GeoGridJSONReaderTest, readCommutesTest)
                 EXPECT_DOUBLE_EQ(commuting_out[1].second, 0.5);
         }
         {
-                auto commuting_in  = sortLoc(location3->CRefIncomingCommutes());
-                auto commuting_out = sortLoc(location3->CRefOutgoingCommutes());
+                auto commuting_in  = sortLoc(location3->GetContent()->CRefIncomingCommutes());
+                auto commuting_out = sortLoc(location3->GetContent()->CRefOutgoingCommutes());
                 EXPECT_EQ(commuting_out.size(), 0);
                 EXPECT_EQ(commuting_in.size(), 2);
 
@@ -371,7 +372,7 @@ TEST(GeoGridJSONReaderTest, readContactPoolsTest)
         vector<ContactPool*> pools;
 
         for (Id typ : IdList) {
-                for (const auto& p : location->CRefPools(typ)) {
+                for (const auto& p : location->GetContent()->CRefPools(typ)) {
                         pools.emplace_back(p);
                 }
         }

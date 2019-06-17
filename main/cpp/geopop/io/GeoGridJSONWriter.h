@@ -43,7 +43,7 @@ public:
         explicit GeoGridJSONWriter(std::shared_ptr<std::ostream> stream);
 
         /// Write the provided GeoGrid to the proved ostream in JSON format.
-        void Write(GeoGrid& geoGrid) override;
+        void Write(GeoGrid<Epidemiologic>& geoGrid) override;
 
 private:
         /// Create a JSON object containing all info needed to reconstruct a ContactPool.
@@ -53,7 +53,7 @@ private:
         nlohmann::json WriteCoordinate(const Coordinate& coordinate);
 
         /// Create a JSON object containing all info needed to reconstruct a Location.
-        nlohmann::json WriteLocation(const Location& location);
+        nlohmann::json WriteLocation(const Location<Epidemiologic>& location);
 
         /// Create a JSON object containing all info needed to reconstruct a Person.
         nlohmann::json WritePerson(stride::Person* person);

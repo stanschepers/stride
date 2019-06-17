@@ -50,12 +50,12 @@ private:
         /// Create a Person based on the information stored in the provided JSON.
         stride::Person* ParsePerson(const nlohmann::json& person);
         /// Create a Location based on the information stored in the provided JSON.
-        std::shared_ptr<Location> ParseLocation(const nlohmann::json& location);
+        std::shared_ptr<Location<Epidemiologic>> ParseLocation(const nlohmann::json& location);
         /// Create a Coordinate based on the information stored in the provided JSON.
         Coordinate ParseCoordinate(const nlohmann::json& coordinate);
         /// Create a ContactPool based on the information stored in the provided JSON.
-        void ParseContactPool(const std::shared_ptr<Location>& location, const nlohmann::json& contactPool,
-                              stride::ContactType::Id type);
+        void ParseContactPool(const std::shared_ptr<Location<Epidemiologic>>& location,
+                              const nlohmann::json& contactPool, stride::ContactType::Id type);
         /// Parse value of type T
         template <typename T>
         T ParseValue(const nlohmann::json& value) const;

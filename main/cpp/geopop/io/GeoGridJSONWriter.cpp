@@ -33,7 +33,7 @@ GeoGridJSONWriter::GeoGridJSONWriter(shared_ptr<ostream> stream) : GeoGridStream
 {
 }
 
-void GeoGridJSONWriter::Write(GeoGrid& geoGrid)
+void GeoGridJSONWriter::Write(GeoGrid<Epidemiologic>& geoGrid)
 {
         json output;
 
@@ -50,14 +50,14 @@ void GeoGridJSONWriter::Write(GeoGrid& geoGrid)
         *m_stream << setw(4) << output;
 }
 
-nlohmann::json GeoGridJSONWriter::WriteLocation(const Location& location)
+nlohmann::json GeoGridJSONWriter::WriteLocation(const Location<Epidemiologic>& location)
 {
         json locationJSON;
 
         locationJSON["id"]           = location.GetID();
         locationJSON["name"]         = location.GetName();
         locationJSON["province"]     = location.GetProvince();
-        locationJSON["population"]   = location.GetPopCount();
+        locationJSON["population"]   = location.GetContent()->GetPopCount();
         locationJSON["coordinate"]   = WriteCoordinate(location.GetCoordinate());
         locationJSON["contactPools"] = json::array();
         locationJSON["commutes"]     = json::array();
@@ -68,13 +68,13 @@ nlohmann::json GeoGridJSONWriter::WriteLocation(const Location& location)
                 contactPoolJSON["class"] = ToString(type);
                 contactPoolJSON["pools"] = json::array();
 
-                for (const auto& pool : location.CRefPools(type)) {
+                for (const auto& pool : location.GetContent()->CRefPools(type)) {
                         contactPoolJSON["pools"].push_back(WriteContactPool(pool));
                 }
                 locationJSON["contactPools"].push_back(contactPoolJSON);
         }
 
-        for (const auto& commute : location.CRefOutgoingCommutes()) {
+        for (const auto& commute : location.GetContent()->CRefOutgoingCommutes()) {
                 json commuteJSON;
                 commuteJSON["to"]         = get<0>(commute)->GetID();
                 commuteJSON["proportion"] = get<1>(commute);

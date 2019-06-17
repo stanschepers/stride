@@ -16,7 +16,7 @@
 #include "geopop/io/GeoGridHDF5Writer.h"
 #include "GeoGridIOUtils.h"
 #include "geopop/GeoGrid.h"
-#include "geopop/io/GeoGridHDF5Utils.h"
+#include "geopop/io/H5Utils.h"
 #include "pop/Population.h"
 #include "util/FileSys.h"
 
@@ -57,10 +57,10 @@ bool validateLocationAttributes(unsigned int id, unsigned int province, double l
 TEST(GeoGridHDF5WriterTest, writeLocationsTest)
 {
         auto pop     = Population::Create();
-        auto geoGrid = GeoGrid(pop.get());
-        geoGrid.AddLocation(make_shared<Location>(1, 4, Coordinate(0, 0), "Bavikhove", 2500));
-        geoGrid.AddLocation(make_shared<Location>(2, 3, Coordinate(0, 0), "Gent", 5000));
-        geoGrid.AddLocation(make_shared<Location>(3, 2, Coordinate(0, 0), "Mons", 2500));
+        auto geoGrid = GeoGrid<Epidemiologic>(pop.get());
+        geoGrid.AddLocation(make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Bavikhove", 2500));
+        geoGrid.AddLocation(make_shared<Location<Epidemiologic>>(2, 3, Coordinate(0, 0), "Gent", 5000));
+        geoGrid.AddLocation(make_shared<Location<Epidemiologic>>(3, 2, Coordinate(0, 0), "Mons", 2500));
 
         GeoGridHDF5Writer writer(FileSys::GetTestsDir().string() + "/testdata/GeoGridHDF5/locationsTest.h5");
         writer.Write(geoGrid);
@@ -188,12 +188,12 @@ TEST(GeoGridHDF5WriterTest, writeCommutesTest)
 TEST(GeoGridHDF5WriterTest, writeContactPoolTest)
 {
         auto pop     = Population::Create();
-        auto geoGrid = GeoGrid(pop.get());
+        auto geoGrid = GeoGrid<Epidemiologic>(pop.get());
 
-        auto location = make_shared<Location>(1, 4, Coordinate(0, 0), "Bavikhove", 2500);
+        auto location = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Bavikhove", 2500);
         for (auto type : IdList) {
                 auto contactPoolPtr = pop->RefPoolSys().CreateContactPool(type);
-                location->RefPools(type).emplace_back(contactPoolPtr);
+                location->GetContent()->RefPools(type).emplace_back(contactPoolPtr);
         }
 
         geoGrid.AddLocation(location);

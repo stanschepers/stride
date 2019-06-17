@@ -27,13 +27,14 @@ using namespace std;
 using namespace stride;
 using namespace stride::ContactType;
 
-template<>
-void Populator<stride::ContactType::Id::PreSchool>::Apply(GeoGrid &geoGrid, const GeoGridConfig& ggConfig)
+template <>
+void Populator<stride::ContactType::Id::PreSchool>::Apply(GeoGrid<Epidemiologic>& geoGrid,
+                                                          const GeoGridConfig&    ggConfig)
 {
         m_logger->trace("Starting to populate PreSchools");
 
         for (const auto& loc : geoGrid) {
-                if (loc->GetPopCount() == 0) {
+                if (loc->GetContent()->GetPopCount() == 0) {
                         continue;
                 }
 
@@ -43,10 +44,10 @@ void Populator<stride::ContactType::Id::PreSchool>::Apply(GeoGrid &geoGrid, cons
                 auto dist = m_rn_man.GetUniformIntGenerator(0, static_cast<int>(classes.size()), 0U);
 
                 // 2. for every student assign a class
-                for (const auto& pool : loc->RefPools(Id::Household)) {
+                for (const auto& pool : loc->GetContent()->RefPools(Id::Household)) {
                         for (Person* p : *pool) {
                                 if (AgeBrackets::PreSchool::HasAge(p->GetAge()) &&
-                                m_rn_man.MakeWeightedCoinFlip(ggConfig.param.participation_preschool)) {
+                                    m_rn_man.MakeWeightedCoinFlip(ggConfig.param.participation_preschool)) {
                                         auto& c = classes[dist()];
                                         c->AddMember(p);
                                         p->SetPoolId(Id::PreSchool, c->GetId());

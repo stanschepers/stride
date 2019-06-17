@@ -98,7 +98,7 @@ stride::Person* GeoGridJSONReader::ParsePerson(const json& person)
         return m_population->CreatePerson(id, age, hhId, dcId, psId, ksId, coId, wpId, pcId, scId);
 }
 
-std::shared_ptr<Location> GeoGridJSONReader::ParseLocation(const json& location)
+std::shared_ptr<Location<Epidemiologic>> GeoGridJSONReader::ParseLocation(const json& location)
 {
         const auto id         = ParseValue<unsigned int>(location["id"]);
         const auto name       = ParseValue<string>(location["name"]);
@@ -106,7 +106,7 @@ std::shared_ptr<Location> GeoGridJSONReader::ParseLocation(const json& location)
         const auto population = ParseValue<unsigned int>(location["population"]);
         const auto coordinate = ParseCoordinate(location["coordinate"]);
 
-        auto locationPtr = make_shared<Location>(id, province, coordinate, name, population);
+        auto locationPtr = make_shared<Location<Epidemiologic>>(id, province, coordinate, name, population);
 
         if (location.find("contactPools") != location.end() && location["contactPools"].is_array()) {
                 for (const auto& contactPool : location["contactPools"]) {
@@ -149,11 +149,12 @@ Coordinate GeoGridJSONReader::ParseCoordinate(const json& coordinate)
         return {longitude, latitude};
 }
 
-void GeoGridJSONReader::ParseContactPool(const shared_ptr<Location>& location, const json& contactPool, Id type)
+void GeoGridJSONReader::ParseContactPool(const shared_ptr<Location<Epidemiologic>>& location, const json& contactPool,
+                                         Id type)
 {
         // Don't use the id of the ContactPool but the let the Population create an id
         auto contactPoolPtr = m_population->RefPoolSys().CreateContactPool(type);
-        location->RefPools(type).emplace_back(contactPoolPtr);
+        location->GetContent()->RefPools(type).emplace_back(contactPoolPtr);
 
         if (contactPool.find("people") != contactPool.end() && contactPool["people"].is_array()) {
                 for (const auto& id : contactPool["people"]) {

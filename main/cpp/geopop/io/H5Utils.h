@@ -35,6 +35,8 @@ struct H5Person
         unsigned int id;
         float        age;
         unsigned int Household;
+        unsigned int Daycare;
+        unsigned int PreSchool;
         unsigned int K12School;
         unsigned int College;
         unsigned int Workplace;
