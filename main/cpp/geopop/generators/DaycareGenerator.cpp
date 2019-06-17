@@ -22,7 +22,7 @@ using namespace stride;
 using namespace stride::ContactType;
 
 template<>
-void Generator<stride::ContactType::Id::Daycare>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig)
+void Generator<stride::ContactType::Id::Daycare>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig)
 {
         // 1. given the number of persons of daycare age, calculate number of daycare's; daycare's
         //    have 500 pupils on average
@@ -36,7 +36,7 @@ void Generator<stride::ContactType::Id::Daycare>::Apply(GeoGrid& geoGrid, const 
 
         vector<double> weights;
         for (const auto& loc : geoGrid) {
-                weights.push_back(loc->GetPopFraction() * loc->GetYoungOldFraction());
+                weights.push_back(loc->GetContent()->GetPopFraction() * loc->GetContent()->GetYoungOldFraction());
         }
 
         if (weights.empty()) {

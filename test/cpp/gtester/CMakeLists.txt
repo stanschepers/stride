@@ -47,8 +47,8 @@ set(SRC
     UnitSlice1.cpp
     UnitSlice2.cpp
     #---
-    #---
     geopop/generators/CollegeGeneratorTest.cpp
+    geopop/generators/EpiOutputGeneratorTest.cpp  # New
     geopop/generators/HouseholdGeneratorTest.cpp
     geopop/generators/K12SchoolGeneratorTest.cpp
     geopop/generators/PrimaryCommunityGeneratorTest.cpp
@@ -59,14 +59,20 @@ set(SRC
     #---
     geopop/io/CitiesCSVReaderTest.cpp
     geopop/io/CommutesCSVReaderTest.cpp
+    geopop/io/EpiOutputHDF5WriterTest.cpp   # New
+    geopop/io/EpiOutputJSONWriterTest.cpp   # New
+    geopop/io/EpiOutputProtoWriterTest.cpp  # New
     geopop/io/GeoGridIOUtils.cpp
-    #geopop/io/GeoGridJSONReaderTest.cpp
-    #geopop/io/GeoGridJSONWriterTest.cpp
+    geopop/io/GeoGridJSONReaderTest.cpp
+    geopop/io/GeoGridJSONWriterTest.cpp
+    geopop/io/GeoGridHDF5ReaderTest.cpp
+    geopop/io/GeoGridHDF5WriterTest.cpp
     geopop/io/GeoGridProtoReaderTest.cpp
     geopop/io/GeoGridProtoWriterTest.cpp
     geopop/io/HouseholdCSVReaderTest.cpp
+    geopop/io/HouseholdJSONReaderTest.cpp
     geopop/io/ReaderFactoryTest.cpp
-        geopop/io/WorkplaceCSVReaderTest.cpp
+    geopop/io/WorkplaceCSVReaderTest.cpp
     #---
     geopop/kdtree.cpp
     #---
@@ -85,7 +91,15 @@ set(SRC
     myhayai/class_delivery.cpp
     myhayai/flex_delivery.cpp
     #---
-    main.cpp)
+    main.cpp
+)
+
+if ((NOT STRIDE_FORCE_NO_QT5) AND QT5_FOUND)  # New
+    set(SRC ${SRC}
+            visualization/EpiOutputHDF5ReaderTest.cpp
+            visualization/EpiOutputJSONReaderTest.cpp
+            visualization/EpiOutputProtoReaderTest.cpp)
+endif()
 
 #if (OPENMP_FOUND)
 #        set(SRC ${SRC} ParallelRuns.cpp)
@@ -101,9 +115,8 @@ install(DIRECTORY testdata/ DESTINATION ${TESTS_INSTALL_LOCATION}/testdata/)
 # Define tests.
 #============================================================================
 add_test(NAME ${EXEC}
-        WORKING_DIRECTORY ${TESTS_DIR}
-        COMMAND ${CMAKE_INSTALL_PREFIX}/${BIN_INSTALL_LOCATION}/${EXEC}
-        --gtest_output=xml:gtester_all.xml
+        WORKING_DIRECTORY ${CMAKE_INSTALL_PREFIX}
+        COMMAND ${BIN_INSTALL_LOCATION}/${EXEC} --gtest_output=xml:${TESTS_INSTALL_LOCATION}/gtester_all.xml
 )
 
 #############################################################################

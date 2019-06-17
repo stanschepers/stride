@@ -22,7 +22,10 @@
 
 namespace geopop {
 
+template <class LocationContent>
 class GeoGrid;
+
+class Epidemiologic;
 
 /**
  * Create an abstract Reader that fills a GeoGrid with the commute info from file.
@@ -38,7 +41,7 @@ public:
         virtual ~CommutesReader() = default;
 
         /// Add commutes onfo to the GeoGrid.
-        virtual void FillGeoGrid(GeoGrid&) const = 0;
+        virtual void FillGeoGrid(GeoGrid<Epidemiologic>&) const = 0;
 
 protected:
         std::unique_ptr<std::istream> m_inputStream; ///< The istream with the file content.

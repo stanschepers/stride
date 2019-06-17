@@ -17,6 +17,7 @@
 
 #include "geopop/GeoGrid.h"
 #include "geopop/Location.h"
+#include "geopop/Epidemiologic.h"
 
 #include <map>
 #include <memory>
@@ -38,7 +39,7 @@ public:
         virtual ~LocationsReader() = default;
 
         /// Add the locations to the GeoGrid.
-        virtual void FillGeoGrid(GeoGrid&) const = 0;
+        virtual void FillGeoGrid(GeoGrid<Epidemiologic>&) const = 0;
 
 protected:
         std::unique_ptr<std::istream> m_inputStream; ///< The istream with the file content.

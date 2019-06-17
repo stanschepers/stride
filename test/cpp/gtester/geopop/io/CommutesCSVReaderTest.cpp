@@ -32,38 +32,38 @@ shared_ptr<Population> getExpectedGeoGrid()
 {
         auto  pop     = Population::Create();
         auto& geoGrid = pop->RefGeoGrid();
-        geoGrid.AddLocation(make_shared<Location>(21, 0, Coordinate(0.0, 0.0), "", 1000));
-        geoGrid.AddLocation(make_shared<Location>(22, 0, Coordinate(0.0, 0.0), "", 800));
-        geoGrid.AddLocation(make_shared<Location>(23, 0, Coordinate(0.0, 0.0), "", 900));
-        geoGrid.AddLocation(make_shared<Location>(24, 0, Coordinate(0.0, 0.0), "", 1300));
+        geoGrid.AddLocation(make_shared<Location<Epidemiologic>>(21, 0, Coordinate(0.0, 0.0), "", 1000));
+        geoGrid.AddLocation(make_shared<Location<Epidemiologic>>(22, 0, Coordinate(0.0, 0.0), "", 800));
+        geoGrid.AddLocation(make_shared<Location<Epidemiologic>>(23, 0, Coordinate(0.0, 0.0), "", 900));
+        geoGrid.AddLocation(make_shared<Location<Epidemiologic>>(24, 0, Coordinate(0.0, 0.0), "", 1300));
 
         // to 21
-        geoGrid.GetById(21)->AddIncomingCommute(geoGrid.GetById(22), 0.15012305168170631);
-        geoGrid.GetById(22)->AddOutgoingCommute(geoGrid.GetById(21), 0.15012305168170631);
+    geoGrid.GetById(21)->GetContent()->AddIncomingCommute(geoGrid.GetById(22)->GetContent(), 0.15012305168170631);
+    geoGrid.GetById(22)->GetContent()->AddOutgoingCommute(geoGrid.GetById(21)->GetContent(), 0.15012305168170631);
 
-        geoGrid.GetById(21)->AddIncomingCommute(geoGrid.GetById(23), 0.59115044247787607);
-        geoGrid.GetById(23)->AddOutgoingCommute(geoGrid.GetById(21), 0.59115044247787607);
+    geoGrid.GetById(21)->GetContent()->AddIncomingCommute(geoGrid.GetById(23)->GetContent(), 0.59115044247787607);
+    geoGrid.GetById(23)->GetContent()->AddOutgoingCommute(geoGrid.GetById(21)->GetContent(), 0.59115044247787607);
 
-        geoGrid.GetById(21)->AddIncomingCommute(geoGrid.GetById(24), 0.37610619469026546);
-        geoGrid.GetById(24)->AddOutgoingCommute(geoGrid.GetById(21), 0.37610619469026546);
+    geoGrid.GetById(21)->GetContent()->AddIncomingCommute(geoGrid.GetById(24)->GetContent(), 0.37610619469026546);
+    geoGrid.GetById(24)->GetContent()->AddOutgoingCommute(geoGrid.GetById(21)->GetContent(), 0.37610619469026546);
 
         // to 22
-        geoGrid.GetById(22)->AddIncomingCommute(geoGrid.GetById(21), 0.11969439728353141);
-        geoGrid.GetById(21)->AddOutgoingCommute(geoGrid.GetById(22), 0.11969439728353141);
+    geoGrid.GetById(22)->GetContent()->AddIncomingCommute(geoGrid.GetById(21)->GetContent(), 0.11969439728353141);
+    geoGrid.GetById(21)->GetContent()->AddOutgoingCommute(geoGrid.GetById(22)->GetContent(), 0.11969439728353141);
 
-        geoGrid.GetById(22)->AddIncomingCommute(geoGrid.GetById(24), 0.62389380530973448);
-        geoGrid.GetById(24)->AddOutgoingCommute(geoGrid.GetById(22), 0.62389380530973448);
+    geoGrid.GetById(22)->GetContent()->AddIncomingCommute(geoGrid.GetById(24)->GetContent(), 0.62389380530973448);
+    geoGrid.GetById(24)->GetContent()->AddOutgoingCommute(geoGrid.GetById(22)->GetContent(), 0.62389380530973448);
 
         // to 23
-        geoGrid.GetById(23)->AddIncomingCommute(geoGrid.GetById(21), 0.41341256366723261);
-        geoGrid.GetById(21)->AddOutgoingCommute(geoGrid.GetById(23), 0.41341256366723261);
+    geoGrid.GetById(23)->GetContent()->AddIncomingCommute(geoGrid.GetById(21)->GetContent(), 0.41341256366723261);
+    geoGrid.GetById(21)->GetContent()->AddOutgoingCommute(geoGrid.GetById(23)->GetContent(), 0.41341256366723261);
 
-        geoGrid.GetById(23)->AddIncomingCommute(geoGrid.GetById(22), 0.28712059064807222);
-        geoGrid.GetById(22)->AddOutgoingCommute(geoGrid.GetById(23), 0.28712059064807222);
+    geoGrid.GetById(23)->GetContent()->AddIncomingCommute(geoGrid.GetById(22)->GetContent(), 0.28712059064807222);
+    geoGrid.GetById(22)->GetContent()->AddOutgoingCommute(geoGrid.GetById(23)->GetContent(), 0.28712059064807222);
 
         // to 24
-        geoGrid.GetById(24)->AddIncomingCommute(geoGrid.GetById(22), 0.2506152584085316);
-        geoGrid.GetById(22)->AddOutgoingCommute(geoGrid.GetById(24), 0.2506152584085316);
+    geoGrid.GetById(24)->GetContent()->AddIncomingCommute(geoGrid.GetById(22)->GetContent(), 0.2506152584085316);
+    geoGrid.GetById(22)->GetContent()->AddOutgoingCommute(geoGrid.GetById(24)->GetContent(), 0.2506152584085316);
 
         return pop;
 }
@@ -81,10 +81,11 @@ TEST(CommutesCSVReaderTest, test1)
         const auto pop             = Population::Create();
         auto&      geoGrid         = pop->RefGeoGrid();
 
-        geoGrid.AddLocation(make_shared<Location>(21, 0, Coordinate(0.0, 0.0), "", 1000));
-        geoGrid.AddLocation(make_shared<Location>(22, 0, Coordinate(0.0, 0.0), "", 800));
-        geoGrid.AddLocation(make_shared<Location>(23, 0, Coordinate(0.0, 0.0), "", 900));
-        geoGrid.AddLocation(make_shared<Location>(24, 0, Coordinate(0.0, 0.0), "", 1300));
+        geoGrid.AddLocation(make_shared<Location<Epidemiologic>>(21, 0, Coordinate(0.0, 0.0), "", 1000));
+        geoGrid.AddLocation(make_shared<Location<Epidemiologic>>(22, 0, Coordinate(0.0, 0.0), "", 800));
+        geoGrid.AddLocation(make_shared<Location<Epidemiologic>>(23, 0, Coordinate(0.0, 0.0), "", 900));
+        geoGrid.AddLocation(make_shared<Location<Epidemiologic>>(24, 0, Coordinate(0.0, 0.0), "", 1300));
+
         auto instream = make_unique<istringstream>(csvString);
 
         CommutesCSVReader reader(move(instream));
@@ -93,22 +94,22 @@ TEST(CommutesCSVReaderTest, test1)
         for (const auto& loc : geoGrid) {
                 int         i                = 0;
                 const auto& expectedLoc      = expectedGeoGrid.GetById(loc->GetID());
-                const auto& outGoingExpected = expectedLoc->CRefOutgoingCommutes();
-                for (const auto& commute : loc->CRefOutgoingCommutes()) {
+                const auto& outGoingExpected = expectedLoc->GetContent()->CRefOutgoingCommutes();
+                for (const auto& commute : loc->GetContent()->CRefOutgoingCommutes()) {
                         EXPECT_DOUBLE_EQ(outGoingExpected[i].first->GetID(), commute.first->GetID());
                         EXPECT_DOUBLE_EQ(outGoingExpected[i].second, commute.second);
                         i++;
                 }
                 i                            = 0;
-                const auto& incomingExpected = expectedLoc->CRefIncomingCommutes();
-                for (const auto& commute : loc->CRefIncomingCommutes()) {
+                const auto& incomingExpected = expectedLoc->GetContent()->CRefIncomingCommutes();
+                for (const auto& commute : loc->GetContent()->CRefIncomingCommutes()) {
                         EXPECT_DOUBLE_EQ(incomingExpected[i].first->GetID(), commute.first->GetID());
                         EXPECT_DOUBLE_EQ(incomingExpected[i].second, commute.second);
                         i++;
                 }
 
-                EXPECT_DOUBLE_EQ(expectedLoc->GetOutgoingCommuteCount(1), loc->GetOutgoingCommuteCount(1));
-                EXPECT_DOUBLE_EQ(expectedLoc->GetIncomingCommuteCount(1), loc->GetIncomingCommuteCount(1));
+                EXPECT_DOUBLE_EQ(expectedLoc->GetContent()->GetOutgoingCommuteCount(1), loc->GetContent()->GetOutgoingCommuteCount(1));
+                EXPECT_DOUBLE_EQ(expectedLoc->GetContent()->GetIncomingCommuteCount(1), loc->GetContent()->GetIncomingCommuteCount(1));
         }
 }
 

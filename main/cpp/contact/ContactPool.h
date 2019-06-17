@@ -10,7 +10,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with the software. If not, see <http://www.gnu.org/licenses/>.
  *
- *  Copyright 2017, Kuylen E, Willem L, Broeckhove J
+ *  Copyright 2017, Kuylen E, Willem L, Broeckhove J, Van Damme L
  */
 
 /**
@@ -23,6 +23,7 @@
 #include "contact/ContactLogMode.h"
 #include "contact/ContactType.h"
 
+#include <map>
 #include <tuple>
 #include <vector>
 #include <limits>
@@ -66,6 +67,9 @@ public:
 
         /// Get the type of ContactPool, used for logging and tests
         ContactType::Id GetType() const { return m_pool_type; }
+
+        /// Generate an epi-output map of the contactpool.
+        std::map<std::string, std::map<std::string, unsigned int>> const GenerateEpiOutput();
 
 public:
         // To iterate over the members.

@@ -49,15 +49,15 @@ TEST(ReaderFactoryTest, TestCommutesFromFile)
 
         auto  pop     = Population::Create();
         auto& geoGrid = pop->RefGeoGrid();
-        geoGrid.AddLocation(make_shared<Location>(21, 0, Coordinate(0.0, 0.0), "", 1000));
-        geoGrid.AddLocation(make_shared<Location>(22, 0, Coordinate(0.0, 0.0), "", 1000));
+        geoGrid.AddLocation(make_shared<Location<Epidemiologic>>(21, 0, Coordinate(0.0, 0.0), "", 1000));
+        geoGrid.AddLocation(make_shared<Location<Epidemiologic>>(22, 0, Coordinate(0.0, 0.0), "", 1000));
 
         res2->FillGeoGrid(geoGrid);
 
-        EXPECT_EQ(geoGrid.GetById(21)->GetIncomingCommuteCount(1.0), 500);
-        EXPECT_EQ(geoGrid.GetById(22)->GetOutgoingCommuteCount(1.0), 500);
-        EXPECT_EQ(geoGrid.GetById(21)->GetIncomingCommuteCount(1.0), 500);
-        EXPECT_EQ(geoGrid.GetById(22)->GetOutgoingCommuteCount(1.0), 500);
+        EXPECT_EQ(geoGrid.GetById(21)->GetContent()->GetIncomingCommuteCount(1.0), 500);
+        EXPECT_EQ(geoGrid.GetById(22)->GetContent()->GetOutgoingCommuteCount(1.0), 500);
+        EXPECT_EQ(geoGrid.GetById(21)->GetContent()->GetIncomingCommuteCount(1.0), 500);
+        EXPECT_EQ(geoGrid.GetById(22)->GetContent()->GetOutgoingCommuteCount(1.0), 500);
 }
 
 TEST(ReaderFactoryTest, TestCities)

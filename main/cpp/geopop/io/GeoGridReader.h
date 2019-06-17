@@ -28,17 +28,20 @@ class Population;
 
 namespace geopop {
 
+template <class LocationContent>
 class GeoGrid;
+
+class Epidemiologic;
 
 /**
  * An abstract base class for creating a GeoGrid that was read from a file, can be implemented
- * using multiple file types (proto and json are currently implemented)
+ * using multiple file types (proto, hdf5 and json are currently implemented)
  */
 class GeoGridReader
 {
 public:
         /// Parametrized constructor.
-        GeoGridReader(std::unique_ptr<std::istream> inputStream, stride::Population* pop);
+        explicit GeoGridReader(stride::Population* pop);
 
         /// No copy constructor.
         GeoGridReader(const GeoGridReader&) = delete;
@@ -49,12 +52,12 @@ public:
         /// Default destructor.
         virtual ~GeoGridReader() = default;
 
-        /// Perform the actual read and return the created GeoGrid.
+        /// Perform the actual read.
         virtual void Read() = 0;
 
 protected:
         /// Add the commutes that were found to their respective Locations symmetrically.
-        void AddCommutes(GeoGrid& geoGrid);
+        void AddCommutes(GeoGrid<Epidemiologic>& geoGrid);
 
 protected:
         ///< Store the persons (id->person) that were found while loping over the ContactPools.
@@ -63,7 +66,6 @@ protected:
         ///< Commutes from, to, number.
         std::vector<std::tuple<unsigned int, unsigned int, double>> m_commutes;
 
-        std::unique_ptr<std::istream> m_inputStream; ///< File to read.
         stride::Population*           m_population;  ///< Population to use in the GeoGrid may be nullptr.
 };
 

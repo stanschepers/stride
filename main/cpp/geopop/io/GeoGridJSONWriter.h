@@ -15,10 +15,10 @@
 
 #pragma once
 
-#include "GeoGridWriter.h"
+#include "GeoGridStreamWriter.h"
 #include "geopop/Location.h"
 
-#include <boost/property_tree/ptree.hpp>
+#include <nlohmann/json.hpp>
 #include <set>
 
 namespace stride {
@@ -33,30 +33,30 @@ class ContactCenter;
 /**
  * Writes a GeoGrid to a JSON file.
  */
-class GeoGridJSONWriter : public GeoGridWriter
+class GeoGridJSONWriter : public GeoGridStreamWriter
 {
 public:
-        /// Construct the GeoGridJSONWriter.
-        GeoGridJSONWriter();
+        /// GeoGridJSONWriter cannot be instantiated without stream.
+        GeoGridJSONWriter() = delete;
+
+        /// Construct GeoGridProtoWriter referencing given stream
+        explicit GeoGridJSONWriter(std::shared_ptr<std::ostream> stream);
 
         /// Write the provided GeoGrid to the proved ostream in JSON format.
-        void Write(GeoGrid& geoGrid, std::ostream& stream) override;
+        void Write(GeoGrid<Epidemiologic>& geoGrid) override;
 
 private:
-        /// Create a Boost Property Tree containing all info needed to reconstruct a ContactCenter.
-        boost::property_tree::ptree WriteContactCenter(std::shared_ptr<ContactCenter> contactCenter);
+        /// Create a JSON object containing all info needed to reconstruct a ContactPool.
+        nlohmann::json WriteContactPool(const stride::ContactPool* contactPool);
 
-        /// Create a Boost Property Tree containing all info needed to reconstruct a ContactPool.
-        boost::property_tree::ptree WriteContactPool(stride::ContactPool* contactPool);
+        /// Create a JSON object containing all info needed to reconstruct a Coordinate.
+        nlohmann::json WriteCoordinate(const Coordinate& coordinate);
 
-        /// Create a Boost Property Tree containing all info needed to reconstruct a Coordinate.
-        boost::property_tree::ptree WriteCoordinate(const Coordinate& coordinate);
+        /// Create a JSON object containing all info needed to reconstruct a Location.
+        nlohmann::json WriteLocation(const Location<Epidemiologic>& location);
 
-        /// Create a Boost Property Tree containing all info needed to reconstruct a Location.
-        boost::property_tree::ptree WriteLocation(const Location& location);
-
-        /// Create a Boost Property Tree containing all info needed to reconstruct a Person.
-        boost::property_tree::ptree WritePerson(stride::Person* person);
+        /// Create a JSON object containing all info needed to reconstruct a Person.
+        nlohmann::json WritePerson(stride::Person* person);
 
 private:
         std::set<stride::Person*> m_persons_found; ///< The persons found when looping over the ContactPools.

@@ -15,8 +15,9 @@
 
 #include "GeoGridReaderFactory.h"
 
-//#include "GeoGridJSONReader.h"
+#include "GeoGridJSONReader.h"
 #include "GeoGridProtoReader.h"
+#include "GeoGridHDF5Reader.h"
 #include "GeoGridReader.h"
 #include "util/Exception.h"
 
@@ -41,11 +42,12 @@ std::shared_ptr<GeoGridReader> GeoGridReaderFactory::CreateReader(const std::str
                 throw stride::util::Exception("GeoGridReaderFactory::CreateReader> File not found: " + path.string());
         }
 
-        /*if (path.extension().string() == ".json") {
-                //return std::make_shared<GeoGridJSONReader>(std::make_unique<std::ifstream>(path.string()), pop);
-        } else */
-                if (path.extension().string() == ".proto") {
+        if (path.extension().string() == ".json") {
+                return std::make_shared<GeoGridJSONReader>(std::make_unique<std::ifstream>(path.string()), pop);
+        } else if (path.extension().string() == ".proto") {
                 return std::make_shared<GeoGridProtoReader>(std::make_unique<std::ifstream>(path.string()), pop);
+        } else if (path.extension().string() == ".h5") {
+                return std::make_shared<GeoGridHDF5Reader>(path.string(), pop);
         } else {
                 throw stride::util::Exception("GeoGridReaderFactory::CreateReader> Unsupported file extension: " +
                                               path.extension().string());

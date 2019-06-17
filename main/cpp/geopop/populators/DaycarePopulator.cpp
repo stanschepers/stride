@@ -27,13 +27,13 @@ using namespace std;
 using namespace stride;
 using namespace stride::ContactType;
 
-template<>
-void Populator<stride::ContactType::Id::Daycare>::Apply(GeoGrid &geoGrid, const GeoGridConfig& ggConfig)
+template <>
+void Populator<stride::ContactType::Id::Daycare>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig)
 {
         m_logger->trace("Starting to populate Daycare's");
 
         for (const auto& loc : geoGrid) {
-                if (loc->GetPopCount() == 0) {
+                if (loc->GetContent()->GetPopCount() == 0) {
                         continue;
                 }
                 // 1. find all schools in an area of 10-k*10 km
@@ -42,7 +42,7 @@ void Populator<stride::ContactType::Id::Daycare>::Apply(GeoGrid &geoGrid, const 
                 auto dist = m_rn_man.GetUniformIntGenerator(0, static_cast<int>(classes.size()), 0U);
 
                 // 2. for every student assign a class
-                for (const auto& pool : loc->RefPools(Id::Household)) {
+                for (const auto& pool : loc->GetContent()->RefPools(Id::Household)) {
                         for (Person* p : *pool) {
                                 if (AgeBrackets::Daycare::HasAge(p->GetAge()) &&
                                     m_rn_man.MakeWeightedCoinFlip(ggConfig.param.participation_daycare)) {

@@ -10,7 +10,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with the software. If not, see <http://www.gnu.org/licenses/>.
  *
- *  Copyright 2018, 2019, Jan Broeckhove and Bistromatics group.
+ *  Copyright 2018, 2019, Jan Broeckhove, Laurens Van Damme and Bistromatics group.
  */
 
 #pragma once
@@ -18,6 +18,7 @@
 #include "contact/ContactType.h"
 #include "contact/IdSubscriptArray.h"
 #include "geopop/Coordinate.h"
+#include "geopop/Epidemiologic.h"
 #include "util/SegmentedVector.h"
 
 #include <iostream>
@@ -28,6 +29,8 @@
 #include <typeinfo>
 #include <unordered_map>
 #include <vector>
+#include <map>
+#include <stdexcept>
 
 namespace stride {
 class ContactPool;
@@ -36,26 +39,24 @@ class ContactPool;
 namespace geopop {
 
 /**
- * Location for use within the GeoGrid, contains Coordinate and index to ContactPools.
+ * Location for use within the GeoGrid, contains Coordinate and meta data of that coordinate.
  */
+template <class Content>
 class Location
 {
 public:
         /// Parametrized constructor with population count.
-        Location(unsigned int id, unsigned int province, Coordinate coordinate = Coordinate(0.0, 0.0),
-                 std::string name = "", unsigned int popCount = 0U, unsigned int householdType = 0U,
-                 double youngOldFraction = 1.0);
+        Location<Content>(unsigned int id, unsigned int province, std::shared_ptr<Content> content, Coordinate coordinate = Coordinate(0.0, 0.0), std::string name = "");
+        /// Specialised contructor for Epidemiologic as template
+        template <typename = std::enable_if<std::is_same<Content, Epidemiologic>::value>>
+        Location<Content>(unsigned int id, unsigned int province, Coordinate coordinate = Coordinate(0.0, 0.0),
+                std::string name = "", unsigned int popCount = 0U, unsigned int householdType = 0U, double youngOldFraction = 1.0)
+                : m_content(std::make_shared<Content>(this, popCount, householdType, youngOldFraction)), m_coordinate(coordinate), m_id(id), m_name(move(name)), m_province(province)
+        {
+        }
 
         /// Perform a full comparison with the other location.
-        bool operator==(const Location& other) const;
-
-        /// Adds a Location and a proportion to the incoming commute vector.
-        /// I.e. fraction of commuting population at otherLocation commuting to this Location.
-        void AddIncomingCommute(std::shared_ptr<Location> otherLocation, double fraction);
-
-        /// Adds a Location and a fraction to the outgoing commute vector.
-        /// I.e. fraction of commuting population at this Location commuting to otherLocation.
-        void AddOutgoingCommute(std::shared_ptr<Location> otherLocation, double fraction);
+        bool operator==(const Location<Content>& other) const;
 
         /// Gets the Coordinate of this Location.
         const Coordinate GetCoordinate() const { return m_coordinate; }
@@ -63,122 +64,36 @@ public:
         /// Gets ID of this Location.
         unsigned int GetID() const { return m_id; }
 
-        /// Calculates number of incomming commuters, given the fraction of the population that commutes.
-        int GetIncomingCommuteCount(double fractionCommuters) const;
-
-        /// Gets the number of people infected in the contactpools at this location.
-        unsigned int GetInfectedCount() const;
-
         /// Gets the name.
         std::string GetName() const { return m_name; }
-
-        /// Calculates number of outgoing commuters, given the fraction of the population that commutes.
-        unsigned int GetOutgoingCommuteCount(double fractionCommuters) const;
-
-        /// Gets the absolute population.
-        unsigned int GetPopCount() const { return m_pop_count; }
 
         /// Gets the province.
         unsigned int GetProvince() const { return m_province; }
 
-        /// Get Location's population fraction (of the total populaion count).
-        double GetPopFraction() const;
-
-        /// Get household type for Households references.
-        unsigned int GetHouseHoldType() const { return m_household_type;}
-
-        /// Gets young/old fraction.
-        double GetYoungOldFraction() const { return m_young_old_fraction;}
-
         /// Sets the Coordinate of this Location.
         void SetCoordinate(const Coordinate& coordinate) { m_coordinate = coordinate; }
 
-        /// Set Location's population count using its population fraction and the total population count.
-        void SetPopCount(unsigned int totalPopCount);
+        /// Gets the content
+        std::shared_ptr<Content> GetContent() const { return m_content; }
 
-        /// Set Location's population fraction (of the total populaion count).
-        void SetPopFraction(double relativePopulation);
-
-        /// Set household type for Households references.
-        void SetHouseHoldType(unsigned int houseHoldType) {m_household_type = houseHoldType;}
-
-        /// Sets young/old fraction.
-        void SetYoungOldFraction(double youngOldFraction) {m_young_old_fraction = youngOldFraction;}
-
-public:
-        /// Access through const reference to ContactPools of type 'id'.
-        /// \param id   ContactType::Id of pools container you want to access.
-        /// \return     The requested reference.
-        const stride::util::SegmentedVector<stride::ContactPool*>& CRefPools(stride::ContactType::Id id) const
-        {
-                return m_pool_index[id];
+        /// Get the latitude or longitude from the coordinate of the location
+        template<unsigned int T>
+        double get() const {
+                if (T < 2) {
+                        return m_coordinate.get<T>();
+                } else {
+                        throw std::out_of_range("index");
+                }
         }
-
-        /// Templated version of @CRefPools for use when the type id is fixed
-        /// \tparam T   ContactType::Id of pools container you want to access.
-        /// \return     The requested reference.
-        template <stride::ContactType::Id T>
-        const stride::util::SegmentedVector<stride::ContactPool*>& CRefPools() const
-        {
-                return m_pool_index[T];
-        }
-
-        /// Access through reference to ContactPools of type 'id'.
-        /// \param id   ContactType::Id of pools container you want to access.
-        /// \return     The requested reference.
-        stride::util::SegmentedVector<stride::ContactPool*>& RefPools(stride::ContactType::Id id)
-        {
-                return m_pool_index[id];
-        }
-
-        /// Templated version of @RefPools for use when the type id is fixed
-        /// \tparam T   ContactType::Id of pools container you want to access.
-        /// \return     The requested reference.
-        template <stride::ContactType::Id T>
-        stride::util::SegmentedVector<stride::ContactPool*>& RefPools()
-        {
-                return m_pool_index[T];
-        }
-
-        /// Register a ContactPool pointer in this Location's pool system.
-        /// Prior to this the pool should have been created in Population's pool system.
-        void RegisterPool(stride::ContactPool* p, stride::ContactType::Id typeId)
-        {
-                m_pool_index[typeId].emplace_back(p);
-        }
-
-        /// Templated version of @RegisterPool
-        template <stride::ContactType::Id T>
-        void RegisterPool(stride::ContactPool* p)
-        {
-                m_pool_index[T].emplace_back(p);
-        }
-
-public:
-        /// References incoming commute Locations + fraction of commutes to that Location.
-        const std::vector<std::pair<Location*, double>>& CRefIncomingCommutes() const { return m_inCommutes; }
-
-        /// References outgoing commute Locations + fraction of commutes to that Location.
-        const std::vector<std::pair<Location*, double>>& CRefOutgoingCommutes() const { return m_outCommutes; }
 
 private:
+        std::shared_ptr<Content> m_content;  ///< Content of the Location
         Coordinate   m_coordinate;           ///< Coordinate of the Location.
         unsigned int m_id = 0U;              ///< Id.
         std::string  m_name;                 ///< Name.
-        unsigned int m_pop_count;            ///< Population count (number of individuals) at this Location.
-        double       m_pop_fraction;         ///< Fraction of whole population at this Location.
         unsigned int m_province;             ///< Province id.
-        unsigned int m_household_type;       ///< Household type
-        double       m_young_old_fraction;   ///< Young/Old fraction (ratio between 15-24y and 55-64y old persons).
-
-        /// Incomming commutes stored as pair of Location and fraction of population at that Location.
-        std::vector<std::pair<Location*, double>> m_inCommutes;
-
-        ///< Outgoing commutes stored as pair of Location and fraction of population to this this Location.
-        std::vector<std::pair<Location*, double>> m_outCommutes;
-
-        ///< The system holding pointers to the contactpools (for each type id) at this Location.
-        stride::ContactType::IdSubscriptArray<stride::util::SegmentedVector<stride::ContactPool*>> m_pool_index;
 };
 
 } // namespace geopop
+
+#include "Location.cpp"

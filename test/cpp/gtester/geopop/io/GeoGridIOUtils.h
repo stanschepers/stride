@@ -44,14 +44,14 @@ void CompareContactPools(stride::ContactType::Id                                
 
 void CompareCoordinate(const Coordinate& coordinate, const proto::GeoGrid_Location_Coordinate& protoCoordinate);
 
-void CompareLocation(const Location& location, const proto::GeoGrid_Location& protoLocation);
+void CompareLocation(const Location<Epidemiologic>& location, const proto::GeoGrid_Location& protoLocation);
 
 void ComparePerson(const proto::GeoGrid_Person& protoPerson);
 
-void CompareGeoGrid(GeoGrid& geoGrid);
+void CompareGeoGrid(GeoGrid<Epidemiologic>& geoGrid);
 
 void CompareGeoGrid(proto::GeoGrid& protoGrid);
 
-std::shared_ptr<GeoGrid> GetPopulatedGeoGrid(stride::Population*);
+std::shared_ptr<GeoGrid<Epidemiologic>> GetPopulatedGeoGrid(stride::Population*);
 
-std::shared_ptr<GeoGrid> GetCommutesGeoGrid(stride::Population*);
+std::shared_ptr<GeoGrid<Epidemiologic>> GetCommutesGeoGrid(stride::Population*);

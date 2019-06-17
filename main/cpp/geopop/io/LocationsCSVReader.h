@@ -33,7 +33,7 @@ public:
         explicit LocationsCSVReader(std::unique_ptr<std::istream> inputStream);
 
         /// Add the locations read to the GeoGrid.
-        void FillGeoGrid(GeoGrid& geoGrid) const override;
+        void FillGeoGrid(GeoGrid<Epidemiologic>& geoGrid) const override;
 };
 
 } // namespace geopop

@@ -24,32 +24,33 @@ using namespace stride;
 
 namespace {
 
-shared_ptr<GeoGrid> getExpectedGeoGrid()
+shared_ptr<GeoGrid<Epidemiologic>> getExpectedGeoGrid()
 {
-        auto geoGrid = make_shared<GeoGrid>(Population::Create().get());
-        auto loc1    = make_shared<Location>(11002, 1, Coordinate(4.413545489, 51.2165845), "ANTWERPEN");
-        auto loc2    = make_shared<Location>(11007, 1, Coordinate(4.4856299, 51.1966684), "BORSBEEK");
-        auto loc3    = make_shared<Location>(11008, 1, Coordinate(4.49419, 51.29227), "BRASSCHAAT");
-        auto loc4    = make_shared<Location>(11009, 1, Coordinate(4.6376322, 51.3495775), "BRECHT");
-        auto loc5    = make_shared<Location>(11016, 1, Coordinate(4.47518, 51.38298), "ESSEN");
-        auto loc6    = make_shared<Location>(73107, 7, Coordinate(5.70979219, 50.96991794), "MAASMECHELEN");
-        auto loc7    = make_shared<Location>(73109, 7, Coordinate(5.806343076, 50.74921941), "VOEREN-'S GRAVENVOEREN");
+        auto geoGrid = make_shared<GeoGrid<Epidemiologic>>(Population::Create().get());
+        auto loc1    = make_shared<Location<Epidemiologic>>(11002, 1, Coordinate(4.413545489, 51.2165845), "ANTWERPEN");
+        auto loc2    = make_shared<Location<Epidemiologic>>(11007, 1, Coordinate(4.4856299, 51.1966684), "BORSBEEK");
+        auto loc3    = make_shared<Location<Epidemiologic>>(11008, 1, Coordinate(4.49419, 51.29227), "BRASSCHAAT");
+        auto loc4    = make_shared<Location<Epidemiologic>>(11009, 1, Coordinate(4.6376322, 51.3495775), "BRECHT");
+        auto loc5    = make_shared<Location<Epidemiologic>>(11016, 1, Coordinate(4.47518, 51.38298), "ESSEN");
+        auto loc6 = make_shared<Location<Epidemiologic>>(73107, 7, Coordinate(5.70979219, 50.96991794), "MAASMECHELEN");
+        auto loc7 = make_shared<Location<Epidemiologic>>(73109, 7, Coordinate(5.806343076, 50.74921941),
+                                                         "VOEREN-'S GRAVENVOEREN");
 
-        loc1->SetPopFraction(0.76599210042448873);
-        loc2->SetPopFraction(0.018849454066692393);
-        loc3->SetPopFraction(0.065934783102172378);
-        loc4->SetPopFraction(0.04604396976369373);
-        loc5->SetPopFraction(0.029663133044287561);
-        loc6->SetPopFraction(0.06618731981930856);
-        loc7->SetPopFraction(0.0073292397793566838);
+        loc1->GetContent()->SetPopFraction(0.76599210042448873);
+        loc2->GetContent()->SetPopFraction(0.018849454066692393);
+        loc3->GetContent()->SetPopFraction(0.065934783102172378);
+        loc4->GetContent()->SetPopFraction(0.04604396976369373);
+        loc5->GetContent()->SetPopFraction(0.029663133044287561);
+        loc6->GetContent()->SetPopFraction(0.06618731981930856);
+        loc7->GetContent()->SetPopFraction(0.0073292397793566838);
 
-        loc1->SetHouseHoldType(1);
-        loc2->SetHouseHoldType(0);
-        loc3->SetHouseHoldType(3);
-        loc4->SetHouseHoldType(5);
-        loc5->SetHouseHoldType(999);
-        loc6->SetHouseHoldType(10000000);
-        loc7->SetHouseHoldType(0);
+        loc1->GetContent()->SetHouseHoldType(1);
+        loc2->GetContent()->SetHouseHoldType(0);
+        loc3->GetContent()->SetHouseHoldType(3);
+        loc4->GetContent()->SetHouseHoldType(5);
+        loc5->GetContent()->SetHouseHoldType(999);
+        loc6->GetContent()->SetHouseHoldType(10000000);
+        loc7->GetContent()->SetHouseHoldType(0);
 
         geoGrid->AddLocation(loc1);
         geoGrid->AddLocation(loc2);
@@ -83,11 +84,11 @@ TEST(CitiesCSVReaderTest, test1)
         reader.FillGeoGrid(geoGrid);
 
         for (const auto& loc : geoGrid) {
-                EXPECT_EQ(*loc, *(expected->GetById(loc->GetID())));
-                EXPECT_DOUBLE_EQ(loc->GetPopFraction(), (expected->GetById(loc->GetID()))->GetPopFraction());
+                EXPECT_TRUE(loc->operator==(*expected->GetById(loc->GetID())));
+                EXPECT_DOUBLE_EQ(loc->GetContent()->GetPopFraction(),
+                                 (expected->GetById(loc->GetID()))->GetContent()->GetPopFraction());
         }
 }
-
 
 TEST(CitiesCSVReaderTest, houseHoldTypeTest)
 {
@@ -101,7 +102,6 @@ TEST(CitiesCSVReaderTest, houseHoldTypeTest)
 73109,7,2583,251986.4171,160699.7771,50.74921941,5.806343076,VOEREN-'S GRAVENVOEREN,0
 )";
 
-
         const auto expected = getExpectedGeoGrid();
         auto       pop      = Population::Create();
         auto&      geoGrid  = pop->RefGeoGrid();
@@ -112,9 +112,9 @@ TEST(CitiesCSVReaderTest, houseHoldTypeTest)
 
         for (const auto& loc : geoGrid) {
                 EXPECT_EQ(*loc, *(expected->GetById(loc->GetID())));
-                EXPECT_EQ(loc->GetHouseHoldType(), (expected->GetById(loc->GetID()))->GetHouseHoldType());
+                EXPECT_EQ(loc->GetContent()->GetHouseHoldType(),
+                          (expected->GetById(loc->GetID()))->GetContent()->GetHouseHoldType());
         }
-
 }
 
 } // namespace

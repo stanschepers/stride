@@ -46,19 +46,19 @@ public:
         }
 
 protected:
-        RnMan                  m_rn_man;
-        DaycarePopulator       m_daycare_populator;
-        GeoGridConfig          m_gg_config;
-        shared_ptr<Population> m_pop;
-        GeoGrid&               m_geo_grid;
-        DaycareGenerator       m_daycare_generator;
-        const unsigned int     m_ppday = m_gg_config.pools[Id::Daycare];
+        RnMan                   m_rn_man;
+        DaycarePopulator        m_daycare_populator;
+        GeoGridConfig           m_gg_config;
+        shared_ptr<Population>  m_pop;
+        GeoGrid<Epidemiologic>& m_geo_grid;
+        DaycareGenerator        m_daycare_generator;
+        const unsigned int      m_ppday = m_gg_config.pools[Id::Daycare];
 };
 
 // Check that populator can handle empty GeoGrid
 TEST_F(DaycarePopulatorTest, NoPopulation)
 {
-        m_geo_grid.AddLocation(make_shared<Location>(0, 0, Coordinate(0.0, 0.0), "", 0));
+        m_geo_grid.AddLocation(make_shared<Location<Epidemiologic>>(0, 0, Coordinate(0.0, 0.0), "", 0));
         m_geo_grid.Finalize();
 
         EXPECT_NO_THROW(m_daycare_populator.Apply(m_geo_grid, m_gg_config));
@@ -89,7 +89,7 @@ TEST_F(DaycarePopulatorTest, OneLocationTest)
             {121, 0}, {122, 1}, {123, 0}, {124, 0}, {125, 0}};
 
         auto  location = *m_geo_grid.begin();
-        auto& dayPools = location->RefPools(Id::Daycare);
+        auto& dayPools = location->GetContent()->RefPools(Id::Daycare);
 
         ASSERT_EQ(dayPools.size(), 5 * m_ppday);
         for (auto& pool : dayPools) {
@@ -158,9 +158,9 @@ TEST_F(DaycarePopulatorTest, TwoLocationTest)
         m_gg_config.param.participation_daycare = 1;
         m_daycare_populator.Apply(m_geo_grid, m_gg_config);
 
-        auto& dayPools1 = brasschaat->RefPools(Id::Daycare);
-        auto& dayPools2 = schoten->RefPools(Id::Daycare);
-        auto& dayPools3 = kortrijk->RefPools(Id::Daycare);
+        auto& dayPools1 = brasschaat->GetContent()->RefPools(Id::Daycare);
+        auto& dayPools2 = schoten->GetContent()->RefPools(Id::Daycare);
+        auto& dayPools3 = kortrijk->GetContent()->RefPools(Id::Daycare);
 
         // Check number of pools corresponding to 3 K12Schools per location.
         EXPECT_EQ(dayPools1.size(), 3 * m_ppday);

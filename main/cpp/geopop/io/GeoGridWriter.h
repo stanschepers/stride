@@ -20,20 +20,25 @@
 
 namespace geopop {
 
+template <class LocationContent>
 class GeoGrid;
 
+class Epidemiologic;
+
 /**
- * An interface for writing the GeoGrid to a file, can be implemented with multiple file types.
- * Protobuf and json are currently implemented.
+ * An interface for writing the GeoGrid.
  */
 class GeoGridWriter
 {
 public:
-        /// Construct the Writer.
+        /// Default construtor
+        GeoGridWriter() = default;
+
+        /// Virtual destrutor to make class abstract.
         virtual ~GeoGridWriter() = default;
 
-        /// Write the GeoGrid to ostream.
-        virtual void Write(GeoGrid& geoGrid, std::ostream& stream) = 0;
+        /// Write the GeoGrid.
+        virtual void Write(GeoGrid<Epidemiologic>& geoGrid) = 0;
 };
 
 } // namespace geopop

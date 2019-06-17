@@ -17,12 +17,13 @@
 
 namespace geopop {
 
-    using namespace std;
-    using namespace stride;
-    using namespace stride::ContactType;
+using namespace std;
+using namespace stride;
+using namespace stride::ContactType;
 
-template<>
-void Generator<stride::ContactType::Id::PreSchool>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig)
+template <>
+void Generator<stride::ContactType::Id::PreSchool>::Apply(GeoGrid<Epidemiologic>& geoGrid,
+                                                          const GeoGridConfig&    ggConfig)
 {
         // 1. given the number of persons of school age, calculate number of schools; schools
         //    have 500 pupils on average
@@ -36,7 +37,7 @@ void Generator<stride::ContactType::Id::PreSchool>::Apply(GeoGrid& geoGrid, cons
 
         vector<double> weights;
         for (const auto& loc : geoGrid) {
-                weights.push_back(loc->GetPopFraction() * loc->GetYoungOldFraction());
+                weights.push_back(loc->GetContent()->GetPopFraction() * loc->GetContent()->GetYoungOldFraction());
         }
 
         if (weights.empty()) {
