@@ -20,7 +20,10 @@
 
 namespace geopop {
 
+template <class LocationContent>
 class GeoGrid;
+
+class Epidemiologic;
 
 /**
  * An interface for writing the GeoGrid.
@@ -35,7 +38,7 @@ public:
         virtual ~GeoGridWriter() = default;
 
         /// Write the GeoGrid.
-        virtual void Write(GeoGrid& geoGrid) = 0;
+        virtual void Write(GeoGrid<Epidemiologic>& geoGrid) = 0;
 };
 
 } // namespace geopop

@@ -28,7 +28,10 @@ class Population;
 
 namespace geopop {
 
+template <class LocationContent>
 class GeoGrid;
+
+class Epidemiologic;
 
 /**
  * An abstract base class for creating a GeoGrid that was read from a file, can be implemented
@@ -54,7 +57,7 @@ public:
 
 protected:
         /// Add the commutes that were found to their respective Locations symmetrically.
-        void AddCommutes(GeoGrid& geoGrid);
+        void AddCommutes(GeoGrid<Epidemiologic>& geoGrid);
 
 protected:
         ///< Store the persons (id->person) that were found while loping over the ContactPools.

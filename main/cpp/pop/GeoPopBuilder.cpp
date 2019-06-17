@@ -22,6 +22,7 @@
 #include "GeoPopBuilder.h"
 
 #include "geopop/GeoGrid.h"
+#include "geopop/Epidemiologic.h"
 #include "geopop/GeoGridConfig.h"
 #include "geopop/generators/Generator.h"
 #include "geopop/io/ReaderFactory.h"
@@ -119,7 +120,7 @@ shared_ptr<Population> GeoPopBuilder::Build(shared_ptr<Population> pop)
         return pop;
 }
 
-void GeoPopBuilder::MakeLocations(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig, const string& citiesFileName,
+void GeoPopBuilder::MakeLocations(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& geoGridConfig, const string& citiesFileName,
                                   const string& commutingFileName)
 {
         const auto locationsReader = ReaderFactory::CreateLocationsReader(citiesFileName);
@@ -130,13 +131,13 @@ void GeoPopBuilder::MakeLocations(GeoGrid& geoGrid, const GeoGridConfig& geoGrid
                 commutesReader->FillGeoGrid(geoGrid);
         }
 
-        for (const shared_ptr<Location>& loc : geoGrid) {
-                loc->SetPopCount(geoGridConfig.param.pop_size);
+        for (const shared_ptr<Location<Epidemiologic>>& loc : geoGrid) {
+            loc->GetContent()->SetPopCount(geoGridConfig.param.pop_size);
         }
         geoGrid.Finalize();
 }
 
-void GeoPopBuilder::MakePools(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig)
+void GeoPopBuilder::MakePools(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& geoGridConfig)
 {
         DaycareGenerator(m_rn_man, m_stride_logger).Apply(geoGrid, geoGridConfig);
 
@@ -155,7 +156,7 @@ void GeoPopBuilder::MakePools(GeoGrid& geoGrid, const GeoGridConfig& geoGridConf
         HouseholdGenerator(m_rn_man, m_stride_logger).Apply(geoGrid, geoGridConfig);
 }
 
-void GeoPopBuilder::MakePersons(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig)
+void GeoPopBuilder::MakePersons(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& geoGridConfig)
 {
         // NOTICE: WorkplacePopulator logic requires that CollegePopulator
         // has been executed prior to WorkplacePopulator.

@@ -115,7 +115,7 @@ void RunTest(const string& testTag, tuple<ptree, unsigned int, double> d, unsign
                 auto& geoGrid       = pop->RefGeoGrid();
                 auto  infectedCount = 0U;
                 for (const auto& loc : geoGrid) {
-                        infectedCount += loc->GetInfectedCount();
+                        infectedCount += loc->GetContent()->GetInfectedCount();
                 }
                 EXPECT_EQ(res, infectedCount);
         }

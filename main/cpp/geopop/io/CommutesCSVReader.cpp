@@ -29,7 +29,7 @@ using namespace stride::util;
 
 CommutesCSVReader::CommutesCSVReader(unique_ptr<istream> inputStream) : CommutesReader(move(inputStream)) {}
 
-void CommutesCSVReader::FillGeoGrid(GeoGrid& geoGrid) const
+void CommutesCSVReader::FillGeoGrid(GeoGrid<Epidemiologic>& geoGrid) const
 {
         // flanders_commuting format
         // kolom: stad van vertrek (headers = id)
@@ -69,8 +69,8 @@ void CommutesCSVReader::FillGeoGrid(GeoGrid& geoGrid) const
                                                         " to " + to_string(locTo->GetID()) +
                                                         " is invalid (0 <= proportion <= 1)");
                                 }
-                                locFrom->AddOutgoingCommute(locTo, proportion);
-                                locTo->AddIncomingCommute(locFrom, proportion);
+                            locFrom->GetContent()->AddOutgoingCommute(locTo->GetContent(), proportion);
+                            locTo->GetContent()->AddIncomingCommute(locFrom->GetContent(), proportion);
                         }
                 }
                 rowIndex++;

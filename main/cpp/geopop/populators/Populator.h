@@ -25,9 +25,15 @@
 
 namespace geopop {
 
+template <class LocationContent>
 class GeoGrid;
+
 class GeoGridConfig;
+
+template <class Content>
 class Location;
+
+class Epidemiologic;
 
 /**
  * Populator uses geo & pop data to populate ContactPools in the GeoGrid.
@@ -48,7 +54,7 @@ public:
         ~Populator() = default;
 
         /// Populate the ContactPools type ID. This is a placeholder for the specializations.
-        void Apply(GeoGrid&, const GeoGridConfig&) {};
+        void Apply(GeoGrid<Epidemiologic>&, const GeoGridConfig&) {};
 
 protected:
         stride::util::RnMan&            m_rn_man; ///< RnManager used by populators.
@@ -59,28 +65,28 @@ protected:
 // Declare specializations (implemntation in separate .cpp files).
 // ---------------------------------------------------------------
 template<>
-void Populator<stride::ContactType::Id::Daycare>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig);
+void Populator<stride::ContactType::Id::Daycare>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig);
 
 template<>
-void Populator<stride::ContactType::Id::PreSchool>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig);
+void Populator<stride::ContactType::Id::PreSchool>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig);
 
 template<>
-void Populator<stride::ContactType::Id::K12School>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig);
+void Populator<stride::ContactType::Id::K12School>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig);
 
 template<>
-void Populator<stride::ContactType::Id::College>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig);
+void Populator<stride::ContactType::Id::College>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig);
 
 template<>
-void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig);
+void Populator<stride::ContactType::Id::Workplace>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig);
 
 template<>
-void Populator<stride::ContactType::Id::Household>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig);
+void Populator<stride::ContactType::Id::Household>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig);
 
 template<>
-void Populator<stride::ContactType::Id::PrimaryCommunity>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig);
+void Populator<stride::ContactType::Id::PrimaryCommunity>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig);
 
 template<>
-void Populator<stride::ContactType::Id::SecondaryCommunity>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig);
+void Populator<stride::ContactType::Id::SecondaryCommunity>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig);
 
 // ---------------------------------------------------------------
 // Shorthand definitions.

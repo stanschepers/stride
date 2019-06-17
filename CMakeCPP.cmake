@@ -202,4 +202,33 @@ if(NOT OPENMP_FOUND)
     include_directories(${CMAKE_HOME_DIRECTORY}/main/resources/lib/domp/include)
 endif()
 
+#----------------------------------------------------------------------------
+# Qt5
+#----------------------------------------------------------------------------
+if (NOT STRIDE_FORCE_NO_QT5)
+    set(TEMP CMAKE_PREFIX_PATH)
+    if(APPLE)
+        set(CMAKE_PREFIX_PATH /usr/local/opt/qt5)
+    else()
+        set(CMAKE_PREFIX_PATH $ENV{HOME}/Qt/5.12.2/gcc_64)
+        set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_RPATH}:$ENV{HOME}/Qt/5.12.2/gcc_64/lib")
+    endif()
+    find_package(Qt5Core REQUIRED)
+    find_package(Qt5Widgets REQUIRED)
+    find_package(Qt5Quick REQUIRED)
+    set(CMAKE_PREFIX_PATH TEMP)
+
+    if(Qt5Core_FOUND AND Qt5Widgets_FOUND AND Qt5Quick_FOUND)
+        set(QT5_FOUND TRUE)
+        set(QT5_LIBRARIES ${Qt5Core_LIBRARIES})
+        set(QT5_LIBRARIES ${QT5_LIBRARIES} ${Qt5Widgets_LIBRARIES})
+        set(QT5_LIBRARIES ${QT5_LIBRARIES} ${Qt5Quick_LIBRARIES})
+        set(QT5_INCLUDE_DIRS ${Qt5Core_INCLUDE_DIRS})
+        set(QT5_INCLUDE_DIRS ${QT5_INCLUDE_DIRS} ${Qt5Widgets_INCLUDE_DIRS})
+        set(QT5_INCLUDE_DIRS ${QT5_INCLUDE_DIRS} ${Qt5Quick_INCLUDE_DIRS})
+    else()
+        set(QT5_FOUND FALSE)
+    endif()
+endif()
+
 #############################################################################

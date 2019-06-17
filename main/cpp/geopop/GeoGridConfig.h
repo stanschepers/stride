@@ -27,6 +27,7 @@
 
 namespace geopop {
 
+template <class LocationContent>
 class GeoGrid;
 
 

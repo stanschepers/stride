@@ -28,7 +28,7 @@ using namespace stride;
 using namespace stride::ContactType;
 
 template<>
-void Generator<stride::ContactType::Id::SecondaryCommunity>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig)
+void Generator<stride::ContactType::Id::SecondaryCommunity>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig)
 {
         // 1. calculate number of communities
         // 2. assign communities to a location using a discrete distribution reflecting
@@ -40,7 +40,7 @@ void Generator<stride::ContactType::Id::SecondaryCommunity>::Apply(GeoGrid& geoG
 
         vector<double> weights;
         for (const auto& loc : geoGrid) {
-                const auto weight = static_cast<double>(loc->GetPopCount()) / static_cast<double>(popCount);
+                const auto weight = static_cast<double>(loc->GetContent()->GetPopCount()) / static_cast<double>(popCount);
                 AssertThrow(weight >= 0 && weight <= 1 && !std::isnan(weight),
                             "SecondaryCommunityGenerator> Invalid weight: " + to_string(weight), m_logger);
                 weights.push_back(weight);

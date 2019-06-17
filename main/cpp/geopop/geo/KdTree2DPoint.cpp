@@ -16,6 +16,7 @@
 #include "KdTree2DPoint.h"
 
 #include "geopop/Location.h"
+#include "geopop/Epidemiologic.h"
 
 #include <boost/geometry/algorithms/distance.hpp>
 #include <boost/geometry/algorithms/within.hpp>
@@ -27,7 +28,7 @@ namespace geopop {
 
 namespace geogrid_detail {
 
-KdTree2DPoint::KdTree2DPoint(const Location* loc) : m_pt(loc->GetCoordinate()), m_location(loc) {}
+KdTree2DPoint::KdTree2DPoint(const Location<void>* loc) : m_pt(loc->GetCoordinate()), m_location(loc) {}
 
 bool KdTree2DPoint::operator==(const KdTree2DPoint& other) const { return Distance(other) < 0.001; }
 

@@ -22,11 +22,11 @@ using namespace stride;
 using namespace stride::ContactType;
 
 template<>
-void Generator<stride::ContactType::Id::Household>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig)
+void Generator<stride::ContactType::Id::Household>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig)
 {
         vector<double> weights;
         for (const auto& loc : geoGrid) {
-                weights.push_back(loc->GetPopFraction());
+                weights.push_back(loc->GetContent()->GetPopFraction());
         }
 
         if (weights.empty()) {

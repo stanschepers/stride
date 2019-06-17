@@ -34,6 +34,7 @@ message( STATUS "------> STRIDE_FORCE_NO_BOOST       : ${STRIDE_FORCE_NO_BOOST}"
 message( STATUS "------> STRIDE_FORCE_NO_OPENMP      : ${STRIDE_FORCE_NO_OPENMP}"   )
 message( STATUS "------> STRIDE_FORCE_NO_PROTOC      : ${STRIDE_FORCE_NO_PROTOC}"   )
 message( STATUS "------> STRIDE_FORCE_NO_PYTHON      : ${STRIDE_FORCE_NO_PYTHON}"   )
+message( STATUS "------> STRIDE_FORCE_NO_QT5         : ${STRIDE_FORCE_NO_QT5}"      )
 #
 message( STATUS " " )
 message( STATUS "------> CMAKE_SYSTEM                : ${CMAKE_SYSTEM} "           )
@@ -111,6 +112,15 @@ if( NOT STRIDE_FORCE_NO_PYTHON )
 	message( STATUS "------> Python_INCLUDE_DIRS         : ${PYTHON_INCLUDE_DIRS} "       )
 	message( STATUS "------> Python_LIBRARIES            : ${PYTHON_LIBRARIES} "          )
 	message( STATUS "------> Python version              : ${PYTHONLIBS_VERSION_STRING} " )
+endif()
+#
+message( STATUS "" )
+if( NOT STRIDE_FORCE_NO_QT5 )
+	message( STATUS "" )
+	message( STATUS "------> QT5_FOUND                   : ${QT5_FOUND} "          )
+	message( STATUS "------> QT5_INCLUDE_DIRS            : ${QT5_INCLUDE_DIRS} "       )
+	message( STATUS "------> QT5_LIBRARIES               : ${QT5_LIBRARIES} "          )
+	message( STATUS "------> QT5 version                 : ${Qt5Core_VERSION} "     )
 endif()
 #
 message( STATUS "" )

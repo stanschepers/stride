@@ -25,7 +25,8 @@ using namespace stride;
 using namespace stride::ContactType;
 
 template <>
-void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig)
+void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid<Epidemiologic>& geoGrid,
+                                                          const GeoGridConfig&    ggConfig)
 {
         // 1. active people count and the commuting people count are given
         // 2. count the workplaces, either by poolparams or if given: the work distribution
@@ -61,8 +62,9 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, cons
         vector<double> weights;
         for (const auto& loc : geoGrid) {
                 const double ActivePeopleCount =
-                    (loc->GetPopCount() + loc->GetIncomingCommuteCount(ggConfig.param.fraction_workplace_commuters) -
-                     loc->GetOutgoingCommuteCount(ggConfig.param.fraction_workplace_commuters) *
+                    (loc->GetContent()->GetPopCount() +
+                     loc->GetContent()->GetIncomingCommuteCount(ggConfig.param.fraction_workplace_commuters) -
+                     loc->GetContent()->GetOutgoingCommuteCount(ggConfig.param.fraction_workplace_commuters) *
                          ggConfig.param.participation_workplace);
 
                 const double weight = ActivePeopleCount / EmployeeCount;
@@ -116,7 +118,7 @@ void Generator<stride::ContactType::Id::Workplace>::AddPools(Location& loc, stri
 {
         auto&      poolSys = pop->RefPoolSys();
         const auto p       = poolSys.CreateContactPool(stride::ContactType::Id::Workplace, limit);
-        loc.RegisterPool<stride::ContactType::Id::Workplace>(p);
+        loc.GetContent()->RegisterPool<stride::ContactType::Id::Workplace>(p);
 }
 #pragma clang diagnostic pop
 

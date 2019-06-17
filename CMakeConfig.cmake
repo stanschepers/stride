@@ -60,7 +60,9 @@ set(STRIDE_FORCE_NO_PYTHON FALSE
 set(STRIDE_FORCE_NO_PROTOC FALSE
 	CACHE BOOL "Do NOT use installed protobuf compiler even if available.")
 set(STRIDE_FORCE_NO_HDF5 FALSE
-		CACHE BOOL "Do NOT use installed HDF5 library even if available.")
+        CACHE BOOL "Do NOT use installed HDF5 library even if available.")
+set(STRIDE_FORCE_NO_QT5 FALSE
+	CACHE BOOL "Do NOT make Qt5 executable.")
 
 #============================================================================
 # Additional CMake modules:

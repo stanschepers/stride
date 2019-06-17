@@ -14,7 +14,12 @@
  *  Copyright 2019, Jan Broeckhove.
  */
 
+#include <vector>
+#include <string>
+
 namespace stride {
+
+inline std::vector<std::string> ageBrackets = {"Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"};
 
 /**
  * AgeBrackets that determine participation in type of ContactPool.

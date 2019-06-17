@@ -19,23 +19,23 @@
 # Protocol Buffer sources.
 #============================================================================
 if(Protobuf_FOUND)
-    protobuf_generate_cpp(PROTO_SRC PROTO_HDR geopop/io/proto/geogrid.proto)
+    protobuf_generate_cpp(PROTO_SRC PROTO_HDR geopop/io/proto/geogrid.proto geopop/io/proto/epioutput.proto)
 else()
-    set(PROTO_SRC ${Protobuf_PBS_DIR}/geogrid.pb.cc)
-    set(PROTO_HDR ${Protobuf_PBS_DIR}/geogrid.pb.h)
+    set(PROTO_SRC ${Protobuf_PBS_DIR}/geogrid.pb.cc ${Protobuf_PBS_DIR}/epioutput.pb.cc)
+    set(PROTO_HDR ${Protobuf_PBS_DIR}/geogrid.pb.h ${Protobuf_PBS_DIR}/epioutput.pb.h)
 endif()
 
 set_source_files_properties(
-    geopop/io/GeoGridProtoReader.cpp
-    geopop/io/GeoGridProtoWriter.cpp
-    PROPERTIES
-    COMPILE_FLAGS "-I${Protobuf_PBS_DIR}"
+        geopop/io/GeoGridProtoReader.cpp
+        geopop/io/GeoGridProtoWriter.cpp
+        PROPERTIES
+        COMPILE_FLAGS "-I${Protobuf_PBS_DIR}"
 )
 
 set_property(SOURCE ${PROTO_HDR} ${PROTO_SRC}
-    PROPERTY
-    COMPILE_FLAGS "-Wno-all -Wno-effc++ -Wno-extra -Wno-pedantic"
-)
+        PROPERTY
+        COMPILE_FLAGS "-Wno-all -Wno-effc++ -Wno-extra -Wno-pedantic"
+        )
 
 #============================================================================
 # Sources.
@@ -63,11 +63,12 @@ set(STRIDE_SRC
     execs/SimController.cpp
     execs/StanController.cpp
     #---
-    #geopop/ContactCenter.cpp
     geopop/Coordinate.h
-    geopop/GeoGrid.cpp
+    geopop/GeoGrid.h
     geopop/GeoGridConfig.cpp
-    geopop/Location.cpp
+    geopop/Location.h
+    geopop/Epidemiologic.cpp
+    geopop/Epidemiologic.h
     #---
     geopop/geo/GeoGridKdTree.cpp
     geopop/geo/KdTree2DPoint.cpp
@@ -81,6 +82,15 @@ set(STRIDE_SRC
     geopop/generators/DaycareGenerator.cpp
     geopop/generators/PreSchoolGenerator.cpp
     #---
+    geopop/io/EpiOutputWriter.h
+    geopop/io/EpiOutputWriterFactory.cpp
+    geopop/io/EpiOutputWriterFactory.h
+    geopop/io/EpiOutputHDF5Writer.cpp
+    geopop/io/EpiOutputHDF5Writer.h
+    geopop/io/EpiOutputJSONWriter.cpp
+    geopop/io/EpiOutputJSONWriter.h
+    geopop/io/EpiOutputProtoWriter.cpp
+    geopop/io/EpiOutputProtoWriter.h
     geopop/io/LocationsCSVReader.cpp
     geopop/io/CommutesCSVReader.cpp
     geopop/io/GeoGridJSONReader.cpp
@@ -89,14 +99,12 @@ set(STRIDE_SRC
     geopop/io/GeoGridHDF5Reader.h
     geopop/io/GeoGridHDF5Writer.cpp
     geopop/io/GeoGridHDF5Writer.h
-    geopop/io/GeoGridHDF5Utils.cpp
-    geopop/io/GeoGridHDF5Utils.h
+    geopop/io/H5Utils.cpp
+    geopop/io/H5Utils.h
     geopop/io/GeoGridProtoReader.cpp
     geopop/io/GeoGridProtoReader.h
     geopop/io/GeoGridProtoWriter.cpp
     geopop/io/GeoGridProtoWriter.h
-    geopop/io/GeoGridReader.cpp
-    geopop/io/GeoGridReader.h
     geopop/io/GeoGridStreamReader.cpp
     geopop/io/GeoGridStreamReader.h
     geopop/io/GeoGridFileReader.cpp
@@ -121,7 +129,7 @@ set(STRIDE_SRC
     geopop/populators/DaycarePopulator.cpp
     geopop/populators/PreSchoolPopulator.cpp
     #---
-    ${PROTO_HEADER}
+    ${PROTO_HDR}
     ${PROTO_SRC}
     #---
     viewers/InfectedFile.cpp
@@ -158,15 +166,36 @@ set(STRIDE_SRC
     viewers/InfectedViewer.cpp
     viewers/PersonsFileViewer.cpp
     viewers/SummaryFileViewer.cpp
+    viewers/EpiOutputViewer.cpp
 )
+
+if(NOT STRIDE_FORCE_NO_QT5)
+    #    include(visualization/CMakeLists.txt)
+    set(VIS_SRC
+            visualization/source/EpiOutput.h
+            visualization/source/EpiOutputReader.cpp
+            visualization/source/EpiOutputReader.h
+            visualization/source/EpiOutputReaderFactory.cpp
+            visualization/source/EpiOutputReaderFactory.h
+            visualization/source/EpiOutputJSONReader.cpp
+            visualization/source/EpiOutputJSONReader.h
+            visualization/source/EpiOutputProtoReader.cpp
+            visualization/source/EpiOutputProtoReader.h
+            visualization/source/EpiOutputHDF5Reader.cpp
+            visualization/source/EpiOutputHDF5Reader.h
+            )
+else()
+    set(VIS_SRC "")
+endif()
 
 #============================================================================
 # Build the Stride library.
 #============================================================================
-add_library(libstride STATIC ${STRIDE_SRC})
+add_library(libstride STATIC ${STRIDE_SRC} ${VIS_SRC})
 target_compile_definitions(libstride PUBLIC "-DSTRIDE_GIT_HASH=${STRIDE_WC_REVISION_HASH}")
 target_compile_definitions(libstride PUBLIC "-DPROCCOUNT=${PROCCOUNT}")
 target_link_libraries(libstride PRIVATE ${LIBS})
+
 if(Protobuf_FOUND)
     target_link_libraries(libstride PUBLIC ${Protobuf_LIBRARIES})
 else()
@@ -178,11 +207,18 @@ else()
     target_link_libraries(libstride PRIVATE hdf5-static hdf5_hl-static hdf5_cpp-static hdf5_hl_cpp-static)
 endif()
 set_target_properties(libstride
-    PROPERTIES
+        PROPERTIES
         POSITION_INDEPENDENT_CODE ON
         PREFIX ""
-)
+        )
 include(CheckIPOSupported)
+
+if(NOT STRIDE_FORCE_NO_QT5)
+    #    target_link_libraries(libstride PUBLIC libstridevisualization)
+    #    target_link_libraries(libstridevisualization PUBLIC libstride)
+    #    target_link_libraries(strideVisualization PUBLIC libstride)
+    add_subdirectory(visualization)
+endif()
 
 # For future use: inter procedural optimization
 # Disabled for now because of issues with gcc 8.1.0 on travis.

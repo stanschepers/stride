@@ -24,7 +24,7 @@ Compilation and installation of the software creates the following files and dir
     \item Configuration files (xml and json) in directory \texttt{<install\_dir>/config}
       	\begin{compactitem}
 			\item $run\_default.xml$: default configuration file for Stride to perform a Nassau simulation.
-        		\item $run\_generate\_default.xml$: default configuration file for Stride to first generate a population and geographical grid and then perform a Nassau Simulation.
+        		\item $run\_generate\_default.xml$: default configuration file for Stride to first generate a population and geographical grid, then perform a Nassau Simulation and at the same time create epi-output.
        		\item $run\_import\_default.xml$: default configuration file for Stride to first import a population and geographical grid and then perform a Nassau Simulation.
         		\item $run\_miami\_weekend.xml$: configuration file for Stride to perform Miami simulations with uniform social contact rates in the community clusters.
 			\item $wrapper\_miami.json$: default configuration file for the wrapper\_sim binary to perform Miami simulations with different attack rates.
@@ -137,5 +137,29 @@ For example: \\ \\
 \centerline{\texttt{./bin/wrapper\_sim --config ./config/wrapper\_default.json}} \\ \\
 will start the simulator with each configuration in the file.
 It is important to note the input notation: values given inside brackets can be extended (e.g., ``rng\_seeds''=[1,2,3]) but single values can only be replaced by one other value (e.g., ``days'': 100).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Visualizer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Running the visualization}	
+
+From the workspace directory, the visualization can be started  using the command \mbox{``\texttt{./bin/visualization/strideVisualization}''}. One argument has to be passed to the visualization on the command line, which is the epi-output file that will be read and represented. For example: \\ \\
+\centerline{\texttt{./bin/visualization/strideVisualization \textless EPI-OUTPUT\textgreater}} \\ \\
+In the GUI you can select an area to get the epi-output of that area, selections can be made with the right mouse button.
+
+\begin{center}
+	\begin{figure}[hbtp!]
+		\makebox[\textwidth][c]{\includegraphics[width=1.2\textwidth]{GUI1.png}}%
+		\caption{GUI part 1} \label{gui1}
+	\end{figure}
+\end{center}
+
+\begin{center}
+	\begin{figure}[hbtp!]
+		\makebox[\textwidth][c]{\includegraphics[width=1.2\textwidth]{GUI2.png}}%
+		\caption{GUI part 2} \label{gui2}
+	\end{figure}
+\end{center}
 
 

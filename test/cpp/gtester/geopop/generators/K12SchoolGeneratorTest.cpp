@@ -46,7 +46,7 @@ protected:
         K12SchoolGenerator     m_k12school_generator;
         GeoGridConfig          m_gg_config;
         shared_ptr<Population> m_pop;
-        GeoGrid                m_geo_grid;
+        GeoGrid<Epidemiologic>                m_geo_grid;
         unsigned int           m_ppk12 = m_gg_config.pools[Id::K12School];
 };
 
@@ -56,12 +56,12 @@ TEST_F(K12SchoolGeneratorTest, OneLocationTest)
         m_gg_config.param.pop_size             = 10000;
         m_gg_config.info.popcount_k12school = 2000;
 
-        auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
+        auto loc1 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Antwerpen", 2500);
         m_geo_grid.AddLocation(loc1);
 
         m_k12school_generator.Apply(m_geo_grid, m_gg_config);
 
-        const auto& poolsOfLoc1 = loc1->CRefPools(Id::K12School);
+        const auto& poolsOfLoc1 = loc1->GetContent()->CRefPools(Id::K12School);
         EXPECT_EQ(poolsOfLoc1.size(), 4 * m_ppk12);
 }
 
@@ -98,11 +98,11 @@ TEST_F(K12SchoolGeneratorTest, FiveLocationsTest)
         m_gg_config.param.pop_size          = 37542 * 100;
         m_gg_config.info.popcount_k12school = 750840;
 
-        auto loc1 = make_shared<Location>(1, 4, Coordinate(0, 0), "Antwerpen", 10150 * 100);
-        auto loc2 = make_shared<Location>(1, 4, Coordinate(0, 0), "Vlaams-Brabant", 10040 * 100);
-        auto loc3 = make_shared<Location>(1, 4, Coordinate(0, 0), "Henegouwen", 7460 * 100);
-        auto loc4 = make_shared<Location>(1, 4, Coordinate(0, 0), "Limburg", 3269 * 100);
-        auto loc5 = make_shared<Location>(1, 4, Coordinate(0, 0), "Luxemburg", 4123 * 100);
+        auto loc1 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Antwerpen", 10150 * 100);
+        auto loc2 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Vlaams-Brabant", 10040 * 100);
+        auto loc3 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Henegouwen", 7460 * 100);
+        auto loc4 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Limburg", 3269 * 100);
+        auto loc5 = make_shared<Location<Epidemiologic>>(1, 4, Coordinate(0, 0), "Luxemburg", 4123 * 100);
 
         m_geo_grid.AddLocation(loc1);
         m_geo_grid.AddLocation(loc2);
@@ -111,7 +111,7 @@ TEST_F(K12SchoolGeneratorTest, FiveLocationsTest)
         m_geo_grid.AddLocation(loc5);
 
         for (const auto& loc : m_geo_grid) {
-                loc->SetPopFraction(static_cast<double>(loc->GetPopCount()) /
+            loc->GetContent()->SetPopFraction(static_cast<double>(loc->GetContent()->GetPopCount()) /
                                     static_cast<double>(m_gg_config.param.pop_size));
         }
 
@@ -119,7 +119,7 @@ TEST_F(K12SchoolGeneratorTest, FiveLocationsTest)
 
         array<unsigned int, 5> sizes{444, 416, 330, 133, 179};
         for (auto i = 0U; i < sizes.size(); i++) {
-                EXPECT_EQ(sizes[i] * m_ppk12, m_geo_grid[i]->CRefPools(Id::K12School).size());
+                EXPECT_EQ(sizes[i] * m_ppk12, m_geo_grid[i]->GetContent()->CRefPools(Id::K12School).size());
         }
 }
 

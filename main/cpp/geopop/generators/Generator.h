@@ -27,8 +27,10 @@
 
 namespace geopop {
 
+template <class LocationContent>
 class GeoGrid;
 
+class Epidemiologic;
 
 /**
  * Generator uses geo & pop data to construct ContactPools in the GeoGrid.
@@ -49,19 +51,18 @@ public:
         ~Generator() = default;
 
         /// Generate ContactPools for ContactType::Id as sepcified by data in GeoGridConfig.
-        void Apply(GeoGrid&, const GeoGridConfig&) {}
+        void Apply(GeoGrid<Epidemiologic>&, const GeoGridConfig&) {}
 
         /// Create a given number ContactPools in the GeoGrid.
-        void AddPools(Location& loc, stride::Population* pop, const GeoGridConfig& ggConfig,
+        void AddPools(Location<Epidemiologic>& loc, stride::Population* pop, const GeoGridConfig& ggConfig,
                  unsigned int limit = std::numeric_limits<unsigned int>::infinity())
         {
                 auto& poolSys = pop->RefPoolSys();
                 for (auto i = 0U; i < ggConfig.pools[ID]; ++i) {
                         const auto p = poolSys.CreateContactPool(ID, limit);
-                        loc.RegisterPool<ID>(p);
+                        loc.GetContent()->RegisterPool<ID>(p);
                 }
         }
-
 
 protected:
         stride::util::RnMan             m_rn_man; ///< RnManager used by generators.
@@ -74,32 +75,32 @@ protected:
 
 // Apply functions
 template<>
-void Generator<stride::ContactType::Id::Daycare>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig);
+void Generator<stride::ContactType::Id::Daycare>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig);
 
 template<>
-void Generator<stride::ContactType::Id::PreSchool>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig);
+void Generator<stride::ContactType::Id::PreSchool>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig);
 
 template<>
-void Generator<stride::ContactType::Id::K12School>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig);
+void Generator<stride::ContactType::Id::K12School>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig);
 
 template<>
-void Generator<stride::ContactType::Id::College>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig);
+void Generator<stride::ContactType::Id::College>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig);
 
 template<>
-void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig);
+void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig);
 
 template<>
-void Generator<stride::ContactType::Id::Household>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig);
+void Generator<stride::ContactType::Id::Household>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig);
 
 template<>
-void Generator<stride::ContactType::Id::PrimaryCommunity>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig);
+void Generator<stride::ContactType::Id::PrimaryCommunity>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig);
 
 template<>
-void Generator<stride::ContactType::Id::SecondaryCommunity>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig);
+void Generator<stride::ContactType::Id::SecondaryCommunity>::Apply(GeoGrid<Epidemiologic>& geoGrid, const GeoGridConfig& ggConfig);
 
 // AddPools functions
 template<>
-void Generator<stride::ContactType::Id::Workplace>::AddPools(Location& loc, stride::Population* pop, const GeoGridConfig& ggConfig, unsigned int limit);
+void Generator<stride::ContactType::Id::Workplace>::AddPools(Location<Epidemiologic>& loc, stride::Population* pop, const GeoGridConfig& ggConfig, unsigned int limit);
 
 // ---------------------------------------------------------------
 // Shorthand definitions.

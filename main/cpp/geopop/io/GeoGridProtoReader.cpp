@@ -58,7 +58,7 @@ void GeoGridProtoReader::Read()
         m_commutes.clear();
 }
 
-void GeoGridProtoReader::ParseContactPools(shared_ptr<Location>                        loc,
+void GeoGridProtoReader::ParseContactPools(shared_ptr<Location<Epidemiologic>>                        loc,
                                            const proto::GeoGrid_Location_ContactPools& protoContactPools)
 {
         const auto protoType = protoContactPools.type();
@@ -86,13 +86,13 @@ Coordinate GeoGridProtoReader::ParseCoordinate(const proto::GeoGrid_Location_Coo
         return {protoCoordinate.longitude(), protoCoordinate.latitude()};
 }
 
-void GeoGridProtoReader::ParseContactPool(shared_ptr<Location>                                    loc,
+void GeoGridProtoReader::ParseContactPool(shared_ptr<Location<Epidemiologic>>                                    loc,
                                           const proto::GeoGrid_Location_ContactPools_ContactPool& protoContactPool,
                                           Id                                                      type)
 {
         // Don't use the id of the ContactPool but the let the Population create an id
         auto result = m_population->RefPoolSys().CreateContactPool(type);
-        loc->RefPools(type).emplace_back(result);
+    loc->GetContent()->RefPools(type).emplace_back(result);
 
         for (int idx = 0; idx < protoContactPool.people_size(); idx++) {
                 const auto person_id = static_cast<unsigned int>(protoContactPool.people(idx));
@@ -103,7 +103,7 @@ void GeoGridProtoReader::ParseContactPool(shared_ptr<Location>                  
         }
 }
 
-shared_ptr<Location> GeoGridProtoReader::ParseLocation(const proto::GeoGrid_Location& protoLocation)
+shared_ptr<Location<Epidemiologic>> GeoGridProtoReader::ParseLocation(const proto::GeoGrid_Location& protoLocation)
 {
         const auto  id         = protoLocation.id();
         const auto& name       = protoLocation.name();
@@ -111,7 +111,7 @@ shared_ptr<Location> GeoGridProtoReader::ParseLocation(const proto::GeoGrid_Loca
         const auto  population = protoLocation.population();
         const auto& coordinate = ParseCoordinate(protoLocation.coordinate());
 
-        auto loc = make_shared<Location>(id, province, coordinate, name, population);
+        auto loc = make_shared<Location<Epidemiologic>>(id, province, coordinate, name, population);
 
         for (int idx = 0; idx < protoLocation.contactpools_size(); idx++) {
                 const proto::GeoGrid_Location_ContactPools& protoPools = protoLocation.contactpools(idx);

@@ -38,7 +38,7 @@ GeoGridProtoWriter::GeoGridProtoWriter(shared_ptr<ostream> stream)
 {
 }
 
-void GeoGridProtoWriter::Write(GeoGrid& geoGrid)
+void GeoGridProtoWriter::Write(GeoGrid<Epidemiologic>& geoGrid)
 {
         GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -94,17 +94,17 @@ void GeoGridProtoWriter::WriteCoordinate(const Coordinate&                   coo
         protoCoordinate->set_latitude(boost::geometry::get<1>(coordinate));
 }
 
-void GeoGridProtoWriter::WriteLocation(Location& location, proto::GeoGrid_Location* protoLocation)
+void GeoGridProtoWriter::WriteLocation(Location<Epidemiologic>& location, proto::GeoGrid_Location* protoLocation)
 {
         protoLocation->set_id(location.GetID());
         protoLocation->set_name(location.GetName());
         protoLocation->set_province(location.GetProvince());
-        protoLocation->set_population(location.GetPopCount());
+        protoLocation->set_population(location.GetContent()->GetPopCount());
         auto coordinate = new proto::GeoGrid_Location_Coordinate();
         WriteCoordinate(location.GetCoordinate(), coordinate);
         protoLocation->set_allocated_coordinate(coordinate);
 
-        auto commutes = location.CRefOutgoingCommutes();
+        auto commutes = location.GetContent()->CRefOutgoingCommutes();
         for (auto commute_pair : commutes) {
                 auto commute = protoLocation->add_commutes();
                 commute->set_to(commute_pair.first->GetID());
@@ -112,7 +112,7 @@ void GeoGridProtoWriter::WriteLocation(Location& location, proto::GeoGrid_Locati
         }
 
         for (Id typ : IdList) {
-                WriteContactPools(typ, location.RefPools(typ), protoLocation->add_contactpools());
+                WriteContactPools(typ, location.GetContent()->RefPools(typ), protoLocation->add_contactpools());
         }
 }
 
