@@ -1,7 +1,6 @@
-<map id="GeoGridStreamWriter.h" name="GeoGridStreamWriter.h">
-<area shape="rect" id="node2" href="$d5/df1/a00206.html" title="GeoGridJSONWriter.h" alt="" coords="122,80,275,107"/>
-<area shape="rect" id="node5" href="$dd/dc1/a00212.html" title="GeoGridProtoWriter.h" alt="" coords="300,80,455,107"/>
-<area shape="rect" id="node3" href="$d5/d13/a00205.html" title="GeoGridJSONWriter.cpp" alt="" coords="5,155,173,181"/>
-<area shape="rect" id="node4" href="$dd/d52/a00221.html" title="GeoGridWriterFactory.cpp" alt="" coords="197,155,379,181"/>
-<area shape="rect" id="node6" href="$dd/ded/a00211.html" title="GeoGridProtoWriter.cpp" alt="" coords="403,155,573,181"/>
+<map id="epioutput.pb.h" name="epioutput.pb.h">
+<area shape="rect" id="node2" href="$d5/d0b/a00220.html" title="EpiOutputProtoWriter.h" alt="" coords="118,80,285,107"/>
+<area shape="rect" id="node5" href="$df/d24/a00217.html" title="EpiOutputProtoReader.cpp" alt="" coords="309,80,499,107"/>
+<area shape="rect" id="node3" href="$dd/df3/a00219.html" title="EpiOutputProtoWriter.cpp" alt="" coords="5,155,187,181"/>
+<area shape="rect" id="node4" href="$de/dc2/a00228.html" title="EpiOutputWriterFactory.cpp" alt="" coords="211,155,403,181"/>
 </map>

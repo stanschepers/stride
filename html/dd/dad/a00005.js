@@ -1,6 +1,7 @@
 var a00005 =
 [
-    [ "Collector", "dd/dad/a00005.html#a51d50ff423abe3d4c568a01db3df5f98", null ],
-    [ "operator()", "dd/dad/a00005.html#a4cd2016d1cb6004c813d34d9141d3edc", null ],
-    [ "m_ins", "dd/dad/a00005.html#a006d956ca7ce672e9c9fe853402f69c7", null ]
+    [ "AABBox", "dd/dad/a00005.html#ae31383690b1a91ad8f5708b5ebcfdb56", null ],
+    [ "AABBox", "dd/dad/a00005.html#ab5a3a282d314e0856fd67950f68442cd", null ],
+    [ "lower", "dd/dad/a00005.html#a28aa15fc4d556f895e09befcdabf5017", null ],
+    [ "upper", "dd/dad/a00005.html#a9536df35bbe6719b45619dc7031ee17e", null ]
 ];

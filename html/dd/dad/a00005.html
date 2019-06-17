@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: geopop::Collector&lt; InsertIter, T &gt; Class Template Reference</title>
+<title>Stride Reference Manual: geopop::AABBox&lt; P &gt; Struct Template Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -108,90 +108,62 @@ $(document).ready(function(){initNavTree('dd/dad/a00005.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="../../d0/db6/a00692.html">List of all members</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="../../d0/da2/a00796.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">geopop::Collector&lt; InsertIter, T &gt; Class Template Reference</div>  </div>
+<div class="title">geopop::AABBox&lt; P &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Aggregates into a vector that must should remain alive for the usage duration of the <a class="el" href="../../dd/dad/a00005.html" title="Aggregates into a vector that must should remain alive for the usage duration of the Collector...">Collector</a>.  
+<p>AxisAlignedBoundingBox (hyperrectangle defined by lower and upper bound for every dimension).  
  <a href="../../dd/dad/a00005.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../da/d15/a00188_source.html">GeoAggregator.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../d2/d34/a00156_source.html">AABBox.h</a>&gt;</code></p>
 <div class="dynheader">
-Collaboration diagram for geopop::Collector&lt; InsertIter, T &gt;:</div>
+Collaboration diagram for geopop::AABBox&lt; P &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d3/dd2/a00693.gif" border="0" usemap="#geopop_1_1Collector_3_01InsertIter_00_01T_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="geopop_1_1Collector_3_01InsertIter_00_01T_01_4_coll__map" id="geopop_1_1Collector_3_01InsertIter_00_01T_01_4_coll__map">
+<div class="center"><img src="../../da/db8/a00797.gif" border="0" usemap="#geopop_1_1AABBox_3_01P_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="geopop_1_1AABBox_3_01P_01_4_coll__map" id="geopop_1_1AABBox_3_01P_01_4_coll__map">
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a51d50ff423abe3d4c568a01db3df5f98"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#a51d50ff423abe3d4c568a01db3df5f98">Collector</a> (const InsertIter &amp;ins)</td></tr>
-<tr class="separator:a51d50ff423abe3d4c568a01db3df5f98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cd2016d1cb6004c813d34d9141d3edc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#a4cd2016d1cb6004c813d34d9141d3edc">operator()</a> (T elem)</td></tr>
-<tr class="memdesc:a4cd2016d1cb6004c813d34d9141d3edc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collect a new element.  <a href="#a4cd2016d1cb6004c813d34d9141d3edc">More...</a><br /></td></tr>
-<tr class="separator:a4cd2016d1cb6004c813d34d9141d3edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae31383690b1a91ad8f5708b5ebcfdb56"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#ae31383690b1a91ad8f5708b5ebcfdb56">AABBox</a> ()</td></tr>
+<tr class="separator:ae31383690b1a91ad8f5708b5ebcfdb56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5a3a282d314e0856fd67950f68442cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#ab5a3a282d314e0856fd67950f68442cd">AABBox</a> (P l, P u)</td></tr>
+<tr class="separator:ab5a3a282d314e0856fd67950f68442cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a006d956ca7ce672e9c9fe853402f69c7"><td class="memItemLeft" align="right" valign="top">InsertIter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#a006d956ca7ce672e9c9fe853402f69c7">m_ins</a></td></tr>
-<tr class="memdesc:a006d956ca7ce672e9c9fe853402f69c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The (back_)insert_iterator that receives new elements.  <a href="#a006d956ca7ce672e9c9fe853402f69c7">More...</a><br /></td></tr>
-<tr class="separator:a006d956ca7ce672e9c9fe853402f69c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a28aa15fc4d556f895e09befcdabf5017"><td class="memItemLeft" align="right" valign="top">P&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#a28aa15fc4d556f895e09befcdabf5017">lower</a></td></tr>
+<tr class="memdesc:a28aa15fc4d556f895e09befcdabf5017"><td class="mdescLeft">&#160;</td><td class="mdescRight">The lower bound for every dimension.  <a href="#a28aa15fc4d556f895e09befcdabf5017">More...</a><br /></td></tr>
+<tr class="separator:a28aa15fc4d556f895e09befcdabf5017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9536df35bbe6719b45619dc7031ee17e"><td class="memItemLeft" align="right" valign="top">P&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#a9536df35bbe6719b45619dc7031ee17e">upper</a></td></tr>
+<tr class="memdesc:a9536df35bbe6719b45619dc7031ee17e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The upper bound for every dimension.  <a href="#a9536df35bbe6719b45619dc7031ee17e">More...</a><br /></td></tr>
+<tr class="separator:a9536df35bbe6719b45619dc7031ee17e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename InsertIter, typename T&gt;<br />
-class geopop::Collector&lt; InsertIter, T &gt;</h3>
+<div class="textblock"><h3>template&lt;typename P&gt;<br />
+struct geopop::AABBox&lt; P &gt;</h3>
 
-<p>Aggregates into a vector that must should remain alive for the usage duration of the <a class="el" href="../../dd/dad/a00005.html" title="Aggregates into a vector that must should remain alive for the usage duration of the Collector...">Collector</a>. </p>
+<p>AxisAlignedBoundingBox (hyperrectangle defined by lower and upper bound for every dimension). </p>
 
-<p>Definition at line <a class="el" href="../../da/d15/a00188_source.html#l00045">45</a> of file <a class="el" href="../../da/d15/a00188_source.html">GeoAggregator.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d2/d34/a00156_source.html#l00024">24</a> of file <a class="el" href="../../d2/d34/a00156_source.html">AABBox.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a51d50ff423abe3d4c568a01db3df5f98"></a>
+<a class="anchor" id="ae31383690b1a91ad8f5708b5ebcfdb56"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename InsertIter, typename T&gt; </div>
+template&lt;typename P&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../dd/dad/a00005.html">geopop::Collector</a>&lt; InsertIter, T &gt;::<a class="el" href="../../dd/dad/a00005.html">Collector</a> </td>
+          <td class="memname"><a class="el" href="../../dd/dad/a00005.html">geopop::AABBox</a>&lt; P &gt;::<a class="el" href="../../dd/dad/a00005.html">AABBox</a> </td>
           <td>(</td>
-          <td class="paramtype">const InsertIter &amp;&#160;</td>
-          <td class="paramname"><em>ins</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../da/d15/a00188_source.html#l00048">48</a> of file <a class="el" href="../../da/d15/a00188_source.html">GeoAggregator.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a4cd2016d1cb6004c813d34d9141d3edc"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename InsertIter, typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="../../dd/dad/a00005.html">geopop::Collector</a>&lt; InsertIter, T &gt;::operator() </td>
-          <td>(</td>
-          <td class="paramtype">T&#160;</td>
-          <td class="paramname"><em>elem</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -202,53 +174,99 @@ template&lt;typename InsertIter, typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Collect a new element. </p>
-
-<p>Definition at line <a class="el" href="../../da/d15/a00188_source.html#l00051">51</a> of file <a class="el" href="../../da/d15/a00188_source.html">GeoAggregator.h</a>.</p>
-
-<p>References <a class="el" href="../../da/d15/a00188_source.html#l00054">geopop::Collector&lt; InsertIter, T &gt;::m_ins</a>.</p>
+<p>Definition at line <a class="el" href="../../d2/d34/a00156_source.html#l00026">26</a> of file <a class="el" href="../../d2/d34/a00156_source.html">AABBox.h</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a006d956ca7ce672e9c9fe853402f69c7"></a>
+<a class="anchor" id="ab5a3a282d314e0856fd67950f68442cd"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename InsertIter, typename T&gt; </div>
+template&lt;typename P&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">InsertIter <a class="el" href="../../dd/dad/a00005.html">geopop::Collector</a>&lt; InsertIter, T &gt;::m_ins</td>
+          <td class="memname"><a class="el" href="../../dd/dad/a00005.html">geopop::AABBox</a>&lt; P &gt;::<a class="el" href="../../dd/dad/a00005.html">AABBox</a> </td>
+          <td>(</td>
+          <td class="paramtype">P&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">P&#160;</td>
+          <td class="paramname"><em>u</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>The (back_)insert_iterator that receives new elements. </p>
-
-<p>Definition at line <a class="el" href="../../da/d15/a00188_source.html#l00054">54</a> of file <a class="el" href="../../da/d15/a00188_source.html">GeoAggregator.h</a>.</p>
-
-<p>Referenced by <a class="el" href="../../da/d15/a00188_source.html#l00051">geopop::Collector&lt; InsertIter, T &gt;::operator()()</a>.</p>
+<p>Definition at line <a class="el" href="../../d2/d34/a00156_source.html#l00027">27</a> of file <a class="el" href="../../d2/d34/a00156_source.html">AABBox.h</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../da/d15/a00188_source.html">GeoAggregator.h</a></li>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a28aa15fc4d556f895e09befcdabf5017"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename P&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">P <a class="el" href="../../dd/dad/a00005.html">geopop::AABBox</a>&lt; P &gt;::lower</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The lower bound for every dimension. </p>
+
+<p>Definition at line <a class="el" href="../../d2/d34/a00156_source.html#l00027">27</a> of file <a class="el" href="../../d2/d34/a00156_source.html">AABBox.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/d0f/a00308_source.html#l00076">geopop::KdTree&lt; P &gt;::Apply()</a>, <a class="el" href="../../d7/d40/a00236_source.html#l00204">geopop::PolygonPolicy::GetBoundingBox()</a>, and <a class="el" href="../../d1/de3/a00306_source.html#l00035">geopop::geogrid_detail::KdTree2DPoint::InBox()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9536df35bbe6719b45619dc7031ee17e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename P&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">P <a class="el" href="../../dd/dad/a00005.html">geopop::AABBox</a>&lt; P &gt;::upper</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The upper bound for every dimension. </p>
+
+<p>Definition at line <a class="el" href="../../d2/d34/a00156_source.html#l00029">29</a> of file <a class="el" href="../../d2/d34/a00156_source.html">AABBox.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/d0f/a00308_source.html#l00076">geopop::KdTree&lt; P &gt;::Apply()</a>, <a class="el" href="../../d7/d40/a00236_source.html#l00204">geopop::PolygonPolicy::GetBoundingBox()</a>, and <a class="el" href="../../d1/de3/a00306_source.html#l00035">geopop::geogrid_detail::KdTree2DPoint::InBox()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="../../d2/d34/a00156_source.html">AABBox.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d2/d45/a00342.html">geopop</a></li><li class="navelem"><a class="el" href="../../dd/dad/a00005.html">Collector</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:38 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../da/dbf/a00393.html">geopop</a></li><li class="navelem"><a class="el" href="../../dd/dad/a00005.html">AABBox</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:10 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

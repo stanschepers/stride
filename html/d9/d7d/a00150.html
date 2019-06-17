@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: CommutesCSVReader.h File Reference</title>
+<title>Stride Reference Manual: visualization::EpiOutputHDF5Reader Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -48,8 +48,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="../../annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="../../files.html"><span>Files</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li><a href="../../files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -70,8 +70,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="../../files.html"><span>File&#160;List</span></a></li>
-      <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="../../annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="../../classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="../../inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -105,53 +107,344 @@ $(document).ready(function(){initNavTree('d9/d7d/a00150.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="../../d7/dd6/a01167.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">CommutesCSVReader.h File Reference</div>  </div>
+<div class="title">visualization::EpiOutputHDF5Reader Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../dd/db2/a00151_source.html">CommutesReader.h</a>&quot;</code><br />
-<code>#include &lt;memory&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for CommutesCSVReader.h:</div>
+
+<p>An implementation of the <a class="el" href="../../da/d01/a00153.html" title="An abstract base class for creating a GeoGrid with the epi-output that was read from a file...">EpiOutputReader</a> using HDF5.  
+ <a href="../../d9/d7d/a00150.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../da/de7/a00210_source.html">EpiOutputHDF5Reader.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for visualization::EpiOutputHDF5Reader:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d9/dad/a00394.gif" border="0" usemap="#CommutesCSVReader_8h" alt=""/></div>
-<map name="CommutesCSVReader_8h" id="CommutesCSVReader_8h">
-<area shape="rect" id="node2" href="../../dd/db2/a00151.html" title="CommutesReader.h" alt="" coords="5,80,153,107"/>
+<div class="center"><img src="../../d4/da6/a01168.gif" border="0" usemap="#visualization_1_1EpiOutputHDF5Reader_inherit__map" alt="Inheritance graph"/></div>
+<map name="visualization_1_1EpiOutputHDF5Reader_inherit__map" id="visualization_1_1EpiOutputHDF5Reader_inherit__map">
+<area shape="rect" id="node2" href="../../da/d01/a00153.html" title="An abstract base class for creating a GeoGrid with the epi&#45;output that was read from a file..." alt="" coords="15,5,185,156"/>
 </map>
 </div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
+<div class="dynheader">
+Collaboration diagram for visualization::EpiOutputHDF5Reader:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../db/dbc/a00395.gif" border="0" usemap="#CommutesCSVReader_8hdep" alt=""/></div>
-<map name="CommutesCSVReader_8hdep" id="CommutesCSVReader_8hdep">
-<area shape="rect" id="node2" href="../../da/d1e/a00149.html" title="CommutesCSVReader.cpp" alt="" coords="5,80,196,107"/>
-<area shape="rect" id="node3" href="../../d6/d7f/a00287.html" title="ReaderFactory.cpp" alt="" coords="220,80,357,107"/>
+<div class="center"><img src="../../d7/daf/a01169.gif" border="0" usemap="#visualization_1_1EpiOutputHDF5Reader_coll__map" alt="Collaboration graph"/></div>
+<map name="visualization_1_1EpiOutputHDF5Reader_coll__map" id="visualization_1_1EpiOutputHDF5Reader_coll__map">
+<area shape="rect" id="node2" href="../../da/d01/a00153.html" title="An abstract base class for creating a GeoGrid with the epi&#45;output that was read from a file..." alt="" coords="1268,3541,1439,3692"/>
+<area shape="rect" id="node3" href="../../d0/d0b/a00004.html" title="{geopop::GeoGrid\&lt; EpiOutput \&gt;\n||+ GeoGrid()\l+ GeoGrid()\l+ operator=()\l+ AddLocation()\l+ Finalize()\l+ GetById()\l+ GetPopulation()\l+ LocationsInRadius()\l+ GetNearbyPools()\l+ LocationsInBox()\land 11 more...\l&#45; CheckFinalized()\l}" alt="" coords="1242,3240,1465,3479"/>
+<area shape="rect" id="node4" href="../../d5/db6/a00042.html" title="{geopop::KdTree\&lt; geogrid\l_detail::KdTree2DPoint \&gt;\n||+ KdTree()\l+ Apply()\l+ Apply()\l+ Contains()\l+ Empty()\l+ GetHeight()\l+ Insert()\l+ Query()\l+ Size()\l+ Build()\l&#45; Construct()\l}" alt="" coords="1235,2013,1418,2251"/>
+<area shape="rect" id="node38" href="../../d0/d0b/a00004.html" title="{geopop::GeoGrid\&lt; geopop\l::geopop::Epidemiologic \&gt;\n||+ GeoGrid()\l+ GeoGrid()\l+ operator=()\l+ AddLocation()\l+ Finalize()\l+ GetById()\l+ GetPopulation()\l+ LocationsInRadius()\l+ GetNearbyPools()\l+ LocationsInBox()\land 11 more...\l&#45; CheckFinalized()\l}" alt="" coords="1695,2321,1889,2575"/>
+<area shape="rect" id="node45" href="../../d0/d0b/a00004.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac..." alt="" coords="1358,2924,1557,3177"/>
+<area shape="rect" id="node6" href="../../dd/d32/a00041.html" title="{geopop::kd::Node\&lt; geogrid\l_detail::KdTree2DPoint, 0 \&gt;\n||+ Node()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="927,1447,1126,1612"/>
+<area shape="rect" id="node7" href="../../d7/d46/a00002.html" title="{geopop::kd::BaseNode\l\&lt; geogrid_detail::KdTree2DPoint \&gt;\n||+ ~BaseNode()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="905,956,1148,1121"/>
+<area shape="rect" id="node8" href="../../d7/d46/a00002.html" title="A base class for all instantiations of a Node with D. " alt="" coords="512,429,717,579"/>
+<area shape="rect" id="node17" href="../../dd/d32/a00041.html" title="A node in the KdTree (parameter P: the type of point, parameter D: dimension this node splits on)..." alt="" coords="387,737,578,888"/>
+<area shape="rect" id="node23" href="../../dd/d32/a00041.html" title="{geopop::kd::Node\&lt; P, 0 \&gt;\n||+ Node()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="259,1182,448,1333"/>
+<area shape="rect" id="node9" href="../../de/d11/a00021.html" title="KdTree for some more information on methods. " alt="" coords="1111,1145,1279,1369"/>
+<area shape="rect" id="node11" href="../../d6/d42/a00043.html" title="{geopop::Location\&lt; void \&gt;\n||+ Location()\l+ Location()\l+ operator==()\l+ GetCoordinate()\l+ GetID()\l+ GetName()\l+ GetProvince()\l+ SetCoordinate()\l+ GetContent()\l+ get()\l}" alt="" coords="1085,708,1273,917"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="934,465,1021,543"/>
+<area shape="rect" id="node21" href="../../d5/db6/a00042.html" title="A k&#45;d tree: a k&#45;dimensional generalization of binary search trees This data structure allows for effi..." alt="" coords="947,1704,1106,1928"/>
+<area shape="rect" id="node25" href="../../d9/da5/a00075.html" title="{stride::util::SegmentedVector\l\&lt; Person \&gt;\n||+ SegmentedVector()\l+ SegmentedVector()\l+ SegmentedVector()\l+ SegmentedVector()\l+ SegmentedVector()\l+ operator=()\l+ operator=()\l+ ~SegmentedVector()\l+ at()\l+ at()\land 23 more...\l&#45; get_chunk()\l}" alt="" coords="2085,2321,2294,2575"/>
+<area shape="rect" id="node29" href="../../d9/da5/a00075.html" title="Container that stores objects &quot;almost contiguously&quot; (in a chain of blocks) and guarantees that pointe..." alt="" coords="2110,2005,2319,2259"/>
+<area shape="rect" id="node19" title="STL class. " alt="" coords="545,153,700,230"/>
+<area shape="rect" id="node28" title="STL class. " alt="" coords="1702,1491,1829,1568"/>
+<area shape="rect" id="node33" title="STL class. " alt="" coords="2211,276,2367,368"/>
+<area shape="rect" id="node35" title="STL class. " alt="" coords="2327,153,2542,230"/>
+<area shape="rect" id="node37" title="STL class. " alt="" coords="2562,261,2739,383"/>
+<area shape="rect" id="node43" title="STL class. " alt="" coords="2691,145,2843,237"/>
+<area shape="rect" id="node24" href="../../db/d57/a00112.html" title="Key Data structure: container for (a) all individuals in the population (b) the ContactPoolSys wchich..." alt="" coords="1811,2637,1971,2861"/>
+<area shape="rect" id="node27" href="../../d9/d00/a00784.html" title="{Chunk *\n||}" alt="" coords="2143,1491,2217,1568"/>
+<area shape="rect" id="node31" href="../../db/ddf/a00088.html" title="ContactPoolSys contains for each of the type of pools (Household, K12School, ...) a vector of with al..." alt="" coords="2349,1182,2515,1333"/>
+<area shape="rect" id="node32" href="../../d3/d8b/a00059.html" title="{stride::ContactType\l::IdSubscriptArray\&lt;\l unsigned int \&gt;\n||+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ operator[]()\l+ operator[]()\l+ at()\l+ at()\l}" alt="" coords="2241,708,2393,917"/>
+<area shape="rect" id="node34" href="../../d3/d8b/a00059.html" title="An std::array modified to enable subscripting with the constact pool type indentifiers. " alt="" coords="2449,407,2621,601"/>
+<area shape="rect" id="node36" href="../../d3/d8b/a00059.html" title="{stride::ContactType\l::IdSubscriptArray\&lt;\l util::stride::util::\lSegmentedVector\&lt; stride\l::ContactPool \&gt; \&gt;\n||+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ operator[]()\l+ operator[]()\l+ at()\l+ at()\l}" alt="" coords="2417,693,2607,932"/>
 </map>
 </div>
-</div>
-<p><a href="../../d9/d7d/a00150_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/a00006.html">geopop::CommutesCSVReader</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a Reader that fills a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> with the commute info from CSV file.  <a href="../../de/d21/a00006.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aff769979d2bf062b88aee7cb92105829"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7d/a00150.html#aff769979d2bf062b88aee7cb92105829">EpiOutputHDF5Reader</a> (const std::string &amp;filename, <a class="el" href="../../d0/d0b/a00004.html">geopop::GeoGrid</a>&lt; <a class="el" href="../../d1/d7c/a00003.html">EpiOutput</a> &gt; *epiOutput)</td></tr>
+<tr class="memdesc:aff769979d2bf062b88aee7cb92105829"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the <a class="el" href="../../d9/d7d/a00150.html" title="An implementation of the EpiOutputReader using HDF5. ">EpiOutputHDF5Reader</a> with the istream which contains the HDF5.  <a href="#aff769979d2bf062b88aee7cb92105829">More...</a><br /></td></tr>
+<tr class="separator:aff769979d2bf062b88aee7cb92105829"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a510d1ea943ed2e1fa99f4da646315978"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7d/a00150.html#a510d1ea943ed2e1fa99f4da646315978">EpiOutputHDF5Reader</a> (const <a class="el" href="../../d9/d7d/a00150.html">EpiOutputHDF5Reader</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a510d1ea943ed2e1fa99f4da646315978"><td class="mdescLeft">&#160;</td><td class="mdescRight">No copy constructor.  <a href="#a510d1ea943ed2e1fa99f4da646315978">More...</a><br /></td></tr>
+<tr class="separator:a510d1ea943ed2e1fa99f4da646315978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85b4986e3ed30021e90443aea04b2674"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d7d/a00150.html">EpiOutputHDF5Reader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7d/a00150.html#a85b4986e3ed30021e90443aea04b2674">operator=</a> (const <a class="el" href="../../d9/d7d/a00150.html">EpiOutputHDF5Reader</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a85b4986e3ed30021e90443aea04b2674"><td class="mdescLeft">&#160;</td><td class="mdescRight">No copy assignement.  <a href="#a85b4986e3ed30021e90443aea04b2674">More...</a><br /></td></tr>
+<tr class="separator:a85b4986e3ed30021e90443aea04b2674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a623e3d2f17b4c3ca2052f32f8a5ee422"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7d/a00150.html#a623e3d2f17b4c3ca2052f32f8a5ee422">Read</a> () override</td></tr>
+<tr class="memdesc:a623e3d2f17b4c3ca2052f32f8a5ee422"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actually perform the read and return the <a class="el" href="../../d1/d7c/a00003.html" title="Epi-output for use within the visualization, contains epi-output of location. ">EpiOutput</a>.  <a href="#a623e3d2f17b4c3ca2052f32f8a5ee422">More...</a><br /></td></tr>
+<tr class="separator:a623e3d2f17b4c3ca2052f32f8a5ee422"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a00153"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00153')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../da/d01/a00153.html">visualization::EpiOutputReader</a></td></tr>
+<tr class="memitem:a200d9e6842db47a7113cb30302d70566 inherit pub_methods_a00153"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/a00153.html#a200d9e6842db47a7113cb30302d70566">EpiOutputReader</a> (<a class="el" href="../../d0/d0b/a00004.html">geopop::GeoGrid</a>&lt; <a class="el" href="../../d1/d7c/a00003.html">EpiOutput</a> &gt; *epiOutput)</td></tr>
+<tr class="memdesc:a200d9e6842db47a7113cb30302d70566 inherit pub_methods_a00153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parametrized constructor.  <a href="#a200d9e6842db47a7113cb30302d70566">More...</a><br /></td></tr>
+<tr class="separator:a200d9e6842db47a7113cb30302d70566 inherit pub_methods_a00153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dcc7814492cd041c81cb05736ba5365 inherit pub_methods_a00153"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/a00153.html#a9dcc7814492cd041c81cb05736ba5365">EpiOutputReader</a> (const <a class="el" href="../../da/d01/a00153.html">EpiOutputReader</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a9dcc7814492cd041c81cb05736ba5365 inherit pub_methods_a00153"><td class="mdescLeft">&#160;</td><td class="mdescRight">No copy constructor.  <a href="#a9dcc7814492cd041c81cb05736ba5365">More...</a><br /></td></tr>
+<tr class="separator:a9dcc7814492cd041c81cb05736ba5365 inherit pub_methods_a00153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61c6303d61d4fb122a5509120a43d533 inherit pub_methods_a00153"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d01/a00153.html">EpiOutputReader</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/a00153.html#a61c6303d61d4fb122a5509120a43d533">operator=</a> (const <a class="el" href="../../da/d01/a00153.html">EpiOutputReader</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a61c6303d61d4fb122a5509120a43d533 inherit pub_methods_a00153"><td class="mdescLeft">&#160;</td><td class="mdescRight">No copy assignement.  <a href="#a61c6303d61d4fb122a5509120a43d533">More...</a><br /></td></tr>
+<tr class="separator:a61c6303d61d4fb122a5509120a43d533 inherit pub_methods_a00153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a489429dd02a7f44ac6e261979e6e72b1 inherit pub_methods_a00153"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/a00153.html#a489429dd02a7f44ac6e261979e6e72b1">~EpiOutputReader</a> ()=default</td></tr>
+<tr class="memdesc:a489429dd02a7f44ac6e261979e6e72b1 inherit pub_methods_a00153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#a489429dd02a7f44ac6e261979e6e72b1">More...</a><br /></td></tr>
+<tr class="separator:a489429dd02a7f44ac6e261979e6e72b1 inherit pub_methods_a00153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:d2/d45/a00342"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/a00342.html">geopop</a></td></tr>
-<tr class="memdesc:d2/d45/a00342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a7d088b3ad88279a56c0c9cb5970aca5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7d/a00150.html#a7d088b3ad88279a56c0c9cb5970aca5e">ReadDay</a> (const H5::Group &amp;day, <a class="el" href="../../d0/d0b/a00004.html">geopop::GeoGrid</a>&lt; <a class="el" href="../../d1/d7c/a00003.html">EpiOutput</a> &gt; &amp;grid)</td></tr>
+<tr class="separator:a7d088b3ad88279a56c0c9cb5970aca5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa7c2aada178c3d863bb443297dc284a8"><td class="memItemLeft" align="right" valign="top">H5::H5File&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d7d/a00150.html#aa7c2aada178c3d863bb443297dc284a8">m_input</a></td></tr>
+<tr class="memdesc:aa7c2aada178c3d863bb443297dc284a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">HDF5 file.  <a href="#aa7c2aada178c3d863bb443297dc284a8">More...</a><br /></td></tr>
+<tr class="separator:aa7c2aada178c3d863bb443297dc284a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_a00153"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00153')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../da/d01/a00153.html">visualization::EpiOutputReader</a></td></tr>
+<tr class="memitem:a47aebe4396832578e36a080814c1332c inherit pro_attribs_a00153"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d0b/a00004.html">geopop::GeoGrid</a>&lt; <a class="el" href="../../d1/d7c/a00003.html">EpiOutput</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/a00153.html#a47aebe4396832578e36a080814c1332c">m_epiOutput</a></td></tr>
+<tr class="memdesc:a47aebe4396832578e36a080814c1332c inherit pro_attribs_a00153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resulting epi-output.  <a href="#a47aebe4396832578e36a080814c1332c">More...</a><br /></td></tr>
+<tr class="separator:a47aebe4396832578e36a080814c1332c inherit pro_attribs_a00153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>An implementation of the <a class="el" href="../../da/d01/a00153.html" title="An abstract base class for creating a GeoGrid with the epi-output that was read from a file...">EpiOutputReader</a> using HDF5. </p>
+<p>This class is used to read a epi-output from a HDF5 file. </p>
+
+<p>Definition at line <a class="el" href="../../da/de7/a00210_source.html#l00031">31</a> of file <a class="el" href="../../da/de7/a00210_source.html">EpiOutputHDF5Reader.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aff769979d2bf062b88aee7cb92105829"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">visualization::EpiOutputHDF5Reader::EpiOutputHDF5Reader </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d0b/a00004.html">geopop::GeoGrid</a>&lt; <a class="el" href="../../d1/d7c/a00003.html">EpiOutput</a> &gt; *&#160;</td>
+          <td class="paramname"><em>epiOutput</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct the <a class="el" href="../../d9/d7d/a00150.html" title="An implementation of the EpiOutputReader using HDF5. ">EpiOutputHDF5Reader</a> with the istream which contains the HDF5. </p>
+
+<p>Definition at line <a class="el" href="../../d3/de5/a00209_source.html#l00033">33</a> of file <a class="el" href="../../d3/de5/a00209_source.html">EpiOutputHDF5Reader.cpp</a>.</p>
+
+<p>References <a class="el" href="../../da/de7/a00210_source.html#l00048">m_input</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a510d1ea943ed2e1fa99f4da646315978"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">visualization::EpiOutputHDF5Reader::EpiOutputHDF5Reader </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d7d/a00150.html">EpiOutputHDF5Reader</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>No copy constructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a85b4986e3ed30021e90443aea04b2674"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d7d/a00150.html">EpiOutputHDF5Reader</a> visualization::EpiOutputHDF5Reader::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d7d/a00150.html">EpiOutputHDF5Reader</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>No copy assignement. </p>
+
+</div>
+</div>
+<a class="anchor" id="a623e3d2f17b4c3ca2052f32f8a5ee422"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::EpiOutputHDF5Reader::Read </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Actually perform the read and return the <a class="el" href="../../d1/d7c/a00003.html" title="Epi-output for use within the visualization, contains epi-output of location. ">EpiOutput</a>. </p>
+
+<p>Implements <a class="el" href="../../da/d01/a00153.html#abc6e85ee05546ffeb71fa1ce1ccdbd65">visualization::EpiOutputReader</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d3/de5/a00209_source.html#l00041">41</a> of file <a class="el" href="../../d3/de5/a00209_source.html">EpiOutputHDF5Reader.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d0/d24/a00222_source.html#l00052">visualization::EpiOutputReader::m_epiOutput</a>, <a class="el" href="../../da/de7/a00210_source.html#l00048">m_input</a>, <a class="el" href="../../d9/dd6/a00272_source.html#l00088">H5Utils::ReadAttribute()</a>, and <a class="el" href="../../d3/de5/a00209_source.html#l00057">ReadDay()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/d7d/a00150_a623e3d2f17b4c3ca2052f32f8a5ee422_cgraph.gif" border="0" usemap="#d9/d7d/a00150_a623e3d2f17b4c3ca2052f32f8a5ee422_cgraph" alt=""/></div>
+<map name="d9/d7d/a00150_a623e3d2f17b4c3ca2052f32f8a5ee422_cgraph" id="d9/d7d/a00150_a623e3d2f17b4c3ca2052f32f8a5ee422_cgraph">
+<area shape="rect" id="node2" href="../../d1/d53/a00399.html#a9ec23e1291e46527f8e1cf4dbb5b01c9" title="H5Utils::ReadAttribute" alt="" coords="470,5,633,32"/>
+<area shape="rect" id="node3" href="../../d9/d7d/a00150.html#a7d088b3ad88279a56c0c9cb5970aca5e" title="visualization::EpiOutput\lHDF5Reader::ReadDay" alt="" coords="224,53,395,94"/>
+<area shape="rect" id="node4" href="../../d0/d0b/a00004.html#afcfee6b560d0031c54a8f93f68821199" title="Adds a location to this GeoGrid. " alt="" coords="443,57,660,84"/>
+<area shape="rect" id="node5" href="../../d1/d53/a00399.html#a55e46626c217357f9e76f0bb91ade2b9" title="H5Utils::GetCompoundType\l\&lt; H5EpiOutput \&gt;" alt="" coords="453,109,650,150"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7d088b3ad88279a56c0c9cb5970aca5e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::EpiOutputHDF5Reader::ReadDay </td>
+          <td>(</td>
+          <td class="paramtype">const H5::Group &amp;&#160;</td>
+          <td class="paramname"><em>day</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d0b/a00004.html">geopop::GeoGrid</a>&lt; <a class="el" href="../../d1/d7c/a00003.html">EpiOutput</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>grid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d3/de5/a00209_source.html#l00057">57</a> of file <a class="el" href="../../d3/de5/a00209_source.html">EpiOutputHDF5Reader.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d4/d08/a00237_source.html#l00041">geopop::GeoGrid&lt; LocationContent &gt;::AddLocation()</a>, <a class="el" href="../../de/d38/a00160_source.html#l00022">stride::ageBrackets</a>, <a class="el" href="../../dd/d86/a00271_source.html#l00058">H5Utils::GetCompoundType&lt; H5EpiOutput &gt;()</a>, <a class="el" href="../../dd/d56/a00274_source.html#l00040">stride::healthStatuses</a>, and <a class="el" href="../../d9/dd6/a00272_source.html#l00088">H5Utils::ReadAttribute()</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d3/de5/a00209_source.html#l00041">Read()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/d7d/a00150_a7d088b3ad88279a56c0c9cb5970aca5e_cgraph.gif" border="0" usemap="#d9/d7d/a00150_a7d088b3ad88279a56c0c9cb5970aca5e_cgraph" alt=""/></div>
+<map name="d9/d7d/a00150_a7d088b3ad88279a56c0c9cb5970aca5e_cgraph" id="d9/d7d/a00150_a7d088b3ad88279a56c0c9cb5970aca5e_cgraph">
+<area shape="rect" id="node2" href="../../d0/d0b/a00004.html#afcfee6b560d0031c54a8f93f68821199" title="Adds a location to this GeoGrid. " alt="" coords="224,5,441,32"/>
+<area shape="rect" id="node3" href="../../d1/d53/a00399.html#a55e46626c217357f9e76f0bb91ade2b9" title="H5Utils::GetCompoundType\l\&lt; H5EpiOutput \&gt;" alt="" coords="234,57,431,98"/>
+<area shape="rect" id="node4" href="../../d1/d53/a00399.html#a9ec23e1291e46527f8e1cf4dbb5b01c9" title="H5Utils::ReadAttribute" alt="" coords="251,123,414,149"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/d7d/a00150_a7d088b3ad88279a56c0c9cb5970aca5e_icgraph.gif" border="0" usemap="#d9/d7d/a00150_a7d088b3ad88279a56c0c9cb5970aca5e_icgraph" alt=""/></div>
+<map name="d9/d7d/a00150_a7d088b3ad88279a56c0c9cb5970aca5e_icgraph" id="d9/d7d/a00150_a7d088b3ad88279a56c0c9cb5970aca5e_icgraph">
+<area shape="rect" id="node2" href="../../d9/d7d/a00150.html#a623e3d2f17b4c3ca2052f32f8a5ee422" title="Actually perform the read and return the EpiOutput. " alt="" coords="224,5,395,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aa7c2aada178c3d863bb443297dc284a8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">H5::H5File visualization::EpiOutputHDF5Reader::m_input</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>HDF5 file. </p>
+
+<p>Definition at line <a class="el" href="../../da/de7/a00210_source.html#l00048">48</a> of file <a class="el" href="../../da/de7/a00210_source.html">EpiOutputHDF5Reader.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d3/de5/a00209_source.html#l00033">EpiOutputHDF5Reader()</a>, and <a class="el" href="../../d3/de5/a00209_source.html#l00041">Read()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="../../da/de7/a00210_source.html">EpiOutputHDF5Reader.h</a></li>
+<li><a class="el" href="../../d3/de5/a00209_source.html">EpiOutputHDF5Reader.cpp</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_c490ff723361adf09283ce460b26e466.html">io</a></li><li class="navelem"><a class="el" href="../../d9/d7d/a00150.html">CommutesCSVReader.h</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:37 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../d3/d29/a00419.html">visualization</a></li><li class="navelem"><a class="el" href="../../d9/d7d/a00150.html">EpiOutputHDF5Reader</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:11 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

@@ -1,8 +1,0 @@
-<map id="geopop::Location::GetOutgoingCommuteCount" name="geopop::Location::GetOutgoingCommuteCount">
-<area shape="rect" id="node2" href="$de/d8c/a00036.html#a03bce2c9b91adf113d2f1f9611ae73da" title="Gets the name. " alt="" coords="275,97,477,124"/>
-<area shape="rect" id="node3" href="$de/d8c/a00036.html#a2303a7a10dd49e03ac0c527f1a16c754" title="Perform a full comparison with the other location. " alt="" coords="525,5,743,32"/>
-<area shape="rect" id="node4" href="$db/db2/a00020.html#a3b4bd0fd7e724b111319db479626aaab" title="geopop::GeoGridHDF5Writer\l::WriteLocation" alt="" coords="533,57,735,98"/>
-<area shape="rect" id="node6" href="$d7/de0/a00022.html#af57d746af60011f0a69e74423027152c" title="Create a JSON object containing all info needed to reconstruct a Location. " alt="" coords="535,122,733,163"/>
-<area shape="rect" id="node7" href="$dc/de2/a00024.html#a926c2d6d9381b1b87ff81fb92f598041" title="Create a ProtoBuf Location containing all the info needed to reconstruct a Location. " alt="" coords="534,187,734,229"/>
-<area shape="rect" id="node5" href="$db/db2/a00020.html#a37c5f82d2b07fc977a794301db1c25d1" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="791,57,992,98"/>
-</map>

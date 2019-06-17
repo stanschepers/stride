@@ -1,4 +1,6 @@
-<map id="DaysOffSchool.h" name="DaysOffSchool.h">
-<area shape="rect" id="node2" href="$d5/da7/a00144.html" title="Header file for the Calendar class. " alt="" coords="289,80,439,107"/>
-<area shape="rect" id="node9" href="$d7/d3f/a00173.html" title="Interface for DaysOff classes. " alt="" coords="462,80,661,107"/>
+<map id="AgeContactProfiles.h" name="AgeContactProfiles.h">
+<area shape="rect" id="node2" href="$de/df3/a00185.html" title="Definition of ContactPool Id Type. " alt="" coords="375,162,487,189"/>
+<area shape="rect" id="node8" href="$d5/d7b/a00286.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="253,80,391,107"/>
+<area shape="rect" id="node13" href="$db/d44/a00162.html" title="Contact profile. " alt="" coords="467,80,667,107"/>
+<area shape="rect" id="node14" href="$de/db9/a00159.html" title="Helpers for age. " alt="" coords="591,162,677,189"/>
 </map>

@@ -1,11 +1,2 @@
-<map id="Generator.h" name="Generator.h">
-<area shape="rect" id="node2" href="$d0/d4a/a00147.html" title="CollegeGenerator.cpp" alt="" coords="5,80,165,107"/>
-<area shape="rect" id="node3" href="$d5/dcb/a00170.html" title="DaycareGenerator.cpp" alt="" coords="190,80,357,107"/>
-<area shape="rect" id="node4" href="$df/d17/a00231.html" title="HouseholdGenerator.cpp" alt="" coords="381,80,563,107"/>
-<area shape="rect" id="node5" href="$d7/d03/a00254.html" title="K12SchoolGenerator.cpp" alt="" coords="587,80,767,107"/>
-<area shape="rect" id="node6" href="$d0/dcd/a00280.html" title="PreSchoolGenerator.cpp" alt="" coords="791,80,969,107"/>
-<area shape="rect" id="node7" href="$dc/dc9/a00282.html" title="PrimaryCommunityGenerator.cpp" alt="" coords="993,80,1229,107"/>
-<area shape="rect" id="node8" href="$db/d7b/a00296.html" title="SecondaryCommunityGenerator.cpp" alt="" coords="1253,80,1507,107"/>
-<area shape="rect" id="node9" href="$d8/df7/a00331.html" title="WorkplaceGenerator.cpp" alt="" coords="1531,80,1709,107"/>
-<area shape="rect" id="node10" href="$dc/d28/a00223.html" title="Initialize populations: implementation. " alt="" coords="1733,80,1875,107"/>
+<map id="CommutesReader.h" name="CommutesReader.h">
 </map>

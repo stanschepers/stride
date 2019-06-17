@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: geopop::CommutesReader Class Reference</title>
+<title>Stride Reference Manual: geopop::Collector&lt; InsertIter, T &gt; Class Template Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -108,74 +108,61 @@ $(document).ready(function(){initNavTree('de/d5e/a00007.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="../../dd/d85/a00702.html">List of all members</a>  </div>
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="../../df/d0e/a00800.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">geopop::CommutesReader Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">geopop::Collector&lt; InsertIter, T &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Create an abstract Reader that fills a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> with the commute info from file.  
+<p>Aggregates into a vector that must should remain alive for the usage duration of the <a class="el" href="../../de/d5e/a00007.html" title="Aggregates into a vector that must should remain alive for the usage duration of the Collector...">Collector</a>.  
  <a href="../../de/d5e/a00007.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../dd/db2/a00151_source.html">CommutesReader.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../d7/d40/a00236_source.html">GeoAggregator.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for geopop::CommutesReader:</div>
+Collaboration diagram for geopop::Collector&lt; InsertIter, T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d8/d86/a00703.gif" border="0" usemap="#geopop_1_1CommutesReader_inherit__map" alt="Inheritance graph"/></div>
-<map name="geopop_1_1CommutesReader_inherit__map" id="geopop_1_1CommutesReader_inherit__map">
-<area shape="rect" id="node2" href="../../de/d21/a00006.html" title="Create a Reader that fills a GeoGrid with the commute info from CSV file. " alt="" coords="5,160,225,252"/>
-</map>
-</div>
-<div class="dynheader">
-Collaboration diagram for geopop::CommutesReader:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d4/d6a/a00704.gif" border="0" usemap="#geopop_1_1CommutesReader_coll__map" alt="Collaboration graph"/></div>
-<map name="geopop_1_1CommutesReader_coll__map" id="geopop_1_1CommutesReader_coll__map">
-<area shape="rect" id="node3" title="STL class. " alt="" coords="40,413,139,491"/>
-<area shape="rect" id="node4" title="STL class. " alt="" coords="20,259,159,351"/>
-<area shape="rect" id="node5" title="STL class. " alt="" coords="5,132,173,209"/>
-<area shape="rect" id="node6" title="STL class. " alt="" coords="36,5,143,83"/>
-<area shape="rect" id="node7" title="STL class. " alt="" coords="163,413,317,491"/>
+<div class="center"><img src="../../d7/d0a/a00801.gif" border="0" usemap="#geopop_1_1Collector_3_01InsertIter_00_01T_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="geopop_1_1Collector_3_01InsertIter_00_01T_01_4_coll__map" id="geopop_1_1Collector_3_01InsertIter_00_01T_01_4_coll__map">
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0dd104614182629344c1103571db7e4c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d5e/a00007.html#a0dd104614182629344c1103571db7e4c">CommutesReader</a> (std::unique_ptr&lt; std::istream &gt; inputStream)</td></tr>
-<tr class="memdesc:a0dd104614182629344c1103571db7e4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the <a class="el" href="../../de/d5e/a00007.html" title="Create an abstract Reader that fills a GeoGrid with the commute info from file. ">CommutesReader</a> with an istream with the file content.  <a href="#a0dd104614182629344c1103571db7e4c">More...</a><br /></td></tr>
-<tr class="separator:a0dd104614182629344c1103571db7e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87275d249311463450de4aa0a8312f28"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d5e/a00007.html#a87275d249311463450de4aa0a8312f28">~CommutesReader</a> ()=default</td></tr>
-<tr class="memdesc:a87275d249311463450de4aa0a8312f28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor needs to be virtual.  <a href="#a87275d249311463450de4aa0a8312f28">More...</a><br /></td></tr>
-<tr class="separator:a87275d249311463450de4aa0a8312f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af234e008eac36ce38d34edecef9cd477"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d5e/a00007.html#af234e008eac36ce38d34edecef9cd477">FillGeoGrid</a> (<a class="el" href="../../d7/dd4/a00013.html">GeoGrid</a> &amp;) const =0</td></tr>
-<tr class="memdesc:af234e008eac36ce38d34edecef9cd477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add commutes onfo to the <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a>.  <a href="#af234e008eac36ce38d34edecef9cd477">More...</a><br /></td></tr>
-<tr class="separator:af234e008eac36ce38d34edecef9cd477"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51d50ff423abe3d4c568a01db3df5f98"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d5e/a00007.html#a51d50ff423abe3d4c568a01db3df5f98">Collector</a> (const InsertIter &amp;ins)</td></tr>
+<tr class="separator:a51d50ff423abe3d4c568a01db3df5f98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cd2016d1cb6004c813d34d9141d3edc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d5e/a00007.html#a4cd2016d1cb6004c813d34d9141d3edc">operator()</a> (T elem)</td></tr>
+<tr class="memdesc:a4cd2016d1cb6004c813d34d9141d3edc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collect a new element.  <a href="#a4cd2016d1cb6004c813d34d9141d3edc">More...</a><br /></td></tr>
+<tr class="separator:a4cd2016d1cb6004c813d34d9141d3edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a045bcd22a463157da9d270ae2ceec8b1"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; std::istream &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d5e/a00007.html#a045bcd22a463157da9d270ae2ceec8b1">m_inputStream</a></td></tr>
-<tr class="memdesc:a045bcd22a463157da9d270ae2ceec8b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The istream with the file content.  <a href="#a045bcd22a463157da9d270ae2ceec8b1">More...</a><br /></td></tr>
-<tr class="separator:a045bcd22a463157da9d270ae2ceec8b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a006d956ca7ce672e9c9fe853402f69c7"><td class="memItemLeft" align="right" valign="top">InsertIter&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d5e/a00007.html#a006d956ca7ce672e9c9fe853402f69c7">m_ins</a></td></tr>
+<tr class="memdesc:a006d956ca7ce672e9c9fe853402f69c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The (back_)insert_iterator that receives new elements.  <a href="#a006d956ca7ce672e9c9fe853402f69c7">More...</a><br /></td></tr>
+<tr class="separator:a006d956ca7ce672e9c9fe853402f69c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Create an abstract Reader that fills a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> with the commute info from file. </p>
-<p>This can be implemented using different input types. Currently CSV is implemented. </p>
+<div class="textblock"><h3>template&lt;typename InsertIter, typename T&gt;<br />
+class geopop::Collector&lt; InsertIter, T &gt;</h3>
 
-<p>Definition at line <a class="el" href="../../dd/db2/a00151_source.html#l00031">31</a> of file <a class="el" href="../../dd/db2/a00151_source.html">CommutesReader.h</a>.</p>
+<p>Aggregates into a vector that must should remain alive for the usage duration of the <a class="el" href="../../de/d5e/a00007.html" title="Aggregates into a vector that must should remain alive for the usage duration of the Collector...">Collector</a>. </p>
+
+<p>Definition at line <a class="el" href="../../d7/d40/a00236_source.html#l00046">46</a> of file <a class="el" href="../../d7/d40/a00236_source.html">GeoAggregator.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a0dd104614182629344c1103571db7e4c"></a>
+<a class="anchor" id="a51d50ff423abe3d4c568a01db3df5f98"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename InsertIter, typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">geopop::CommutesReader::CommutesReader </td>
+          <td class="memname"><a class="el" href="../../de/d5e/a00007.html">geopop::Collector</a>&lt; InsertIter, T &gt;::<a class="el" href="../../de/d5e/a00007.html">Collector</a> </td>
           <td>(</td>
-          <td class="paramtype">std::unique_ptr&lt; std::istream &gt;&#160;</td>
-          <td class="paramname"><em>inputStream</em></td><td>)</td>
+          <td class="paramtype">const InsertIter &amp;&#160;</td>
+          <td class="paramname"><em>ins</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -186,140 +173,82 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct the <a class="el" href="../../de/d5e/a00007.html" title="Create an abstract Reader that fills a GeoGrid with the commute info from file. ">CommutesReader</a> with an istream with the file content. </p>
-
-<p>Definition at line <a class="el" href="../../dd/db2/a00151_source.html#l00035">35</a> of file <a class="el" href="../../dd/db2/a00151_source.html">CommutesReader.h</a>.</p>
-
-<p>References <a class="el" href="../../de/d5e/a00007.html#af234e008eac36ce38d34edecef9cd477">FillGeoGrid()</a>, and <a class="el" href="../../de/d5e/a00007.html#a87275d249311463450de4aa0a8312f28">~CommutesReader()</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../de/d5e/a00007_a0dd104614182629344c1103571db7e4c_cgraph.gif" border="0" usemap="#de/d5e/a00007_a0dd104614182629344c1103571db7e4c_cgraph" alt=""/></div>
-<map name="de/d5e/a00007_a0dd104614182629344c1103571db7e4c_cgraph" id="de/d5e/a00007_a0dd104614182629344c1103571db7e4c_cgraph">
-<area shape="rect" id="node2" href="../../de/d5e/a00007.html#af234e008eac36ce38d34edecef9cd477" title="Add commutes onfo to the GeoGrid. " alt="" coords="247,5,440,47"/>
-<area shape="rect" id="node3" href="../../de/d5e/a00007.html#a87275d249311463450de4aa0a8312f28" title="Default destructor needs to be virtual. " alt="" coords="247,71,440,112"/>
-</map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="../../d7/d40/a00236_source.html#l00049">49</a> of file <a class="el" href="../../d7/d40/a00236_source.html">GeoAggregator.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a87275d249311463450de4aa0a8312f28"></a>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a4cd2016d1cb6004c813d34d9141d3edc"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename InsertIter, typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual geopop::CommutesReader::~CommutesReader </td>
+          <td class="memname">void <a class="el" href="../../de/d5e/a00007.html">geopop::Collector</a>&lt; InsertIter, T &gt;::operator() </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>elem</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Default destructor needs to be virtual. </p>
+<p>Collect a new element. </p>
 
-<p>Referenced by <a class="el" href="../../dd/db2/a00151_source.html#l00035">CommutesReader()</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d40/a00236_source.html#l00052">52</a> of file <a class="el" href="../../d7/d40/a00236_source.html">GeoAggregator.h</a>.</p>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../de/d5e/a00007_a87275d249311463450de4aa0a8312f28_icgraph.gif" border="0" usemap="#de/d5e/a00007_a87275d249311463450de4aa0a8312f28_icgraph" alt=""/></div>
-<map name="de/d5e/a00007_a87275d249311463450de4aa0a8312f28_icgraph" id="de/d5e/a00007_a87275d249311463450de4aa0a8312f28_icgraph">
-<area shape="rect" id="node2" href="../../de/d5e/a00007.html#a0dd104614182629344c1103571db7e4c" title="Construct the CommutesReader with an istream with the file content. " alt="" coords="247,5,440,47"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="af234e008eac36ce38d34edecef9cd477"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void geopop::CommutesReader::FillGeoGrid </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d7/dd4/a00013.html">GeoGrid</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Add commutes onfo to the <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a>. </p>
-
-<p>Implemented in <a class="el" href="../../de/d21/a00006.html#a45fffb45b9c5fb2eb92b6b1fc1f3d88c">geopop::CommutesCSVReader</a>.</p>
-
-<p>Referenced by <a class="el" href="../../dd/db2/a00151_source.html#l00035">CommutesReader()</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../de/d5e/a00007_af234e008eac36ce38d34edecef9cd477_icgraph.gif" border="0" usemap="#de/d5e/a00007_af234e008eac36ce38d34edecef9cd477_icgraph" alt=""/></div>
-<map name="de/d5e/a00007_af234e008eac36ce38d34edecef9cd477_icgraph" id="de/d5e/a00007_af234e008eac36ce38d34edecef9cd477_icgraph">
-<area shape="rect" id="node2" href="../../de/d5e/a00007.html#a0dd104614182629344c1103571db7e4c" title="Construct the CommutesReader with an istream with the file content. " alt="" coords="247,5,440,47"/>
-</map>
-</div>
-</p>
+<p>References <a class="el" href="../../d7/d40/a00236_source.html#l00055">geopop::Collector&lt; InsertIter, T &gt;::m_ins</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a045bcd22a463157da9d270ae2ceec8b1"></a>
+<a class="anchor" id="a006d956ca7ce672e9c9fe853402f69c7"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename InsertIter, typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt;std::istream&gt; geopop::CommutesReader::m_inputStream</td>
+          <td class="memname">InsertIter <a class="el" href="../../de/d5e/a00007.html">geopop::Collector</a>&lt; InsertIter, T &gt;::m_ins</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>The istream with the file content. </p>
+<p>The (back_)insert_iterator that receives new elements. </p>
 
-<p>Definition at line <a class="el" href="../../dd/db2/a00151_source.html#l00044">44</a> of file <a class="el" href="../../dd/db2/a00151_source.html">CommutesReader.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d7/d40/a00236_source.html#l00055">55</a> of file <a class="el" href="../../d7/d40/a00236_source.html">GeoAggregator.h</a>.</p>
 
-<p>Referenced by <a class="el" href="../../da/d1e/a00149_source.html#l00032">geopop::CommutesCSVReader::FillGeoGrid()</a>.</p>
+<p>Referenced by <a class="el" href="../../d7/d40/a00236_source.html#l00052">geopop::Collector&lt; InsertIter, T &gt;::operator()()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../dd/db2/a00151_source.html">CommutesReader.h</a></li>
+<li><a class="el" href="../../d7/d40/a00236_source.html">GeoAggregator.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d2/d45/a00342.html">geopop</a></li><li class="navelem"><a class="el" href="../../de/d5e/a00007.html">CommutesReader</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:38 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../da/dbf/a00393.html">geopop</a></li><li class="navelem"><a class="el" href="../../de/d5e/a00007.html">Collector</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:10 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

@@ -1,7 +1,5 @@
-<map id="geopop::GeoGridWriter" name="geopop::GeoGridWriter">
-<area shape="rect" id="node2" href="$d1/d2b/a00018.html" title="An interface for writing the GeoGrid to a filelocated at inputFilePath, can be implemented with multi..." alt="" coords="13,160,199,296"/>
-<area shape="rect" id="node4" href="$dc/d3c/a00028.html" title="An interface for writing the GeoGrid to an output stream, can be implemented with multiple file types..." alt="" coords="224,160,439,296"/>
-<area shape="rect" id="node3" href="$db/db2/a00020.html" title="An implementation of the GeoGridFileWriter using HDF5 This class is used to write a GeoGrid to an HDF..." alt="" coords="5,344,207,553"/>
-<area shape="rect" id="node5" href="$d7/de0/a00022.html" title="Writes a GeoGrid to a JSON file. " alt="" coords="231,366,429,531"/>
-<area shape="rect" id="node6" href="$dc/de2/a00024.html" title="An implementation of the GeoGridWriter using Protocol Buffers This class is used to write a GeoGrid t..." alt="" coords="453,359,653,539"/>
+<map id="WorkplaceCSVReader.h" name="WorkplaceCSVReader.h">
+<area shape="rect" id="node2" href="$d1/d72/a00204.html" title="DistributionReader.h" alt="" coords="205,80,356,107"/>
+<area shape="rect" id="node3" href="$df/d03/a00348.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="253,155,425,181"/>
+<area shape="rect" id="node4" href="$dc/de3/a00373.html" title="Interface/Implementation for SVIterator. " alt="" coords="143,229,242,256"/>
 </map>

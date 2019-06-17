@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: DaysOffAll.h File Reference</title>
+<title>Stride Reference Manual: CommutesCSVReader.cpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -105,51 +105,64 @@ $(document).ready(function(){initNavTree('d6/dfb/a00172.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">DaysOffAll.h File Reference</div>  </div>
+<div class="title">CommutesCSVReader.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>DaysOffAll class: everybody gets the day off.  
-<a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d7/d3f/a00173_source.html">DaysOffInterface.h</a>&quot;</code><br />
-<code>#include &lt;memory&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d7/d3f/a00173_source.html">CommutesCSVReader.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../da/d2e/a00238_source.html">geopop/GeoGrid.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/d67/a00310_source.html">geopop/Location.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/d6e/a00190_source.html">util/CSV.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/da8/a00230_source.html">util/Exception.h</a>&quot;</code><br />
+<code>#include &lt;map&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for DaysOffAll.h:</div>
+Include dependency graph for CommutesCSVReader.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d4/d53/a00429.gif" border="0" usemap="#DaysOffAll_8h" alt=""/></div>
-<map name="DaysOffAll_8h" id="DaysOffAll_8h">
-<area shape="rect" id="node2" href="../../d7/d3f/a00173.html" title="Interface for DaysOff classes. " alt="" coords="5,80,145,107"/>
+<div class="center"><img src="../../d3/def/a00446.gif" border="0" usemap="#CommutesCSVReader_8cpp" alt=""/></div>
+<map name="CommutesCSVReader_8cpp" id="CommutesCSVReader_8cpp">
+<area shape="rect" id="node2" href="../../d7/d3f/a00173.html" title="CommutesCSVReader.h" alt="" coords="5,229,180,256"/>
+<area shape="rect" id="node6" href="../../da/d2e/a00238.html" title="geopop/GeoGrid.h" alt="" coords="1714,80,1853,107"/>
+<area shape="rect" id="node20" href="../../d1/d67/a00310.html" title="geopop/Location.h" alt="" coords="1236,229,1376,256"/>
+<area shape="rect" id="node40" href="../../d1/da8/a00230.html" title="util/Exception.h" alt="" coords="672,379,791,405"/>
+<area shape="rect" id="node45" href="../../d7/d6e/a00190.html" title="Header file of base class for config that needs to be read from a file. " alt="" coords="2899,304,2982,331"/>
+<area shape="rect" id="node3" href="../../d8/df1/a00174.html" title="CommutesReader.h" alt="" coords="25,304,173,331"/>
+<area shape="rect" id="node7" href="../../de/df3/a00185.html" title="Definition of ContactPool Id Type. " alt="" coords="1657,461,1821,487"/>
+<area shape="rect" id="node13" href="../../d7/d03/a00254.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="375,229,583,256"/>
+<area shape="rect" id="node37" href="../../d8/d64/a00181.html" title="Header for the core ContactPool class. " alt="" coords="2409,379,2571,405"/>
+<area shape="rect" id="node41" href="../../d4/d08/a00237.html" title="GeoGrid.cpp" alt="" coords="1093,155,1194,181"/>
+<area shape="rect" id="node14" href="../../d3/d07/a00305.html" title="KdTree.h" alt="" coords="264,304,340,331"/>
+<area shape="rect" id="node16" href="../../d0/da2/a00307.html" title="KdTree2DPoint.h" alt="" coords="436,304,563,331"/>
+<area shape="rect" id="node17" href="../../da/d15/a00188.html" title="geopop/Coordinate.h" alt="" coords="440,379,596,405"/>
+<area shape="rect" id="node21" href="../../d5/d7b/a00286.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="1326,379,1515,405"/>
+<area shape="rect" id="node26" href="../../d5/df1/a00206.html" title="geopop/Epidemiologic.h" alt="" coords="1540,304,1715,331"/>
+<area shape="rect" id="node27" href="../../df/d03/a00348.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="1692,379,1864,405"/>
+<area shape="rect" id="node36" href="../../d2/d71/a00309.html" title="Location.cpp" alt="" coords="1013,304,1116,331"/>
+<area shape="rect" id="node28" href="../../dc/de3/a00373.html" title="Interface/Implementation for SVIterator. " alt="" coords="1947,461,2046,487"/>
+<area shape="rect" id="node38" href="../../db/dd9/a00179.html" title="Header for the ContactLogMode class. " alt="" coords="2377,461,2571,487"/>
+<area shape="rect" id="node42" href="../../d7/d40/a00236.html" title="geopop/geo/GeoAggregator.h" alt="" coords="658,229,869,256"/>
+<area shape="rect" id="node43" href="../../d4/db5/a00328.html" title="Header file for the core Population class. " alt="" coords="1719,229,1848,256"/>
+<area shape="rect" id="node46" href="../../dd/da2/a00192.html" title="Header file of base class for config that needs to be read from a file. " alt="" coords="2859,379,2943,405"/>
+<area shape="rect" id="node47" href="../../d9/d9b/a00363.html" title="Miscellaneous string utilities. " alt="" coords="2697,461,2819,487"/>
+<area shape="rect" id="node49" href="../../da/d50/a00301.html" title="Interface/Implementation of is_iterator. " alt="" coords="3018,461,3138,487"/>
 </map>
 </div>
 </div>
 <p><a href="../../d6/dfb/a00172_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/a00077.html">stride::DaysOffAll</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">No days off work or school.  <a href="../../d1/d09/a00077.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:d3/dc9/a00355"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dc9/a00355.html">stride</a></td></tr>
-<tr class="memdesc:d3/dc9/a00355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
+<tr class="memitem:da/dbf/a00393"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dbf/a00393.html">geopop</a></td></tr>
+<tr class="memdesc:da/dbf/a00393"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>DaysOffAll class: everybody gets the day off. </p>
-
-<p>Definition in file <a class="el" href="../../d6/dfb/a00172_source.html">DaysOffAll.h</a>.</p>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_479f5232607056a987532404314b00ea.html">calendar</a></li><li class="navelem"><a class="el" href="../../d6/dfb/a00172.html">DaysOffAll.h</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:37 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_c490ff723361adf09283ce460b26e466.html">io</a></li><li class="navelem"><a class="el" href="../../d6/dfb/a00172.html">CommutesCSVReader.cpp</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:10 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

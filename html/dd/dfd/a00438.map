@@ -1,22 +1,4 @@
-<map id="DiseaseSeeder.cpp" name="DiseaseSeeder.cpp">
-<area shape="rect" id="node2" href="$d0/d81/a00180.html" title="Header for the DiseaseSeeder class. " alt="" coords="575,169,705,196"/>
-<area shape="rect" id="node26" href="$d9/d21/a00240.html" title="Header for the Immunizer class. " alt="" coords="729,169,884,196"/>
-<area shape="rect" id="node27" href="$dc/d5d/a00278.html" title="Header file for the core Population class. " alt="" coords="1249,87,1378,114"/>
-<area shape="rect" id="node41" href="$d2/d94/a00184.html" title="Interface for install directory queries. " alt="" coords="2214,169,2314,196"/>
-<area shape="rect" id="node43" href="$d1/dd4/a00267.html" title="Logging (spdlog) utilities. " alt="" coords="2023,87,2131,114"/>
-<area shape="rect" id="node44" href="$d7/df2/a00312.html" title="Miscellaneous string utilities. " alt="" coords="2347,333,2469,360"/>
-<area shape="rect" id="node3" href="$d6/db8/a00158.html" title="Header for the core ContactPool class. " alt="" coords="1101,251,1264,278"/>
-<area shape="rect" id="node13" href="$d6/d82/a00293.html" title="Interface of RnMan. " alt="" coords="610,251,710,278"/>
-<area shape="rect" id="node17" href="$d9/d0d/a00298.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="414,251,586,278"/>
-<area shape="rect" id="node4" href="$d2/d34/a00156.html" title="Header for the ContactLogMode class. " alt="" coords="1981,333,2176,360"/>
-<area shape="rect" id="node6" href="$db/d44/a00162.html" title="Definition of ContactPool Id Type. " alt="" coords="1678,333,1842,360"/>
-<area shape="rect" id="node14" href="$da/dd4/a00291.html" title="Interface of RnPcg. " alt="" coords="1037,333,1110,360"/>
-<area shape="rect" id="node18" href="$de/de9/a00322.html" title="Interface/Implementation for SVIterator. " alt="" coords="139,333,237,360"/>
-<area shape="rect" id="node28" href="$de/d38/a00160.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="1089,169,1276,196"/>
-<area shape="rect" id="node32" href="$d7/d6e/a00190.html" title="geopop/GeoGrid.h" alt="" coords="1775,169,1913,196"/>
-<area shape="rect" id="node38" href="$d9/dd6/a00272.html" title="Header file for the Person class. " alt="" coords="959,169,1065,196"/>
-<area shape="rect" id="node29" href="$da/d2e/a00238.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="939,251,1077,278"/>
-<area shape="rect" id="node33" href="$dc/d31/a00208.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="1563,251,1771,278"/>
-<area shape="rect" id="node34" href="$d9/d39/a00257.html" title="KdTree.h" alt="" coords="937,333,1013,360"/>
-<area shape="rect" id="node39" href="$dc/d55/a00226.html" title="Header for the Health class. " alt="" coords="734,251,863,278"/>
+<map id="Calendar.cpp" name="Calendar.cpp">
+<area shape="rect" id="node2" href="$dc/de6/a00167.html" title="Header file for the Calendar class. " alt="" coords="285,87,376,114"/>
+<area shape="rect" id="node9" href="$d0/d53/a00232.html" title="Interface for install directory queries. " alt="" coords="673,87,773,114"/>
 </map>

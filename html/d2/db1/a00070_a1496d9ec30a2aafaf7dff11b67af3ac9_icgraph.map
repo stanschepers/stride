@@ -1,0 +1,6 @@
+<map id="proto::GeoGrid_Location_ContactPools_ContactPool::people" name="proto::GeoGrid_Location_ContactPools_ContactPool::people">
+<area shape="rect" id="node2" href="$d5/d79/a00030.html#a2dbb3c79e2668dae50173b81cd1acf4c" title="Create a ContactPool based on the provided protobuf ContactPool. " alt="" coords="251,13,459,54"/>
+<area shape="rect" id="node3" href="$d5/d79/a00030.html#af625c084f64f568ffb38d140c517b0cd" title="Create ContactPools based on protobuf ContactPools info. " alt="" coords="507,13,715,54"/>
+<area shape="rect" id="node4" href="$d5/d79/a00030.html#af96217883d9f91252f7056acde4021b5" title="Create a Location based on protobuf Location info. " alt="" coords="763,13,971,54"/>
+<area shape="rect" id="node5" href="$d5/d79/a00030.html#a6f156064f4af6a0905e1959605ac9826" title="Actually perform the read and return the GeoGrid. " alt="" coords="1019,13,1227,54"/>
+</map>

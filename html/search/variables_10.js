@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['to',['to',['../d4/dca/a00048.html#ab993feaeff426a510e801791233ec30a',1,'H5Utils::H5Commute']]],
-  ['to_5f',['to_',['../d1/dea/a00054.html#a9636ac050a3889fc72adaadb0d0e122f',1,'proto::GeoGrid_Location_Commute']]],
-  ['type_5f',['type_',['../d4/d6d/a00055.html#a9706394dcae6b609e5069a0702e9e364',1,'proto::GeoGrid_Location_ContactPools']]],
-  ['type_5farraysize',['Type_ARRAYSIZE',['../d4/d6d/a00055.html#abc70748e21d50886b56d88af484d8bdc',1,'proto::GeoGrid_Location_ContactPools']]],
-  ['type_5fmax',['Type_MAX',['../d4/d6d/a00055.html#ae6f7a7999ee4f7eb476aa64243231320',1,'proto::GeoGrid_Location_ContactPools']]],
-  ['type_5fmin',['Type_MIN',['../d4/d6d/a00055.html#a22cd252cff0d5127d855929937341f73',1,'proto::GeoGrid_Location_ContactPools']]]
+  ['secondarycommunity',['SecondaryCommunity',['../d1/d22/a00057.html#a703a05eeca4b8306e3ba4218ec18b920',1,'H5Utils::H5Person::SecondaryCommunity()'],['../d4/d31/a00069.html#a96e415e2a42769025da52b8df5903887',1,'proto::GeoGrid_Location_ContactPools::SecondaryCommunity()']]],
+  ['serialization_5ftable',['serialization_table',['../db/d48/a00148.html#acb6826876a620d2bfe05073c580f04e4',1,'TableStruct_epioutput_2eproto::serialization_table()'],['../da/d1e/a00149.html#a5bd363cc6c43ac962af44d0a3a51f8cc',1,'TableStruct_geogrid_2eproto::serialization_table()']]]
 ];

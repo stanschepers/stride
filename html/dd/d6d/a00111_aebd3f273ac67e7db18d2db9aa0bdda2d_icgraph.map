@@ -1,0 +1,5 @@
+<map id="stride::Person::GetPoolId" name="stride::Person::GetPoolId">
+<area shape="rect" id="node2" href="$df/d6a/a00119.html#a81b191380f9a2c93768ff0efcec47f6b" title="Seeds the population with survey participants. " alt="" coords="253,5,409,47"/>
+<area shape="rect" id="node4" href="$d5/d16/a00029.html#ac76d8a5db270181e67b1b561bfe55650" title="Create a JSON object containing all info needed to reconstruct a Person. " alt="" coords="232,71,431,112"/>
+<area shape="rect" id="node3" href="$d2/da3/a00115.html#a1f32dd929e6e21eabd41f7f7246a7aa1" title="Build the simulator and return it afterwards. " alt="" coords="479,5,613,47"/>
+</map>

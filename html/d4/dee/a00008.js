@@ -1,6 +1,5 @@
 var a00008 =
 [
-    [ "DistributionReader", "d4/dee/a00008.html#a340c27ac40d9788816e156f84ec0910c", null ],
-    [ "~DistributionReader", "d4/dee/a00008.html#aab6765c211192dccbe696e9fb8e4dbe9", null ],
-    [ "SetWorkDistribution", "d4/dee/a00008.html#a420403a9ce94061638226f78c8392f30", null ]
+    [ "CommutesCSVReader", "d4/dee/a00008.html#a9a08896e164c5172832c662b18b0af7e", null ],
+    [ "FillGeoGrid", "d4/dee/a00008.html#a61add5af7692546f4591267a3e618c97", null ]
 ];

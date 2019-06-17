@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: H5Utils Namespace Reference</title>
+<title>Stride Reference Manual: SegmentedVector.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -47,9 +47,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="../../namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="../../annotated.html"><span>Classes</span></a></li>
-      <li><a href="../../files.html"><span>Files</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -70,8 +70,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="../../namespaces.html"><span>Namespace&#160;List</span></a></li>
-      <li><a href="../../namespacemembers.html"><span>Namespace&#160;Members</span></a></li>
+      <li><a href="../../files.html"><span>File&#160;List</span></a></li>
+      <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -106,608 +106,129 @@ $(document).ready(function(){initNavTree('df/d03/a00348.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">H5Utils Namespace Reference</div>  </div>
+<div class="title">SegmentedVector.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Interface and implementation for SegmentedVector class.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../dc/de3/a00373_source.html">SVIterator.h</a>&quot;</code><br />
+<code>#include &lt;array&gt;</code><br />
+<code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;iterator&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for SegmentedVector.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d3b/a00715.gif" border="0" usemap="#SegmentedVector_8h" alt=""/></div>
+<map name="SegmentedVector_8h" id="SegmentedVector_8h">
+<area shape="rect" id="node2" href="../../dc/de3/a00373.html" title="Interface/Implementation for SVIterator. " alt="" coords="85,80,184,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d2/d94/a00716.gif" border="0" usemap="#SegmentedVector_8hdep" alt=""/></div>
+<map name="SegmentedVector_8hdep" id="SegmentedVector_8hdep">
+<area shape="rect" id="node2" href="../../dc/d52/a00183.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="824,80,959,107"/>
+<area shape="rect" id="node4" href="../../d4/db5/a00328.html" title="Header file for the core Population class. " alt="" coords="841,155,942,181"/>
+<area shape="rect" id="node14" href="../../d0/d1f/a00247.html" title="GeoGridHDF5Writer.cpp" alt="" coords="2358,379,2529,405"/>
+<area shape="rect" id="node15" href="../../d9/d39/a00257.html" title="GeoGridProtoWriter.cpp" alt="" coords="2966,379,3137,405"/>
+<area shape="rect" id="node26" href="../../d8/dfc/a00327.html" title="Core Population class. " alt="" coords="175,229,291,256"/>
+<area shape="rect" id="node27" href="../../de/d79/a00203.html" title="Header for the DiseaseSeeder class. " alt="" coords="110,80,241,107"/>
+<area shape="rect" id="node29" href="../../da/ddc/a00288.html" title="Header for the Immunizer class. " alt="" coords="441,80,542,107"/>
+<area shape="rect" id="node31" href="../../d5/df1/a00206.html" title="Epidemiologic.h" alt="" coords="2847,80,2970,107"/>
+<area shape="rect" id="node35" href="../../d1/d67/a00310.html" title="Location.h" alt="" coords="1807,155,1895,181"/>
+<area shape="rect" id="node44" href="../../d6/db6/a00241.html" title="GeoGridConfig.h" alt="" coords="681,229,808,256"/>
+<area shape="rect" id="node46" href="../../d1/d72/a00204.html" title="DistributionReader.h" alt="" coords="3375,379,3525,405"/>
+<area shape="rect" id="node48" href="../../dd/dfe/a00283.html" title="HouseholdReader.h" alt="" coords="3549,379,3695,405"/>
+<area shape="rect" id="node3" href="../../d7/d25/a00182.html" title="Core Population class. " alt="" coords="667,155,817,181"/>
+<area shape="rect" id="node5" href="../../db/d53/a00202.html" title="Implementation for the DiseaseSeeder class. " alt="" coords="5,229,151,256"/>
+<area shape="rect" id="node6" href="../../d6/de1/a00233.html" title="Generator.h" alt="" coords="417,304,515,331"/>
+<area shape="rect" id="node7" href="../../d5/d42/a00269.html" title="Initialize populations: implementation. " alt="" coords="847,528,989,555"/>
+<area shape="rect" id="node8" href="../../d4/d08/a00237.html" title="GeoGrid.cpp" alt="" coords="1434,229,1535,256"/>
+<area shape="rect" id="node22" href="../../dc/dc9/a00282.html" title="HouseholdPopulator.cpp" alt="" coords="505,379,683,405"/>
+<area shape="rect" id="node9" href="../../da/d2e/a00238.html" title="GeoGrid.h" alt="" coords="1441,304,1528,331"/>
+<area shape="rect" id="node10" href="../../d6/dfb/a00172.html" title="CommutesCSVReader.cpp" alt="" coords="2143,379,2333,405"/>
+<area shape="rect" id="node11" href="../../dd/ded/a00211.html" title="EpiOutputHDF5Writer.cpp" alt="" coords="2759,379,2941,405"/>
+<area shape="rect" id="node12" href="../../d3/dd5/a00215.html" title="EpiOutputJSONWriter.cpp" alt="" coords="1939,379,2118,405"/>
+<area shape="rect" id="node13" href="../../dd/df3/a00219.html" title="EpiOutputProtoWriter.cpp" alt="" coords="2553,379,2734,405"/>
+<area shape="rect" id="node16" href="../../d0/d2f/a00259.html" title="GeoGridReader.cpp" alt="" coords="1771,379,1915,405"/>
+<area shape="rect" id="node17" href="../../dd/db3/a00313.html" title="LocationsReader.h" alt="" coords="3161,379,3299,405"/>
+<area shape="rect" id="node20" href="../../d1/d0d/a00171.html" title="CollegePopulator.cpp" alt="" coords="956,379,1112,405"/>
+<area shape="rect" id="node21" href="../../dc/d57/a00194.html" title="DaycarePopulator.cpp" alt="" coords="1534,379,1697,405"/>
+<area shape="rect" id="node23" href="../../dc/d0f/a00303.html" title="K12SchoolPopulator.cpp" alt="" coords="1137,379,1313,405"/>
+<area shape="rect" id="node24" href="../../d8/df7/a00331.html" title="PreSchoolPopulator.cpp" alt="" coords="1337,379,1510,405"/>
+<area shape="rect" id="node25" href="../../da/dee/a00383.html" title="WorkplacePopulator.cpp" alt="" coords="707,379,881,405"/>
+<area shape="rect" id="node18" href="../../dc/d84/a00338.html" title="ReaderFactory.h" alt="" coords="3169,453,3291,480"/>
+<area shape="rect" id="node19" href="../../d9/d21/a00240.html" title="GeoGridConfig.cpp" alt="" coords="3209,528,3350,555"/>
+<area shape="rect" id="node28" href="../../d0/d48/a00351.html" title="Implementation for the SimBuilder class. " alt="" coords="21,155,138,181"/>
+<area shape="rect" id="node30" href="../../d6/d7f/a00287.html" title="Implementation for the Immunizer class. " alt="" coords="433,155,549,181"/>
+<area shape="rect" id="node32" href="../../d5/d13/a00205.html" title="Epidemiologic.cpp" alt="" coords="2957,229,3095,256"/>
+<area shape="rect" id="node33" href="../../d1/de3/a00306.html" title="KdTree2DPoint.cpp" alt="" coords="3119,229,3261,256"/>
+<area shape="rect" id="node34" href="../../d0/def/a00256.html" title="GeoGridProtoReader.h" alt="" coords="2770,229,2933,256"/>
+<area shape="rect" id="node36" href="../../dd/dc1/a00212.html" title="EpiOutputHDF5Writer.h" alt="" coords="2548,304,2715,331"/>
+<area shape="rect" id="node37" href="../../d6/d43/a00216.html" title="EpiOutputJSONWriter.h" alt="" coords="1604,304,1768,331"/>
+<area shape="rect" id="node38" href="../../d5/d0b/a00220.html" title="EpiOutputProtoWriter.h" alt="" coords="2177,304,2344,331"/>
+<area shape="rect" id="node39" href="../../d4/d9a/a00246.html" title="GeoGridHDF5Reader.h" alt="" coords="2067,229,2231,256"/>
+<area shape="rect" id="node40" href="../../dd/dd7/a00248.html" title="GeoGridHDF5Writer.h" alt="" coords="1945,304,2101,331"/>
+<area shape="rect" id="node41" href="../../d0/da7/a00250.html" title="GeoGridJSONReader.h" alt="" coords="2255,229,2416,256"/>
+<area shape="rect" id="node42" href="../../dc/ded/a00252.html" title="GeoGridJSONWriter.h" alt="" coords="2440,229,2593,256"/>
+<area shape="rect" id="node43" href="../../d7/d2f/a00258.html" title="GeoGridProtoWriter.h" alt="" coords="2369,304,2523,331"/>
+<area shape="rect" id="node45" href="../../dd/d4e/a00329.html" title="Populator.h" alt="" coords="987,304,1081,331"/>
+<area shape="rect" id="node47" href="../../de/d08/a00381.html" title="WorkplaceCSVReader.h" alt="" coords="3366,453,3534,480"/>
+<area shape="rect" id="node49" href="../../dc/d5d/a00278.html" title="HouseholdCSVReader.h" alt="" coords="3609,453,3781,480"/>
+<area shape="rect" id="node50" href="../../d2/d04/a00281.html" title="HouseholdJSONReader.h" alt="" coords="3805,453,3983,480"/>
+</map>
+</div>
+</div>
+<p><a href="../../df/d03/a00348_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dca/a00048.html">H5Commute</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/da5/a00075.html">stride::util::SegmentedVector&lt; T, N, Safe &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container that stores objects "almost contiguously" (in a chain of blocks) and guarantees that pointers/iterators are not invalidated when the container grows.  <a href="../../d9/da5/a00075.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dee/a00049.html">H5Person</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:d1/d8b/a00406"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d8b/a00406.html">stride</a></td></tr>
+<tr class="memdesc:d1/d8b/a00406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/de0/a00050.html">H5PoolPerson</a></td></tr>
+<tr class="memitem:da/d9c/a00413"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d9c/a00413.html">stride::util</a></td></tr>
+<tr class="memdesc:da/d9c/a00413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utilities for the project. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a81d86b3c29a5e0ca5712f7dab6ab31c8"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr class="memitem:a81d86b3c29a5e0ca5712f7dab6ab31c8"><td class="memTemplItemLeft" align="right" valign="top">CompType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d03/a00348.html#a81d86b3c29a5e0ca5712f7dab6ab31c8">GetCompoundType&lt; H5Commute &gt;</a> ()</td></tr>
-<tr class="separator:a81d86b3c29a5e0ca5712f7dab6ab31c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dd16e9ed848fe257fe5b65bc0418cd1"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr class="memitem:a3dd16e9ed848fe257fe5b65bc0418cd1"><td class="memTemplItemLeft" align="right" valign="top">CompType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d03/a00348.html#a3dd16e9ed848fe257fe5b65bc0418cd1">GetCompoundType&lt; H5PoolPerson &gt;</a> ()</td></tr>
-<tr class="separator:a3dd16e9ed848fe257fe5b65bc0418cd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acac829dc3fb928cc284ca97a2d1d9e05"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr class="memitem:acac829dc3fb928cc284ca97a2d1d9e05"><td class="memTemplItemLeft" align="right" valign="top">CompType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d03/a00348.html#acac829dc3fb928cc284ca97a2d1d9e05">GetCompoundType&lt; H5Person &gt;</a> ()</td></tr>
-<tr class="separator:acac829dc3fb928cc284ca97a2d1d9e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaff3c46ac4cda2de0cf124ac1f1e6e96"><td class="memItemLeft" align="right" valign="top">DataSpace&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00348.html#aaff3c46ac4cda2de0cf124ac1f1e6e96">CreateSpace</a> (hsize_t size)</td></tr>
-<tr class="separator:aaff3c46ac4cda2de0cf124ac1f1e6e96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9129e552cdda5f75bb4d0038058e918a"><td class="memItemLeft" align="right" valign="top">H5::PredType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00348.html#a9129e552cdda5f75bb4d0038058e918a">HDF5Type</a> (const int &amp;)</td></tr>
-<tr class="separator:a9129e552cdda5f75bb4d0038058e918a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a349fa5f9f2e9d265b9eeea52cf309cbf"><td class="memItemLeft" align="right" valign="top">H5::PredType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00348.html#a349fa5f9f2e9d265b9eeea52cf309cbf">HDF5Type</a> (const unsigned int &amp;)</td></tr>
-<tr class="separator:a349fa5f9f2e9d265b9eeea52cf309cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaabbc6846f4dd8d66afe48b47714d637"><td class="memItemLeft" align="right" valign="top">H5::PredType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00348.html#aaabbc6846f4dd8d66afe48b47714d637">HDF5Type</a> (const long &amp;)</td></tr>
-<tr class="separator:aaabbc6846f4dd8d66afe48b47714d637"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec954c233292aec9fdda188bec9f71c0"><td class="memItemLeft" align="right" valign="top">H5::PredType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00348.html#aec954c233292aec9fdda188bec9f71c0">HDF5Type</a> (const unsigned long &amp;)</td></tr>
-<tr class="separator:aec954c233292aec9fdda188bec9f71c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd3d85bc08e702585d2b56c49e729369"><td class="memItemLeft" align="right" valign="top">H5::PredType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00348.html#abd3d85bc08e702585d2b56c49e729369">HDF5Type</a> (const float &amp;)</td></tr>
-<tr class="separator:abd3d85bc08e702585d2b56c49e729369"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d9ee09a782b27148271317f3288f0de"><td class="memItemLeft" align="right" valign="top">H5::PredType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00348.html#a8d9ee09a782b27148271317f3288f0de">HDF5Type</a> (const <a class="el" href="../../d8/d21/a00368.html">double</a> &amp;)</td></tr>
-<tr class="separator:a8d9ee09a782b27148271317f3288f0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e0af4e62afca9e9a77f704a14046317"><td class="memItemLeft" align="right" valign="top">H5::StrType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d03/a00348.html#a8e0af4e62afca9e9a77f704a14046317">HDF5Type</a> (const string &amp;value)</td></tr>
-<tr class="separator:a8e0af4e62afca9e9a77f704a14046317"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dd0af090282dc6bfda46a7a48bb0d7f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a8dd0af090282dc6bfda46a7a48bb0d7f"><td class="memTemplItemLeft" align="right" valign="top">H5::CompType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d03/a00348.html#a8dd0af090282dc6bfda46a7a48bb0d7f">GetCompoundType</a> ()</td></tr>
-<tr class="separator:a8dd0af090282dc6bfda46a7a48bb0d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf460078744fdb2a5679c70dd7073055"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:abf460078744fdb2a5679c70dd7073055"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d03/a00348.html#abf460078744fdb2a5679c70dd7073055">WriteAttribute</a> (const T &amp;value, const std::string &amp;name, H5::H5Object &amp;h5Object)</td></tr>
-<tr class="separator:abf460078744fdb2a5679c70dd7073055"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9322248d3dd0e8dbff5cccfc0d130d8"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr class="memitem:ad9322248d3dd0e8dbff5cccfc0d130d8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d03/a00348.html#ad9322248d3dd0e8dbff5cccfc0d130d8">WriteAttribute</a> (const std::string &amp;value, const std::string &amp;name, H5::H5Object &amp;h5Object)</td></tr>
-<tr class="separator:ad9322248d3dd0e8dbff5cccfc0d130d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ec23e1291e46527f8e1cf4dbb5b01c9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a9ec23e1291e46527f8e1cf4dbb5b01c9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d03/a00348.html#a9ec23e1291e46527f8e1cf4dbb5b01c9">ReadAttribute</a> (T &amp;value, const std::string &amp;name, const H5::H5Object &amp;h5Object)</td></tr>
-<tr class="separator:a9ec23e1291e46527f8e1cf4dbb5b01c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd18cab280d1c4b5595178b5929efd31"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr class="memitem:acd18cab280d1c4b5595178b5929efd31"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d03/a00348.html#acd18cab280d1c4b5595178b5929efd31">ReadAttribute</a> (std::string &amp;value, const std::string &amp;name, const H5::H5Object &amp;h5Object)</td></tr>
-<tr class="separator:acd18cab280d1c4b5595178b5929efd31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eaaf506e8aca5d5bc8fa9889924e892"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N = 512, bool Safe = true&gt; </td></tr>
+<tr class="memitem:a6eaaf506e8aca5d5bc8fa9889924e892"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d9c/a00413.html#a6eaaf506e8aca5d5bc8fa9889924e892">stride::util::operator==</a> (const SegmentedVector&lt; T, N, Safe &gt; &amp;lhs, const SegmentedVector&lt; T, N, Safe &gt; &amp;rhs)</td></tr>
+<tr class="memdesc:a6eaaf506e8aca5d5bc8fa9889924e892"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for equality test (equal size and all elements equal).  <a href="../../da/d9c/a00413.html#a6eaaf506e8aca5d5bc8fa9889924e892">More...</a><br /></td></tr>
+<tr class="separator:a6eaaf506e8aca5d5bc8fa9889924e892"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29c3bf8ea6f91c062396ae746b51b2db"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N = 512, bool Safe = true&gt; </td></tr>
+<tr class="memitem:a29c3bf8ea6f91c062396ae746b51b2db"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d9c/a00413.html#a29c3bf8ea6f91c062396ae746b51b2db">stride::util::operator!=</a> (const SegmentedVector&lt; T, N, Safe &gt; &amp;lhs, const SegmentedVector&lt; T, N, Safe &gt; &amp;rhs)</td></tr>
+<tr class="memdesc:a29c3bf8ea6f91c062396ae746b51b2db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for inequality test (unequal size or not all elements equal).  <a href="../../da/d9c/a00413.html#a29c3bf8ea6f91c062396ae746b51b2db">More...</a><br /></td></tr>
+<tr class="separator:a29c3bf8ea6f91c062396ae746b51b2db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a81d86b3c29a5e0ca5712f7dab6ab31c8"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">CompType <a class="el" href="../../df/d03/a00348.html#a8dd0af090282dc6bfda46a7a48bb0d7f">H5Utils::GetCompoundType</a>&lt; <a class="el" href="../../d4/dca/a00048.html">H5Commute</a> &gt; </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interface and implementation for SegmentedVector class. </p>
 
-<p>Definition at line <a class="el" href="../../d8/d72/a00199_source.html#l00024">24</a> of file <a class="el" href="../../d8/d72/a00199_source.html">GeoGridHDF5Utils.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="../../de/db1/a00197_source.html#l00110">geopop::GeoGridHDF5Reader::ReadLocation()</a>, and <a class="el" href="../../dd/de3/a00201_source.html#l00090">geopop::GeoGridHDF5Writer::WriteCommutes()</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../df/d03/a00348_a81d86b3c29a5e0ca5712f7dab6ab31c8_icgraph.gif" border="0" usemap="#df/d03/a00348_a81d86b3c29a5e0ca5712f7dab6ab31c8_icgraph" alt=""/></div>
-<map name="df/d03/a00348_a81d86b3c29a5e0ca5712f7dab6ab31c8_icgraph" id="df/d03/a00348_a81d86b3c29a5e0ca5712f7dab6ab31c8_icgraph">
-<area shape="rect" id="node2" href="../../dd/da2/a00019.html#a44b9bcb40b65211ba5cffc8da2e5afd9" title="geopop::GeoGridHDF5Reader\l::ReadLocation" alt="" coords="251,5,460,47"/>
-<area shape="rect" id="node5" href="../../db/db2/a00020.html#a816d3ea4faa22eb8cfacccd1fc850c24" title="geopop::GeoGridHDF5Writer\l::WriteCommutes" alt="" coords="255,71,456,112"/>
-<area shape="rect" id="node3" href="../../dd/da2/a00019.html#a9fc58126c17749621ecfb9ecc29313c4" title="Locations. " alt="" coords="508,5,717,47"/>
-<area shape="rect" id="node4" href="../../dd/da2/a00019.html#a7c475566a30e6dc1626463ef5bff1b6e" title="Actually perform the read. " alt="" coords="765,5,975,47"/>
-<area shape="rect" id="node6" href="../../db/db2/a00020.html#a3b4bd0fd7e724b111319db479626aaab" title="geopop::GeoGridHDF5Writer\l::WriteLocation" alt="" coords="512,71,713,112"/>
-<area shape="rect" id="node7" href="../../db/db2/a00020.html#a37c5f82d2b07fc977a794301db1c25d1" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="769,71,971,112"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a3dd16e9ed848fe257fe5b65bc0418cd1"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">CompType <a class="el" href="../../df/d03/a00348.html#a8dd0af090282dc6bfda46a7a48bb0d7f">H5Utils::GetCompoundType</a>&lt; <a class="el" href="../../d5/de0/a00050.html">H5PoolPerson</a> &gt; </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d8/d72/a00199_source.html#l00033">33</a> of file <a class="el" href="../../d8/d72/a00199_source.html">GeoGridHDF5Utils.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="../../de/db1/a00197_source.html#l00157">geopop::GeoGridHDF5Reader::ReadContactPool()</a>, and <a class="el" href="../../dd/de3/a00201_source.html#l00108">geopop::GeoGridHDF5Writer::WriteContactPool()</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../df/d03/a00348_a3dd16e9ed848fe257fe5b65bc0418cd1_icgraph.gif" border="0" usemap="#df/d03/a00348_a3dd16e9ed848fe257fe5b65bc0418cd1_icgraph" alt=""/></div>
-<map name="df/d03/a00348_a3dd16e9ed848fe257fe5b65bc0418cd1_icgraph" id="df/d03/a00348_a3dd16e9ed848fe257fe5b65bc0418cd1_icgraph">
-<area shape="rect" id="node2" href="../../dd/da2/a00019.html#ae96709b15428009e94c824f7792976c8" title="geopop::GeoGridHDF5Reader\l::ReadContactPool" alt="" coords="251,5,460,47"/>
-<area shape="rect" id="node6" href="../../db/db2/a00020.html#a599467553181db5ec29bfcdaa7645c7a" title="geopop::GeoGridHDF5Writer\l::WriteContactPool" alt="" coords="255,71,456,112"/>
-<area shape="rect" id="node3" href="../../dd/da2/a00019.html#a44b9bcb40b65211ba5cffc8da2e5afd9" title="geopop::GeoGridHDF5Reader\l::ReadLocation" alt="" coords="508,5,717,47"/>
-<area shape="rect" id="node4" href="../../dd/da2/a00019.html#a9fc58126c17749621ecfb9ecc29313c4" title="Locations. " alt="" coords="765,5,975,47"/>
-<area shape="rect" id="node5" href="../../dd/da2/a00019.html#a7c475566a30e6dc1626463ef5bff1b6e" title="Actually perform the read. " alt="" coords="1023,5,1232,47"/>
-<area shape="rect" id="node7" href="../../db/db2/a00020.html#a3b4bd0fd7e724b111319db479626aaab" title="geopop::GeoGridHDF5Writer\l::WriteLocation" alt="" coords="512,71,713,112"/>
-<area shape="rect" id="node8" href="../../db/db2/a00020.html#a37c5f82d2b07fc977a794301db1c25d1" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="769,71,971,112"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="acac829dc3fb928cc284ca97a2d1d9e05"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">CompType <a class="el" href="../../df/d03/a00348.html#a8dd0af090282dc6bfda46a7a48bb0d7f">H5Utils::GetCompoundType</a>&lt; <a class="el" href="../../d2/dee/a00049.html">H5Person</a> &gt; </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d8/d72/a00199_source.html#l00041">41</a> of file <a class="el" href="../../d8/d72/a00199_source.html">GeoGridHDF5Utils.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="../../de/db1/a00197_source.html#l00073">geopop::GeoGridHDF5Reader::ReadPeople()</a>, and <a class="el" href="../../dd/de3/a00201_source.html#l00129">geopop::GeoGridHDF5Writer::WritePeople()</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../df/d03/a00348_acac829dc3fb928cc284ca97a2d1d9e05_icgraph.gif" border="0" usemap="#df/d03/a00348_acac829dc3fb928cc284ca97a2d1d9e05_icgraph" alt=""/></div>
-<map name="df/d03/a00348_acac829dc3fb928cc284ca97a2d1d9e05_icgraph" id="df/d03/a00348_acac829dc3fb928cc284ca97a2d1d9e05_icgraph">
-<area shape="rect" id="node2" href="../../dd/da2/a00019.html#a135374ea55ab69dbad3d00711acded97" title="People. " alt="" coords="251,5,460,47"/>
-<area shape="rect" id="node4" href="../../db/db2/a00020.html#a42fe8af0e0a6071fda128824e437de4a" title="geopop::GeoGridHDF5Writer\l::WritePeople" alt="" coords="255,71,456,112"/>
-<area shape="rect" id="node3" href="../../dd/da2/a00019.html#a7c475566a30e6dc1626463ef5bff1b6e" title="Actually perform the read. " alt="" coords="508,5,717,47"/>
-<area shape="rect" id="node5" href="../../db/db2/a00020.html#a37c5f82d2b07fc977a794301db1c25d1" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="512,71,713,112"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="aaff3c46ac4cda2de0cf124ac1f1e6e96"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">H5::DataSpace H5Utils::CreateSpace </td>
-          <td>(</td>
-          <td class="paramtype">hsize_t&#160;</td>
-          <td class="paramname"><em>size</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d8/d72/a00199_source.html#l00057">57</a> of file <a class="el" href="../../d8/d72/a00199_source.html">GeoGridHDF5Utils.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="../../d3/db1/a00200_source.html#l00067">WriteAttribute()</a>, <a class="el" href="../../dd/de3/a00201_source.html#l00090">geopop::GeoGridHDF5Writer::WriteCommutes()</a>, <a class="el" href="../../dd/de3/a00201_source.html#l00108">geopop::GeoGridHDF5Writer::WriteContactPool()</a>, and <a class="el" href="../../dd/de3/a00201_source.html#l00129">geopop::GeoGridHDF5Writer::WritePeople()</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../df/d03/a00348_aaff3c46ac4cda2de0cf124ac1f1e6e96_icgraph.gif" border="0" usemap="#df/d03/a00348_aaff3c46ac4cda2de0cf124ac1f1e6e96_icgraph" alt=""/></div>
-<map name="df/d03/a00348_aaff3c46ac4cda2de0cf124ac1f1e6e96_icgraph" id="df/d03/a00348_aaff3c46ac4cda2de0cf124ac1f1e6e96_icgraph">
-<area shape="rect" id="node2" href="../../df/d03/a00348.html#abf460078744fdb2a5679c70dd7073055" title="H5Utils::WriteAttribute" alt="" coords="212,135,375,162"/>
-<area shape="rect" id="node5" href="../../db/db2/a00020.html#a816d3ea4faa22eb8cfacccd1fc850c24" title="geopop::GeoGridHDF5Writer\l::WriteCommutes" alt="" coords="423,5,624,47"/>
-<area shape="rect" id="node6" href="../../db/db2/a00020.html#a599467553181db5ec29bfcdaa7645c7a" title="geopop::GeoGridHDF5Writer\l::WriteContactPool" alt="" coords="423,71,624,112"/>
-<area shape="rect" id="node7" href="../../db/db2/a00020.html#a42fe8af0e0a6071fda128824e437de4a" title="geopop::GeoGridHDF5Writer\l::WritePeople" alt="" coords="423,239,624,280"/>
-<area shape="rect" id="node3" href="../../db/db2/a00020.html#a37c5f82d2b07fc977a794301db1c25d1" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="921,180,1123,221"/>
-<area shape="rect" id="node4" href="../../db/db2/a00020.html#a3b4bd0fd7e724b111319db479626aaab" title="geopop::GeoGridHDF5Writer\l::WriteLocation" alt="" coords="672,96,873,137"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a9129e552cdda5f75bb4d0038058e918a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">H5::PredType H5Utils::HDF5Type </td>
-          <td>(</td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d8/d72/a00199_source.html#l00063">63</a> of file <a class="el" href="../../d8/d72/a00199_source.html">GeoGridHDF5Utils.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="../../d3/db1/a00200_source.html#l00067">WriteAttribute()</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../df/d03/a00348_a9129e552cdda5f75bb4d0038058e918a_icgraph.gif" border="0" usemap="#df/d03/a00348_a9129e552cdda5f75bb4d0038058e918a_icgraph" alt=""/></div>
-<map name="df/d03/a00348_a9129e552cdda5f75bb4d0038058e918a_icgraph" id="df/d03/a00348_a9129e552cdda5f75bb4d0038058e918a_icgraph">
-<area shape="rect" id="node2" href="../../df/d03/a00348.html#abf460078744fdb2a5679c70dd7073055" title="H5Utils::WriteAttribute" alt="" coords="192,62,355,88"/>
-<area shape="rect" id="node3" href="../../db/db2/a00020.html#a37c5f82d2b07fc977a794301db1c25d1" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="901,54,1103,96"/>
-<area shape="rect" id="node4" href="../../db/db2/a00020.html#a3b4bd0fd7e724b111319db479626aaab" title="geopop::GeoGridHDF5Writer\l::WriteLocation" alt="" coords="652,54,853,96"/>
-<area shape="rect" id="node5" href="../../db/db2/a00020.html#a816d3ea4faa22eb8cfacccd1fc850c24" title="geopop::GeoGridHDF5Writer\l::WriteCommutes" alt="" coords="403,54,604,96"/>
-<area shape="rect" id="node6" href="../../db/db2/a00020.html#a599467553181db5ec29bfcdaa7645c7a" title="geopop::GeoGridHDF5Writer\l::WriteContactPool" alt="" coords="403,120,604,161"/>
-<area shape="rect" id="node7" href="../../db/db2/a00020.html#a42fe8af0e0a6071fda128824e437de4a" title="geopop::GeoGridHDF5Writer\l::WritePeople" alt="" coords="652,149,853,190"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a349fa5f9f2e9d265b9eeea52cf309cbf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">H5::PredType H5Utils::HDF5Type </td>
-          <td>(</td>
-          <td class="paramtype">const unsigned int &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d8/d72/a00199_source.html#l00065">65</a> of file <a class="el" href="../../d8/d72/a00199_source.html">GeoGridHDF5Utils.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aaabbc6846f4dd8d66afe48b47714d637"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">H5::PredType H5Utils::HDF5Type </td>
-          <td>(</td>
-          <td class="paramtype">const long &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d8/d72/a00199_source.html#l00067">67</a> of file <a class="el" href="../../d8/d72/a00199_source.html">GeoGridHDF5Utils.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aec954c233292aec9fdda188bec9f71c0"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">H5::PredType H5Utils::HDF5Type </td>
-          <td>(</td>
-          <td class="paramtype">const unsigned long &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d8/d72/a00199_source.html#l00069">69</a> of file <a class="el" href="../../d8/d72/a00199_source.html">GeoGridHDF5Utils.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="abd3d85bc08e702585d2b56c49e729369"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">H5::PredType H5Utils::HDF5Type </td>
-          <td>(</td>
-          <td class="paramtype">const float &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d8/d72/a00199_source.html#l00071">71</a> of file <a class="el" href="../../d8/d72/a00199_source.html">GeoGridHDF5Utils.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a8d9ee09a782b27148271317f3288f0de"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">H5::PredType H5Utils::HDF5Type </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d8/d21/a00368.html">double</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d8/d72/a00199_source.html#l00073">73</a> of file <a class="el" href="../../d8/d72/a00199_source.html">GeoGridHDF5Utils.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a8e0af4e62afca9e9a77f704a14046317"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">H5::StrType H5Utils::HDF5Type </td>
-          <td>(</td>
-          <td class="paramtype">const string &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d8/d72/a00199_source.html#l00075">75</a> of file <a class="el" href="../../d8/d72/a00199_source.html">GeoGridHDF5Utils.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a8dd0af090282dc6bfda46a7a48bb0d7f"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">H5::CompType H5Utils::GetCompoundType </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="abf460078744fdb2a5679c70dd7073055"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void H5Utils::WriteAttribute </td>
-          <td>(</td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">H5::H5Object &amp;&#160;</td>
-          <td class="paramname"><em>h5Object</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d3/db1/a00200_source.html#l00067">67</a> of file <a class="el" href="../../d3/db1/a00200_source.html">GeoGridHDF5Utils.h</a>.</p>
-
-<p>References <a class="el" href="../../d8/d72/a00199_source.html#l00057">CreateSpace()</a>, and <a class="el" href="../../d8/d72/a00199_source.html#l00063">HDF5Type()</a>.</p>
-
-<p>Referenced by <a class="el" href="../../dd/de3/a00201_source.html#l00038">geopop::GeoGridHDF5Writer::Write()</a>, <a class="el" href="../../dd/de3/a00201_source.html#l00090">geopop::GeoGridHDF5Writer::WriteCommutes()</a>, <a class="el" href="../../dd/de3/a00201_source.html#l00108">geopop::GeoGridHDF5Writer::WriteContactPool()</a>, <a class="el" href="../../dd/de3/a00201_source.html#l00064">geopop::GeoGridHDF5Writer::WriteLocation()</a>, and <a class="el" href="../../dd/de3/a00201_source.html#l00129">geopop::GeoGridHDF5Writer::WritePeople()</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../df/d03/a00348_abf460078744fdb2a5679c70dd7073055_cgraph.gif" border="0" usemap="#df/d03/a00348_abf460078744fdb2a5679c70dd7073055_cgraph" alt=""/></div>
-<map name="df/d03/a00348_abf460078744fdb2a5679c70dd7073055_cgraph" id="df/d03/a00348_abf460078744fdb2a5679c70dd7073055_cgraph">
-<area shape="rect" id="node2" href="../../df/d03/a00348.html#aaff3c46ac4cda2de0cf124ac1f1e6e96" title="H5Utils::CreateSpace" alt="" coords="216,5,375,32"/>
-<area shape="rect" id="node3" href="../../df/d03/a00348.html#a9129e552cdda5f75bb4d0038058e918a" title="H5Utils::HDF5Type" alt="" coords="226,56,365,83"/>
-</map>
-</div>
-</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../df/d03/a00348_abf460078744fdb2a5679c70dd7073055_icgraph.gif" border="0" usemap="#df/d03/a00348_abf460078744fdb2a5679c70dd7073055_icgraph" alt=""/></div>
-<map name="df/d03/a00348_abf460078744fdb2a5679c70dd7073055_icgraph" id="df/d03/a00348_abf460078744fdb2a5679c70dd7073055_icgraph">
-<area shape="rect" id="node2" href="../../db/db2/a00020.html#a37c5f82d2b07fc977a794301db1c25d1" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="715,99,916,140"/>
-<area shape="rect" id="node3" href="../../db/db2/a00020.html#a816d3ea4faa22eb8cfacccd1fc850c24" title="geopop::GeoGridHDF5Writer\l::WriteCommutes" alt="" coords="216,40,417,82"/>
-<area shape="rect" id="node4" href="../../db/db2/a00020.html#a3b4bd0fd7e724b111319db479626aaab" title="geopop::GeoGridHDF5Writer\l::WriteLocation" alt="" coords="465,99,667,140"/>
-<area shape="rect" id="node5" href="../../db/db2/a00020.html#a599467553181db5ec29bfcdaa7645c7a" title="geopop::GeoGridHDF5Writer\l::WriteContactPool" alt="" coords="216,158,417,199"/>
-<area shape="rect" id="node6" href="../../db/db2/a00020.html#a42fe8af0e0a6071fda128824e437de4a" title="geopop::GeoGridHDF5Writer\l::WritePeople" alt="" coords="465,190,667,231"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ad9322248d3dd0e8dbff5cccfc0d130d8"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void H5Utils::WriteAttribute </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">H5::H5Object &amp;&#160;</td>
-          <td class="paramname"><em>h5Object</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d3/db1/a00200_source.html#l00074">74</a> of file <a class="el" href="../../d3/db1/a00200_source.html">GeoGridHDF5Utils.h</a>.</p>
-
-<p>References <a class="el" href="../../d8/d72/a00199_source.html#l00057">CreateSpace()</a>, and <a class="el" href="../../d8/d72/a00199_source.html#l00063">HDF5Type()</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../df/d03/a00348_ad9322248d3dd0e8dbff5cccfc0d130d8_cgraph.gif" border="0" usemap="#df/d03/a00348_ad9322248d3dd0e8dbff5cccfc0d130d8_cgraph" alt=""/></div>
-<map name="df/d03/a00348_ad9322248d3dd0e8dbff5cccfc0d130d8_cgraph" id="df/d03/a00348_ad9322248d3dd0e8dbff5cccfc0d130d8_cgraph">
-<area shape="rect" id="node2" href="../../df/d03/a00348.html#aaff3c46ac4cda2de0cf124ac1f1e6e96" title="H5Utils::CreateSpace" alt="" coords="216,5,375,32"/>
-<area shape="rect" id="node3" href="../../df/d03/a00348.html#a9129e552cdda5f75bb4d0038058e918a" title="H5Utils::HDF5Type" alt="" coords="226,56,365,83"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a9ec23e1291e46527f8e1cf4dbb5b01c9"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void H5Utils::ReadAttribute </td>
-          <td>(</td>
-          <td class="paramtype">T &amp;&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const H5::H5Object &amp;&#160;</td>
-          <td class="paramname"><em>h5Object</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d3/db1/a00200_source.html#l00081">81</a> of file <a class="el" href="../../d3/db1/a00200_source.html">GeoGridHDF5Utils.h</a>.</p>
-
-<p>Referenced by <a class="el" href="../../de/db1/a00197_source.html#l00157">geopop::GeoGridHDF5Reader::ReadContactPool()</a>, <a class="el" href="../../de/db1/a00197_source.html#l00110">geopop::GeoGridHDF5Reader::ReadLocation()</a>, <a class="el" href="../../de/db1/a00197_source.html#l00097">geopop::GeoGridHDF5Reader::ReadLocations()</a>, and <a class="el" href="../../de/db1/a00197_source.html#l00073">geopop::GeoGridHDF5Reader::ReadPeople()</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../df/d03/a00348_a9ec23e1291e46527f8e1cf4dbb5b01c9_icgraph.gif" border="0" usemap="#df/d03/a00348_a9ec23e1291e46527f8e1cf4dbb5b01c9_icgraph" alt=""/></div>
-<map name="df/d03/a00348_a9ec23e1291e46527f8e1cf4dbb5b01c9_icgraph" id="df/d03/a00348_a9ec23e1291e46527f8e1cf4dbb5b01c9_icgraph">
-<area shape="rect" id="node2" href="../../dd/da2/a00019.html#ae96709b15428009e94c824f7792976c8" title="geopop::GeoGridHDF5Reader\l::ReadContactPool" alt="" coords="216,5,425,47"/>
-<area shape="rect" id="node3" href="../../dd/da2/a00019.html#a44b9bcb40b65211ba5cffc8da2e5afd9" title="geopop::GeoGridHDF5Reader\l::ReadLocation" alt="" coords="473,56,683,97"/>
-<area shape="rect" id="node4" href="../../dd/da2/a00019.html#a9fc58126c17749621ecfb9ecc29313c4" title="Locations. " alt="" coords="731,115,940,156"/>
-<area shape="rect" id="node6" href="../../dd/da2/a00019.html#a135374ea55ab69dbad3d00711acded97" title="People. " alt="" coords="473,173,683,215"/>
-<area shape="rect" id="node5" href="../../dd/da2/a00019.html#a7c475566a30e6dc1626463ef5bff1b6e" title="Actually perform the read. " alt="" coords="988,144,1197,185"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="acd18cab280d1c4b5595178b5929efd31"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void H5Utils::ReadAttribute </td>
-          <td>(</td>
-          <td class="paramtype">std::string &amp;&#160;</td>
-          <td class="paramname"><em>value</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const H5::H5Object &amp;&#160;</td>
-          <td class="paramname"><em>h5Object</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d3/db1/a00200_source.html#l00089">89</a> of file <a class="el" href="../../d3/db1/a00200_source.html">GeoGridHDF5Utils.h</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+<p>Definition in file <a class="el" href="../../df/d03/a00348_source.html">SegmentedVector.h</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../df/d03/a00348.html">H5Utils</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:38 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_cf56009b1fcb470adac12e74ab7406a1.html">util</a></li><li class="navelem"><a class="el" href="../../df/d03/a00348.html">SegmentedVector.h</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:10 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

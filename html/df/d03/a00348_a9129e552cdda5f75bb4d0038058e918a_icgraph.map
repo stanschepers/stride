@@ -1,8 +1,0 @@
-<map id="H5Utils::HDF5Type" name="H5Utils::HDF5Type">
-<area shape="rect" id="node2" href="$df/d03/a00348.html#abf460078744fdb2a5679c70dd7073055" title="H5Utils::WriteAttribute" alt="" coords="192,62,355,88"/>
-<area shape="rect" id="node3" href="$db/db2/a00020.html#a37c5f82d2b07fc977a794301db1c25d1" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="901,54,1103,96"/>
-<area shape="rect" id="node4" href="$db/db2/a00020.html#a3b4bd0fd7e724b111319db479626aaab" title="geopop::GeoGridHDF5Writer\l::WriteLocation" alt="" coords="652,54,853,96"/>
-<area shape="rect" id="node5" href="$db/db2/a00020.html#a816d3ea4faa22eb8cfacccd1fc850c24" title="geopop::GeoGridHDF5Writer\l::WriteCommutes" alt="" coords="403,54,604,96"/>
-<area shape="rect" id="node6" href="$db/db2/a00020.html#a599467553181db5ec29bfcdaa7645c7a" title="geopop::GeoGridHDF5Writer\l::WriteContactPool" alt="" coords="403,120,604,161"/>
-<area shape="rect" id="node7" href="$db/db2/a00020.html#a42fe8af0e0a6071fda128824e437de4a" title="geopop::GeoGridHDF5Writer\l::WritePeople" alt="" coords="652,149,853,190"/>
-</map>

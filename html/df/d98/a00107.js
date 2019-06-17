@@ -1,8 +1,5 @@
 var a00107 =
 [
-    [ "HaveOpenMP", "df/d98/a00107.html#ad6fc5f3f3e32a15f059c64b74dfea905", null ],
-    [ "GitRevision", "df/d98/a00107.html#aea2c9d397f10f54b7ae47f4b0f181799", null ],
-    [ "GetHostname", "df/d98/a00107.html#a502bd4410a3e77792ea575f77f470d41", null ],
-    [ "NumberAvailableThreads", "df/d98/a00107.html#a6b4240ce29160e778c69f9e246e1747d", null ],
-    [ "ProcessorCount", "df/d98/a00107.html#a9b191149cb109105f73c84df61bebbb6", null ]
+    [ "InfectorMap", "df/d98/a00107.html#a389bcbbddf547f27cb2e60feadca12af", null ],
+    [ "Add", "df/d98/a00107.html#ae0e244621d901cb06ae8ec8d7dc82161", null ]
 ];

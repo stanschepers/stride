@@ -1,6 +1,7 @@
 var a00045 =
 [
-    [ "WorkplaceCSVReader", "d6/d97/a00045.html#a36cce0d2064a1e65520c72d4c474c73b", null ],
-    [ "SetWorkDistribution", "d6/d97/a00045.html#a7d62236d42befa1b866ece1d4cbdf28f", null ],
-    [ "m_input_stream", "d6/d97/a00045.html#a2b5bdb458511a36b6e2cceee59c8cba0", null ]
+    [ "LocationsReader", "d6/d97/a00045.html#a08a0a0bee6983e75de99b46132e26eaa", null ],
+    [ "~LocationsReader", "d6/d97/a00045.html#adf7cb185f3d39194f4065707da23e0d6", null ],
+    [ "FillGeoGrid", "d6/d97/a00045.html#a311ffc6110bac3d83c0e644054489a78", null ],
+    [ "m_inputStream", "d6/d97/a00045.html#ad1bd8f33fd74070b9b606734e6c8d2de", null ]
 ];

@@ -1,7 +1,9 @@
-<map id="SimController.h" name="SimController.h">
-<area shape="rect" id="node2" href="$db/ddf/a00164.html" title="Header for the command line controller. " alt="" coords="403,87,524,114"/>
-<area shape="rect" id="node3" href="$d6/d82/a00293.html" title="Interface of RnMan. " alt="" coords="195,177,295,203"/>
-<area shape="rect" id="node10" href="$d1/d67/a00310.html" title="Definition of Stopwatch. " alt="" coords="452,177,576,203"/>
-<area shape="rect" id="node4" href="$da/dd4/a00291.html" title="Interface of RnPcg. " alt="" coords="8,259,81,285"/>
-<area shape="rect" id="node11" href="$d8/d23/a00326.html" title="Utilities to tag clocks and reformat clock readout to string. " alt="" coords="503,259,619,285"/>
+<map id="Immunizer.h" name="Immunizer.h">
+<area shape="rect" id="node2" href="$d8/d64/a00181.html" title="Header for the core ContactPool class. " alt="" coords="476,80,639,107"/>
+<area shape="rect" id="node13" href="$d0/dc5/a00343.html" title="Interface of RnMan. " alt="" coords="715,80,815,107"/>
+<area shape="rect" id="node17" href="$df/d03/a00348.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="1149,80,1321,107"/>
+<area shape="rect" id="node3" href="$db/dd9/a00179.html" title="Header for the ContactLogMode class. " alt="" coords="5,155,200,181"/>
+<area shape="rect" id="node5" href="$de/df3/a00185.html" title="Definition of ContactPool Id Type. " alt="" coords="475,155,639,181"/>
+<area shape="rect" id="node14" href="$d3/d93/a00341.html" title="Interface of RnPcg. " alt="" coords="378,155,451,181"/>
+<area shape="rect" id="node18" href="$dc/de3/a00373.html" title="Interface/Implementation for SVIterator. " alt="" coords="1527,155,1625,181"/>
 </map>

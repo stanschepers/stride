@@ -1,0 +1,8 @@
+<map id="geopop::Location::GetID" name="geopop::Location::GetID">
+<area shape="rect" id="node2" href="$d6/d42/a00043.html#aa9a92f27c4156744f9f3f49fc57f97a4" title="Perform a full comparison with the other location. " alt="" coords="229,15,447,42"/>
+<area shape="rect" id="node4" href="$d0/d33/a00027.html#a5e019dbc1a039494aa15feda0b9cbcaa" title="geopop::GeoGridHDF5Writer\l::WriteLocation" alt="" coords="237,68,439,109"/>
+<area shape="rect" id="node6" href="$d5/d16/a00029.html#a8b7a0f294b33fb6d81ad46b1385bff80" title="Create a JSON object containing all info needed to reconstruct a Location. " alt="" coords="239,133,437,175"/>
+<area shape="rect" id="node7" href="$df/d61/a00031.html#aa102932bd4c96db671640192aa232110" title="Create a ProtoBuf Location containing all the info needed to reconstruct a Location. " alt="" coords="238,199,438,240"/>
+<area shape="rect" id="node3" href="$d6/d42/a00043.html#ab9474f8c01009bdb5c1e427d1c21da4d" title="Specialised contructor for Epidemiologic as template. " alt="" coords="498,5,693,47"/>
+<area shape="rect" id="node5" href="$d0/d33/a00027.html#a9294e506e64e9ec60d8802d6f665b003" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="495,71,696,112"/>
+</map>

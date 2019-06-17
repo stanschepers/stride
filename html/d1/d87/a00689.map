@@ -1,2 +1,14 @@
-<map id="geopop::AABBox&lt; P &gt;" name="geopop::AABBox&lt; P &gt;">
+<map id="Populator.h" name="Populator.h">
+<area shape="rect" id="node2" href="$de/df3/a00185.html" title="Definition of ContactPool Id Type. " alt="" coords="1186,319,1350,345"/>
+<area shape="rect" id="node8" href="$d8/d64/a00181.html" title="Header for the core ContactPool class. " alt="" coords="799,244,961,271"/>
+<area shape="rect" id="node13" href="$d6/db6/a00241.html" title="geopop/GeoGridConfig.h" alt="" coords="1285,80,1464,107"/>
+<area shape="rect" id="node31" href="$d4/d6f/a00315.html" title="Logging (spdlog) utilities. " alt="" coords="2067,244,2175,271"/>
+<area shape="rect" id="node33" href="$d0/dc5/a00343.html" title="Interface of RnMan. " alt="" coords="1783,244,1883,271"/>
+<area shape="rect" id="node9" href="$db/dd9/a00179.html" title="Header for the ContactLogMode class. " alt="" coords="783,319,977,345"/>
+<area shape="rect" id="node14" href="$d5/d7b/a00286.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="1331,244,1520,271"/>
+<area shape="rect" id="node19" href="$de/de9/a00322.html" title="Header file for the Person class. " alt="" coords="1504,162,1611,189"/>
+<area shape="rect" id="node22" href="$df/d03/a00348.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="319,244,491,271"/>
+<area shape="rect" id="node20" href="$dd/d56/a00274.html" title="Header for the Health class. " alt="" coords="1687,319,1817,345"/>
+<area shape="rect" id="node23" href="$dc/de3/a00373.html" title="Interface/Implementation for SVIterator. " alt="" coords="88,319,187,345"/>
+<area shape="rect" id="node34" href="$d3/d93/a00341.html" title="Interface of RnPcg. " alt="" coords="1841,319,1914,345"/>
 </map>

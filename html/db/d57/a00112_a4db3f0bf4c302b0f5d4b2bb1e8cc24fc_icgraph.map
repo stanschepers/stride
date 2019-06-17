@@ -1,0 +1,5 @@
+<map id="stride::Population::RefContactLogger" name="stride::Population::RefContactLogger">
+<area shape="rect" id="node2" href="$df/d6a/a00119.html#a81b191380f9a2c93768ff0efcec47f6b" title="Seeds the population with survey participants. " alt="" coords="198,5,354,47"/>
+<area shape="rect" id="node4" href="$d8/d17/a00114.html#a032911d7270c91e0a6a9c55f68800096" title="Run one time step, computing full simulation (default) or only index case. " alt="" coords="196,71,356,98"/>
+<area shape="rect" id="node3" href="$d2/da3/a00115.html#a1f32dd929e6e21eabd41f7f7246a7aa1" title="Build the simulator and return it afterwards. " alt="" coords="404,5,539,47"/>
+</map>

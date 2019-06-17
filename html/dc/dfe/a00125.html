@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: stride::util::TimeStamp Class Reference</title>
+<title>Stride Reference Manual: stride::util::detail::pair2data&lt; T, Ptree &gt; Struct Template Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -108,156 +108,78 @@ $(document).ready(function(){initNavTree('dc/dfe/a00125.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="../../dc/d10/a01003.html">List of all members</a>  </div>
+<a href="../../d2/d7b/a01150.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">stride::util::TimeStamp Class Reference</div>  </div>
+<div class="title">stride::util::detail::pair2data&lt; T, Ptree &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Provides wall-clock time stamp using the time call.  
- <a href="../../dc/dfe/a00125.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="../../d4/d8f/a00324_source.html">TimeStamp.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../da/d75/a00334_source.html">PtreeUtils.h</a>&gt;</code></p>
 <div class="dynheader">
-Collaboration diagram for stride::util::TimeStamp:</div>
+Inheritance diagram for stride::util::detail::pair2data&lt; T, Ptree &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../df/dbc/a01004.gif" border="0" usemap="#stride_1_1util_1_1TimeStamp_coll__map" alt="Collaboration graph"/></div>
-<map name="stride_1_1util_1_1TimeStamp_coll__map" id="stride_1_1util_1_1TimeStamp_coll__map">
+<div class="center"><img src="../../de/df1/a01151.gif" border="0" usemap="#stride_1_1util_1_1detail_1_1pair2data_3_01T_00_01Ptree_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="stride_1_1util_1_1detail_1_1pair2data_3_01T_00_01Ptree_01_4_inherit__map" id="stride_1_1util_1_1detail_1_1pair2data_3_01T_00_01Ptree_01_4_inherit__map">
+</map>
+</div>
+<div class="dynheader">
+Collaboration diagram for stride::util::detail::pair2data&lt; T, Ptree &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/d97/a01152.gif" border="0" usemap="#stride_1_1util_1_1detail_1_1pair2data_3_01T_00_01Ptree_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="stride_1_1util_1_1detail_1_1pair2data_3_01T_00_01Ptree_01_4_coll__map" id="stride_1_1util_1_1detail_1_1pair2data_3_01T_00_01Ptree_01_4_coll__map">
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a13a61188e51c4e05d05a91e459c33ffc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfe/a00125.html#a13a61188e51c4e05d05a91e459c33ffc">TimeStamp</a> ()</td></tr>
-<tr class="memdesc:a13a61188e51c4e05d05a91e459c33ffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor marks the current time for the time stamp.  <a href="#a13a61188e51c4e05d05a91e459c33ffc">More...</a><br /></td></tr>
-<tr class="separator:a13a61188e51c4e05d05a91e459c33ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea42ff56713aa57c0aafe5efc92f29e5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfe/a00125.html#aea42ff56713aa57c0aafe5efc92f29e5">ToString</a> () const </td></tr>
-<tr class="memdesc:aea42ff56713aa57c0aafe5efc92f29e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns string with the time stamp after eliminating newline.  <a href="#aea42ff56713aa57c0aafe5efc92f29e5">More...</a><br /></td></tr>
-<tr class="separator:aea42ff56713aa57c0aafe5efc92f29e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f6eefbc6871a229b1c45dbbd98b41fe"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfe/a00125.html#a5f6eefbc6871a229b1c45dbbd98b41fe">ToTag</a> () const </td></tr>
-<tr class="memdesc:a5f6eefbc6871a229b1c45dbbd98b41fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns string with the time stamp after eliminating newline.  <a href="#a5f6eefbc6871a229b1c45dbbd98b41fe">More...</a><br /></td></tr>
-<tr class="separator:a5f6eefbc6871a229b1c45dbbd98b41fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a04acbf03cad1f6a0f62dd3e1128726b6"><td class="memItemLeft" align="right" valign="top">std::chrono::system_clock::time_point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfe/a00125.html#a04acbf03cad1f6a0f62dd3e1128726b6">m_tp</a></td></tr>
-<tr class="separator:a04acbf03cad1f6a0f62dd3e1128726b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af75ac339034526cfb3e419d0f175bf07"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfe/a00125.html#af75ac339034526cfb3e419d0f175bf07">operator()</a> (const typename Ptree::value_type &amp;pair) const </td></tr>
+<tr class="separator:af75ac339034526cfb3e419d0f175bf07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Provides wall-clock time stamp using the time call. </p>
-<p>The time is that of the constructor call. </p>
+<div class="textblock"><h3>template&lt;class T, class Ptree&gt;<br />
+struct stride::util::detail::pair2data&lt; T, Ptree &gt;</h3>
 
-<p>Definition at line <a class="el" href="../../d4/d8f/a00324_source.html#l00034">34</a> of file <a class="el" href="../../d4/d8f/a00324_source.html">TimeStamp.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a13a61188e51c4e05d05a91e459c33ffc"></a>
+
+<p>Definition at line <a class="el" href="../../da/d75/a00334_source.html#l00041">41</a> of file <a class="el" href="../../da/d75/a00334_source.html">PtreeUtils.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="af75ac339034526cfb3e419d0f175bf07"></a>
 <div class="memitem">
 <div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">stride::util::TimeStamp::TimeStamp </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Constructor marks the current time for the time stamp. </p>
-
-<p>Definition at line <a class="el" href="../../de/d55/a00323_source.html#l00031">31</a> of file <a class="el" href="../../de/d55/a00323_source.html">TimeStamp.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aea42ff56713aa57c0aafe5efc92f29e5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string stride::util::TimeStamp::ToString </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns string with the time stamp after eliminating newline. </p>
-
-<p>Definition at line <a class="el" href="../../de/d55/a00323_source.html#l00033">33</a> of file <a class="el" href="../../de/d55/a00323_source.html">TimeStamp.cpp</a>.</p>
-
-<p>References <a class="el" href="../../d4/d8f/a00324_source.html#l00047">m_tp</a>.</p>
-
-<p>Referenced by <a class="el" href="../../d4/d8f/a00324_source.html#l00053">stride::util::operator&lt;&lt;()</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../dc/dfe/a00125_aea42ff56713aa57c0aafe5efc92f29e5_icgraph.gif" border="0" usemap="#dc/dfe/a00125_aea42ff56713aa57c0aafe5efc92f29e5_icgraph" alt=""/></div>
-<map name="dc/dfe/a00125_aea42ff56713aa57c0aafe5efc92f29e5_icgraph" id="dc/dfe/a00125_aea42ff56713aa57c0aafe5efc92f29e5_icgraph">
-<area shape="rect" id="node2" href="../../de/dd7/a00362.html#a93f9f2ea967f7688a4ed4ef10852b566" title="TimeStamp helper inserts string representation in output stream. " alt="" coords="220,13,391,39"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a5f6eefbc6871a229b1c45dbbd98b41fe"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string stride::util::TimeStamp::ToTag </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns string with the time stamp after eliminating newline. </p>
-
-<p>Definition at line <a class="el" href="../../de/d55/a00323_source.html#l00041">41</a> of file <a class="el" href="../../de/d55/a00323_source.html">TimeStamp.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a04acbf03cad1f6a0f62dd3e1128726b6"></a>
-<div class="memitem">
-<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class Ptree &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::chrono::system_clock::time_point stride::util::TimeStamp::m_tp</td>
+          <td class="memname">T <a class="el" href="../../dc/dfe/a00125.html">stride::util::detail::pair2data</a>&lt; T, Ptree &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const typename Ptree::value_type &amp;&#160;</td>
+          <td class="paramname"><em>pair</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d4/d8f/a00324_source.html#l00047">47</a> of file <a class="el" href="../../d4/d8f/a00324_source.html">TimeStamp.h</a>.</p>
-
-<p>Referenced by <a class="el" href="../../de/d55/a00323_source.html#l00033">ToString()</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d75/a00334_source.html#l00043">43</a> of file <a class="el" href="../../da/d75/a00334_source.html">PtreeUtils.h</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="../../d4/d8f/a00324_source.html">TimeStamp.h</a></li>
-<li><a class="el" href="../../de/d55/a00323_source.html">TimeStamp.cpp</a></li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="../../da/d75/a00334_source.html">PtreeUtils.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d3/dc9/a00355.html">stride</a></li><li class="navelem"><a class="el" href="../../de/dd7/a00362.html">util</a></li><li class="navelem"><a class="el" href="../../dc/dfe/a00125.html">TimeStamp</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:38 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../d1/d8b/a00406.html">stride</a></li><li class="navelem"><a class="el" href="../../da/d9c/a00413.html">util</a></li><li class="navelem"><a class="el" href="../../d4/dbc/a00414.html">detail</a></li><li class="navelem"><a class="el" href="../../dc/dfe/a00125.html">pair2data</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:11 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

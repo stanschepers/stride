@@ -1,29 +1,4 @@
-<map id="GeoPopBuilder.cpp" name="GeoPopBuilder.cpp">
-<area shape="rect" id="node2" href="$d5/ddf/a00224.html" title="Initialize populations. " alt="" coords="2130,87,2257,114"/>
-<area shape="rect" id="node7" href="$d7/d6e/a00190.html" title="geopop/GeoGrid.h" alt="" coords="1429,251,1568,278"/>
-<area shape="rect" id="node8" href="$db/d44/a00162.html" title="Definition of ContactPool Id Type. " alt="" coords="494,408,658,435"/>
-<area shape="rect" id="node19" href="$dd/df4/a00193.html" title="geopop/GeoGridConfig.h" alt="" coords="763,169,941,196"/>
-<area shape="rect" id="node26" href="$de/df3/a00185.html" title="geopop/generators/Generator.h" alt="" coords="1100,87,1324,114"/>
-<area shape="rect" id="node28" href="$dc/d5d/a00278.html" title="Header file for the core Population class. " alt="" coords="966,169,1095,196"/>
-<area shape="rect" id="node30" href="$d6/d82/a00293.html" title="Interface of RnMan. " alt="" coords="2201,333,2301,360"/>
-<area shape="rect" id="node34" href="$da/ddc/a00288.html" title="geopop/io/ReaderFactory.h" alt="" coords="2548,87,2737,114"/>
-<area shape="rect" id="node41" href="$d2/d82/a00279.html" title="geopop/populators/Populator.h" alt="" coords="1360,87,1579,114"/>
-<area shape="rect" id="node42" href="$db/d53/a00321.html" title="Header file for the SurveySeeder class. " alt="" coords="2353,169,2503,196"/>
-<area shape="rect" id="node43" href="$d2/d94/a00184.html" title="Interface for install directory queries. " alt="" coords="2955,169,3055,196"/>
-<area shape="rect" id="node44" href="$d7/df2/a00312.html" title="Miscellaneous string utilities. " alt="" coords="3107,408,3229,435"/>
-<area shape="rect" id="node3" href="$d5/d5b/a00135.html" title="Base Class for PopBuilders. " alt="" coords="2072,169,2227,196"/>
-<area shape="rect" id="node14" href="$dc/d31/a00208.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="1867,333,2075,360"/>
-<area shape="rect" id="node15" href="$d9/d39/a00257.html" title="KdTree.h" alt="" coords="1923,408,1999,435"/>
-<area shape="rect" id="node20" href="$d6/db8/a00158.html" title="Header for the core ContactPool class. " alt="" coords="612,333,775,360"/>
-<area shape="rect" id="node21" href="$da/d2e/a00238.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="145,333,335,360"/>
-<area shape="rect" id="node22" href="$d9/dd6/a00272.html" title="Header file for the Person class. " alt="" coords="296,251,403,278"/>
-<area shape="rect" id="node23" href="$d9/d0d/a00298.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="754,408,926,435"/>
-<area shape="rect" id="node27" href="$d9/d8d/a00262.html" title="geopop/Location.h" alt="" coords="1265,251,1405,278"/>
-<area shape="rect" id="node33" href="$d1/dd4/a00267.html" title="Logging (spdlog) utilities. " alt="" coords="1415,169,1523,196"/>
-<area shape="rect" id="node29" href="$de/d38/a00160.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="528,251,715,278"/>
-<area shape="rect" id="node31" href="$da/dd4/a00291.html" title="Interface of RnPcg. " alt="" coords="2177,408,2250,435"/>
-<area shape="rect" id="node35" href="$dd/db2/a00151.html" title="CommutesReader.h" alt="" coords="2681,169,2829,196"/>
-<area shape="rect" id="node37" href="$d3/d42/a00235.html" title="HouseholdReader.h" alt="" coords="1697,333,1842,360"/>
-<area shape="rect" id="node38" href="$da/d53/a00265.html" title="LocationsReader.h" alt="" coords="1757,169,1896,196"/>
-<area shape="rect" id="node39" href="$d8/d64/a00181.html" title="DistributionReader.h" alt="" coords="1522,333,1673,360"/>
+<map id="EpiOutputHDF5Writer.h" name="EpiOutputHDF5Writer.h">
+<area shape="rect" id="node2" href="$dd/ded/a00211.html" title="EpiOutputHDF5Writer.cpp" alt="" coords="5,80,188,107"/>
+<area shape="rect" id="node3" href="$de/dc2/a00228.html" title="EpiOutputWriterFactory.cpp" alt="" coords="213,80,405,107"/>
 </map>

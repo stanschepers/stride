@@ -1,0 +1,6 @@
+<map id="geopop::Epidemiologic::GetMemberCount" name="geopop::Epidemiologic::GetMemberCount">
+<area shape="rect" id="node2" href="$da/d45/a00011.html#a181cf15e29892b07541785081503a463" title="Generate an epi&#45;output map of the Household contactpools. " alt="" coords="220,8,387,49"/>
+<area shape="rect" id="node5" href="$da/d45/a00011.html#a20111a1d8c063a9b499e1140ca401711" title="Gets the absolute population. " alt="" coords="435,71,601,112"/>
+<area shape="rect" id="node3" href="$da/d45/a00011.html#af41433ad68bc3ce3ac6012c75adfe5bc" title="Gets young/old fraction. " alt="" coords="435,5,601,47"/>
+<area shape="rect" id="node4" href="$da/d45/a00011.html#a9b2fb47b088255b4b81f55f48d3ea99b" title="Perform a full comparison with the other Epidemiologic. " alt="" coords="649,39,816,80"/>
+</map>

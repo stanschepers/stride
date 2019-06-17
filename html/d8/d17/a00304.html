@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: SimController.h File Reference</title>
+<title>Stride Reference Manual: KdNode.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -108,33 +108,73 @@ $(document).ready(function(){initNavTree('d8/d17/a00304.html','../../');});
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">SimController.h File Reference</div>  </div>
+<div class="title">KdNode.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Header for the command line controller.  
-<a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="../../db/ddf/a00164_source.html">ControlHelper.h</a>&quot;</code><br />
-<code>#include &lt;boost/property_tree/ptree_fwd.hpp&gt;</code><br />
+<div class="textblock"><code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for SimController.h:</div>
+Include dependency graph for KdNode.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d6/dfa/a00626.gif" border="0" usemap="#SimController_8h" alt=""/></div>
-<map name="SimController_8h" id="SimController_8h">
-<area shape="rect" id="node2" href="../../db/ddf/a00164.html" title="Header for the command line controller. " alt="" coords="403,87,524,114"/>
-<area shape="rect" id="node3" href="../../d6/d82/a00293.html" title="Interface of RnMan. " alt="" coords="195,177,295,203"/>
-<area shape="rect" id="node10" href="../../d1/d67/a00310.html" title="Definition of Stopwatch. " alt="" coords="452,177,576,203"/>
-<area shape="rect" id="node4" href="../../da/dd4/a00291.html" title="Interface of RnPcg. " alt="" coords="8,259,81,285"/>
-<area shape="rect" id="node11" href="../../d8/d23/a00326.html" title="Utilities to tag clocks and reformat clock readout to string. " alt="" coords="503,259,619,285"/>
+<div class="center"><img src="../../de/d33/a00651.gif" border="0" usemap="#KdNode_8h" alt=""/></div>
+<map name="KdNode_8h" id="KdNode_8h">
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d3/da3/a00627.gif" border="0" usemap="#SimController_8hdep" alt=""/></div>
-<map name="SimController_8hdep" id="SimController_8hdep">
-<area shape="rect" id="node2" href="../../dc/d0f/a00303.html" title="Header for the command line controller. " alt="" coords="5,80,140,107"/>
-<area shape="rect" id="node3" href="../../d1/d5d/a00311.html" title="Main program: command line handling. " alt="" coords="165,80,250,107"/>
+<div class="center"><img src="../../df/d37/a00652.gif" border="0" usemap="#KdNode_8hdep" alt=""/></div>
+<map name="KdNode_8hdep" id="KdNode_8hdep">
+<area shape="rect" id="node2" href="../../d3/d07/a00305.html" title="KdTree.h" alt="" coords="4057,80,4133,107"/>
+<area shape="rect" id="node50" href="../../d5/d0f/a00308.html" title="KdTree_def.h" alt="" coords="4168,155,4271,181"/>
+<area shape="rect" id="node3" href="../../d7/d40/a00236.html" title="GeoAggregator.h" alt="" coords="3861,155,3991,181"/>
+<area shape="rect" id="node48" href="../../d7/d03/a00254.html" title="GeoGridKdTree.h" alt="" coords="4015,155,4143,181"/>
+<area shape="rect" id="node4" href="../../d4/d08/a00237.html" title="GeoGrid.cpp" alt="" coords="3941,229,4042,256"/>
+<area shape="rect" id="node5" href="../../da/d2e/a00238.html" title="GeoGrid.h" alt="" coords="3992,304,4079,331"/>
+<area shape="rect" id="node6" href="../../da/d31/a00234.html" title="Header for the command line controller. " alt="" coords="3041,453,3201,480"/>
+<area shape="rect" id="node7" href="../../d6/dfb/a00172.html" title="CommutesCSVReader.cpp" alt="" coords="3423,379,3613,405"/>
+<area shape="rect" id="node8" href="../../dd/ded/a00211.html" title="EpiOutputHDF5Writer.cpp" alt="" coords="3637,379,3820,405"/>
+<area shape="rect" id="node9" href="../../d3/dd5/a00215.html" title="EpiOutputJSONWriter.cpp" alt="" coords="3845,379,4023,405"/>
+<area shape="rect" id="node10" href="../../dd/df3/a00219.html" title="EpiOutputProtoWriter.cpp" alt="" coords="4047,379,4229,405"/>
+<area shape="rect" id="node11" href="../../d6/d22/a00245.html" title="GeoGridHDF5Reader.cpp" alt="" coords="2050,453,2229,480"/>
+<area shape="rect" id="node12" href="../../d0/d1f/a00247.html" title="GeoGridHDF5Writer.cpp" alt="" coords="4253,379,4423,405"/>
+<area shape="rect" id="node13" href="../../de/dbc/a00249.html" title="GeoGridJSONReader.cpp" alt="" coords="2253,453,2429,480"/>
+<area shape="rect" id="node14" href="../../d3/d1a/a00251.html" title="GeoGridJSONWriter.cpp" alt="" coords="4447,379,4615,405"/>
+<area shape="rect" id="node15" href="../../d4/d04/a00255.html" title="GeoGridProtoReader.cpp" alt="" coords="2453,453,2631,480"/>
+<area shape="rect" id="node16" href="../../d9/d39/a00257.html" title="GeoGridProtoWriter.cpp" alt="" coords="4639,379,4810,405"/>
+<area shape="rect" id="node17" href="../../d0/d2f/a00259.html" title="GeoGridReader.cpp" alt="" coords="4834,379,4978,405"/>
+<area shape="rect" id="node18" href="../../dd/db3/a00313.html" title="LocationsReader.h" alt="" coords="3259,379,3398,405"/>
+<area shape="rect" id="node21" href="../../d5/d42/a00269.html" title="Initialize populations: implementation. " alt="" coords="2625,528,2768,555"/>
+<area shape="rect" id="node22" href="../../d1/d0d/a00171.html" title="CollegePopulator.cpp" alt="" coords="5003,379,5159,405"/>
+<area shape="rect" id="node23" href="../../dc/d57/a00194.html" title="DaycarePopulator.cpp" alt="" coords="5183,379,5346,405"/>
+<area shape="rect" id="node24" href="../../dc/dc9/a00282.html" title="HouseholdPopulator.cpp" alt="" coords="2656,453,2833,480"/>
+<area shape="rect" id="node25" href="../../dc/d0f/a00303.html" title="K12SchoolPopulator.cpp" alt="" coords="5370,379,5546,405"/>
+<area shape="rect" id="node26" href="../../d8/df7/a00331.html" title="PreSchoolPopulator.cpp" alt="" coords="5570,379,5743,405"/>
+<area shape="rect" id="node27" href="../../d2/d0a/a00333.html" title="PrimaryCommunityPopulator.cpp" alt="" coords="5767,379,5999,405"/>
+<area shape="rect" id="node28" href="../../d1/dc6/a00347.html" title="SecondaryCommunityPopulator.cpp" alt="" coords="6023,379,6274,405"/>
+<area shape="rect" id="node29" href="../../da/dee/a00383.html" title="WorkplacePopulator.cpp" alt="" coords="6298,379,6471,405"/>
+<area shape="rect" id="node30" href="../../d4/d66/a00289.html" title="Initialize populations: implementation. " alt="" coords="2857,453,3016,480"/>
+<area shape="rect" id="node31" href="../../d4/db5/a00328.html" title="Header file for the core Population class. " alt="" coords="1749,379,1850,405"/>
+<area shape="rect" id="node45" href="../../dc/d98/a00225.html" title="Observer for SimEvents for commandline interface usage. " alt="" coords="3225,453,3379,480"/>
+<area shape="rect" id="node46" href="../../d0/d24/a00222.html" title="EpiOutputReader.h" alt="" coords="6496,379,6636,405"/>
+<area shape="rect" id="node47" href="../../d2/d41/a00318.html" title="MapController.h" alt="" coords="6661,379,6783,405"/>
+<area shape="rect" id="node19" href="../../d7/df2/a00312.html" title="LocationsCSVReader.h" alt="" coords="3601,453,3766,480"/>
+<area shape="rect" id="node20" href="../../dc/d84/a00338.html" title="ReaderFactory.h" alt="" coords="3454,453,3577,480"/>
+<area shape="rect" id="node32" href="../../db/d53/a00202.html" title="Implementation for the DiseaseSeeder class. " alt="" coords="5,453,151,480"/>
+<area shape="rect" id="node33" href="../../d3/d5e/a00275.html" title="Implementation for HelthSeeder class. " alt="" coords="175,453,311,480"/>
+<area shape="rect" id="node34" href="../../df/d91/a00335.html" title="Implementation for the PublicHealthAgency class. " alt="" coords="335,453,509,480"/>
+<area shape="rect" id="node35" href="../../d8/d00/a00186.html" title="Header for the command line controller. " alt="" coords="533,453,669,480"/>
+<area shape="rect" id="node36" href="../../db/ddc/a00353.html" title="Header for the command line controller. " alt="" coords="693,453,828,480"/>
+<area shape="rect" id="node37" href="../../df/d73/a00358.html" title="Header for the command line controller. " alt="" coords="852,453,992,480"/>
+<area shape="rect" id="node38" href="../../d6/de1/a00233.html" title="Generator.h" alt="" coords="1927,453,2026,480"/>
+<area shape="rect" id="node39" href="../../d3/db1/a00200.html" title="Initialize populations: implementation. " alt="" coords="1017,453,1179,480"/>
+<area shape="rect" id="node40" href="../../d8/dfc/a00327.html" title="Core Population class. " alt="" coords="1204,453,1320,480"/>
+<area shape="rect" id="node41" href="../../d6/d80/a00371.html" title="Implementation for the SurveySeeder class. " alt="" coords="1345,453,1483,480"/>
+<area shape="rect" id="node42" href="../../d7/dfc/a00349.html" title="Implementation for the Simulator class. " alt="" coords="1507,453,1582,480"/>
+<area shape="rect" id="node43" href="../../d3/dc9/a00355.html" title="Implementation for SimRunner. " alt="" coords="1606,453,1723,480"/>
+<area shape="rect" id="node44" href="../../dd/da7/a00168.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="1747,453,1852,480"/>
+<area shape="rect" id="node49" href="../../d0/d3e/a00253.html" title="GeoGridKdTree.cpp" alt="" coords="4132,229,4275,256"/>
 </map>
 </div>
 </div>
@@ -142,27 +182,31 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3a/a00101.html">stride::SimController</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls a simulation run initiated with the command line interface (cli).  <a href="../../d4/d3a/a00101.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/db6/a00042.html">geopop::KdTree&lt; P &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A k-d tree: a k-dimensional generalization of binary search trees This data structure allows for efficient lookup of points and range queries with an Axis-Aligned Bounding Box (when balanced).  <a href="../../d5/db6/a00042.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d46/a00002.html">geopop::kd::BaseNode&lt; P &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A base class for all instantiations of a <a class="el" href="../../dd/d32/a00041.html" title="A node in the KdTree (parameter P: the type of point, parameter D: dimension this node splits on)...">Node</a> with D.  <a href="../../d7/d46/a00002.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d32/a00041.html">geopop::kd::Node&lt; P, D &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A node in the <a class="el" href="../../d5/db6/a00042.html" title="A k-d tree: a k-dimensional generalization of binary search trees This data structure allows for effi...">KdTree</a> (parameter P: the type of point, parameter D: dimension this node splits on).  <a href="../../dd/d32/a00041.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:d3/dc9/a00355"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dc9/a00355.html">stride</a></td></tr>
-<tr class="memdesc:d3/dc9/a00355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
+<tr class="memitem:da/dbf/a00393"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dbf/a00393.html">geopop</a></td></tr>
+<tr class="memdesc:da/dbf/a00393"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:db/dbc/a00395"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbc/a00395.html">geopop::kd</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Header for the command line controller. </p>
-
-<p>Definition in file <a class="el" href="../../d8/d17/a00304_source.html">SimController.h</a>.</p>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_563242887663aa0a08dd2011933ce69c.html">execs</a></li><li class="navelem"><a class="el" href="../../d8/d17/a00304.html">SimController.h</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:37 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_1fafd3a38d53c2ca250f450f6134d22a.html">geo</a></li><li class="navelem"><a class="el" href="../../d8/d17/a00304.html">KdNode.h</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:10 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

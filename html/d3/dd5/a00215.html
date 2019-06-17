@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: GeoGridReaderFactory.cpp File Reference</title>
+<title>Stride Reference Manual: EpiOutputJSONWriter.cpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -105,41 +105,46 @@ $(document).ready(function(){initNavTree('d3/dd5/a00215.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
-<div class="title">GeoGridReaderFactory.cpp File Reference</div>  </div>
+<div class="title">EpiOutputJSONWriter.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d6/d43/a00216_source.html">GeoGridReaderFactory.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d1/d72/a00204_source.html">GeoGridJSONReader.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../da/de7/a00210_source.html">GeoGridProtoReader.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d7/da0/a00198_source.html">GeoGridHDF5Reader.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d3/dd1/a00214_source.html">GeoGridReader.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d7/d25/a00182_source.html">util/Exception.h</a>&quot;</code><br />
-<code>#include &lt;fstream&gt;</code><br />
-<code>#include &lt;filesystem&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d6/d43/a00216_source.html">EpiOutputJSONWriter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../da/d2e/a00238_source.html">geopop/GeoGrid.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/d67/a00310_source.html">geopop/Location.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/d56/a00274_source.html">disease/Health.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../de/d38/a00160_source.html">contact/AgeBrackets.h</a>&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;omp.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for GeoGridReaderFactory.cpp:</div>
+Include dependency graph for EpiOutputJSONWriter.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../db/dc4/a00495.gif" border="0" usemap="#GeoGridReaderFactory_8cpp" alt=""/></div>
-<map name="GeoGridReaderFactory_8cpp" id="GeoGridReaderFactory_8cpp">
-<area shape="rect" id="node2" href="../../d6/d43/a00216.html" title="GeoGridReaderFactory.h" alt="" coords="5,229,180,256"/>
-<area shape="rect" id="node6" href="../../d1/d72/a00204.html" title="GeoGridJSONReader.h" alt="" coords="1088,80,1249,107"/>
-<area shape="rect" id="node9" href="../../d3/dd1/a00214.html" title="GeoGridReader.h" alt="" coords="425,229,555,256"/>
-<area shape="rect" id="node41" href="../../da/de7/a00210.html" title="GeoGridProtoReader.h" alt="" coords="697,80,859,107"/>
-<area shape="rect" id="node42" href="../../d7/da0/a00198.html" title="GeoGridHDF5Reader.h" alt="" coords="900,80,1064,107"/>
-<area shape="rect" id="node46" href="../../d7/d25/a00182.html" title="util/Exception.h" alt="" coords="1808,229,1927,256"/>
-<area shape="rect" id="node7" href="../../dc/d9a/a00218.html" title="GeoGridStreamReader.h" alt="" coords="339,155,516,181"/>
-<area shape="rect" id="node13" href="../../d6/db8/a00158.html" title="Header for the core ContactPool class. " alt="" coords="697,229,859,256"/>
-<area shape="rect" id="node15" href="../../db/d44/a00162.html" title="Definition of ContactPool Id Type. " alt="" coords="1112,311,1276,338"/>
-<area shape="rect" id="node20" href="../../d9/d8d/a00262.html" title="geopop/Location.h" alt="" coords="1088,155,1228,181"/>
-<area shape="rect" id="node14" href="../../d2/d34/a00156.html" title="Header for the ContactLogMode class. " alt="" coords="673,311,867,338"/>
-<area shape="rect" id="node21" href="../../da/d2e/a00238.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="1594,229,1783,256"/>
-<area shape="rect" id="node26" href="../../d0/d48/a00165.html" title="geopop/Coordinate.h" alt="" coords="2267,229,2423,256"/>
-<area shape="rect" id="node29" href="../../d9/d0d/a00298.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="1951,229,2123,256"/>
-<area shape="rect" id="node30" href="../../de/de9/a00322.html" title="Interface/Implementation for SVIterator. " alt="" coords="2227,311,2326,338"/>
-<area shape="rect" id="node43" href="../../d3/d2a/a00195.html" title="GeoGridFileReader.h" alt="" coords="541,155,690,181"/>
-<area shape="rect" id="node44" href="../../d3/db1/a00200.html" title="GeoGridHDF5Utils.h" alt="" coords="1253,155,1402,181"/>
+<div class="center"><img src="../../d4/dfb/a00512.gif" border="0" usemap="#EpiOutputJSONWriter_8cpp" alt=""/></div>
+<map name="EpiOutputJSONWriter_8cpp" id="EpiOutputJSONWriter_8cpp">
+<area shape="rect" id="node2" href="../../d6/d43/a00216.html" title="EpiOutputJSONWriter.h" alt="" coords="275,155,439,181"/>
+<area shape="rect" id="node6" href="../../d1/d67/a00310.html" title="geopop/Location.h" alt="" coords="677,229,817,256"/>
+<area shape="rect" id="node37" href="../../dd/d56/a00274.html" title="Header for the Health class. " alt="" coords="1514,461,1643,487"/>
+<area shape="rect" id="node41" href="../../da/d2e/a00238.html" title="geopop/GeoGrid.h" alt="" coords="1505,80,1644,107"/>
+<area shape="rect" id="node49" href="../../de/d38/a00160.html" title="contact/AgeBrackets.h" alt="" coords="2326,543,2493,569"/>
+<area shape="rect" id="node3" href="../../d9/d01/a00227.html" title="EpiOutputWriter.h" alt="" coords="841,229,973,256"/>
+<area shape="rect" id="node7" href="../../de/df3/a00185.html" title="Definition of ContactPool Id Type. " alt="" coords="609,543,773,569"/>
+<area shape="rect" id="node13" href="../../d5/d7b/a00286.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="413,461,603,487"/>
+<area shape="rect" id="node18" href="../../da/d15/a00188.html" title="geopop/Coordinate.h" alt="" coords="903,379,1059,405"/>
+<area shape="rect" id="node21" href="../../d5/df1/a00206.html" title="geopop/Epidemiologic.h" alt="" coords="1085,304,1259,331"/>
+<area shape="rect" id="node22" href="../../df/d03/a00348.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="1877,379,2049,405"/>
+<area shape="rect" id="node33" href="../../d2/d71/a00309.html" title="Location.cpp" alt="" coords="653,304,755,331"/>
+<area shape="rect" id="node23" href="../../dc/de3/a00373.html" title="Interface/Implementation for SVIterator. " alt="" coords="2000,461,2099,487"/>
+<area shape="rect" id="node34" href="../../d8/d64/a00181.html" title="Header for the core ContactPool class. " alt="" coords="1537,379,1700,405"/>
+<area shape="rect" id="node38" href="../../de/de9/a00322.html" title="Header file for the Person class. " alt="" coords="721,379,828,405"/>
+<area shape="rect" id="node35" href="../../db/dd9/a00179.html" title="Header for the ContactLogMode class. " alt="" coords="1441,543,1636,569"/>
+<area shape="rect" id="node42" href="../../d7/d03/a00254.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="2275,229,2483,256"/>
+<area shape="rect" id="node45" href="../../d4/d08/a00237.html" title="GeoGrid.cpp" alt="" coords="1721,155,1823,181"/>
+<area shape="rect" id="node43" href="../../d3/d07/a00305.html" title="KdTree.h" alt="" coords="2341,304,2417,331"/>
+<area shape="rect" id="node44" href="../../d0/da2/a00307.html" title="KdTree2DPoint.h" alt="" coords="2114,304,2241,331"/>
+<area shape="rect" id="node46" href="../../d7/d40/a00236.html" title="geopop/geo/GeoAggregator.h" alt="" coords="2040,229,2251,256"/>
+<area shape="rect" id="node47" href="../../d4/db5/a00328.html" title="Header file for the core Population class. " alt="" coords="1434,229,1563,256"/>
 </map>
 </div>
 </div>
@@ -147,17 +152,22 @@ Include dependency graph for GeoGridReaderFactory.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:d2/d45/a00342"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/a00342.html">geopop</a></td></tr>
-<tr class="memdesc:d2/d45/a00342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
+<tr class="memitem:da/dbf/a00393"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dbf/a00393.html">geopop</a></td></tr>
+<tr class="memdesc:da/dbf/a00393"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a0101010c4cc08176295a72d7785b6aa3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dbf/a00393.html#a0101010c4cc08176295a72d7785b6aa3">geopop::json</a> = nlohmann::json</td></tr>
+<tr class="separator:a0101010c4cc08176295a72d7785b6aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_c490ff723361adf09283ce460b26e466.html">io</a></li><li class="navelem"><a class="el" href="../../d3/dd5/a00215.html">GeoGridReaderFactory.cpp</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:37 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_c490ff723361adf09283ce460b26e466.html">io</a></li><li class="navelem"><a class="el" href="../../d3/dd5/a00215.html">EpiOutputJSONWriter.cpp</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:10 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

@@ -1,5 +1,4 @@
-<map id="WorkplaceCSVReader.h" name="WorkplaceCSVReader.h">
-<area shape="rect" id="node2" href="$d8/d64/a00181.html" title="DistributionReader.h" alt="" coords="205,80,356,107"/>
-<area shape="rect" id="node3" href="$d9/d0d/a00298.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="253,155,425,181"/>
-<area shape="rect" id="node4" href="$de/de9/a00322.html" title="Interface/Implementation for SVIterator. " alt="" coords="143,229,242,256"/>
+<map id="LocationsCSVReader.h" name="LocationsCSVReader.h">
+<area shape="rect" id="node2" href="$d1/d5d/a00311.html" title="LocationsCSVReader.cpp" alt="" coords="5,80,185,107"/>
+<area shape="rect" id="node3" href="$d4/dce/a00337.html" title="ReaderFactory.cpp" alt="" coords="209,80,347,107"/>
 </map>

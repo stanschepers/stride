@@ -1,4 +1,4 @@
-<map id="geopop::GeoGridFileWriter" name="geopop::GeoGridFileWriter">
-<area shape="rect" id="node3" href="$db/db2/a00020.html" title="An implementation of the GeoGridFileWriter using HDF5 This class is used to write a GeoGrid to an HDF..." alt="" coords="5,344,207,553"/>
-<area shape="rect" id="node2" href="$d5/d16/a00029.html" title="An interface for writing the GeoGrid. " alt="" coords="23,5,189,112"/>
+<map id="StanController.h" name="StanController.h">
+<area shape="rect" id="node2" href="$df/d73/a00358.html" title="Header for the command line controller. " alt="" coords="5,80,145,107"/>
+<area shape="rect" id="node3" href="$d7/ddb/a00361.html" title="Main program: command line handling. " alt="" coords="170,80,255,107"/>
 </map>

@@ -1,13 +1,11 @@
 var a00102 =
 [
-    [ "SimRunner", "d9/dcc/a00102.html#a22679f34074793fde2fd0e4ea0f6bea8", null ],
-    [ "~SimRunner", "d9/dcc/a00102.html#ad59e65dfe839b8a589b1c6ffa805ba2f", null ],
-    [ "GetClock", "d9/dcc/a00102.html#aceb24930d50702acfa88bdfe5cb13a1b", null ],
-    [ "GetConfig", "d9/dcc/a00102.html#a9eeaa63450413a62f31bcee07df29fa3", null ],
-    [ "GetSim", "d9/dcc/a00102.html#a99014dd891a3422214c2a088dd38cde9", null ],
-    [ "Run", "d9/dcc/a00102.html#a81720a1766d513eb248cb443d948567f", null ],
-    [ "Run", "d9/dcc/a00102.html#a233f76f6af0cef8c5971112b6d2235d0", null ],
-    [ "m_clock", "d9/dcc/a00102.html#ae2de72162f806fe5b7008e81854bdc2d", null ],
-    [ "m_config", "d9/dcc/a00102.html#a83447e89523054d043db597e17d4d501", null ],
-    [ "m_sim", "d9/dcc/a00102.html#a4ff961d97649b68ef661d38c098baaf0", null ]
+    [ "HealthSeeder", "d9/dcc/a00102.html#a7b4785c0728c9f154aa1426034d6e1b5", null ],
+    [ "Seed", "d9/dcc/a00102.html#ad6a9061857cee5335745fe5501bcb73d", null ],
+    [ "GetDistribution", "d9/dcc/a00102.html#a7b240a326b204767217481b3fcc46237", null ],
+    [ "Sample", "d9/dcc/a00102.html#a562b022d2c7f2836b4400e7d19e1b040", null ],
+    [ "m_start_symptomatic", "d9/dcc/a00102.html#a4521a7113e70e8e8243da7180d5b1d5e", null ],
+    [ "m_time_asymptomatic", "d9/dcc/a00102.html#ab33626e940aee2fe1e6e4c22875f6af1", null ],
+    [ "m_time_infectious", "d9/dcc/a00102.html#a40f8e0eb1bc5b7eabb6ec85ec5f210e1", null ],
+    [ "m_time_symptomatic", "d9/dcc/a00102.html#aa2dea61097996a03e8c5d113dd81696c", null ]
 ];

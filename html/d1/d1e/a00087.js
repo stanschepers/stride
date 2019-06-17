@@ -1,11 +1,25 @@
 var a00087 =
 [
-    [ "HealthSeeder", "d1/d1e/a00087.html#a7b4785c0728c9f154aa1426034d6e1b5", null ],
-    [ "Seed", "d1/d1e/a00087.html#ad6a9061857cee5335745fe5501bcb73d", null ],
-    [ "GetDistribution", "d1/d1e/a00087.html#a7b240a326b204767217481b3fcc46237", null ],
-    [ "Sample", "d1/d1e/a00087.html#a562b022d2c7f2836b4400e7d19e1b040", null ],
-    [ "m_start_symptomatic", "d1/d1e/a00087.html#a4521a7113e70e8e8243da7180d5b1d5e", null ],
-    [ "m_time_asymptomatic", "d1/d1e/a00087.html#ab33626e940aee2fe1e6e4c22875f6af1", null ],
-    [ "m_time_infectious", "d1/d1e/a00087.html#a40f8e0eb1bc5b7eabb6ec85ec5f210e1", null ],
-    [ "m_time_symptomatic", "d1/d1e/a00087.html#aa2dea61097996a03e8c5d113dd81696c", null ]
+    [ "iterator", "d1/d1e/a00087.html#a12e167b902612c7efe48d2e396ad0e03", null ],
+    [ "ContactPool", "d1/d1e/a00087.html#aa9f9eef38206f52d31e13a3fb73b6f68", null ],
+    [ "~ContactPool", "d1/d1e/a00087.html#adee0ae5ebfa3ec1ccd684b2a4e16542c", null ],
+    [ "AddMember", "d1/d1e/a00087.html#aa9aeb5154fea3446d9a4ac4d1844b510", null ],
+    [ "CheckLimit", "d1/d1e/a00087.html#a8687501308ccf1202d043a1f743bbb97", null ],
+    [ "GetLimit", "d1/d1e/a00087.html#a61107675442bae4ac31a302260079c52", null ],
+    [ "GetId", "d1/d1e/a00087.html#a3b2da2fe2ebe5e75bcf8a13893f8d10a", null ],
+    [ "GetInfectedCount", "d1/d1e/a00087.html#acd38806272aa6ee77aae82edaf1224ba", null ],
+    [ "GetPool", "d1/d1e/a00087.html#afb9a65718e51a5afa72e9f34724f1fe0", null ],
+    [ "GetType", "d1/d1e/a00087.html#a9cfd2356daa4191fe6951d7c704bf16c", null ],
+    [ "GenerateEpiOutput", "d1/d1e/a00087.html#a878b9b79af0c8fe9025676ed1c092c29", null ],
+    [ "begin", "d1/d1e/a00087.html#a85249b3315c664761fbd1448708473ab", null ],
+    [ "end", "d1/d1e/a00087.html#a59eb79bf2d47f73de6ece95400106f2f", null ],
+    [ "size", "d1/d1e/a00087.html#a2c357e530f204c4ba1e686f4903f40ad", null ],
+    [ "operator[]", "d1/d1e/a00087.html#a3cae7beb1739e01246b4d9fa80b3aa79", null ],
+    [ "SortMembers", "d1/d1e/a00087.html#a38adafed84fa1801c5f1f6420158a7f3", null ],
+    [ "Infector", "d1/d1e/a00087.html#a9ffe141bfd5da5336894dc1cebf49fa7", null ],
+    [ "m_index_immune", "d1/d1e/a00087.html#a2efe968db2b7ac3adb440bb515cdf9c4", null ],
+    [ "m_pool_id", "d1/d1e/a00087.html#a491a3a04acc39cf5ffccd30714a8e76a", null ],
+    [ "m_pool_type", "d1/d1e/a00087.html#afe687068792fae04b6b3edb61f6ad93f", null ],
+    [ "m_members", "d1/d1e/a00087.html#a672b69837fbd57d9a61f8acb18fec82e", null ],
+    [ "m_limit", "d1/d1e/a00087.html#abda88c1bda96dbf356a6380a9d71c2cb", null ]
 ];

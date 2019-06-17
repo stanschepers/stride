@@ -1,0 +1,5 @@
+<map id="visualization::MapController::UpdateLocations" name="visualization::MapController::UpdateLocations">
+<area shape="rect" id="node2" href="$d3/df8/a00155.html#a698bf28251b49a62a202da8431104b42" title="Set the selected age bracket. " alt="" coords="251,5,448,47"/>
+<area shape="rect" id="node3" href="$d3/df8/a00155.html#ad9fdfe5405e2744f6226876cc686419a" title="Set the shown day. " alt="" coords="251,71,448,112"/>
+<area shape="rect" id="node4" href="$d3/df8/a00155.html#aa4f86259e6cad0db7308732577eb694f" title="Set the selected health status. " alt="" coords="251,136,448,177"/>
+</map>

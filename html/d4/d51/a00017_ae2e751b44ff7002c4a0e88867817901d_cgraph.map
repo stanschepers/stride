@@ -1,0 +1,5 @@
+<map id="geopop::Generator::Apply" name="geopop::Generator::Apply">
+<area shape="rect" id="node2" href="$d0/d0b/a00004.html#aee8eaf194ef99f6080afbcde37716edc" title="Get the Population associated with this GeoGrid. " alt="" coords="204,5,432,32"/>
+<area shape="rect" id="node3" href="$d0/d0b/a00004.html#a85acfd01de1c6c9d0dde32ad5d7e9ab6" title="Gets the K biggest (in population count) locations of this GeoGrid. " alt="" coords="235,56,401,83"/>
+<area shape="rect" id="node4" href="$d6/d42/a00043.html#a5a55b805fc13aeb37c6ce0dfffbc44dd" title="Gets the content. " alt="" coords="480,56,695,83"/>
+</map>

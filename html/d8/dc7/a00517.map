@@ -1,5 +1,4 @@
-<map id="HouseholdCSVReader.h" name="HouseholdCSVReader.h">
-<area shape="rect" id="node2" href="$d3/d42/a00235.html" title="HouseholdReader.h" alt="" coords="207,80,352,107"/>
-<area shape="rect" id="node3" href="$d9/d0d/a00298.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="253,155,425,181"/>
-<area shape="rect" id="node4" href="$de/de9/a00322.html" title="Interface/Implementation for SVIterator. " alt="" coords="143,229,242,256"/>
+<map id="EpiOutputProtoReader.h" name="EpiOutputProtoReader.h">
+<area shape="rect" id="node2" href="$df/d24/a00217.html" title="EpiOutputProtoReader.cpp" alt="" coords="5,80,195,107"/>
+<area shape="rect" id="node3" href="$dc/d28/a00223.html" title="EpiOutputReaderFactory.cpp" alt="" coords="219,80,419,107"/>
 </map>

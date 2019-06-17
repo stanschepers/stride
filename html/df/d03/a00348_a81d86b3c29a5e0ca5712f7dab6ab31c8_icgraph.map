@@ -1,8 +1,0 @@
-<map id="H5Utils::GetCompoundType&lt; H5Commute &gt;" name="H5Utils::GetCompoundType&lt; H5Commute &gt;">
-<area shape="rect" id="node2" href="$dd/da2/a00019.html#a44b9bcb40b65211ba5cffc8da2e5afd9" title="geopop::GeoGridHDF5Reader\l::ReadLocation" alt="" coords="251,5,460,47"/>
-<area shape="rect" id="node5" href="$db/db2/a00020.html#a816d3ea4faa22eb8cfacccd1fc850c24" title="geopop::GeoGridHDF5Writer\l::WriteCommutes" alt="" coords="255,71,456,112"/>
-<area shape="rect" id="node3" href="$dd/da2/a00019.html#a9fc58126c17749621ecfb9ecc29313c4" title="Locations. " alt="" coords="508,5,717,47"/>
-<area shape="rect" id="node4" href="$dd/da2/a00019.html#a7c475566a30e6dc1626463ef5bff1b6e" title="Actually perform the read. " alt="" coords="765,5,975,47"/>
-<area shape="rect" id="node6" href="$db/db2/a00020.html#a3b4bd0fd7e724b111319db479626aaab" title="geopop::GeoGridHDF5Writer\l::WriteLocation" alt="" coords="512,71,713,112"/>
-<area shape="rect" id="node7" href="$db/db2/a00020.html#a37c5f82d2b07fc977a794301db1c25d1" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="769,71,971,112"/>
-</map>

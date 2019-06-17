@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: GeoGridFileWriter.h File Reference</title>
+<title>Stride Reference Manual: DaysOffInterface.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -108,29 +108,22 @@ $(document).ready(function(){initNavTree('d7/ded/a00196.html','../../');});
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">GeoGridFileWriter.h File Reference</div>  </div>
+<div class="title">DaysOffInterface.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;utility&gt;</code><br />
-<code>#include &lt;memory&gt;</code><br />
-<code>#include &lt;ostream&gt;</code><br />
-<code>#include &quot;<a class="el" href="../../d5/d0b/a00220_source.html">GeoGridWriter.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for GeoGridFileWriter.h:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../db/d2c/a00466.gif" border="0" usemap="#GeoGridFileWriter_8h" alt=""/></div>
-<map name="GeoGridFileWriter_8h" id="GeoGridFileWriter_8h">
-<area shape="rect" id="node5" href="../../d5/d0b/a00220.html" title="GeoGridWriter.h" alt="" coords="137,80,258,107"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
+
+<p>Interface for DaysOff classes.  
+<a href="#details">More...</a></p>
+<div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d7/d5e/a00467.gif" border="0" usemap="#GeoGridFileWriter_8hdep" alt=""/></div>
-<map name="GeoGridFileWriter_8hdep" id="GeoGridFileWriter_8hdep">
-<area shape="rect" id="node2" href="../../db/d53/a00202.html" title="GeoGridHDF5Writer.h" alt="" coords="113,80,269,107"/>
-<area shape="rect" id="node3" href="../../dd/de3/a00201.html" title="GeoGridHDF5Writer.cpp" alt="" coords="5,155,176,181"/>
-<area shape="rect" id="node4" href="../../dd/d52/a00221.html" title="GeoGridWriterFactory.cpp" alt="" coords="200,155,381,181"/>
+<div class="center"><img src="../../dc/da0/a00483.gif" border="0" usemap="#DaysOffInterface_8hdep" alt=""/></div>
+<map name="DaysOffInterface_8hdep" id="DaysOffInterface_8hdep">
+<area shape="rect" id="node2" href="../../d3/d2a/a00195.html" title="DaysOffAll class: everybody gets the day off. " alt="" coords="5,80,104,107"/>
+<area shape="rect" id="node3" href="../../de/db1/a00197.html" title="DaysOffNone class. " alt="" coords="129,80,247,107"/>
+<area shape="rect" id="node4" href="../../d7/da0/a00198.html" title="DaysOffAll class: everybody gets the day off. " alt="" coords="271,80,398,107"/>
+<area shape="rect" id="node5" href="../../d8/d72/a00199.html" title="DaysOffStandard class. " alt="" coords="422,80,565,107"/>
+<area shape="rect" id="node6" href="../../d7/dfc/a00349.html" title="Implementation for the Simulator class. " alt="" coords="456,155,531,181"/>
 </map>
 </div>
 </div>
@@ -138,23 +131,27 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d2b/a00018.html">geopop::GeoGridFileWriter</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An interface for writing the <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> to a filelocated at inputFilePath, can be implemented with multiple file types.  <a href="../../d1/d2b/a00018.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d7d/a00093.html">stride::DaysOffInterface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface definition.  <a href="../../d4/d7d/a00093.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:d2/d45/a00342"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/a00342.html">geopop</a></td></tr>
-<tr class="memdesc:d2/d45/a00342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
+<tr class="memitem:d1/d8b/a00406"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d8b/a00406.html">stride</a></td></tr>
+<tr class="memdesc:d1/d8b/a00406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interface for DaysOff classes. </p>
+
+<p>Definition in file <a class="el" href="../../d7/ded/a00196_source.html">DaysOffInterface.h</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_c490ff723361adf09283ce460b26e466.html">io</a></li><li class="navelem"><a class="el" href="../../d7/ded/a00196.html">GeoGridFileWriter.h</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:37 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_479f5232607056a987532404314b00ea.html">calendar</a></li><li class="navelem"><a class="el" href="../../d7/ded/a00196.html">DaysOffInterface.h</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:10 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

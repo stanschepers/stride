@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: ContactLogMode.cpp File Reference</title>
+<title>Stride Reference Manual: visualization::MapController Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -48,8 +48,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="../../annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="../../files.html"><span>Files</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li><a href="../../files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -70,8 +70,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="../../files.html"><span>File&#160;List</span></a></li>
-      <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="../../annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="../../classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="../../inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -105,58 +107,1283 @@ $(document).ready(function(){initNavTree('d3/df8/a00155.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#signals">Signals</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#properties">Properties</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="../../de/db5/a01181.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ContactLogMode.cpp File Reference</div>  </div>
+<div class="title">visualization::MapController Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Implementation of ContactLogMode.  
-<a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d2/d34/a00156_source.html">ContactLogMode.h</a>&quot;</code><br />
-<code>#include &lt;boost/algorithm/string.hpp&gt;</code><br />
-<code>#include &lt;map&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for ContactLogMode.cpp:</div>
+<p><a class="el" href="../../d3/df8/a00155.html" title="MapController for use within the visualization, controller of the GUI and communicates with the qml...">MapController</a> for use within the visualization, controller of the GUI and communicates with the qml.  
+ <a href="../../d3/df8/a00155.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for visualization::MapController:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d0/da0/a00403.gif" border="0" usemap="#ContactLogMode_8cpp" alt=""/></div>
-<map name="ContactLogMode_8cpp" id="ContactLogMode_8cpp">
-<area shape="rect" id="node2" href="../../d2/d34/a00156.html" title="Header for the ContactLogMode class. " alt="" coords="5,80,148,107"/>
+<div class="center"><img src="../../dd/de9/a01182.gif" border="0" usemap="#visualization_1_1MapController_inherit__map" alt="Inheritance graph"/></div>
+<map name="visualization_1_1MapController_inherit__map" id="visualization_1_1MapController_inherit__map">
+<area shape="rect" id="node2" href="../../d1/d6e/a00073.html" title="{QObject\n||}" alt="" coords="67,5,141,83"/>
 </map>
 </div>
+<div class="dynheader">
+Collaboration diagram for visualization::MapController:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dc/d2d/a01183.gif" border="0" usemap="#visualization_1_1MapController_coll__map" alt="Collaboration graph"/></div>
+<map name="visualization_1_1MapController_coll__map" id="visualization_1_1MapController_coll__map">
+<area shape="rect" id="node2" href="../../d1/d6e/a00073.html" title="{QObject\n||}" alt="" coords="479,3302,553,3379"/>
+<area shape="rect" id="node4" href="../../d0/d0b/a00004.html" title="{geopop::GeoGrid\&lt; EpiOutput \&gt;\n||+ GeoGrid()\l+ GeoGrid()\l+ operator=()\l+ AddLocation()\l+ Finalize()\l+ GetById()\l+ GetPopulation()\l+ LocationsInRadius()\l+ GetNearbyPools()\l+ LocationsInBox()\land 11 more...\l&#45; CheckFinalized()\l}" alt="" coords="1321,3221,1543,3460"/>
+<area shape="rect" id="node5" href="../../d5/db6/a00042.html" title="{geopop::KdTree\&lt; geogrid\l_detail::KdTree2DPoint \&gt;\n||+ KdTree()\l+ Apply()\l+ Apply()\l+ Contains()\l+ Empty()\l+ GetHeight()\l+ Insert()\l+ Query()\l+ Size()\l+ Build()\l&#45; Construct()\l}" alt="" coords="1007,1965,1190,2203"/>
+<area shape="rect" id="node32" href="../../d0/d0b/a00004.html" title="{geopop::GeoGrid\&lt; geopop\l::geopop::Epidemiologic \&gt;\n||+ GeoGrid()\l+ GeoGrid()\l+ operator=()\l+ AddLocation()\l+ Finalize()\l+ GetById()\l+ GetPopulation()\l+ LocationsInRadius()\l+ GetNearbyPools()\l+ LocationsInBox()\land 11 more...\l&#45; CheckFinalized()\l}" alt="" coords="1258,2273,1451,2527"/>
+<area shape="rect" id="node40" href="../../d0/d0b/a00004.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac..." alt="" coords="1333,2905,1531,3159"/>
+<area shape="rect" id="node7" href="../../dd/d32/a00041.html" title="{geopop::kd::Node\&lt; geogrid\l_detail::KdTree2DPoint, 0 \&gt;\n||+ Node()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="211,1399,410,1564"/>
+<area shape="rect" id="node8" href="../../d7/d46/a00002.html" title="{geopop::kd::BaseNode\l\&lt; geogrid_detail::KdTree2DPoint \&gt;\n||+ ~BaseNode()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="656,923,899,1088"/>
+<area shape="rect" id="node9" href="../../d7/d46/a00002.html" title="A base class for all instantiations of a Node with D. " alt="" coords="423,476,628,627"/>
+<area shape="rect" id="node13" href="../../dd/d32/a00041.html" title="A node in the KdTree (parameter P: the type of point, parameter D: dimension this node splits on)..." alt="" coords="221,748,411,899"/>
+<area shape="rect" id="node18" href="../../dd/d32/a00041.html" title="{geopop::kd::Node\&lt; P, 0 \&gt;\n||+ Node()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="449,1149,639,1299"/>
+<area shape="rect" id="node10" href="../../de/d11/a00021.html" title="KdTree for some more information on methods. " alt="" coords="713,1112,881,1336"/>
+<area shape="rect" id="node16" href="../../d5/db6/a00042.html" title="A k&#45;d tree: a k&#45;dimensional generalization of binary search trees This data structure allows for effi..." alt="" coords="745,1656,903,1880"/>
+<area shape="rect" id="node20" href="../../d9/da5/a00075.html" title="{stride::util::SegmentedVector\l\&lt; Person \&gt;\n||+ SegmentedVector()\l+ SegmentedVector()\l+ SegmentedVector()\l+ SegmentedVector()\l+ SegmentedVector()\l+ operator=()\l+ operator=()\l+ ~SegmentedVector()\l+ at()\l+ at()\land 23 more...\l&#45; get_chunk()\l}" alt="" coords="1767,2273,1977,2527"/>
+<area shape="rect" id="node24" href="../../d9/da5/a00075.html" title="Container that stores objects &quot;almost contiguously&quot; (in a chain of blocks) and guarantees that pointe..." alt="" coords="1626,1957,1835,2211"/>
+<area shape="rect" id="node14" title="STL class. " alt="" coords="757,204,912,281"/>
+<area shape="rect" id="node23" title="STL class. " alt="" coords="2135,1443,2262,1520"/>
+<area shape="rect" id="node28" title="STL class. " alt="" coords="2110,197,2266,289"/>
+<area shape="rect" id="node31" title="STL class. " alt="" coords="1713,182,1890,303"/>
+<area shape="rect" id="node38" title="STL class. " alt="" coords="1441,1722,1593,1814"/>
+<area shape="rect" id="node50" title="STL class. " alt="" coords="2597,1729,2729,1807"/>
+<area shape="rect" id="node19" href="../../db/d57/a00112.html" title="Key Data structure: container for (a) all individuals in the population (b) the ContactPoolSys wchich..." alt="" coords="1801,2619,1961,2843"/>
+<area shape="rect" id="node22" href="../../d9/d00/a00784.html" title="{Chunk *\n||}" alt="" coords="1902,1443,1975,1520"/>
+<area shape="rect" id="node26" href="../../db/ddf/a00088.html" title="ContactPoolSys contains for each of the type of pools (Household, K12School, ...) a vector of with al..." alt="" coords="1951,748,2118,899"/>
+<area shape="rect" id="node27" href="../../d3/d8b/a00059.html" title="{stride::ContactType\l::IdSubscriptArray\&lt;\l unsigned int \&gt;\n||+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ operator[]()\l+ operator[]()\l+ at()\l+ at()\l}" alt="" coords="1977,447,2129,656"/>
+<area shape="rect" id="node29" href="../../d3/d8b/a00059.html" title="An std::array modified to enable subscripting with the constact pool type indentifiers. " alt="" coords="1914,145,2086,340"/>
+<area shape="rect" id="node30" href="../../d3/d8b/a00059.html" title="{stride::ContactType\l::IdSubscriptArray\&lt;\l util::stride::util::\lSegmentedVector\&lt; stride\l::ContactPool \&gt; \&gt;\n||+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ operator[]()\l+ operator[]()\l+ at()\l+ at()\l}" alt="" coords="1752,432,1941,671"/>
+<area shape="rect" id="node46" title="STL class. " alt="" coords="2626,2993,2713,3071"/>
+<area shape="rect" id="node47" title="STL class. " alt="" coords="2601,2685,2738,2777"/>
+</map>
 </div>
-<p><a href="../../d3/df8/a00155_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:d3/dc9/a00355"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dc9/a00355.html">stride</a></td></tr>
-<tr class="memdesc:d3/dc9/a00355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:df/df1/a00357"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/a00357.html">stride::ContactLogMode</a></td></tr>
-<tr class="memdesc:df/df1/a00357"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum specifiying the level of logging required: <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:a7b76858632eecde584d96f6fc7aebe0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a7b76858632eecde584d96f6fc7aebe0d">DayChanged</a> ()</td></tr>
+<tr class="memdesc:a7b76858632eecde584d96f6fc7aebe0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for when day changes.  <a href="#a7b76858632eecde584d96f6fc7aebe0d">More...</a><br /></td></tr>
+<tr class="separator:a7b76858632eecde584d96f6fc7aebe0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a874a56929986affe98627e57d03b4fd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a874a56929986affe98627e57d03b4fd9">HeightChanged</a> ()</td></tr>
+<tr class="memdesc:a874a56929986affe98627e57d03b4fd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for when height changes.  <a href="#a874a56929986affe98627e57d03b4fd9">More...</a><br /></td></tr>
+<tr class="separator:a874a56929986affe98627e57d03b4fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a376e6afcdfbe6a52020614e4ec9f8171"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a376e6afcdfbe6a52020614e4ec9f8171">WidthChanged</a> ()</td></tr>
+<tr class="memdesc:a376e6afcdfbe6a52020614e4ec9f8171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for when width changes.  <a href="#a376e6afcdfbe6a52020614e4ec9f8171">More...</a><br /></td></tr>
+<tr class="separator:a376e6afcdfbe6a52020614e4ec9f8171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e3e63bc7fb5f962af410257aa115330"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a2e3e63bc7fb5f962af410257aa115330">ShownInformationChanged</a> ()</td></tr>
+<tr class="memdesc:a2e3e63bc7fb5f962af410257aa115330"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for when the show information changes.  <a href="#a2e3e63bc7fb5f962af410257aa115330">More...</a><br /></td></tr>
+<tr class="separator:a2e3e63bc7fb5f962af410257aa115330"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a327df78761122577280a8e6a34820a48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a327df78761122577280a8e6a34820a48">AgeBracketChanged</a> ()</td></tr>
+<tr class="memdesc:a327df78761122577280a8e6a34820a48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for when the selected age bracket changes.  <a href="#a327df78761122577280a8e6a34820a48">More...</a><br /></td></tr>
+<tr class="separator:a327df78761122577280a8e6a34820a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ee90812c833d8fc7a0f47e3ce38be84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a7ee90812c833d8fc7a0f47e3ce38be84">HealthStatusChanged</a> ()</td></tr>
+<tr class="memdesc:a7ee90812c833d8fc7a0f47e3ce38be84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for when the selected health status changes.  <a href="#a7ee90812c833d8fc7a0f47e3ce38be84">More...</a><br /></td></tr>
+<tr class="separator:a7ee90812c833d8fc7a0f47e3ce38be84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a138350716995c9694a4c64e01e4b94e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a138350716995c9694a4c64e01e4b94e0">DataPinnedChanged</a> ()</td></tr>
+<tr class="memdesc:a138350716995c9694a4c64e01e4b94e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal for when the selected health status changes.  <a href="#a138350716995c9694a4c64e01e4b94e0">More...</a><br /></td></tr>
+<tr class="separator:a138350716995c9694a4c64e01e4b94e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a025f9ff3cf2df8c0c8b95e48724d9b7c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/a00357.html#a025f9ff3cf2df8c0c8b95e48724d9b7c">stride::ContactLogMode::ToString</a> (ContactLogMode::Id w)</td></tr>
-<tr class="memdesc:a025f9ff3cf2df8c0c8b95e48724d9b7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a LogMode value to corresponding name.  <a href="../../df/df1/a00357.html#a025f9ff3cf2df8c0c8b95e48724d9b7c">More...</a><br /></td></tr>
-<tr class="separator:a025f9ff3cf2df8c0c8b95e48724d9b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12707c23b43baa1a0f5bed51db72756d"><td class="memItemLeft" align="right" valign="top">Id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/a00357.html#a12707c23b43baa1a0f5bed51db72756d">stride::ContactLogMode::ToMode</a> (const std::string &amp;s)</td></tr>
-<tr class="memdesc:a12707c23b43baa1a0f5bed51db72756d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string with name to LogMode value.  <a href="../../df/df1/a00357.html#a12707c23b43baa1a0f5bed51db72756d">More...</a><br /></td></tr>
-<tr class="separator:a12707c23b43baa1a0f5bed51db72756d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a16f36077cbdfdb4d2eb8d0241127abbf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a16f36077cbdfdb4d2eb8d0241127abbf">MapController</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:a16f36077cbdfdb4d2eb8d0241127abbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="../../d3/df8/a00155.html" title="MapController for use within the visualization, controller of the GUI and communicates with the qml...">MapController</a> and read the epi-output file.  <a href="#a16f36077cbdfdb4d2eb8d0241127abbf">More...</a><br /></td></tr>
+<tr class="separator:a16f36077cbdfdb4d2eb8d0241127abbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a541cf96dad19a0f5cb9f98bf5e6e1776"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a541cf96dad19a0f5cb9f98bf5e6e1776">MapController</a> (const <a class="el" href="../../d3/df8/a00155.html">MapController</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a541cf96dad19a0f5cb9f98bf5e6e1776"><td class="mdescLeft">&#160;</td><td class="mdescRight">No copy constructor.  <a href="#a541cf96dad19a0f5cb9f98bf5e6e1776">More...</a><br /></td></tr>
+<tr class="separator:a541cf96dad19a0f5cb9f98bf5e6e1776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ce5525379d9a7c3580f40300595188e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/df8/a00155.html">MapController</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a7ce5525379d9a7c3580f40300595188e">operator=</a> (const <a class="el" href="../../d3/df8/a00155.html">MapController</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a7ce5525379d9a7c3580f40300595188e"><td class="mdescLeft">&#160;</td><td class="mdescRight">No copy assignement.  <a href="#a7ce5525379d9a7c3580f40300595188e">More...</a><br /></td></tr>
+<tr class="separator:a7ce5525379d9a7c3580f40300595188e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9fdfe5405e2744f6226876cc686419a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#ad9fdfe5405e2744f6226876cc686419a">SetDay</a> (const QString &amp;day)</td></tr>
+<tr class="memdesc:ad9fdfe5405e2744f6226876cc686419a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the shown day.  <a href="#ad9fdfe5405e2744f6226876cc686419a">More...</a><br /></td></tr>
+<tr class="separator:ad9fdfe5405e2744f6226876cc686419a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1271842e613d3a67b51d4c2db5dffed0"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a1271842e613d3a67b51d4c2db5dffed0">GetDay</a> ()</td></tr>
+<tr class="memdesc:a1271842e613d3a67b51d4c2db5dffed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the shown day.  <a href="#a1271842e613d3a67b51d4c2db5dffed0">More...</a><br /></td></tr>
+<tr class="separator:a1271842e613d3a67b51d4c2db5dffed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3ad0cf15546eeebb17c0611810fe695"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#ad3ad0cf15546eeebb17c0611810fe695">SetWindowHeight</a> (const QString &amp;height)</td></tr>
+<tr class="memdesc:ad3ad0cf15546eeebb17c0611810fe695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the window height.  <a href="#ad3ad0cf15546eeebb17c0611810fe695">More...</a><br /></td></tr>
+<tr class="separator:ad3ad0cf15546eeebb17c0611810fe695"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0198f1bb5e85b54b3aab7485bbd8ca68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a0198f1bb5e85b54b3aab7485bbd8ca68">SetWindowWidth</a> (const QString &amp;width)</td></tr>
+<tr class="memdesc:a0198f1bb5e85b54b3aab7485bbd8ca68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the window width.  <a href="#a0198f1bb5e85b54b3aab7485bbd8ca68">More...</a><br /></td></tr>
+<tr class="separator:a0198f1bb5e85b54b3aab7485bbd8ca68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa36ea6c3f65c3a8f357f1fbaa71c89d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#aa36ea6c3f65c3a8f357f1fbaa71c89d8">SetShownInformation</a> (const QString &amp;sourceInformation)</td></tr>
+<tr class="memdesc:aa36ea6c3f65c3a8f357f1fbaa71c89d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the shown information about one locality.  <a href="#aa36ea6c3f65c3a8f357f1fbaa71c89d8">More...</a><br /></td></tr>
+<tr class="separator:aa36ea6c3f65c3a8f357f1fbaa71c89d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a00e08d7fc8fa06918bbdc0a04c9ea1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a6a00e08d7fc8fa06918bbdc0a04c9ea1">Initialize</a> (<a class="el" href="../../d1/d6e/a00073.html">QObject</a> *root)</td></tr>
+<tr class="memdesc:a6a00e08d7fc8fa06918bbdc0a04c9ea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the map.  <a href="#a6a00e08d7fc8fa06918bbdc0a04c9ea1">More...</a><br /></td></tr>
+<tr class="separator:a6a00e08d7fc8fa06918bbdc0a04c9ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7edcfc96538d8be6c08aa5e7a9b94773"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a7edcfc96538d8be6c08aa5e7a9b94773">UpdateLocations</a> ()</td></tr>
+<tr class="memdesc:a7edcfc96538d8be6c08aa5e7a9b94773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the color of the circles on the map.  <a href="#a7edcfc96538d8be6c08aa5e7a9b94773">More...</a><br /></td></tr>
+<tr class="separator:a7edcfc96538d8be6c08aa5e7a9b94773"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a698bf28251b49a62a202da8431104b42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a698bf28251b49a62a202da8431104b42">SetAgeBracket</a> (const QString &amp;ageBracket)</td></tr>
+<tr class="memdesc:a698bf28251b49a62a202da8431104b42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the selected age bracket.  <a href="#a698bf28251b49a62a202da8431104b42">More...</a><br /></td></tr>
+<tr class="separator:a698bf28251b49a62a202da8431104b42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4f86259e6cad0db7308732577eb694f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#aa4f86259e6cad0db7308732577eb694f">SetHealthStatus</a> (const QString &amp;healthStatus)</td></tr>
+<tr class="memdesc:aa4f86259e6cad0db7308732577eb694f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the selected health status.  <a href="#aa4f86259e6cad0db7308732577eb694f">More...</a><br /></td></tr>
+<tr class="separator:aa4f86259e6cad0db7308732577eb694f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fa9e0aa4c70a7c0f4e072e39cc3548e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a4fa9e0aa4c70a7c0f4e072e39cc3548e">IsDataPinned</a> ()</td></tr>
+<tr class="memdesc:a4fa9e0aa4c70a7c0f4e072e39cc3548e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of dataPinned.  <a href="#a4fa9e0aa4c70a7c0f4e072e39cc3548e">More...</a><br /></td></tr>
+<tr class="separator:a4fa9e0aa4c70a7c0f4e072e39cc3548e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab19a23d469debd414eaadf3079734aa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#ab19a23d469debd414eaadf3079734aa4">PinData</a> (bool pinned)</td></tr>
+<tr class="memdesc:ab19a23d469debd414eaadf3079734aa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the state of dataPinned.  <a href="#ab19a23d469debd414eaadf3079734aa4">More...</a><br /></td></tr>
+<tr class="separator:ab19a23d469debd414eaadf3079734aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a5253884934f778367fe6ea90e9bce6cd"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a5253884934f778367fe6ea90e9bce6cd">shownDay</a></td></tr>
+<tr class="separator:a5253884934f778367fe6ea90e9bce6cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f1515afea75db53ce647c2e072216dc"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a9f1515afea75db53ce647c2e072216dc">setWindowHeight</a></td></tr>
+<tr class="separator:a9f1515afea75db53ce647c2e072216dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1256f0ae12d7726adb40e4638ea0e676"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a1256f0ae12d7726adb40e4638ea0e676">setWindowWidth</a></td></tr>
+<tr class="separator:a1256f0ae12d7726adb40e4638ea0e676"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb946d5874224b90e61f05f39ae8826"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a0cb946d5874224b90e61f05f39ae8826">setShownInformation</a></td></tr>
+<tr class="separator:a0cb946d5874224b90e61f05f39ae8826"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6802db1f62b55b37afd54eab1f92506"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#af6802db1f62b55b37afd54eab1f92506">setAgeBracket</a></td></tr>
+<tr class="separator:af6802db1f62b55b37afd54eab1f92506"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac40cbc9fc877d07276ee102fe91497a2"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#ac40cbc9fc877d07276ee102fe91497a2">setHealthStatus</a></td></tr>
+<tr class="separator:ac40cbc9fc877d07276ee102fe91497a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80f45965c7c4fe2eb82c4625fdcb2324"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a80f45965c7c4fe2eb82c4625fdcb2324">dataPinned</a></td></tr>
+<tr class="separator:a80f45965c7c4fe2eb82c4625fdcb2324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a7464e7a3ca21621a821ec7b1c8b8e7fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d0b/a00004.html">geopop::GeoGrid</a>&lt; <a class="el" href="../../d1/d7c/a00003.html">EpiOutput</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a7464e7a3ca21621a821ec7b1c8b8e7fc">m_geogrid</a></td></tr>
+<tr class="memdesc:a7464e7a3ca21621a821ec7b1c8b8e7fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">GeoGrid that contains all the locations and their epi-output.  <a href="#a7464e7a3ca21621a821ec7b1c8b8e7fc">More...</a><br /></td></tr>
+<tr class="separator:a7464e7a3ca21621a821ec7b1c8b8e7fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e52b8d11f40431171bc5020e1f8deb8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a8e52b8d11f40431171bc5020e1f8deb8">m_data_pinned</a></td></tr>
+<tr class="memdesc:a8e52b8d11f40431171bc5020e1f8deb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the shown data is pinned.  <a href="#a8e52b8d11f40431171bc5020e1f8deb8">More...</a><br /></td></tr>
+<tr class="separator:a8e52b8d11f40431171bc5020e1f8deb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d9fe6853e799ab6ad35863836b16ea8"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a8d9fe6853e799ab6ad35863836b16ea8">m_day</a></td></tr>
+<tr class="memdesc:a8d9fe6853e799ab6ad35863836b16ea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current shown step.  <a href="#a8d9fe6853e799ab6ad35863836b16ea8">More...</a><br /></td></tr>
+<tr class="separator:a8d9fe6853e799ab6ad35863836b16ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59e8303802d3e1d2eaea5c6f63ff0303"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a59e8303802d3e1d2eaea5c6f63ff0303">m_day_diff</a></td></tr>
+<tr class="memdesc:a59e8303802d3e1d2eaea5c6f63ff0303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Difference (Amount of days) between epi-output measurements (Stride)  <a href="#a59e8303802d3e1d2eaea5c6f63ff0303">More...</a><br /></td></tr>
+<tr class="separator:a59e8303802d3e1d2eaea5c6f63ff0303"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a38a425ac800e3c356cb038d2b35d90"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a1a38a425ac800e3c356cb038d2b35d90">m_window_height</a></td></tr>
+<tr class="memdesc:a1a38a425ac800e3c356cb038d2b35d90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the GUI window.  <a href="#a1a38a425ac800e3c356cb038d2b35d90">More...</a><br /></td></tr>
+<tr class="separator:a1a38a425ac800e3c356cb038d2b35d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab987bd59a5293b372d0e2d2bc475f700"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#ab987bd59a5293b372d0e2d2bc475f700">m_window_width</a></td></tr>
+<tr class="memdesc:ab987bd59a5293b372d0e2d2bc475f700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width of the GUI window.  <a href="#ab987bd59a5293b372d0e2d2bc475f700">More...</a><br /></td></tr>
+<tr class="separator:ab987bd59a5293b372d0e2d2bc475f700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39414dc3c19d8de7f69730258f467d42"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a39414dc3c19d8de7f69730258f467d42">m_selectedAgeBracket</a></td></tr>
+<tr class="memdesc:a39414dc3c19d8de7f69730258f467d42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selected age bracket in the GUI.  <a href="#a39414dc3c19d8de7f69730258f467d42">More...</a><br /></td></tr>
+<tr class="separator:a39414dc3c19d8de7f69730258f467d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ccee696bd5a29a0aa4f58eee8004c87"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a7ccee696bd5a29a0aa4f58eee8004c87">m_selectedHealthStatus</a></td></tr>
+<tr class="memdesc:a7ccee696bd5a29a0aa4f58eee8004c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selected health status in the GUI.  <a href="#a7ccee696bd5a29a0aa4f58eee8004c87">More...</a><br /></td></tr>
+<tr class="separator:a7ccee696bd5a29a0aa4f58eee8004c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4482bed18c7e92a2146ffb8c1cf7f155"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::map&lt; std::string, <a class="el" href="../../db/d4f/a00420.html">double</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a4482bed18c7e92a2146ffb8c1cf7f155">m_smallest_values</a></td></tr>
+<tr class="memdesc:a4482bed18c7e92a2146ffb8c1cf7f155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Smallest epi-output values for each category.  <a href="#a4482bed18c7e92a2146ffb8c1cf7f155">More...</a><br /></td></tr>
+<tr class="separator:a4482bed18c7e92a2146ffb8c1cf7f155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01658425fa07091998c6221ecf067161"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::map&lt; std::string, <a class="el" href="../../db/d4f/a00420.html">double</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a01658425fa07091998c6221ecf067161">m_biggest_values</a></td></tr>
+<tr class="memdesc:a01658425fa07091998c6221ecf067161"><td class="mdescLeft">&#160;</td><td class="mdescRight">Biggest epi-output values for each category.  <a href="#a01658425fa07091998c6221ecf067161">More...</a><br /></td></tr>
+<tr class="separator:a01658425fa07091998c6221ecf067161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f2b59f0f605fdbb6869163c2838c071"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d6e/a00073.html">QObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a1f2b59f0f605fdbb6869163c2838c071">m_root</a> = nullptr</td></tr>
+<tr class="memdesc:a1f2b59f0f605fdbb6869163c2838c071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Root of the Qt object.  <a href="#a1f2b59f0f605fdbb6869163c2838c071">More...</a><br /></td></tr>
+<tr class="separator:a1f2b59f0f605fdbb6869163c2838c071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5417a6ab0f6b85b8b8484847664abb3b"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/df8/a00155.html#a5417a6ab0f6b85b8b8484847664abb3b">m_pinned_data</a></td></tr>
+<tr class="memdesc:a5417a6ab0f6b85b8b8484847664abb3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information of the source of the last shown data.  <a href="#a5417a6ab0f6b85b8b8484847664abb3b">More...</a><br /></td></tr>
+<tr class="separator:a5417a6ab0f6b85b8b8484847664abb3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implementation of ContactLogMode. </p>
+<div class="textblock"><p><a class="el" href="../../d3/df8/a00155.html" title="MapController for use within the visualization, controller of the GUI and communicates with the qml...">MapController</a> for use within the visualization, controller of the GUI and communicates with the qml. </p>
 
-<p>Definition in file <a class="el" href="../../d3/df8/a00155_source.html">ContactLogMode.cpp</a>.</p>
-</div></div><!-- contents -->
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00030">30</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a16f36077cbdfdb4d2eb8d0241127abbf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">visualization::MapController::MapController </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a <a class="el" href="../../d3/df8/a00155.html" title="MapController for use within the visualization, controller of the GUI and communicates with the qml...">MapController</a> and read the epi-output file. </p>
+
+<p>Definition at line <a class="el" href="../../da/de0/a00317_source.html#l00065">65</a> of file <a class="el" href="../../da/de0/a00317_source.html">MapController.cpp</a>.</p>
+
+<p>References <a class="el" href="../../da/d2e/a00238_source.html#l00127">geopop::GeoGrid&lt; LocationContent &gt;::begin()</a>, <a class="el" href="../../dc/d28/a00223_source.html#l00036">visualization::EpiOutputReaderFactory::CreateReader()</a>, <a class="el" href="../../d4/d08/a00237_source.html#l00073">geopop::GeoGrid&lt; LocationContent &gt;::Finalize()</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00112">m_day_diff</a>, and <a class="el" href="../../d2/d41/a00318_source.html#l00108">m_geogrid</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/a00155_a16f36077cbdfdb4d2eb8d0241127abbf_cgraph.gif" border="0" usemap="#d3/df8/a00155_a16f36077cbdfdb4d2eb8d0241127abbf_cgraph" alt=""/></div>
+<map name="d3/df8/a00155_a16f36077cbdfdb4d2eb8d0241127abbf_cgraph" id="d3/df8/a00155_a16f36077cbdfdb4d2eb8d0241127abbf_cgraph">
+<area shape="rect" id="node2" href="../../d0/d0b/a00004.html#ac833893da758c5e158b59914e690a352" title="Iterator to first Location. " alt="" coords="267,5,441,32"/>
+<area shape="rect" id="node3" href="../../d3/d65/a00154.html#a91a1ab7a4cbd868aa15063370d8b6835" title="Create a EpiOutputReader based on the provided extension in the filename. " alt="" coords="251,57,457,98"/>
+<area shape="rect" id="node4" href="../../d0/d0b/a00004.html#a2c1113a8221ad2af733a9b2d230ac7f8" title="Disables the addLocation method and builds the kdtree. " alt="" coords="262,123,446,149"/>
+<area shape="rect" id="node5" href="../../d5/db6/a00042.html#a1d40a1a8b7fee81108aea82d92ae83c0" title="Build a balanced tree from the given set of points efficiently. " alt="" coords="505,108,688,164"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a541cf96dad19a0f5cb9f98bf5e6e1776"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">visualization::MapController::MapController </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/df8/a00155.html">MapController</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>No copy constructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a7ce5525379d9a7c3580f40300595188e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/df8/a00155.html">MapController</a>&amp; visualization::MapController::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/df8/a00155.html">MapController</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>No copy assignement. </p>
+
+</div>
+</div>
+<a class="anchor" id="ad9fdfe5405e2744f6226876cc686419a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::MapController::SetDay </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>day</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the shown day. </p>
+
+<p>Definition at line <a class="el" href="../../da/de0/a00317_source.html#l00081">81</a> of file <a class="el" href="../../da/de0/a00317_source.html">MapController.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d2/d41/a00318_source.html#l00110">m_data_pinned</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00111">m_day</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00112">m_day_diff</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00121">m_pinned_data</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00120">m_root</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00115">m_selectedAgeBracket</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00116">m_selectedHealthStatus</a>, <a class="el" href="../../da/de0/a00317_source.html#l00114">SetShownInformation()</a>, and <a class="el" href="../../da/de0/a00317_source.html#l00339">UpdateLocations()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/a00155_ad9fdfe5405e2744f6226876cc686419a_cgraph.gif" border="0" usemap="#d3/df8/a00155_ad9fdfe5405e2744f6226876cc686419a_cgraph" alt=""/></div>
+<map name="d3/df8/a00155_ad9fdfe5405e2744f6226876cc686419a_cgraph" id="d3/df8/a00155_ad9fdfe5405e2744f6226876cc686419a_cgraph">
+<area shape="rect" id="node2" href="../../d3/df8/a00155.html#aa36ea6c3f65c3a8f357f1fbaa71c89d8" title="Set the shown information about one locality. " alt="" coords="251,5,448,47"/>
+<area shape="rect" id="node4" href="../../d3/df8/a00155.html#a7edcfc96538d8be6c08aa5e7a9b94773" title="Update the color of the circles on the map. " alt="" coords="251,71,448,112"/>
+<area shape="rect" id="node3" href="../../d3/d29/a00419.html#a8be2757f36192cd5e4574875a698f873" title="visualization::makePresentable\lPercentage" alt="" coords="496,39,716,80"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1271842e613d3a67b51d4c2db5dffed0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString visualization::MapController::GetDay </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the shown day. </p>
+
+<p>Definition at line <a class="el" href="../../da/de0/a00317_source.html#l00102">102</a> of file <a class="el" href="../../da/de0/a00317_source.html">MapController.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d2/d41/a00318_source.html#l00111">m_day</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad3ad0cf15546eeebb17c0611810fe695"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::MapController::SetWindowHeight </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>height</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the window height. </p>
+
+<p>Definition at line <a class="el" href="../../da/de0/a00317_source.html#l00104">104</a> of file <a class="el" href="../../da/de0/a00317_source.html">MapController.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d2/d41/a00318_source.html#l00113">m_window_height</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0198f1bb5e85b54b3aab7485bbd8ca68"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::MapController::SetWindowWidth </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>width</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the window width. </p>
+
+<p>Definition at line <a class="el" href="../../da/de0/a00317_source.html#l00109">109</a> of file <a class="el" href="../../da/de0/a00317_source.html">MapController.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d2/d41/a00318_source.html#l00114">m_window_width</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa36ea6c3f65c3a8f357f1fbaa71c89d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::MapController::SetShownInformation </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>sourceInformation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the shown information about one locality. </p>
+
+<p>Definition at line <a class="el" href="../../da/de0/a00317_source.html#l00114">114</a> of file <a class="el" href="../../da/de0/a00317_source.html">MapController.cpp</a>.</p>
+
+<p>References <a class="el" href="../../de/d38/a00160_source.html#l00022">stride::ageBrackets</a>, <a class="el" href="../../dd/d56/a00274_source.html#l00040">stride::healthStatuses</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00110">m_data_pinned</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00111">m_day</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00108">m_geogrid</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00121">m_pinned_data</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00120">m_root</a>, and <a class="el" href="../../da/de0/a00317_source.html#l00050">visualization::makePresentablePercentage()</a>.</p>
+
+<p>Referenced by <a class="el" href="../../da/de0/a00317_source.html#l00081">SetDay()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/a00155_aa36ea6c3f65c3a8f357f1fbaa71c89d8_cgraph.gif" border="0" usemap="#d3/df8/a00155_aa36ea6c3f65c3a8f357f1fbaa71c89d8_cgraph" alt=""/></div>
+<map name="d3/df8/a00155_aa36ea6c3f65c3a8f357f1fbaa71c89d8_cgraph" id="d3/df8/a00155_aa36ea6c3f65c3a8f357f1fbaa71c89d8_cgraph">
+<area shape="rect" id="node2" href="../../d3/d29/a00419.html#a8be2757f36192cd5e4574875a698f873" title="visualization::makePresentable\lPercentage" alt="" coords="251,5,471,47"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/a00155_aa36ea6c3f65c3a8f357f1fbaa71c89d8_icgraph.gif" border="0" usemap="#d3/df8/a00155_aa36ea6c3f65c3a8f357f1fbaa71c89d8_icgraph" alt=""/></div>
+<map name="d3/df8/a00155_aa36ea6c3f65c3a8f357f1fbaa71c89d8_icgraph" id="d3/df8/a00155_aa36ea6c3f65c3a8f357f1fbaa71c89d8_icgraph">
+<area shape="rect" id="node2" href="../../d3/df8/a00155.html#ad9fdfe5405e2744f6226876cc686419a" title="Set the shown day. " alt="" coords="251,5,448,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a6a00e08d7fc8fa06918bbdc0a04c9ea1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::MapController::Initialize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/d6e/a00073.html">QObject</a> *&#160;</td>
+          <td class="paramname"><em>root</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the map. </p>
+
+<p>Definition at line <a class="el" href="../../da/de0/a00317_source.html#l00218">218</a> of file <a class="el" href="../../da/de0/a00317_source.html">MapController.cpp</a>.</p>
+
+<p>References <a class="el" href="../../da/d2e/a00238_source.html#l00127">geopop::GeoGrid&lt; LocationContent &gt;::begin()</a>, <a class="el" href="../../da/de0/a00317_source.html#l00032">visualization::distanceOnEarth()</a>, <a class="el" href="../../da/d2e/a00238_source.html#l00130">geopop::GeoGrid&lt; LocationContent &gt;::end()</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00111">m_day</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00108">m_geogrid</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00120">m_root</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00113">m_window_height</a>, and <a class="el" href="../../d2/d41/a00318_source.html#l00114">m_window_width</a>.</p>
+
+<p>Referenced by <a class="el" href="../../de/dd7/a00362_source.html#l00028">main()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/a00155_a6a00e08d7fc8fa06918bbdc0a04c9ea1_cgraph.gif" border="0" usemap="#d3/df8/a00155_a6a00e08d7fc8fa06918bbdc0a04c9ea1_cgraph" alt=""/></div>
+<map name="d3/df8/a00155_a6a00e08d7fc8fa06918bbdc0a04c9ea1_cgraph" id="d3/df8/a00155_a6a00e08d7fc8fa06918bbdc0a04c9ea1_cgraph">
+<area shape="rect" id="node2" href="../../d0/d0b/a00004.html#ac833893da758c5e158b59914e690a352" title="Iterator to first Location. " alt="" coords="254,5,427,32"/>
+<area shape="rect" id="node3" href="../../d3/d29/a00419.html#a40d6ee97d8cc89c9b1d74268976d8f30" title="visualization::distanceOn\lEarth" alt="" coords="251,57,431,98"/>
+<area shape="rect" id="node4" href="../../d0/d0b/a00004.html#a57b0222e94d6d31fa969dda7175bbce7" title="Iterator to the end of the Location storage. " alt="" coords="259,123,422,149"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/a00155_a6a00e08d7fc8fa06918bbdc0a04c9ea1_icgraph.gif" border="0" usemap="#d3/df8/a00155_a6a00e08d7fc8fa06918bbdc0a04c9ea1_icgraph" alt=""/></div>
+<map name="d3/df8/a00155_a6a00e08d7fc8fa06918bbdc0a04c9ea1_icgraph" id="d3/df8/a00155_a6a00e08d7fc8fa06918bbdc0a04c9ea1_icgraph">
+<area shape="rect" id="node2" href="../../de/dd7/a00362.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main program of the stride visualizer. " alt="" coords="251,13,305,39"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7edcfc96538d8be6c08aa5e7a9b94773"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::MapController::UpdateLocations </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Update the color of the circles on the map. </p>
+
+<p>Definition at line <a class="el" href="../../da/de0/a00317_source.html#l00339">339</a> of file <a class="el" href="../../da/de0/a00317_source.html">MapController.cpp</a>.</p>
+
+<p>References <a class="el" href="../../de/d38/a00160_source.html#l00022">stride::ageBrackets</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00111">m_day</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00108">m_geogrid</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00120">m_root</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00115">m_selectedAgeBracket</a>, <a class="el" href="../../d2/d41/a00318_source.html#l00116">m_selectedHealthStatus</a>, and <a class="el" href="../../da/de0/a00317_source.html#l00050">visualization::makePresentablePercentage()</a>.</p>
+
+<p>Referenced by <a class="el" href="../../da/de0/a00317_source.html#l00416">SetAgeBracket()</a>, <a class="el" href="../../da/de0/a00317_source.html#l00081">SetDay()</a>, and <a class="el" href="../../da/de0/a00317_source.html#l00426">SetHealthStatus()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/a00155_a7edcfc96538d8be6c08aa5e7a9b94773_cgraph.gif" border="0" usemap="#d3/df8/a00155_a7edcfc96538d8be6c08aa5e7a9b94773_cgraph" alt=""/></div>
+<map name="d3/df8/a00155_a7edcfc96538d8be6c08aa5e7a9b94773_cgraph" id="d3/df8/a00155_a7edcfc96538d8be6c08aa5e7a9b94773_cgraph">
+<area shape="rect" id="node2" href="../../d3/d29/a00419.html#a8be2757f36192cd5e4574875a698f873" title="visualization::makePresentable\lPercentage" alt="" coords="251,5,471,47"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/a00155_a7edcfc96538d8be6c08aa5e7a9b94773_icgraph.gif" border="0" usemap="#d3/df8/a00155_a7edcfc96538d8be6c08aa5e7a9b94773_icgraph" alt=""/></div>
+<map name="d3/df8/a00155_a7edcfc96538d8be6c08aa5e7a9b94773_icgraph" id="d3/df8/a00155_a7edcfc96538d8be6c08aa5e7a9b94773_icgraph">
+<area shape="rect" id="node2" href="../../d3/df8/a00155.html#a698bf28251b49a62a202da8431104b42" title="Set the selected age bracket. " alt="" coords="251,5,448,47"/>
+<area shape="rect" id="node3" href="../../d3/df8/a00155.html#ad9fdfe5405e2744f6226876cc686419a" title="Set the shown day. " alt="" coords="251,71,448,112"/>
+<area shape="rect" id="node4" href="../../d3/df8/a00155.html#aa4f86259e6cad0db7308732577eb694f" title="Set the selected health status. " alt="" coords="251,136,448,177"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a698bf28251b49a62a202da8431104b42"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::MapController::SetAgeBracket </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>ageBracket</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the selected age bracket. </p>
+
+<p>Definition at line <a class="el" href="../../da/de0/a00317_source.html#l00416">416</a> of file <a class="el" href="../../da/de0/a00317_source.html">MapController.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d2/d41/a00318_source.html#l00115">m_selectedAgeBracket</a>, and <a class="el" href="../../da/de0/a00317_source.html#l00339">UpdateLocations()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/a00155_a698bf28251b49a62a202da8431104b42_cgraph.gif" border="0" usemap="#d3/df8/a00155_a698bf28251b49a62a202da8431104b42_cgraph" alt=""/></div>
+<map name="d3/df8/a00155_a698bf28251b49a62a202da8431104b42_cgraph" id="d3/df8/a00155_a698bf28251b49a62a202da8431104b42_cgraph">
+<area shape="rect" id="node2" href="../../d3/df8/a00155.html#a7edcfc96538d8be6c08aa5e7a9b94773" title="Update the color of the circles on the map. " alt="" coords="251,5,448,47"/>
+<area shape="rect" id="node3" href="../../d3/d29/a00419.html#a8be2757f36192cd5e4574875a698f873" title="visualization::makePresentable\lPercentage" alt="" coords="496,5,716,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa4f86259e6cad0db7308732577eb694f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::MapController::SetHealthStatus </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>healthStatus</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the selected health status. </p>
+
+<p>Definition at line <a class="el" href="../../da/de0/a00317_source.html#l00426">426</a> of file <a class="el" href="../../da/de0/a00317_source.html">MapController.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d2/d41/a00318_source.html#l00116">m_selectedHealthStatus</a>, and <a class="el" href="../../da/de0/a00317_source.html#l00339">UpdateLocations()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/df8/a00155_aa4f86259e6cad0db7308732577eb694f_cgraph.gif" border="0" usemap="#d3/df8/a00155_aa4f86259e6cad0db7308732577eb694f_cgraph" alt=""/></div>
+<map name="d3/df8/a00155_aa4f86259e6cad0db7308732577eb694f_cgraph" id="d3/df8/a00155_aa4f86259e6cad0db7308732577eb694f_cgraph">
+<area shape="rect" id="node2" href="../../d3/df8/a00155.html#a7edcfc96538d8be6c08aa5e7a9b94773" title="Update the color of the circles on the map. " alt="" coords="251,5,448,47"/>
+<area shape="rect" id="node3" href="../../d3/d29/a00419.html#a8be2757f36192cd5e4574875a698f873" title="visualization::makePresentable\lPercentage" alt="" coords="496,5,716,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a4fa9e0aa4c70a7c0f4e072e39cc3548e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool visualization::MapController::IsDataPinned </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the state of dataPinned. </p>
+
+<p>Definition at line <a class="el" href="../../da/de0/a00317_source.html#l00436">436</a> of file <a class="el" href="../../da/de0/a00317_source.html">MapController.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d2/d41/a00318_source.html#l00110">m_data_pinned</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab19a23d469debd414eaadf3079734aa4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::MapController::PinData </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>pinned</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the state of dataPinned. </p>
+
+<p>Definition at line <a class="el" href="../../da/de0/a00317_source.html#l00438">438</a> of file <a class="el" href="../../da/de0/a00317_source.html">MapController.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d2/d41/a00318_source.html#l00110">m_data_pinned</a>, and <a class="el" href="../../d2/d41/a00318_source.html#l00120">m_root</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7b76858632eecde584d96f6fc7aebe0d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::MapController::DayChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal for when day changes. </p>
+
+</div>
+</div>
+<a class="anchor" id="a874a56929986affe98627e57d03b4fd9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::MapController::HeightChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal for when height changes. </p>
+
+</div>
+</div>
+<a class="anchor" id="a376e6afcdfbe6a52020614e4ec9f8171"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::MapController::WidthChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal for when width changes. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2e3e63bc7fb5f962af410257aa115330"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::MapController::ShownInformationChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal for when the show information changes. </p>
+
+</div>
+</div>
+<a class="anchor" id="a327df78761122577280a8e6a34820a48"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::MapController::AgeBracketChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal for when the selected age bracket changes. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7ee90812c833d8fc7a0f47e3ce38be84"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::MapController::HealthStatusChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal for when the selected health status changes. </p>
+
+</div>
+</div>
+<a class="anchor" id="a138350716995c9694a4c64e01e4b94e0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::MapController::DataPinnedChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal for when the selected health status changes. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a7464e7a3ca21621a821ec7b1c8b8e7fc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d0b/a00004.html">geopop::GeoGrid</a>&lt;<a class="el" href="../../d1/d7c/a00003.html">EpiOutput</a>&gt; visualization::MapController::m_geogrid</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>GeoGrid that contains all the locations and their epi-output. </p>
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00108">108</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../da/de0/a00317_source.html#l00218">Initialize()</a>, <a class="el" href="../../da/de0/a00317_source.html#l00065">MapController()</a>, <a class="el" href="../../da/de0/a00317_source.html#l00114">SetShownInformation()</a>, and <a class="el" href="../../da/de0/a00317_source.html#l00339">UpdateLocations()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8e52b8d11f40431171bc5020e1f8deb8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool visualization::MapController::m_data_pinned</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicates if the shown data is pinned. </p>
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00110">110</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../da/de0/a00317_source.html#l00436">IsDataPinned()</a>, <a class="el" href="../../da/de0/a00317_source.html#l00438">PinData()</a>, <a class="el" href="../../da/de0/a00317_source.html#l00081">SetDay()</a>, and <a class="el" href="../../da/de0/a00317_source.html#l00114">SetShownInformation()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8d9fe6853e799ab6ad35863836b16ea8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int visualization::MapController::m_day</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Current shown step. </p>
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00111">111</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../da/de0/a00317_source.html#l00102">GetDay()</a>, <a class="el" href="../../da/de0/a00317_source.html#l00218">Initialize()</a>, <a class="el" href="../../da/de0/a00317_source.html#l00081">SetDay()</a>, <a class="el" href="../../da/de0/a00317_source.html#l00114">SetShownInformation()</a>, and <a class="el" href="../../da/de0/a00317_source.html#l00339">UpdateLocations()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a59e8303802d3e1d2eaea5c6f63ff0303"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int visualization::MapController::m_day_diff</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Difference (Amount of days) between epi-output measurements (Stride) </p>
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00112">112</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../da/de0/a00317_source.html#l00065">MapController()</a>, and <a class="el" href="../../da/de0/a00317_source.html#l00081">SetDay()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1a38a425ac800e3c356cb038d2b35d90"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int visualization::MapController::m_window_height</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Height of the GUI window. </p>
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00113">113</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../da/de0/a00317_source.html#l00218">Initialize()</a>, and <a class="el" href="../../da/de0/a00317_source.html#l00104">SetWindowHeight()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab987bd59a5293b372d0e2d2bc475f700"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int visualization::MapController::m_window_width</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Width of the GUI window. </p>
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00114">114</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../da/de0/a00317_source.html#l00218">Initialize()</a>, and <a class="el" href="../../da/de0/a00317_source.html#l00109">SetWindowWidth()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a39414dc3c19d8de7f69730258f467d42"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string visualization::MapController::m_selectedAgeBracket</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Selected age bracket in the GUI. </p>
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00115">115</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../da/de0/a00317_source.html#l00416">SetAgeBracket()</a>, <a class="el" href="../../da/de0/a00317_source.html#l00081">SetDay()</a>, and <a class="el" href="../../da/de0/a00317_source.html#l00339">UpdateLocations()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7ccee696bd5a29a0aa4f58eee8004c87"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string visualization::MapController::m_selectedHealthStatus</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Selected health status in the GUI. </p>
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00116">116</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../da/de0/a00317_source.html#l00081">SetDay()</a>, <a class="el" href="../../da/de0/a00317_source.html#l00426">SetHealthStatus()</a>, and <a class="el" href="../../da/de0/a00317_source.html#l00339">UpdateLocations()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4482bed18c7e92a2146ffb8c1cf7f155"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, std::map&lt;std::string, <a class="el" href="../../db/d4f/a00420.html">double</a>&gt; &gt; visualization::MapController::m_smallest_values</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Smallest epi-output values for each category. </p>
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00117">117</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a01658425fa07091998c6221ecf067161"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, std::map&lt;std::string, <a class="el" href="../../db/d4f/a00420.html">double</a>&gt; &gt; visualization::MapController::m_biggest_values</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Biggest epi-output values for each category. </p>
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00118">118</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1f2b59f0f605fdbb6869163c2838c071"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d6e/a00073.html">QObject</a>* visualization::MapController::m_root = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Root of the Qt object. </p>
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00120">120</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../da/de0/a00317_source.html#l00218">Initialize()</a>, <a class="el" href="../../da/de0/a00317_source.html#l00438">PinData()</a>, <a class="el" href="../../da/de0/a00317_source.html#l00081">SetDay()</a>, <a class="el" href="../../da/de0/a00317_source.html#l00114">SetShownInformation()</a>, and <a class="el" href="../../da/de0/a00317_source.html#l00339">UpdateLocations()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5417a6ab0f6b85b8b8484847664abb3b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString visualization::MapController::m_pinned_data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Information of the source of the last shown data. </p>
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00121">121</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../da/de0/a00317_source.html#l00081">SetDay()</a>, and <a class="el" href="../../da/de0/a00317_source.html#l00114">SetShownInformation()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a class="anchor" id="a5253884934f778367fe6ea90e9bce6cd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString visualization::MapController::shownDay</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00034">34</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9f1515afea75db53ce647c2e072216dc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString visualization::MapController::setWindowHeight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00035">35</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1256f0ae12d7726adb40e4638ea0e676"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString visualization::MapController::setWindowWidth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00036">36</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0cb946d5874224b90e61f05f39ae8826"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString visualization::MapController::setShownInformation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00037">37</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af6802db1f62b55b37afd54eab1f92506"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString visualization::MapController::setAgeBracket</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00038">38</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac40cbc9fc877d07276ee102fe91497a2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString visualization::MapController::setHealthStatus</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00039">39</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a80f45965c7c4fe2eb82c4625fdcb2324"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool visualization::MapController::dataPinned</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d2/d41/a00318_source.html#l00040">40</a> of file <a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="../../d2/d41/a00318_source.html">MapController.h</a></li>
+<li><a class="el" href="../../da/de0/a00317_source.html">MapController.cpp</a></li>
+</ul>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_d006795525347f4aaca311cb4e45f0bc.html">contact</a></li><li class="navelem"><a class="el" href="../../d3/df8/a00155.html">ContactLogMode.cpp</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:37 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../d3/d29/a00419.html">visualization</a></li><li class="navelem"><a class="el" href="../../d3/df8/a00155.html">MapController</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:11 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

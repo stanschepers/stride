@@ -1,0 +1,6 @@
+<map id="geopop::GeoGrid::LocationsInBox" name="geopop::GeoGrid::LocationsInBox">
+<area shape="rect" id="node2" href="$d6/d42/a00043.html#aa3663655c3916150de163cf55786e468" title="Gets the Coordinate of this Location. " alt="" coords="252,5,485,32"/>
+<area shape="rect" id="node3" href="$d0/d0b/a00004.html#ab420cdfd98e10a82976c5f9fc83c0d2c" title="Gets the locations in a rectangle determined by the two coordinates (long1, lat1) and (long2..." alt="" coords="269,57,468,98"/>
+<area shape="rect" id="node4" href="$d0/d0b/a00004.html#a4b9eeda8fc9cc76e8999d4da3a3a951a" title="&lt; Checks whether the GeoGrid is finalized i.e. certain operations can(not) be used. " alt="" coords="533,39,764,65"/>
+<area shape="rect" id="node5" href="$da/dbf/a00393.html#ad29105dc339e24a7c92af01763abce35" title="Build a Collector, useful for type inference. " alt="" coords="565,89,733,116"/>
+</map>

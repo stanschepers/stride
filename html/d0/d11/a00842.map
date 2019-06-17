@@ -1,3 +1,15 @@
-<map id="proto::GeoGrid_Person" name="proto::GeoGrid_Person">
-<area shape="rect" id="node2" href="$d6/d2d/a00047.html" title="{Message\n||}" alt="" coords="5,5,84,83"/>
+<map id="geopop::GeoAggregator&lt; Policy &gt;" name="geopop::GeoAggregator&lt; Policy &gt;">
+<area shape="rect" id="node2" href="$d5/db6/a00042.html" title="{geopop::KdTree\&lt; geogrid\l_detail::KdTree2DPoint \&gt;\n||+ KdTree()\l+ Apply()\l+ Apply()\l+ Contains()\l+ Empty()\l+ GetHeight()\l+ Insert()\l+ Query()\l+ Size()\l+ Build()\l&#45; Construct()\l}" alt="" coords="584,2025,767,2264"/>
+<area shape="rect" id="node4" href="$dd/d32/a00041.html" title="{geopop::kd::Node\&lt; geogrid\l_detail::KdTree2DPoint, 0 \&gt;\n||+ Node()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="1116,1327,1315,1492"/>
+<area shape="rect" id="node5" href="$d7/d46/a00002.html" title="{geopop::kd::BaseNode\l\&lt; geogrid_detail::KdTree2DPoint \&gt;\n||+ ~BaseNode()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="1070,821,1313,987"/>
+<area shape="rect" id="node6" href="$d7/d46/a00002.html" title="A base class for all instantiations of a Node with D. " alt="" coords="1521,331,1726,481"/>
+<area shape="rect" id="node18" href="$dd/d32/a00041.html" title="A node in the KdTree (parameter P: the type of point, parameter D: dimension this node splits on)..." alt="" coords="1528,617,1719,768"/>
+<area shape="rect" id="node24" href="$dd/d32/a00041.html" title="{geopop::kd::Node\&lt; P, 0 \&gt;\n||+ Node()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="1604,1334,1793,1485"/>
+<area shape="rect" id="node7" href="$de/d11/a00021.html" title="KdTree for some more information on methods. " alt="" coords="637,1011,805,1235"/>
+<area shape="rect" id="node9" href="$d6/d42/a00043.html" title="{geopop::Location\&lt; void \&gt;\n||+ Location()\l+ Location()\l+ operator==()\l+ GetCoordinate()\l+ GetID()\l+ GetName()\l+ GetProvince()\l+ SetCoordinate()\l+ GetContent()\l+ get()\l}" alt="" coords="578,588,766,797"/>
+<area shape="rect" id="node14" href="$d6/d42/a00043.html" title="Location for use within the GeoGrid, contains Coordinate and meta data of that coordinate. " alt="" coords="285,301,498,511"/>
+<area shape="rect" id="node10" title="STL class. " alt="" coords="51,147,138,224"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="26,5,163,97"/>
+<area shape="rect" id="node22" href="$d5/db6/a00042.html" title="A k&#45;d tree: a k&#45;dimensional generalization of binary search trees This data structure allows for effi..." alt="" coords="756,1724,915,1948"/>
+<area shape="rect" id="node20" title="STL class. " alt="" coords="973,654,1128,731"/>
 </map>

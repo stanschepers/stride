@@ -1,6 +1,6 @@
 var a00077 =
 [
-    [ "DaysOffAll", "d1/d09/a00077.html#a8804c46ae3703253cb96e5f81f92251b", null ],
-    [ "IsWorkOff", "d1/d09/a00077.html#a61f87cc93335185f90d9d772f168b1bb", null ],
-    [ "IsSchoolOff", "d1/d09/a00077.html#a12a699d750a9b0a640db4ea47df0b11c", null ]
+    [ "HasAge", "d1/d09/a00077.html#a9da586fa49f908053a05ce521e904d27", null ],
+    [ "m_lower", "d1/d09/a00077.html#a029109d3a8bf8ca7e5d7ad04800c5daf", null ],
+    [ "m_upper", "d1/d09/a00077.html#a7ff124dd1641223d7e51a4c6b8c6356b", null ]
 ];

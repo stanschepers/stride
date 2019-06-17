@@ -1,0 +1,15 @@
+<map id="geopop::GeoGridProtoWriter::WriteLocation" name="geopop::GeoGridProtoWriter::WriteLocation">
+<area shape="rect" id="node2" href="$dc/ddf/a00067.html#afcaa78dcf409d0cb1f68907948ed761a" title="proto::GeoGrid_Location\l::add_commutes" alt="" coords="281,5,459,47"/>
+<area shape="rect" id="node3" href="$dc/ddf/a00067.html#a15b9f8b8d66691662d9e956085633ce8" title="proto::GeoGrid_Location\l::add_contactpools" alt="" coords="281,71,459,112"/>
+<area shape="rect" id="node4" href="$d6/d42/a00043.html#a5a55b805fc13aeb37c6ce0dfffbc44dd" title="Gets the content. " alt="" coords="263,137,477,163"/>
+<area shape="rect" id="node5" href="$d6/d42/a00043.html#aa3663655c3916150de163cf55786e468" title="Gets the Coordinate of this Location. " alt="" coords="253,187,487,214"/>
+<area shape="rect" id="node6" href="$d6/d42/a00043.html#ae3f15e65c534d7b4f7af8f07b1514eee" title="Gets ID of this Location. " alt="" coords="282,238,458,265"/>
+<area shape="rect" id="node7" href="$d6/d42/a00043.html#a991edd729724c00a2d1c1ebf0994a840" title="Gets the name. " alt="" coords="269,289,471,315"/>
+<area shape="rect" id="node8" href="$d6/d42/a00043.html#a50a738766ed780e5a64070e6a0ba6bfb" title="Gets the province. " alt="" coords="261,339,479,366"/>
+<area shape="rect" id="node9" href="$dc/ddf/a00067.html#ae6dbb45201d633d8cb62b7a553f76d37" title="proto::GeoGrid_Location\l::set_allocated_coordinate" alt="" coords="275,391,465,432"/>
+<area shape="rect" id="node10" href="$dc/ddf/a00067.html#a1d365381ae92aed8249b91cce620cf99" title="proto::GeoGrid_Location\l::set_id" alt="" coords="281,456,459,497"/>
+<area shape="rect" id="node11" href="$dc/ddf/a00067.html#a7c05daf9d464d1459286d096d989bf23" title="proto::GeoGrid_Location\l::set_name" alt="" coords="281,521,459,563"/>
+<area shape="rect" id="node12" href="$dc/ddf/a00067.html#a881f94e3b033b5535b37654013177e31" title="proto::GeoGrid_Location\l::set_population" alt="" coords="281,587,459,628"/>
+<area shape="rect" id="node13" href="$dc/ddf/a00067.html#ac0e0fef5af15055b22c4d2419107caf1" title="proto::GeoGrid_Location\l::set_province" alt="" coords="281,652,459,693"/>
+<area shape="rect" id="node14" href="$da/d24/a00068.html#a87a5dda29b7cf251d8f8c57c901ca815" title="proto::GeoGrid_Location\l_Commute::set_to" alt="" coords="281,717,459,759"/>
+</map>

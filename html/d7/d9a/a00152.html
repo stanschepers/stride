@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: ConfigInfo.cpp File Reference</title>
+<title>Stride Reference Manual: visualization::EpiOutputProtoReader Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -48,8 +48,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="../../annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="../../files.html"><span>Files</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li><a href="../../files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -70,8 +70,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="../../files.html"><span>File&#160;List</span></a></li>
-      <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="../../annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="../../classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="../../inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -105,96 +107,276 @@ $(document).ready(function(){initNavTree('d7/d9a/a00152.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="../../d7/d0c/a01173.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ConfigInfo.cpp File Reference</div>  </div>
+<div class="title">visualization::EpiOutputProtoReader Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Info on configuration.  
-<a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="../../da/d01/a00153_source.html">ConfigInfo.h</a>&quot;</code><br />
-<code>#include &lt;omp.h&gt;</code><br />
-<code>#include &lt;string&gt;</code><br />
-<code>#include &lt;unistd.h&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for ConfigInfo.cpp:</div>
+<p>An implementation of the <a class="el" href="../../da/d01/a00153.html" title="An abstract base class for creating a GeoGrid with the epi-output that was read from a file...">EpiOutputReader</a> using Protobuf.  
+ <a href="../../d7/d9a/a00152.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../dc/d9a/a00218_source.html">EpiOutputProtoReader.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for visualization::EpiOutputProtoReader:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d9/dd1/a00398.gif" border="0" usemap="#ConfigInfo_8cpp" alt=""/></div>
-<map name="ConfigInfo_8cpp" id="ConfigInfo_8cpp">
-<area shape="rect" id="node2" href="../../da/d01/a00153.html" title="Info on configuration. " alt="" coords="5,80,103,107"/>
+<div class="center"><img src="../../da/dfb/a01174.gif" border="0" usemap="#visualization_1_1EpiOutputProtoReader_inherit__map" alt="Inheritance graph"/></div>
+<map name="visualization_1_1EpiOutputProtoReader_inherit__map" id="visualization_1_1EpiOutputProtoReader_inherit__map">
+<area shape="rect" id="node2" href="../../da/d01/a00153.html" title="An abstract base class for creating a GeoGrid with the epi&#45;output that was read from a file..." alt="" coords="14,5,185,156"/>
 </map>
 </div>
+<div class="dynheader">
+Collaboration diagram for visualization::EpiOutputProtoReader:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d6/df2/a01175.gif" border="0" usemap="#visualization_1_1EpiOutputProtoReader_coll__map" alt="Collaboration graph"/></div>
+<map name="visualization_1_1EpiOutputProtoReader_coll__map" id="visualization_1_1EpiOutputProtoReader_coll__map">
+<area shape="rect" id="node2" href="../../da/d01/a00153.html" title="An abstract base class for creating a GeoGrid with the epi&#45;output that was read from a file..." alt="" coords="2391,3835,2562,3985"/>
+<area shape="rect" id="node3" href="../../d0/d0b/a00004.html" title="{geopop::GeoGrid\&lt; EpiOutput \&gt;\n||+ GeoGrid()\l+ GeoGrid()\l+ operator=()\l+ AddLocation()\l+ Finalize()\l+ GetById()\l+ GetPopulation()\l+ LocationsInRadius()\l+ GetNearbyPools()\l+ LocationsInBox()\land 11 more...\l&#45; CheckFinalized()\l}" alt="" coords="1208,3533,1431,3772"/>
+<area shape="rect" id="node4" href="../../d5/db6/a00042.html" title="{geopop::KdTree\&lt; geogrid\l_detail::KdTree2DPoint \&gt;\n||+ KdTree()\l+ Apply()\l+ Apply()\l+ Contains()\l+ Empty()\l+ GetHeight()\l+ Insert()\l+ Query()\l+ Size()\l+ Build()\l&#45; Construct()\l}" alt="" coords="1609,2306,1792,2545"/>
+<area shape="rect" id="node34" href="../../d0/d0b/a00004.html" title="{geopop::GeoGrid\&lt; geopop\l::geopop::Epidemiologic \&gt;\n||+ GeoGrid()\l+ GeoGrid()\l+ operator=()\l+ AddLocation()\l+ Finalize()\l+ GetById()\l+ GetPopulation()\l+ LocationsInRadius()\l+ GetNearbyPools()\l+ LocationsInBox()\land 11 more...\l&#45; CheckFinalized()\l}" alt="" coords="183,2615,376,2868"/>
+<area shape="rect" id="node41" href="../../d0/d0b/a00004.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac..." alt="" coords="975,3217,1173,3471"/>
+<area shape="rect" id="node6" href="../../dd/d32/a00041.html" title="{geopop::kd::Node\&lt; geogrid\l_detail::KdTree2DPoint, 0 \&gt;\n||+ Node()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="1965,1740,2164,1905"/>
+<area shape="rect" id="node7" href="../../d7/d46/a00002.html" title="{geopop::kd::BaseNode\l\&lt; geogrid_detail::KdTree2DPoint \&gt;\n||+ ~BaseNode()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="2374,1249,2617,1415"/>
+<area shape="rect" id="node8" href="../../d7/d46/a00002.html" title="A base class for all instantiations of a Node with D. " alt="" coords="2317,744,2522,895"/>
+<area shape="rect" id="node15" href="../../dd/d32/a00041.html" title="A node in the KdTree (parameter P: the type of point, parameter D: dimension this node splits on)..." alt="" coords="2061,1045,2252,1196"/>
+<area shape="rect" id="node20" href="../../dd/d32/a00041.html" title="{geopop::kd::Node\&lt; P, 0 \&gt;\n||+ Node()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="2270,1475,2459,1626"/>
+<area shape="rect" id="node9" href="../../de/d11/a00021.html" title="KdTree for some more information on methods. " alt="" coords="1807,1439,1975,1663"/>
+<area shape="rect" id="node11" href="../../d6/d42/a00043.html" title="{geopop::Location\&lt; void \&gt;\n||+ Location()\l+ Location()\l+ operator==()\l+ GetCoordinate()\l+ GetID()\l+ GetName()\l+ GetProvince()\l+ SetCoordinate()\l+ GetContent()\l+ get()\l}" alt="" coords="1707,1016,1895,1225"/>
+<area shape="rect" id="node18" href="../../d5/db6/a00042.html" title="A k&#45;d tree: a k&#45;dimensional generalization of binary search trees This data structure allows for effi..." alt="" coords="1739,1997,1897,2221"/>
+<area shape="rect" id="node22" href="../../d9/da5/a00075.html" title="{stride::util::SegmentedVector\l\&lt; Person \&gt;\n||+ SegmentedVector()\l+ SegmentedVector()\l+ SegmentedVector()\l+ SegmentedVector()\l+ SegmentedVector()\l+ operator=()\l+ operator=()\l+ ~SegmentedVector()\l+ at()\l+ at()\land 23 more...\l&#45; get_chunk()\l}" alt="" coords="657,2615,867,2868"/>
+<area shape="rect" id="node26" href="../../d9/da5/a00075.html" title="Container that stores objects &quot;almost contiguously&quot; (in a chain of blocks) and guarantees that pointe..." alt="" coords="657,2299,867,2552"/>
+<area shape="rect" id="node16" title="STL class. " alt="" coords="2558,472,2713,549"/>
+<area shape="rect" id="node25" title="STL class. " alt="" coords="557,1784,684,1861"/>
+<area shape="rect" id="node30" title="STL class. " alt="" coords="427,465,583,557"/>
+<area shape="rect" id="node33" title="STL class. " alt="" coords="29,450,207,571"/>
+<area shape="rect" id="node39" title="STL class. " alt="" coords="658,465,810,557"/>
+<area shape="rect" id="node21" href="../../db/d57/a00112.html" title="Key Data structure: container for (a) all individuals in the population (b) the ContactPoolSys wchich..." alt="" coords="494,2931,654,3155"/>
+<area shape="rect" id="node24" href="../../d9/d00/a00784.html" title="{Chunk *\n||}" alt="" coords="277,1784,351,1861"/>
+<area shape="rect" id="node28" href="../../db/ddf/a00088.html" title="ContactPoolSys contains for each of the type of pools (Household, K12School, ...) a vector of with al..." alt="" coords="156,1045,323,1196"/>
+<area shape="rect" id="node29" href="../../d3/d8b/a00059.html" title="{stride::ContactType\l::IdSubscriptArray\&lt;\l unsigned int \&gt;\n||+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ operator[]()\l+ operator[]()\l+ at()\l+ at()\l}" alt="" coords="294,715,446,924"/>
+<area shape="rect" id="node31" href="../../d3/d8b/a00059.html" title="An std::array modified to enable subscripting with the constact pool type indentifiers. " alt="" coords="231,413,403,608"/>
+<area shape="rect" id="node32" href="../../d3/d8b/a00059.html" title="{stride::ContactType\l::IdSubscriptArray\&lt;\l util::stride::util::\lSegmentedVector\&lt; stride\l::ContactPool \&gt; \&gt;\n||+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ operator[]()\l+ operator[]()\l+ at()\l+ at()\l}" alt="" coords="69,700,258,939"/>
+<area shape="rect" id="node47" title="STL class. " alt="" coords="2955,472,3054,549"/>
+<area shape="rect" id="node48" title="STL class. " alt="" coords="2935,259,3074,351"/>
+<area shape="rect" id="node49" title="STL class. " alt="" coords="2921,132,3089,209"/>
+<area shape="rect" id="node50" title="STL class. " alt="" coords="2951,5,3058,83"/>
+</map>
 </div>
-<p><a href="../../d7/d9a/a00152_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:d3/dc9/a00355"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dc9/a00355.html">stride</a></td></tr>
-<tr class="memdesc:d3/dc9/a00355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:de/dd7/a00362"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dd7/a00362.html">stride::util</a></td></tr>
-<tr class="memdesc:de/dd7/a00362"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utilities for the project. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a21e49c5ab42385df34739c533d93a9c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d9a/a00152.html#a21e49c5ab42385df34739c533d93a9c4">EpiOutputProtoReader</a> (std::unique_ptr&lt; std::istream &gt; inputStream, <a class="el" href="../../d0/d0b/a00004.html">geopop::GeoGrid</a>&lt; <a class="el" href="../../d1/d7c/a00003.html">EpiOutput</a> &gt; *epiOutput)</td></tr>
+<tr class="memdesc:a21e49c5ab42385df34739c533d93a9c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the <a class="el" href="../../d7/d9a/a00152.html" title="An implementation of the EpiOutputReader using Protobuf. ">EpiOutputProtoReader</a> with the istream which contains the Protobuf.  <a href="#a21e49c5ab42385df34739c533d93a9c4">More...</a><br /></td></tr>
+<tr class="separator:a21e49c5ab42385df34739c533d93a9c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7fe77f9e27903d0b01e648672e1674a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d9a/a00152.html#ae7fe77f9e27903d0b01e648672e1674a">EpiOutputProtoReader</a> (const <a class="el" href="../../d7/d9a/a00152.html">EpiOutputProtoReader</a> &amp;)=delete</td></tr>
+<tr class="memdesc:ae7fe77f9e27903d0b01e648672e1674a"><td class="mdescLeft">&#160;</td><td class="mdescRight">No copy constructor.  <a href="#ae7fe77f9e27903d0b01e648672e1674a">More...</a><br /></td></tr>
+<tr class="separator:ae7fe77f9e27903d0b01e648672e1674a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07b8820e4c13f24fe72af36eb327e801"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d9a/a00152.html">EpiOutputProtoReader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d9a/a00152.html#a07b8820e4c13f24fe72af36eb327e801">operator=</a> (const <a class="el" href="../../d7/d9a/a00152.html">EpiOutputProtoReader</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a07b8820e4c13f24fe72af36eb327e801"><td class="mdescLeft">&#160;</td><td class="mdescRight">No copy assignement.  <a href="#a07b8820e4c13f24fe72af36eb327e801">More...</a><br /></td></tr>
+<tr class="separator:a07b8820e4c13f24fe72af36eb327e801"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3f7a9373e728d35cde759c93235b772"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d9a/a00152.html#ae3f7a9373e728d35cde759c93235b772">Read</a> () override</td></tr>
+<tr class="memdesc:ae3f7a9373e728d35cde759c93235b772"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actually perform the read and return the <a class="el" href="../../d1/d7c/a00003.html" title="Epi-output for use within the visualization, contains epi-output of location. ">EpiOutput</a>.  <a href="#ae3f7a9373e728d35cde759c93235b772">More...</a><br /></td></tr>
+<tr class="separator:ae3f7a9373e728d35cde759c93235b772"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a00153"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00153')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../da/d01/a00153.html">visualization::EpiOutputReader</a></td></tr>
+<tr class="memitem:a200d9e6842db47a7113cb30302d70566 inherit pub_methods_a00153"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/a00153.html#a200d9e6842db47a7113cb30302d70566">EpiOutputReader</a> (<a class="el" href="../../d0/d0b/a00004.html">geopop::GeoGrid</a>&lt; <a class="el" href="../../d1/d7c/a00003.html">EpiOutput</a> &gt; *epiOutput)</td></tr>
+<tr class="memdesc:a200d9e6842db47a7113cb30302d70566 inherit pub_methods_a00153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parametrized constructor.  <a href="#a200d9e6842db47a7113cb30302d70566">More...</a><br /></td></tr>
+<tr class="separator:a200d9e6842db47a7113cb30302d70566 inherit pub_methods_a00153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dcc7814492cd041c81cb05736ba5365 inherit pub_methods_a00153"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/a00153.html#a9dcc7814492cd041c81cb05736ba5365">EpiOutputReader</a> (const <a class="el" href="../../da/d01/a00153.html">EpiOutputReader</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a9dcc7814492cd041c81cb05736ba5365 inherit pub_methods_a00153"><td class="mdescLeft">&#160;</td><td class="mdescRight">No copy constructor.  <a href="#a9dcc7814492cd041c81cb05736ba5365">More...</a><br /></td></tr>
+<tr class="separator:a9dcc7814492cd041c81cb05736ba5365 inherit pub_methods_a00153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61c6303d61d4fb122a5509120a43d533 inherit pub_methods_a00153"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d01/a00153.html">EpiOutputReader</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/a00153.html#a61c6303d61d4fb122a5509120a43d533">operator=</a> (const <a class="el" href="../../da/d01/a00153.html">EpiOutputReader</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a61c6303d61d4fb122a5509120a43d533 inherit pub_methods_a00153"><td class="mdescLeft">&#160;</td><td class="mdescRight">No copy assignement.  <a href="#a61c6303d61d4fb122a5509120a43d533">More...</a><br /></td></tr>
+<tr class="separator:a61c6303d61d4fb122a5509120a43d533 inherit pub_methods_a00153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a489429dd02a7f44ac6e261979e6e72b1 inherit pub_methods_a00153"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/a00153.html#a489429dd02a7f44ac6e261979e6e72b1">~EpiOutputReader</a> ()=default</td></tr>
+<tr class="memdesc:a489429dd02a7f44ac6e261979e6e72b1 inherit pub_methods_a00153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#a489429dd02a7f44ac6e261979e6e72b1">More...</a><br /></td></tr>
+<tr class="separator:a489429dd02a7f44ac6e261979e6e72b1 inherit pub_methods_a00153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a6df1d22fb5f09eccc23b9f399670cfd7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d9a/a00152.html#a6df1d22fb5f09eccc23b9f399670cfd7">STRINGIFY</a>(x)&#160;&#160;&#160;#x</td></tr>
-<tr class="separator:a6df1d22fb5f09eccc23b9f399670cfd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9063e80f8777300c93afde6e6f4c9cea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d9a/a00152.html#a9063e80f8777300c93afde6e6f4c9cea">TOSTRING</a>(x)&#160;&#160;&#160;<a class="el" href="../../d7/d9a/a00152.html#a6df1d22fb5f09eccc23b9f399670cfd7">STRINGIFY</a>(x)</td></tr>
-<tr class="separator:a9063e80f8777300c93afde6e6f4c9cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ab5e64352498773ab0d744ebb9e96b0b5"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; std::istream &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d9a/a00152.html#ab5e64352498773ab0d744ebb9e96b0b5">m_inputStream</a></td></tr>
+<tr class="memdesc:ab5e64352498773ab0d744ebb9e96b0b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">File to read.  <a href="#ab5e64352498773ab0d744ebb9e96b0b5">More...</a><br /></td></tr>
+<tr class="separator:ab5e64352498773ab0d744ebb9e96b0b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_a00153"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00153')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../da/d01/a00153.html">visualization::EpiOutputReader</a></td></tr>
+<tr class="memitem:a47aebe4396832578e36a080814c1332c inherit pro_attribs_a00153"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d0b/a00004.html">geopop::GeoGrid</a>&lt; <a class="el" href="../../d1/d7c/a00003.html">EpiOutput</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/a00153.html#a47aebe4396832578e36a080814c1332c">m_epiOutput</a></td></tr>
+<tr class="memdesc:a47aebe4396832578e36a080814c1332c inherit pro_attribs_a00153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resulting epi-output.  <a href="#a47aebe4396832578e36a080814c1332c">More...</a><br /></td></tr>
+<tr class="separator:a47aebe4396832578e36a080814c1332c inherit pro_attribs_a00153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Info on configuration. </p>
+<div class="textblock"><p>An implementation of the <a class="el" href="../../da/d01/a00153.html" title="An abstract base class for creating a GeoGrid with the epi-output that was read from a file...">EpiOutputReader</a> using Protobuf. </p>
+<p>This class is used to read a epi-output from a Protobuf file. </p>
 
-<p>Definition in file <a class="el" href="../../d7/d9a/a00152_source.html">ConfigInfo.cpp</a>.</p>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a6df1d22fb5f09eccc23b9f399670cfd7"></a>
+<p>Definition at line <a class="el" href="../../dc/d9a/a00218_source.html#l00030">30</a> of file <a class="el" href="../../dc/d9a/a00218_source.html">EpiOutputProtoReader.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a21e49c5ab42385df34739c533d93a9c4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define STRINGIFY</td>
+          <td class="memname">visualization::EpiOutputProtoReader::EpiOutputProtoReader </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;#x</td>
+          <td class="paramtype">std::unique_ptr&lt; std::istream &gt;&#160;</td>
+          <td class="paramname"><em>inputStream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d0b/a00004.html">geopop::GeoGrid</a>&lt; <a class="el" href="../../d1/d7c/a00003.html">EpiOutput</a> &gt; *&#160;</td>
+          <td class="paramname"><em>epiOutput</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d9a/a00152_source.html#l00027">27</a> of file <a class="el" href="../../d7/d9a/a00152_source.html">ConfigInfo.cpp</a>.</p>
+<p>Construct the <a class="el" href="../../d7/d9a/a00152.html" title="An implementation of the EpiOutputReader using Protobuf. ">EpiOutputProtoReader</a> with the istream which contains the Protobuf. </p>
+
+<p>Definition at line <a class="el" href="../../df/d24/a00217_source.html#l00029">29</a> of file <a class="el" href="../../df/d24/a00217_source.html">EpiOutputProtoReader.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a9063e80f8777300c93afde6e6f4c9cea"></a>
+<a class="anchor" id="ae7fe77f9e27903d0b01e648672e1674a"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">#define TOSTRING</td>
+          <td class="memname">visualization::EpiOutputProtoReader::EpiOutputProtoReader </td>
           <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="../../d7/d9a/a00152.html#a6df1d22fb5f09eccc23b9f399670cfd7">STRINGIFY</a>(x)</td>
+          <td class="paramtype">const <a class="el" href="../../d7/d9a/a00152.html">EpiOutputProtoReader</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d7/d9a/a00152_source.html#l00028">28</a> of file <a class="el" href="../../d7/d9a/a00152_source.html">ConfigInfo.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="../../d7/d9a/a00152_source.html#l00033">stride::util::ConfigInfo::GitRevision()</a>.</p>
+<p>No copy constructor. </p>
 
 </div>
 </div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a07b8820e4c13f24fe72af36eb327e801"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d9a/a00152.html">EpiOutputProtoReader</a> visualization::EpiOutputProtoReader::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d7/d9a/a00152.html">EpiOutputProtoReader</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>No copy assignement. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae3f7a9373e728d35cde759c93235b772"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::EpiOutputProtoReader::Read </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Actually perform the read and return the <a class="el" href="../../d1/d7c/a00003.html" title="Epi-output for use within the visualization, contains epi-output of location. ">EpiOutput</a>. </p>
+
+<p>Implements <a class="el" href="../../da/d01/a00153.html#abc6e85ee05546ffeb71fa1ce1ccdbd65">visualization::EpiOutputReader</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/d24/a00217_source.html#l00035">35</a> of file <a class="el" href="../../df/d24/a00217_source.html">EpiOutputProtoReader.cpp</a>.</p>
+
+<p>References <a class="el" href="../../dc/d31/a00208_source.html#l01184">proto::EpiOutput_Day_Location::coordinate()</a>, <a class="el" href="../../dc/d31/a00208_source.html#l01323">proto::EpiOutput::days()</a>, <a class="el" href="../../dc/d31/a00208_source.html#l01308">proto::EpiOutput::days_size()</a>, <a class="el" href="../../dc/d31/a00208_source.html#l01289">proto::EpiOutput_Day::locations()</a>, <a class="el" href="../../d0/d24/a00222_source.html#l00052">visualization::EpiOutputReader::m_epiOutput</a>, and <a class="el" href="../../dc/d9a/a00218_source.html#l00046">m_inputStream</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d7/d9a/a00152_ae3f7a9373e728d35cde759c93235b772_cgraph.gif" border="0" usemap="#d7/d9a/a00152_ae3f7a9373e728d35cde759c93235b772_cgraph" alt=""/></div>
+<map name="d7/d9a/a00152_ae3f7a9373e728d35cde759c93235b772_cgraph" id="d7/d9a/a00152_ae3f7a9373e728d35cde759c93235b772_cgraph">
+<area shape="rect" id="node2" href="../../df/d03/a00062.html#a38495d9e19e4762aa5d11b09c981ac06" title="proto::EpiOutput_Day\l_Location::coordinate" alt="" coords="243,5,402,47"/>
+<area shape="rect" id="node3" href="../../d9/d73/a00060.html#a9b95435252f71a784adf6d633397ce87" title="proto::EpiOutput::days" alt="" coords="240,71,405,98"/>
+<area shape="rect" id="node4" href="../../d9/d73/a00060.html#a278bb1db294037e2c628b88f5137157f" title="proto::EpiOutput::days_size" alt="" coords="224,122,421,149"/>
+<area shape="rect" id="node5" href="../../d4/de8/a00061.html#af372a076961a2ee29b6358cb48227b30" title="proto::EpiOutput_Day\l::locations" alt="" coords="243,173,402,215"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ab5e64352498773ab0d744ebb9e96b0b5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;std::istream&gt; visualization::EpiOutputProtoReader::m_inputStream</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>File to read. </p>
+
+<p>Definition at line <a class="el" href="../../dc/d9a/a00218_source.html#l00046">46</a> of file <a class="el" href="../../dc/d9a/a00218_source.html">EpiOutputProtoReader.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../df/d24/a00217_source.html#l00035">Read()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="../../dc/d9a/a00218_source.html">EpiOutputProtoReader.h</a></li>
+<li><a class="el" href="../../df/d24/a00217_source.html">EpiOutputProtoReader.cpp</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_cf56009b1fcb470adac12e74ab7406a1.html">util</a></li><li class="navelem"><a class="el" href="../../d7/d9a/a00152.html">ConfigInfo.cpp</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:37 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../d3/d29/a00419.html">visualization</a></li><li class="navelem"><a class="el" href="../../d7/d9a/a00152.html">EpiOutputProtoReader</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:11 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

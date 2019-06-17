@@ -1,0 +1,4 @@
+<map id="geopop::GeoGridJSONReader::ParseContactPool" name="geopop::GeoGridJSONReader::ParseContactPool">
+<area shape="rect" id="node2" href="$dc/d3c/a00028.html#abc292440ef7dca461f1a06252be793c8" title="Create a Location based on the information stored in the provided JSON. " alt="" coords="260,5,467,47"/>
+<area shape="rect" id="node3" href="$dc/d3c/a00028.html#a0b6a6032beee9c1bdb5536e8aa3d87f7" title="Actually perform the read and return the GeoGrid. " alt="" coords="515,5,721,47"/>
+</map>

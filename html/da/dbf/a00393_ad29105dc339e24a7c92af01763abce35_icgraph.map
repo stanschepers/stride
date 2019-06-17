@@ -1,0 +1,7 @@
+<map id="geopop::MakeCollector" name="geopop::MakeCollector">
+<area shape="rect" id="node2" href="$d0/d0b/a00004.html#ab420cdfd98e10a82976c5f9fc83c0d2c" title="Gets the locations in a rectangle determined by the two coordinates (long1, lat1) and (long2..." alt="" coords="221,45,420,87"/>
+<area shape="rect" id="node5" href="$d0/d0b/a00004.html#aea34bfa48f8584a53bd63f82c88047cb" title="Search for locations in radius (in km) around start. " alt="" coords="221,111,420,152"/>
+<area shape="rect" id="node3" href="$d0/d0b/a00004.html#a6f0db64fb3d805db606c99b9ade885c1" title="Gets the location in a rectangle defined by the two Locations. " alt="" coords="468,5,667,47"/>
+<area shape="rect" id="node4" href="$d0/d0b/a00004.html#a58745925a1490d2c5a95aa117734eb57" title="Find contactpools in startRadius (in km) around start and, if none are found, double the radius and s..." alt="" coords="471,70,664,126"/>
+<area shape="rect" id="node6" href="$d0/d0b/a00004.html#aee8eaf194ef99f6080afbcde37716edc" title="Get the Population associated with this GeoGrid. " alt="" coords="471,150,664,206"/>
+</map>

@@ -1,27 +1,4 @@
 var searchData=
 [
-  ['param',['param',['../d7/d7a/a00016.html#a94643f701d8a4359bf23a937ce33ee1e',1,'geopop::GeoGridConfig']]],
-  ['participation_5fcollege',['participation_college',['../d7/d7a/a00016.html#a079dd4c7d18c3d25e3af1509a1ec7b75',1,'geopop::GeoGridConfig']]],
-  ['participation_5fdaycare',['participation_daycare',['../d7/d7a/a00016.html#a9169e8573e673d5a4fcc6563028839ec',1,'geopop::GeoGridConfig']]],
-  ['participation_5fpreschool',['participation_preschool',['../d7/d7a/a00016.html#aedbec717efa1b52e4875345bf6ca10d7',1,'geopop::GeoGridConfig']]],
-  ['participation_5fworkplace',['participation_workplace',['../d7/d7a/a00016.html#a24a1def3a3cb10525dab4115003eb4c2',1,'geopop::GeoGridConfig']]],
-  ['people',['people',['../d7/d7a/a00016.html#af51964b5e60593430bbb2bcdcc0400ec',1,'geopop::GeoGridConfig']]],
-  ['people_5f',['people_',['../d9/d2e/a00056.html#aec9ad5ad9eb375c9cfbbdac7190fcbf4',1,'proto::GeoGrid_Location_ContactPools_ContactPool']]],
-  ['person_5fcount',['person_count',['../d5/df9/a00044.html#a7125fdd06f0ba926f2b2e88211d8ceca',1,'geopop::ReferenceHouseHold']]],
-  ['persons_5f',['persons_',['../d1/d84/a00052.html#a3b59a92801fa6e3205c99df850f08dd1',1,'proto::GeoGrid']]],
-  ['pools',['pools',['../d7/d7a/a00016.html#ac33a9ff190210799b551cc1702f4682c',1,'geopop::GeoGridConfig']]],
-  ['pools_5f',['pools_',['../d4/d6d/a00055.html#a9c18d11fa3d5c24ed32a52e49e18bdb6',1,'proto::GeoGrid_Location_ContactPools']]],
-  ['pop_5fsize',['pop_size',['../d7/d7a/a00016.html#a0deb035c1ea53adff9e0014b67824454',1,'geopop::GeoGridConfig']]],
-  ['popcount_5fcollege',['popcount_college',['../db/d3a/a00040.html#ab7663bf22dbfe6d56f5e07af064d6498',1,'geopop::PopulationInfo']]],
-  ['popcount_5fdaycare',['popcount_daycare',['../db/d3a/a00040.html#adbb87cbde5cee5ef68b6bf1fb7a4a712',1,'geopop::PopulationInfo']]],
-  ['popcount_5fk12school',['popcount_k12school',['../db/d3a/a00040.html#a6b6db87f6ccaa00a624242cadd695eb9',1,'geopop::PopulationInfo']]],
-  ['popcount_5fpreschool',['popcount_preschool',['../db/d3a/a00040.html#a6b3b6238336293faa050715aca04806a',1,'geopop::PopulationInfo']]],
-  ['popcount_5fworkplace',['popcount_workplace',['../db/d3a/a00040.html#ae5d13fc961c7c5c701465ec97bcef05d',1,'geopop::PopulationInfo']]],
-  ['popinfoperhhtype',['popInfoperHHtype',['../d7/d7a/a00016.html#a36aaf77189f2bd0522d48bcc4a886c3b',1,'geopop::GeoGridConfig']]],
-  ['population_5f',['population_',['../dc/dee/a00053.html#a6547521bb7e4140e082542aae89d718f',1,'proto::GeoGrid_Location']]],
-  ['preschool',['PreSchool',['../d2/dee/a00049.html#ac0420d84a40fe97543a805fecfd42db2',1,'H5Utils::H5Person::PreSchool()'],['../d4/d6d/a00055.html#abc54d2094048e6c0b4f8c72fc28bec59',1,'proto::GeoGrid_Location_ContactPools::PreSchool()']]],
-  ['primarycommunity',['PrimaryCommunity',['../d2/dee/a00049.html#a73d3df95077924ce4b6c39f8d09107c3',1,'H5Utils::H5Person::PrimaryCommunity()'],['../d4/d6d/a00055.html#a978967c6cda2c377853a12fa35a97ba8',1,'proto::GeoGrid_Location_ContactPools::PrimaryCommunity()']]],
-  ['proportion',['proportion',['../d4/dca/a00048.html#ac59838fb6e8cdaed1108d627055c422d',1,'H5Utils::H5Commute']]],
-  ['proportion_5f',['proportion_',['../d1/dea/a00054.html#aeae15310a0d29fd31e8c9496206301cb',1,'proto::GeoGrid_Location_Commute']]],
-  ['province_5f',['province_',['../dc/dee/a00053.html#a3270c34b911a8e64c45fbb3f40f0a205',1,'proto::GeoGrid_Location']]]
+  ['offsets',['offsets',['../db/d48/a00148.html#a853e19be8a9df16b8f9407eaa21869f4',1,'TableStruct_epioutput_2eproto::offsets()'],['../da/d1e/a00149.html#a98f3abc503157caec7b549c1fc4e2633',1,'TableStruct_geogrid_2eproto::offsets()']]]
 ];

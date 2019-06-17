@@ -1,0 +1,7 @@
+<map id="visualization::makePresentablePercentage" name="visualization::makePresentablePercentage">
+<area shape="rect" id="node2" href="$d3/df8/a00155.html#aa36ea6c3f65c3a8f357f1fbaa71c89d8" title="Set the shown information about one locality. " alt="" coords="273,5,471,47"/>
+<area shape="rect" id="node4" href="$d3/df8/a00155.html#a7edcfc96538d8be6c08aa5e7a9b94773" title="Update the color of the circles on the map. " alt="" coords="273,71,471,112"/>
+<area shape="rect" id="node3" href="$d3/df8/a00155.html#ad9fdfe5405e2744f6226876cc686419a" title="Set the shown day. " alt="" coords="519,5,716,47"/>
+<area shape="rect" id="node5" href="$d3/df8/a00155.html#a698bf28251b49a62a202da8431104b42" title="Set the selected age bracket. " alt="" coords="519,71,716,112"/>
+<area shape="rect" id="node6" href="$d3/df8/a00155.html#aa4f86259e6cad0db7308732577eb694f" title="Set the selected health status. " alt="" coords="519,136,716,177"/>
+</map>

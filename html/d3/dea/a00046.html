@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: google::protobuf::is_proto_enum&lt; ::proto::GeoGrid_Location_ContactPools_Type &gt; Struct Template Reference</title>
+<title>Stride Reference Manual: geopop::PolygonPolicy Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -106,42 +106,195 @@ $(document).ready(function(){initNavTree('d3/dea/a00046.html','../../');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="../../d2/d5e/a00915.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">google::protobuf::is_proto_enum&lt; ::proto::GeoGrid_Location_ContactPools_Type &gt; Struct Template Reference</div>  </div>
+<div class="title">geopop::PolygonPolicy Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="../../d9/dd0/a00191_source.html">geogrid.pb.h</a>&gt;</code></p>
+<p>A <a class="el" href="../../d1/d2b/a00018.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time...">GeoAggregator</a> Policy that aggregates over a (clockwise) polygon.  
+ <a href="../../d3/dea/a00046.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d7/d40/a00236_source.html">GeoAggregator.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for google::protobuf::is_proto_enum&lt; ::proto::GeoGrid_Location_ContactPools_Type &gt;:</div>
+Collaboration diagram for geopop::PolygonPolicy:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../da/d71/a00814.gif" border="0" usemap="#google_1_1protobuf_1_1is__proto__enum_3_01_1_1proto_1_1GeoGrid__Location__ContactPools__Type_01_4_inherit__map" alt="Inheritance graph"/></div>
-<map name="google_1_1protobuf_1_1is__proto__enum_3_01_1_1proto_1_1GeoGrid__Location__ContactPools__Type_01_4_inherit__map" id="google_1_1protobuf_1_1is__proto__enum_3_01_1_1proto_1_1GeoGrid__Location__ContactPools__Type_01_4_inherit__map">
+<div class="center"><img src="../../d6/d66/a00916.gif" border="0" usemap="#geopop_1_1PolygonPolicy_coll__map" alt="Collaboration graph"/></div>
+<map name="geopop_1_1PolygonPolicy_coll__map" id="geopop_1_1PolygonPolicy_coll__map">
 </map>
 </div>
-<div class="dynheader">
-Collaboration diagram for google::protobuf::is_proto_enum&lt; ::proto::GeoGrid_Location_ContactPools_Type &gt;:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d8/d2d/a00815.gif" border="0" usemap="#google_1_1protobuf_1_1is__proto__enum_3_01_1_1proto_1_1GeoGrid__Location__ContactPools__Type_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="google_1_1protobuf_1_1is__proto__enum_3_01_1_1proto_1_1GeoGrid__Location__ContactPools__Type_01_4_coll__map" id="google_1_1protobuf_1_1is__proto__enum_3_01_1_1proto_1_1GeoGrid__Location__ContactPools__Type_01_4_coll__map">
-</map>
-</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a5468ac31eae54f8b993ffd14a62927d7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dea/a00046.html#a5468ac31eae54f8b993ffd14a62927d7">Args</a> = boost::geometry::model::polygon&lt; <a class="el" href="../../da/dbf/a00393.html#ad853921c138e9ecb23181946c1d066c4">Coordinate</a>, true &gt;</td></tr>
+<tr class="separator:a5468ac31eae54f8b993ffd14a62927d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a9f6a7862371bdb5991a62af32bfc44fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dea/a00046.html#a9f6a7862371bdb5991a62af32bfc44fe">PolygonPolicy</a> (boost::geometry::model::polygon&lt; <a class="el" href="../../da/dbf/a00393.html#ad853921c138e9ecb23181946c1d066c4">Coordinate</a>, true &gt; args)</td></tr>
+<tr class="separator:a9f6a7862371bdb5991a62af32bfc44fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37ead64e0fc7096f4d71ee2c2b5ce8d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/dad/a00005.html">AABBox</a>&lt; <a class="el" href="../../de/d11/a00021.html">geogrid_detail::KdTree2DPoint</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dea/a00046.html#a37ead64e0fc7096f4d71ee2c2b5ce8d0">GetBoundingBox</a> () const </td></tr>
+<tr class="separator:a37ead64e0fc7096f4d71ee2c2b5ce8d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa76a2a2617b5fd1ae1ff45891adf65b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dea/a00046.html#aa76a2a2617b5fd1ae1ff45891adf65b5">Contains</a> (const <a class="el" href="../../de/d11/a00021.html">geogrid_detail::KdTree2DPoint</a> &amp;pt) const </td></tr>
+<tr class="separator:aa76a2a2617b5fd1ae1ff45891adf65b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a69ddb55e11e6fa42222646a21432bfb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/dea/a00046.html#a5468ac31eae54f8b993ffd14a62927d7">Args</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dea/a00046.html#a69ddb55e11e6fa42222646a21432bfb1">m_poly</a></td></tr>
+<tr class="separator:a69ddb55e11e6fa42222646a21432bfb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;&gt;<br />
-struct google::protobuf::is_proto_enum&lt; ::proto::GeoGrid_Location_ContactPools_Type &gt;</h3>
+<div class="textblock"><p>A <a class="el" href="../../d1/d2b/a00018.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time...">GeoAggregator</a> Policy that aggregates over a (clockwise) polygon. </p>
 
+<p>Definition at line <a class="el" href="../../d7/d40/a00236_source.html#l00197">197</a> of file <a class="el" href="../../d7/d40/a00236_source.html">GeoAggregator.h</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="a5468ac31eae54f8b993ffd14a62927d7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d3/dea/a00046.html#a5468ac31eae54f8b993ffd14a62927d7">geopop::PolygonPolicy::Args</a> =  boost::geometry::model::polygon&lt;<a class="el" href="../../da/dbf/a00393.html#ad853921c138e9ecb23181946c1d066c4">Coordinate</a>, true&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d9/dd0/a00191_source.html#l01595">1595</a> of file <a class="el" href="../../d9/dd0/a00191_source.html">geogrid.pb.h</a>.</p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="../../d9/dd0/a00191_source.html">geogrid.pb.h</a></li>
+<p>Definition at line <a class="el" href="../../d7/d40/a00236_source.html#l00200">200</a> of file <a class="el" href="../../d7/d40/a00236_source.html">GeoAggregator.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a9f6a7862371bdb5991a62af32bfc44fe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">geopop::PolygonPolicy::PolygonPolicy </td>
+          <td>(</td>
+          <td class="paramtype">boost::geometry::model::polygon&lt; <a class="el" href="../../da/dbf/a00393.html#ad853921c138e9ecb23181946c1d066c4">Coordinate</a>, true &gt;&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d40/a00236_source.html#l00202">202</a> of file <a class="el" href="../../d7/d40/a00236_source.html">GeoAggregator.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a37ead64e0fc7096f4d71ee2c2b5ce8d0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/dad/a00005.html">AABBox</a>&lt;<a class="el" href="../../de/d11/a00021.html">geogrid_detail::KdTree2DPoint</a>&gt; geopop::PolygonPolicy::GetBoundingBox </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d40/a00236_source.html#l00204">204</a> of file <a class="el" href="../../d7/d40/a00236_source.html">GeoAggregator.h</a>.</p>
+
+<p>References <a class="el" href="../../d2/d34/a00156_source.html#l00027">geopop::AABBox&lt; P &gt;::lower</a>, and <a class="el" href="../../d2/d34/a00156_source.html#l00029">geopop::AABBox&lt; P &gt;::upper</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa76a2a2617b5fd1ae1ff45891adf65b5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool geopop::PolygonPolicy::Contains </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/d11/a00021.html">geogrid_detail::KdTree2DPoint</a> &amp;&#160;</td>
+          <td class="paramname"><em>pt</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d40/a00236_source.html#l00214">214</a> of file <a class="el" href="../../d7/d40/a00236_source.html">GeoAggregator.h</a>.</p>
+
+<p>References <a class="el" href="../../d0/da2/a00307_source.html#l00075">geopop::geogrid_detail::KdTree2DPoint::GetPoint()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/dea/a00046_aa76a2a2617b5fd1ae1ff45891adf65b5_cgraph.gif" border="0" usemap="#d3/dea/a00046_aa76a2a2617b5fd1ae1ff45891adf65b5_cgraph" alt=""/></div>
+<map name="d3/dea/a00046_aa76a2a2617b5fd1ae1ff45891adf65b5_cgraph" id="d3/dea/a00046_aa76a2a2617b5fd1ae1ff45891adf65b5_cgraph">
+<area shape="rect" id="node2" href="../../de/d11/a00021.html#a3b5330463d70e33c9759a02ab68ffc27" title="Get the coordinate for this Location. " alt="" coords="217,39,403,80"/>
+<area shape="rect" id="node3" href="../../de/d11/a00021.html#a95b74e013a8d4d2c6c5366e27fd3d951" title="geopop::geogrid_detail\l::KdTree2DPoint::InBox" alt="" coords="458,5,626,47"/>
+<area shape="rect" id="node4" href="../../de/d11/a00021.html#a6b85c29413257e2c0400e376241e91a3" title="Does the point lie within radius km from start? " alt="" coords="451,71,633,112"/>
+<area shape="rect" id="node5" href="../../de/d11/a00021.html#a1ebd0d0592ea210885f32f110d8ec0de" title="Distance in kilometers, following great circle distance on a speroid earth. " alt="" coords="681,71,868,112"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a69ddb55e11e6fa42222646a21432bfb1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/dea/a00046.html#a5468ac31eae54f8b993ffd14a62927d7">Args</a> geopop::PolygonPolicy::m_poly</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d7/d40/a00236_source.html#l00220">220</a> of file <a class="el" href="../../d7/d40/a00236_source.html">GeoAggregator.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="../../d7/d40/a00236_source.html">GeoAggregator.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d9/d48/a00345.html">google</a></li><li class="navelem"><a class="el" href="../../d2/daf/a00346.html">protobuf</a></li><li class="navelem"><a class="el" href="../../d3/dea/a00046.html">is_proto_enum&lt; ::proto::GeoGrid_Location_ContactPools_Type &gt;</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:38 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../da/dbf/a00393.html">geopop</a></li><li class="navelem"><a class="el" href="../../d3/dea/a00046.html">PolygonPolicy</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:11 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

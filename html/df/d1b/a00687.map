@@ -1,2 +1,25 @@
-<map id="tuple&lt; stride::ContactLogMode::Id, bool &gt;" name="tuple&lt; stride::ContactLogMode::Id, bool &gt;">
+<map id="Population.h" name="Population.h">
+<area shape="rect" id="node2" href="$d8/d64/a00181.html" title="Header for the core ContactPool class. " alt="" coords="1696,393,1859,420"/>
+<area shape="rect" id="node5" href="$de/df3/a00185.html" title="Definition of ContactPool Id Type. " alt="" coords="665,543,829,569"/>
+<area shape="rect" id="node13" href="$dc/d52/a00183.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="383,319,570,345"/>
+<area shape="rect" id="node19" href="$df/d03/a00348.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="85,393,257,420"/>
+<area shape="rect" id="node25" href="$da/d2e/a00238.html" title="geopop/GeoGrid.h" alt="" coords="1622,87,1760,114"/>
+<area shape="rect" id="node36" href="$d5/df1/a00206.html" title="geopop/Epidemiologic.h" alt="" coords="880,319,1054,345"/>
+<area shape="rect" id="node43" href="$de/de9/a00322.html" title="Header file for the Person class. " alt="" coords="1515,393,1622,420"/>
+<area shape="rect" id="node47" href="$d0/dc5/a00343.html" title="Interface of RnMan. " alt="" coords="2942,393,3042,420"/>
+<area shape="rect" id="node3" href="$db/dd9/a00179.html" title="Header for the ContactLogMode class. " alt="" coords="2626,543,2820,569"/>
+<area shape="rect" id="node14" href="$d5/d7b/a00286.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="917,468,1054,495"/>
+<area shape="rect" id="node20" href="$dc/de3/a00373.html" title="Interface/Implementation for SVIterator. " alt="" coords="144,468,243,495"/>
+<area shape="rect" id="node26" href="$d7/d03/a00254.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="2358,244,2566,271"/>
+<area shape="rect" id="node35" href="$d1/d67/a00310.html" title="geopop/Location.h" alt="" coords="1230,244,1370,271"/>
+<area shape="rect" id="node44" href="$d4/d08/a00237.html" title="GeoGrid.cpp" alt="" coords="1871,169,1972,196"/>
+<area shape="rect" id="node27" href="$d3/d07/a00305.html" title="KdTree.h" alt="" coords="2322,319,2398,345"/>
+<area shape="rect" id="node33" href="$d0/da2/a00307.html" title="KdTree2DPoint.h" alt="" coords="2529,319,2656,345"/>
+<area shape="rect" id="node28" href="$d2/d34/a00156.html" title="AABBox.h" alt="" coords="2550,393,2635,420"/>
+<area shape="rect" id="node29" href="$d8/d17/a00304.html" title="KdNode.h" alt="" coords="2238,393,2322,420"/>
+<area shape="rect" id="node34" href="$da/d15/a00188.html" title="geopop/Coordinate.h" alt="" coords="2660,393,2816,420"/>
+<area shape="rect" id="node41" href="$d2/d71/a00309.html" title="Location.cpp" alt="" coords="1421,319,1524,345"/>
+<area shape="rect" id="node42" href="$dd/d56/a00274.html" title="Header for the Health class. " alt="" coords="1574,468,1704,495"/>
+<area shape="rect" id="node45" href="$d7/d40/a00236.html" title="geopop/geo/GeoAggregator.h" alt="" coords="2123,244,2334,271"/>
+<area shape="rect" id="node48" href="$d3/d93/a00341.html" title="Interface of RnPcg. " alt="" coords="2289,543,2362,569"/>
 </map>

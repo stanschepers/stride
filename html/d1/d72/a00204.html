@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: GeoGridJSONReader.h File Reference</title>
+<title>Stride Reference Manual: DistributionReader.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -108,39 +108,32 @@ $(document).ready(function(){initNavTree('d1/d72/a00204.html','../../');});
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">GeoGridJSONReader.h File Reference</div>  </div>
+<div class="title">DistributionReader.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../dc/d9a/a00218_source.html">GeoGridStreamReader.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d6/db8/a00158_source.html">contact/ContactPool.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../db/d44/a00162_source.html">contact/ContactType.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d9/d8d/a00262_source.html">geopop/Location.h</a>&quot;</code><br />
-<code>#include &lt;nlohmann/json.hpp&gt;</code><br />
-<code>#include &lt;spdlog/logger.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../df/d03/a00348_source.html">util/SegmentedVector.h</a>&quot;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for GeoGridJSONReader.h:</div>
+Include dependency graph for DistributionReader.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d9/dea/a00478.gif" border="0" usemap="#GeoGridJSONReader_8h" alt=""/></div>
-<map name="GeoGridJSONReader_8h" id="GeoGridJSONReader_8h">
-<area shape="rect" id="node2" href="../../dc/d9a/a00218.html" title="GeoGridStreamReader.h" alt="" coords="141,80,319,107"/>
-<area shape="rect" id="node9" href="../../d6/db8/a00158.html" title="Header for the core ContactPool class. " alt="" coords="571,155,734,181"/>
-<area shape="rect" id="node12" href="../../db/d44/a00162.html" title="Definition of ContactPool Id Type. " alt="" coords="908,237,1072,263"/>
-<area shape="rect" id="node17" href="../../d9/d8d/a00262.html" title="geopop/Location.h" alt="" coords="1024,80,1164,107"/>
-<area shape="rect" id="node5" href="../../d3/dd1/a00214.html" title="GeoGridReader.h" alt="" coords="113,155,243,181"/>
-<area shape="rect" id="node10" href="../../d2/d34/a00156.html" title="Header for the ContactLogMode class. " alt="" coords="507,237,702,263"/>
-<area shape="rect" id="node18" href="../../da/d2e/a00238.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="1527,155,1717,181"/>
-<area shape="rect" id="node23" href="../../d0/d48/a00165.html" title="geopop/Coordinate.h" alt="" coords="1741,155,1897,181"/>
-<area shape="rect" id="node26" href="../../d9/d0d/a00298.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="1307,155,1479,181"/>
-<area shape="rect" id="node27" href="../../de/de9/a00322.html" title="Interface/Implementation for SVIterator. " alt="" coords="1430,237,1529,263"/>
+<div class="center"><img src="../../d5/d0f/a00494.gif" border="0" usemap="#DistributionReader_8h" alt=""/></div>
+<map name="DistributionReader_8h" id="DistributionReader_8h">
+<area shape="rect" id="node2" href="../../df/d03/a00348.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="341,80,513,107"/>
+<area shape="rect" id="node3" href="../../dc/de3/a00373.html" title="Interface/Implementation for SVIterator. " alt="" coords="479,155,577,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d9/d4a/a00479.gif" border="0" usemap="#GeoGridJSONReader_8hdep" alt=""/></div>
-<map name="GeoGridJSONReader_8hdep" id="GeoGridJSONReader_8hdep">
-<area shape="rect" id="node2" href="../../de/d79/a00203.html" title="GeoGridJSONReader.cpp" alt="" coords="5,80,181,107"/>
-<area shape="rect" id="node3" href="../../d3/dd5/a00215.html" title="GeoGridReaderFactory.cpp" alt="" coords="205,80,395,107"/>
+<div class="center"><img src="../../db/dc4/a00495.gif" border="0" usemap="#DistributionReader_8hdep" alt=""/></div>
+<map name="DistributionReader_8hdep" id="DistributionReader_8hdep">
+<area shape="rect" id="node2" href="../../d9/d21/a00240.html" title="GeoGridConfig.cpp" alt="" coords="5,155,147,181"/>
+<area shape="rect" id="node3" href="../../dc/d84/a00338.html" title="ReaderFactory.h" alt="" coords="177,80,300,107"/>
+<area shape="rect" id="node6" href="../../de/d08/a00381.html" title="WorkplaceCSVReader.h" alt="" coords="324,80,492,107"/>
+<area shape="rect" id="node4" href="../../d4/dce/a00337.html" title="ReaderFactory.cpp" alt="" coords="337,155,474,181"/>
+<area shape="rect" id="node5" href="../../d5/d42/a00269.html" title="Initialize populations: implementation. " alt="" coords="170,155,313,181"/>
+<area shape="rect" id="node7" href="../../d8/ddd/a00380.html" title="WorkplaceCSVReader.cpp" alt="" coords="498,155,681,181"/>
 </map>
 </div>
 </div>
@@ -148,14 +141,17 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d11/a00021.html">geopop::GeoGridJSONReader</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An implementation of the <a class="el" href="../../d3/dfe/a00025.html" title="An abstract base class for creating a GeoGrid that was read from a file, can be implemented using mul...">GeoGridReader</a> using JSON.  <a href="../../de/d11/a00021.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dec/a00010.html">geopop::DistributionReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the reference distribution profiles from file.  <a href="../../d7/dec/a00010.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:d2/d45/a00342"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/a00342.html">geopop</a></td></tr>
-<tr class="memdesc:d2/d45/a00342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
+<tr class="memitem:d1/d8b/a00406"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d8b/a00406.html">stride</a></td></tr>
+<tr class="memdesc:d1/d8b/a00406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:da/dbf/a00393"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dbf/a00393.html">geopop</a></td></tr>
+<tr class="memdesc:da/dbf/a00393"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
@@ -163,8 +159,8 @@ Namespaces</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_c490ff723361adf09283ce460b26e466.html">io</a></li><li class="navelem"><a class="el" href="../../d1/d72/a00204.html">GeoGridJSONReader.h</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:37 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_c490ff723361adf09283ce460b26e466.html">io</a></li><li class="navelem"><a class="el" href="../../d1/d72/a00204.html">DistributionReader.h</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:10 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

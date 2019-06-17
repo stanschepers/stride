@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: Message Class Reference</title>
+<title>Stride Reference Manual: geopop::PopulationInfo Struct Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -106,41 +106,166 @@ $(document).ready(function(){initNavTree('d6/d2d/a00047.html','../../');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="../../d4/ddc/a00917.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Message Class Reference</div>  </div>
+<div class="title">geopop::PopulationInfo Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d6/db6/a00241_source.html">GeoGridConfig.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for Message:</div>
+Collaboration diagram for geopop::PopulationInfo:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d1/d97/a00670.gif" border="0" usemap="#Message_inherit__map" alt="Inheritance graph"/></div>
-<map name="Message_inherit__map" id="Message_inherit__map">
-<area shape="rect" id="node2" href="../../d1/d84/a00052.html" title="{proto::GeoGrid\n|+ kIndexInFileMessages\l+ kLocationsFieldNumber\l+ kPersonsFieldNumber\l&#45; _internal_metadata_\l&#45; locations_\l&#45; persons_\l&#45; _cached_size_\l|+ GeoGrid()\l+ ~GeoGrid()\l+ GeoGrid()\l+ operator=()\l+ Swap()\l+ New()\l+ New()\l+ CopyFrom()\l+ MergeFrom()\l+ CopyFrom()\land 23 more...\l+ descriptor()\l+ default_instance()\l+ InitAsDefaultInstance()\l+ internal_default_instance()\l&#45; SharedCtor()\l&#45; SharedDtor()\l&#45; SetCachedSize()\l&#45; InternalSwap()\l&#45; GetArenaNoVirtual()\l&#45; MaybeArenaPtr()\l}" alt="" coords="5,285,212,743"/>
-<area shape="rect" id="node3" href="../../dc/dee/a00053.html" title="{proto::GeoGrid_Location\n|+ kIndexInFileMessages\l+ kContactPoolsFieldNumber\l+ kCommutesFieldNumber\l+ kNameFieldNumber\l+ kCoordinateFieldNumber\l+ kIdFieldNumber\l+ kProvinceFieldNumber\l+ kPopulationFieldNumber\l&#45; _internal_metadata_\l&#45; contactpools_\l&#45; commutes_\l&#45; name_\l&#45; coordinate_\l&#45; id_\l&#45; province_\l&#45; population_\l&#45; _cached_size_\l|+ GeoGrid_Location()\l+ ~GeoGrid_Location()\l+ GeoGrid_Location()\l+ operator=()\l+ Swap()\l+ New()\l+ New()\l+ CopyFrom()\l+ MergeFrom()\l+ CopyFrom()\land 46 more...\l+ descriptor()\l+ default_instance()\l+ InitAsDefaultInstance()\l+ internal_default_instance()\l&#45; SharedCtor()\l&#45; SharedDtor()\l&#45; SetCachedSize()\l&#45; InternalSwap()\l&#45; GetArenaNoVirtual()\l&#45; MaybeArenaPtr()\l}" alt="" coords="237,211,445,817"/>
-<area shape="rect" id="node4" href="../../d1/dea/a00054.html" title="{proto::GeoGrid_Location\l_Commute\n|+ kIndexInFileMessages\l+ kToFieldNumber\l+ kProportionFieldNumber\l&#45; _internal_metadata_\l&#45; to_\l&#45; proportion_\l&#45; _cached_size_\l|+ GeoGrid_Location_Commute()\l+ ~GeoGrid_Location_Commute()\l+ GeoGrid_Location_Commute()\l+ operator=()\l+ Swap()\l+ New()\l+ New()\l+ CopyFrom()\l+ MergeFrom()\l+ CopyFrom()\land 15 more...\l+ descriptor()\l+ default_instance()\l+ InitAsDefaultInstance()\l+ internal_default_instance()\l&#45; SharedCtor()\l&#45; SharedDtor()\l&#45; SetCachedSize()\l&#45; InternalSwap()\l&#45; GetArenaNoVirtual()\l&#45; MaybeArenaPtr()\l}" alt="" coords="469,277,711,751"/>
-<area shape="rect" id="node5" href="../../d4/d6d/a00055.html" title="{proto::GeoGrid_Location\l_ContactPools\n|+ kIndexInFileMessages\l+ Daycare\l+ PreSchool\l+ K12School\l+ PrimaryCommunity\l+ SecondaryCommunity\l+ College\l+ Household\l+ Workplace\l+ Type_MIN\l+ Type_MAX\l+ Type_ARRAYSIZE\l+ kPoolsFieldNumber\l+ kIdFieldNumber\l+ kTypeFieldNumber\l&#45; _internal_metadata_\l&#45; pools_\l&#45; id_\l&#45; type_\l&#45; _cached_size_\l|+ GeoGrid_Location_Contact\lPools()\l+ ~GeoGrid_Location_Contact\lPools()\l+ GeoGrid_Location_Contact\lPools()\l+ operator=()\l+ Swap()\l+ New()\l+ New()\l+ CopyFrom()\l+ MergeFrom()\l+ CopyFrom()\land 22 more...\l+ descriptor()\l+ default_instance()\l+ InitAsDefaultInstance()\l+ internal_default_instance()\l+ Type_IsValid()\l+ Type_descriptor()\l+ Type_Name()\l+ Type_Parse()\l&#45; SharedCtor()\l&#45; SharedDtor()\l&#45; SetCachedSize()\l&#45; InternalSwap()\l&#45; GetArenaNoVirtual()\l&#45; MaybeArenaPtr()\l}" alt="" coords="735,131,954,897"/>
-<area shape="rect" id="node6" href="../../d9/d2e/a00056.html" title="{proto::GeoGrid_Location\l_ContactPools_ContactPool\n|+ kIndexInFileMessages\l+ kPeopleFieldNumber\l+ kIdFieldNumber\l&#45; _internal_metadata_\l&#45; people_\l&#45; _people_cached_byte\l_size_\l&#45; id_\l&#45; _cached_size_\l|+ GeoGrid_Location_Contact\lPools_ContactPool()\l+ ~GeoGrid_Location_Contact\lPools_ContactPool()\l+ GeoGrid_Location_Contact\lPools_ContactPool()\l+ operator=()\l+ Swap()\l+ New()\l+ New()\l+ CopyFrom()\l+ MergeFrom()\l+ CopyFrom()\land 19 more...\l+ descriptor()\l+ default_instance()\l+ InitAsDefaultInstance()\l+ internal_default_instance()\l&#45; SharedCtor()\l&#45; SharedDtor()\l&#45; SetCachedSize()\l&#45; InternalSwap()\l&#45; GetArenaNoVirtual()\l&#45; MaybeArenaPtr()\l}" alt="" coords="978,241,1197,787"/>
-<area shape="rect" id="node7" href="../../d1/d22/a00057.html" title="{proto::GeoGrid_Location\l_Coordinate\n|+ kIndexInFileMessages\l+ kLongitudeFieldNumber\l+ kLatitudeFieldNumber\l&#45; _internal_metadata_\l&#45; longitude_\l&#45; latitude_\l&#45; _cached_size_\l|+ GeoGrid_Location_Coordinate()\l+ ~GeoGrid_Location_Coordinate()\l+ GeoGrid_Location_Coordinate()\l+ operator=()\l+ Swap()\l+ New()\l+ New()\l+ CopyFrom()\l+ MergeFrom()\l+ CopyFrom()\land 15 more...\l+ descriptor()\l+ default_instance()\l+ InitAsDefaultInstance()\l+ internal_default_instance()\l&#45; SharedCtor()\l&#45; SharedDtor()\l&#45; SetCachedSize()\l&#45; InternalSwap()\l&#45; GetArenaNoVirtual()\l&#45; MaybeArenaPtr()\l}" alt="" coords="1221,277,1469,751"/>
-<area shape="rect" id="node8" href="../../d7/df7/a00058.html" title="{proto::GeoGrid_Person\n|+ kIndexInFileMessages\l+ kIdFieldNumber\l+ kAgeFieldNumber\l&#45; _internal_metadata_\l&#45; id_\l&#45; age_\l&#45; _cached_size_\l|+ GeoGrid_Person()\l+ ~GeoGrid_Person()\l+ GeoGrid_Person()\l+ operator=()\l+ Swap()\l+ New()\l+ New()\l+ CopyFrom()\l+ MergeFrom()\l+ CopyFrom()\land 15 more...\l+ descriptor()\l+ default_instance()\l+ InitAsDefaultInstance()\l+ internal_default_instance()\l&#45; SharedCtor()\l&#45; SharedDtor()\l&#45; SetCachedSize()\l&#45; InternalSwap()\l&#45; GetArenaNoVirtual()\l&#45; MaybeArenaPtr()\l}" alt="" coords="1493,285,1700,743"/>
+<div class="center"><img src="../../d0/ddf/a00918.gif" border="0" usemap="#geopop_1_1PopulationInfo_coll__map" alt="Collaboration graph"/></div>
+<map name="geopop_1_1PopulationInfo_coll__map" id="geopop_1_1PopulationInfo_coll__map">
 </map>
 </div>
-<div class="dynheader">
-Collaboration diagram for Message:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d8/d13/a00671.gif" border="0" usemap="#Message_coll__map" alt="Collaboration graph"/></div>
-<map name="Message_coll__map" id="Message_coll__map">
-</map>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:adbb87cbde5cee5ef68b6bf1fb7a4a712"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d2d/a00047.html#adbb87cbde5cee5ef68b6bf1fb7a4a712">popcount_daycare</a></td></tr>
+<tr class="memdesc:adbb87cbde5cee5ef68b6bf1fb7a4a712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of individuals in Daycare.  <a href="#adbb87cbde5cee5ef68b6bf1fb7a4a712">More...</a><br /></td></tr>
+<tr class="separator:adbb87cbde5cee5ef68b6bf1fb7a4a712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b3b6238336293faa050715aca04806a"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d2d/a00047.html#a6b3b6238336293faa050715aca04806a">popcount_preschool</a></td></tr>
+<tr class="memdesc:a6b3b6238336293faa050715aca04806a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of individuals in PreSchool.  <a href="#a6b3b6238336293faa050715aca04806a">More...</a><br /></td></tr>
+<tr class="separator:a6b3b6238336293faa050715aca04806a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b6db87f6ccaa00a624242cadd695eb9"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d2d/a00047.html#a6b6db87f6ccaa00a624242cadd695eb9">popcount_k12school</a></td></tr>
+<tr class="memdesc:a6b6db87f6ccaa00a624242cadd695eb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of individuals in K12School.  <a href="#a6b6db87f6ccaa00a624242cadd695eb9">More...</a><br /></td></tr>
+<tr class="separator:a6b6db87f6ccaa00a624242cadd695eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7663bf22dbfe6d56f5e07af064d6498"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d2d/a00047.html#ab7663bf22dbfe6d56f5e07af064d6498">popcount_college</a></td></tr>
+<tr class="memdesc:ab7663bf22dbfe6d56f5e07af064d6498"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of individuals in College.  <a href="#ab7663bf22dbfe6d56f5e07af064d6498">More...</a><br /></td></tr>
+<tr class="separator:ab7663bf22dbfe6d56f5e07af064d6498"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5d13fc961c7c5c701465ec97bcef05d"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d2d/a00047.html#ae5d13fc961c7c5c701465ec97bcef05d">popcount_workplace</a></td></tr>
+<tr class="memdesc:ae5d13fc961c7c5c701465ec97bcef05d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of individuals in Workplace.  <a href="#ae5d13fc961c7c5c701465ec97bcef05d">More...</a><br /></td></tr>
+<tr class="separator:ae5d13fc961c7c5c701465ec97bcef05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc88b873dc378a2d31e317018f12f2c8"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d2d/a00047.html#adc88b873dc378a2d31e317018f12f2c8">count_households</a></td></tr>
+<tr class="memdesc:adc88b873dc378a2d31e317018f12f2c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of households.  <a href="#adc88b873dc378a2d31e317018f12f2c8">More...</a><br /></td></tr>
+<tr class="separator:adc88b873dc378a2d31e317018f12f2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../d6/db6/a00241_source.html#l00055">55</a> of file <a class="el" href="../../d6/db6/a00241_source.html">GeoGridConfig.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="adbb87cbde5cee5ef68b6bf1fb7a4a712"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int geopop::PopulationInfo::popcount_daycare</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of individuals in Daycare. </p>
+
+<p>Definition at line <a class="el" href="../../d6/db6/a00241_source.html#l00058">58</a> of file <a class="el" href="../../d6/db6/a00241_source.html">GeoGridConfig.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../dd/df4/a00193_source.html#l00025">geopop::Generator&lt; ID &gt;::Apply()</a>, <a class="el" href="../../d9/d21/a00240_source.html#l00232">geopop::operator&lt;&lt;()</a>, and <a class="el" href="../../d9/d21/a00240_source.html#l00063">geopop::GeoGridConfig::SetData()</a>.</p>
+
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../d9/dd0/a00191_source.html">geogrid.pb.h</a></li>
+</div>
+<a class="anchor" id="a6b3b6238336293faa050715aca04806a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int geopop::PopulationInfo::popcount_preschool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of individuals in PreSchool. </p>
+
+<p>Definition at line <a class="el" href="../../d6/db6/a00241_source.html#l00061">61</a> of file <a class="el" href="../../d6/db6/a00241_source.html">GeoGridConfig.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../dd/dbb/a00330_source.html#l00025">geopop::Generator&lt; ID &gt;::Apply()</a>, <a class="el" href="../../d9/d21/a00240_source.html#l00232">geopop::operator&lt;&lt;()</a>, and <a class="el" href="../../d9/d21/a00240_source.html#l00063">geopop::GeoGridConfig::SetData()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6b6db87f6ccaa00a624242cadd695eb9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int geopop::PopulationInfo::popcount_k12school</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of individuals in K12School. </p>
+
+<p>Definition at line <a class="el" href="../../d6/db6/a00241_source.html#l00064">64</a> of file <a class="el" href="../../d6/db6/a00241_source.html">GeoGridConfig.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d0/d61/a00302_source.html#l00025">geopop::Generator&lt; ID &gt;::Apply()</a>, <a class="el" href="../../d9/d21/a00240_source.html#l00232">geopop::operator&lt;&lt;()</a>, and <a class="el" href="../../d9/d21/a00240_source.html#l00063">geopop::GeoGridConfig::SetData()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab7663bf22dbfe6d56f5e07af064d6498"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int geopop::PopulationInfo::popcount_college</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of individuals in College. </p>
+
+<p>Definition at line <a class="el" href="../../d6/db6/a00241_source.html#l00067">67</a> of file <a class="el" href="../../d6/db6/a00241_source.html">GeoGridConfig.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/dcb/a00170_source.html#l00027">geopop::Generator&lt; ID &gt;::Apply()</a>, <a class="el" href="../../da/dee/a00383_source.html#l00036">geopop::Populator&lt; ID &gt;::Apply()</a>, <a class="el" href="../../d9/d21/a00240_source.html#l00232">geopop::operator&lt;&lt;()</a>, and <a class="el" href="../../d9/d21/a00240_source.html#l00063">geopop::GeoGridConfig::SetData()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae5d13fc961c7c5c701465ec97bcef05d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int geopop::PopulationInfo::popcount_workplace</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of individuals in Workplace. </p>
+
+<p>Definition at line <a class="el" href="../../d6/db6/a00241_source.html#l00070">70</a> of file <a class="el" href="../../d6/db6/a00241_source.html">GeoGridConfig.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d3/d45/a00382_source.html#l00028">geopop::Generator&lt; ID &gt;::Apply()</a>, <a class="el" href="../../da/dee/a00383_source.html#l00036">geopop::Populator&lt; ID &gt;::Apply()</a>, <a class="el" href="../../d9/d21/a00240_source.html#l00232">geopop::operator&lt;&lt;()</a>, and <a class="el" href="../../d9/d21/a00240_source.html#l00063">geopop::GeoGridConfig::SetData()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adc88b873dc378a2d31e317018f12f2c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int geopop::PopulationInfo::count_households</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of households. </p>
+
+<p>Definition at line <a class="el" href="../../d6/db6/a00241_source.html#l00073">73</a> of file <a class="el" href="../../d6/db6/a00241_source.html">GeoGridConfig.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d2/d82/a00279_source.html#l00025">geopop::Generator&lt; ID &gt;::Apply()</a>, and <a class="el" href="../../d9/d21/a00240_source.html#l00063">geopop::GeoGridConfig::SetData()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="../../d6/db6/a00241_source.html">GeoGridConfig.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d6/d2d/a00047.html">Message</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:37 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../da/dbf/a00393.html">geopop</a></li><li class="navelem"><a class="el" href="../../d6/d2d/a00047.html">PopulationInfo</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:11 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

@@ -1,4 +1,9 @@
-<map id="Subject.h" name="Subject.h">
-<area shape="rect" id="node2" href="$d4/d08/a00237.html" title="Definition of EventId. " alt="" coords="105,80,151,107"/>
-<area shape="rect" id="node5" href="$d4/d6f/a00315.html" title="Interface/Implementation of Subject. " alt="" coords="219,80,325,107"/>
+<map id="Infector.h" name="Infector.h">
+<area shape="rect" id="node2" href="$db/dd9/a00179.html" title="Header for the ContactLogMode class. " alt="" coords="22,80,165,107"/>
+<area shape="rect" id="node4" href="$d8/d95/a00379.html" title="Header for the TransmissionProfile class. " alt="" coords="983,80,1137,107"/>
+<area shape="rect" id="node6" href="$dc/de6/a00167.html" title="Header file for the Calendar class. " alt="" coords="740,80,889,107"/>
+<area shape="rect" id="node13" href="$db/d44/a00162.html" title="Contact profile. " alt="" coords="247,80,447,107"/>
+<area shape="rect" id="node20" href="$dd/d4c/a00177.html" title="Header for the ContactHandler class. " alt="" coords="1162,80,1347,107"/>
+<area shape="rect" id="node14" href="$de/df3/a00185.html" title="Definition of ContactPool Id Type. " alt="" coords="72,162,184,189"/>
+<area shape="rect" id="node18" href="$de/db9/a00159.html" title="Helpers for age. " alt="" coords="209,162,295,189"/>
 </map>

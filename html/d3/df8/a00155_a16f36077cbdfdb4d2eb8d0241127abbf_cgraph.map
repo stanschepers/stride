@@ -1,0 +1,6 @@
+<map id="visualization::MapController::MapController" name="visualization::MapController::MapController">
+<area shape="rect" id="node2" href="$d0/d0b/a00004.html#ac833893da758c5e158b59914e690a352" title="Iterator to first Location. " alt="" coords="267,5,441,32"/>
+<area shape="rect" id="node3" href="$d3/d65/a00154.html#a91a1ab7a4cbd868aa15063370d8b6835" title="Create a EpiOutputReader based on the provided extension in the filename. " alt="" coords="251,57,457,98"/>
+<area shape="rect" id="node4" href="$d0/d0b/a00004.html#a2c1113a8221ad2af733a9b2d230ac7f8" title="Disables the addLocation method and builds the kdtree. " alt="" coords="262,123,446,149"/>
+<area shape="rect" id="node5" href="$d5/db6/a00042.html#a1d40a1a8b7fee81108aea82d92ae83c0" title="Build a balanced tree from the given set of points efficiently. " alt="" coords="505,108,688,164"/>
+</map>

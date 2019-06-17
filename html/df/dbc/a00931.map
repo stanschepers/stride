@@ -1,3 +1,6 @@
-<map id="stride::AgeBrackets::Daycare" name="stride::AgeBrackets::Daycare">
-<area shape="rect" id="node2" href="$d8/d21/a00368.html" title="{double\n||}" alt="" coords="46,5,111,83"/>
+<map id="geopop::geogrid_detail::KdTree2DPoint" name="geopop::geogrid_detail::KdTree2DPoint">
+<area shape="rect" id="node3" href="$d6/d42/a00043.html" title="{geopop::Location\&lt; void \&gt;\n||+ Location()\l+ Location()\l+ operator==()\l+ GetCoordinate()\l+ GetID()\l+ GetName()\l+ GetProvince()\l+ SetCoordinate()\l+ GetContent()\l+ get()\l}" alt="" coords="260,573,448,783"/>
+<area shape="rect" id="node8" href="$d6/d42/a00043.html" title="Location for use within the GeoGrid, contains Coordinate and meta data of that coordinate. " alt="" coords="362,301,576,511"/>
+<area shape="rect" id="node4" title="STL class. " alt="" coords="559,147,646,224"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="534,5,671,97"/>
 </map>

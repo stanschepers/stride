@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: geopop::GeoAggregator&lt; Policy &gt; Class Template Reference</title>
+<title>Stride Reference Manual: geopop::Epidemiologic Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -109,94 +109,1097 @@ $(document).ready(function(){initNavTree('da/d45/a00011.html','../../');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
-<a href="../../de/d4c/a00711.html">List of all members</a>  </div>
+<a href="../../d7/d60/a00816.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">geopop::GeoAggregator&lt; Policy &gt; Class Template Reference</div>  </div>
+<div class="title">geopop::Epidemiologic Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A <a class="el" href="../../d7/dec/a00010.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time...">GeoAggregator</a> that has to be called with a functor.  
+<p><a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a> for use within the <a class="el" href="../../d0/d0b/a00004.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a>, contains index to ContactPools and commutes.  
  <a href="../../da/d45/a00011.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../da/d15/a00188_source.html">GeoAggregator.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for geopop::GeoAggregator&lt; Policy &gt;:</div>
+Collaboration diagram for geopop::Epidemiologic:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d3/dda/a00712.gif" border="0" usemap="#geopop_1_1GeoAggregator_3_01Policy_01_4_inherit__map" alt="Inheritance graph"/></div>
-<map name="geopop_1_1GeoAggregator_3_01Policy_01_4_inherit__map" id="geopop_1_1GeoAggregator_3_01Policy_01_4_inherit__map">
-<area shape="rect" id="node2" href="../../df/d86/a00012.html" title="A GeoAggregator constructed with a functor. " alt="" coords="5,175,181,281"/>
-</map>
-</div>
-<div class="dynheader">
-Collaboration diagram for geopop::GeoAggregator&lt; Policy &gt;:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d3/d82/a00717.gif" border="0" usemap="#geopop_1_1GeoAggregator_3_01Policy_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="geopop_1_1GeoAggregator_3_01Policy_01_4_coll__map" id="geopop_1_1GeoAggregator_3_01Policy_01_4_coll__map">
-<area shape="rect" id="node2" href="../../d4/d8c/a00035.html" title="{geopop::KdTree\&lt; geogrid\l_detail::KdTree2DPoint \&gt;\n||+ KdTree()\l+ Apply()\l+ Apply()\l+ Contains()\l+ Empty()\l+ GetHeight()\l+ Insert()\l+ Query()\l+ Size()\l+ Build()\l&#45; Construct()\l}" alt="" coords="650,2277,833,2516"/>
-<area shape="rect" id="node4" href="../../db/df3/a00034.html" title="{geopop::kd::Node\&lt; geogrid\l_detail::KdTree2DPoint, 0 \&gt;\n||+ Node()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="931,1748,1130,1913"/>
-<area shape="rect" id="node5" href="../../d7/d46/a00002.html" title="{geopop::kd::BaseNode\l\&lt; geogrid_detail::KdTree2DPoint \&gt;\n||+ ~BaseNode()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="945,971,1188,1136"/>
-<area shape="rect" id="node6" href="../../d7/d46/a00002.html" title="A base class for all instantiations of a Node with D. " alt="" coords="1431,443,1636,594"/>
-<area shape="rect" id="node24" href="../../db/df3/a00034.html" title="A node in the KdTree (parameter P: the type of point, parameter D: dimension this node splits on)..." alt="" coords="1438,752,1629,903"/>
-<area shape="rect" id="node29" href="../../db/df3/a00034.html" title="{geopop::kd::Node\&lt; P, 0 \&gt;\n||+ Node()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="1476,1498,1665,1649"/>
-<area shape="rect" id="node7" href="../../d2/de7/a00014.html" title="KdTree for some more information on methods. " alt="" coords="380,1461,548,1685"/>
-<area shape="rect" id="node8" href="../../de/d8c/a00036.html" title="Location for use within the GeoGrid, contains Coordinate and index to ContactPools. " alt="" coords="399,1160,630,1384"/>
-<area shape="rect" id="node9" href="../../d8/d21/a00368.html" title="{double\n||}" alt="" coords="795,789,861,866"/>
-<area shape="rect" id="node11" href="../../d2/d79/a00051.html" title="{stride::ContactType\l::IdSubscriptArray\&lt;\l stride::util::stride\l::util::SegmentedVector\l\&lt; stride::stride::ContactPool * \&gt; \&gt;\n||+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ operator[]()\l+ operator[]()\l+ at()\l+ at()\l}" alt="" coords="528,708,771,947"/>
-<area shape="rect" id="node12" title="STL class. " alt="" coords="657,261,855,397"/>
-<area shape="rect" id="node15" title="STL class. " alt="" coords="469,153,683,230"/>
-<area shape="rect" id="node20" title="STL class. " alt="" coords="98,153,225,230"/>
-<area shape="rect" id="node26" title="STL class. " alt="" coords="884,789,1039,866"/>
-<area shape="rect" id="node14" href="../../d2/d79/a00051.html" title="An std::array modified to enable subscripting with the constact pool type indentifiers. " alt="" coords="471,421,643,616"/>
-<area shape="rect" id="node16" title="STL class. " alt="" coords="293,789,379,866"/>
-<area shape="rect" id="node17" title="STL class. " alt="" coords="267,473,405,565"/>
-<area shape="rect" id="node27" href="../../d4/d8c/a00035.html" title="A k&#45;d tree: a k&#45;dimensional generalization of binary search trees This data structure allows for effi..." alt="" coords="850,1976,1009,2200"/>
+<div class="center"><img src="../../d7/d4f/a00819.gif" border="0" usemap="#geopop_1_1Epidemiologic_coll__map" alt="Collaboration graph"/></div>
+<map name="geopop_1_1Epidemiologic_coll__map" id="geopop_1_1Epidemiologic_coll__map">
+<area shape="rect" id="node2" href="../../db/d4f/a00420.html" title="{double\n||}" alt="" coords="61,818,127,895"/>
+<area shape="rect" id="node3" href="../../d3/d8b/a00059.html" title="{stride::ContactType\l::IdSubscriptArray\&lt;\l stride::util::stride\l::util::SegmentedVector\l\&lt; stride::stride::ContactPool * \&gt; \&gt;\n||+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ operator[]()\l+ operator[]()\l+ at()\l+ at()\l}" alt="" coords="409,737,651,976"/>
+<area shape="rect" id="node4" title="STL class. " alt="" coords="357,276,554,412"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="472,167,687,245"/>
+<area shape="rect" id="node18" title="STL class. " alt="" coords="5,167,132,245"/>
+<area shape="rect" id="node6" href="../../d3/d8b/a00059.html" title="An std::array modified to enable subscripting with the constact pool type indentifiers. " alt="" coords="493,443,665,638"/>
+<area shape="rect" id="node8" href="../../d6/d42/a00043.html" title="{geopop::Location\&lt; geopop\l::Epidemiologic \&gt;\n||+ Location()\l+ Location()\l+ operator==()\l+ GetCoordinate()\l+ GetID()\l+ GetName()\l+ GetProvince()\l+ SetCoordinate()\l+ GetContent()\l+ get()\l}" alt="" coords="1073,745,1267,969"/>
+<area shape="rect" id="node14" href="../../d6/d42/a00043.html" title="Location for use within the GeoGrid, contains Coordinate and meta data of that coordinate. " alt="" coords="1354,436,1567,645"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="1551,167,1637,245"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="1525,5,1663,97"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a98061f715d7f989acc80177244b9e382"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a98061f715d7f989acc80177244b9e382">GeoAggregator</a> (const <a class="el" href="../../d4/d8c/a00035.html">KdTree</a>&lt; <a class="el" href="../../d2/de7/a00014.html">geogrid_detail::KdTree2DPoint</a> &gt; &amp;tree, typename Policy::Args &amp;&amp;args)</td></tr>
-<tr class="separator:a98061f715d7f989acc80177244b9e382"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9690fa2f2fd4865dc4fc1f36007cae6c"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
-<tr class="memitem:a9690fa2f2fd4865dc4fc1f36007cae6c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a9690fa2f2fd4865dc4fc1f36007cae6c">operator()</a> (F f)</td></tr>
-<tr class="memdesc:a9690fa2f2fd4865dc4fc1f36007cae6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggregate over the area specified by the policy with the functor <code>f</code>.  <a href="#a9690fa2f2fd4865dc4fc1f36007cae6c">More...</a><br /></td></tr>
-<tr class="separator:a9690fa2f2fd4865dc4fc1f36007cae6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22cf73171b80cd731c604f7047f9ec25"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a22cf73171b80cd731c604f7047f9ec25">Epidemiologic</a> (<a class="el" href="../../d6/d42/a00043.html">Location</a>&lt; <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> &gt; *location, unsigned int popCount=0U, unsigned int householdType=0U, double youngOldFraction=1.0)</td></tr>
+<tr class="memdesc:a22cf73171b80cd731c604f7047f9ec25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parametrized constructor with population count.  <a href="#a22cf73171b80cd731c604f7047f9ec25">More...</a><br /></td></tr>
+<tr class="separator:a22cf73171b80cd731c604f7047f9ec25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7f552aa106f950e649aef2a0316daf2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#ab7f552aa106f950e649aef2a0316daf2">Epidemiologic</a> (const <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> &amp;)=delete</td></tr>
+<tr class="memdesc:ab7f552aa106f950e649aef2a0316daf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">No copy constructor.  <a href="#ab7f552aa106f950e649aef2a0316daf2">More...</a><br /></td></tr>
+<tr class="separator:ab7f552aa106f950e649aef2a0316daf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5a041de148ccb3207642c91946edd7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d45/a00011.html">Epidemiologic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#af5a041de148ccb3207642c91946edd7e">operator=</a> (const <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> &amp;)=delete</td></tr>
+<tr class="memdesc:af5a041de148ccb3207642c91946edd7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">No copy assignment.  <a href="#af5a041de148ccb3207642c91946edd7e">More...</a><br /></td></tr>
+<tr class="separator:af5a041de148ccb3207642c91946edd7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b2fb47b088255b4b81f55f48d3ea99b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a9b2fb47b088255b4b81f55f48d3ea99b">operator==</a> (const <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> &amp;other) const </td></tr>
+<tr class="memdesc:a9b2fb47b088255b4b81f55f48d3ea99b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform a full comparison with the other <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>.  <a href="#a9b2fb47b088255b4b81f55f48d3ea99b">More...</a><br /></td></tr>
+<tr class="separator:a9b2fb47b088255b4b81f55f48d3ea99b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a956bd9b75297a1423f67fefd7d376ac8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a956bd9b75297a1423f67fefd7d376ac8">AddIncomingCommute</a> (std::shared_ptr&lt; <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> &gt; otherEpidemiologic, <a class="el" href="../../db/d4f/a00420.html">double</a> fraction)</td></tr>
+<tr class="memdesc:a956bd9b75297a1423f67fefd7d376ac8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a> and a proportion to the incoming commute vector.  <a href="#a956bd9b75297a1423f67fefd7d376ac8">More...</a><br /></td></tr>
+<tr class="separator:a956bd9b75297a1423f67fefd7d376ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a2a3744a9811e4b87f7d9ca340fd4d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a6a2a3744a9811e4b87f7d9ca340fd4d4">AddOutgoingCommute</a> (std::shared_ptr&lt; <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> &gt; otherEpidemiologic, <a class="el" href="../../db/d4f/a00420.html">double</a> fraction)</td></tr>
+<tr class="memdesc:a6a2a3744a9811e4b87f7d9ca340fd4d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a> and a fraction to the outgoing commute vector.  <a href="#a6a2a3744a9811e4b87f7d9ca340fd4d4">More...</a><br /></td></tr>
+<tr class="separator:a6a2a3744a9811e4b87f7d9ca340fd4d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3503e62c4ad1ab7317119a654ec3033f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a3503e62c4ad1ab7317119a654ec3033f">GetIncomingCommuteCount</a> (<a class="el" href="../../db/d4f/a00420.html">double</a> fractionCommuters) const </td></tr>
+<tr class="memdesc:a3503e62c4ad1ab7317119a654ec3033f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates number of incomming commuters, given the fraction of the population that commutes.  <a href="#a3503e62c4ad1ab7317119a654ec3033f">More...</a><br /></td></tr>
+<tr class="separator:a3503e62c4ad1ab7317119a654ec3033f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ba04d6f1237329f23a84a48032b3afc"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a6ba04d6f1237329f23a84a48032b3afc">GetInfectedCount</a> () const </td></tr>
+<tr class="memdesc:a6ba04d6f1237329f23a84a48032b3afc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of people infected in the contactpools at this <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>.  <a href="#a6ba04d6f1237329f23a84a48032b3afc">More...</a><br /></td></tr>
+<tr class="separator:a6ba04d6f1237329f23a84a48032b3afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91111899687f02b63d41b9337cded6b6"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a91111899687f02b63d41b9337cded6b6">GetOutgoingCommuteCount</a> (<a class="el" href="../../db/d4f/a00420.html">double</a> fractionCommuters) const </td></tr>
+<tr class="memdesc:a91111899687f02b63d41b9337cded6b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates number of outgoing commuters, given the fraction of the population that commutes.  <a href="#a91111899687f02b63d41b9337cded6b6">More...</a><br /></td></tr>
+<tr class="separator:a91111899687f02b63d41b9337cded6b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20111a1d8c063a9b499e1140ca401711"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a20111a1d8c063a9b499e1140ca401711">GetPopCount</a> () const </td></tr>
+<tr class="memdesc:a20111a1d8c063a9b499e1140ca401711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the absolute population.  <a href="#a20111a1d8c063a9b499e1140ca401711">More...</a><br /></td></tr>
+<tr class="separator:a20111a1d8c063a9b499e1140ca401711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a234fecc3020529ef06d7b4ef2a266b6f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a234fecc3020529ef06d7b4ef2a266b6f">GetMemberCount</a> () const </td></tr>
+<tr class="memdesc:a234fecc3020529ef06d7b4ef2a266b6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the amount of members in all household pools.  <a href="#a234fecc3020529ef06d7b4ef2a266b6f">More...</a><br /></td></tr>
+<tr class="separator:a234fecc3020529ef06d7b4ef2a266b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ababb4cca38b9c3b75405680a4c5e9be6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d4f/a00420.html">double</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#ababb4cca38b9c3b75405680a4c5e9be6">GetPopFraction</a> () const </td></tr>
+<tr class="memdesc:ababb4cca38b9c3b75405680a4c5e9be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>'s population fraction (of the total population count).  <a href="#ababb4cca38b9c3b75405680a4c5e9be6">More...</a><br /></td></tr>
+<tr class="separator:ababb4cca38b9c3b75405680a4c5e9be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7bacb26e7a72f1f866412cc75de2f62"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#af7bacb26e7a72f1f866412cc75de2f62">GetID</a> () const </td></tr>
+<tr class="memdesc:af7bacb26e7a72f1f866412cc75de2f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the ID of the location.  <a href="#af7bacb26e7a72f1f866412cc75de2f62">More...</a><br /></td></tr>
+<tr class="separator:af7bacb26e7a72f1f866412cc75de2f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd0bbfa6c916a487124c780f70b23483"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d42/a00043.html">Location</a>&lt; <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#afd0bbfa6c916a487124c780f70b23483">GetLocation</a> () const </td></tr>
+<tr class="memdesc:afd0bbfa6c916a487124c780f70b23483"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the location of which this is the content.  <a href="#afd0bbfa6c916a487124c780f70b23483">More...</a><br /></td></tr>
+<tr class="separator:afd0bbfa6c916a487124c780f70b23483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98b4e0dcb3cf9b8444bf5155ab55bac5"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a98b4e0dcb3cf9b8444bf5155ab55bac5">GetHouseHoldType</a> () const </td></tr>
+<tr class="memdesc:a98b4e0dcb3cf9b8444bf5155ab55bac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get household type for Households references.  <a href="#a98b4e0dcb3cf9b8444bf5155ab55bac5">More...</a><br /></td></tr>
+<tr class="separator:a98b4e0dcb3cf9b8444bf5155ab55bac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af41433ad68bc3ce3ac6012c75adfe5bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d4f/a00420.html">double</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#af41433ad68bc3ce3ac6012c75adfe5bc">GetYoungOldFraction</a> () const </td></tr>
+<tr class="memdesc:af41433ad68bc3ce3ac6012c75adfe5bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets young/old fraction.  <a href="#af41433ad68bc3ce3ac6012c75adfe5bc">More...</a><br /></td></tr>
+<tr class="separator:af41433ad68bc3ce3ac6012c75adfe5bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a181cf15e29892b07541785081503a463"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::map&lt; std::string, <a class="el" href="../../db/d4f/a00420.html">double</a> &gt; &gt; const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a181cf15e29892b07541785081503a463">GenerateEpiOutput</a> ()</td></tr>
+<tr class="memdesc:a181cf15e29892b07541785081503a463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an epi-output map of the Household contactpools.  <a href="#a181cf15e29892b07541785081503a463">More...</a><br /></td></tr>
+<tr class="separator:a181cf15e29892b07541785081503a463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bff7e01e34144ff9c0a784c70fe81f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a8bff7e01e34144ff9c0a784c70fe81f3">SetPopCount</a> (unsigned int totalPopCount)</td></tr>
+<tr class="memdesc:a8bff7e01e34144ff9c0a784c70fe81f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>'s population count using its population fraction and the total population count.  <a href="#a8bff7e01e34144ff9c0a784c70fe81f3">More...</a><br /></td></tr>
+<tr class="separator:a8bff7e01e34144ff9c0a784c70fe81f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b5336ba1a9416cc7c9d05e6326e1af7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a1b5336ba1a9416cc7c9d05e6326e1af7">SetPopFraction</a> (<a class="el" href="../../db/d4f/a00420.html">double</a> relativePopulation)</td></tr>
+<tr class="memdesc:a1b5336ba1a9416cc7c9d05e6326e1af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>'s population fraction (of the total population count).  <a href="#a1b5336ba1a9416cc7c9d05e6326e1af7">More...</a><br /></td></tr>
+<tr class="separator:a1b5336ba1a9416cc7c9d05e6326e1af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a797dc73da51a1ea36b04429b1d6a37e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a797dc73da51a1ea36b04429b1d6a37e9">SetHouseHoldType</a> (unsigned int houseHoldType)</td></tr>
+<tr class="memdesc:a797dc73da51a1ea36b04429b1d6a37e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set household type for Households references.  <a href="#a797dc73da51a1ea36b04429b1d6a37e9">More...</a><br /></td></tr>
+<tr class="separator:a797dc73da51a1ea36b04429b1d6a37e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12f2e0e3580ddcf3d072fdb8dffb9aaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a12f2e0e3580ddcf3d072fdb8dffb9aaa">SetYoungOldFraction</a> (<a class="el" href="../../db/d4f/a00420.html">double</a> youngOldFraction)</td></tr>
+<tr class="memdesc:a12f2e0e3580ddcf3d072fdb8dffb9aaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets young/old fraction.  <a href="#a12f2e0e3580ddcf3d072fdb8dffb9aaa">More...</a><br /></td></tr>
+<tr class="separator:a12f2e0e3580ddcf3d072fdb8dffb9aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a022a2f111af3032e50a484db5f3a1f58"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d9/da5/a00075.html">stride::util::SegmentedVector</a>&lt; <a class="el" href="../../d1/d1e/a00087.html">stride::ContactPool</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a022a2f111af3032e50a484db5f3a1f58">CRefPools</a> (<a class="el" href="../../de/d3d/a00409.html#a61a32e88a50c57e6f5c49f0996b6b462">stride::ContactType::Id</a> id) const </td></tr>
+<tr class="memdesc:a022a2f111af3032e50a484db5f3a1f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access through const reference to ContactPools of type 'id'.  <a href="#a022a2f111af3032e50a484db5f3a1f58">More...</a><br /></td></tr>
+<tr class="separator:a022a2f111af3032e50a484db5f3a1f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec198faaa27ba4cd2d90955ad6df1cce"><td class="memTemplParams" colspan="2">template&lt;stride::ContactType::Id T&gt; </td></tr>
+<tr class="memitem:aec198faaa27ba4cd2d90955ad6df1cce"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="../../d9/da5/a00075.html">stride::util::SegmentedVector</a>&lt; <a class="el" href="../../d1/d1e/a00087.html">stride::ContactPool</a> * &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#aec198faaa27ba4cd2d90955ad6df1cce">CRefPools</a> () const </td></tr>
+<tr class="memdesc:aec198faaa27ba4cd2d90955ad6df1cce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Templated version of  for use when the type id is fixed.  <a href="#aec198faaa27ba4cd2d90955ad6df1cce">More...</a><br /></td></tr>
+<tr class="separator:aec198faaa27ba4cd2d90955ad6df1cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79271732a52593e8d4c5d92b5c35503e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/da5/a00075.html">stride::util::SegmentedVector</a>&lt; <a class="el" href="../../d1/d1e/a00087.html">stride::ContactPool</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a79271732a52593e8d4c5d92b5c35503e">RefPools</a> (<a class="el" href="../../de/d3d/a00409.html#a61a32e88a50c57e6f5c49f0996b6b462">stride::ContactType::Id</a> id)</td></tr>
+<tr class="memdesc:a79271732a52593e8d4c5d92b5c35503e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access through reference to ContactPools of type 'id'.  <a href="#a79271732a52593e8d4c5d92b5c35503e">More...</a><br /></td></tr>
+<tr class="separator:a79271732a52593e8d4c5d92b5c35503e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69455d00f8bf5111684ef719e2f97dea"><td class="memTemplParams" colspan="2">template&lt;stride::ContactType::Id T&gt; </td></tr>
+<tr class="memitem:a69455d00f8bf5111684ef719e2f97dea"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d9/da5/a00075.html">stride::util::SegmentedVector</a>&lt; <a class="el" href="../../d1/d1e/a00087.html">stride::ContactPool</a> * &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a69455d00f8bf5111684ef719e2f97dea">RefPools</a> ()</td></tr>
+<tr class="memdesc:a69455d00f8bf5111684ef719e2f97dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Templated version of  for use when the type id is fixed.  <a href="#a69455d00f8bf5111684ef719e2f97dea">More...</a><br /></td></tr>
+<tr class="separator:a69455d00f8bf5111684ef719e2f97dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51303dd9fcaf6a08bcc6081a112345be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a51303dd9fcaf6a08bcc6081a112345be">RegisterPool</a> (<a class="el" href="../../d1/d1e/a00087.html">stride::ContactPool</a> *p, <a class="el" href="../../de/d3d/a00409.html#a61a32e88a50c57e6f5c49f0996b6b462">stride::ContactType::Id</a> typeId)</td></tr>
+<tr class="memdesc:a51303dd9fcaf6a08bcc6081a112345be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a ContactPool pointer in this <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>'s pool system.  <a href="#a51303dd9fcaf6a08bcc6081a112345be">More...</a><br /></td></tr>
+<tr class="separator:a51303dd9fcaf6a08bcc6081a112345be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24e491db4def4faf35041bad710168bd"><td class="memTemplParams" colspan="2">template&lt;stride::ContactType::Id T&gt; </td></tr>
+<tr class="memitem:a24e491db4def4faf35041bad710168bd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a24e491db4def4faf35041bad710168bd">RegisterPool</a> (<a class="el" href="../../d1/d1e/a00087.html">stride::ContactPool</a> *p)</td></tr>
+<tr class="memdesc:a24e491db4def4faf35041bad710168bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Templated version of .  <a href="#a24e491db4def4faf35041bad710168bd">More...</a><br /></td></tr>
+<tr class="separator:a24e491db4def4faf35041bad710168bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9e725d837df6f1e4695429370523e9c"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::pair&lt; <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> *, <a class="el" href="../../db/d4f/a00420.html">double</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#ae9e725d837df6f1e4695429370523e9c">CRefIncomingCommutes</a> () const </td></tr>
+<tr class="memdesc:ae9e725d837df6f1e4695429370523e9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">References incoming commute Epidemiologics + fraction of commutes to that <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>.  <a href="#ae9e725d837df6f1e4695429370523e9c">More...</a><br /></td></tr>
+<tr class="separator:ae9e725d837df6f1e4695429370523e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7909580bbc910174eab4654a276733ed"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::pair&lt; <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> *, <a class="el" href="../../db/d4f/a00420.html">double</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a7909580bbc910174eab4654a276733ed">CRefOutgoingCommutes</a> () const </td></tr>
+<tr class="memdesc:a7909580bbc910174eab4654a276733ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">References outgoing commute Epidemiologics + fraction of commutes to that <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>.  <a href="#a7909580bbc910174eab4654a276733ed">More...</a><br /></td></tr>
+<tr class="separator:a7909580bbc910174eab4654a276733ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a8869ab6e0b5648b01be252b664c29c4f"><td class="memItemLeft" align="right" valign="top">Policy&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a8869ab6e0b5648b01be252b664c29c4f">m_policy</a></td></tr>
-<tr class="separator:a8869ab6e0b5648b01be252b664c29c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72d96601581d45ac424d0d5b2ff60a5d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/d8c/a00035.html">KdTree</a>&lt; <a class="el" href="../../d2/de7/a00014.html">geogrid_detail::KdTree2DPoint</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a72d96601581d45ac424d0d5b2ff60a5d">m_tree</a></td></tr>
-<tr class="separator:a72d96601581d45ac424d0d5b2ff60a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac12d8d2212a72d94eb564b2b58efad95"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#ac12d8d2212a72d94eb564b2b58efad95">m_pop_count</a></td></tr>
+<tr class="memdesc:ac12d8d2212a72d94eb564b2b58efad95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Population count (number of individuals) at this <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>.  <a href="#ac12d8d2212a72d94eb564b2b58efad95">More...</a><br /></td></tr>
+<tr class="separator:ac12d8d2212a72d94eb564b2b58efad95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef7101228c2d1238a5312f7356f1d687"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d4f/a00420.html">double</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#aef7101228c2d1238a5312f7356f1d687">m_pop_fraction</a></td></tr>
+<tr class="memdesc:aef7101228c2d1238a5312f7356f1d687"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fraction of whole population at this <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>.  <a href="#aef7101228c2d1238a5312f7356f1d687">More...</a><br /></td></tr>
+<tr class="separator:aef7101228c2d1238a5312f7356f1d687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7172fb566b4d7d9174c83d0a4270ef4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d42/a00043.html">Location</a>&lt; <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a7172fb566b4d7d9174c83d0a4270ef4a">m_location</a></td></tr>
+<tr class="memdesc:a7172fb566b4d7d9174c83d0a4270ef4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Link to the location.  <a href="#a7172fb566b4d7d9174c83d0a4270ef4a">More...</a><br /></td></tr>
+<tr class="separator:a7172fb566b4d7d9174c83d0a4270ef4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5309fbd151b8f74d2176996245c78f7b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a5309fbd151b8f74d2176996245c78f7b">m_household_type</a></td></tr>
+<tr class="memdesc:a5309fbd151b8f74d2176996245c78f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Household type.  <a href="#a5309fbd151b8f74d2176996245c78f7b">More...</a><br /></td></tr>
+<tr class="separator:a5309fbd151b8f74d2176996245c78f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0798fe39d34e8a4b380162e12c92a0cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d4f/a00420.html">double</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a0798fe39d34e8a4b380162e12c92a0cb">m_young_old_fraction</a></td></tr>
+<tr class="memdesc:a0798fe39d34e8a4b380162e12c92a0cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Young/Old fraction (ratio between 15-24y and 55-64y old persons).  <a href="#a0798fe39d34e8a4b380162e12c92a0cb">More...</a><br /></td></tr>
+<tr class="separator:a0798fe39d34e8a4b380162e12c92a0cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23860c5c55b686b23037c11dcd977057"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> *, <a class="el" href="../../db/d4f/a00420.html">double</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a23860c5c55b686b23037c11dcd977057">m_inCommutes</a></td></tr>
+<tr class="memdesc:a23860c5c55b686b23037c11dcd977057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incomming commutes stored as pair of <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a> and fraction of population at that <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>.  <a href="#a23860c5c55b686b23037c11dcd977057">More...</a><br /></td></tr>
+<tr class="separator:a23860c5c55b686b23037c11dcd977057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9ef84023beae98cc9b21160d281cf16"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> *, <a class="el" href="../../db/d4f/a00420.html">double</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#ad9ef84023beae98cc9b21160d281cf16">m_outCommutes</a></td></tr>
+<tr class="memdesc:ad9ef84023beae98cc9b21160d281cf16"><td class="mdescLeft">&#160;</td><td class="mdescRight">The system holding pointers to the contactpools (for each type id) at this <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>.  <a href="#ad9ef84023beae98cc9b21160d281cf16">More...</a><br /></td></tr>
+<tr class="separator:ad9ef84023beae98cc9b21160d281cf16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d102b444fc233b5657085395f4d56a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d8b/a00059.html">stride::ContactType::IdSubscriptArray</a>&lt; <a class="el" href="../../d9/da5/a00075.html">stride::util::SegmentedVector</a>&lt; <a class="el" href="../../d1/d1e/a00087.html">stride::ContactPool</a> * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/a00011.html#a5d102b444fc233b5657085395f4d56a0">m_pool_index</a></td></tr>
+<tr class="separator:a5d102b444fc233b5657085395f4d56a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename Policy&gt;<br />
-class geopop::GeoAggregator&lt; Policy &gt;</h3>
+<div class="textblock"><p><a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a> for use within the <a class="el" href="../../d0/d0b/a00004.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a>, contains index to ContactPools and commutes. </p>
 
-<p>A <a class="el" href="../../d7/dec/a00010.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time...">GeoAggregator</a> that has to be called with a functor. </p>
-
-<p>Definition at line <a class="el" href="../../da/d15/a00188_source.html#l00085">85</a> of file <a class="el" href="../../da/d15/a00188_source.html">GeoAggregator.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00044">44</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a98061f715d7f989acc80177244b9e382"></a>
+<a class="anchor" id="a22cf73171b80cd731c604f7047f9ec25"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename Policy &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d7/dec/a00010.html">geopop::GeoAggregator</a>&lt; Policy &gt;::<a class="el" href="../../d7/dec/a00010.html">GeoAggregator</a> </td>
+          <td class="memname">geopop::Epidemiologic::Epidemiologic </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d4/d8c/a00035.html">KdTree</a>&lt; <a class="el" href="../../d2/de7/a00014.html">geogrid_detail::KdTree2DPoint</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>tree</em>, </td>
+          <td class="paramtype"><a class="el" href="../../d6/d42/a00043.html">Location</a>&lt; <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> &gt; *&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">typename Policy::Args &amp;&amp;&#160;</td>
-          <td class="paramname"><em>args</em>&#160;</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>popCount</em> = <code>0U</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>householdType</em> = <code>0U</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d4f/a00420.html">double</a>&#160;</td>
+          <td class="paramname"><em>youngOldFraction</em> = <code>1.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parametrized constructor with population count. </p>
+
+<p>Definition at line <a class="el" href="../../d5/d13/a00205_source.html#l00032">32</a> of file <a class="el" href="../../d5/d13/a00205_source.html">Epidemiologic.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab7f552aa106f950e649aef2a0316daf2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">geopop::Epidemiologic::Epidemiologic </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>No copy constructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="af5a041de148ccb3207642c91946edd7e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> geopop::Epidemiologic::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>No copy assignment. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9b2fb47b088255b4b81f55f48d3ea99b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool geopop::Epidemiologic::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Perform a full comparison with the other <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>. </p>
+
+<p>Definition at line <a class="el" href="../../d5/d13/a00205_source.html#l00039">39</a> of file <a class="el" href="../../d5/d13/a00205_source.html">Epidemiologic.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00164">CRefIncomingCommutes()</a>, <a class="el" href="../../d5/df1/a00206_source.html#l00167">CRefOutgoingCommutes()</a>, <a class="el" href="../../d5/df1/a00206_source.html#l00126">CRefPools()</a>, <a class="el" href="../../d5/df1/a00206_source.html#l00093">GetHouseHoldType()</a>, <a class="el" href="../../d5/df1/a00206_source.html#l00078">GetPopCount()</a>, <a class="el" href="../../d5/df1/a00206_source.html#l00096">GetYoungOldFraction()</a>, and <a class="el" href="../../de/df3/a00185_source.html#l00078">stride::ContactType::IdList</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d45/a00011_a9b2fb47b088255b4b81f55f48d3ea99b_cgraph.gif" border="0" usemap="#da/d45/a00011_a9b2fb47b088255b4b81f55f48d3ea99b_cgraph" alt=""/></div>
+<map name="da/d45/a00011_a9b2fb47b088255b4b81f55f48d3ea99b_cgraph" id="da/d45/a00011_a9b2fb47b088255b4b81f55f48d3ea99b_cgraph">
+<area shape="rect" id="node2" href="../../da/d45/a00011.html#ae9e725d837df6f1e4695429370523e9c" title="References incoming commute Epidemiologics + fraction of commutes to that Epidemiologic. " alt="" coords="220,5,407,47"/>
+<area shape="rect" id="node3" href="../../da/d45/a00011.html#a7909580bbc910174eab4654a276733ed" title="References outgoing commute Epidemiologics + fraction of commutes to that Epidemiologic. " alt="" coords="220,71,407,112"/>
+<area shape="rect" id="node4" href="../../da/d45/a00011.html#aec198faaa27ba4cd2d90955ad6df1cce" title="Templated version of &#160;for use when the type id is fixed. " alt="" coords="884,219,1051,260"/>
+<area shape="rect" id="node5" href="../../da/d45/a00011.html#a98b4e0dcb3cf9b8444bf5155ab55bac5" title="Get household type for Households references. " alt="" coords="230,188,397,229"/>
+<area shape="rect" id="node6" href="../../da/d45/a00011.html#a20111a1d8c063a9b499e1140ca401711" title="Gets the absolute population. " alt="" coords="230,253,397,295"/>
+<area shape="rect" id="node10" href="../../da/d45/a00011.html#af41433ad68bc3ce3ac6012c75adfe5bc" title="Gets young/old fraction. " alt="" coords="230,401,397,443"/>
+<area shape="rect" id="node7" href="../../da/d45/a00011.html#a234fecc3020529ef06d7b4ef2a266b6f" title="Gets the amount of members in all household pools. " alt="" coords="669,219,836,260"/>
+<area shape="rect" id="node8" href="../../da/d45/a00011.html#ababb4cca38b9c3b75405680a4c5e9be6" title="Get Epidemiologic&#39;s population fraction (of the total population count). " alt="" coords="455,239,621,280"/>
+<area shape="rect" id="node9" href="../../da/d45/a00011.html#af7bacb26e7a72f1f866412cc75de2f62" title="Get the ID of the location. " alt="" coords="455,304,621,345"/>
+<area shape="rect" id="node11" href="../../da/d45/a00011.html#a181cf15e29892b07541785081503a463" title="Generate an epi&#45;output map of the Household contactpools. " alt="" coords="455,369,621,411"/>
+<area shape="rect" id="node12" href="../../da/d45/a00011.html#a8bff7e01e34144ff9c0a784c70fe81f3" title="Set Epidemiologic&#39;s population count using its population fraction and the total population count..." alt="" coords="455,435,621,476"/>
+<area shape="rect" id="node13" href="../../da/d45/a00011.html#a1b5336ba1a9416cc7c9d05e6326e1af7" title="Set Epidemiologic&#39;s population fraction (of the total population count). " alt="" coords="455,500,621,541"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a956bd9b75297a1423f67fefd7d376ac8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void geopop::Epidemiologic::AddIncomingCommute </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> &gt;&#160;</td>
+          <td class="paramname"><em>otherEpidemiologic</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d4f/a00420.html">double</a>&#160;</td>
+          <td class="paramname"><em>fraction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a> and a proportion to the incoming commute vector. </p>
+<p>I.e. fraction of commuting population at otherEpidemiologic commuting to this <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>. </p>
+
+<p>Definition at line <a class="el" href="../../d5/d13/a00205_source.html#l00050">50</a> of file <a class="el" href="../../d5/d13/a00205_source.html">Epidemiologic.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00177">m_inCommutes</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6a2a3744a9811e4b87f7d9ca340fd4d4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void geopop::Epidemiologic::AddOutgoingCommute </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> &gt;&#160;</td>
+          <td class="paramname"><em>otherEpidemiologic</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../db/d4f/a00420.html">double</a>&#160;</td>
+          <td class="paramname"><em>fraction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a> and a fraction to the outgoing commute vector. </p>
+<p>I.e. fraction of commuting population at this <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a> commuting to otherEpidemiologic. </p>
+
+<p>Definition at line <a class="el" href="../../d5/d13/a00205_source.html#l00055">55</a> of file <a class="el" href="../../d5/d13/a00205_source.html">Epidemiologic.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00180">m_outCommutes</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3503e62c4ad1ab7317119a654ec3033f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int geopop::Epidemiologic::GetIncomingCommuteCount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d4f/a00420.html">double</a>&#160;</td>
+          <td class="paramname"><em>fractionCommuters</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates number of incomming commuters, given the fraction of the population that commutes. </p>
+
+<p>Definition at line <a class="el" href="../../d5/d13/a00205_source.html#l00060">60</a> of file <a class="el" href="../../d5/d13/a00205_source.html">Epidemiologic.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00177">m_inCommutes</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ba04d6f1237329f23a84a48032b3afc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int geopop::Epidemiologic::GetInfectedCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the number of people infected in the contactpools at this <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>. </p>
+
+<p>Definition at line <a class="el" href="../../d5/d13/a00205_source.html#l00070">70</a> of file <a class="el" href="../../d5/d13/a00205_source.html">Epidemiologic.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a91111899687f02b63d41b9337cded6b6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int geopop::Epidemiologic::GetOutgoingCommuteCount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d4f/a00420.html">double</a>&#160;</td>
+          <td class="paramname"><em>fractionCommuters</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates number of outgoing commuters, given the fraction of the population that commutes. </p>
+
+<p>Definition at line <a class="el" href="../../d5/d13/a00205_source.html#l00082">82</a> of file <a class="el" href="../../d5/d13/a00205_source.html">Epidemiologic.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00180">m_outCommutes</a>, and <a class="el" href="../../d5/df1/a00206_source.html#l00170">m_pop_count</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a20111a1d8c063a9b499e1140ca401711"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int geopop::Epidemiologic::GetPopCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the absolute population. </p>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00078">78</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>References <a class="el" href="../../d5/d13/a00205_source.html#l00103">GetID()</a>, <a class="el" href="../../d5/d13/a00205_source.html#l00092">GetMemberCount()</a>, <a class="el" href="../../d5/d13/a00205_source.html#l00101">GetPopFraction()</a>, and <a class="el" href="../../d5/df1/a00206_source.html#l00170">m_pop_count</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/d13/a00205_source.html#l00039">operator==()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d45/a00011_a20111a1d8c063a9b499e1140ca401711_cgraph.gif" border="0" usemap="#da/d45/a00011_a20111a1d8c063a9b499e1140ca401711_cgraph" alt=""/></div>
+<map name="da/d45/a00011_a20111a1d8c063a9b499e1140ca401711_cgraph" id="da/d45/a00011_a20111a1d8c063a9b499e1140ca401711_cgraph">
+<area shape="rect" id="node2" href="../../da/d45/a00011.html#af7bacb26e7a72f1f866412cc75de2f62" title="Get the ID of the location. " alt="" coords="220,5,387,47"/>
+<area shape="rect" id="node3" href="../../da/d45/a00011.html#a234fecc3020529ef06d7b4ef2a266b6f" title="Gets the amount of members in all household pools. " alt="" coords="220,71,387,112"/>
+<area shape="rect" id="node5" href="../../da/d45/a00011.html#ababb4cca38b9c3b75405680a4c5e9be6" title="Get Epidemiologic&#39;s population fraction (of the total population count). " alt="" coords="220,136,387,177"/>
+<area shape="rect" id="node4" href="../../da/d45/a00011.html#aec198faaa27ba4cd2d90955ad6df1cce" title="Templated version of &#160;for use when the type id is fixed. " alt="" coords="435,71,601,112"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d45/a00011_a20111a1d8c063a9b499e1140ca401711_icgraph.gif" border="0" usemap="#da/d45/a00011_a20111a1d8c063a9b499e1140ca401711_icgraph" alt=""/></div>
+<map name="da/d45/a00011_a20111a1d8c063a9b499e1140ca401711_icgraph" id="da/d45/a00011_a20111a1d8c063a9b499e1140ca401711_icgraph">
+<area shape="rect" id="node2" href="../../da/d45/a00011.html#a9b2fb47b088255b4b81f55f48d3ea99b" title="Perform a full comparison with the other Epidemiologic. " alt="" coords="220,5,387,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a234fecc3020529ef06d7b4ef2a266b6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int geopop::Epidemiologic::GetMemberCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the amount of members in all household pools. </p>
+
+<p>Definition at line <a class="el" href="../../d5/d13/a00205_source.html#l00092">92</a> of file <a class="el" href="../../d5/d13/a00205_source.html">Epidemiologic.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00126">CRefPools()</a>, and <a class="el" href="../../de/d3d/a00409.html#a61a32e88a50c57e6f5c49f0996b6b462aea4be67641b70cfa3fec0f86ea7f239b">stride::ContactType::Household</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/d13/a00205_source.html#l00105">GenerateEpiOutput()</a>, and <a class="el" href="../../d5/df1/a00206_source.html#l00078">GetPopCount()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d45/a00011_a234fecc3020529ef06d7b4ef2a266b6f_cgraph.gif" border="0" usemap="#da/d45/a00011_a234fecc3020529ef06d7b4ef2a266b6f_cgraph" alt=""/></div>
+<map name="da/d45/a00011_a234fecc3020529ef06d7b4ef2a266b6f_cgraph" id="da/d45/a00011_a234fecc3020529ef06d7b4ef2a266b6f_cgraph">
+<area shape="rect" id="node2" href="../../da/d45/a00011.html#aec198faaa27ba4cd2d90955ad6df1cce" title="Templated version of &#160;for use when the type id is fixed. " alt="" coords="220,5,387,47"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d45/a00011_a234fecc3020529ef06d7b4ef2a266b6f_icgraph.gif" border="0" usemap="#da/d45/a00011_a234fecc3020529ef06d7b4ef2a266b6f_icgraph" alt=""/></div>
+<map name="da/d45/a00011_a234fecc3020529ef06d7b4ef2a266b6f_icgraph" id="da/d45/a00011_a234fecc3020529ef06d7b4ef2a266b6f_icgraph">
+<area shape="rect" id="node2" href="../../da/d45/a00011.html#a181cf15e29892b07541785081503a463" title="Generate an epi&#45;output map of the Household contactpools. " alt="" coords="220,8,387,49"/>
+<area shape="rect" id="node5" href="../../da/d45/a00011.html#a20111a1d8c063a9b499e1140ca401711" title="Gets the absolute population. " alt="" coords="435,71,601,112"/>
+<area shape="rect" id="node3" href="../../da/d45/a00011.html#af41433ad68bc3ce3ac6012c75adfe5bc" title="Gets young/old fraction. " alt="" coords="435,5,601,47"/>
+<area shape="rect" id="node4" href="../../da/d45/a00011.html#a9b2fb47b088255b4b81f55f48d3ea99b" title="Perform a full comparison with the other Epidemiologic. " alt="" coords="649,39,816,80"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ababb4cca38b9c3b75405680a4c5e9be6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d4f/a00420.html">double</a> geopop::Epidemiologic::GetPopFraction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>'s population fraction (of the total population count). </p>
+
+<p>Definition at line <a class="el" href="../../d5/d13/a00205_source.html#l00101">101</a> of file <a class="el" href="../../d5/d13/a00205_source.html">Epidemiologic.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00171">m_pop_fraction</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/df1/a00206_source.html#l00078">GetPopCount()</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d45/a00011_ababb4cca38b9c3b75405680a4c5e9be6_icgraph.gif" border="0" usemap="#da/d45/a00011_ababb4cca38b9c3b75405680a4c5e9be6_icgraph" alt=""/></div>
+<map name="da/d45/a00011_ababb4cca38b9c3b75405680a4c5e9be6_icgraph" id="da/d45/a00011_ababb4cca38b9c3b75405680a4c5e9be6_icgraph">
+<area shape="rect" id="node2" href="../../da/d45/a00011.html#a20111a1d8c063a9b499e1140ca401711" title="Gets the absolute population. " alt="" coords="220,5,387,47"/>
+<area shape="rect" id="node3" href="../../da/d45/a00011.html#a9b2fb47b088255b4b81f55f48d3ea99b" title="Perform a full comparison with the other Epidemiologic. " alt="" coords="435,5,601,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af7bacb26e7a72f1f866412cc75de2f62"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int geopop::Epidemiologic::GetID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the ID of the location. </p>
+
+<p>Definition at line <a class="el" href="../../d5/d13/a00205_source.html#l00103">103</a> of file <a class="el" href="../../d5/d13/a00205_source.html">Epidemiologic.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00172">m_location</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/df1/a00206_source.html#l00078">GetPopCount()</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d45/a00011_af7bacb26e7a72f1f866412cc75de2f62_icgraph.gif" border="0" usemap="#da/d45/a00011_af7bacb26e7a72f1f866412cc75de2f62_icgraph" alt=""/></div>
+<map name="da/d45/a00011_af7bacb26e7a72f1f866412cc75de2f62_icgraph" id="da/d45/a00011_af7bacb26e7a72f1f866412cc75de2f62_icgraph">
+<area shape="rect" id="node2" href="../../da/d45/a00011.html#a20111a1d8c063a9b499e1140ca401711" title="Gets the absolute population. " alt="" coords="220,5,387,47"/>
+<area shape="rect" id="node3" href="../../da/d45/a00011.html#a9b2fb47b088255b4b81f55f48d3ea99b" title="Perform a full comparison with the other Epidemiologic. " alt="" coords="435,5,601,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="afd0bbfa6c916a487124c780f70b23483"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/d42/a00043.html">Location</a>&lt;<a class="el" href="../../da/d45/a00011.html">Epidemiologic</a>&gt;* geopop::Epidemiologic::GetLocation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the location of which this is the content. </p>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00090">90</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00172">m_location</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a98b4e0dcb3cf9b8444bf5155ab55bac5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int geopop::Epidemiologic::GetHouseHoldType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get household type for Households references. </p>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00093">93</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00173">m_household_type</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/d13/a00205_source.html#l00039">operator==()</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d45/a00011_a98b4e0dcb3cf9b8444bf5155ab55bac5_icgraph.gif" border="0" usemap="#da/d45/a00011_a98b4e0dcb3cf9b8444bf5155ab55bac5_icgraph" alt=""/></div>
+<map name="da/d45/a00011_a98b4e0dcb3cf9b8444bf5155ab55bac5_icgraph" id="da/d45/a00011_a98b4e0dcb3cf9b8444bf5155ab55bac5_icgraph">
+<area shape="rect" id="node2" href="../../da/d45/a00011.html#a9b2fb47b088255b4b81f55f48d3ea99b" title="Perform a full comparison with the other Epidemiologic. " alt="" coords="220,5,387,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="af41433ad68bc3ce3ac6012c75adfe5bc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d4f/a00420.html">double</a> geopop::Epidemiologic::GetYoungOldFraction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets young/old fraction. </p>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00096">96</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>References <a class="el" href="../../d5/d13/a00205_source.html#l00105">GenerateEpiOutput()</a>, <a class="el" href="../../d5/df1/a00206_source.html#l00174">m_young_old_fraction</a>, <a class="el" href="../../d5/d13/a00205_source.html#l00152">SetPopCount()</a>, and <a class="el" href="../../d5/d13/a00205_source.html#l00156">SetPopFraction()</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/d13/a00205_source.html#l00039">operator==()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d45/a00011_af41433ad68bc3ce3ac6012c75adfe5bc_cgraph.gif" border="0" usemap="#da/d45/a00011_af41433ad68bc3ce3ac6012c75adfe5bc_cgraph" alt=""/></div>
+<map name="da/d45/a00011_af41433ad68bc3ce3ac6012c75adfe5bc_cgraph" id="da/d45/a00011_af41433ad68bc3ce3ac6012c75adfe5bc_cgraph">
+<area shape="rect" id="node2" href="../../da/d45/a00011.html#a181cf15e29892b07541785081503a463" title="Generate an epi&#45;output map of the Household contactpools. " alt="" coords="220,35,387,76"/>
+<area shape="rect" id="node5" href="../../da/d45/a00011.html#a8bff7e01e34144ff9c0a784c70fe81f3" title="Set Epidemiologic&#39;s population count using its population fraction and the total population count..." alt="" coords="220,100,387,141"/>
+<area shape="rect" id="node6" href="../../da/d45/a00011.html#a1b5336ba1a9416cc7c9d05e6326e1af7" title="Set Epidemiologic&#39;s population fraction (of the total population count). " alt="" coords="220,165,387,207"/>
+<area shape="rect" id="node3" href="../../da/d45/a00011.html#a234fecc3020529ef06d7b4ef2a266b6f" title="Gets the amount of members in all household pools. " alt="" coords="435,5,601,47"/>
+<area shape="rect" id="node4" href="../../da/d45/a00011.html#aec198faaa27ba4cd2d90955ad6df1cce" title="Templated version of &#160;for use when the type id is fixed. " alt="" coords="649,35,816,76"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d45/a00011_af41433ad68bc3ce3ac6012c75adfe5bc_icgraph.gif" border="0" usemap="#da/d45/a00011_af41433ad68bc3ce3ac6012c75adfe5bc_icgraph" alt=""/></div>
+<map name="da/d45/a00011_af41433ad68bc3ce3ac6012c75adfe5bc_icgraph" id="da/d45/a00011_af41433ad68bc3ce3ac6012c75adfe5bc_icgraph">
+<area shape="rect" id="node2" href="../../da/d45/a00011.html#a9b2fb47b088255b4b81f55f48d3ea99b" title="Perform a full comparison with the other Epidemiologic. " alt="" coords="220,5,387,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a181cf15e29892b07541785081503a463"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt; std::string, std::map&lt; std::string, <a class="el" href="../../db/d4f/a00420.html">double</a> &gt; &gt; const geopop::Epidemiologic::GenerateEpiOutput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generate an epi-output map of the Household contactpools. </p>
+
+<p>Definition at line <a class="el" href="../../d5/d13/a00205_source.html#l00105">105</a> of file <a class="el" href="../../d5/d13/a00205_source.html">Epidemiologic.cpp</a>.</p>
+
+<p>References <a class="el" href="../../de/d38/a00160_source.html#l00022">stride::ageBrackets</a>, <a class="el" href="../../d5/df1/a00206_source.html#l00126">CRefPools()</a>, <a class="el" href="../../d5/d13/a00205_source.html#l00092">GetMemberCount()</a>, <a class="el" href="../../dd/d56/a00274_source.html#l00040">stride::healthStatuses</a>, and <a class="el" href="../../de/d3d/a00409.html#a61a32e88a50c57e6f5c49f0996b6b462aea4be67641b70cfa3fec0f86ea7f239b">stride::ContactType::Household</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/df1/a00206_source.html#l00096">GetYoungOldFraction()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d45/a00011_a181cf15e29892b07541785081503a463_cgraph.gif" border="0" usemap="#da/d45/a00011_a181cf15e29892b07541785081503a463_cgraph" alt=""/></div>
+<map name="da/d45/a00011_a181cf15e29892b07541785081503a463_cgraph" id="da/d45/a00011_a181cf15e29892b07541785081503a463_cgraph">
+<area shape="rect" id="node2" href="../../da/d45/a00011.html#aec198faaa27ba4cd2d90955ad6df1cce" title="Templated version of &#160;for use when the type id is fixed. " alt="" coords="435,5,601,47"/>
+<area shape="rect" id="node3" href="../../da/d45/a00011.html#a234fecc3020529ef06d7b4ef2a266b6f" title="Gets the amount of members in all household pools. " alt="" coords="220,35,387,76"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d45/a00011_a181cf15e29892b07541785081503a463_icgraph.gif" border="0" usemap="#da/d45/a00011_a181cf15e29892b07541785081503a463_icgraph" alt=""/></div>
+<map name="da/d45/a00011_a181cf15e29892b07541785081503a463_icgraph" id="da/d45/a00011_a181cf15e29892b07541785081503a463_icgraph">
+<area shape="rect" id="node2" href="../../da/d45/a00011.html#af41433ad68bc3ce3ac6012c75adfe5bc" title="Gets young/old fraction. " alt="" coords="220,5,387,47"/>
+<area shape="rect" id="node3" href="../../da/d45/a00011.html#a9b2fb47b088255b4b81f55f48d3ea99b" title="Perform a full comparison with the other Epidemiologic. " alt="" coords="435,5,601,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a8bff7e01e34144ff9c0a784c70fe81f3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void geopop::Epidemiologic::SetPopCount </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>totalPopCount</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>'s population count using its population fraction and the total population count. </p>
+
+<p>Definition at line <a class="el" href="../../d5/d13/a00205_source.html#l00152">152</a> of file <a class="el" href="../../d5/d13/a00205_source.html">Epidemiologic.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00170">m_pop_count</a>, and <a class="el" href="../../d5/df1/a00206_source.html#l00171">m_pop_fraction</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/df1/a00206_source.html#l00096">GetYoungOldFraction()</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d45/a00011_a8bff7e01e34144ff9c0a784c70fe81f3_icgraph.gif" border="0" usemap="#da/d45/a00011_a8bff7e01e34144ff9c0a784c70fe81f3_icgraph" alt=""/></div>
+<map name="da/d45/a00011_a8bff7e01e34144ff9c0a784c70fe81f3_icgraph" id="da/d45/a00011_a8bff7e01e34144ff9c0a784c70fe81f3_icgraph">
+<area shape="rect" id="node2" href="../../da/d45/a00011.html#af41433ad68bc3ce3ac6012c75adfe5bc" title="Gets young/old fraction. " alt="" coords="220,5,387,47"/>
+<area shape="rect" id="node3" href="../../da/d45/a00011.html#a9b2fb47b088255b4b81f55f48d3ea99b" title="Perform a full comparison with the other Epidemiologic. " alt="" coords="435,5,601,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b5336ba1a9416cc7c9d05e6326e1af7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void geopop::Epidemiologic::SetPopFraction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d4f/a00420.html">double</a>&#160;</td>
+          <td class="paramname"><em>relativePopulation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>'s population fraction (of the total population count). </p>
+
+<p>Definition at line <a class="el" href="../../d5/d13/a00205_source.html#l00156">156</a> of file <a class="el" href="../../d5/d13/a00205_source.html">Epidemiologic.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00171">m_pop_fraction</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/df1/a00206_source.html#l00096">GetYoungOldFraction()</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d45/a00011_a1b5336ba1a9416cc7c9d05e6326e1af7_icgraph.gif" border="0" usemap="#da/d45/a00011_a1b5336ba1a9416cc7c9d05e6326e1af7_icgraph" alt=""/></div>
+<map name="da/d45/a00011_a1b5336ba1a9416cc7c9d05e6326e1af7_icgraph" id="da/d45/a00011_a1b5336ba1a9416cc7c9d05e6326e1af7_icgraph">
+<area shape="rect" id="node2" href="../../da/d45/a00011.html#af41433ad68bc3ce3ac6012c75adfe5bc" title="Gets young/old fraction. " alt="" coords="220,5,387,47"/>
+<area shape="rect" id="node3" href="../../da/d45/a00011.html#a9b2fb47b088255b4b81f55f48d3ea99b" title="Perform a full comparison with the other Epidemiologic. " alt="" coords="435,5,601,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a797dc73da51a1ea36b04429b1d6a37e9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void geopop::Epidemiologic::SetHouseHoldType </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>houseHoldType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set household type for Households references. </p>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00108">108</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00173">m_household_type</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a12f2e0e3580ddcf3d072fdb8dffb9aaa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void geopop::Epidemiologic::SetYoungOldFraction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/d4f/a00420.html">double</a>&#160;</td>
+          <td class="paramname"><em>youngOldFraction</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets young/old fraction. </p>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00111">111</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00174">m_young_old_fraction</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a022a2f111af3032e50a484db5f3a1f58"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d9/da5/a00075.html">stride::util::SegmentedVector</a>&lt;<a class="el" href="../../d1/d1e/a00087.html">stride::ContactPool</a>*&gt;&amp; geopop::Epidemiologic::CRefPools </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d3d/a00409.html#a61a32e88a50c57e6f5c49f0996b6b462">stride::ContactType::Id</a>&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Access through const reference to ContactPools of type 'id'. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>ContactType::Id of pools container you want to access. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The requested reference. </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00117">117</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00183">m_pool_index</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/d13/a00205_source.html#l00039">operator==()</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d45/a00011_a022a2f111af3032e50a484db5f3a1f58_icgraph.gif" border="0" usemap="#da/d45/a00011_a022a2f111af3032e50a484db5f3a1f58_icgraph" alt=""/></div>
+<map name="da/d45/a00011_a022a2f111af3032e50a484db5f3a1f58_icgraph" id="da/d45/a00011_a022a2f111af3032e50a484db5f3a1f58_icgraph">
+<area shape="rect" id="node2" href="../../da/d45/a00011.html#a9b2fb47b088255b4b81f55f48d3ea99b" title="Perform a full comparison with the other Epidemiologic. " alt="" coords="220,5,387,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aec198faaa27ba4cd2d90955ad6df1cce"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;stride::ContactType::Id T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d9/da5/a00075.html">stride::util::SegmentedVector</a>&lt;<a class="el" href="../../d1/d1e/a00087.html">stride::ContactPool</a>*&gt;&amp; geopop::Epidemiologic::CRefPools </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Templated version of  for use when the type id is fixed. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>ContactType::Id of pools container you want to access. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The requested reference. </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00126">126</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00183">m_pool_index</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/d13/a00205_source.html#l00105">GenerateEpiOutput()</a>, <a class="el" href="../../d5/d13/a00205_source.html#l00092">GetMemberCount()</a>, and <a class="el" href="../../d5/d13/a00205_source.html#l00039">operator==()</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d45/a00011_aec198faaa27ba4cd2d90955ad6df1cce_icgraph.gif" border="0" usemap="#da/d45/a00011_aec198faaa27ba4cd2d90955ad6df1cce_icgraph" alt=""/></div>
+<map name="da/d45/a00011_aec198faaa27ba4cd2d90955ad6df1cce_icgraph" id="da/d45/a00011_aec198faaa27ba4cd2d90955ad6df1cce_icgraph">
+<area shape="rect" id="node2" href="../../da/d45/a00011.html#a181cf15e29892b07541785081503a463" title="Generate an epi&#45;output map of the Household contactpools. " alt="" coords="435,30,601,71"/>
+<area shape="rect" id="node4" href="../../da/d45/a00011.html#a9b2fb47b088255b4b81f55f48d3ea99b" title="Perform a full comparison with the other Epidemiologic. " alt="" coords="864,30,1031,71"/>
+<area shape="rect" id="node5" href="../../da/d45/a00011.html#a234fecc3020529ef06d7b4ef2a266b6f" title="Gets the amount of members in all household pools. " alt="" coords="220,84,387,126"/>
+<area shape="rect" id="node3" href="../../da/d45/a00011.html#af41433ad68bc3ce3ac6012c75adfe5bc" title="Gets young/old fraction. " alt="" coords="649,30,816,71"/>
+<area shape="rect" id="node6" href="../../da/d45/a00011.html#a20111a1d8c063a9b499e1140ca401711" title="Gets the absolute population. " alt="" coords="649,95,816,136"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a79271732a52593e8d4c5d92b5c35503e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/da5/a00075.html">stride::util::SegmentedVector</a>&lt;<a class="el" href="../../d1/d1e/a00087.html">stride::ContactPool</a>*&gt;&amp; geopop::Epidemiologic::RefPools </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d3d/a00409.html#a61a32e88a50c57e6f5c49f0996b6b462">stride::ContactType::Id</a>&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Access through reference to ContactPools of type 'id'. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>ContactType::Id of pools container you want to access. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The requested reference. </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00134">134</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00183">m_pool_index</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a69455d00f8bf5111684ef719e2f97dea"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;stride::ContactType::Id T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/da5/a00075.html">stride::util::SegmentedVector</a>&lt;<a class="el" href="../../d1/d1e/a00087.html">stride::ContactPool</a>*&gt;&amp; geopop::Epidemiologic::RefPools </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Templated version of  for use when the type id is fixed. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>ContactType::Id of pools container you want to access. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The requested reference. </dd></dl>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00143">143</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00183">m_pool_index</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a51303dd9fcaf6a08bcc6081a112345be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void geopop::Epidemiologic::RegisterPool </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/d1e/a00087.html">stride::ContactPool</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/d3d/a00409.html#a61a32e88a50c57e6f5c49f0996b6b462">stride::ContactType::Id</a>&#160;</td>
+          <td class="paramname"><em>typeId</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -211,27 +1214,29 @@ template&lt;typename Policy &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../da/d15/a00188_source.html#l00088">88</a> of file <a class="el" href="../../da/d15/a00188_source.html">GeoAggregator.h</a>.</p>
+<p>Register a ContactPool pointer in this <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>'s pool system. </p>
+<p>Prior to this the pool should have been created in Population's pool system. </p>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00150">150</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00183">m_pool_index</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a9690fa2f2fd4865dc4fc1f36007cae6c"></a>
+<a class="anchor" id="a24e491db4def4faf35041bad710168bd"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Policy &gt; </div>
-<div class="memtemplate">
-template&lt;typename F &gt; </div>
+template&lt;stride::ContactType::Id T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="../../d7/dec/a00010.html">geopop::GeoAggregator</a>&lt; Policy &gt;::operator() </td>
+          <td class="memname">void geopop::Epidemiologic::RegisterPool </td>
           <td>(</td>
-          <td class="paramtype">F&#160;</td>
-          <td class="paramname"><em>f</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../d1/d1e/a00087.html">stride::ContactPool</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -242,18 +1247,90 @@ template&lt;typename F &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Aggregate over the area specified by the policy with the functor <code>f</code>. </p>
+<p>Templated version of . </p>
 
-<p>Definition at line <a class="el" href="../../da/d15/a00188_source.html#l00095">95</a> of file <a class="el" href="../../da/d15/a00188_source.html">GeoAggregator.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00157">157</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
 
-<p>References <a class="el" href="../../d0/d2f/a00259_source.html#l00069">geopop::geogrid_detail::KdTree2DPoint::GetLocation()</a>.</p>
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00183">m_pool_index</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae9e725d837df6f1e4695429370523e9c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;std::pair&lt;<a class="el" href="../../da/d45/a00011.html">Epidemiologic</a>*, <a class="el" href="../../db/d4f/a00420.html">double</a>&gt; &gt;&amp; geopop::Epidemiologic::CRefIncomingCommutes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>References incoming commute Epidemiologics + fraction of commutes to that <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>. </p>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00164">164</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00177">m_inCommutes</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/d13/a00205_source.html#l00039">operator==()</a>.</p>
 
 <p><div class="dynheader">
-Here is the call graph for this function:</div>
+Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../da/d45/a00011_a9690fa2f2fd4865dc4fc1f36007cae6c_cgraph.gif" border="0" usemap="#da/d45/a00011_a9690fa2f2fd4865dc4fc1f36007cae6c_cgraph" alt=""/></div>
-<map name="da/d45/a00011_a9690fa2f2fd4865dc4fc1f36007cae6c_cgraph" id="da/d45/a00011_a9690fa2f2fd4865dc4fc1f36007cae6c_cgraph">
-<area shape="rect" id="node2" href="../../d2/de7/a00014.html#a458d22954ec0f9ed79557a8936432527" title="Retrieve the location. " alt="" coords="229,5,436,47"/>
+<div class="center"><img src="../../da/d45/a00011_ae9e725d837df6f1e4695429370523e9c_icgraph.gif" border="0" usemap="#da/d45/a00011_ae9e725d837df6f1e4695429370523e9c_icgraph" alt=""/></div>
+<map name="da/d45/a00011_ae9e725d837df6f1e4695429370523e9c_icgraph" id="da/d45/a00011_ae9e725d837df6f1e4695429370523e9c_icgraph">
+<area shape="rect" id="node2" href="../../da/d45/a00011.html#a9b2fb47b088255b4b81f55f48d3ea99b" title="Perform a full comparison with the other Epidemiologic. " alt="" coords="240,5,407,47"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a7909580bbc910174eab4654a276733ed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;std::pair&lt;<a class="el" href="../../da/d45/a00011.html">Epidemiologic</a>*, <a class="el" href="../../db/d4f/a00420.html">double</a>&gt; &gt;&amp; geopop::Epidemiologic::CRefOutgoingCommutes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>References outgoing commute Epidemiologics + fraction of commutes to that <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>. </p>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00167">167</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>References <a class="el" href="../../d5/df1/a00206_source.html#l00180">m_outCommutes</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/d13/a00205_source.html#l00039">operator==()</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d45/a00011_a7909580bbc910174eab4654a276733ed_icgraph.gif" border="0" usemap="#da/d45/a00011_a7909580bbc910174eab4654a276733ed_icgraph" alt=""/></div>
+<map name="da/d45/a00011_a7909580bbc910174eab4654a276733ed_icgraph" id="da/d45/a00011_a7909580bbc910174eab4654a276733ed_icgraph">
+<area shape="rect" id="node2" href="../../da/d45/a00011.html#a9b2fb47b088255b4b81f55f48d3ea99b" title="Perform a full comparison with the other Epidemiologic. " alt="" coords="240,5,407,47"/>
 </map>
 </div>
 </p>
@@ -261,17 +1338,15 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a8869ab6e0b5648b01be252b664c29c4f"></a>
+<a class="anchor" id="ac12d8d2212a72d94eb564b2b58efad95"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename Policy &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Policy <a class="el" href="../../d7/dec/a00010.html">geopop::GeoAggregator</a>&lt; Policy &gt;::m_policy</td>
+          <td class="memname">unsigned int geopop::Epidemiologic::m_pop_count</td>
         </tr>
       </table>
   </td>
@@ -281,21 +1356,23 @@ template&lt;typename Policy &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../da/d15/a00188_source.html#l00109">109</a> of file <a class="el" href="../../da/d15/a00188_source.html">GeoAggregator.h</a>.</p>
+<p>Population count (number of individuals) at this <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>. </p>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00170">170</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/d13/a00205_source.html#l00082">GetOutgoingCommuteCount()</a>, <a class="el" href="../../d5/df1/a00206_source.html#l00078">GetPopCount()</a>, and <a class="el" href="../../d5/d13/a00205_source.html#l00152">SetPopCount()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a72d96601581d45ac424d0d5b2ff60a5d"></a>
+<a class="anchor" id="aef7101228c2d1238a5312f7356f1d687"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename Policy &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="../../d4/d8c/a00035.html">KdTree</a>&lt;<a class="el" href="../../d2/de7/a00014.html">geogrid_detail::KdTree2DPoint</a>&gt;&amp; <a class="el" href="../../d7/dec/a00010.html">geopop::GeoAggregator</a>&lt; Policy &gt;::m_tree</td>
+          <td class="memname"><a class="el" href="../../db/d4f/a00420.html">double</a> geopop::Epidemiologic::m_pop_fraction</td>
         </tr>
       </table>
   </td>
@@ -305,20 +1382,180 @@ template&lt;typename Policy &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../da/d15/a00188_source.html#l00110">110</a> of file <a class="el" href="../../da/d15/a00188_source.html">GeoAggregator.h</a>.</p>
+<p>Fraction of whole population at this <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>. </p>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00171">171</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/d13/a00205_source.html#l00101">GetPopFraction()</a>, <a class="el" href="../../d5/d13/a00205_source.html#l00152">SetPopCount()</a>, and <a class="el" href="../../d5/d13/a00205_source.html#l00156">SetPopFraction()</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="../../da/d15/a00188_source.html">GeoAggregator.h</a></li>
+<a class="anchor" id="a7172fb566b4d7d9174c83d0a4270ef4a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/d42/a00043.html">Location</a>&lt;<a class="el" href="../../da/d45/a00011.html">Epidemiologic</a>&gt;* geopop::Epidemiologic::m_location</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Link to the location. </p>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00172">172</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/d13/a00205_source.html#l00103">GetID()</a>, and <a class="el" href="../../d5/df1/a00206_source.html#l00090">GetLocation()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5309fbd151b8f74d2176996245c78f7b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int geopop::Epidemiologic::m_household_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Household type. </p>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00173">173</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/df1/a00206_source.html#l00093">GetHouseHoldType()</a>, and <a class="el" href="../../d5/df1/a00206_source.html#l00108">SetHouseHoldType()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0798fe39d34e8a4b380162e12c92a0cb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d4f/a00420.html">double</a> geopop::Epidemiologic::m_young_old_fraction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Young/Old fraction (ratio between 15-24y and 55-64y old persons). </p>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00174">174</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/df1/a00206_source.html#l00096">GetYoungOldFraction()</a>, and <a class="el" href="../../d5/df1/a00206_source.html#l00111">SetYoungOldFraction()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a23860c5c55b686b23037c11dcd977057"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::pair&lt;<a class="el" href="../../da/d45/a00011.html">Epidemiologic</a>*, <a class="el" href="../../db/d4f/a00420.html">double</a>&gt; &gt; geopop::Epidemiologic::m_inCommutes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Incomming commutes stored as pair of <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a> and fraction of population at that <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>. </p>
+<p>Outgoing commutes stored as pair of <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a> and fraction of population to this this <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>. </p>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00177">177</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/d13/a00205_source.html#l00050">AddIncomingCommute()</a>, <a class="el" href="../../d5/df1/a00206_source.html#l00164">CRefIncomingCommutes()</a>, and <a class="el" href="../../d5/d13/a00205_source.html#l00060">GetIncomingCommuteCount()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad9ef84023beae98cc9b21160d281cf16"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::pair&lt;<a class="el" href="../../da/d45/a00011.html">Epidemiologic</a>*, <a class="el" href="../../db/d4f/a00420.html">double</a>&gt; &gt; geopop::Epidemiologic::m_outCommutes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The system holding pointers to the contactpools (for each type id) at this <a class="el" href="../../da/d45/a00011.html" title="Epidemiologic for use within the GeoGrid, contains index to ContactPools and commutes. ">Epidemiologic</a>. </p>
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00180">180</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/d13/a00205_source.html#l00055">AddOutgoingCommute()</a>, <a class="el" href="../../d5/df1/a00206_source.html#l00167">CRefOutgoingCommutes()</a>, and <a class="el" href="../../d5/d13/a00205_source.html#l00082">GetOutgoingCommuteCount()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d102b444fc233b5657085395f4d56a0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d8b/a00059.html">stride::ContactType::IdSubscriptArray</a>&lt;<a class="el" href="../../d9/da5/a00075.html">stride::util::SegmentedVector</a>&lt;<a class="el" href="../../d1/d1e/a00087.html">stride::ContactPool</a>*&gt; &gt; geopop::Epidemiologic::m_pool_index</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/df1/a00206_source.html#l00183">183</a> of file <a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d5/df1/a00206_source.html#l00117">CRefPools()</a>, <a class="el" href="../../d5/df1/a00206_source.html#l00134">RefPools()</a>, and <a class="el" href="../../d5/df1/a00206_source.html#l00150">RegisterPool()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="../../d5/df1/a00206_source.html">Epidemiologic.h</a></li>
+<li><a class="el" href="../../d5/d13/a00205_source.html">Epidemiologic.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d2/d45/a00342.html">geopop</a></li><li class="navelem"><a class="el" href="../../da/d45/a00011.html">GeoAggregator&lt; Policy &gt;</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:38 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../da/dbf/a00393.html">geopop</a></li><li class="navelem"><a class="el" href="../../da/d45/a00011.html">Epidemiologic</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:10 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

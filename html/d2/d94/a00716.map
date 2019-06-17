@@ -1,0 +1,51 @@
+<map id="SegmentedVector.h" name="SegmentedVector.h">
+<area shape="rect" id="node2" href="$dc/d52/a00183.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="824,80,959,107"/>
+<area shape="rect" id="node4" href="$d4/db5/a00328.html" title="Header file for the core Population class. " alt="" coords="841,155,942,181"/>
+<area shape="rect" id="node14" href="$d0/d1f/a00247.html" title="GeoGridHDF5Writer.cpp" alt="" coords="2358,379,2529,405"/>
+<area shape="rect" id="node15" href="$d9/d39/a00257.html" title="GeoGridProtoWriter.cpp" alt="" coords="2966,379,3137,405"/>
+<area shape="rect" id="node26" href="$d8/dfc/a00327.html" title="Core Population class. " alt="" coords="175,229,291,256"/>
+<area shape="rect" id="node27" href="$de/d79/a00203.html" title="Header for the DiseaseSeeder class. " alt="" coords="110,80,241,107"/>
+<area shape="rect" id="node29" href="$da/ddc/a00288.html" title="Header for the Immunizer class. " alt="" coords="441,80,542,107"/>
+<area shape="rect" id="node31" href="$d5/df1/a00206.html" title="Epidemiologic.h" alt="" coords="2847,80,2970,107"/>
+<area shape="rect" id="node35" href="$d1/d67/a00310.html" title="Location.h" alt="" coords="1807,155,1895,181"/>
+<area shape="rect" id="node44" href="$d6/db6/a00241.html" title="GeoGridConfig.h" alt="" coords="681,229,808,256"/>
+<area shape="rect" id="node46" href="$d1/d72/a00204.html" title="DistributionReader.h" alt="" coords="3375,379,3525,405"/>
+<area shape="rect" id="node48" href="$dd/dfe/a00283.html" title="HouseholdReader.h" alt="" coords="3549,379,3695,405"/>
+<area shape="rect" id="node3" href="$d7/d25/a00182.html" title="Core Population class. " alt="" coords="667,155,817,181"/>
+<area shape="rect" id="node5" href="$db/d53/a00202.html" title="Implementation for the DiseaseSeeder class. " alt="" coords="5,229,151,256"/>
+<area shape="rect" id="node6" href="$d6/de1/a00233.html" title="Generator.h" alt="" coords="417,304,515,331"/>
+<area shape="rect" id="node7" href="$d5/d42/a00269.html" title="Initialize populations: implementation. " alt="" coords="847,528,989,555"/>
+<area shape="rect" id="node8" href="$d4/d08/a00237.html" title="GeoGrid.cpp" alt="" coords="1434,229,1535,256"/>
+<area shape="rect" id="node22" href="$dc/dc9/a00282.html" title="HouseholdPopulator.cpp" alt="" coords="505,379,683,405"/>
+<area shape="rect" id="node9" href="$da/d2e/a00238.html" title="GeoGrid.h" alt="" coords="1441,304,1528,331"/>
+<area shape="rect" id="node10" href="$d6/dfb/a00172.html" title="CommutesCSVReader.cpp" alt="" coords="2143,379,2333,405"/>
+<area shape="rect" id="node11" href="$dd/ded/a00211.html" title="EpiOutputHDF5Writer.cpp" alt="" coords="2759,379,2941,405"/>
+<area shape="rect" id="node12" href="$d3/dd5/a00215.html" title="EpiOutputJSONWriter.cpp" alt="" coords="1939,379,2118,405"/>
+<area shape="rect" id="node13" href="$dd/df3/a00219.html" title="EpiOutputProtoWriter.cpp" alt="" coords="2553,379,2734,405"/>
+<area shape="rect" id="node16" href="$d0/d2f/a00259.html" title="GeoGridReader.cpp" alt="" coords="1771,379,1915,405"/>
+<area shape="rect" id="node17" href="$dd/db3/a00313.html" title="LocationsReader.h" alt="" coords="3161,379,3299,405"/>
+<area shape="rect" id="node20" href="$d1/d0d/a00171.html" title="CollegePopulator.cpp" alt="" coords="956,379,1112,405"/>
+<area shape="rect" id="node21" href="$dc/d57/a00194.html" title="DaycarePopulator.cpp" alt="" coords="1534,379,1697,405"/>
+<area shape="rect" id="node23" href="$dc/d0f/a00303.html" title="K12SchoolPopulator.cpp" alt="" coords="1137,379,1313,405"/>
+<area shape="rect" id="node24" href="$d8/df7/a00331.html" title="PreSchoolPopulator.cpp" alt="" coords="1337,379,1510,405"/>
+<area shape="rect" id="node25" href="$da/dee/a00383.html" title="WorkplacePopulator.cpp" alt="" coords="707,379,881,405"/>
+<area shape="rect" id="node18" href="$dc/d84/a00338.html" title="ReaderFactory.h" alt="" coords="3169,453,3291,480"/>
+<area shape="rect" id="node19" href="$d9/d21/a00240.html" title="GeoGridConfig.cpp" alt="" coords="3209,528,3350,555"/>
+<area shape="rect" id="node28" href="$d0/d48/a00351.html" title="Implementation for the SimBuilder class. " alt="" coords="21,155,138,181"/>
+<area shape="rect" id="node30" href="$d6/d7f/a00287.html" title="Implementation for the Immunizer class. " alt="" coords="433,155,549,181"/>
+<area shape="rect" id="node32" href="$d5/d13/a00205.html" title="Epidemiologic.cpp" alt="" coords="2957,229,3095,256"/>
+<area shape="rect" id="node33" href="$d1/de3/a00306.html" title="KdTree2DPoint.cpp" alt="" coords="3119,229,3261,256"/>
+<area shape="rect" id="node34" href="$d0/def/a00256.html" title="GeoGridProtoReader.h" alt="" coords="2770,229,2933,256"/>
+<area shape="rect" id="node36" href="$dd/dc1/a00212.html" title="EpiOutputHDF5Writer.h" alt="" coords="2548,304,2715,331"/>
+<area shape="rect" id="node37" href="$d6/d43/a00216.html" title="EpiOutputJSONWriter.h" alt="" coords="1604,304,1768,331"/>
+<area shape="rect" id="node38" href="$d5/d0b/a00220.html" title="EpiOutputProtoWriter.h" alt="" coords="2177,304,2344,331"/>
+<area shape="rect" id="node39" href="$d4/d9a/a00246.html" title="GeoGridHDF5Reader.h" alt="" coords="2067,229,2231,256"/>
+<area shape="rect" id="node40" href="$dd/dd7/a00248.html" title="GeoGridHDF5Writer.h" alt="" coords="1945,304,2101,331"/>
+<area shape="rect" id="node41" href="$d0/da7/a00250.html" title="GeoGridJSONReader.h" alt="" coords="2255,229,2416,256"/>
+<area shape="rect" id="node42" href="$dc/ded/a00252.html" title="GeoGridJSONWriter.h" alt="" coords="2440,229,2593,256"/>
+<area shape="rect" id="node43" href="$d7/d2f/a00258.html" title="GeoGridProtoWriter.h" alt="" coords="2369,304,2523,331"/>
+<area shape="rect" id="node45" href="$dd/d4e/a00329.html" title="Populator.h" alt="" coords="987,304,1081,331"/>
+<area shape="rect" id="node47" href="$de/d08/a00381.html" title="WorkplaceCSVReader.h" alt="" coords="3366,453,3534,480"/>
+<area shape="rect" id="node49" href="$dc/d5d/a00278.html" title="HouseholdCSVReader.h" alt="" coords="3609,453,3781,480"/>
+<area shape="rect" id="node50" href="$d2/d04/a00281.html" title="HouseholdJSONReader.h" alt="" coords="3805,453,3983,480"/>
+</map>

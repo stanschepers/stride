@@ -1,21 +1,11 @@
-<map id="DefaultPopBuilder.cpp" name="DefaultPopBuilder.cpp">
-<area shape="rect" id="node2" href="$d9/d90/a00178.html" title="Initialize populations. " alt="" coords="207,87,353,114"/>
-<area shape="rect" id="node7" href="$d2/d34/a00156.html" title="Header for the ContactLogMode class. " alt="" coords="1991,333,2185,360"/>
-<area shape="rect" id="node9" href="$db/d44/a00162.html" title="Definition of ContactPool Id Type. " alt="" coords="1023,333,1187,360"/>
-<area shape="rect" id="node14" href="$da/d2e/a00238.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="695,251,884,278"/>
-<area shape="rect" id="node19" href="$dc/d5d/a00278.html" title="Header file for the core Population class. " alt="" coords="998,87,1127,114"/>
-<area shape="rect" id="node36" href="$d6/d82/a00293.html" title="Interface of RnMan. " alt="" coords="1829,169,1929,196"/>
-<area shape="rect" id="node40" href="$db/d53/a00321.html" title="Header file for the SurveySeeder class. " alt="" coords="369,169,519,196"/>
-<area shape="rect" id="node41" href="$d2/d94/a00184.html" title="Interface for install directory queries. " alt="" coords="1969,169,2069,196"/>
-<area shape="rect" id="node43" href="$d7/df2/a00312.html" title="Miscellaneous string utilities. " alt="" coords="2260,333,2383,360"/>
-<area shape="rect" id="node3" href="$d5/d5b/a00135.html" title="Base Class for PopBuilders. " alt="" coords="88,169,243,196"/>
-<area shape="rect" id="node20" href="$d6/db8/a00158.html" title="Header for the core ContactPool class. " alt="" coords="1359,251,1521,278"/>
-<area shape="rect" id="node23" href="$de/d38/a00160.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="748,169,935,196"/>
-<area shape="rect" id="node24" href="$d9/d0d/a00298.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="498,251,670,278"/>
-<area shape="rect" id="node29" href="$d7/d6e/a00190.html" title="geopop/GeoGrid.h" alt="" coords="1545,251,1684,278"/>
-<area shape="rect" id="node33" href="$d9/dd6/a00272.html" title="Header file for the Person class. " alt="" coords="1009,169,1116,196"/>
-<area shape="rect" id="node25" href="$de/de9/a00322.html" title="Interface/Implementation for SVIterator. " alt="" coords="88,333,187,360"/>
-<area shape="rect" id="node30" href="$dc/d31/a00208.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="1559,333,1767,360"/>
-<area shape="rect" id="node34" href="$dc/d55/a00226.html" title="Header for the Health class. " alt="" coords="1154,251,1283,278"/>
-<area shape="rect" id="node37" href="$da/dd4/a00291.html" title="Interface of RnPcg. " alt="" coords="1842,333,1915,360"/>
+<map id="Assert.h" name="Assert.h">
+<area shape="rect" id="node2" href="$d0/d19/a00273.html" title="Implementation for the Health class. " alt="" coords="5,80,96,107"/>
+<area shape="rect" id="node3" href="$d3/d5e/a00275.html" title="Implementation for HelthSeeder class. " alt="" coords="120,80,256,107"/>
+<area shape="rect" id="node4" href="$d5/dcb/a00170.html" title="CollegeGenerator.cpp" alt="" coords="280,80,440,107"/>
+<area shape="rect" id="node5" href="$dc/d50/a00332.html" title="PrimaryCommunityGenerator.cpp" alt="" coords="463,80,699,107"/>
+<area shape="rect" id="node6" href="$d2/daf/a00346.html" title="SecondaryCommunityGenerator.cpp" alt="" coords="723,80,978,107"/>
+<area shape="rect" id="node7" href="$d3/d45/a00382.html" title="WorkplaceGenerator.cpp" alt="" coords="1002,80,1179,107"/>
+<area shape="rect" id="node8" href="$d1/d0d/a00171.html" title="CollegePopulator.cpp" alt="" coords="1203,80,1359,107"/>
+<area shape="rect" id="node9" href="$da/dee/a00383.html" title="WorkplacePopulator.cpp" alt="" coords="1384,80,1557,107"/>
+<area shape="rect" id="node10" href="$d8/dfc/a00327.html" title="Core Population class. " alt="" coords="1582,80,1698,107"/>
 </map>

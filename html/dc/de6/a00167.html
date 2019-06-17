@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: CSV.h File Reference</title>
+<title>Stride Reference Manual: Calendar.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -106,44 +106,43 @@ $(document).ready(function(){initNavTree('dc/de6/a00167.html','../../');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">CSV.h File Reference</div>  </div>
+<div class="title">Calendar.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Header file of base class for config that needs to be read from a file.  
+<p>Header file for the Calendar class.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="../../de/d53/a00169_source.html">CSVRow.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d7/df2/a00312_source.html">util/StringUtils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d0/d3e/a00253_source.html">util/is_iterator.h</a>&quot;</code><br />
-<code>#include &lt;iosfwd&gt;</code><br />
-<code>#include &lt;type_traits&gt;</code><br />
+<div class="textblock"><code>#include &lt;boost/property_tree/ptree_fwd.hpp&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;filesystem&gt;</code><br />
+<code>#include &lt;date/date.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for CSV.h:</div>
+Include dependency graph for Calendar.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d2/de1/a00421.gif" border="0" usemap="#CSV_8h" alt=""/></div>
-<map name="CSV_8h" id="CSV_8h">
-<area shape="rect" id="node2" href="../../de/d53/a00169.html" title="Header file of base class for config that needs to be read from a file. " alt="" coords="567,80,651,107"/>
-<area shape="rect" id="node3" href="../../d7/df2/a00312.html" title="Miscellaneous string utilities. " alt="" coords="345,155,467,181"/>
-<area shape="rect" id="node13" href="../../d0/d3e/a00253.html" title="Interface/Implementation of is_iterator. " alt="" coords="814,80,934,107"/>
+<div class="center"><img src="../../d9/d3a/a00439.gif" border="0" usemap="#Calendar_8h" alt=""/></div>
+<map name="Calendar_8h" id="Calendar_8h">
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../db/d43/a00422.gif" border="0" usemap="#CSV_8hdep" alt=""/></div>
-<map name="CSV_8hdep" id="CSV_8hdep">
-<area shape="rect" id="node2" href="../../d5/d0f/a00308.html" title="Header for the command line controller. " alt="" coords="5,80,145,107"/>
-<area shape="rect" id="node3" href="../../da/d1e/a00149.html" title="CommutesCSVReader.cpp" alt="" coords="169,80,360,107"/>
-<area shape="rect" id="node4" href="../../dd/d2d/a00229.html" title="HouseholdCSVReader.cpp" alt="" coords="385,80,571,107"/>
-<area shape="rect" id="node5" href="../../df/da9/a00263.html" title="LocationsCSVReader.cpp" alt="" coords="596,80,776,107"/>
-<area shape="rect" id="node6" href="../../dd/d4e/a00329.html" title="WorkplaceCSVReader.cpp" alt="" coords="800,80,983,107"/>
-<area shape="rect" id="node7" href="../../d9/d38/a00166.html" title="Source file of csv. " alt="" coords="1007,80,1082,107"/>
-<area shape="rect" id="node8" href="../../dd/da7/a00168.html" title="Source file of CSVRow. " alt="" coords="1106,80,1205,107"/>
+<div class="center"><img src="../../de/df8/a00440.gif" border="0" usemap="#Calendar_8hdep" alt=""/></div>
+<map name="Calendar_8hdep" id="Calendar_8hdep">
+<area shape="rect" id="node2" href="../../d9/d38/a00166.html" title="Implementation file for the Calendar class. " alt="" coords="5,80,111,107"/>
+<area shape="rect" id="node3" href="../../de/db1/a00197.html" title="DaysOffNone class. " alt="" coords="135,80,253,107"/>
+<area shape="rect" id="node4" href="../../d7/da0/a00198.html" title="DaysOffAll class: everybody gets the day off. " alt="" coords="277,80,404,107"/>
+<area shape="rect" id="node5" href="../../d8/d72/a00199.html" title="DaysOffStandard class. " alt="" coords="428,80,571,107"/>
+<area shape="rect" id="node7" href="../../d9/d0d/a00298.html" title="Header for the Infector class. " alt="" coords="647,80,728,107"/>
+<area shape="rect" id="node8" href="../../d3/d4a/a00297.html" title="Implementation of Infector algorithms. " alt="" coords="561,155,657,181"/>
+<area shape="rect" id="node11" href="../../d3/dc9/a00355.html" title="Implementation for SimRunner. " alt="" coords="753,80,870,107"/>
+<area shape="rect" id="node12" href="../../dd/da7/a00168.html" title="Definition of Observer for SimEvents for commandline interface usage. " alt="" coords="893,80,999,107"/>
+<area shape="rect" id="node6" href="../../d7/dfc/a00349.html" title="Implementation for the Simulator class. " alt="" coords="462,155,537,181"/>
+<area shape="rect" id="node9" href="../../db/da2/a00300.html" title="Header for the InfectorMap. " alt="" coords="681,155,790,181"/>
+<area shape="rect" id="node10" href="../../d0/d48/a00351.html" title="Implementation for the SimBuilder class. " alt="" coords="677,229,794,256"/>
 </map>
 </div>
 </div>
@@ -151,35 +150,27 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd6/a00108.html">stride::util::CSV</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A collection of <a class="el" href="../../dd/d42/a00109.html" title="Row in CSV file. ">CSVRow</a> elements.  <a href="../../d1/dd6/a00108.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d13/a00085.html">stride::Calendar</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that keeps track of the 'state' of simulated world.  <a href="../../df/d13/a00085.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:d3/dc9/a00355"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dc9/a00355.html">stride</a></td></tr>
-<tr class="memdesc:d3/dc9/a00355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
+<tr class="memitem:d1/d8b/a00406"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d8b/a00406.html">stride</a></td></tr>
+<tr class="memdesc:d1/d8b/a00406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:de/dd7/a00362"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dd7/a00362.html">stride::util</a></td></tr>
-<tr class="memdesc:de/dd7/a00362"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utilities for the project. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ab8f4ca13e5c3a78333ce8cfa62f36fe1"><td class="memItemLeft" align="right" valign="top">std::ofstream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dd7/a00362.html#ab8f4ca13e5c3a78333ce8cfa62f36fe1">stride::util::operator&lt;&lt;</a> (std::ofstream &amp;ofs, const CSV &amp;csv)</td></tr>
-<tr class="separator:ab8f4ca13e5c3a78333ce8cfa62f36fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Header file of base class for config that needs to be read from a file. </p>
+<div class="textblock"><p>Header file for the Calendar class. </p>
 
-<p>Definition in file <a class="el" href="../../dc/de6/a00167_source.html">CSV.h</a>.</p>
+<p>Definition in file <a class="el" href="../../dc/de6/a00167_source.html">Calendar.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_cf56009b1fcb470adac12e74ab7406a1.html">util</a></li><li class="navelem"><a class="el" href="../../dc/de6/a00167.html">CSV.h</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:37 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_479f5232607056a987532404314b00ea.html">calendar</a></li><li class="navelem"><a class="el" href="../../dc/de6/a00167.html">Calendar.h</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:10 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

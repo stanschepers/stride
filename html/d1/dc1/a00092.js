@@ -1,5 +1,6 @@
 var a00092 =
 [
-    [ "InfectorMap", "d1/dc1/a00092.html#a389bcbbddf547f27cb2e60feadca12af", null ],
-    [ "Add", "d1/dc1/a00092.html#ae0e244621d901cb06ae8ec8d7dc82161", null ]
+    [ "DaysOffAll", "d1/dc1/a00092.html#a8804c46ae3703253cb96e5f81f92251b", null ],
+    [ "IsWorkOff", "d1/dc1/a00092.html#a61f87cc93335185f90d9d772f168b1bb", null ],
+    [ "IsSchoolOff", "d1/dc1/a00092.html#a12a699d750a9b0a640db4ea47df0b11c", null ]
 ];

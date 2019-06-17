@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['subject_2eh',['Subject.h',['../d4/d6f/a00315.html',1,'']]],
-  ['unregister',['Unregister',['../de/d36/a00123.html#aaa38f379243ec0d27b47b5bd110ebe75',1,'stride::util::Subject']]],
-  ['unregisterall',['UnregisterAll',['../de/d36/a00123.html#a8e0f20cb6cc045cf215f5d5a0963046f',1,'stride::util::Subject']]],
-  ['update',['Update',['../da/d2a/a00086.html#a26b7fd4e8c9107413d09592734bae3ce',1,'stride::Health::Update()'],['../d9/df8/a00096.html#abeed34b336b17866bb881b77237c76c4',1,'stride::Person::Update()'],['../df/dcd/a00127.html#a9f3a2f9efda499fa6a80f3871c7298d7',1,'stride::viewers::CliViewer::Update()'],['../d1/d88/a00128.html#a8128b6620992860cad456275e2173b16',1,'stride::viewers::InfectedFileViewer::Update()'],['../d9/d47/a00129.html#ac539c7549cc8c19530813f0bdb35a14d',1,'stride::viewers::InfectedViewer::Update()'],['../d6/db3/a00130.html#ae2840bec7fc5f76db6e79130b61fff19',1,'stride::viewers::PersonsFileViewer::Update()'],['../d7/d06/a00131.html#a1e54b49cad6f7b645668551b08762e28',1,'stride::viewers::SummaryFileViewer::Update()']]],
-  ['upper',['upper',['../d1/d7c/a00003.html#a9536df35bbe6719b45619dc7031ee17e',1,'geopop::AABBox']]]
+  ['subject_2eh',['Subject.h',['../d2/d3e/a00366.html',1,'']]],
+  ['unregister',['Unregister',['../d4/ddd/a00138.html#aaa38f379243ec0d27b47b5bd110ebe75',1,'stride::util::Subject']]],
+  ['unregisterall',['UnregisterAll',['../d4/ddd/a00138.html#a8e0f20cb6cc045cf215f5d5a0963046f',1,'stride::util::Subject']]],
+  ['update',['Update',['../d4/d3a/a00101.html#a26b7fd4e8c9107413d09592734bae3ce',1,'stride::Health::Update()'],['../df/d86/a00012.html#a897ce4410caab1bb5a4a74818a728573',1,'geopop::EpiOutputHDF5Writer::Update()'],['../d7/dd4/a00013.html#a95778c0cef92c2e51aa932c3eff13dfd',1,'geopop::EpiOutputJSONWriter::Update()'],['../d2/de7/a00014.html#a99e49d66d2cb801ac3b053d251c8679d',1,'geopop::EpiOutputProtoWriter::Update()'],['../dd/d1b/a00015.html#ac41e1d18c912cd6c345f9a68b7bb97da',1,'geopop::EpiOutputWriter::Update()'],['../dd/d6d/a00111.html#abeed34b336b17866bb881b77237c76c4',1,'stride::Person::Update()'],['../d2/d82/a00142.html#a9f3a2f9efda499fa6a80f3871c7298d7',1,'stride::viewers::CliViewer::Update()'],['../d7/dce/a00143.html#a2f119b303affc0052eb0589732628a48',1,'stride::viewers::EpiOutputViewer::Update()'],['../d5/da7/a00144.html#a8128b6620992860cad456275e2173b16',1,'stride::viewers::InfectedFileViewer::Update()'],['../da/ddb/a00145.html#ac539c7549cc8c19530813f0bdb35a14d',1,'stride::viewers::InfectedViewer::Update()'],['../d9/db6/a00146.html#ae2840bec7fc5f76db6e79130b61fff19',1,'stride::viewers::PersonsFileViewer::Update()'],['../d0/d4a/a00147.html#a1e54b49cad6f7b645668551b08762e28',1,'stride::viewers::SummaryFileViewer::Update()']]],
+  ['updatelocations',['UpdateLocations',['../d3/df8/a00155.html#a7edcfc96538d8be6c08aa5e7a9b94773',1,'visualization::MapController']]],
+  ['upper',['upper',['../dd/dad/a00005.html#a9536df35bbe6719b45619dc7031ee17e',1,'geopop::AABBox']]]
 ];

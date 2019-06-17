@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: CollegePopulator.cpp File Reference</title>
+<title>Stride Reference Manual: TableStruct_epioutput_2eproto Struct Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -48,8 +48,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="../../annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="../../files.html"><span>Files</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li><a href="../../files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -70,8 +70,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="../../files.html"><span>File&#160;List</span></a></li>
-      <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="../../annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="../../classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="../../inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -105,64 +107,194 @@ $(document).ready(function(){initNavTree('db/d48/a00148.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="../../d6/d17/a00778.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">CollegePopulator.cpp File Reference</div>  </div>
+<div class="title">TableStruct_epioutput_2eproto Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d2/d82/a00279_source.html">Populator.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d2/df5/a00137_source.html">contact/AgeBrackets.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d6/db8/a00158_source.html">contact/ContactPool.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d7/d6e/a00190_source.html">geopop/GeoGrid.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../dd/df4/a00193_source.html">geopop/GeoGridConfig.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d9/d8d/a00262_source.html">geopop/Location.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d9/dd6/a00272_source.html">pop/Person.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d5/d4e/a00141_source.html">util/Assert.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for CollegePopulator.cpp:</div>
+
+<p><code>#include &lt;<a class="el" href="../../dc/d31/a00208_source.html">epioutput.pb.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for TableStruct_epioutput_2eproto:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d4/d27/a00392.gif" border="0" usemap="#CollegePopulator_8cpp" alt=""/></div>
-<map name="CollegePopulator_8cpp" id="CollegePopulator_8cpp">
-<area shape="rect" id="node2" href="../../d2/d82/a00279.html" title="Populator.h" alt="" coords="1150,80,1245,107"/>
-<area shape="rect" id="node9" href="../../d6/db8/a00158.html" title="Header for the core ContactPool class. " alt="" coords="849,319,1012,345"/>
-<area shape="rect" id="node13" href="../../dd/df4/a00193.html" title="geopop/GeoGridConfig.h" alt="" coords="697,155,876,181"/>
-<area shape="rect" id="node19" href="../../d9/dd6/a00272.html" title="Header file for the Person class. " alt="" coords="336,237,443,263"/>
-<area shape="rect" id="node37" href="../../d2/df5/a00137.html" title="contact/AgeBrackets.h" alt="" coords="2335,80,2502,107"/>
-<area shape="rect" id="node38" href="../../d7/d6e/a00190.html" title="geopop/GeoGrid.h" alt="" coords="2483,155,2621,181"/>
-<area shape="rect" id="node45" href="../../d9/d8d/a00262.html" title="geopop/Location.h" alt="" coords="2058,237,2198,263"/>
-<area shape="rect" id="node48" href="../../d5/d4e/a00141.html" title="Definition of . " alt="" coords="1349,237,1448,263"/>
-<area shape="rect" id="node3" href="../../db/d44/a00162.html" title="Definition of ContactPool Id Type. " alt="" coords="939,393,1103,420"/>
-<area shape="rect" id="node31" href="../../d1/dd4/a00267.html" title="Logging (spdlog) utilities. " alt="" coords="1777,319,1885,345"/>
-<area shape="rect" id="node33" href="../../d6/d82/a00293.html" title="Interface of RnMan. " alt="" coords="2266,319,2366,345"/>
-<area shape="rect" id="node10" href="../../d2/d34/a00156.html" title="Header for the ContactLogMode class. " alt="" coords="1208,393,1403,420"/>
-<area shape="rect" id="node14" href="../../da/d2e/a00238.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="361,319,551,345"/>
-<area shape="rect" id="node22" href="../../d9/d0d/a00298.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="575,319,747,345"/>
-<area shape="rect" id="node20" href="../../dc/d55/a00226.html" title="Header for the Health class. " alt="" coords="207,319,337,345"/>
-<area shape="rect" id="node23" href="../../de/de9/a00322.html" title="Interface/Implementation for SVIterator. " alt="" coords="396,393,495,420"/>
-<area shape="rect" id="node34" href="../../da/dd4/a00291.html" title="Interface of RnPcg. " alt="" coords="1870,393,1943,420"/>
-<area shape="rect" id="node39" href="../../dc/d31/a00208.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="2519,237,2727,263"/>
-<area shape="rect" id="node40" href="../../d9/d39/a00257.html" title="KdTree.h" alt="" coords="2166,319,2242,345"/>
-<area shape="rect" id="node41" href="../../d0/d2f/a00259.html" title="KdTree2DPoint.h" alt="" coords="2810,319,2937,345"/>
-<area shape="rect" id="node42" href="../../d0/d48/a00165.html" title="geopop/Coordinate.h" alt="" coords="2658,393,2814,420"/>
-<area shape="rect" id="node49" href="../../d7/d25/a00182.html" title="util/Exception.h" alt="" coords="1281,319,1399,345"/>
+<div class="center"><img src="../../d3/d95/a00779.gif" border="0" usemap="#TableStruct__epioutput__2eproto_coll__map" alt="Collaboration graph"/></div>
+<map name="TableStruct__epioutput__2eproto_coll__map" id="TableStruct__epioutput__2eproto_coll__map">
 </map>
 </div>
-</div>
-<p><a href="../../db/d48/a00148_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:d2/d45/a00342"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/a00342.html">geopop</a></td></tr>
-<tr class="memdesc:d2/d45/a00342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a6ee21e9fb6f864e121d4512671279229"><td class="memItemLeft" align="right" valign="top">static const ::google::protobuf::internal::ParseTableField entries[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a6ee21e9fb6f864e121d4512671279229">PROTOBUF_SECTION_VARIABLE</a> (protodesc_cold)</td></tr>
+<tr class="separator:a6ee21e9fb6f864e121d4512671279229"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a710b902e63190f7b4a42954807849096"><td class="memItemLeft" align="right" valign="top">static const ::google::protobuf::internal::AuxillaryParseTableField aux[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a710b902e63190f7b4a42954807849096">PROTOBUF_SECTION_VARIABLE</a> (protodesc_cold)</td></tr>
+<tr class="separator:a710b902e63190f7b4a42954807849096"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2c06f86d1d8c40db7c9d1a7f7575002"><td class="memItemLeft" align="right" valign="top">static const ::google::protobuf::internal::ParseTable schema[6]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#aa2c06f86d1d8c40db7c9d1a7f7575002">PROTOBUF_SECTION_VARIABLE</a> (protodesc_cold)</td></tr>
+<tr class="separator:aa2c06f86d1d8c40db7c9d1a7f7575002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:aea8ba70d0e0f921da4bea4c03ba40d8a"><td class="memItemLeft" align="right" valign="top">static const ::google::protobuf::internal::FieldMetadata&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#aea8ba70d0e0f921da4bea4c03ba40d8a">field_metadata</a> []</td></tr>
+<tr class="separator:aea8ba70d0e0f921da4bea4c03ba40d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb6826876a620d2bfe05073c580f04e4"><td class="memItemLeft" align="right" valign="top">static const ::google::protobuf::internal::SerializationTable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#acb6826876a620d2bfe05073c580f04e4">serialization_table</a> []</td></tr>
+<tr class="separator:acb6826876a620d2bfe05073c580f04e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a853e19be8a9df16b8f9407eaa21869f4"><td class="memItemLeft" align="right" valign="top">static const ::google::protobuf::uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d48/a00148.html#a853e19be8a9df16b8f9407eaa21869f4">offsets</a> []</td></tr>
+<tr class="separator:a853e19be8a9df16b8f9407eaa21869f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="../../dc/d31/a00208_source.html#l00039">39</a> of file <a class="el" href="../../dc/d31/a00208_source.html">epioutput.pb.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a6ee21e9fb6f864e121d4512671279229"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const ::google::protobuf::internal::ParseTableField entries [] TableStruct_epioutput_2eproto::PROTOBUF_SECTION_VARIABLE </td>
+          <td>(</td>
+          <td class="paramtype">protodesc_cold&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a710b902e63190f7b4a42954807849096"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const ::google::protobuf::internal::AuxillaryParseTableField aux [] TableStruct_epioutput_2eproto::PROTOBUF_SECTION_VARIABLE </td>
+          <td>(</td>
+          <td class="paramtype">protodesc_cold&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa2c06f86d1d8c40db7c9d1a7f7575002"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const ::google::protobuf::internal::ParseTable schema [6] TableStruct_epioutput_2eproto::PROTOBUF_SECTION_VARIABLE </td>
+          <td>(</td>
+          <td class="paramtype">protodesc_cold&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aea8ba70d0e0f921da4bea4c03ba40d8a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const ::google::protobuf::internal::FieldMetadata TableStruct_epioutput_2eproto::field_metadata[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d31/a00208_source.html#l00046">46</a> of file <a class="el" href="../../dc/d31/a00208_source.html">epioutput.pb.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acb6826876a620d2bfe05073c580f04e4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const ::google::protobuf::internal::SerializationTable TableStruct_epioutput_2eproto::serialization_table[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d31/a00208_source.html#l00047">47</a> of file <a class="el" href="../../dc/d31/a00208_source.html">epioutput.pb.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a853e19be8a9df16b8f9407eaa21869f4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const ::google::protobuf::uint32 TableStruct_epioutput_2eproto::offsets[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../dc/d31/a00208_source.html#l00048">48</a> of file <a class="el" href="../../dc/d31/a00208_source.html">epioutput.pb.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="../../dc/d31/a00208_source.html">epioutput.pb.h</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_e7e2007abe30c6c76c8a673fdd5d8158.html">populators</a></li><li class="navelem"><a class="el" href="../../db/d48/a00148.html">CollegePopulator.cpp</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:37 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../db/d48/a00148.html">TableStruct_epioutput_2eproto</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:10 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

@@ -1,7 +1,0 @@
-<map id="stride::ContactPool::GetId" name="stride::ContactPool::GetId">
-<area shape="rect" id="node2" href="$d7/de0/a00022.html#a67d19b0ec28b5258056ef8b4d042112c" title="Create a JSON object containing all info needed to reconstruct a ContactPool. " alt="" coords="197,5,396,47"/>
-<area shape="rect" id="node3" href="$db/db2/a00020.html#a599467553181db5ec29bfcdaa7645c7a" title="geopop::GeoGridHDF5Writer\l::WriteContactPool" alt="" coords="196,71,397,112"/>
-<area shape="rect" id="node6" href="$dc/de2/a00024.html#a015dcfc0716f0ffe586fe4d927809435" title="Create a ProtoBuf ContactPool containing all the info needed to reconstruct a ContactPool. " alt="" coords="197,136,397,177"/>
-<area shape="rect" id="node4" href="$db/db2/a00020.html#a3b4bd0fd7e724b111319db479626aaab" title="geopop::GeoGridHDF5Writer\l::WriteLocation" alt="" coords="445,71,647,112"/>
-<area shape="rect" id="node5" href="$db/db2/a00020.html#a37c5f82d2b07fc977a794301db1c25d1" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="695,71,896,112"/>
-</map>

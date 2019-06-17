@@ -1,0 +1,5 @@
+<map id="visualization::MapController::SetDay" name="visualization::MapController::SetDay">
+<area shape="rect" id="node2" href="$d3/df8/a00155.html#aa36ea6c3f65c3a8f357f1fbaa71c89d8" title="Set the shown information about one locality. " alt="" coords="251,5,448,47"/>
+<area shape="rect" id="node4" href="$d3/df8/a00155.html#a7edcfc96538d8be6c08aa5e7a9b94773" title="Update the color of the circles on the map. " alt="" coords="251,71,448,112"/>
+<area shape="rect" id="node3" href="$d3/d29/a00419.html#a8be2757f36192cd5e4574875a698f873" title="visualization::makePresentable\lPercentage" alt="" coords="496,39,716,80"/>
+</map>

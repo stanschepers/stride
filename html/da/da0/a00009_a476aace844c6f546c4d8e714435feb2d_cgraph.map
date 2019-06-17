@@ -1,5 +1,0 @@
-<map id="geopop::Generator::AddPools" name="geopop::Generator::AddPools">
-<area shape="rect" id="node2" href="$d1/d6e/a00073.html#ac8e6932adc8cb0269357c033c6630bff" title="Create a new contact pool of a given type. " alt="" coords="230,5,397,47"/>
-<area shape="rect" id="node3" href="$d1/d84/a00097.html#aa3cce01ca781a43bc67620e798c3b484" title="Reference the ContactPoolSys of the Population. " alt="" coords="247,71,380,112"/>
-<area shape="rect" id="node4" href="$de/d8c/a00036.html#a5bd9b521763ed0bc766cc51e0d6e35ab" title="Register a ContactPool pointer in this Location&#39;s pool system. " alt="" coords="204,137,423,163"/>
-</map>

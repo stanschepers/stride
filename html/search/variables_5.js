@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['geogrid_5flocation_5fcontactpools_5ftype_5ftype_5farraysize',['GeoGrid_Location_ContactPools_Type_Type_ARRAYSIZE',['../d7/dfc/a00349.html#a85687b9d8275ed90a373c0ca895688c6',1,'proto']]],
-  ['geogrid_5flocation_5fcontactpools_5ftype_5ftype_5fmax',['GeoGrid_Location_ContactPools_Type_Type_MAX',['../d7/dfc/a00349.html#a5833b17f6b8507eb96c3024c295c3919',1,'proto']]],
-  ['geogrid_5flocation_5fcontactpools_5ftype_5ftype_5fmin',['GeoGrid_Location_ContactPools_Type_Type_MIN',['../d7/dfc/a00349.html#ac04caa42633288c5c4ee8691883f83cc',1,'proto']]]
+  ['field_5fmetadata',['field_metadata',['../db/d48/a00148.html#aea8ba70d0e0f921da4bea4c03ba40d8a',1,'TableStruct_epioutput_2eproto::field_metadata()'],['../da/d1e/a00149.html#a9a8e9e93c507543eb7899332656b706d',1,'TableStruct_geogrid_2eproto::field_metadata()']]],
+  ['fraction_5fcollege_5fcommuters',['fraction_college_commuters',['../d3/d52/a00023.html#a4af24f062d897f70d30e4b353ed2e65c',1,'geopop::GeoGridConfig']]],
+  ['fraction_5fworkplace_5fcommuters',['fraction_workplace_commuters',['../d3/d52/a00023.html#af9c8808fa2cba963254602956ed1543d',1,'geopop::GeoGridConfig']]]
 ];

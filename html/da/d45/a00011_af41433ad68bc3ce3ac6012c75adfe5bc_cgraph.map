@@ -1,0 +1,7 @@
+<map id="geopop::Epidemiologic::GetYoungOldFraction" name="geopop::Epidemiologic::GetYoungOldFraction">
+<area shape="rect" id="node2" href="$da/d45/a00011.html#a181cf15e29892b07541785081503a463" title="Generate an epi&#45;output map of the Household contactpools. " alt="" coords="220,35,387,76"/>
+<area shape="rect" id="node5" href="$da/d45/a00011.html#a8bff7e01e34144ff9c0a784c70fe81f3" title="Set Epidemiologic&#39;s population count using its population fraction and the total population count..." alt="" coords="220,100,387,141"/>
+<area shape="rect" id="node6" href="$da/d45/a00011.html#a1b5336ba1a9416cc7c9d05e6326e1af7" title="Set Epidemiologic&#39;s population fraction (of the total population count). " alt="" coords="220,165,387,207"/>
+<area shape="rect" id="node3" href="$da/d45/a00011.html#a234fecc3020529ef06d7b4ef2a266b6f" title="Gets the amount of members in all household pools. " alt="" coords="435,5,601,47"/>
+<area shape="rect" id="node4" href="$da/d45/a00011.html#aec198faaa27ba4cd2d90955ad6df1cce" title="Templated version of &#160;for use when the type id is fixed. " alt="" coords="649,35,816,76"/>
+</map>

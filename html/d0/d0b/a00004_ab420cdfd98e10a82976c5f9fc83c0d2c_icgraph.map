@@ -1,0 +1,4 @@
+<map id="geopop::GeoGrid::LocationsInBox" name="geopop::GeoGrid::LocationsInBox">
+<area shape="rect" id="node2" href="$d0/d0b/a00004.html#a58745925a1490d2c5a95aa117734eb57" title="Find contactpools in startRadius (in km) around start and, if none are found, double the radius and s..." alt="" coords="255,5,448,61"/>
+<area shape="rect" id="node3" href="$d0/d0b/a00004.html#a6f0db64fb3d805db606c99b9ade885c1" title="Gets the location in a rectangle defined by the two Locations. " alt="" coords="252,85,451,126"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="stride::util::SegmentedVector::get_chunk" name="stride::util::SegmentedVector::get_chunk">
+<area shape="rect" id="node2" href="$d9/da5/a00075.html#a2cd11f9b95b20b69378fc9268c380096" title="Constructs element in&#45;place at the end. " alt="" coords="263,104,472,145"/>
+<area shape="rect" id="node12" href="$d9/da5/a00075.html#a74bf9839c2e38750216689f965a647de" title="Adds element to end. " alt="" coords="263,169,472,211"/>
+<area shape="rect" id="node3" href="$db/d57/a00112.html#aaf54d07535aa1549886affe493dd632e" title="Create Person in the population. " alt="" coords="520,104,653,145"/>
+<area shape="rect" id="node4" href="$d4/dca/a00048.html#aa85cded51dc8f507f51bc5c61bfc5d2b" title="geopop::Populator::\lApply" alt="" coords="733,5,879,47"/>
+<area shape="rect" id="node5" href="$dc/d3c/a00028.html#af8795723624c96ea0b6cb0c9914b08e4" title="Create a Person based on the information stored in the provided JSON. " alt="" coords="703,71,909,112"/>
+<area shape="rect" id="node7" href="$d5/d79/a00030.html#af379f9881c0626dd1efbb969798ab38e" title="Create a Person based on protobuf Person info. " alt="" coords="702,136,910,177"/>
+<area shape="rect" id="node9" href="$d6/d5b/a00026.html#a2994bdfe011fb64f062d411336cbff94" title="geopop::GeoGridHDF5Reader\l::ReadPerson" alt="" coords="701,201,911,243"/>
+<area shape="rect" id="node6" href="$dc/d3c/a00028.html#a0b6a6032beee9c1bdb5536e8aa3d87f7" title="Actually perform the read and return the GeoGrid. " alt="" coords="960,71,1167,112"/>
+<area shape="rect" id="node8" href="$d5/d79/a00030.html#a6f156064f4af6a0905e1959605ac9826" title="Actually perform the read and return the GeoGrid. " alt="" coords="959,136,1167,177"/>
+<area shape="rect" id="node10" href="$d6/d5b/a00026.html#a135374ea55ab69dbad3d00711acded97" title="People. " alt="" coords="959,201,1168,243"/>
+<area shape="rect" id="node11" href="$d6/d5b/a00026.html#a7c475566a30e6dc1626463ef5bff1b6e" title="Actually perform the read. " alt="" coords="1216,201,1425,243"/>
+</map>

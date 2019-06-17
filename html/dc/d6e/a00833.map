@@ -1,3 +1,5 @@
-<map id="proto::GeoGrid_Location_ContactPools" name="proto::GeoGrid_Location_ContactPools">
-<area shape="rect" id="node2" href="$d6/d2d/a00047.html" title="{Message\n||}" alt="" coords="5,27,84,105"/>
+<map id="geopop::EpiOutputWriter" name="geopop::EpiOutputWriter">
+<area shape="rect" id="node2" href="$df/d86/a00012.html" title="Writes a GeoGrid epi&#45;output to a HDF5 file. " alt="" coords="5,160,217,296"/>
+<area shape="rect" id="node3" href="$d7/dd4/a00013.html" title="Writes a GeoGrid epi&#45;output to a JSON file. " alt="" coords="241,160,451,296"/>
+<area shape="rect" id="node4" href="$d2/de7/a00014.html" title="Writes a GeoGrid epi&#45;output to a protobuf file. " alt="" coords="475,160,686,296"/>
 </map>

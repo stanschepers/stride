@@ -1,4 +1,4 @@
-<map id="SimController.h" name="SimController.h">
-<area shape="rect" id="node2" href="$dc/d0f/a00303.html" title="Header for the command line controller. " alt="" coords="5,80,140,107"/>
-<area shape="rect" id="node3" href="$d1/d5d/a00311.html" title="Main program: command line handling. " alt="" coords="165,80,250,107"/>
+<map id="Immunizer.h" name="Immunizer.h">
+<area shape="rect" id="node2" href="$db/d53/a00202.html" title="Implementation for the DiseaseSeeder class. " alt="" coords="5,80,151,107"/>
+<area shape="rect" id="node3" href="$d6/d7f/a00287.html" title="Implementation for the Immunizer class. " alt="" coords="175,80,291,107"/>
 </map>

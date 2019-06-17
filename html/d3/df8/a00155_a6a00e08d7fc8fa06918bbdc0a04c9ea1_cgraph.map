@@ -1,0 +1,5 @@
+<map id="visualization::MapController::Initialize" name="visualization::MapController::Initialize">
+<area shape="rect" id="node2" href="$d0/d0b/a00004.html#ac833893da758c5e158b59914e690a352" title="Iterator to first Location. " alt="" coords="254,5,427,32"/>
+<area shape="rect" id="node3" href="$d3/d29/a00419.html#a40d6ee97d8cc89c9b1d74268976d8f30" title="visualization::distanceOn\lEarth" alt="" coords="251,57,431,98"/>
+<area shape="rect" id="node4" href="$d0/d0b/a00004.html#a57b0222e94d6d31fa969dda7175bbce7" title="Iterator to the end of the Location storage. " alt="" coords="259,123,422,149"/>
+</map>

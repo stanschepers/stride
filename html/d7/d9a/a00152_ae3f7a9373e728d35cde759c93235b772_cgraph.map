@@ -1,0 +1,6 @@
+<map id="visualization::EpiOutputProtoReader::Read" name="visualization::EpiOutputProtoReader::Read">
+<area shape="rect" id="node2" href="$df/d03/a00062.html#a38495d9e19e4762aa5d11b09c981ac06" title="proto::EpiOutput_Day\l_Location::coordinate" alt="" coords="243,5,402,47"/>
+<area shape="rect" id="node3" href="$d9/d73/a00060.html#a9b95435252f71a784adf6d633397ce87" title="proto::EpiOutput::days" alt="" coords="240,71,405,98"/>
+<area shape="rect" id="node4" href="$d9/d73/a00060.html#a278bb1db294037e2c628b88f5137157f" title="proto::EpiOutput::days_size" alt="" coords="224,122,421,149"/>
+<area shape="rect" id="node5" href="$d4/de8/a00061.html#af372a076961a2ee29b6358cb48227b30" title="proto::EpiOutput_Day\l::locations" alt="" coords="243,173,402,215"/>
+</map>

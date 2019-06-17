@@ -1,3 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$dc/d54/a00094.html" title="Produces a file with daily cases count. " alt="" coords="5,5,192,32"/>
+<area shape="rect" id="node1" href="$da/d82/a00091.html" title="Controls a simulation run initiated with the command line interface (cli). " alt="" coords="5,56,160,83"/>
+<area shape="rect" id="node2" href="$da/d74/a00099.html" title="Controls a geo&#45;population generation run initiated with the command line interface (cli)..." alt="" coords="208,5,387,32"/>
+<area shape="rect" id="node3" href="$d4/d3e/a00116.html" title="Controls a simulation run initiated with the command line interface (cli). " alt="" coords="221,56,374,83"/>
+<area shape="rect" id="node4" href="$d8/d87/a00118.html" title="Runs a simulation multiple times, with different random engine seeds. " alt="" coords="218,107,377,133"/>
 </map>

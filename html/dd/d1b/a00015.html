@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: geopop::geogrid_detail::KdTree2DPoint::dimension_type&lt; D &gt; Struct Template Reference</title>
+<title>Stride Reference Manual: geopop::EpiOutputWriter Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -107,60 +107,154 @@ $(document).ready(function(){initNavTree('dd/d1b/a00015.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
-<a href="../../d0/dad/a00806.html">List of all members</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="../../d0/d08/a00832.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">geopop::geogrid_detail::KdTree2DPoint::dimension_type&lt; D &gt; Struct Template Reference</div>  </div>
+<div class="title">geopop::EpiOutputWriter Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="../../d0/d2f/a00259_source.html">KdTree2DPoint.h</a>&gt;</code></p>
+<p>An interface for writing the epi-output of a <a class="el" href="../../d0/d0b/a00004.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> to a file, can be implemented with multiple file types.  
+ <a href="../../dd/d1b/a00015.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d9/d01/a00227_source.html">EpiOutputWriter.h</a>&gt;</code></p>
 <div class="dynheader">
-Collaboration diagram for geopop::geogrid_detail::KdTree2DPoint::dimension_type&lt; D &gt;:</div>
+Inheritance diagram for geopop::EpiOutputWriter:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../df/dc7/a00807.gif" border="0" usemap="#geopop_1_1geogrid__detail_1_1KdTree2DPoint_1_1dimension__type_3_01D_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="geopop_1_1geogrid__detail_1_1KdTree2DPoint_1_1dimension__type_3_01D_01_4_coll__map" id="geopop_1_1geogrid__detail_1_1KdTree2DPoint_1_1dimension__type_3_01D_01_4_coll__map">
+<div class="center"><img src="../../dc/d6e/a00833.gif" border="0" usemap="#geopop_1_1EpiOutputWriter_inherit__map" alt="Inheritance graph"/></div>
+<map name="geopop_1_1EpiOutputWriter_inherit__map" id="geopop_1_1EpiOutputWriter_inherit__map">
+<area shape="rect" id="node2" href="../../df/d86/a00012.html" title="Writes a GeoGrid epi&#45;output to a HDF5 file. " alt="" coords="5,160,217,296"/>
+<area shape="rect" id="node3" href="../../d7/dd4/a00013.html" title="Writes a GeoGrid epi&#45;output to a JSON file. " alt="" coords="241,160,451,296"/>
+<area shape="rect" id="node4" href="../../d2/de7/a00014.html" title="Writes a GeoGrid epi&#45;output to a protobuf file. " alt="" coords="475,160,686,296"/>
+</map>
+</div>
+<div class="dynheader">
+Collaboration diagram for geopop::EpiOutputWriter:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/d02/a00834.gif" border="0" usemap="#geopop_1_1EpiOutputWriter_coll__map" alt="Collaboration graph"/></div>
+<map name="geopop_1_1EpiOutputWriter_coll__map" id="geopop_1_1EpiOutputWriter_coll__map">
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:af301c9d0d60f687fad02d840a4496905"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d1b/a00015.html#af301c9d0d60f687fad02d840a4496905">type</a> = <a class="el" href="../../d8/d21/a00368.html">double</a></td></tr>
-<tr class="separator:af301c9d0d60f687fad02d840a4496905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a72bb97795f2ab0af111969592fdf98c5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d1b/a00015.html#a72bb97795f2ab0af111969592fdf98c5">~EpiOutputWriter</a> ()=default</td></tr>
+<tr class="memdesc:a72bb97795f2ab0af111969592fdf98c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deconstruct the Writer.  <a href="#a72bb97795f2ab0af111969592fdf98c5">More...</a><br /></td></tr>
+<tr class="separator:a72bb97795f2ab0af111969592fdf98c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63c2010f5d7d3c7338ef7fe6819dda34"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d1b/a00015.html#a63c2010f5d7d3c7338ef7fe6819dda34">Write</a> ()=0</td></tr>
+<tr class="memdesc:a63c2010f5d7d3c7338ef7fe6819dda34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the epi-output to the provided file. (If given)  <a href="#a63c2010f5d7d3c7338ef7fe6819dda34">More...</a><br /></td></tr>
+<tr class="separator:a63c2010f5d7d3c7338ef7fe6819dda34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac41e1d18c912cd6c345f9a68b7bb97da"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d1b/a00015.html#ac41e1d18c912cd6c345f9a68b7bb97da">Update</a> (<a class="el" href="../../d0/d0b/a00004.html">GeoGrid</a>&lt; <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> &gt; &amp;geoGrid, unsigned int day)=0</td></tr>
+<tr class="memdesc:ac41e1d18c912cd6c345f9a68b7bb97da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the epi-output of the <a class="el" href="../../d0/d0b/a00004.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> to the right data format.  <a href="#ac41e1d18c912cd6c345f9a68b7bb97da">More...</a><br /></td></tr>
+<tr class="separator:ac41e1d18c912cd6c345f9a68b7bb97da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;std::size_t D&gt;<br />
-struct geopop::geogrid_detail::KdTree2DPoint::dimension_type&lt; D &gt;</h3>
+<div class="textblock"><p>An interface for writing the epi-output of a <a class="el" href="../../d0/d0b/a00004.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> to a file, can be implemented with multiple file types. </p>
+<p>JSON, Protobuf and HDF5 are currently implemented. </p>
 
-
-<p>Definition at line <a class="el" href="../../d0/d2f/a00259_source.html#l00039">39</a> of file <a class="el" href="../../d0/d2f/a00259_source.html">KdTree2DPoint.h</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="af301c9d0d60f687fad02d840a4496905"></a>
+<p>Definition at line <a class="el" href="../../d9/d01/a00227_source.html#l00032">32</a> of file <a class="el" href="../../d9/d01/a00227_source.html">EpiOutputWriter.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a72bb97795f2ab0af111969592fdf98c5"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;std::size_t D&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../dd/d1b/a00015.html">geopop::geogrid_detail::KdTree2DPoint::dimension_type</a>&lt; D &gt;::<a class="el" href="../../dd/d1b/a00015.html#af301c9d0d60f687fad02d840a4496905">type</a> =  <a class="el" href="../../d8/d21/a00368.html">double</a></td>
+          <td class="memname">virtual geopop::EpiOutputWriter::~EpiOutputWriter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d0/d2f/a00259_source.html#l00041">41</a> of file <a class="el" href="../../d0/d2f/a00259_source.html">KdTree2DPoint.h</a>.</p>
+<p>Deconstruct the Writer. </p>
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="../../d0/d2f/a00259_source.html">KdTree2DPoint.h</a></li>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a63c2010f5d7d3c7338ef7fe6819dda34"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void geopop::EpiOutputWriter::Write </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write the epi-output to the provided file. (If given) </p>
+
+<p>Implemented in <a class="el" href="../../d2/de7/a00014.html#a48973996138ee491dd06afd635698344">geopop::EpiOutputProtoWriter</a>, <a class="el" href="../../d7/dd4/a00013.html#a4736f79f9aafa287fb364181ece181a0">geopop::EpiOutputJSONWriter</a>, and <a class="el" href="../../df/d86/a00012.html#ac7faa44eb6e0b620c2bdbbc6b64eeb74">geopop::EpiOutputHDF5Writer</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac41e1d18c912cd6c345f9a68b7bb97da"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void geopop::EpiOutputWriter::Update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/d0b/a00004.html">GeoGrid</a>&lt; <a class="el" href="../../da/d45/a00011.html">Epidemiologic</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>geoGrid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>day</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write the epi-output of the <a class="el" href="../../d0/d0b/a00004.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> to the right data format. </p>
+
+<p>Implemented in <a class="el" href="../../d2/de7/a00014.html#a99e49d66d2cb801ac3b053d251c8679d">geopop::EpiOutputProtoWriter</a>, <a class="el" href="../../d7/dd4/a00013.html#a95778c0cef92c2e51aa932c3eff13dfd">geopop::EpiOutputJSONWriter</a>, and <a class="el" href="../../df/d86/a00012.html#a897ce4410caab1bb5a4a74818a728573">geopop::EpiOutputHDF5Writer</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="../../d9/d01/a00227_source.html">EpiOutputWriter.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../d2/d45/a00342.html">geopop</a></li><li class="navelem"><a class="el" href="../../d0/dc5/a00343.html">geogrid_detail</a></li><li class="navelem"><a class="el" href="../../d2/de7/a00014.html">KdTree2DPoint</a></li><li class="navelem"><a class="el" href="../../dd/d1b/a00015.html">dimension_type</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:38 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../da/dbf/a00393.html">geopop</a></li><li class="navelem"><a class="el" href="../../dd/d1b/a00015.html">EpiOutputWriter</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:10 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

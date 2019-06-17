@@ -1,9 +1,13 @@
 var a00028 =
 [
-    [ "GeoGridStreamWriter", "dc/d3c/a00028.html#a8005b00d7c0166a378b7e7ca5bd48ded", null ],
-    [ "GeoGridStreamWriter", "dc/d3c/a00028.html#a09578f2776586c4d00222911ce6e8b9f", null ],
-    [ "~GeoGridStreamWriter", "dc/d3c/a00028.html#a8976fd28009afbc8fb0ae43148604bbf", null ],
-    [ "Write", "dc/d3c/a00028.html#aa8b7dd6c90a858d257c96ca789e313e3", null ],
-    [ "StreamRef", "dc/d3c/a00028.html#a3caad39937bafe28aa7d9d596e5dd8b8", null ],
-    [ "m_stream", "dc/d3c/a00028.html#ae4bcb1ea49a62c03f85c872fbadfe704", null ]
+    [ "GeoGridJSONReader", "dc/d3c/a00028.html#af1a416909c5768271bc0c33c452b38a0", null ],
+    [ "GeoGridJSONReader", "dc/d3c/a00028.html#aabf14c2a5629bc0d8e797256bdc67e43", null ],
+    [ "operator=", "dc/d3c/a00028.html#a457112a2f1c4ae1feb9218b4c3176980", null ],
+    [ "Read", "dc/d3c/a00028.html#a0b6a6032beee9c1bdb5536e8aa3d87f7", null ],
+    [ "ParsePerson", "dc/d3c/a00028.html#af8795723624c96ea0b6cb0c9914b08e4", null ],
+    [ "ParseLocation", "dc/d3c/a00028.html#abc292440ef7dca461f1a06252be793c8", null ],
+    [ "ParseCoordinate", "dc/d3c/a00028.html#aec53dfd238343a9744e93a17a4b1abed", null ],
+    [ "ParseContactPool", "dc/d3c/a00028.html#a5a8883c60aca2d6e82307a6ef58b8f55", null ],
+    [ "ParseValue", "dc/d3c/a00028.html#a3271609b7cfed23b47a51ceb81b1e2f7", null ],
+    [ "ParseValue", "dc/d3c/a00028.html#a03f217116b74c9c26a7268b2c4bbfd8d", null ]
 ];

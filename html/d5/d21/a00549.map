@@ -1,2 +1,23 @@
-<map id="InfectorExec.h" name="InfectorExec.h">
+<map id="GeoGrid.h" name="GeoGrid.h">
+<area shape="rect" id="node2" href="$de/df3/a00185.html" title="Definition of ContactPool Id Type. " alt="" coords="1387,497,1551,524"/>
+<area shape="rect" id="node8" href="$d7/d03/a00254.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="2767,155,2975,181"/>
+<area shape="rect" id="node21" href="$d1/d67/a00310.html" title="geopop/Location.h" alt="" coords="1122,155,1262,181"/>
+<area shape="rect" id="node40" href="$d8/d64/a00181.html" title="Header for the core ContactPool class. " alt="" coords="1816,326,1979,353"/>
+<area shape="rect" id="node46" href="$d4/d08/a00237.html" title="GeoGrid.cpp" alt="" coords="1761,80,1863,107"/>
+<area shape="rect" id="node9" href="$d3/d07/a00305.html" title="KdTree.h" alt="" coords="2833,237,2909,263"/>
+<area shape="rect" id="node16" href="$d0/da2/a00307.html" title="KdTree2DPoint.h" alt="" coords="2558,237,2685,263"/>
+<area shape="rect" id="node10" href="$d2/d34/a00156.html" title="AABBox.h" alt="" coords="2619,326,2704,353"/>
+<area shape="rect" id="node11" href="$d8/d17/a00304.html" title="KdNode.h" alt="" coords="2881,326,2965,353"/>
+<area shape="rect" id="node17" href="$da/d15/a00188.html" title="geopop/Coordinate.h" alt="" coords="2155,326,2311,353"/>
+<area shape="rect" id="node22" href="$d5/d7b/a00286.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="681,415,871,442"/>
+<area shape="rect" id="node27" href="$d5/df1/a00206.html" title="geopop/Epidemiologic.h" alt="" coords="929,326,1103,353"/>
+<area shape="rect" id="node28" href="$df/d03/a00348.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="1038,415,1210,442"/>
+<area shape="rect" id="node39" href="$d2/d71/a00309.html" title="Location.cpp" alt="" coords="1433,237,1535,263"/>
+<area shape="rect" id="node29" href="$dc/de3/a00373.html" title="Interface/Implementation for SVIterator. " alt="" coords="960,497,1059,524"/>
+<area shape="rect" id="node43" href="$dd/d56/a00274.html" title="Header for the Health class. " alt="" coords="1655,497,1785,524"/>
+<area shape="rect" id="node44" href="$de/de9/a00322.html" title="Header file for the Person class. " alt="" coords="1635,326,1741,353"/>
+<area shape="rect" id="node45" href="$d1/da8/a00230.html" title="util/Exception.h" alt="" coords="895,415,1014,442"/>
+<area shape="rect" id="node41" href="$db/dd9/a00179.html" title="Header for the ContactLogMode class. " alt="" coords="1809,497,2004,524"/>
+<area shape="rect" id="node47" href="$d7/d40/a00236.html" title="geopop/geo/GeoAggregator.h" alt="" coords="2347,155,2557,181"/>
+<area shape="rect" id="node49" href="$d4/db5/a00328.html" title="Header file for the core Population class. " alt="" coords="1669,237,1798,263"/>
 </map>

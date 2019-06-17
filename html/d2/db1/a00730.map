@@ -1,33 +1,32 @@
-<map id="geopop::GeoGridFileReader" name="geopop::GeoGridFileReader">
-<area shape="rect" id="node2" href="$d3/dfe/a00025.html" title="An abstract base class for creating a GeoGrid that was read from a file, can be implemented using mul..." alt="" coords="2453,3269,2627,3420"/>
-<area shape="rect" id="node6" title="STL class. " alt="" coords="2381,153,2513,230"/>
-<area shape="rect" id="node46" title="STL class. " alt="" coords="1827,145,1979,237"/>
-<area shape="rect" id="node14" title="STL class. " alt="" coords="2307,774,2434,851"/>
-<area shape="rect" id="node19" title="STL class. " alt="" coords="649,276,805,368"/>
-<area shape="rect" id="node21" title="STL class. " alt="" coords="915,153,1130,230"/>
-<area shape="rect" id="node23" title="STL class. " alt="" coords="382,261,559,383"/>
-<area shape="rect" id="node40" title="STL class. " alt="" coords="1288,465,1443,543"/>
-<area shape="rect" id="node9" href="$d1/d84/a00097.html" title="Key Data structure: container for (a) all individuals in the population (b) the ContactPoolSys wchich..." alt="" coords="2111,2983,2271,3207"/>
-<area shape="rect" id="node24" href="$d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac..." alt="" coords="1935,2681,2097,2920"/>
-<area shape="rect" id="node10" href="$d9/d73/a00060.html" title="{stride::util::SegmentedVector\l\&lt; Person \&gt;\n||+ SegmentedVector()\l+ SegmentedVector()\l+ SegmentedVector()\l+ SegmentedVector()\l+ SegmentedVector()\l+ operator=()\l+ operator=()\l+ ~SegmentedVector()\l+ at()\l+ at()\land 23 more...\l&#45; get_chunk()\l}" alt="" coords="2221,1763,2430,2016"/>
-<area shape="rect" id="node11" href="$dc/df3/a00424.html" title="{size_t\n||}" alt="" coords="2121,1083,2180,1160"/>
-<area shape="rect" id="node15" href="$d9/d73/a00060.html" title="Container that stores objects &quot;almost contiguously&quot; (in a chain of blocks) and guarantees that pointe..." alt="" coords="2430,1447,2639,1700"/>
-<area shape="rect" id="node25" href="$d4/d8c/a00035.html" title="{geopop::KdTree\&lt; geogrid\l_detail::KdTree2DPoint \&gt;\n||+ KdTree()\l+ Apply()\l+ Apply()\l+ Contains()\l+ Empty()\l+ GetHeight()\l+ Insert()\l+ Query()\l+ Size()\l+ Build()\l&#45; Construct()\l}" alt="" coords="1925,2380,2107,2619"/>
-<area shape="rect" id="node30" href="$d2/de7/a00014.html" title="KdTree for some more information on methods. " alt="" coords="984,1461,1152,1685"/>
-<area shape="rect" id="node41" href="$d4/d8c/a00035.html" title="A k&#45;d tree: a k&#45;dimensional generalization of binary search trees This data structure allows for effi..." alt="" coords="1814,2079,1973,2303"/>
-<area shape="rect" id="node13" href="$d5/d39/a00676.html" title="{Chunk *\n||}" alt="" coords="2210,774,2283,851"/>
-<area shape="rect" id="node17" href="$d1/d6e/a00073.html" title="ContactPoolSys contains for each of the type of pools (Household, K12School, ...) a vector of with al..." alt="" coords="201,1046,367,1197"/>
-<area shape="rect" id="node18" href="$d2/d79/a00051.html" title="{stride::ContactType\l::IdSubscriptArray\&lt;\l unsigned int \&gt;\n||+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ operator[]()\l+ operator[]()\l+ at()\l+ at()\l}" alt="" coords="225,708,377,917"/>
-<area shape="rect" id="node20" href="$d2/d79/a00051.html" title="An std::array modified to enable subscripting with the constact pool type indentifiers. " alt="" coords="293,407,465,601"/>
-<area shape="rect" id="node22" href="$d2/d79/a00051.html" title="{stride::ContactType\l::IdSubscriptArray\&lt;\l util::stride::util::\lSegmentedVector\&lt; stride\l::ContactPool \&gt; \&gt;\n||+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ operator[]()\l+ operator[]()\l+ at()\l+ at()\l}" alt="" coords="5,693,195,932"/>
-<area shape="rect" id="node34" href="$d2/d79/a00051.html" title="{stride::ContactType\l::IdSubscriptArray\&lt;\l stride::util::stride\l::util::SegmentedVector\l\&lt; stride::stride::ContactPool * \&gt; \&gt;\n||+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ operator[]()\l+ operator[]()\l+ at()\l+ at()\l}" alt="" coords="913,693,1156,932"/>
-<area shape="rect" id="node27" href="$db/df3/a00034.html" title="{geopop::kd::Node\&lt; geogrid\l_detail::KdTree2DPoint, 0 \&gt;\n||+ Node()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="1197,1807,1395,1972"/>
-<area shape="rect" id="node28" href="$d7/d46/a00002.html" title="{geopop::kd::BaseNode\l\&lt; geogrid_detail::KdTree2DPoint \&gt;\n||+ ~BaseNode()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="1692,1257,1935,1423"/>
-<area shape="rect" id="node29" href="$d7/d46/a00002.html" title="A base class for all instantiations of a Node with D. " alt="" coords="1709,737,1915,888"/>
-<area shape="rect" id="node38" href="$db/df3/a00034.html" title="A node in the KdTree (parameter P: the type of point, parameter D: dimension this node splits on)..." alt="" coords="1297,1046,1487,1197"/>
-<area shape="rect" id="node43" href="$db/df3/a00034.html" title="{geopop::kd::Node\&lt; P, 0 \&gt;\n||+ Node()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="1544,1498,1733,1649"/>
-<area shape="rect" id="node31" href="$de/d8c/a00036.html" title="Location for use within the GeoGrid, contains Coordinate and index to ContactPools. " alt="" coords="887,1009,1118,1233"/>
-<area shape="rect" id="node32" href="$d8/d21/a00368.html" title="{double\n||}" alt="" coords="1181,774,1246,851"/>
-<area shape="rect" id="node35" title="STL class. " alt="" coords="629,774,715,851"/>
-<area shape="rect" id="node36" title="STL class. " alt="" coords="730,458,867,550"/>
+<map id="StanController.cpp" name="StanController.cpp">
+<area shape="rect" id="node2" href="$d4/def/a00359.html" title="Header for the St(ochastic)an(alysis)Controller. " alt="" coords="1503,80,1628,107"/>
+<area shape="rect" id="node13" href="$d4/db5/a00328.html" title="Header file for the core Population class. " alt="" coords="609,80,738,107"/>
+<area shape="rect" id="node25" href="$db/d10/a00350.html" title="Header for the Simulator class. " alt="" coords="2038,80,2125,107"/>
+<area shape="rect" id="node31" href="$d6/de1/a00356.html" title="Header for the SimRunner class. " alt="" coords="2702,155,2831,181"/>
+<area shape="rect" id="node34" href="$d0/d48/a00165.html" title="Header file for BoxPlotData. " alt="" coords="988,319,1124,345"/>
+<area shape="rect" id="node37" href="$d7/d6e/a00190.html" title="Header file of base class for config that needs to be read from a file. " alt="" coords="3145,155,3228,181"/>
+<area shape="rect" id="node39" href="$d9/d9b/a00363.html" title="Miscellaneous string utilities. " alt="" coords="3033,319,3156,345"/>
+<area shape="rect" id="node46" href="$d5/de9/a00176.html" title="Info on configuration. " alt="" coords="2727,80,2847,107"/>
+<area shape="rect" id="node47" href="$d0/d53/a00232.html" title="Interface for install directory queries. " alt="" coords="2578,155,2678,181"/>
+<area shape="rect" id="node48" href="$db/d7b/a00296.html" title="Observer for infection count at each sim step. " alt="" coords="1710,237,1887,263"/>
+<area shape="rect" id="node3" href="$d6/daa/a00187.html" title="Header for the command line controller. " alt="" coords="1505,155,1626,181"/>
+<area shape="rect" id="node4" href="$d0/dc5/a00343.html" title="Interface of RnMan. " alt="" coords="1355,237,1455,263"/>
+<area shape="rect" id="node8" href="$d0/d65/a00360.html" title="Definition of Stopwatch. " alt="" coords="2230,237,2354,263"/>
+<area shape="rect" id="node14" href="$d8/d64/a00181.html" title="Header for the core ContactPool class. " alt="" coords="627,237,789,263"/>
+<area shape="rect" id="node16" href="$de/df3/a00185.html" title="Definition of ContactPool Id Type. " alt="" coords="433,319,597,345"/>
+<area shape="rect" id="node18" href="$dc/d52/a00183.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="515,155,701,181"/>
+<area shape="rect" id="node19" href="$df/d03/a00348.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="741,319,913,345"/>
+<area shape="rect" id="node22" href="$da/d2e/a00238.html" title="geopop/GeoGrid.h" alt="" coords="97,155,236,181"/>
+<area shape="rect" id="node23" href="$d5/df1/a00206.html" title="geopop/Epidemiologic.h" alt="" coords="427,237,602,263"/>
+<area shape="rect" id="node24" href="$de/de9/a00322.html" title="Header file for the Person class. " alt="" coords="195,237,301,263"/>
+<area shape="rect" id="node15" href="$db/dd9/a00179.html" title="Header for the ContactLogMode class. " alt="" coords="2044,319,2239,345"/>
+<area shape="rect" id="node26" href="$dd/dae/a00163.html" title="Contact profiles stored in simulator. " alt="" coords="1650,155,1857,181"/>
+<area shape="rect" id="node27" href="$dd/d4c/a00177.html" title="Header for the ContactHandler class. " alt="" coords="2317,155,2502,181"/>
+<area shape="rect" id="node28" href="$df/d95/a00299.html" title="Header for the InfectorExec class. " alt="" coords="1081,155,1245,181"/>
+<area shape="rect" id="node29" href="$d8/d95/a00379.html" title="Header for the TransmissionProfile class. " alt="" coords="2034,155,2241,181"/>
+<area shape="rect" id="node30" href="$dd/d1d/a00336.html" title="Header for the PublicHealthAgency class. " alt="" coords="1269,155,1480,181"/>
+<area shape="rect" id="node32" href="$d3/d58/a00285.html" title="Definition of EventId. " alt="" coords="2641,319,2753,345"/>
+<area shape="rect" id="node33" href="$dd/db5/a00365.html" title="Definition of Subject/Observer for SimEvents. " alt="" coords="2632,237,2781,263"/>
+<area shape="rect" id="node38" href="$dd/da2/a00192.html" title="Header file of base class for config that needs to be read from a file. " alt="" coords="3171,237,3255,263"/>
+<area shape="rect" id="node44" href="$da/d50/a00301.html" title="Interface/Implementation of is_iterator. " alt="" coords="3280,319,3400,345"/>
 </map>

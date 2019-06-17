@@ -1,7 +1,6 @@
 var a00093 =
 [
-    [ "InfectedFile", "d4/d7d/a00093.html#a1f9b3fab4125e26c2eebd32ee27dd977", null ],
-    [ "~InfectedFile", "d4/d7d/a00093.html#ab67bfb80c8ca94162f3c33d2c7be3f89", null ],
-    [ "Print", "d4/d7d/a00093.html#ae42038f7696374e29aef434de61d386d", null ],
-    [ "m_fstream", "d4/d7d/a00093.html#ab499185c218c6a1ef08779d8e0ece660", null ]
+    [ "~DaysOffInterface", "d4/d7d/a00093.html#afec638f8fcc3e653e389f47bd30d63e1", null ],
+    [ "IsWorkOff", "d4/d7d/a00093.html#a2ae431c15cddca106e2a0753fde99f83", null ],
+    [ "IsSchoolOff", "d4/d7d/a00093.html#a747d7b072b24545437aa9326ba024185", null ]
 ];

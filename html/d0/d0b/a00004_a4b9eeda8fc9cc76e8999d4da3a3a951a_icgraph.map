@@ -1,0 +1,8 @@
+<map id="geopop::GeoGrid::CheckFinalized" name="geopop::GeoGrid::CheckFinalized">
+<area shape="rect" id="node2" href="$d0/d0b/a00004.html#ab420cdfd98e10a82976c5f9fc83c0d2c" title="Gets the locations in a rectangle determined by the two coordinates (long1, lat1) and (long2..." alt="" coords="284,45,483,87"/>
+<area shape="rect" id="node5" href="$d0/d0b/a00004.html#aea34bfa48f8584a53bd63f82c88047cb" title="Search for locations in radius (in km) around start. " alt="" coords="284,111,483,152"/>
+<area shape="rect" id="node7" href="$d0/d0b/a00004.html#a2f1a6fdee6b31567da06d2c473b2fd65" title="Gets current size of Location storage. " alt="" coords="287,175,480,231"/>
+<area shape="rect" id="node3" href="$d0/d0b/a00004.html#a58745925a1490d2c5a95aa117734eb57" title="Find contactpools in startRadius (in km) around start and, if none are found, double the radius and s..." alt="" coords="533,70,727,126"/>
+<area shape="rect" id="node4" href="$d0/d0b/a00004.html#a6f0db64fb3d805db606c99b9ade885c1" title="Gets the location in a rectangle defined by the two Locations. " alt="" coords="531,5,729,47"/>
+<area shape="rect" id="node6" href="$d0/d0b/a00004.html#aee8eaf194ef99f6080afbcde37716edc" title="Get the Population associated with this GeoGrid. " alt="" coords="533,150,727,206"/>
+</map>

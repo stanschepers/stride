@@ -1,0 +1,5 @@
+<map id="geopop::GeoGrid::begin" name="geopop::GeoGrid::begin">
+<area shape="rect" id="node2" href="$d3/df8/a00155.html#a6a00e08d7fc8fa06918bbdc0a04c9ea1" title="Initialize the map. " alt="" coords="227,5,424,47"/>
+<area shape="rect" id="node4" href="$d3/df8/a00155.html#a16f36077cbdfdb4d2eb8d0241127abbf" title="Create a MapController and read the epi&#45;output file. " alt="" coords="227,71,424,112"/>
+<area shape="rect" id="node3" href="$de/dd7/a00362.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main program of the stride visualizer. " alt="" coords="472,13,527,39"/>
+</map>

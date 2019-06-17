@@ -1,4 +1,9 @@
-<map id="geopop::GeoGridProtoReader" name="geopop::GeoGridProtoReader">
-<area shape="rect" id="node2" href="$d0/d33/a00027.html" title="An abstract base class for creating a GeoGrid that was read from a stream, can be implemented using m..." alt="" coords="5,233,228,369"/>
-<area shape="rect" id="node3" href="$d3/dfe/a00025.html" title="An abstract base class for creating a GeoGrid that was read from a file, can be implemented using mul..." alt="" coords="29,5,204,185"/>
+<map id="SummaryFileViewer.h" name="SummaryFileViewer.h">
+<area shape="rect" id="node2" href="$d8/d21/a00368.html" title="Header for the SummaryFile class. " alt="" coords="173,80,291,107"/>
+<area shape="rect" id="node6" href="$d6/de1/a00356.html" title="Header for the SimRunner class. " alt="" coords="634,80,763,107"/>
+<area shape="rect" id="node7" href="$d3/d58/a00285.html" title="Definition of EventId. " alt="" coords="699,244,811,271"/>
+<area shape="rect" id="node9" href="$dd/db5/a00365.html" title="Definition of Subject/Observer for SimEvents. " alt="" coords="792,162,941,189"/>
+<area shape="rect" id="node14" href="$d0/d65/a00360.html" title="Definition of Stopwatch. " alt="" coords="347,162,471,189"/>
+<area shape="rect" id="node10" href="$d2/d3e/a00366.html" title="Interface/Implementation of Subject. " alt="" coords="835,244,941,271"/>
+<area shape="rect" id="node15" href="$d4/d13/a00377.html" title="Utilities to tag clocks and reformat clock readout to string. " alt="" coords="326,244,442,271"/>
 </map>

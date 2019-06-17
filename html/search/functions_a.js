@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['latitude',['latitude',['../d1/d22/a00057.html#a6bc5976b2e0d0f05f1a134544844b6bc',1,'proto::GeoGrid_Location_Coordinate']]],
-  ['location',['Location',['../de/d8c/a00036.html#ab1dff8f467fd2bd5bd4bb0cc129c9833',1,'geopop::Location']]],
-  ['locations',['locations',['../d1/d84/a00052.html#a3b5d0b66ec5382518acb9fc346d600a7',1,'proto::GeoGrid::locations(int index) const '],['../d1/d84/a00052.html#ac03281d346ea7ad3bf9cad98116e3bd4',1,'proto::GeoGrid::locations() const ']]],
-  ['locations_5fsize',['locations_size',['../d1/d84/a00052.html#aa4e4cc38da711b133be850b95d4cf2cb',1,'proto::GeoGrid']]],
-  ['locationscsvreader',['LocationsCSVReader',['../d1/dc6/a00037.html#a03d6126b7e3450a5a5660d65acd4e5d2',1,'geopop::LocationsCSVReader']]],
-  ['locationsinbox',['LocationsInBox',['../d7/dd4/a00013.html#a54759924264d5047ea81defa57d6eef3',1,'geopop::GeoGrid::LocationsInBox(double long1, double lat1, double long2, double lat2) const '],['../d7/dd4/a00013.html#a1bf11fca7ce661a42d21e40fb00c30aa',1,'geopop::GeoGrid::LocationsInBox(Location *loc1, Location *loc2) const ']]],
-  ['locationsinradius',['LocationsInRadius',['../d7/dd4/a00013.html#a819fba3f0ca0af029cc913aaf7729b0b',1,'geopop::GeoGrid']]],
-  ['locationsreader',['LocationsReader',['../d8/d41/a00038.html#a08a0a0bee6983e75de99b46132e26eaa',1,'geopop::LocationsReader']]],
-  ['logshutdown',['LogShutdown',['../db/df8/a00076.html#aa40b02ef62cb1b4a2db78eb847ffe964',1,'stride::ControlHelper']]],
-  ['logstartup',['LogStartup',['../db/df8/a00076.html#adc021af008df0bf673682b81aa8d0010',1,'stride::ControlHelper']]],
-  ['longitude',['longitude',['../d1/d22/a00057.html#a03d2590a2f44bf79ad4872b5bcfb3b6d',1,'proto::GeoGrid_Location_Coordinate']]]
+  ['latitude',['latitude',['../de/de1/a00065.html#a6b2ee8f0b42844f919e5a452ecb91f34',1,'proto::EpiOutput_Day_Location_Coordinate::latitude()'],['../d0/d89/a00071.html#a6bc5976b2e0d0f05f1a134544844b6bc',1,'proto::GeoGrid_Location_Coordinate::latitude()']]],
+  ['location',['Location',['../d6/d42/a00043.html#a2d8900acb2578e1607e7b740f8274bf8',1,'geopop::Location::Location(unsigned int id, unsigned int province, std::shared_ptr&lt; Content &gt; content, Coordinate coordinate=Coordinate(0.0, 0.0), std::string name=&quot;&quot;)'],['../d6/d42/a00043.html#ab9474f8c01009bdb5c1e427d1c21da4d',1,'geopop::Location::Location(unsigned int id, unsigned int province, Coordinate coordinate=Coordinate(0.0, 0.0), std::string name=&quot;&quot;, unsigned int popCount=0U, unsigned int householdType=0U, double youngOldFraction=1.0)']]],
+  ['locations',['locations',['../d4/de8/a00061.html#af372a076961a2ee29b6358cb48227b30',1,'proto::EpiOutput_Day::locations(int index) const '],['../d4/de8/a00061.html#a69f37556c4215a3f8a048d19ededc771',1,'proto::EpiOutput_Day::locations() const '],['../d9/db3/a00066.html#a3b5d0b66ec5382518acb9fc346d600a7',1,'proto::GeoGrid::locations(int index) const '],['../d9/db3/a00066.html#ac03281d346ea7ad3bf9cad98116e3bd4',1,'proto::GeoGrid::locations() const ']]],
+  ['locations_5fsize',['locations_size',['../d4/de8/a00061.html#a46f176176141c248cb953727b828ec34',1,'proto::EpiOutput_Day::locations_size()'],['../d9/db3/a00066.html#aa4e4cc38da711b133be850b95d4cf2cb',1,'proto::GeoGrid::locations_size()']]],
+  ['locationscsvreader',['LocationsCSVReader',['../d5/df9/a00044.html#a03d6126b7e3450a5a5660d65acd4e5d2',1,'geopop::LocationsCSVReader']]],
+  ['locationsinbox',['LocationsInBox',['../d0/d0b/a00004.html#ab420cdfd98e10a82976c5f9fc83c0d2c',1,'geopop::GeoGrid::LocationsInBox(double long1, double lat1, double long2, double lat2) const '],['../d0/d0b/a00004.html#a6f0db64fb3d805db606c99b9ade885c1',1,'geopop::GeoGrid::LocationsInBox(Location&lt; LocationContent &gt; *loc1, Location&lt; LocationContent &gt; *loc2) const ']]],
+  ['locationsinradius',['LocationsInRadius',['../d0/d0b/a00004.html#aea34bfa48f8584a53bd63f82c88047cb',1,'geopop::GeoGrid']]],
+  ['locationsreader',['LocationsReader',['../d6/d97/a00045.html#a08a0a0bee6983e75de99b46132e26eaa',1,'geopop::LocationsReader']]],
+  ['logshutdown',['LogShutdown',['../da/d82/a00091.html#aa40b02ef62cb1b4a2db78eb847ffe964',1,'stride::ControlHelper']]],
+  ['logstartup',['LogStartup',['../da/d82/a00091.html#adc021af008df0bf673682b81aa8d0010',1,'stride::ControlHelper']]],
+  ['longitude',['longitude',['../de/de1/a00065.html#ae530586a242d8081355b3971cdbd72f4',1,'proto::EpiOutput_Day_Location_Coordinate::longitude()'],['../d0/d89/a00071.html#a03d2590a2f44bf79ad4872b5bcfb3b6d',1,'proto::GeoGrid_Location_Coordinate::longitude()']]]
 ];

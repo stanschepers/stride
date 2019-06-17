@@ -27,6 +27,7 @@ var NAVTREE =
         [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Typedefs", "functions_type.html", null ],
+        [ "Properties", "functions_prop.html", null ],
         [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -35,6 +36,7 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -44,14 +46,16 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d1/d84/a00097.html#a7cfcedae698db0dc471770044de4834d",
-"d3/d8b/a00059.html#ab63808f8d34717a3054955e43572a111",
-"d5/d7b/a00286.html",
-"d7/df7/a00058.html#a33504aef7f70bfd13db991af60c5ef38",
-"d9/db3/a00066.html#a8ef793a9a43fa8cd58370dbb9c868f63",
-"db/d44/a00162.html#a61a32e88a50c57e6f5c49f0996b6b462a45c6a290fcb4fad167ee4b610eeea878",
-"dc/dee/a00053.html#aefbdc32cc3383efea960e4b645b36737",
-"df/d13/a00085.html#a6c0a01d2def04c804fff3ef162dfbc4f"
+"d1/d53/a00399.html",
+"d3/d30/a00370_source.html",
+"d4/d51/a00017.html#a485aecfc9f8d6218bb286e9c32e3be2d",
+"d5/deb/a00132.html#a137e01100d0d79b122f731bb1292179d",
+"d8/d53/a00081.html",
+"d9/db3/a00066.html#ae06b872919c51df7446ce55e68b6d2c6",
+"db/d44/a00162.html",
+"dc/ddf/a00067.html#ad1296fe1050f811ae0135917be1cc716",
+"de/d36/a00123.html#a95a803434a1562b71908b536095c532e",
+"df/d5f/a00064.html#a4fc75619d8c972f9fa8f89c36a38a100"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

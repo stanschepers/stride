@@ -1,23 +1,12 @@
-<map id="HouseholdPopulator.cpp" name="HouseholdPopulator.cpp">
-<area shape="rect" id="node2" href="$d2/d82/a00279.html" title="Populator.h" alt="" coords="1419,80,1514,107"/>
-<area shape="rect" id="node13" href="$dd/df4/a00193.html" title="geopop/GeoGridConfig.h" alt="" coords="1203,155,1381,181"/>
-<area shape="rect" id="node37" href="$d7/d6e/a00190.html" title="geopop/GeoGrid.h" alt="" coords="1779,237,1917,263"/>
-<area shape="rect" id="node46" href="$d9/d8d/a00262.html" title="geopop/Location.h" alt="" coords="1942,237,2082,263"/>
-<area shape="rect" id="node49" href="$dc/d5d/a00278.html" title="Header file for the core Population class. " alt="" coords="927,155,1057,181"/>
-<area shape="rect" id="node3" href="$db/d44/a00162.html" title="Definition of ContactPool Id Type. " alt="" coords="727,393,891,420"/>
-<area shape="rect" id="node9" href="$d6/db8/a00158.html" title="Header for the core ContactPool class. " alt="" coords="939,319,1101,345"/>
-<area shape="rect" id="node31" href="$d1/dd4/a00267.html" title="Logging (spdlog) utilities. " alt="" coords="1599,155,1707,181"/>
-<area shape="rect" id="node33" href="$d6/d82/a00293.html" title="Interface of RnMan. " alt="" coords="1607,319,1707,345"/>
-<area shape="rect" id="node10" href="$d2/d34/a00156.html" title="Header for the ContactLogMode class. " alt="" coords="1045,393,1240,420"/>
-<area shape="rect" id="node14" href="$da/d2e/a00238.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="1125,319,1315,345"/>
-<area shape="rect" id="node19" href="$d9/dd6/a00272.html" title="Header file for the Person class. " alt="" coords="848,237,955,263"/>
-<area shape="rect" id="node22" href="$d9/d0d/a00298.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="283,319,455,345"/>
-<area shape="rect" id="node20" href="$dc/d55/a00226.html" title="Header for the Health class. " alt="" coords="785,319,914,345"/>
-<area shape="rect" id="node23" href="$de/de9/a00322.html" title="Interface/Implementation for SVIterator. " alt="" coords="81,393,180,420"/>
-<area shape="rect" id="node34" href="$da/dd4/a00291.html" title="Interface of RnPcg. " alt="" coords="1627,393,1701,420"/>
-<area shape="rect" id="node38" href="$dc/d31/a00208.html" title="geopop/geo/GeoGridKdTree.h" alt="" coords="2100,319,2308,345"/>
-<area shape="rect" id="node39" href="$d9/d39/a00257.html" title="KdTree.h" alt="" coords="2101,393,2177,420"/>
-<area shape="rect" id="node40" href="$d0/d2f/a00259.html" title="KdTree2DPoint.h" alt="" coords="2742,393,2869,420"/>
-<area shape="rect" id="node41" href="$d0/d48/a00165.html" title="geopop/Coordinate.h" alt="" coords="2778,468,2934,495"/>
-<area shape="rect" id="node50" href="$de/d38/a00160.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="587,237,773,263"/>
+<map id="EpiOutputReader.h" name="EpiOutputReader.h">
+<area shape="rect" id="node2" href="$da/de7/a00210.html" title="EpiOutputHDF5Reader.h" alt="" coords="148,80,323,107"/>
+<area shape="rect" id="node5" href="$d3/dd1/a00214.html" title="EpiOutputJSONReader.h" alt="" coords="347,80,519,107"/>
+<area shape="rect" id="node7" href="$dc/d9a/a00218.html" title="EpiOutputProtoReader.h" alt="" coords="543,80,717,107"/>
+<area shape="rect" id="node9" href="$dd/d52/a00221.html" title="EpiOutputReader.cpp" alt="" coords="951,80,1106,107"/>
+<area shape="rect" id="node10" href="$d5/ddf/a00224.html" title="EpiOutputReaderFactory.h" alt="" coords="741,80,927,107"/>
+<area shape="rect" id="node3" href="$d3/de5/a00209.html" title="EpiOutputHDF5Reader.cpp" alt="" coords="5,155,196,181"/>
+<area shape="rect" id="node4" href="$dc/d28/a00223.html" title="EpiOutputReaderFactory.cpp" alt="" coords="431,155,631,181"/>
+<area shape="rect" id="node6" href="$d1/de1/a00213.html" title="EpiOutputJSONReader.cpp" alt="" coords="221,155,407,181"/>
+<area shape="rect" id="node8" href="$df/d24/a00217.html" title="EpiOutputProtoReader.cpp" alt="" coords="655,155,845,181"/>
+<area shape="rect" id="node11" href="$da/de0/a00317.html" title="MapController.cpp" alt="" coords="869,155,1007,181"/>
 </map>

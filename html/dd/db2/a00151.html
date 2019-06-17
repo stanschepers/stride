@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: CommutesReader.h File Reference</title>
+<title>Stride Reference Manual: visualization::EpiOutputJSONReader Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -48,8 +48,8 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
     <ul class="tablist">
       <li><a href="../../index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="../../namespaces.html"><span>Namespaces</span></a></li>
-      <li><a href="../../annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="../../files.html"><span>Files</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Classes</span></a></li>
+      <li><a href="../../files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -70,8 +70,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="../../files.html"><span>File&#160;List</span></a></li>
-      <li><a href="../../globals.html"><span>File&#160;Members</span></a></li>
+      <li><a href="../../annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="../../classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="../../inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -105,56 +107,273 @@ $(document).ready(function(){initNavTree('dd/db2/a00151.html','../../');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="../../d3/dc7/a01170.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">CommutesReader.h File Reference</div>  </div>
+<div class="title">visualization::EpiOutputJSONReader Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;istream&gt;</code><br />
-<code>#include &lt;memory&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for CommutesReader.h:</div>
+
+<p>An implementation of the <a class="el" href="../../da/d01/a00153.html" title="An abstract base class for creating a GeoGrid with the epi-output that was read from a file...">EpiOutputReader</a> using JSON.  
+ <a href="../../dd/db2/a00151.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d3/dd1/a00214_source.html">EpiOutputJSONReader.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for visualization::EpiOutputJSONReader:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d9/da1/a00396.gif" border="0" usemap="#CommutesReader_8h" alt=""/></div>
-<map name="CommutesReader_8h" id="CommutesReader_8h">
+<div class="center"><img src="../../d2/d22/a01171.gif" border="0" usemap="#visualization_1_1EpiOutputJSONReader_inherit__map" alt="Inheritance graph"/></div>
+<map name="visualization_1_1EpiOutputJSONReader_inherit__map" id="visualization_1_1EpiOutputJSONReader_inherit__map">
+<area shape="rect" id="node2" href="../../da/d01/a00153.html" title="An abstract base class for creating a GeoGrid with the epi&#45;output that was read from a file..." alt="" coords="13,5,184,156"/>
 </map>
 </div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
+<div class="dynheader">
+Collaboration diagram for visualization::EpiOutputJSONReader:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d7/d93/a00397.gif" border="0" usemap="#CommutesReader_8hdep" alt=""/></div>
-<map name="CommutesReader_8hdep" id="CommutesReader_8hdep">
-<area shape="rect" id="node2" href="../../d9/d7d/a00150.html" title="CommutesCSVReader.h" alt="" coords="192,80,367,107"/>
-<area shape="rect" id="node5" href="../../da/ddc/a00288.html" title="ReaderFactory.h" alt="" coords="391,80,514,107"/>
-<area shape="rect" id="node3" href="../../da/d1e/a00149.html" title="CommutesCSVReader.cpp" alt="" coords="5,155,196,181"/>
-<area shape="rect" id="node4" href="../../d6/d7f/a00287.html" title="ReaderFactory.cpp" alt="" coords="220,155,357,181"/>
-<area shape="rect" id="node6" href="../../dd/da2/a00192.html" title="GeoGridConfig.cpp" alt="" coords="382,155,523,181"/>
-<area shape="rect" id="node7" href="../../dc/d28/a00223.html" title="Initialize populations: implementation. " alt="" coords="547,155,689,181"/>
+<div class="center"><img src="../../d6/db6/a01172.gif" border="0" usemap="#visualization_1_1EpiOutputJSONReader_coll__map" alt="Collaboration graph"/></div>
+<map name="visualization_1_1EpiOutputJSONReader_coll__map" id="visualization_1_1EpiOutputJSONReader_coll__map">
+<area shape="rect" id="node2" href="../../da/d01/a00153.html" title="An abstract base class for creating a GeoGrid with the epi&#45;output that was read from a file..." alt="" coords="2391,3835,2562,3985"/>
+<area shape="rect" id="node3" href="../../d0/d0b/a00004.html" title="{geopop::GeoGrid\&lt; EpiOutput \&gt;\n||+ GeoGrid()\l+ GeoGrid()\l+ operator=()\l+ AddLocation()\l+ Finalize()\l+ GetById()\l+ GetPopulation()\l+ LocationsInRadius()\l+ GetNearbyPools()\l+ LocationsInBox()\land 11 more...\l&#45; CheckFinalized()\l}" alt="" coords="1208,3533,1431,3772"/>
+<area shape="rect" id="node4" href="../../d5/db6/a00042.html" title="{geopop::KdTree\&lt; geogrid\l_detail::KdTree2DPoint \&gt;\n||+ KdTree()\l+ Apply()\l+ Apply()\l+ Contains()\l+ Empty()\l+ GetHeight()\l+ Insert()\l+ Query()\l+ Size()\l+ Build()\l&#45; Construct()\l}" alt="" coords="1609,2306,1792,2545"/>
+<area shape="rect" id="node34" href="../../d0/d0b/a00004.html" title="{geopop::GeoGrid\&lt; geopop\l::geopop::Epidemiologic \&gt;\n||+ GeoGrid()\l+ GeoGrid()\l+ operator=()\l+ AddLocation()\l+ Finalize()\l+ GetById()\l+ GetPopulation()\l+ LocationsInRadius()\l+ GetNearbyPools()\l+ LocationsInBox()\land 11 more...\l&#45; CheckFinalized()\l}" alt="" coords="183,2615,376,2868"/>
+<area shape="rect" id="node41" href="../../d0/d0b/a00004.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac..." alt="" coords="975,3217,1173,3471"/>
+<area shape="rect" id="node6" href="../../dd/d32/a00041.html" title="{geopop::kd::Node\&lt; geogrid\l_detail::KdTree2DPoint, 0 \&gt;\n||+ Node()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="1965,1740,2164,1905"/>
+<area shape="rect" id="node7" href="../../d7/d46/a00002.html" title="{geopop::kd::BaseNode\l\&lt; geogrid_detail::KdTree2DPoint \&gt;\n||+ ~BaseNode()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="2374,1249,2617,1415"/>
+<area shape="rect" id="node8" href="../../d7/d46/a00002.html" title="A base class for all instantiations of a Node with D. " alt="" coords="2317,744,2522,895"/>
+<area shape="rect" id="node15" href="../../dd/d32/a00041.html" title="A node in the KdTree (parameter P: the type of point, parameter D: dimension this node splits on)..." alt="" coords="2061,1045,2252,1196"/>
+<area shape="rect" id="node20" href="../../dd/d32/a00041.html" title="{geopop::kd::Node\&lt; P, 0 \&gt;\n||+ Node()\l+ BorrowLeft()\l+ BorrowRight()\l+ BorrowSplitChild()\l+ AddChild()\l+ GetPoint()\l}" alt="" coords="2270,1475,2459,1626"/>
+<area shape="rect" id="node9" href="../../de/d11/a00021.html" title="KdTree for some more information on methods. " alt="" coords="1807,1439,1975,1663"/>
+<area shape="rect" id="node11" href="../../d6/d42/a00043.html" title="{geopop::Location\&lt; void \&gt;\n||+ Location()\l+ Location()\l+ operator==()\l+ GetCoordinate()\l+ GetID()\l+ GetName()\l+ GetProvince()\l+ SetCoordinate()\l+ GetContent()\l+ get()\l}" alt="" coords="1707,1016,1895,1225"/>
+<area shape="rect" id="node18" href="../../d5/db6/a00042.html" title="A k&#45;d tree: a k&#45;dimensional generalization of binary search trees This data structure allows for effi..." alt="" coords="1739,1997,1897,2221"/>
+<area shape="rect" id="node22" href="../../d9/da5/a00075.html" title="{stride::util::SegmentedVector\l\&lt; Person \&gt;\n||+ SegmentedVector()\l+ SegmentedVector()\l+ SegmentedVector()\l+ SegmentedVector()\l+ SegmentedVector()\l+ operator=()\l+ operator=()\l+ ~SegmentedVector()\l+ at()\l+ at()\land 23 more...\l&#45; get_chunk()\l}" alt="" coords="657,2615,867,2868"/>
+<area shape="rect" id="node26" href="../../d9/da5/a00075.html" title="Container that stores objects &quot;almost contiguously&quot; (in a chain of blocks) and guarantees that pointe..." alt="" coords="657,2299,867,2552"/>
+<area shape="rect" id="node16" title="STL class. " alt="" coords="2558,472,2713,549"/>
+<area shape="rect" id="node25" title="STL class. " alt="" coords="557,1784,684,1861"/>
+<area shape="rect" id="node30" title="STL class. " alt="" coords="427,465,583,557"/>
+<area shape="rect" id="node33" title="STL class. " alt="" coords="29,450,207,571"/>
+<area shape="rect" id="node39" title="STL class. " alt="" coords="658,465,810,557"/>
+<area shape="rect" id="node21" href="../../db/d57/a00112.html" title="Key Data structure: container for (a) all individuals in the population (b) the ContactPoolSys wchich..." alt="" coords="494,2931,654,3155"/>
+<area shape="rect" id="node24" href="../../d9/d00/a00784.html" title="{Chunk *\n||}" alt="" coords="277,1784,351,1861"/>
+<area shape="rect" id="node28" href="../../db/ddf/a00088.html" title="ContactPoolSys contains for each of the type of pools (Household, K12School, ...) a vector of with al..." alt="" coords="156,1045,323,1196"/>
+<area shape="rect" id="node29" href="../../d3/d8b/a00059.html" title="{stride::ContactType\l::IdSubscriptArray\&lt;\l unsigned int \&gt;\n||+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ operator[]()\l+ operator[]()\l+ at()\l+ at()\l}" alt="" coords="294,715,446,924"/>
+<area shape="rect" id="node31" href="../../d3/d8b/a00059.html" title="An std::array modified to enable subscripting with the constact pool type indentifiers. " alt="" coords="231,413,403,608"/>
+<area shape="rect" id="node32" href="../../d3/d8b/a00059.html" title="{stride::ContactType\l::IdSubscriptArray\&lt;\l util::stride::util::\lSegmentedVector\&lt; stride\l::ContactPool \&gt; \&gt;\n||+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ IdSubscriptArray()\l+ operator[]()\l+ operator[]()\l+ at()\l+ at()\l}" alt="" coords="69,700,258,939"/>
+<area shape="rect" id="node47" title="STL class. " alt="" coords="2955,472,3054,549"/>
+<area shape="rect" id="node48" title="STL class. " alt="" coords="2935,259,3074,351"/>
+<area shape="rect" id="node49" title="STL class. " alt="" coords="2921,132,3089,209"/>
+<area shape="rect" id="node50" title="STL class. " alt="" coords="2951,5,3058,83"/>
 </map>
 </div>
-</div>
-<p><a href="../../dd/db2/a00151_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d5e/a00007.html">geopop::CommutesReader</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an abstract Reader that fills a <a class="el" href="../../d7/dd4/a00013.html" title="A Geographic grid of simulation region contains Locations that in turn contain an index to the Contac...">GeoGrid</a> with the commute info from file.  <a href="../../de/d5e/a00007.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a4a325bf3754eaff03bb16af583c22d64"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a4a325bf3754eaff03bb16af583c22d64">EpiOutputJSONReader</a> (std::unique_ptr&lt; std::istream &gt; inputStream, <a class="el" href="../../d0/d0b/a00004.html">geopop::GeoGrid</a>&lt; <a class="el" href="../../d1/d7c/a00003.html">EpiOutput</a> &gt; *epiOutput)</td></tr>
+<tr class="memdesc:a4a325bf3754eaff03bb16af583c22d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the <a class="el" href="../../dd/db2/a00151.html" title="An implementation of the EpiOutputReader using JSON. ">EpiOutputJSONReader</a> with the istream which contains the JSON.  <a href="#a4a325bf3754eaff03bb16af583c22d64">More...</a><br /></td></tr>
+<tr class="separator:a4a325bf3754eaff03bb16af583c22d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b74179e4e814a053a8b3b5bd46063cc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a1b74179e4e814a053a8b3b5bd46063cc">EpiOutputJSONReader</a> (const <a class="el" href="../../dd/db2/a00151.html">EpiOutputJSONReader</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a1b74179e4e814a053a8b3b5bd46063cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">No copy constructor.  <a href="#a1b74179e4e814a053a8b3b5bd46063cc">More...</a><br /></td></tr>
+<tr class="separator:a1b74179e4e814a053a8b3b5bd46063cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9788cabde12ea5f470bc6952e293b741"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/db2/a00151.html">EpiOutputJSONReader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a9788cabde12ea5f470bc6952e293b741">operator=</a> (const <a class="el" href="../../dd/db2/a00151.html">EpiOutputJSONReader</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a9788cabde12ea5f470bc6952e293b741"><td class="mdescLeft">&#160;</td><td class="mdescRight">No copy assignement.  <a href="#a9788cabde12ea5f470bc6952e293b741">More...</a><br /></td></tr>
+<tr class="separator:a9788cabde12ea5f470bc6952e293b741"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab90a78dc6f8fc1fff1376ab95e18397a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#ab90a78dc6f8fc1fff1376ab95e18397a">Read</a> () override</td></tr>
+<tr class="memdesc:ab90a78dc6f8fc1fff1376ab95e18397a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actually perform the read and return the <a class="el" href="../../d1/d7c/a00003.html" title="Epi-output for use within the visualization, contains epi-output of location. ">EpiOutput</a>.  <a href="#ab90a78dc6f8fc1fff1376ab95e18397a">More...</a><br /></td></tr>
+<tr class="separator:ab90a78dc6f8fc1fff1376ab95e18397a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_a00153"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_a00153')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../da/d01/a00153.html">visualization::EpiOutputReader</a></td></tr>
+<tr class="memitem:a200d9e6842db47a7113cb30302d70566 inherit pub_methods_a00153"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/a00153.html#a200d9e6842db47a7113cb30302d70566">EpiOutputReader</a> (<a class="el" href="../../d0/d0b/a00004.html">geopop::GeoGrid</a>&lt; <a class="el" href="../../d1/d7c/a00003.html">EpiOutput</a> &gt; *epiOutput)</td></tr>
+<tr class="memdesc:a200d9e6842db47a7113cb30302d70566 inherit pub_methods_a00153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parametrized constructor.  <a href="#a200d9e6842db47a7113cb30302d70566">More...</a><br /></td></tr>
+<tr class="separator:a200d9e6842db47a7113cb30302d70566 inherit pub_methods_a00153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dcc7814492cd041c81cb05736ba5365 inherit pub_methods_a00153"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/a00153.html#a9dcc7814492cd041c81cb05736ba5365">EpiOutputReader</a> (const <a class="el" href="../../da/d01/a00153.html">EpiOutputReader</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a9dcc7814492cd041c81cb05736ba5365 inherit pub_methods_a00153"><td class="mdescLeft">&#160;</td><td class="mdescRight">No copy constructor.  <a href="#a9dcc7814492cd041c81cb05736ba5365">More...</a><br /></td></tr>
+<tr class="separator:a9dcc7814492cd041c81cb05736ba5365 inherit pub_methods_a00153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61c6303d61d4fb122a5509120a43d533 inherit pub_methods_a00153"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d01/a00153.html">EpiOutputReader</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/a00153.html#a61c6303d61d4fb122a5509120a43d533">operator=</a> (const <a class="el" href="../../da/d01/a00153.html">EpiOutputReader</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a61c6303d61d4fb122a5509120a43d533 inherit pub_methods_a00153"><td class="mdescLeft">&#160;</td><td class="mdescRight">No copy assignement.  <a href="#a61c6303d61d4fb122a5509120a43d533">More...</a><br /></td></tr>
+<tr class="separator:a61c6303d61d4fb122a5509120a43d533 inherit pub_methods_a00153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a489429dd02a7f44ac6e261979e6e72b1 inherit pub_methods_a00153"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/a00153.html#a489429dd02a7f44ac6e261979e6e72b1">~EpiOutputReader</a> ()=default</td></tr>
+<tr class="memdesc:a489429dd02a7f44ac6e261979e6e72b1 inherit pub_methods_a00153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#a489429dd02a7f44ac6e261979e6e72b1">More...</a><br /></td></tr>
+<tr class="separator:a489429dd02a7f44ac6e261979e6e72b1 inherit pub_methods_a00153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:d2/d45/a00342"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d45/a00342.html">geopop</a></td></tr>
-<tr class="memdesc:d2/d45/a00342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a23cfad5dbd4ed93061c9b7d4ed1d3686"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; std::istream &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db2/a00151.html#a23cfad5dbd4ed93061c9b7d4ed1d3686">m_inputStream</a></td></tr>
+<tr class="memdesc:a23cfad5dbd4ed93061c9b7d4ed1d3686"><td class="mdescLeft">&#160;</td><td class="mdescRight">File to read.  <a href="#a23cfad5dbd4ed93061c9b7d4ed1d3686">More...</a><br /></td></tr>
+<tr class="separator:a23cfad5dbd4ed93061c9b7d4ed1d3686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_a00153"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_a00153')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../da/d01/a00153.html">visualization::EpiOutputReader</a></td></tr>
+<tr class="memitem:a47aebe4396832578e36a080814c1332c inherit pro_attribs_a00153"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d0b/a00004.html">geopop::GeoGrid</a>&lt; <a class="el" href="../../d1/d7c/a00003.html">EpiOutput</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d01/a00153.html#a47aebe4396832578e36a080814c1332c">m_epiOutput</a></td></tr>
+<tr class="memdesc:a47aebe4396832578e36a080814c1332c inherit pro_attribs_a00153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resulting epi-output.  <a href="#a47aebe4396832578e36a080814c1332c">More...</a><br /></td></tr>
+<tr class="separator:a47aebe4396832578e36a080814c1332c inherit pro_attribs_a00153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>An implementation of the <a class="el" href="../../da/d01/a00153.html" title="An abstract base class for creating a GeoGrid with the epi-output that was read from a file...">EpiOutputReader</a> using JSON. </p>
+<p>This class is used to read a epi-output from a JSON file. </p>
+
+<p>Definition at line <a class="el" href="../../d3/dd1/a00214_source.html#l00030">30</a> of file <a class="el" href="../../d3/dd1/a00214_source.html">EpiOutputJSONReader.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a4a325bf3754eaff03bb16af583c22d64"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">visualization::EpiOutputJSONReader::EpiOutputJSONReader </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; std::istream &gt;&#160;</td>
+          <td class="paramname"><em>inputStream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d0b/a00004.html">geopop::GeoGrid</a>&lt; <a class="el" href="../../d1/d7c/a00003.html">EpiOutput</a> &gt; *&#160;</td>
+          <td class="paramname"><em>epiOutput</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct the <a class="el" href="../../dd/db2/a00151.html" title="An implementation of the EpiOutputReader using JSON. ">EpiOutputJSONReader</a> with the istream which contains the JSON. </p>
+
+<p>Definition at line <a class="el" href="../../d1/de1/a00213_source.html#l00031">31</a> of file <a class="el" href="../../d1/de1/a00213_source.html">EpiOutputJSONReader.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b74179e4e814a053a8b3b5bd46063cc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">visualization::EpiOutputJSONReader::EpiOutputJSONReader </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dd/db2/a00151.html">EpiOutputJSONReader</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>No copy constructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9788cabde12ea5f470bc6952e293b741"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/db2/a00151.html">EpiOutputJSONReader</a> visualization::EpiOutputJSONReader::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dd/db2/a00151.html">EpiOutputJSONReader</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>No copy assignement. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab90a78dc6f8fc1fff1376ab95e18397a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visualization::EpiOutputJSONReader::Read </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Actually perform the read and return the <a class="el" href="../../d1/d7c/a00003.html" title="Epi-output for use within the visualization, contains epi-output of location. ">EpiOutput</a>. </p>
+
+<p>Implements <a class="el" href="../../da/d01/a00153.html#abc6e85ee05546ffeb71fa1ce1ccdbd65">visualization::EpiOutputReader</a>.</p>
+
+<p>Definition at line <a class="el" href="../../d1/de1/a00213_source.html#l00037">37</a> of file <a class="el" href="../../d1/de1/a00213_source.html">EpiOutputJSONReader.cpp</a>.</p>
+
+<p>References <a class="el" href="../../d4/d08/a00237_source.html#l00041">geopop::GeoGrid&lt; LocationContent &gt;::AddLocation()</a>, <a class="el" href="../../de/d38/a00160_source.html#l00022">stride::ageBrackets</a>, <a class="el" href="../../dd/d56/a00274_source.html#l00040">stride::healthStatuses</a>, <a class="el" href="../../d0/d24/a00222_source.html#l00052">visualization::EpiOutputReader::m_epiOutput</a>, and <a class="el" href="../../d3/dd1/a00214_source.html#l00046">m_inputStream</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/db2/a00151_ab90a78dc6f8fc1fff1376ab95e18397a_cgraph.gif" border="0" usemap="#dd/db2/a00151_ab90a78dc6f8fc1fff1376ab95e18397a_cgraph" alt=""/></div>
+<map name="dd/db2/a00151_ab90a78dc6f8fc1fff1376ab95e18397a_cgraph" id="dd/db2/a00151_ab90a78dc6f8fc1fff1376ab95e18397a_cgraph">
+<area shape="rect" id="node2" href="../../d0/d0b/a00004.html#afcfee6b560d0031c54a8f93f68821199" title="Adds a location to this GeoGrid. " alt="" coords="224,13,441,39"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a23cfad5dbd4ed93061c9b7d4ed1d3686"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;std::istream&gt; visualization::EpiOutputJSONReader::m_inputStream</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>File to read. </p>
+
+<p>Definition at line <a class="el" href="../../d3/dd1/a00214_source.html#l00046">46</a> of file <a class="el" href="../../d3/dd1/a00214_source.html">EpiOutputJSONReader.h</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d1/de1/a00213_source.html#l00037">Read()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="../../d3/dd1/a00214_source.html">EpiOutputJSONReader.h</a></li>
+<li><a class="el" href="../../d1/de1/a00213_source.html">EpiOutputJSONReader.cpp</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_c490ff723361adf09283ce460b26e466.html">io</a></li><li class="navelem"><a class="el" href="../../dd/db2/a00151.html">CommutesReader.h</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:37 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../d3/d29/a00419.html">visualization</a></li><li class="navelem"><a class="el" href="../../dd/db2/a00151.html">EpiOutputJSONReader</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:11 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

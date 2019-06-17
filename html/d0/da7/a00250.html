@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Stride Reference Manual: Infector.h File Reference</title>
+<title>Stride Reference Manual: GeoGridJSONReader.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Stride Reference Manual
-   &#160;<span id="projectnumber">- generated for commit 01075df</span>
+   &#160;<span id="projectnumber">- generated for commit 7026282</span>
    </div>
   </td>
  </tr>
@@ -108,41 +108,44 @@ $(document).ready(function(){initNavTree('d0/da7/a00250.html','../../');});
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">Infector.h File Reference</div>  </div>
+<div class="title">GeoGridJSONReader.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Header for the Infector class.  
-<a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="../../d2/d34/a00156_source.html">ContactLogMode.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d4/db5/a00328_source.html">TransmissionProfile.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d5/da7/a00144_source.html">calendar/Calendar.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../de/d14/a00139_source.html">contact/AgeContactProfile.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d3/d65/a00154_source.html">contact/ContactHandler.h</a>&quot;</code><br />
-<code>#include &lt;memory&gt;</code><br />
-<code>#include &lt;spdlog/spdlog.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d3/dcc/a00264_source.html">GeoGridStreamReader.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/d64/a00181_source.html">contact/ContactPool.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../de/df3/a00185_source.html">contact/ContactType.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/d67/a00310_source.html">geopop/Location.h</a>&quot;</code><br />
+<code>#include &lt;nlohmann/json.hpp&gt;</code><br />
+<code>#include &lt;spdlog/logger.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for Infector.h:</div>
+Include dependency graph for GeoGridJSONReader.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d9/d8b/a00547.gif" border="0" usemap="#Infector_8h" alt=""/></div>
-<map name="Infector_8h" id="Infector_8h">
-<area shape="rect" id="node2" href="../../d2/d34/a00156.html" title="Header for the ContactLogMode class. " alt="" coords="22,80,165,107"/>
-<area shape="rect" id="node4" href="../../d4/db5/a00328.html" title="Header for the TransmissionProfile class. " alt="" coords="983,80,1137,107"/>
-<area shape="rect" id="node6" href="../../d5/da7/a00144.html" title="Header file for the Calendar class. " alt="" coords="740,80,889,107"/>
-<area shape="rect" id="node13" href="../../de/d14/a00139.html" title="Contact profile. " alt="" coords="247,80,447,107"/>
-<area shape="rect" id="node20" href="../../d3/d65/a00154.html" title="Header for the ContactHandler class. " alt="" coords="1162,80,1347,107"/>
-<area shape="rect" id="node14" href="../../db/d44/a00162.html" title="Definition of ContactPool Id Type. " alt="" coords="72,162,184,189"/>
-<area shape="rect" id="node18" href="../../d0/d5e/a00136.html" title="Helpers for age. " alt="" coords="209,162,295,189"/>
+<div class="center"><img src="../../dc/d40/a00568.gif" border="0" usemap="#GeoGridJSONReader_8h" alt=""/></div>
+<map name="GeoGridJSONReader_8h" id="GeoGridJSONReader_8h">
+<area shape="rect" id="node2" href="../../d3/dcc/a00264.html" title="GeoGridStreamReader.h" alt="" coords="131,155,308,181"/>
+<area shape="rect" id="node9" href="../../d8/d64/a00181.html" title="Header for the core ContactPool class. " alt="" coords="473,237,635,263"/>
+<area shape="rect" id="node12" href="../../de/df3/a00185.html" title="Definition of ContactPool Id Type. " alt="" coords="957,393,1121,420"/>
+<area shape="rect" id="node17" href="../../d1/d67/a00310.html" title="geopop/Location.h" alt="" coords="1368,80,1508,107"/>
+<area shape="rect" id="node5" href="../../dd/dd7/a00260.html" title="GeoGridReader.h" alt="" coords="108,237,237,263"/>
+<area shape="rect" id="node10" href="../../db/dd9/a00179.html" title="Header for the ContactLogMode class. " alt="" coords="458,393,653,420"/>
+<area shape="rect" id="node18" href="../../d5/d7b/a00286.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="1353,319,1542,345"/>
+<area shape="rect" id="node23" href="../../da/d15/a00188.html" title="geopop/Coordinate.h" alt="" coords="1901,155,2057,181"/>
+<area shape="rect" id="node26" href="../../d5/df1/a00206.html" title="geopop/Epidemiologic.h" alt="" coords="1527,237,1701,263"/>
+<area shape="rect" id="node27" href="../../df/d03/a00348.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="2189,319,2361,345"/>
+<area shape="rect" id="node37" href="../../d2/d71/a00309.html" title="Location.cpp" alt="" coords="1005,155,1108,181"/>
+<area shape="rect" id="node28" href="../../dc/de3/a00373.html" title="Interface/Implementation for SVIterator. " alt="" coords="2294,393,2393,420"/>
+<area shape="rect" id="node38" href="../../dd/d56/a00274.html" title="Header for the Health class. " alt="" coords="752,393,881,420"/>
+<area shape="rect" id="node39" href="../../de/de9/a00322.html" title="Header file for the Person class. " alt="" coords="1003,237,1110,263"/>
+<area shape="rect" id="node41" href="../../d1/da8/a00230.html" title="util/Exception.h" alt="" coords="863,319,981,345"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../dd/de6/a00548.gif" border="0" usemap="#Infector_8hdep" alt=""/></div>
-<map name="Infector_8hdep" id="Infector_8hdep">
-<area shape="rect" id="node2" href="../../de/dbc/a00249.html" title="Implementation of Infector algorithms. " alt="" coords="5,80,101,107"/>
-<area shape="rect" id="node3" href="../../dc/ded/a00252.html" title="Header for the InfectorMap. " alt="" coords="125,80,235,107"/>
-<area shape="rect" id="node4" href="../../da/d50/a00301.html" title="Implementation for the SimBuilder class. " alt="" coords="121,155,239,181"/>
+<div class="center"><img src="../../d4/d9e/a00569.gif" border="0" usemap="#GeoGridJSONReader_8hdep" alt=""/></div>
+<map name="GeoGridJSONReader_8hdep" id="GeoGridJSONReader_8hdep">
+<area shape="rect" id="node2" href="../../de/dbc/a00249.html" title="GeoGridJSONReader.cpp" alt="" coords="5,80,181,107"/>
+<area shape="rect" id="node3" href="../../dc/d6a/a00261.html" title="GeoGridReaderFactory.cpp" alt="" coords="205,80,395,107"/>
 </map>
 </div>
 </div>
@@ -150,30 +153,26 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dec/a00090.html">stride::Infector&lt; LL, TIC, TO &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual contacts and transmission in contactpool (primary template).  <a href="../../d9/dec/a00090.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d0b/a00004.html">geopop::GeoGrid&lt; LocationContent &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Geographic grid of simulation region contains Locations that in turn contain an index to the ContactPools situated at that <a class="el" href="../../d6/d42/a00043.html" title="Location for use within the GeoGrid, contains Coordinate and meta data of that coordinate. ">Location</a>.  <a href="../../d0/d0b/a00004.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d82/a00091.html">stride::Infector&lt; LL, TIC, true &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time-optimized version (For NoLocalInformation &amp;&amp; (None || Transmission logging)).  <a href="../../da/d82/a00091.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3c/a00028.html">geopop::GeoGridJSONReader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An implementation of the <a class="el" href="../../dc/d87/a00032.html" title="An abstract base class for creating a GeoGrid that was read from a file, can be implemented using mul...">GeoGridReader</a> using JSON.  <a href="../../dc/d3c/a00028.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:d3/dc9/a00355"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dc9/a00355.html">stride</a></td></tr>
-<tr class="memdesc:d3/dc9/a00355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the simulator and related classes. <br /></td></tr>
+<tr class="memitem:da/dbf/a00393"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dbf/a00393.html">geopop</a></td></tr>
+<tr class="memdesc:da/dbf/a00393"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for the geographic and demograhic classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Header for the Infector class. </p>
-
-<p>Definition in file <a class="el" href="../../d0/da7/a00250_source.html">Infector.h</a>.</p>
-</div></div><!-- contents -->
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_d006795525347f4aaca311cb4e45f0bc.html">contact</a></li><li class="navelem"><a class="el" href="../../d0/da7/a00250.html">Infector.h</a></li>
-    <li class="footer">Generated on Mon Jun 17 2019 10:47:37 for Stride Reference Manual by
+    <li class="navelem"><a class="el" href="../../dir_5c982d53a68cdbcd421152b4020263a9.html">main</a></li><li class="navelem"><a class="el" href="../../dir_a2a8aff9b00c67914e6daf05d7173af9.html">cpp</a></li><li class="navelem"><a class="el" href="../../dir_0be871b61b0cfdce2f605ca21b1bda01.html">geopop</a></li><li class="navelem"><a class="el" href="../../dir_c490ff723361adf09283ce460b26e466.html">io</a></li><li class="navelem"><a class="el" href="../../d0/da7/a00250.html">GeoGridJSONReader.h</a></li>
+    <li class="footer">Generated on Mon Jun 17 2019 15:13:10 for Stride Reference Manual by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

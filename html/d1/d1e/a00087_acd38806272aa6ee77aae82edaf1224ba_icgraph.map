@@ -1,0 +1,8 @@
+<map id="stride::ContactPool::GetInfectedCount" name="stride::ContactPool::GetInfectedCount">
+<area shape="rect" id="node2" href="$d1/d1e/a00087.html#a3b2da2fe2ebe5e75bcf8a13893f8d10a" title="Get the pool id. " alt="" coords="196,71,339,112"/>
+<area shape="rect" id="node3" href="$d5/d16/a00029.html#a67d19b0ec28b5258056ef8b4d042112c" title="Create a JSON object containing all info needed to reconstruct a ContactPool. " alt="" coords="388,5,587,47"/>
+<area shape="rect" id="node4" href="$d0/d33/a00027.html#a599467553181db5ec29bfcdaa7645c7a" title="geopop::GeoGridHDF5Writer\l::WriteContactPool" alt="" coords="387,71,588,112"/>
+<area shape="rect" id="node7" href="$df/d61/a00031.html#a015dcfc0716f0ffe586fe4d927809435" title="Create a ProtoBuf ContactPool containing all the info needed to reconstruct a ContactPool. " alt="" coords="387,136,587,177"/>
+<area shape="rect" id="node5" href="$d0/d33/a00027.html#a5e019dbc1a039494aa15feda0b9cbcaa" title="geopop::GeoGridHDF5Writer\l::WriteLocation" alt="" coords="636,71,837,112"/>
+<area shape="rect" id="node6" href="$d0/d33/a00027.html#a9294e506e64e9ec60d8802d6f665b003" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="885,71,1087,112"/>
+</map>

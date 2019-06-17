@@ -1,3 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$d7/dec/a00010.html" title="A GeoAggregator can either be instantiated with a functor, or be called with one every time..." alt="" coords="5,5,181,47"/>
+<area shape="rect" id="node1" href="$dd/d1b/a00015.html" title="An interface for writing the epi&#45;output of a GeoGrid to a file, can be implemented with multiple file..." alt="" coords="5,56,183,83"/>
+<area shape="rect" id="node2" href="$df/d86/a00012.html" title="Writes a GeoGrid epi&#45;output to a HDF5 file. " alt="" coords="231,5,443,32"/>
+<area shape="rect" id="node3" href="$d7/dd4/a00013.html" title="Writes a GeoGrid epi&#45;output to a JSON file. " alt="" coords="232,56,441,83"/>
+<area shape="rect" id="node4" href="$d2/de7/a00014.html" title="Writes a GeoGrid epi&#45;output to a protobuf file. " alt="" coords="231,107,442,133"/>
 </map>

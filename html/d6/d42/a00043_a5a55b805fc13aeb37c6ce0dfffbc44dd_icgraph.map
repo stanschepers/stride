@@ -1,0 +1,12 @@
+<map id="geopop::Location::GetContent" name="geopop::Location::GetContent">
+<area shape="rect" id="node2" href="$d4/d51/a00017.html#ae4d522e34ba171854830b7cc86c479b3" title="Create a given number ContactPools in the GeoGrid. " alt="" coords="301,5,452,47"/>
+<area shape="rect" id="node3" href="$d6/d42/a00043.html#aa9a92f27c4156744f9f3f49fc57f97a4" title="Perform a full comparison with the other location. " alt="" coords="268,71,485,98"/>
+<area shape="rect" id="node5" href="$d0/d0b/a00004.html#a85acfd01de1c6c9d0dde32ad5d7e9ab6" title="Gets the K biggest (in population count) locations of this GeoGrid. " alt="" coords="293,122,460,149"/>
+<area shape="rect" id="node8" href="$d0/d33/a00027.html#a5e019dbc1a039494aa15feda0b9cbcaa" title="geopop::GeoGridHDF5Writer\l::WriteLocation" alt="" coords="276,173,477,215"/>
+<area shape="rect" id="node10" href="$d5/d16/a00029.html#a8b7a0f294b33fb6d81ad46b1385bff80" title="Create a JSON object containing all info needed to reconstruct a Location. " alt="" coords="277,239,476,280"/>
+<area shape="rect" id="node11" href="$df/d61/a00031.html#aa102932bd4c96db671640192aa232110" title="Create a ProtoBuf Location containing all the info needed to reconstruct a Location. " alt="" coords="277,304,477,345"/>
+<area shape="rect" id="node4" href="$d6/d42/a00043.html#ab9474f8c01009bdb5c1e427d1c21da4d" title="Specialised contructor for Epidemiologic as template. " alt="" coords="537,13,731,55"/>
+<area shape="rect" id="node6" href="$d4/d51/a00017.html#ae2e751b44ff7002c4a0e88867817901d" title="geopop::Generator::\lApply" alt="" coords="559,79,709,120"/>
+<area shape="rect" id="node7" href="$d0/d0b/a00004.html#a58745925a1490d2c5a95aa117734eb57" title="Find contactpools in startRadius (in km) around start and, if none are found, double the radius and s..." alt="" coords="537,143,731,199"/>
+<area shape="rect" id="node9" href="$d0/d33/a00027.html#a9294e506e64e9ec60d8802d6f665b003" title="Write the GeoGrid to the file in HDF5 format. " alt="" coords="533,223,735,264"/>
+</map>

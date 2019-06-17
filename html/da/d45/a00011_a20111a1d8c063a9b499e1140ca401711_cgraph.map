@@ -1,0 +1,6 @@
+<map id="geopop::Epidemiologic::GetPopCount" name="geopop::Epidemiologic::GetPopCount">
+<area shape="rect" id="node2" href="$da/d45/a00011.html#af7bacb26e7a72f1f866412cc75de2f62" title="Get the ID of the location. " alt="" coords="220,5,387,47"/>
+<area shape="rect" id="node3" href="$da/d45/a00011.html#a234fecc3020529ef06d7b4ef2a266b6f" title="Gets the amount of members in all household pools. " alt="" coords="220,71,387,112"/>
+<area shape="rect" id="node5" href="$da/d45/a00011.html#ababb4cca38b9c3b75405680a4c5e9be6" title="Get Epidemiologic&#39;s population fraction (of the total population count). " alt="" coords="220,136,387,177"/>
+<area shape="rect" id="node4" href="$da/d45/a00011.html#aec198faaa27ba4cd2d90955ad6df1cce" title="Templated version of &#160;for use when the type id is fixed. " alt="" coords="435,71,601,112"/>
+</map>

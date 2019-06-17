@@ -1,3 +1,4 @@
-<map id="stride::InfectorMap" name="stride::InfectorMap">
-<area shape="rect" id="node2" title="STL class. " alt="" coords="5,5,208,127"/>
+<map id="geopop::HouseholdReader" name="geopop::HouseholdReader">
+<area shape="rect" id="node2" href="$d8/d41/a00038.html" title="Creates a Reader that retrieves the different Household profiles from a given CSV file..." alt="" coords="5,167,223,259"/>
+<area shape="rect" id="node3" href="$d3/de7/a00039.html" title="Creates a Reader that retrieves the different Household profiles from a given JSON file..." alt="" coords="247,160,469,267"/>
 </map>

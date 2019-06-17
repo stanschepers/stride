@@ -1,0 +1,6 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$d3/df8/a00155.html#a6a00e08d7fc8fa06918bbdc0a04c9ea1" title="Initialize the map. " alt="" coords="108,49,305,90"/>
+<area shape="rect" id="node3" href="$d0/d0b/a00004.html#ac833893da758c5e158b59914e690a352" title="Iterator to first Location. " alt="" coords="357,5,530,32"/>
+<area shape="rect" id="node4" href="$d0/d0b/a00004.html#a57b0222e94d6d31fa969dda7175bbce7" title="Iterator to the end of the Location storage. " alt="" coords="362,56,525,83"/>
+<area shape="rect" id="node5" href="$d3/d29/a00419.html#a40d6ee97d8cc89c9b1d74268976d8f30" title="visualization::distanceOn\lEarth" alt="" coords="353,107,533,149"/>
+</map>

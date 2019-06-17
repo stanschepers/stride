@@ -1,5 +1,30 @@
 var searchData=
 [
-  ['refhh',['refHH',['../d7/d7a/a00016.html#a4b9f2e32fdc11c4cd33e531bcc360885',1,'geopop::GeoGridConfig']]],
-  ['refhhperhhtype',['refHHperHHType',['../d7/d7a/a00016.html#a14f2bfd5a4a1fb3eb649baba8b6f2c63',1,'geopop::GeoGridConfig']]]
+  ['param',['param',['../d3/d52/a00023.html#a94643f701d8a4359bf23a937ce33ee1e',1,'geopop::GeoGridConfig']]],
+  ['participation_5fcollege',['participation_college',['../d3/d52/a00023.html#a079dd4c7d18c3d25e3af1509a1ec7b75',1,'geopop::GeoGridConfig']]],
+  ['participation_5fdaycare',['participation_daycare',['../d3/d52/a00023.html#a9169e8573e673d5a4fcc6563028839ec',1,'geopop::GeoGridConfig']]],
+  ['participation_5fpreschool',['participation_preschool',['../d3/d52/a00023.html#aedbec717efa1b52e4875345bf6ca10d7',1,'geopop::GeoGridConfig']]],
+  ['participation_5fworkplace',['participation_workplace',['../d3/d52/a00023.html#a24a1def3a3cb10525dab4115003eb4c2',1,'geopop::GeoGridConfig']]],
+  ['people',['people',['../d3/d52/a00023.html#af51964b5e60593430bbb2bcdcc0400ec',1,'geopop::GeoGridConfig']]],
+  ['people_5f',['people_',['../d2/db1/a00070.html#aec9ad5ad9eb375c9cfbbdac7190fcbf4',1,'proto::GeoGrid_Location_ContactPools_ContactPool']]],
+  ['percentage',['percentage',['../d9/d2e/a00056.html#abe71aca721cdabf5a4ff630ff713eb97',1,'H5Utils::H5EpiOutput']]],
+  ['percentage_5f',['percentage_',['../df/d5f/a00064.html#a7d2639301d1f4d481735db8f50b9c9b6',1,'proto::EpiOutput_Day_Location_AgeBracket_HealthStatus']]],
+  ['person_5fcount',['person_count',['../d2/d79/a00051.html#a7125fdd06f0ba926f2b2e88211d8ceca',1,'geopop::ReferenceHouseHold']]],
+  ['persons_5f',['persons_',['../d9/db3/a00066.html#a3b59a92801fa6e3205c99df850f08dd1',1,'proto::GeoGrid']]],
+  ['pools',['pools',['../d3/d52/a00023.html#ac33a9ff190210799b551cc1702f4682c',1,'geopop::GeoGridConfig']]],
+  ['pools_5f',['pools_',['../d4/d31/a00069.html#a9c18d11fa3d5c24ed32a52e49e18bdb6',1,'proto::GeoGrid_Location_ContactPools']]],
+  ['pop_5fcount',['pop_count',['../d1/d7c/a00003.html#a0e6db9fc8c1f074c38bead60171dc6c3',1,'EpiOutput']]],
+  ['pop_5fsize',['pop_size',['../d3/d52/a00023.html#a0deb035c1ea53adff9e0014b67824454',1,'geopop::GeoGridConfig']]],
+  ['popcount_5fcollege',['popcount_college',['../d6/d2d/a00047.html#ab7663bf22dbfe6d56f5e07af064d6498',1,'geopop::PopulationInfo']]],
+  ['popcount_5fdaycare',['popcount_daycare',['../d6/d2d/a00047.html#adbb87cbde5cee5ef68b6bf1fb7a4a712',1,'geopop::PopulationInfo']]],
+  ['popcount_5fk12school',['popcount_k12school',['../d6/d2d/a00047.html#a6b6db87f6ccaa00a624242cadd695eb9',1,'geopop::PopulationInfo']]],
+  ['popcount_5fpreschool',['popcount_preschool',['../d6/d2d/a00047.html#a6b3b6238336293faa050715aca04806a',1,'geopop::PopulationInfo']]],
+  ['popcount_5fworkplace',['popcount_workplace',['../d6/d2d/a00047.html#ae5d13fc961c7c5c701465ec97bcef05d',1,'geopop::PopulationInfo']]],
+  ['popinfoperhhtype',['popInfoperHHtype',['../d3/d52/a00023.html#a36aaf77189f2bd0522d48bcc4a886c3b',1,'geopop::GeoGridConfig']]],
+  ['population_5f',['population_',['../df/d03/a00062.html#a502ad03f6d059133f339c2f06bc562ce',1,'proto::EpiOutput_Day_Location::population_()'],['../dc/ddf/a00067.html#a6547521bb7e4140e082542aae89d718f',1,'proto::GeoGrid_Location::population_()']]],
+  ['preschool',['PreSchool',['../d1/d22/a00057.html#ac0420d84a40fe97543a805fecfd42db2',1,'H5Utils::H5Person::PreSchool()'],['../d4/d31/a00069.html#abc54d2094048e6c0b4f8c72fc28bec59',1,'proto::GeoGrid_Location_ContactPools::PreSchool()']]],
+  ['primarycommunity',['PrimaryCommunity',['../d1/d22/a00057.html#a73d3df95077924ce4b6c39f8d09107c3',1,'H5Utils::H5Person::PrimaryCommunity()'],['../d4/d31/a00069.html#a978967c6cda2c377853a12fa35a97ba8',1,'proto::GeoGrid_Location_ContactPools::PrimaryCommunity()']]],
+  ['proportion',['proportion',['../d4/d6d/a00055.html#ac59838fb6e8cdaed1108d627055c422d',1,'H5Utils::H5Commute']]],
+  ['proportion_5f',['proportion_',['../da/d24/a00068.html#aeae15310a0d29fd31e8c9496206301cb',1,'proto::GeoGrid_Location_Commute']]],
+  ['province_5f',['province_',['../df/d03/a00062.html#ae40a1b220026012e9f20e51895cb8053',1,'proto::EpiOutput_Day_Location::province_()'],['../dc/ddf/a00067.html#a3270c34b911a8e64c45fbb3f40f0a205',1,'proto::GeoGrid_Location::province_()']]]
 ];

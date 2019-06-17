@@ -1,7 +1,6 @@
 var a00284 =
 [
-    [ "pair2data", "d4/d81/a00110.html", "d4/d81/a00110" ],
-    [ "ToSequence", "db/dc3/a00284.html#a29ac84256d48f3fb5596d2d4d6bc5173", null ],
-    [ "ToArray", "db/dc3/a00284.html#a4a886659f5c17aa6571c4c01211bfe99", null ],
-    [ "Merge", "db/dc3/a00284.html#aaf7d3b8f66de250307e449784676de27", null ]
+    [ "IsType", "db/dc3/a00284.html#a43c0310b3eef6024b540ffaa5c4c39b2", null ],
+    [ "ToString", "db/dc3/a00284.html#aaa54357f0c5b3af4e7905ed503167ede", null ],
+    [ "ToType", "db/dc3/a00284.html#ac81b85da174b73232cac26f53bd6d3a0", null ]
 ];

@@ -1,0 +1,14 @@
+<map id="geopop::Epidemiologic::operator==" name="geopop::Epidemiologic::operator==">
+<area shape="rect" id="node2" href="$da/d45/a00011.html#ae9e725d837df6f1e4695429370523e9c" title="References incoming commute Epidemiologics + fraction of commutes to that Epidemiologic. " alt="" coords="220,5,407,47"/>
+<area shape="rect" id="node3" href="$da/d45/a00011.html#a7909580bbc910174eab4654a276733ed" title="References outgoing commute Epidemiologics + fraction of commutes to that Epidemiologic. " alt="" coords="220,71,407,112"/>
+<area shape="rect" id="node4" href="$da/d45/a00011.html#aec198faaa27ba4cd2d90955ad6df1cce" title="Templated version of &#160;for use when the type id is fixed. " alt="" coords="884,219,1051,260"/>
+<area shape="rect" id="node5" href="$da/d45/a00011.html#a98b4e0dcb3cf9b8444bf5155ab55bac5" title="Get household type for Households references. " alt="" coords="230,188,397,229"/>
+<area shape="rect" id="node6" href="$da/d45/a00011.html#a20111a1d8c063a9b499e1140ca401711" title="Gets the absolute population. " alt="" coords="230,253,397,295"/>
+<area shape="rect" id="node10" href="$da/d45/a00011.html#af41433ad68bc3ce3ac6012c75adfe5bc" title="Gets young/old fraction. " alt="" coords="230,401,397,443"/>
+<area shape="rect" id="node7" href="$da/d45/a00011.html#a234fecc3020529ef06d7b4ef2a266b6f" title="Gets the amount of members in all household pools. " alt="" coords="669,219,836,260"/>
+<area shape="rect" id="node8" href="$da/d45/a00011.html#ababb4cca38b9c3b75405680a4c5e9be6" title="Get Epidemiologic&#39;s population fraction (of the total population count). " alt="" coords="455,239,621,280"/>
+<area shape="rect" id="node9" href="$da/d45/a00011.html#af7bacb26e7a72f1f866412cc75de2f62" title="Get the ID of the location. " alt="" coords="455,304,621,345"/>
+<area shape="rect" id="node11" href="$da/d45/a00011.html#a181cf15e29892b07541785081503a463" title="Generate an epi&#45;output map of the Household contactpools. " alt="" coords="455,369,621,411"/>
+<area shape="rect" id="node12" href="$da/d45/a00011.html#a8bff7e01e34144ff9c0a784c70fe81f3" title="Set Epidemiologic&#39;s population count using its population fraction and the total population count..." alt="" coords="455,435,621,476"/>
+<area shape="rect" id="node13" href="$da/d45/a00011.html#a1b5336ba1a9416cc7c9d05e6326e1af7" title="Set Epidemiologic&#39;s population fraction (of the total population count). " alt="" coords="455,500,621,541"/>
+</map>
