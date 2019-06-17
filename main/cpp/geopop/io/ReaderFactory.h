@@ -15,9 +15,10 @@
 
 #pragma once
 
-#include "CitiesReader.h"
 #include "CommutesReader.h"
 #include "HouseholdReader.h"
+#include "LocationsReader.h"
+#include "DistributionReader.h"
 
 #include <istream>
 #include <memory>
@@ -42,11 +43,11 @@ namespace geopop {
 class ReaderFactory
 {
 public:
-        /// Create a CitiesReader based on the filename relative to the data directory.
-        static std::shared_ptr<CitiesReader> CreateCitiesReader(const std::string& filename);
+        /// Create a Reader based on the filename relative to the data directory.
+        static std::shared_ptr<LocationsReader> CreateLocationsReader(const std::string &filename);
 
-        /// Create a CitiesReader based on an absolute filesystem path for the input file.
-        static std::shared_ptr<CitiesReader> CreateCitiesReader(const filesys::path& path);
+        /// Create a Reader based on an absolute filesystem path for the input file.
+        static std::shared_ptr<LocationsReader> CreateLocationsReader(const filesys::path &path);
 
         /// Create a CommutesReader based on the filename relative to the data directory.
         static std::shared_ptr<CommutesReader> CreateCommutesReader(const std::string& filename);
@@ -59,6 +60,12 @@ public:
 
         /// Create a HouseholdReader based on the absolute filesystem path the input file.
         static std::shared_ptr<HouseholdReader> CreateHouseholdReader(const filesys::path& path);
+
+        /// Create a DistributionReader based on the filename relative to the data directory.
+        static std::shared_ptr<DistributionReader> CreateDistributionReader(const std::string& filename);
+
+        /// Create a DistributionReader based on the absolute filesystem path the input file.
+        static std::shared_ptr<DistributionReader> CreateDistributionReader(const filesys::path& path);
 
 private:
         /// Create an istream based on the filesystem path.

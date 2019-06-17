@@ -19,7 +19,7 @@
                         {
                             "id": 2,
                             "people": [
-                                1
+                                0
                             ]
                         }
                     ]
@@ -31,7 +31,7 @@
                         {
                             "id": 3,
                             "people": [
-                                1
+                                0
                             ]
                         }
                     ]
@@ -43,7 +43,7 @@
                         {
                             "id": 7,
                             "people": [
-                                1
+                                0
                             ]
                         }
                     ]
@@ -55,7 +55,7 @@
                         {
                             "id": 4,
                             "people": [
-                                1
+                                0
                             ]
                         }
                     ]
@@ -67,7 +67,7 @@
                         {
                             "id": 5,
                             "people": [
-                                1
+                                0
                             ]
                         }
                     ]
@@ -79,7 +79,31 @@
                         {
                             "id": 6,
                             "people": [
-                                1
+                                0
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "type": "Daycare",
+                    "pools": [
+                        {
+                            "id": 8,
+                            "people": [
+                                0
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "type": "PreSchool",
+                    "pools": [
+                        {
+                            "id": 9,
+                            "people": [
+                                0
                             ]
                         }
                     ]
@@ -89,14 +113,16 @@
     ],
     "persons": [
         {
-            "id": 1,
+            "id": 0,
             "age": 18,
             "K12School": 2,
             "Household": 5,
             "Workplace": 6,
             "PrimaryCommunity": 3,
             "SecondaryCommunity": 7,
-            "College": 4
+            "College": 4,
+            "Daycare": 8,
+            "PreSchool": 9
         }
     ]
 }

@@ -83,20 +83,46 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "id": 6,
+                    "type": "Daycare",
+                    "pools": [
+                        {
+                            "id": "8",
+                            "people": [
+                                "2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "type": "PreSchool",
+                    "pools": [
+                        {
+                            "id": "9",
+                            "people": [
+                                "2"
+                            ]
+                        }
+                    ]
                 }
             ]
         }
     ],
     "persons": [
         {
-            "id": "1",
+            "id": "0",
             "age": "18",
             "K12School": "2",
             "Household": "5",
             "Workplace": "6",
             "PrimaryCommunity": "3",
             "SecondaryCommunity": "7",
-            "College": "4"
+            "College": "4",
+            "Daycare": "8",
+            "PreSchool": "9"
         }
     ]
 }

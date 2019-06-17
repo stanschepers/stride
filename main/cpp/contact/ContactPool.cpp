@@ -29,8 +29,8 @@ namespace stride {
 
 using namespace std;
 
-ContactPool::ContactPool(unsigned int poolId, ContactType::Id type)
-    : m_index_immune(0), m_pool_id(poolId), m_pool_type(type), m_members()
+ContactPool::ContactPool(unsigned int poolId, ContactType::Id type, unsigned int limit)
+    : m_index_immune(0), m_pool_id(poolId), m_pool_type(type), m_members(), m_limit(limit)
 {
 }
 
@@ -38,6 +38,14 @@ void ContactPool::AddMember(Person* p)
 {
         m_members.emplace_back(p);
         m_index_immune++;
+}
+
+bool ContactPool::CheckLimit()
+{
+        if (m_members.size() >= m_limit) {
+                return true;
+        }
+        return false;
 }
 
 unsigned int ContactPool::GetInfectedCount() const

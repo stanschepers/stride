@@ -71,12 +71,39 @@ void RunConfigManager::AddGeoPopConfig(ptree& pt)
                 <fraction_college_commuters>0.5</fraction_college_commuters>
                 <fraction_workplace_commuters>0.5</fraction_workplace_commuters>
                 <household_file>households_flanders.csv</household_file>
+                <participation_daycare>0</participation_daycare>
+                <participation_preschool>0</participation_preschool>
                 <participation_college>0.5</participation_college>
-                <particpation_workplace>0.75</particpation_workplace>
+                <participation_workplace>0.75</participation_workplace>
                 <population_size>600000</population_size>
     </geopop_gen>
 </run>
         )###";
+        ptree        geopop_ptree = FromString(geopop_str);
+        pt.put_child("run.population_file", geopop_ptree.get_child("run.population_file"));
+        pt.put_child("run.population_type", geopop_ptree.get_child("run.population_type"));
+        pt.put_child("run.geopop_gen", geopop_ptree.get_child("run.geopop_gen"));
+}
+
+void RunConfigManager::AddGeoPopDistConfig(ptree& pt)
+{
+        const string geopop_str   = R"###(
+<run>
+<population_file>gengeopop.proto</population_file>
+<population_type>generate</geopopulation_type>
+<geopop_gen>
+        <cities_file>flanders_cities.csv</cities_file>
+        <commuting_file>flanders_commuting.csv</commuting_file>
+        <fraction_college_commuters>0.5</fraction_college_commuters>
+        <fraction_workplace_commuters>0.5</fraction_workplace_commuters>
+        <household_file>households_flanders.csv</household_file>
+        <distribution_file>workplace_size_distribution.csv</distribution_file>
+        <participation_college>0.5</participation_college>
+        <particpation_workplace>0.75</particpation_workplace>
+        <population_size>600000</population_size>
+</geopop_gen>
+</run>
+)###";
         ptree        geopop_ptree = FromString(geopop_str);
         pt.put_child("run.population_file", geopop_ptree.get_child("run.population_file"));
         pt.put_child("run.population_type", geopop_ptree.get_child("run.population_type"));

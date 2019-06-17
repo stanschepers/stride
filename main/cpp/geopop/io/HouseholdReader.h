@@ -21,15 +21,11 @@
 #include <vector>
 
 namespace stride {
-
 class Person;
 class ContactPool;
-
 } // namespace stride
 
 namespace geopop {
-
-class HouseholdCenter;
 
 /**
  * Retrieves the reference Household profiles from file.
@@ -45,8 +41,8 @@ public:
         virtual ~HouseholdReader() = default;
 
         /// Add the info on reference households to the GeoGridConfig.
-        virtual void SetReferenceHouseholds(unsigned int&                           ref_person_count,
-                                            std::vector<std::vector<unsigned int>>& ref_ages) = 0;
+        virtual void SetReferenceHouseholds(unsigned int &ref_person_count, std::vector<std::vector<unsigned int>> &ref_ages,
+                                            double &ref_young_old_fraction) = 0;
 };
 
 } // namespace geopop

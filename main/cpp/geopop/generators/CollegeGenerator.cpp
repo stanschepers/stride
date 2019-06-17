@@ -13,24 +13,22 @@
  *  Copyright 2018, 2019, Jan Broeckhove and Bistromatics group.
  */
 
-#include "CollegeGenerator.h"
+#include "Generator.h"
 
-#include "geopop/CollegeCenter.h"
-#include "geopop/GeoGrid.h"
-#include "geopop/GeoGridConfig.h"
-#include "geopop/Location.h"
 #include "util/Assert.h"
-#include "util/RnMan.h"
 
 namespace geopop {
 
 using namespace std;
+using namespace stride;
+using namespace stride::ContactType;
 
-void CollegeGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfig, unsigned int& contactCenterCounter)
+template<>
+void Generator<stride::ContactType::Id::College>::Apply(GeoGrid& geoGrid, const GeoGridConfig& ggConfig)
 {
-        const auto pupilCount = geoGridConfig.popInfo.popcount_college;
-        const auto schoolCount =
-            static_cast<unsigned int>(ceil(pupilCount / static_cast<double>(geoGridConfig.pools.college_size)));
+        const auto studentCount = ggConfig.info.popcount_college;
+        const auto collegeCount =
+            static_cast<unsigned int>(ceil(studentCount / static_cast<double>(ggConfig.people[Id::College])));
         const auto cities = geoGrid.TopK(10);
 
         if (cities.empty()) {
@@ -38,7 +36,7 @@ void CollegeGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfi
                 return;
         }
 
-        // Aggregate population in cities.
+        // Aggregate population in TopK cities.
         auto totalPop = 0U;
         for (const auto& c : cities) {
                 totalPop += c->GetPopCount();
@@ -54,13 +52,13 @@ void CollegeGenerator::Apply(GeoGrid& geoGrid, const GeoGridConfig& geoGridConfi
         }
 
         const auto dist = m_rn_man.GetDiscreteGenerator(weights, 0U);
+        auto       pop  = geoGrid.GetPopulation();
 
-        for (auto i = 0U; i < schoolCount; i++) {
-                auto loc     = cities[dist()];
-                auto college = make_shared<CollegeCenter>(contactCenterCounter++);
-                college->SetupPools(geoGridConfig, geoGrid.GetPopulation());
-                loc->AddCenter(college);
+        for (auto i = 0U; i < collegeCount; i++) {
+                auto loc = cities[dist()];
+                AddPools(*loc, pop, ggConfig);
         }
 }
+
 
 } // namespace geopop

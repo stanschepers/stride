@@ -47,40 +47,45 @@ set(SRC
     UnitSlice1.cpp
     UnitSlice2.cpp
     #---
-    createlogger.h
     #---
     geopop/generators/CollegeGeneratorTest.cpp
-    geopop/generators/CommunityGeneratorTest.cpp
     geopop/generators/HouseholdGeneratorTest.cpp
     geopop/generators/K12SchoolGeneratorTest.cpp
+    geopop/generators/PrimaryCommunityGeneratorTest.cpp
+    geopop/generators/SecondaryCommunityGeneratorTest.cpp
     geopop/generators/WorkplaceGeneratorTest.cpp
+    geopop/generators/DaycareGeneratorTest.cpp
+    geopop/generators/PreSchoolGeneratorTest.cpp
     #---
     geopop/io/CitiesCSVReaderTest.cpp
     geopop/io/CommutesCSVReaderTest.cpp
     geopop/io/GeoGridIOUtils.cpp
-    geopop/io/GeoGridJSONReaderTest.cpp
-    geopop/io/GeoGridJSONWriterTest.cpp
+    #geopop/io/GeoGridJSONReaderTest.cpp
+    #geopop/io/GeoGridJSONWriterTest.cpp
     geopop/io/GeoGridProtoReaderTest.cpp
     geopop/io/GeoGridProtoWriterTest.cpp
     geopop/io/HouseholdCSVReaderTest.cpp
     geopop/io/ReaderFactoryTest.cpp
+        geopop/io/WorkplaceCSVReaderTest.cpp
     #---
     geopop/kdtree.cpp
     #---
-    geopop/populators/CommunityPopulatorTests.cpp
+    geopop/populators/MakeGeoGrid.cpp
     geopop/populators/CollegePopulatorTest.cpp
     geopop/populators/HouseholdPopulatorTest.cpp
     geopop/populators/K12SchoolPopulatorTest.cpp
+    geopop/populators/PrimaryCommunityPopulatorTests.cpp
+    geopop/populators/SecondaryCommunityPopulatorTests.cpp
     geopop/populators/WorkplacePopulatorTest.cpp
-    geopop/populators/createGeogrid.cpp
+    geopop/populators/DaycarePopulatorTest.cpp
+    geopop/populators/PreSchoolPopulatorTest.cpp
     #---
     myhayai/DeliveryMan.cpp
     myhayai/MyhayaiTests.cpp
     myhayai/class_delivery.cpp
     myhayai/flex_delivery.cpp
     #---
-    main.cpp
-)
+    main.cpp)
 
 #if (OPENMP_FOUND)
 #        set(SRC ${SRC} ParallelRuns.cpp)

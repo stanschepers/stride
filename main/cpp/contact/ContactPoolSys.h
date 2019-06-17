@@ -40,7 +40,7 @@ public:
         ContactPoolSys();
 
         /// Create a new contact pool of a given type.
-        ContactPool* CreateContactPool(ContactType::Id typeId);
+        ContactPool* CreateContactPool(ContactType::Id typeId, unsigned int limit = std::numeric_limits<unsigned int>::infinity());
 
         /// Templated version of @CreateContactPool for use when type id is fixed.
         /// \tparam T   One of the ContactType::Id's (Household, K12 School, ...).
@@ -50,6 +50,9 @@ public:
         {
                 return m_sys[T].emplace_back(m_currentContactPoolId[T]++, T);
         }
+
+//        template<>
+//        ContactPool* CreateContactPool<stride::ContactType::Id::Workplace>(unsigned int limit);
 
         /// Access through const reference to ContactPools of type 'id'.
         /// \param id   ContactType::Id of pools container you want to access.
