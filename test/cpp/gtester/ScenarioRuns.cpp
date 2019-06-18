@@ -112,33 +112,33 @@ void RunTest(const string& testTag, tuple<ptree, unsigned int, double> d, unsign
         }
 }
 
-// TEST_P(RunsDefault, defaultpop_single)
-//{
-//        const string testTag = GetParam();
-//        RunTest(testTag, ScenarioData::Get(testTag), 1U);
-//}
-//
-//#ifdef _OPENMP
-// TEST_P(RunsDefault, defaultpop_multi)
-//{
-//        const string testTag = GetParam();
-//        RunTest(testTag, ScenarioData::Get(testTag), ConfigInfo::NumberAvailableThreads());
-//}
-//#endif
-//
-// TEST_P(RunsGeoPop, geopop_single)
-//{
-//        const string testTag = GetParam();
-//        RunTest(testTag, ScenarioData::Get(testTag + "_geopop"), 1U);
-//}
-//
-//#ifdef _OPENMP
-// TEST_P(RunsGeoPop, geopop_multi)
-//{
-//        const string testTag = GetParam();
-//        RunTest(testTag, ScenarioData::Get(testTag + "_geopop"), ConfigInfo::NumberAvailableThreads());
-//}
-//#endif
+ TEST_P(RunsDefault, defaultpop_single)
+{
+        const string testTag = GetParam();
+        RunTest(testTag, ScenarioData::Get(testTag), 1U);
+}
+
+#ifdef _OPENMP
+ TEST_P(RunsDefault, defaultpop_multi)
+{
+        const string testTag = GetParam();
+        RunTest(testTag, ScenarioData::Get(testTag), ConfigInfo::NumberAvailableThreads());
+}
+#endif
+
+ TEST_P(RunsGeoPop, geopop_single)
+{
+        const string testTag = GetParam();
+        RunTest(testTag, ScenarioData::Get(testTag + "_geopop"), 1U);
+}
+
+#ifdef _OPENMP
+ TEST_P(RunsGeoPop, geopop_multi)
+{
+        const string testTag = GetParam();
+        RunTest(testTag, ScenarioData::Get(testTag + "_geopop"), ConfigInfo::NumberAvailableThreads());
+}
+#endif
 
 #ifdef _OPENMP
 TEST_P(RunsGeoPop, geopop_distribution)
