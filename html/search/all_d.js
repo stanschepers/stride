@@ -20,7 +20,6 @@ var searchData=
   ['locationsreader',['LocationsReader',['../d6/d97/a00045.html#a08a0a0bee6983e75de99b46132e26eaa',1,'geopop::LocationsReader']]],
   ['locationsreader',['LocationsReader',['../d6/d97/a00045.html',1,'geopop']]],
   ['locationsreader_2eh',['LocationsReader.h',['../dd/db3/a00313.html',1,'']]],
-  ['logshutdown',['LogShutdown',['../da/d82/a00091.html#aa40b02ef62cb1b4a2db78eb847ffe964',1,'stride::ControlHelper']]],
   ['logstartup',['LogStartup',['../da/d82/a00091.html#adc021af008df0bf673682b81aa8d0010',1,'stride::ControlHelper']]],
   ['logutils',['LogUtils',['../d5/deb/a00132.html',1,'stride::util']]],
   ['logutils_2ecpp',['LogUtils.cpp',['../d0/d39/a00314.html',1,'']]],

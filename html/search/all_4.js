@@ -94,7 +94,7 @@ var searchData=
   ['contains',['Contains',['../d2/dee/a00049.html#abba48a42260870f97e6d307e234254e6',1,'geopop::RadiusPolicy::Contains()'],['../de/d21/a00006.html#a52925b64f09df5d8bf8e3ea854e3de01',1,'geopop::BoxPolicy::Contains()'],['../d3/dea/a00046.html#aa76a2a2617b5fd1ae1ff45891adf65b5',1,'geopop::PolygonPolicy::Contains()'],['../d5/db6/a00042.html#a5caa3f8d786189195613cfb5e508f3c8',1,'geopop::KdTree::Contains()']]],
   ['control',['Control',['../da/d74/a00099.html#a9cef30bd849611feee70025cd9270e96',1,'stride::GenPopController::Control()'],['../d4/d3e/a00116.html#acddfa3cafcea42db5c8b18af0410179f',1,'stride::SimController::Control()'],['../d8/d87/a00118.html#a5cc6905d4a31b469d89177de47007dbe',1,'stride::StanController::Control()']]],
   ['controlhelper',['ControlHelper',['../da/d82/a00091.html',1,'stride']]],
-  ['controlhelper',['ControlHelper',['../da/d82/a00091.html#a8dcdb0b45a733f433e41f471e5157138',1,'stride::ControlHelper::ControlHelper(std::string name, const boost::property_tree::ptree &amp;config)'],['../da/d82/a00091.html#adf5c02b1632443f385cc0359dc76506b',1,'stride::ControlHelper::ControlHelper()']]],
+  ['controlhelper',['ControlHelper',['../da/d82/a00091.html#a9f1e53f85841f686c07c424ba23a090b',1,'stride::ControlHelper::ControlHelper(const boost::property_tree::ptree &amp;config, std::string name)'],['../da/d82/a00091.html#adf5c02b1632443f385cc0359dc76506b',1,'stride::ControlHelper::ControlHelper()']]],
   ['controlhelper_2ecpp',['ControlHelper.cpp',['../d8/d00/a00186.html',1,'']]],
   ['controlhelper_2eh',['ControlHelper.h',['../d6/daa/a00187.html',1,'']]],
   ['convertfromstring',['ConvertFromString',['../d1/d8b/a00406.html#ad8bead5f8361eccc7b7b699529da6351',1,'stride']]],

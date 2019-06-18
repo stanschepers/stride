@@ -2,7 +2,7 @@ var searchData=
 [
   ['generateepioutput',['GenerateEpiOutput',['../d1/d1e/a00087.html#a878b9b79af0c8fe9025676ed1c092c29',1,'stride::ContactPool::GenerateEpiOutput()'],['../da/d45/a00011.html#a181cf15e29892b07541785081503a463',1,'geopop::Epidemiologic::GenerateEpiOutput()']]],
   ['generator',['Generator',['../d4/d51/a00017.html#a2301c46e0598928fc493d28caffef499',1,'geopop::Generator']]],
-  ['genpopcontroller',['GenPopController',['../da/d74/a00099.html#a5585b723dfd364bbe94361148be98799',1,'stride::GenPopController']]],
+  ['genpopcontroller',['GenPopController',['../da/d74/a00099.html#a359087a932604632751ec5314794d795',1,'stride::GenPopController']]],
   ['geoaggregator',['GeoAggregator',['../dd/da2/a00019.html#a98061f715d7f989acc80177244b9e382',1,'geopop::GeoAggregator&lt; Policy &gt;::GeoAggregator()'],['../db/db2/a00020.html#a3feb72ee9b1d9ae9bfd777f149eabe9d',1,'geopop::GeoAggregator&lt; Policy, F &gt;::GeoAggregator()']]],
   ['geogrid',['GeoGrid',['../d0/d0b/a00004.html#af395eec5af1aabd0f692f72617a81b23',1,'geopop::GeoGrid::GeoGrid(stride::Population *population)'],['../d0/d0b/a00004.html#a0153173c4c436b80ddfbd0f5a163fe55',1,'geopop::GeoGrid::GeoGrid(const GeoGrid &amp;)=delete'],['../d9/db3/a00066.html#a4fee992d5d7fced60a847258f37e9b62',1,'proto::GeoGrid::GeoGrid()'],['../d9/db3/a00066.html#a59548cbbed93d5c0cd85a6eea1247b7e',1,'proto::GeoGrid::GeoGrid(const GeoGrid &amp;from)']]],
   ['geogrid_5flocation',['GeoGrid_Location',['../dc/ddf/a00067.html#aac7b99d1d33890606786aebe1d7d8a02',1,'proto::GeoGrid_Location::GeoGrid_Location()'],['../dc/ddf/a00067.html#a66a50f961c4c37f7788cf771845d5867',1,'proto::GeoGrid_Location::GeoGrid_Location(const GeoGrid_Location &amp;from)']]],
@@ -91,7 +91,7 @@ var searchData=
   ['getprovince',['GetProvince',['../d6/d42/a00043.html#a50a738766ed780e5a64070e6a0ba6bfb',1,'geopop::Location']]],
   ['getrate',['GetRate',['../d4/d98/a00120.html#a51ffe104253ffd5bcf12ab299fa6f2e2',1,'stride::TransmissionProfile']]],
   ['getrootdir',['GetRootDir',['../df/dcd/a00127.html#a08ac8bd3a86a0db3901aa2d422bd6d13',1,'stride::util::FileSys']]],
-  ['getsim',['GetSim',['../d9/d4b/a00117.html#a99014dd891a3422214c2a088dd38cde9',1,'stride::SimRunner']]],
+  ['getsim',['GetSim',['../d4/d3e/a00116.html#a7612605be8f6961c0d32ce03292da00d',1,'stride::SimController::GetSim()'],['../d9/d4b/a00117.html#a99014dd891a3422214c2a088dd38cde9',1,'stride::SimRunner::GetSim()']]],
   ['getsimulationday',['GetSimulationDay',['../df/d13/a00085.html#a440b877497550ef988931917fc243809',1,'stride::Calendar']]],
   ['getstartinfectiousness',['GetStartInfectiousness',['../d4/d3a/a00101.html#a9eab117bce0fe7009188aad7e534ca82',1,'stride::Health']]],
   ['getstartsymptomatic',['GetStartSymptomatic',['../d4/d3a/a00101.html#adf2c4f06cd9ad0dac95c5a2ffdd39489',1,'stride::Health']]],

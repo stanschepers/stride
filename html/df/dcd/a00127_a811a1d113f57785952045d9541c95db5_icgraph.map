@@ -8,7 +8,7 @@
 <area shape="rect" id="node29" href="$df/dcd/a00127.html#abf429c79cfcd82e0f363d6b977bedeb1" title="Return tests dir (only relevant when use_install_dirs mode is active) " alt="" coords="220,397,356,439"/>
 <area shape="rect" id="node4" href="$da/d82/a00091.html#adc021af008df0bf673682b81aa8d0010" title="Logs info on setup for cli environment to stride_logger. " alt="" coords="422,136,577,177"/>
 <area shape="rect" id="node5" href="$da/d74/a00099.html#a9cef30bd849611feee70025cd9270e96" title="Actual run of the simulator. " alt="" coords="1097,201,1276,243"/>
-<area shape="rect" id="node7" href="$d4/d3e/a00116.html#acddfa3cafcea42db5c8b18af0410179f" title="Actual run of the simulator. " alt="" coords="893,143,1046,184"/>
+<area shape="rect" id="node7" href="$d4/d3e/a00116.html#acddfa3cafcea42db5c8b18af0410179f" title="Control the execution of the simulation. " alt="" coords="893,143,1046,184"/>
 <area shape="rect" id="node8" href="$d8/d87/a00118.html#a5cc6905d4a31b469d89177de47007dbe" title="Actual run of the simulator. " alt="" coords="890,77,1049,119"/>
 <area shape="rect" id="node6" href="$d7/ddb/a00361.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main program of the stride simulator. " alt="" coords="1324,150,1379,177"/>
 <area shape="rect" id="node11" href="$d5/de0/a00050.html#abb99b826e135cac651269f27058c9e81" title="Create a CommutesReader based on the filename relative to the data directory. " alt="" coords="405,267,593,308"/>
