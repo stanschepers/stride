@@ -1,34 +1,34 @@
 <map id="ControlHelper.cpp" name="ControlHelper.cpp">
-<area shape="rect" id="node2" href="$d6/daa/a00187.html" title="Header for the command line controller. " alt="" coords="2691,169,2813,196"/>
-<area shape="rect" id="node15" href="$d4/db5/a00328.html" title="Header file for the core Population class. " alt="" coords="757,87,886,114"/>
-<area shape="rect" id="node30" href="$d6/de1/a00356.html" title="Header for the SimRunner class. " alt="" coords="3455,169,3585,196"/>
-<area shape="rect" id="node33" href="$d5/de9/a00176.html" title="Info on configuration. " alt="" coords="1836,87,1956,114"/>
-<area shape="rect" id="node34" href="$d0/d53/a00232.html" title="Interface for install directory queries. " alt="" coords="2837,169,2937,196"/>
-<area shape="rect" id="node36" href="$d4/d6f/a00315.html" title="Logging (spdlog) utilities. " alt="" coords="1830,169,1938,196"/>
-<area shape="rect" id="node37" href="$dd/dcb/a00375.html" title="TimeStamp class. " alt="" coords="3877,251,4008,278"/>
-<area shape="rect" id="node39" href="$de/d53/a00169.html" title="Observer for SimEvents for commandline interface usage. " alt="" coords="2525,169,2667,196"/>
-<area shape="rect" id="node40" href="$d4/d5b/a00294.html" title="Observer for Infected output. " alt="" coords="1499,169,1696,196"/>
-<area shape="rect" id="node42" href="$d8/d23/a00326.html" title="Observer for Persons output. " alt="" coords="2304,169,2501,196"/>
-<area shape="rect" id="node44" href="$d3/d30/a00370.html" title="Observer for Persons output. " alt="" coords="3230,87,3439,114"/>
-<area shape="rect" id="node46" href="$dc/d55/a00226.html" title="Observer for the epidemiological condition of the population each timestep. " alt="" coords="1285,169,1475,196"/>
-<area shape="rect" id="node47" href="$d9/d01/a00227.html" title="geopop/io/EpiOutputWriter.h" alt="" coords="1939,251,2138,278"/>
-<area shape="rect" id="node48" href="$dd/d2d/a00229.html" title="geopop/io/EpiOutputWriter\lFactory.h" alt="" coords="1677,244,1865,285"/>
-<area shape="rect" id="node3" href="$d0/dc5/a00343.html" title="Interface of RnMan. " alt="" coords="1349,251,1449,278"/>
-<area shape="rect" id="node10" href="$d0/d65/a00360.html" title="Definition of Stopwatch. " alt="" coords="3730,251,3854,278"/>
-<area shape="rect" id="node4" href="$d3/d93/a00341.html" title="Interface of RnPcg. " alt="" coords="1375,333,1449,360"/>
-<area shape="rect" id="node11" href="$d4/d13/a00377.html" title="Utilities to tag clocks and reformat clock readout to string. " alt="" coords="3734,333,3850,360"/>
-<area shape="rect" id="node16" href="$d8/d64/a00181.html" title="Header for the core ContactPool class. " alt="" coords="92,251,255,278"/>
-<area shape="rect" id="node18" href="$de/df3/a00185.html" title="Definition of ContactPool Id Type. " alt="" coords="386,333,550,360"/>
-<area shape="rect" id="node22" href="$dc/d52/a00183.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="329,169,516,196"/>
-<area shape="rect" id="node24" href="$df/d03/a00348.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="746,251,918,278"/>
-<area shape="rect" id="node26" href="$da/d2e/a00238.html" title="geopop/GeoGrid.h" alt="" coords="5,169,144,196"/>
-<area shape="rect" id="node27" href="$d5/df1/a00206.html" title="geopop/Epidemiologic.h" alt="" coords="671,169,846,196"/>
-<area shape="rect" id="node28" href="$de/de9/a00322.html" title="Header file for the Person class. " alt="" coords="540,169,647,196"/>
-<area shape="rect" id="node17" href="$db/dd9/a00179.html" title="Header for the ContactLogMode class. " alt="" coords="167,333,361,360"/>
-<area shape="rect" id="node23" href="$d5/d7b/a00286.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="431,251,569,278"/>
-<area shape="rect" id="node31" href="$d3/d58/a00285.html" title="Definition of EventId. " alt="" coords="2607,333,2719,360"/>
-<area shape="rect" id="node32" href="$dd/db5/a00365.html" title="Definition of Subject/Observer for SimEvents. " alt="" coords="3455,251,3604,278"/>
-<area shape="rect" id="node41" href="$d8/d0a/a00292.html" title="Header for the InfectedFile class. " alt="" coords="1143,333,1249,360"/>
-<area shape="rect" id="node43" href="$d4/d8f/a00324.html" title="Header for the PersonFile class. " alt="" coords="2410,251,2515,278"/>
-<area shape="rect" id="node45" href="$d8/d21/a00368.html" title="Header for the SummaryFile class. " alt="" coords="3263,169,3380,196"/>
+<area shape="rect" id="node2" href="$d6/daa/a00187.html" title="Header for the command line controller. " alt="" coords="2380,169,2501,196"/>
+<area shape="rect" id="node15" href="$d4/db5/a00328.html" title="Header file for the core Population class. " alt="" coords="758,87,888,114"/>
+<area shape="rect" id="node31" href="$d6/de1/a00356.html" title="Header for the SimRunner class. " alt="" coords="2917,169,3046,196"/>
+<area shape="rect" id="node34" href="$d5/de9/a00176.html" title="Info on configuration. " alt="" coords="2306,87,2426,114"/>
+<area shape="rect" id="node35" href="$d0/d53/a00232.html" title="Interface for install directory queries. " alt="" coords="3868,169,3968,196"/>
+<area shape="rect" id="node37" href="$d4/d6f/a00315.html" title="Logging (spdlog) utilities. " alt="" coords="1773,169,1881,196"/>
+<area shape="rect" id="node38" href="$dd/dcb/a00375.html" title="TimeStamp class. " alt="" coords="3391,251,3522,278"/>
+<area shape="rect" id="node40" href="$de/d53/a00169.html" title="Observer for SimEvents for commandline interface usage. " alt="" coords="2576,169,2718,196"/>
+<area shape="rect" id="node41" href="$d4/d5b/a00294.html" title="Observer for Infected output. " alt="" coords="1338,169,1535,196"/>
+<area shape="rect" id="node43" href="$d8/d23/a00326.html" title="Observer for Persons output. " alt="" coords="2034,169,2231,196"/>
+<area shape="rect" id="node45" href="$d3/d30/a00370.html" title="Observer for Persons output. " alt="" coords="3122,87,3332,114"/>
+<area shape="rect" id="node47" href="$dc/d55/a00226.html" title="Observer for the epidemiological condition of the population each timestep. " alt="" coords="1559,169,1748,196"/>
+<area shape="rect" id="node48" href="$d9/d01/a00227.html" title="geopop/io/EpiOutputWriter.h" alt="" coords="2005,251,2204,278"/>
+<area shape="rect" id="node49" href="$dd/d2d/a00229.html" title="geopop/io/EpiOutputWriter\lFactory.h" alt="" coords="2430,244,2618,285"/>
+<area shape="rect" id="node3" href="$d0/dc5/a00343.html" title="Interface of RnMan. " alt="" coords="1350,251,1450,278"/>
+<area shape="rect" id="node10" href="$d0/d65/a00360.html" title="Definition of Stopwatch. " alt="" coords="3192,251,3316,278"/>
+<area shape="rect" id="node4" href="$d3/d93/a00341.html" title="Interface of RnPcg. " alt="" coords="1393,333,1466,360"/>
+<area shape="rect" id="node11" href="$d4/d13/a00377.html" title="Utilities to tag clocks and reformat clock readout to string. " alt="" coords="3201,333,3317,360"/>
+<area shape="rect" id="node16" href="$d8/d64/a00181.html" title="Header for the core ContactPool class. " alt="" coords="94,251,256,278"/>
+<area shape="rect" id="node18" href="$de/df3/a00185.html" title="Definition of ContactPool Id Type. " alt="" coords="382,333,546,360"/>
+<area shape="rect" id="node23" href="$dc/d52/a00183.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="331,169,518,196"/>
+<area shape="rect" id="node25" href="$df/d03/a00348.html" title="Interface and implementation for SegmentedVector class. " alt="" coords="748,251,920,278"/>
+<area shape="rect" id="node27" href="$da/d2e/a00238.html" title="geopop/GeoGrid.h" alt="" coords="27,169,166,196"/>
+<area shape="rect" id="node28" href="$d5/df1/a00206.html" title="geopop/Epidemiologic.h" alt="" coords="673,169,848,196"/>
+<area shape="rect" id="node29" href="$de/de9/a00322.html" title="Header file for the Person class. " alt="" coords="542,169,648,196"/>
+<area shape="rect" id="node17" href="$db/dd9/a00179.html" title="Header for the ContactLogMode class. " alt="" coords="163,333,358,360"/>
+<area shape="rect" id="node24" href="$d5/d7b/a00286.html" title="Container for the contact pools of various type (household, work, ...). " alt="" coords="433,251,570,278"/>
+<area shape="rect" id="node32" href="$d3/d58/a00285.html" title="Definition of EventId. " alt="" coords="2626,333,2738,360"/>
+<area shape="rect" id="node33" href="$dd/db5/a00365.html" title="Definition of Subject/Observer for SimEvents. " alt="" coords="3019,251,3168,278"/>
+<area shape="rect" id="node42" href="$d8/d0a/a00292.html" title="Header for the InfectedFile class. " alt="" coords="1161,333,1266,360"/>
+<area shape="rect" id="node44" href="$d4/d8f/a00324.html" title="Header for the PersonFile class. " alt="" coords="1876,251,1981,278"/>
+<area shape="rect" id="node46" href="$d8/d21/a00368.html" title="Header for the SummaryFile class. " alt="" coords="3500,169,3618,196"/>
 </map>

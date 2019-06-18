@@ -4,7 +4,6 @@ var searchData=
   ['_7ebasenode',['~BaseNode',['../d7/d46/a00002.html#a228daa8a108dd960bc1b6d4e7ee06857',1,'geopop::kd::BaseNode']]],
   ['_7ecommutesreader',['~CommutesReader',['../da/da0/a00009.html#a87275d249311463450de4aa0a8312f28',1,'geopop::CommutesReader']]],
   ['_7econtactpool',['~ContactPool',['../d1/d1e/a00087.html#adee0ae5ebfa3ec1ccd684b2a4e16542c',1,'stride::ContactPool']]],
-  ['_7econtrolhelper',['~ControlHelper',['../da/d82/a00091.html#a4c0bbd0529e9b3cf89701ee6d4e4dd36',1,'stride::ControlHelper']]],
   ['_7edaysoffinterface',['~DaysOffInterface',['../d4/d7d/a00093.html#afec638f8fcc3e653e389f47bd30d63e1',1,'stride::DaysOffInterface']]],
   ['_7edistributionreader',['~DistributionReader',['../d7/dec/a00010.html#aab6765c211192dccbe696e9fb8e4dbe9',1,'geopop::DistributionReader']]],
   ['_7eepioutput',['~EpiOutput',['../d9/d73/a00060.html#a4c793081eef8472cbc91c4ca115e8848',1,'proto::EpiOutput']]],

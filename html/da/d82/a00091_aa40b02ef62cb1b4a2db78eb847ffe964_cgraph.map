@@ -1,4 +1,4 @@
-<map id="stride::ControlHelper::Shutdown" name="stride::ControlHelper::Shutdown">
+<map id="stride::ControlHelper::LogShutdown" name="stride::ControlHelper::LogShutdown">
 <area shape="rect" id="node2" href="$d2/df5/a00137.html#a4b6145f590e94467a0048817f348ac75" title="Stops the stopwatch if it was running. " alt="" coords="208,5,368,47"/>
 <area shape="rect" id="node3" href="$d2/df5/a00137.html#a1a068a66f6b5db8cf68dabe5a8935f22" title="Returns string representation of readout. " alt="" coords="208,71,368,112"/>
 <area shape="rect" id="node4" href="$d2/df5/a00137.html#afe36cf7e76eb1de8cda4490fc5b41829" title="Returns the accumulated value without altering the stopwatch state. " alt="" coords="416,49,607,75"/>
