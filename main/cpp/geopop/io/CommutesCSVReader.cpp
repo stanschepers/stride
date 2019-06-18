@@ -48,8 +48,8 @@ void CommutesCSVReader::FillGeoGrid(GeoGrid<Epidemiologic>& geoGrid) const
                         const auto &locFrom = geoGrid.GetById(cityId1);
                         const auto &locTo = geoGrid.GetById(cityId2);
 
-                        locFrom->AddOutgoingCommute(locTo, proportion);
-                        locTo->AddIncomingCommute(locFrom, proportion);
+                        locFrom->GetContent()->AddOutgoingCommute(locTo->GetContent(), proportion);
+                        locTo->GetContent()->AddIncomingCommute(locFrom->GetContent(), proportion);
                 }
                 return;
         }

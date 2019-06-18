@@ -9,7 +9,7 @@
     <immunity_rate>0.8</immunity_rate>
     <num_days>100</num_days>
     <num_participants_survey>10</num_participants_survey>
-    <num_threads>12</num_threads>
+    <num_threads>1</num_threads>
     <output_cases>true</output_cases>
     <output_persons>false</output_persons>
     <output_prefix></output_prefix>
@@ -21,7 +21,7 @@
     <r0>11</r0>
     <seeding_age_max>99</seeding_age_max>
     <seeding_age_min>1</seeding_age_min>
-    <seeding_rate>0.00000334</seeding_rate>
+    <seeding_rate>0.000002727</seeding_rate>
     <start_date>2017-01-01</start_date>
     <stride_log_level>trace</stride_log_level>
     <track_index_case>false</track_index_case>
@@ -52,8 +52,32 @@
                 <household_file>households_east_flanders.csv</household_file>
             </household>
             <household>
+                <population_id>5</population_id>
+                <household_file>households_hainaut.csv</household_file>
+            </household>
+            <household>
+                <population_id>6</population_id>
+                <household_file>households_liege.csv</household_file>
+            </household>
+            <household>
                 <population_id>7</population_id>
                 <household_file>households_limburg.csv</household_file>
+            </household>
+            <household>
+                <population_id>8</population_id>
+                <household_file>households_luxembourg.csv</household_file>
+            </household>
+            <household>
+                <population_id>9</population_id>
+                <household_file>households_namur.csv</household_file>
+            </household>
+            <household>
+                <population_id>10</population_id>
+                <household_file>households_walloon_brabant.csv</household_file>
+            </household>
+            <household>
+                <population_id>11</population_id>
+                <household_file>households_brussels.csv</household_file>
             </household>
         </households>
         <participation_daycare>0.45</participation_daycare>
