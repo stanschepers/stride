@@ -1114,9 +1114,6 @@ TEST(EpiOutputJSONReaderTest, emptyStreamTest) {
         EXPECT_THROW(getEpiOutputFromJSON(jsonString, &geoGrid), runtime_error);
 }
 
-/// Checks if the epi-output json reader is able to handle invalid input
-TEST(EpiOutputJSONReaderTest, invalidTypeTest) { EXPECT_TRUE(true); }  // TODO: How to?
-
 /// Checks if the epi-output json reader throws an exception when the json is invalid
 TEST(EpiOutputJSONReaderTest, invalidJSONTest) {
         string jsonString = R"(

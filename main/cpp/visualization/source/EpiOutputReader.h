@@ -34,7 +34,7 @@ class EpiOutputReader
 {
 public:
         /// Parametrized constructor.
-        EpiOutputReader(std::unique_ptr<std::istream> inputStream, geopop::GeoGrid<EpiOutput>* epiOutput);
+        EpiOutputReader(geopop::GeoGrid<EpiOutput>* epiOutput);
 
         /// No copy constructor.
         EpiOutputReader(const EpiOutputReader&) = delete;
@@ -49,7 +49,6 @@ public:
         virtual void Read() = 0;
 
 protected:
-        std::unique_ptr<std::istream> m_inputStream; ///< File to read.
         geopop::GeoGrid<EpiOutput>* m_epiOutput;     ///< Resulting epi-output
 };
 

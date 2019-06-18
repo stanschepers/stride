@@ -26,9 +26,8 @@ class DataSpace;
     wrappers for the HDF5 dataset creation property functions.
 */
 //  Inheritance: ObjCreatPropList -> PropList -> IdComponent
-class H5_DLLCPP DSetCreatPropList : public ObjCreatPropList
-{
-public:
+class H5_DLLCPP DSetCreatPropList : public ObjCreatPropList {
+   public:
         ///\brief Default dataset creation property list.
         static const DSetCreatPropList& DEFAULT;
 
@@ -70,12 +69,10 @@ public:
         void setFillValue(const DataType& fvalue_type, const void* value) const;
 
         // Returns information about a filter in a pipeline.
-        H5Z_filter_t getFilter(int filter_number, unsigned int& flags, size_t& cd_nelmts, unsigned int* cd_values,
-                               size_t namelen, char name[], unsigned int& filter_config) const;
+        H5Z_filter_t getFilter(int filter_number, unsigned int& flags, size_t& cd_nelmts, unsigned int* cd_values, size_t namelen, char name[], unsigned int &filter_config) const;
 
         // Returns information about a filter in a pipeline given the filter id.
-        void getFilterById(H5Z_filter_t filter_id, unsigned int& flags, size_t& cd_nelmts, unsigned int* cd_values,
-                           size_t namelen, char name[], unsigned int& filter_config) const;
+        void getFilterById(H5Z_filter_t filter_id, unsigned int &flags, size_t &cd_nelmts, unsigned int* cd_values, size_t namelen, char name[], unsigned int &filter_config) const;
 
         // Gets the layout of the raw data storage of the data that uses this
         // property list.
@@ -92,8 +89,7 @@ public:
         H5D_fill_value_t isFillValueDefined() const;
 
         // Modifies the specified filter.
-        void modifyFilter(H5Z_filter_t filter_id, unsigned int flags, size_t cd_nelmts,
-                          const unsigned int cd_values[]) const;
+        void modifyFilter(H5Z_filter_t filter_id, unsigned int flags, size_t cd_nelmts, const unsigned int cd_values[]) const;
 
         // Remove one or all filters from the filter pipeline.
         void removeFilter(H5Z_filter_t filter_id) const;
@@ -105,8 +101,7 @@ public:
         void setExternal(const char* name, off_t offset, hsize_t size) const;
 
         // Adds a filter to the filter pipeline.
-        void setFilter(H5Z_filter_t filter, unsigned int flags = 0, size_t cd_nelmts = 0,
-                       const unsigned int cd_values[] = NULL) const;
+        void setFilter(H5Z_filter_t filter, unsigned int flags = 0, size_t cd_nelmts = 0, const unsigned int cd_values[] = NULL) const;
 
         // Sets Fletcher32 checksum of EDC for this property list.
         void setFletcher32() const;
@@ -121,13 +116,11 @@ public:
         void setNbit() const;
 
         // Maps elements of a virtual dataset to elements of the source dataset.
-        void setVirtual(const DataSpace& vspace, const char* src_fname, const char* src_dsname,
-                        const DataSpace& sspace) const;
-        void setVirtual(const DataSpace& vspace, const H5std_string src_fname, const H5std_string src_dsname,
-                        const DataSpace& sspace) const;
+        void setVirtual(const DataSpace& vspace, const char *src_fname, const char *src_dsname, const DataSpace& sspace) const;
+        void setVirtual(const DataSpace& vspace, const H5std_string src_fname, const H5std_string src_dsname, const DataSpace& sspace) const;
 
         ///\brief Returns this class name.
-        virtual H5std_string fromClass() const { return ("DSetCreatPropList"); }
+        virtual H5std_string fromClass () const { return("DSetCreatPropList"); }
 
         // Copy constructor - same as the original DSetCreatPropList.
         DSetCreatPropList(const DSetCreatPropList& orig);
@@ -144,7 +137,7 @@ public:
         // Deletes the global constant, should only be used by the library
         static void deleteConstants();
 
-private:
+    private:
         static DSetCreatPropList* DEFAULT_;
 
         // Creates the global constant, should only be used by the library

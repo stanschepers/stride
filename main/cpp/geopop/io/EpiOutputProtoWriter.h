@@ -21,12 +21,12 @@
 
 #include <fstream>
 
-//namespace proto {
-//class EpiOutput;
-//class EpiOutput_Location;
-//class EpiOutput_Location_Coordinate;
-//class EpiOutput_Location_AgeBracket;
-//class EpiOutput_Location_AgeBracket_HealthStatus;
+// namespace proto {
+// class EpiOutput;
+// class EpiOutput_Location;
+// class EpiOutput_Location_Coordinate;
+// class EpiOutput_Location_AgeBracket;
+// class EpiOutput_Location_AgeBracket_HealthStatus;
 //}
 
 namespace geopop {
@@ -44,14 +44,14 @@ public:
         void Write() override;
 
         /// Write the provided GeoGrid epi-output to the provided ostream in JSON format. (Only for test purposes)
-        void Write(std::ostream& stream) override;
+        void Write(std::ostream& stream);
 
         /// Write the epi-output of the GeoGrid to the right data format.
         void Update(GeoGrid<Epidemiologic>& geoGrid, unsigned int day) override;
 
 private:
         proto::EpiOutput m_output;  ///< protobuf to be written to a file
-        std::ofstream m_fstream;  ///< The file stream.
+        std::ofstream    m_fstream; ///< The file stream.
 };
 
 } // namespace geopop

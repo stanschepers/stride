@@ -29,7 +29,7 @@ class Epidemiologic;
  * An interface for writing the epi-output of a GeoGrid to a file, can be implemented with multiple file types.
  * JSON, Protobuf and HDF5 are currently implemented.
  */
-class EpiOutputWriter  // TODO: Make epi-output file in stead of writer?
+class EpiOutputWriter
 {
 public:
         /// Deconstruct the Writer
@@ -37,9 +37,6 @@ public:
 
         /// Write the epi-output to the provided file. (If given)
         virtual void Write() = 0;
-
-        /// Write the epi-output to the ostream. (Only used for test purposes)
-        virtual void Write(std::ostream& stream) = 0;
 
         /// Write the epi-output of the GeoGrid to the right data format.
         virtual void Update(GeoGrid<Epidemiologic>& geoGrid, unsigned int day) = 0;

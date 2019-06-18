@@ -10,13 +10,14 @@
  *  You should have received a copy of the GNU General Public License
  *  along with the software. If not, see <http://www.gnu.org/licenses/>.
  *
- *  Copyright 2019, Laurens Van Damme.
+ *  Copyright 2019, Andrei Bondarenko.
  */
 
 #pragma once
 
 #include "EpiOutputReader.h"
 
+#include <H5Cpp.h>
 #include <memory>
 
 namespace visualization {
@@ -24,26 +25,27 @@ namespace visualization {
 class EpiOutputReader;
 
 /**
- * An implementation of the EpiOutputReader using JSON.
- * This class is used to read a epi-output from a JSON file.
+ * An implementation of the EpiOutputReader using HDF5.
+ * This class is used to read a epi-output from a HDF5 file.
  */
-class EpiOutputJSONReader : public EpiOutputReader
+class EpiOutputHDF5Reader : public EpiOutputReader
 {
 public:
-        /// Construct the EpiOutputJSONReader with the istream which contains the JSON.
-        EpiOutputJSONReader(std::unique_ptr<std::istream> inputStream, geopop::GeoGrid<EpiOutput>* epiOutput);
+        /// Construct the EpiOutputHDF5Reader with the istream which contains the HDF5.
+        EpiOutputHDF5Reader(const std::string& filename, geopop::GeoGrid<EpiOutput>* epiOutput);
 
         /// No copy constructor.
-        EpiOutputJSONReader(const EpiOutputJSONReader&) = delete;
+        EpiOutputHDF5Reader(const EpiOutputHDF5Reader&) = delete;
 
         /// No copy assignement.
-        EpiOutputJSONReader operator=(const EpiOutputJSONReader&) = delete;
+        EpiOutputHDF5Reader operator=(const EpiOutputHDF5Reader&) = delete;
 
         /// Actually perform the read and return the EpiOutput.
         void Read() override;
-
 private:
-        std::unique_ptr<std::istream> m_inputStream; ///< File to read.
+        void ReadDay(const H5::Group& day, geopop::GeoGrid<EpiOutput>& grid);
+private:
+        H5::H5File m_input; ///< HDF5 file
 };
 
 } // namespace visualization

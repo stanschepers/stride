@@ -4,6 +4,7 @@ import QtLocation 5.6
 import QtPositioning 5.6
 import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.11
+import QtQuick.Controls.Styles 1.4
 
 Window {
     id: dataVisualWindow
@@ -323,7 +324,12 @@ Window {
         anchors.left: parent.left
         anchors.margins: 10
         width: 240
+
         model: ["Age bracket", "Daycare", "PreSchool", "K12School", "College", "Workplace", "Senior"]
+
+        style: ComboBoxStyle {
+            textColor: "black"
+        }
 
         onActivated: ctrl.setAgeBracket = model[index]
     }
@@ -334,7 +340,12 @@ Window {
         anchors.left: ageBracketComboBox.right
         anchors.margins: 10
         width: 240
+
         model: ["Health status", "Susceptible", "Infected", "Infectious", "Symptomatic", "Recovered", "Immune"]
+
+        style: ComboBoxStyle {
+            textColor: "black"
+        }
 
         onActivated: ctrl.setHealthStatus = model[index]
     }

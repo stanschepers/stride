@@ -43,11 +43,7 @@ public:
         void Read() override;
 
 private:
-//        /// Create a Coordinate based on the information stored in the provided boost property tree.
-//        geopop::Coordinate ParseCoordinate(boost::property_tree::ptree& coordinate);
-//
-//        /// Create a Location based on the information stored in the provided boost property tree.
-//        std::shared_ptr<geopop::Location<EpiOutput>> ParseLocation(boost::property_tree::ptree& location);
+        std::unique_ptr<std::istream> m_inputStream; ///< File to read.
 };
 
 } // namespace visualization

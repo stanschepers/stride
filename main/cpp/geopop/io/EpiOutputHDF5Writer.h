@@ -10,7 +10,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with the software. If not, see <http://www.gnu.org/licenses/>.
  *
- *  Copyright 2019, Laurens Van Damme.
+ *  Copyright 2019, Andrei Bondarenko.
  */
 
 #pragma once
@@ -18,33 +18,29 @@
 #include "EpiOutputWriter.h"
 #include "geopop/Location.h"
 
-#include <fstream>
-
-#include <nlohmann/json.hpp>
+#include <H5Cpp.h>
 
 namespace geopop {
 
 /**
- * Writes a GeoGrid epi-output to a JSON file.
+ * Writes a GeoGrid epi-output to a HDF5 file.
  */
-class EpiOutputJSONWriter : public EpiOutputWriter
+class EpiOutputHDF5Writer : public EpiOutputWriter
 {
 public:
-        /// Construct the EpiOutputJSONWriter.
-        explicit EpiOutputJSONWriter(const std::string& filename = "");
+        /// Construct the EpiOutputHDF5Writer.
+        explicit EpiOutputHDF5Writer(const std::string& filename);
 
-        /// Write the provided GeoGrid epi-output to the provided JSON file. (If given)
+        /// Write the provided GeoGrid epi-output to the provided HDF5 file. (If given)
         void Write() override;
-
-        /// Write the provided GeoGrid epi-output to the provided ostream in JSON format. (Only for test purposes)
-        void Write(std::ostream& stream);
 
         /// Write the epi-output of the GeoGrid to the right data format.
         void Update(GeoGrid<Epidemiologic>& geoGrid, unsigned int day) override;
 
 private:
-        nlohmann::json m_output;  ///< json to be written to a file
-        std::ofstream  m_fstream; ///< The file stream.
+        H5::H5File   m_output;         ///< HDF5 file
+        unsigned int m_day_count;      ///< Used to set day_count attribute in HDF5 file
+        unsigned int m_location_count; ///< Used to set location_count attribute in HDF5 file
 };
 
 } // namespace geopop

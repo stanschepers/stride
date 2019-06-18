@@ -33,9 +33,8 @@ class DataSpace;
     It provides a collection of services that are common to both Attribute
     and DataSet.
 */
-class H5_DLLCPP AbstractDs
-{
-public:
+class H5_DLLCPP AbstractDs {
+   public:
         // Gets a copy the datatype of that this abstract dataset uses.
         // Note that this datatype is a generic one and can only be accessed
         // via generic member functions, i.e., member functions belong
@@ -44,12 +43,12 @@ public:
         DataType getDataType() const;
 
         // Gets a copy of the specific datatype of this abstract dataset.
-        ArrayType  getArrayType() const;
-        CompType   getCompType() const;
-        EnumType   getEnumType() const;
-        IntType    getIntType() const;
-        FloatType  getFloatType() const;
-        StrType    getStrType() const;
+        ArrayType getArrayType() const;
+        CompType getCompType() const;
+        EnumType getEnumType() const;
+        IntType getIntType() const;
+        FloatType getFloatType() const;
+        StrType getStrType() const;
         VarLenType getVarLenType() const;
 
         ///\brief Gets the size in memory of this abstract dataset.
@@ -71,11 +70,11 @@ public:
         // Destructor
         virtual ~AbstractDs();
 
-protected:
+   protected:
         // Default constructor
         AbstractDs();
 
-private:
+   private:
         // This member function is implemented by DataSet and Attribute - pure virtual.
         virtual hid_t p_get_type() const = 0;
 

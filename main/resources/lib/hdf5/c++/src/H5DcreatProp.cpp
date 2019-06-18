@@ -13,19 +13,19 @@
 
 #include <string>
 
-#include "H5DaccProp.h"
-#include "H5DataSpace.h"
-#include "H5DataType.h"
-#include "H5DcreatProp.h"
+#include "H5Include.h"
 #include "H5Exception.h"
 #include "H5IdComponent.h"
-#include "H5Include.h"
-#include "H5LaccProp.h"
+#include "H5DataSpace.h"
+#include "H5PropList.h"
+#include "H5OcreatProp.h"
+#include "H5DcreatProp.h"
 #include "H5LcreatProp.h"
+#include "H5LaccProp.h"
+#include "H5DaccProp.h"
 #include "H5Location.h"
 #include "H5Object.h"
-#include "H5OcreatProp.h"
-#include "H5PropList.h"
+#include "H5DataType.h"
 
 namespace H5 {
 
@@ -51,21 +51,21 @@ DSetCreatPropList* DSetCreatPropList::DEFAULT_ = 0;
 //--------------------------------------------------------------------------
 DSetCreatPropList* DSetCreatPropList::getConstant()
 {
-        // Tell the C library not to clean up, H5Library::termH5cpp will call
-        // H5close - more dependency if use H5Library::dontAtExit()
-        if (!IdComponent::H5dontAtexit_called) {
-                (void)H5dont_atexit();
-                IdComponent::H5dontAtexit_called = true;
-        }
+    // Tell the C library not to clean up, H5Library::termH5cpp will call
+    // H5close - more dependency if use H5Library::dontAtExit()
+    if (!IdComponent::H5dontAtexit_called)
+    {
+        (void) H5dont_atexit();
+        IdComponent::H5dontAtexit_called = true;
+    }
 
-        // If the constant pointer is not allocated, allocate it. Otherwise,
-        // throw because it shouldn't be.
-        if (DEFAULT_ == 0)
-                DEFAULT_ = new DSetCreatPropList(H5P_DATASET_CREATE);
-        else
-                throw PropListIException("DSetCreatPropList::getConstant",
-                                         "DSetCreatPropList::getConstant is being invoked on an allocated DEFAULT_");
-        return (DEFAULT_);
+    // If the constant pointer is not allocated, allocate it. Otherwise,
+    // throw because it shouldn't be.
+    if (DEFAULT_ == 0)
+        DEFAULT_ = new DSetCreatPropList(H5P_DATASET_CREATE);
+    else
+        throw PropListIException("DSetCreatPropList::getConstant", "DSetCreatPropList::getConstant is being invoked on an allocated DEFAULT_");
+    return(DEFAULT_);
 }
 
 //--------------------------------------------------------------------------
@@ -76,8 +76,8 @@ DSetCreatPropList* DSetCreatPropList::getConstant()
 //--------------------------------------------------------------------------
 void DSetCreatPropList::deleteConstants()
 {
-        if (DEFAULT_ != 0)
-                delete DEFAULT_;
+    if (DEFAULT_ != 0)
+        delete DEFAULT_;
 }
 
 //--------------------------------------------------------------------------
@@ -127,10 +127,11 @@ DSetCreatPropList::DSetCreatPropList(const hid_t plist_id) : ObjCreatPropList(pl
 //--------------------------------------------------------------------------
 void DSetCreatPropList::setChunk(int ndims, const hsize_t* dim) const
 {
-        herr_t ret_value = H5Pset_chunk(id, ndims, dim);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::setChunk", "H5Pset_chunk failed");
-        }
+    herr_t ret_value = H5Pset_chunk(id, ndims, dim);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::setChunk", "H5Pset_chunk failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -144,11 +145,13 @@ void DSetCreatPropList::setChunk(int ndims, const hsize_t* dim) const
 //--------------------------------------------------------------------------
 int DSetCreatPropList::getChunk(int max_ndims, hsize_t* dim) const
 {
-        int chunk_size = H5Pget_chunk(id, max_ndims, dim);
-        if (chunk_size < 0) {
-                throw PropListIException("DSetCreatPropList::getChunk", "H5Pget_chunk returns negative chunk size");
-        }
-        return (chunk_size);
+    int chunk_size = H5Pget_chunk(id, max_ndims, dim);
+    if (chunk_size < 0)
+    {
+        throw PropListIException("DSetCreatPropList::getChunk",
+            "H5Pget_chunk returns negative chunk size");
+    }
+    return(chunk_size);
 }
 
 //--------------------------------------------------------------------------
@@ -163,10 +166,12 @@ int DSetCreatPropList::getChunk(int max_ndims, hsize_t* dim) const
 //--------------------------------------------------------------------------
 void DSetCreatPropList::setLayout(H5D_layout_t layout) const
 {
-        herr_t ret_value = H5Pset_layout(id, layout);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::setLayout", "H5Pset_layout failed");
-        }
+    herr_t ret_value = H5Pset_layout(id, layout);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::setLayout",
+            "H5Pset_layout failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -187,11 +192,13 @@ void DSetCreatPropList::setLayout(H5D_layout_t layout) const
 //--------------------------------------------------------------------------
 H5D_layout_t DSetCreatPropList::getLayout() const
 {
-        H5D_layout_t layout = H5Pget_layout(id);
-        if (layout == H5D_LAYOUT_ERROR) {
-                throw PropListIException("DSetCreatPropList::getLayout", "H5Pget_layout returns H5D_LAYOUT_ERROR");
-        }
-        return (layout);
+    H5D_layout_t layout = H5Pget_layout(id);
+    if (layout == H5D_LAYOUT_ERROR)
+    {
+        throw PropListIException("DSetCreatPropList::getLayout",
+            "H5Pget_layout returns H5D_LAYOUT_ERROR");
+    }
+    return(layout);
 }
 
 //--------------------------------------------------------------------------
@@ -208,10 +215,12 @@ H5D_layout_t DSetCreatPropList::getLayout() const
 //--------------------------------------------------------------------------
 void DSetCreatPropList::setDeflate(int level) const
 {
-        herr_t ret_value = H5Pset_deflate(id, level);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::setDeflate", "H5Pset_deflate failed");
-        }
+    herr_t ret_value = H5Pset_deflate(id, level);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::setDeflate",
+            "H5Pset_deflate failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -232,10 +241,12 @@ void DSetCreatPropList::setDeflate(int level) const
 //--------------------------------------------------------------------------
 void DSetCreatPropList::setSzip(unsigned int options_mask, unsigned int pixels_per_block) const
 {
-        herr_t ret_value = H5Pset_szip(id, options_mask, pixels_per_block);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::setSzip", "H5Pset_szip failed");
-        }
+    herr_t ret_value = H5Pset_szip(id, options_mask, pixels_per_block);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::setSzip",
+            "H5Pset_szip failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -252,10 +263,12 @@ void DSetCreatPropList::setSzip(unsigned int options_mask, unsigned int pixels_p
 //--------------------------------------------------------------------------
 void DSetCreatPropList::setNbit() const
 {
-        herr_t ret_value = H5Pset_nbit(id);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::setNbit", "H5Pset_nbit failed");
-        }
+    herr_t ret_value = H5Pset_nbit(id);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::setNbit",
+            "H5Pset_nbit failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -277,10 +290,12 @@ void DSetCreatPropList::setNbit() const
 //--------------------------------------------------------------------------
 void DSetCreatPropList::setFillValue(const DataType& fvalue_type, const void* value) const
 {
-        herr_t ret_value = H5Pset_fill_value(id, fvalue_type.getId(), value);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::setFillValue", "H5Pset_fill_value failed");
-        }
+    herr_t ret_value = H5Pset_fill_value(id, fvalue_type.getId(), value);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::setFillValue",
+                "H5Pset_fill_value failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -298,10 +313,12 @@ void DSetCreatPropList::setFillValue(const DataType& fvalue_type, const void* va
 //--------------------------------------------------------------------------
 void DSetCreatPropList::getFillValue(const DataType& fvalue_type, void* value) const
 {
-        herr_t ret_value = H5Pget_fill_value(id, fvalue_type.getId(), value);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::getFillValue", "H5Pget_fill_value failed");
-        }
+    herr_t ret_value = H5Pget_fill_value(id, fvalue_type.getId(), value);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::getFillValue",
+                "H5Pget_fill_value failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -316,13 +333,15 @@ void DSetCreatPropList::getFillValue(const DataType& fvalue_type, void* value) c
 //--------------------------------------------------------------------------
 H5D_fill_value_t DSetCreatPropList::isFillValueDefined() const
 {
-        H5D_fill_value_t status;
-        herr_t           ret_value = H5Pfill_value_defined(id, &status);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::isFillValueDefined",
-                                         "H5Pfill_value_defined returned H5D_FILL_VALUE_ERROR (-1)");
-        } else
-                return (status);
+    H5D_fill_value_t status;
+    herr_t ret_value = H5Pfill_value_defined(id, &status);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::isFillValueDefined",
+                "H5Pfill_value_defined returned H5D_FILL_VALUE_ERROR (-1)");
+    }
+    else
+        return (status);
 }
 
 //--------------------------------------------------------------------------
@@ -345,13 +364,15 @@ H5D_fill_value_t DSetCreatPropList::isFillValueDefined() const
 ///             and the filter fails then the entire I/O operation fails.
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-void DSetCreatPropList::setFilter(H5Z_filter_t filter_id, unsigned int flags, size_t cd_nelmts,
-                                  const unsigned int cd_values[]) const
+void DSetCreatPropList::setFilter(H5Z_filter_t filter_id, unsigned int flags,
+        size_t cd_nelmts, const unsigned int cd_values[]) const
 {
-        herr_t ret_value = H5Pset_filter(id, filter_id, flags, cd_nelmts, cd_values);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::setFilter", "H5Pset_filter failed");
-        }
+    herr_t ret_value = H5Pset_filter(id, filter_id, flags, cd_nelmts, cd_values);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::setFilter",
+                "H5Pset_filter failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -366,10 +387,12 @@ void DSetCreatPropList::setFilter(H5Z_filter_t filter_id, unsigned int flags, si
 //--------------------------------------------------------------------------
 void DSetCreatPropList::removeFilter(H5Z_filter_t filter_id) const
 {
-        herr_t ret_value = H5Premove_filter(id, filter_id);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::removeFilter", "H5Premove_filter failed");
-        }
+    herr_t ret_value = H5Premove_filter(id, filter_id);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::removeFilter",
+                "H5Premove_filter failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -381,12 +404,14 @@ void DSetCreatPropList::removeFilter(H5Z_filter_t filter_id) const
 //--------------------------------------------------------------------------
 int DSetCreatPropList::getNfilters() const
 {
-        int num_filters = H5Pget_nfilters(id);
-        if (num_filters < 0) {
-                throw PropListIException("DSetCreatPropList::getNfilters",
-                                         "H5Pget_nfilters returned negative number of filters");
-        } else
-                return (num_filters);
+    int num_filters = H5Pget_nfilters(id);
+    if (num_filters < 0)
+    {
+        throw PropListIException("DSetCreatPropList::getNfilters",
+                "H5Pget_nfilters returned negative number of filters");
+    }
+    else
+        return(num_filters);
 }
 
 //--------------------------------------------------------------------------
@@ -409,16 +434,18 @@ int DSetCreatPropList::getNfilters() const
 //              of unsigned int, but for backward compatibility, it cannot be
 //              changed. -BMR (2014/04/15)
 //--------------------------------------------------------------------------
-H5Z_filter_t DSetCreatPropList::getFilter(int filter_number, unsigned int& flags, size_t& cd_nelmts,
-                                          unsigned int* cd_values, size_t namelen, char name[],
-                                          unsigned int& filter_config) const
+H5Z_filter_t DSetCreatPropList::getFilter(int filter_number,
+        unsigned int &flags, size_t &cd_nelmts, unsigned int* cd_values,
+        size_t namelen, char name[], unsigned int& filter_config) const
 {
-        H5Z_filter_t filter_id;
-        filter_id = H5Pget_filter2(id, filter_number, &flags, &cd_nelmts, cd_values, namelen, name, &filter_config);
-        if (filter_id == H5Z_FILTER_ERROR)
-                throw PropListIException("DSetCreatPropList::getFilter", "H5Pget_filter2 returned H5Z_FILTER_ERROR");
-        else
-                return (filter_id);
+    H5Z_filter_t filter_id;
+    filter_id = H5Pget_filter2(id, filter_number, &flags, &cd_nelmts,
+                                  cd_values, namelen, name, &filter_config);
+    if (filter_id == H5Z_FILTER_ERROR)
+        throw PropListIException("DSetCreatPropList::getFilter",
+                "H5Pget_filter2 returned H5Z_FILTER_ERROR");
+    else
+        return(filter_id);
 }
 
 //--------------------------------------------------------------------------
@@ -436,14 +463,15 @@ H5Z_filter_t DSetCreatPropList::getFilter(int filter_number, unsigned int& flags
 ///\exception   H5::PropListIException
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-void DSetCreatPropList::getFilterById(H5Z_filter_t filter_id, unsigned int& flags, size_t& cd_nelmts,
-                                      unsigned int* cd_values, size_t namelen, char name[],
-                                      unsigned int& filter_config) const
+void DSetCreatPropList::getFilterById(H5Z_filter_t filter_id,
+        unsigned int &flags, size_t &cd_nelmts, unsigned int* cd_values,
+        size_t namelen, char name[], unsigned int &filter_config) const
 {
-        herr_t ret_value =
-            H5Pget_filter_by_id2(id, filter_id, &flags, &cd_nelmts, cd_values, namelen, name, &filter_config);
-        if (ret_value < 0)
-                throw PropListIException("DSetCreatPropList::getFilterById", "H5Pget_filter_by_id2 failed");
+    herr_t ret_value = H5Pget_filter_by_id2(id, filter_id, &flags, &cd_nelmts,
+                                  cd_values, namelen, name, &filter_config);
+    if (ret_value < 0)
+        throw PropListIException("DSetCreatPropList::getFilterById",
+                "H5Pget_filter_by_id2 failed");
 }
 
 //--------------------------------------------------------------------------
@@ -467,13 +495,15 @@ void DSetCreatPropList::getFilterById(H5Z_filter_t filter_id, unsigned int& flag
 ///             and the filter fails then the entire I/O operation fails.
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-void DSetCreatPropList::modifyFilter(H5Z_filter_t filter_id, unsigned int flags, size_t cd_nelmts,
-                                     const unsigned int cd_values[]) const
+void DSetCreatPropList::modifyFilter(H5Z_filter_t filter_id, unsigned int
+        flags, size_t cd_nelmts, const unsigned int cd_values[]) const
 {
-        herr_t ret_value = H5Pmodify_filter(id, filter_id, flags, cd_nelmts, cd_values);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::modifyFilter", "H5Pmodify_filter failed");
-        }
+    herr_t ret_value = H5Pmodify_filter(id, filter_id, flags, cd_nelmts, cd_values);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::modifyFilter",
+                "H5Pmodify_filter failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -487,16 +517,15 @@ void DSetCreatPropList::modifyFilter(H5Z_filter_t filter_id, unsigned int flags,
 //--------------------------------------------------------------------------
 bool DSetCreatPropList::allFiltersAvail() const
 {
-        htri_t ret_value = H5Pall_filters_avail(id);
-        if (ret_value > 0)
-                return true;
-        else if (ret_value == 0)
-                return false;
-        else // Raise exception when H5Pall_filters_avail returns a negative value
-        {
-                throw PropListIException("DSetCreatPropList::allFiltersAvail",
-                                         "H5Pall_filters_avail returned negative value");
-        }
+    htri_t ret_value = H5Pall_filters_avail(id);
+    if (ret_value > 0)
+        return true;
+    else if (ret_value == 0)
+        return false;
+    else // Raise exception when H5Pall_filters_avail returns a negative value
+    {
+        throw PropListIException("DSetCreatPropList::allFiltersAvail", "H5Pall_filters_avail returned negative value");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -511,10 +540,12 @@ bool DSetCreatPropList::allFiltersAvail() const
 //--------------------------------------------------------------------------
 void DSetCreatPropList::setShuffle() const
 {
-        herr_t ret_value = H5Pset_shuffle(id);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::setShuffle", "H5Pset_shuffle failed");
-        }
+    herr_t ret_value = H5Pset_shuffle(id);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::setShuffle",
+                "H5Pset_shuffle failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -533,12 +564,15 @@ void DSetCreatPropList::setShuffle() const
 //--------------------------------------------------------------------------
 H5D_alloc_time_t DSetCreatPropList::getAllocTime() const
 {
-        H5D_alloc_time_t alloc_time;
-        herr_t           ret_value = H5Pget_alloc_time(id, &alloc_time);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::getAllocTime", "H5Pget_alloc_time failed");
-        } else
-                return (alloc_time);
+    H5D_alloc_time_t alloc_time;
+    herr_t ret_value = H5Pget_alloc_time(id, &alloc_time);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::getAllocTime",
+                "H5Pget_alloc_time failed");
+    }
+    else
+        return (alloc_time);
 }
 
 //--------------------------------------------------------------------------
@@ -554,12 +588,15 @@ H5D_alloc_time_t DSetCreatPropList::getAllocTime() const
 //--------------------------------------------------------------------------
 H5D_fill_time_t DSetCreatPropList::getFillTime() const
 {
-        H5D_fill_time_t fill_time;
-        herr_t          ret_value = H5Pget_fill_time(id, &fill_time);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::getFillTime", "H5Pget_fill_time failed");
-        } else
-                return (fill_time);
+    H5D_fill_time_t fill_time;
+    herr_t ret_value = H5Pget_fill_time(id, &fill_time);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::getFillTime",
+                "H5Pget_fill_time failed");
+    }
+    else
+        return (fill_time);
 }
 
 //--------------------------------------------------------------------------
@@ -577,10 +614,12 @@ H5D_fill_time_t DSetCreatPropList::getFillTime() const
 //--------------------------------------------------------------------------
 void DSetCreatPropList::setAllocTime(H5D_alloc_time_t alloc_time) const
 {
-        herr_t ret_value = H5Pset_alloc_time(id, alloc_time);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::setAllocTime", "H5Pset_alloc_time failed");
-        }
+    herr_t ret_value = H5Pset_alloc_time(id, alloc_time);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::setAllocTime",
+                "H5Pset_alloc_time failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -596,10 +635,12 @@ void DSetCreatPropList::setAllocTime(H5D_alloc_time_t alloc_time) const
 //--------------------------------------------------------------------------
 void DSetCreatPropList::setFillTime(H5D_fill_time_t fill_time) const
 {
-        herr_t ret_value = H5Pset_fill_time(id, fill_time);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::setFillTime", "H5Pset_fill_time failed");
-        }
+    herr_t ret_value = H5Pset_fill_time(id, fill_time);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::setFillTime",
+                "H5Pset_fill_time failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -611,10 +652,12 @@ void DSetCreatPropList::setFillTime(H5D_fill_time_t fill_time) const
 //--------------------------------------------------------------------------
 void DSetCreatPropList::setFletcher32() const
 {
-        herr_t ret_value = H5Pset_fletcher32(id);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::setFletcher32", "H5Pset_fletcher32 failed");
-        }
+    herr_t ret_value = H5Pset_fletcher32(id);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::setFletcher32",
+                "H5Pset_fletcher32 failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -635,10 +678,12 @@ void DSetCreatPropList::setFletcher32() const
 //--------------------------------------------------------------------------
 void DSetCreatPropList::setExternal(const char* name, off_t offset, hsize_t size) const
 {
-        herr_t ret_value = H5Pset_external(id, name, offset, size);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::setExternal", "H5Pset_external failed");
-        }
+    herr_t ret_value = H5Pset_external(id, name, offset, size);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::setExternal",
+                "H5Pset_external failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -650,12 +695,14 @@ void DSetCreatPropList::setExternal(const char* name, off_t offset, hsize_t size
 //--------------------------------------------------------------------------
 int DSetCreatPropList::getExternalCount() const
 {
-        int num_ext_files = H5Pget_external_count(id);
-        if (num_ext_files < 0) {
-                throw PropListIException("DSetCreatPropList::getExternalCount",
-                                         "H5Pget_external_count returns negative number of external files");
-        } else
-                return (num_ext_files);
+    int num_ext_files = H5Pget_external_count(id);
+    if (num_ext_files < 0)
+    {
+        throw PropListIException("DSetCreatPropList::getExternalCount",
+                "H5Pget_external_count returns negative number of external files");
+    }
+    else
+        return(num_ext_files);
 }
 
 //--------------------------------------------------------------------------
@@ -682,10 +729,12 @@ int DSetCreatPropList::getExternalCount() const
 //--------------------------------------------------------------------------
 void DSetCreatPropList::getExternal(unsigned idx, size_t name_size, char* name, off_t& offset, hsize_t& size) const
 {
-        herr_t ret_value = H5Pget_external(id, idx, name_size, name, &offset, &size);
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::getExternal", "H5Pget_external failed");
-        }
+    herr_t ret_value = H5Pget_external(id, idx, name_size, name, &offset, &size);
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::getExternal",
+                "H5Pget_external failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -706,13 +755,14 @@ void DSetCreatPropList::getExternal(unsigned idx, size_t name_size, char* name, 
 ///             the HDF5 C Reference Manual.
 // Programmer   Binh-Minh Ribler - Mar, 2017
 //--------------------------------------------------------------------------
-void DSetCreatPropList::setVirtual(const DataSpace& vspace, const char* src_fname, const char* src_dsname,
-                                   const DataSpace& sspace) const
+void DSetCreatPropList::setVirtual(const DataSpace& vspace, const char *src_fname, const char *src_dsname, const DataSpace& sspace) const
 {
-        herr_t ret_value = H5Pset_virtual(id, vspace.getId(), src_fname, src_dsname, sspace.getId());
-        if (ret_value < 0) {
-                throw PropListIException("DSetCreatPropList::setVirtual", "H5Pset_virtual failed");
-        }
+    herr_t ret_value = H5Pset_virtual(id, vspace.getId(), src_fname, src_dsname, sspace.getId());
+    if (ret_value < 0)
+    {
+        throw PropListIException("DSetCreatPropList::setVirtual",
+            "H5Pset_virtual failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -733,10 +783,9 @@ void DSetCreatPropList::setVirtual(const DataSpace& vspace, const char* src_fnam
 ///             the HDF5 C Reference Manual.
 // Programmer   Binh-Minh Ribler - Mar, 2017
 //--------------------------------------------------------------------------
-void DSetCreatPropList::setVirtual(const DataSpace& vspace, const H5std_string src_fname, const H5std_string src_dsname,
-                                   const DataSpace& sspace) const
+void DSetCreatPropList::setVirtual(const DataSpace& vspace, const H5std_string src_fname, const H5std_string src_dsname, const DataSpace& sspace) const
 {
-        setVirtual(vspace, src_fname.c_str(), src_dsname.c_str(), sspace);
+    setVirtual(vspace, src_fname.c_str(), src_dsname.c_str(), sspace);
 }
 
 //--------------------------------------------------------------------------
@@ -746,4 +795,4 @@ void DSetCreatPropList::setVirtual(const DataSpace& vspace, const H5std_string s
 //--------------------------------------------------------------------------
 DSetCreatPropList::~DSetCreatPropList() {}
 
-} // namespace H5
+} // end namespace

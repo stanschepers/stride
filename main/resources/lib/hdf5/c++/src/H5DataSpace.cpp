@@ -18,10 +18,10 @@
 #endif
 #include <string>
 
-#include "H5DataSpace.h"
+#include "H5Include.h"
 #include "H5Exception.h"
 #include "H5IdComponent.h"
-#include "H5Include.h"
+#include "H5DataSpace.h"
 
 namespace H5 {
 using std::cerr;
@@ -47,21 +47,21 @@ DataSpace* DataSpace::ALL_ = 0;
 //--------------------------------------------------------------------------
 DataSpace* DataSpace::getConstant()
 {
-        // Tell the C library not to clean up, H5Library::termH5cpp will call
-        // H5close - more dependency if use H5Library::dontAtExit()
-        if (!IdComponent::H5dontAtexit_called) {
-                (void)H5dont_atexit();
-                IdComponent::H5dontAtexit_called = true;
-        }
+    // Tell the C library not to clean up, H5Library::termH5cpp will call
+    // H5close - more dependency if use H5Library::dontAtExit()
+    if (!IdComponent::H5dontAtexit_called)
+    {
+        (void) H5dont_atexit();
+        IdComponent::H5dontAtexit_called = true;
+    }
 
-        // If the constant pointer is not allocated, allocate it. Otherwise,
-        // throw because it shouldn't be.
-        if (ALL_ == 0)
-                ALL_ = new DataSpace(H5S_ALL);
-        else
-                throw DataSpaceIException("DataSpace::getConstant",
-                                          "DataSpace::getConstant is being invoked on an allocated ALL_");
-        return (ALL_);
+    // If the constant pointer is not allocated, allocate it. Otherwise,
+    // throw because it shouldn't be.
+    if (ALL_ == 0)
+        ALL_ = new DataSpace(H5S_ALL);
+    else
+        throw DataSpaceIException("DataSpace::getConstant", "DataSpace::getConstant is being invoked on an allocated ALL_");
+    return(ALL_);
 }
 
 //--------------------------------------------------------------------------
@@ -71,8 +71,8 @@ DataSpace* DataSpace::getConstant()
 //--------------------------------------------------------------------------
 void DataSpace::deleteConstants()
 {
-        if (ALL_ != 0)
-                delete ALL_;
+    if (ALL_ != 0)
+        delete ALL_;
 }
 
 //--------------------------------------------------------------------------
@@ -93,10 +93,11 @@ const DataSpace& DataSpace::ALL = *getConstant();
 //--------------------------------------------------------------------------
 DataSpace::DataSpace(H5S_class_t type) : IdComponent()
 {
-        id = H5Screate(type);
-        if (id < 0) {
-                throw DataSpaceIException("DataSpace constructor", "H5Screate failed");
-        }
+    id = H5Screate(type);
+    if (id < 0)
+    {
+        throw DataSpaceIException("DataSpace constructor", "H5Screate failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -108,12 +109,13 @@ DataSpace::DataSpace(H5S_class_t type) : IdComponent()
 ///\exception   H5::DataSpaceIException
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-DataSpace::DataSpace(int rank, const hsize_t* dims, const hsize_t* maxdims) : IdComponent()
+DataSpace::DataSpace(int rank, const hsize_t * dims, const hsize_t * maxdims) : IdComponent()
 {
-        id = H5Screate_simple(rank, dims, maxdims);
-        if (id < 0) {
-                throw DataSpaceIException("DataSpace constructor", "H5Screate_simple failed");
-        }
+    id = H5Screate_simple(rank, dims, maxdims);
+    if (id < 0)
+    {
+        throw DataSpaceIException("DataSpace constructor", "H5Screate_simple failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -126,7 +128,7 @@ DataSpace::DataSpace(int rank, const hsize_t* dims, const hsize_t* maxdims) : Id
 //--------------------------------------------------------------------------
 DataSpace::DataSpace(const hid_t existing_id) : IdComponent(), id(existing_id)
 {
-        incRefCount(); // increment number of references to this id
+    incRefCount(); // increment number of references to this id
 }
 
 //--------------------------------------------------------------------------
@@ -137,7 +139,7 @@ DataSpace::DataSpace(const hid_t existing_id) : IdComponent(), id(existing_id)
 //--------------------------------------------------------------------------
 DataSpace::DataSpace(const DataSpace& original) : IdComponent(), id(original.id)
 {
-        incRefCount(); // increment number of references to this id
+    incRefCount(); // increment number of references to this id
 }
 
 //--------------------------------------------------------------------------
@@ -154,20 +156,21 @@ DataSpace::DataSpace(const DataSpace& original) : IdComponent(), id(original.id)
 //--------------------------------------------------------------------------
 void DataSpace::copy(const DataSpace& like_space)
 {
-        // If this object has an hdf5 valid id, close it
-        if (id != H5S_ALL) {
-                try {
-                        close();
-                } catch (Exception& close_error) {
-                        throw DataSpaceIException("DataSpace::copy", close_error.getDetailMsg());
-                }
-        } // end if
+    // If this object has an hdf5 valid id, close it
+    if (id != H5S_ALL) {
+        try {
+            close();
+        }
+        catch (Exception& close_error) {
+         throw DataSpaceIException("DataSpace::copy", close_error.getDetailMsg());
+        }
+    }  // end if
 
-        // call C routine to copy the dataspace
-        id = H5Scopy(like_space.getId());
+    // call C routine to copy the dataspace
+    id = H5Scopy(like_space.getId());
 
-        if (id < 0)
-                throw DataSpaceIException("DataSpace::copy", "H5Scopy failed");
+    if (id < 0)
+        throw DataSpaceIException("DataSpace::copy", "H5Scopy failed");
 }
 
 //--------------------------------------------------------------------------
@@ -183,9 +186,9 @@ void DataSpace::copy(const DataSpace& like_space)
 //--------------------------------------------------------------------------
 DataSpace& DataSpace::operator=(const DataSpace& rhs)
 {
-        if (this != &rhs)
-                copy(rhs);
-        return (*this);
+    if (this != &rhs)
+        copy(rhs);
+    return(*this);
 }
 
 //--------------------------------------------------------------------------
@@ -196,16 +199,18 @@ DataSpace& DataSpace::operator=(const DataSpace& rhs)
 ///\exception   H5::DataSpaceIException
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-bool DataSpace::isSimple() const
+bool DataSpace::isSimple () const
 {
-        htri_t simple = H5Sis_simple(id);
-        if (simple > 0)
-                return true;
-        else if (simple == 0)
-                return false;
-        else {
-                throw DataSpaceIException("DataSpace::isSimple", "H5Sis_simple returns negative value");
-        }
+    htri_t simple = H5Sis_simple(id);
+    if (simple > 0)
+        return true;
+    else if (simple == 0)
+        return false;
+    else
+    {
+        throw DataSpaceIException("DataSpace::isSimple",
+            "H5Sis_simple returns negative value");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -220,12 +225,13 @@ bool DataSpace::isSimple() const
 ///             it to be re-defined.
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-void DataSpace::offsetSimple(const hssize_t* offset) const
+void DataSpace::offsetSimple (const hssize_t* offset) const
 {
-        herr_t ret_value = H5Soffset_simple(id, offset);
-        if (ret_value < 0) {
-                throw DataSpaceIException("DataSpace::offsetSimple", "H5Soffset_simple failed");
-        }
+    herr_t ret_value = H5Soffset_simple(id, offset);
+    if (ret_value < 0)
+    {
+        throw DataSpaceIException("DataSpace::offsetSimple", "H5Soffset_simple failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -238,14 +244,15 @@ void DataSpace::offsetSimple(const hssize_t* offset) const
 ///\exception   H5::DataSpaceIException
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-int DataSpace::getSimpleExtentDims(hsize_t* dims, hsize_t* maxdims) const
+int DataSpace::getSimpleExtentDims (hsize_t *dims, hsize_t *maxdims) const
 {
-        int ndims = H5Sget_simple_extent_dims(id, dims, maxdims);
-        if (ndims < 0) {
-                throw DataSpaceIException("DataSpace::getSimpleExtentDims",
-                                          "H5Sget_simple_extent_dims returns negative number of dimensions");
-        }
-        return (ndims);
+    int ndims = H5Sget_simple_extent_dims(id, dims, maxdims);
+    if (ndims < 0)
+    {
+        throw DataSpaceIException("DataSpace::getSimpleExtentDims",
+            "H5Sget_simple_extent_dims returns negative number of dimensions");
+    }
+    return(ndims);
 }
 
 //--------------------------------------------------------------------------
@@ -255,15 +262,15 @@ int DataSpace::getSimpleExtentDims(hsize_t* dims, hsize_t* maxdims) const
 ///\exception   H5::DataSpaceIException
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-int DataSpace::getSimpleExtentNdims() const
+int DataSpace::getSimpleExtentNdims () const
 {
-        int ndims = H5Sget_simple_extent_ndims(id);
-        if (ndims < 0) {
-                throw DataSpaceIException(
-                    "DataSpace::getSimpleExtentNdims",
-                    "H5Sget_simple_extent_ndims returns negative value for dimensionality of the dataspace");
-        }
-        return (ndims);
+    int ndims = H5Sget_simple_extent_ndims(id);
+    if (ndims < 0)
+    {
+        throw DataSpaceIException("DataSpace::getSimpleExtentNdims",
+            "H5Sget_simple_extent_ndims returns negative value for dimensionality of the dataspace");
+    }
+    return(ndims);
 }
 
 //--------------------------------------------------------------------------
@@ -277,16 +284,16 @@ int DataSpace::getSimpleExtentNdims() const
 //                      num_elements = -1 when failure occurs vs. 0
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-hssize_t DataSpace::getSimpleExtentNpoints() const
+hssize_t DataSpace::getSimpleExtentNpoints () const
 {
-        hssize_t num_elements = H5Sget_simple_extent_npoints(id);
-        if (num_elements > -1)
-                return (num_elements);
-        else {
-                throw DataSpaceIException(
-                    "DataSpace::getSimpleExtentNpoints",
-                    "H5Sget_simple_extent_npoints returns negative value for the number of elements in the dataspace");
-        }
+    hssize_t num_elements = H5Sget_simple_extent_npoints(id);
+    if (num_elements > -1)
+        return(num_elements);
+    else
+    {
+        throw DataSpaceIException("DataSpace::getSimpleExtentNpoints",
+        "H5Sget_simple_extent_npoints returns negative value for the number of elements in the dataspace");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -296,14 +303,15 @@ hssize_t DataSpace::getSimpleExtentNpoints() const
 ///\exception   H5::DataSpaceIException
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-H5S_class_t DataSpace::getSimpleExtentType() const
+H5S_class_t DataSpace::getSimpleExtentType () const
 {
-        H5S_class_t class_name = H5Sget_simple_extent_type(id);
-        if (class_name == H5S_NO_CLASS) {
-                throw DataSpaceIException("DataSpace::getSimpleExtentType",
-                                          "H5Sget_simple_extent_type returns H5S_NO_CLASS");
-        }
-        return (class_name);
+    H5S_class_t class_name = H5Sget_simple_extent_type(id);
+    if (class_name == H5S_NO_CLASS)
+    {
+        throw DataSpaceIException("DataSpace::getSimpleExtentType",
+            "H5Sget_simple_extent_type returns H5S_NO_CLASS");
+    }
+    return(class_name);
 }
 
 //--------------------------------------------------------------------------
@@ -313,13 +321,14 @@ H5S_class_t DataSpace::getSimpleExtentType() const
 ///\exception   H5::DataSpaceIException
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-void DataSpace::extentCopy(const DataSpace& dest_space) const
+void DataSpace::extentCopy (const DataSpace& dest_space) const
 {
-        hid_t  dest_space_id = dest_space.getId();
-        herr_t ret_value     = H5Sextent_copy(dest_space_id, id);
-        if (ret_value < 0) {
-                throw DataSpaceIException("DataSpace::extentCopy", "H5Sextent_copy failed");
-        }
+    hid_t dest_space_id = dest_space.getId();
+    herr_t ret_value = H5Sextent_copy(dest_space_id, id);
+    if (ret_value < 0)
+    {
+        throw DataSpaceIException("DataSpace::extentCopy", "H5Sextent_copy failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -335,7 +344,7 @@ void DataSpace::extentCopy(const DataSpace& dest_space) const
 //              Removed from documentation. -BMR, 2016/03/07 1.8.17 and 1.10.0
 //              Removed from code. -BMR, 2016/08/11 1.8.18 and 1.10.1
 //--------------------------------------------------------------------------
-// void DataSpace::extentCopy(DataSpace& dest_space) const
+//void DataSpace::extentCopy(DataSpace& dest_space) const
 //{
 //    extentCopy(dest_space);
 //}
@@ -349,13 +358,14 @@ void DataSpace::extentCopy(const DataSpace& dest_space) const
 ///\exception   H5::DataSpaceIException
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-void DataSpace::setExtentSimple(int rank, const hsize_t* current_size, const hsize_t* maximum_size) const
+void DataSpace::setExtentSimple(int rank, const hsize_t *current_size, const hsize_t *maximum_size) const
 {
-        herr_t ret_value;
-        ret_value = H5Sset_extent_simple(id, rank, current_size, maximum_size);
-        if (ret_value < 0) {
-                throw DataSpaceIException("DataSpace::setExtentSimple", "H5Sset_extent_simple failed");
-        }
+    herr_t ret_value;
+    ret_value = H5Sset_extent_simple(id, rank, current_size, maximum_size);
+    if (ret_value < 0)
+    {
+        throw DataSpaceIException("DataSpace::setExtentSimple", "H5Sset_extent_simple failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -365,12 +375,13 @@ void DataSpace::setExtentSimple(int rank, const hsize_t* current_size, const hsi
 ///\exception   H5::DataSpaceIException
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-void DataSpace::setExtentNone() const
+void DataSpace::setExtentNone () const
 {
-        herr_t ret_value = H5Sset_extent_none(id);
-        if (ret_value < 0) {
-                throw DataSpaceIException("DataSpace::setExtentNone", "H5Sset_extent_none failed");
-        }
+    herr_t ret_value = H5Sset_extent_none(id);
+    if (ret_value < 0)
+    {
+        throw DataSpaceIException("DataSpace::setExtentNone", "H5Sset_extent_none failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -380,15 +391,15 @@ void DataSpace::setExtentNone() const
 ///\exception   H5::DataSpaceIException
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-hssize_t DataSpace::getSelectNpoints() const
+hssize_t DataSpace::getSelectNpoints () const
 {
-        hssize_t num_elements = H5Sget_select_npoints(id);
-        if (num_elements < 0) {
-                throw DataSpaceIException(
-                    "DataSpace::getSelectNpoints",
-                    "H5Sget_select_npoints returns negative value for number of elements in the dataspace selection");
-        }
-        return (num_elements);
+    hssize_t num_elements = H5Sget_select_npoints(id);
+    if (num_elements < 0)
+    {
+        throw DataSpaceIException("DataSpace::getSelectNpoints",
+            "H5Sget_select_npoints returns negative value for number of elements in the dataspace selection");
+    }
+    return(num_elements);
 }
 
 //--------------------------------------------------------------------------
@@ -398,15 +409,15 @@ hssize_t DataSpace::getSelectNpoints() const
 ///\exception   H5::DataSpaceIException
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-hssize_t DataSpace::getSelectHyperNblocks() const
+hssize_t DataSpace::getSelectHyperNblocks () const
 {
-        hssize_t num_blocks = H5Sget_select_hyper_nblocks(id);
-        if (num_blocks < 0) {
-                throw DataSpaceIException(
-                    "DataSpace::getSelectHyperNblocks",
-                    "H5Sget_select_hyper_nblocks returns negative value for the number of hyperslab blocks");
-        }
-        return (num_blocks);
+    hssize_t num_blocks = H5Sget_select_hyper_nblocks(id);
+    if (num_blocks < 0)
+    {
+        throw DataSpaceIException("DataSpace::getSelectHyperNblocks",
+            "H5Sget_select_hyper_nblocks returns negative value for the number of hyperslab blocks");
+    }
+    return(num_blocks);
 }
 
 //--------------------------------------------------------------------------
@@ -418,13 +429,15 @@ hssize_t DataSpace::getSelectHyperNblocks() const
 ///\exception   H5::DataSpaceIException
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-void DataSpace::getSelectHyperBlocklist(hsize_t startblock, hsize_t numblocks, hsize_t* buf) const
+void DataSpace::getSelectHyperBlocklist(hsize_t startblock, hsize_t numblocks, hsize_t *buf) const
 {
-        herr_t ret_value;
-        ret_value = H5Sget_select_hyper_blocklist(id, startblock, numblocks, buf);
-        if (ret_value < 0) {
-                throw DataSpaceIException("DataSpace::getSelectHyperBlocklist", "H5Sget_select_hyper_blocklist failed");
-        }
+    herr_t ret_value;
+    ret_value = H5Sget_select_hyper_blocklist(id, startblock, numblocks, buf);
+    if (ret_value < 0)
+    {
+        throw DataSpaceIException("DataSpace::getSelectHyperBlocklist",
+            "H5Sget_select_hyper_blocklist failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -434,13 +447,15 @@ void DataSpace::getSelectHyperBlocklist(hsize_t startblock, hsize_t numblocks, h
 ///\exception   H5::DataSpaceIException
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-hssize_t DataSpace::getSelectElemNpoints() const
+hssize_t DataSpace::getSelectElemNpoints () const
 {
-        hssize_t num_points = H5Sget_select_elem_npoints(id);
-        if (num_points < 0) {
-                throw DataSpaceIException("DataSpace::getSelectElemNpoints", "H5Sget_select_elem_npoints failed");
-        }
-        return (num_points);
+    hssize_t num_points = H5Sget_select_elem_npoints(id);
+    if (num_points < 0)
+    {
+        throw DataSpaceIException("DataSpace::getSelectElemNpoints",
+            "H5Sget_select_elem_npoints failed");
+    }
+    return(num_points);
 }
 
 //--------------------------------------------------------------------------
@@ -455,13 +470,15 @@ hssize_t DataSpace::getSelectElemNpoints() const
 ///             H5Sget_select_elem_pointlist in the HDF5 C Reference Manual.
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-void DataSpace::getSelectElemPointlist(hsize_t startpoint, hsize_t numpoints, hsize_t* buf) const
+void DataSpace::getSelectElemPointlist (hsize_t startpoint, hsize_t numpoints, hsize_t *buf) const
 {
-        herr_t ret_value;
-        ret_value = H5Sget_select_elem_pointlist(id, startpoint, numpoints, buf);
-        if (ret_value < 0) {
-                throw DataSpaceIException("DataSpace::getSelectElemPointlist", "H5Sget_select_elem_pointlist failed");
-        }
+    herr_t ret_value;
+    ret_value = H5Sget_select_elem_pointlist(id, startpoint, numpoints, buf);
+    if (ret_value < 0)
+    {
+        throw DataSpaceIException("DataSpace::getSelectElemPointlist",
+            "H5Sget_select_elem_pointlist failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -476,12 +493,14 @@ void DataSpace::getSelectElemPointlist(hsize_t startpoint, hsize_t numpoints, hs
 ///             the HDF5 C Reference Manual.
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-void DataSpace::getSelectBounds(hsize_t* start, hsize_t* end) const
+void DataSpace::getSelectBounds (hsize_t* start, hsize_t* end) const
 {
-        herr_t ret_value = H5Sget_select_bounds(id, start, end);
-        if (ret_value < 0) {
-                throw DataSpaceIException("DataSpace::getSelectBounds", "H5Sget_select_bounds failed");
-        }
+    herr_t ret_value = H5Sget_select_bounds(id, start, end);
+    if (ret_value < 0)
+    {
+        throw DataSpaceIException("DataSpace::getSelectBounds",
+            "H5Sget_select_bounds failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -499,13 +518,15 @@ void DataSpace::getSelectBounds(hsize_t* start, hsize_t* end) const
 ///             the HDF5 C Reference Manual.
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-void DataSpace::selectElements(H5S_seloper_t op, const size_t num_elements, const hsize_t* coord) const
+void DataSpace::selectElements (H5S_seloper_t op, const size_t num_elements, const hsize_t *coord) const
 {
-        herr_t ret_value;
-        ret_value = H5Sselect_elements(id, op, num_elements, coord);
-        if (ret_value < 0) {
-                throw DataSpaceIException("DataSpace::selectElements", "H5Sselect_elements failed");
-        }
+    herr_t ret_value;
+    ret_value = H5Sselect_elements(id, op, num_elements, coord);
+    if (ret_value < 0)
+    {
+        throw DataSpaceIException("DataSpace::selectElements",
+            "H5Sselect_elements failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -515,12 +536,13 @@ void DataSpace::selectElements(H5S_seloper_t op, const size_t num_elements, cons
 ///\exception   H5::DataSpaceIException
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-void DataSpace::selectAll() const
+void DataSpace::selectAll () const
 {
-        herr_t ret_value = H5Sselect_all(id);
-        if (ret_value < 0) {
-                throw DataSpaceIException("DataSpace::selectAll", "H5Sselect_all failed");
-        }
+    herr_t ret_value = H5Sselect_all(id);
+    if (ret_value < 0)
+    {
+        throw DataSpaceIException("DataSpace::selectAll", "H5Sselect_all failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -530,12 +552,14 @@ void DataSpace::selectAll() const
 ///\exception   H5::DataSpaceIException
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-void DataSpace::selectNone() const
+void DataSpace::selectNone () const
 {
-        herr_t ret_value = H5Sselect_none(id);
-        if (ret_value < 0) {
-                throw DataSpaceIException("DataSpace::selectNone", "H5Sselect_none failed");
-        }
+    herr_t ret_value = H5Sselect_none(id);
+    if (ret_value < 0)
+    {
+        throw DataSpaceIException("DataSpace::selectNone",
+            "H5Sselect_none failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -547,16 +571,18 @@ void DataSpace::selectNone() const
 ///\exception   H5::DataSpaceIException
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-bool DataSpace::selectValid() const
+bool DataSpace::selectValid () const
 {
-        htri_t ret_value = H5Sselect_valid(id);
-        if (ret_value > 0)
-                return true;
-        else if (ret_value == 0)
-                return false;
-        else {
-                throw DataSpaceIException("DataSpace::selectValid", "H5Sselect_valid returns negative value");
-        }
+    htri_t ret_value = H5Sselect_valid(id);
+    if (ret_value > 0)
+        return true;
+    else if (ret_value == 0)
+        return false;
+    else
+    {
+        throw DataSpaceIException("DataSpace::selectValid",
+            "H5Sselect_valid returns negative value");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -573,14 +599,15 @@ bool DataSpace::selectValid() const
 ///             the HDF5 C Reference Manual.
 // Programmer   Binh-Minh Ribler - 2000
 //--------------------------------------------------------------------------
-void DataSpace::selectHyperslab(H5S_seloper_t op, const hsize_t* count, const hsize_t* start, const hsize_t* stride,
-                                const hsize_t* block) const
+void DataSpace::selectHyperslab(H5S_seloper_t op, const hsize_t *count, const hsize_t *start, const hsize_t *stride, const hsize_t *block) const
 {
-        herr_t ret_value;
-        ret_value = H5Sselect_hyperslab(id, op, start, stride, count, block);
-        if (ret_value < 0) {
-                throw DataSpaceIException("DataSpace::selectHyperslab", "H5Sselect_hyperslab failed");
-        }
+    herr_t ret_value;
+    ret_value = H5Sselect_hyperslab(id, op, start, stride, count, block);
+    if (ret_value < 0)
+    {
+        throw DataSpaceIException("DataSpace::selectHyperslab",
+            "H5Sselect_hyperslab failed");
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -595,7 +622,10 @@ void DataSpace::selectHyperslab(H5S_seloper_t op, const hsize_t* count, const hs
 //              IdComponent::getId now becomes pure virtual function.
 // Programmer   Binh-Minh Ribler - May, 2008
 //--------------------------------------------------------------------------
-hid_t DataSpace::getId() const { return (id); }
+hid_t DataSpace::getId() const
+{
+    return(id);
+}
 
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
 //--------------------------------------------------------------------------
@@ -612,14 +642,15 @@ hid_t DataSpace::getId() const { return (id); }
 //--------------------------------------------------------------------------
 void DataSpace::p_setId(const hid_t new_id)
 {
-        // handling references to this old id
-        try {
-                close();
-        } catch (Exception& close_error) {
-                throw DataSpaceIException(inMemFunc("p_setId"), close_error.getDetailMsg());
-        }
-        // reset object's id to the given id
-        id = new_id;
+    // handling references to this old id
+    try {
+        close();
+    }
+    catch (Exception& close_error) {
+        throw DataSpaceIException(inMemFunc("p_setId"), close_error.getDetailMsg());
+    }
+    // reset object's id to the given id
+    id = new_id;
 }
 #endif // DOXYGEN_SHOULD_SKIP_THIS
 
@@ -632,15 +663,17 @@ void DataSpace::p_setId(const hid_t new_id)
 //--------------------------------------------------------------------------
 void DataSpace::close()
 {
-        // check if id is a valid hdf5 object id before trying to close it
-        if (p_valid_id(id)) {
-                herr_t ret_value = H5Sclose(id);
-                if (ret_value < 0) {
-                        throw DataSpaceIException("DataSpace::close", "H5Sclose failed");
-                }
-                // reset the id
-                id = H5I_INVALID_HID;
+    // check if id is a valid hdf5 object id before trying to close it
+    if (p_valid_id(id))
+    {
+        herr_t ret_value = H5Sclose(id);
+        if (ret_value < 0)
+        {
+            throw DataSpaceIException("DataSpace::close", "H5Sclose failed");
         }
+        // reset the id
+        id = H5I_INVALID_HID;
+    }
 }
 
 //--------------------------------------------------------------------------
@@ -655,11 +688,11 @@ void DataSpace::close()
 //--------------------------------------------------------------------------
 DataSpace::~DataSpace()
 {
-        try {
-                close();
-        } catch (Exception& close_error) {
-                cerr << "DataSpace::~DataSpace - " << close_error.getDetailMsg() << endl;
-        }
+    try {
+        close();
+    } catch (Exception& close_error) {
+        cerr << "DataSpace::~DataSpace - " << close_error.getDetailMsg() << endl;
+    }
 }
 
-} // namespace H5
+} // end namespace
