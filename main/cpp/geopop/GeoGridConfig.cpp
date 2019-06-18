@@ -127,10 +127,8 @@ void GeoGridConfig::SetData(const string& householdsFileName)
         info.count_households = static_cast<unsigned int>(floor(static_cast<double>(popSize) / averageHhSize));
 }
 
-void GeoGridConfig::SetDistributionData(const std::string &distributionFileName)
+void GeoGridConfig::SetDistributionData(const std::string& distributionFileName)
 {
-        //STILL NEED TO CHECK RATIOS AND SIZES
-
         auto distributionReader = ReaderFactory::CreateDistributionReader(distributionFileName);
         distributionReader->SetWorkDistribution(param.work_distribution);
 }
@@ -233,7 +231,7 @@ ostream& operator<<(ostream& out, const GeoGridConfig& config)
 {
         const int w = 53;
         out.setf(std::ios_base::left, std::ios_base::adjustfield);
-        out << "param:" << endl;
+        out << "Input:" << endl;
         out << setw(w) << "Fraction college commuters:" << config.param.fraction_college_commuters << "\n";
         out << setw(w) << "Fraction workplace commuters:" << config.param.fraction_workplace_commuters << "\n";
         out << setw(w) << "Participation fraction of daycare:" << config.param.participation_daycare << "\n";
