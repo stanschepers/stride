@@ -149,10 +149,11 @@ void MapController::SetShownInformation(const QString& sourceInformation)
         case 3: // Circle:
         {
                 header = "Circle selection";
-                geopop::Location<EpiOutput> tempLoc(std::numeric_limits<unsigned int>::infinity(),
+                geopop::Location<EpiOutput>                     tempLoc(std::numeric_limits<unsigned int>::infinity(),
                                                                         std::numeric_limits<unsigned int>::infinity(), nullptr,
                                                                         geopop::Coordinate(std::stod(tokens[0]), std::stod(tokens[1])));
-                std::vector<const geopop::Location<EpiOutput>*> locations = m_geogrid.LocationsInRadius(tempLoc, std::stod(tokens[2]) / 1000);
+                std::vector<const geopop::Location<EpiOutput>*> locations =
+                    m_geogrid.LocationsInRadius(tempLoc, std::stod(tokens[2]) / 1000);
                 // Calculate the total population of the selected area
                 double total_pop = 0;
                 for (auto const& location : locations) {
@@ -243,16 +244,16 @@ void MapController::Initialize(QObject* root)
                   });
 
         // Initialize biggest and smalles values
-//        for (const std::string& ageBracket : stride::ageBrackets) {
-//                for (const std::string& healthStatus : stride::healthStatuses) {
-//                        m_smallest_values[ageBracket][healthStatus] = std::numeric_limits<double>::infinity();
-//                        m_biggest_values[ageBracket][healthStatus]  = 0;
-//                }
-//        }
-//        for (const std::string& healthStatus : stride::healthStatuses) {
-//                m_smallest_values["Total"][healthStatus] = std::numeric_limits<double>::infinity();
-//                m_biggest_values["Total"][healthStatus]  = 0;
-//        }
+        //        for (const std::string& ageBracket : stride::ageBrackets) {
+        //                for (const std::string& healthStatus : stride::healthStatuses) {
+        //                        m_smallest_values[ageBracket][healthStatus] = std::numeric_limits<double>::infinity();
+        //                        m_biggest_values[ageBracket][healthStatus]  = 0;
+        //                }
+        //        }
+        //        for (const std::string& healthStatus : stride::healthStatuses) {
+        //                m_smallest_values["Total"][healthStatus] = std::numeric_limits<double>::infinity();
+        //                m_biggest_values["Total"][healthStatus]  = 0;
+        //        }
 
         // Put the locations on the map and search the smallest and biggest values
         for (auto const& location : m_geogrid) {
@@ -279,44 +280,49 @@ void MapController::Initialize(QObject* root)
                     Q_ARG(QVariant, QVariant::fromValue(location->GetContent()->pop_count * 0.2))); // radius
 
                 // Search the smallest and biggest values of each category
-//                for (unsigned int day = firstDay; day < lastDay + 1; day += m_day_diff) {
-//                        for (const std::string& ageBracket : stride::ageBrackets) {
-//                                for (const std::string& healthStatus : stride::healthStatuses) {
-//                                        // If the value is smaller than the smallest value, replace it
-//                                        if (location->GetContent()->epiOutput[ageBracket][healthStatus][day] <
-//                                            m_smallest_values[ageBracket][healthStatus]) {
-//                                                m_smallest_values[ageBracket][healthStatus] =
-//                                                    location->GetContent()->epiOutput[ageBracket][healthStatus][day];
-//                                        }
-//                                        // If the value is bigger than the biggest value, replace it
-//                                        if (location->GetContent()->epiOutput[ageBracket][healthStatus][day] >
-//                                            m_biggest_values[ageBracket][healthStatus]) {
-//                                                m_biggest_values[ageBracket][healthStatus] =
-//                                                    location->GetContent()->epiOutput[ageBracket][healthStatus][day];
-//                                        }
-//                                }
-//                        }
-//                        // Age bracket = Total (Because age brackets don't have the category total)
-//                        for (const std::string& healthStatus : stride::healthStatuses) {
-//                                // Skip the total because everything will be 1 (= 100%)
-//                                if (healthStatus == "Total") {
-//                                        continue;
-//                                }
-//                                // Calculate the totals for the health statuses
-//                                double total = 0;
-//                                for (const std::string& ageBracket : stride::ageBrackets) {
-//                                        total += location->GetContent()->epiOutput[ageBracket][healthStatus][day];
-//                                }
-//                                // If the value is smaller than the smallest value, replace it
-//                                if (total < m_smallest_values["Total"][healthStatus]) {
-//                                        m_smallest_values["Total"][healthStatus] = total;
-//                                }
-//                                // If the value is bigger than the biggest value, replace it
-//                                if (total > m_biggest_values["Total"][healthStatus]) {
-//                                        m_biggest_values["Total"][healthStatus] = total;
-//                                }
-//                        }
-//                }
+                //                for (unsigned int day = firstDay; day < lastDay + 1; day += m_day_diff) {
+                //                        for (const std::string& ageBracket : stride::ageBrackets) {
+                //                                for (const std::string& healthStatus : stride::healthStatuses) {
+                //                                        // If the value is smaller than the smallest value, replace it
+                //                                        if
+                //                                        (location->GetContent()->epiOutput[ageBracket][healthStatus][day]
+                //                                        <
+                //                                            m_smallest_values[ageBracket][healthStatus]) {
+                //                                                m_smallest_values[ageBracket][healthStatus] =
+                //                                                    location->GetContent()->epiOutput[ageBracket][healthStatus][day];
+                //                                        }
+                //                                        // If the value is bigger than the biggest value, replace it
+                //                                        if
+                //                                        (location->GetContent()->epiOutput[ageBracket][healthStatus][day]
+                //                                        >
+                //                                            m_biggest_values[ageBracket][healthStatus]) {
+                //                                                m_biggest_values[ageBracket][healthStatus] =
+                //                                                    location->GetContent()->epiOutput[ageBracket][healthStatus][day];
+                //                                        }
+                //                                }
+                //                        }
+                //                        // Age bracket = Total (Because age brackets don't have the category total)
+                //                        for (const std::string& healthStatus : stride::healthStatuses) {
+                //                                // Skip the total because everything will be 1 (= 100%)
+                //                                if (healthStatus == "Total") {
+                //                                        continue;
+                //                                }
+                //                                // Calculate the totals for the health statuses
+                //                                double total = 0;
+                //                                for (const std::string& ageBracket : stride::ageBrackets) {
+                //                                        total +=
+                //                                        location->GetContent()->epiOutput[ageBracket][healthStatus][day];
+                //                                }
+                //                                // If the value is smaller than the smallest value, replace it
+                //                                if (total < m_smallest_values["Total"][healthStatus]) {
+                //                                        m_smallest_values["Total"][healthStatus] = total;
+                //                                }
+                //                                // If the value is bigger than the biggest value, replace it
+                //                                if (total > m_biggest_values["Total"][healthStatus]) {
+                //                                        m_biggest_values["Total"][healthStatus] = total;
+                //                                }
+                //                        }
+                //                }
         }
 
         // Calculate the center of the map
@@ -366,8 +372,9 @@ void MapController::UpdateLocations()
         // Specific category selected
         else {
                 // Take the smallest and biggest in the category
-//                low  = m_smallest_values[m_selectedAgeBracket][m_selectedHealthStatus]; // Smallest of that category
-//                high = m_biggest_values[m_selectedAgeBracket][m_selectedHealthStatus];  // Biggest of that category
+                //                low  = m_smallest_values[m_selectedAgeBracket][m_selectedHealthStatus]; // Smallest of
+                //                that category high = m_biggest_values[m_selectedAgeBracket][m_selectedHealthStatus];
+                //                // Biggest of that category
                 low  = 0;
                 high = 1;
         }
@@ -389,8 +396,10 @@ void MapController::UpdateLocations()
                         // status
                         double total = 0;
                         for (const auto& ageBracket : stride::ageBrackets) {
-                                double agePop = location->GetContent()->pop_count * location->GetContent()->epiOutput[ageBracket]["Total"][m_day];
-                                total += location->GetContent()->epiOutput[ageBracket][m_selectedHealthStatus][m_day] * agePop;
+                                double agePop = location->GetContent()->pop_count *
+                                                location->GetContent()->epiOutput[ageBracket]["Total"][m_day];
+                                total += location->GetContent()->epiOutput[ageBracket][m_selectedHealthStatus][m_day] *
+                                         agePop;
                         }
                         // Scale the value so the evolution is seen in the GUI
                         value = total / location->GetContent()->pop_count; // scaleValue(low, high, total);
@@ -405,7 +414,7 @@ void MapController::UpdateLocations()
                         // Scale the value so the evolution is seen in the GUI
                         value = /*scaleValue(
                             low, high,*/
-                            location->GetContent()->epiOutput[m_selectedAgeBracket][m_selectedHealthStatus][m_day];//);
+                            location->GetContent()->epiOutput[m_selectedAgeBracket][m_selectedHealthStatus][m_day]; //);
                 }
                 // Call the QML method to update the circle on the map
                 QMetaObject::invokeMethod(m_root, "updateLocation",
