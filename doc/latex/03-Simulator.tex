@@ -28,6 +28,8 @@ Compilation and installation of the software creates the following files and dir
        		\item $run\_import\_default.xml$: default configuration file for Stride to first import a population and geographical grid and then perform a Nassau Simulation.
         		\item $run\_miami\_weekend.xml$: configuration file for Stride to perform Miami simulations with uniform social contact rates in the community clusters.
 			\item $wrapper\_miami.json$: default configuration file for the wrapper\_sim binary to perform Miami simulations with different attack rates.
+			\item $run\_belgium.xml$: default configuration file for Stride to perform a simulation in Belgium with 10 provinces and the Brussels Region.
+			\item $run\_flandsers.xml$: default configuration file for Stride to perform a simualtion in Flanders with th 5 Flemish provinces.
         		\item \ldots
         \end{compactitem}
 %        
@@ -228,7 +230,7 @@ If the $<stride\_log\_level>$ tag is set to "trace", there will be additional ou
 
 From the workspace directory, the visualization can be started  using the command \mbox{``\texttt{./bin/visualization/strideVisualization}''}. One argument has to be passed to the visualization on the command line, which is the epi-output file that will be read and represented. For example: \\ \\
 \centerline{\texttt{./bin/visualization/strideVisualization \textless EPI-OUTPUT\textgreater}} \\ \\
-In the GUI you can select an area to get the epi-output of that area, selections can be made with the right mouse button.
+In the GUI you can select an area to get the epi-output of that area, selections can be made by right-clicking and dragging.
 
 \begin{center}
 	\begin{figure}[hbtp!]
@@ -244,4 +246,73 @@ In the GUI you can select an area to get the epi-output of that area, selections
 	\end{figure}
 \end{center}
 
+\newpage
 
+The epi-output is made during a simulation. You can activate the epi-output viewer by adding the epi-output property to the configuration file. An example is shown here:
+
+\begin{center}
+	\begin{lstlisting}[language=XML,caption=Config xml file example to make epi-output.]
+	<?xml version="1.0" encoding="utf-8"?>
+	<run>
+		<age_contact_matrix_file>contact_matrix_flanders_subpop.xml</age_contact_matrix_file>
+		<contact_log_level>Transmissions</contact_log_level>
+		<contact_output_file>true</contact_output_file>
+		<disease_config_file>disease_measles.xml</disease_config_file>
+		<holidays_file>holidays_none.json</holidays_file>
+		<immunity_profile>None</immunity_profile>
+		<immunity_rate>0.8</immunity_rate>
+		<num_days>100</num_days>
+		<num_participants_survey>10</num_participants_survey>
+		<num_threads>1</num_threads>
+		<output_cases>true</output_cases>
+		<output_persons>false</output_persons>
+		<output_prefix></output_prefix>
+		<output_summary>false</output_summary>
+		<epi_output>
+		    <stride>25</stride>
+		    <file_type>json</file_type>
+		</epi_output>
+		<population_file>genpop.proto</population_file>
+		<population_type>generate</population_type>
+		<rng_seed>1097253,2387652,9963540,4730214</rng_seed>
+		<r0>11</r0>
+		<seeding_age_max>99</seeding_age_max>
+		<seeding_age_min>1</seeding_age_min>
+		<seeding_rate>0.002</seeding_rate>
+		<start_date>2017-01-01</start_date>
+		<stride_log_level>info</stride_log_level>
+		<track_index_case>false</track_index_case>
+		<use_install_dirs>true</use_install_dirs>
+		<vaccine_link_probability>0</vaccine_link_probability>
+		<vaccine_profile>Random</vaccine_profile>
+		<vaccine_rate>0.8</vaccine_rate>
+		<geopop_gen>
+		    <cities_file>flanders_cities.csv</cities_file>
+			<commuting_file>flanders_commuting.csv</commuting_file>
+			<fraction_college_commuters>0.5</fraction_college_commuters>
+			<fraction_workplace_commuters>0.5</fraction_workplace_commuters>
+			<household_file>households_flanders.csv</household_file>
+			<participation_college>0.5</participation_college>
+			<particpation_workplace>0.75</particpation_workplace>
+			<population_size>600000</population_size>
+		</geopop_gen>
+	</run>
+	\end{lstlisting}
+\end{center}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Demographic Profile
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Using multiple household references for different locations}
+
+The user can choose to use one household file as its reference or he/she can assign for each different location its respective household reference when generation a population.
+The first can be achieved by declaring the name of the household file between the $household\_file$ tags in the $genpop$ tags of the configuration file.
+An example of this configuration can be found in $run\_default.xml$.
+
+
+The second can be achieved by declaring $households$ tags in $genpop$ tags. Between these tags declare for each different household reference $household$ tags.
+In this $household$ tag there should be a tag named $household\_id$ containing a unique integer and a tag named $household\_file$ containing the name of the household file.
+The locations should get from its input file an extra attribute $household\_id$ containing which reference household should be used when generating and populating.
+An example of this configuration can be found in $run\_belgium.xml$.
