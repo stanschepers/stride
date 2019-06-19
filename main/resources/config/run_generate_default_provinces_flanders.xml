@@ -61,6 +61,7 @@
         <participation_college>0.5</participation_college>
         <distribution_file>workplace_size_distribution_flanders.csv</distribution_file>
         <participation_workplace>0.75</participation_workplace>
+        <distribution_file>workplace_size_distribution_flanders.csv</distribution_file>
         <population_size>600000</population_size>
     </geopop_gen>
 </run>

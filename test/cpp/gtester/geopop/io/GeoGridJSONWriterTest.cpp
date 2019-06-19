@@ -307,8 +307,10 @@ TEST(GeoGridJSOWriterTest, writePeopleTest)
             "persons": [
                 {
                     "College": 1,
+                    "Daycare": 1,
                     "Household": 1,
                     "K12School": 1,
+                    "PreSchool": 1,
                     "PrimaryCommunity": 1,
                     "SecondaryCommunity": 1,
                     "Workplace": 1,
