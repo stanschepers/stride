@@ -17,12 +17,9 @@ addons:
       - ubuntu-toolchain-r-test
       - boost-latest
     packages: &default_packages
-      - libhdf5-serial-dev
+      # - libhdf5-dev
       - doxygen
       - graphviz
-  homebrew:
-    packages:
-      - hdf5
 
 matrix:
   include:
