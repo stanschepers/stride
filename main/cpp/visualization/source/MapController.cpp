@@ -389,10 +389,11 @@ void MapController::UpdateLocations()
                         // status
                         double total = 0;
                         for (const auto& ageBracket : stride::ageBrackets) {
-                                total += location->GetContent()->epiOutput[ageBracket][m_selectedHealthStatus][m_day];
+                                double agePop = location->GetContent()->pop_count * location->GetContent()->epiOutput[ageBracket]["Total"][m_day];
+                                total += location->GetContent()->epiOutput[ageBracket][m_selectedHealthStatus][m_day] * agePop;
                         }
                         // Scale the value so the evolution is seen in the GUI
-                        value = total; // scaleValue(low, high, total);
+                        value = total / location->GetContent()->pop_count; // scaleValue(low, high, total);
                 }
                 // Only category in age bracket selected
                 else if (m_selectedHealthStatus == "Total") {
