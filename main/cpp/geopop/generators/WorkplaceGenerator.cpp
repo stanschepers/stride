@@ -16,7 +16,6 @@
 #include "Generator.h"
 
 #include "util/Assert.h"
-#include "util/RnMan.h"
 
 namespace geopop {
 
@@ -111,7 +110,9 @@ void Generator<stride::ContactType::Id::Workplace>::Apply(GeoGrid<Epidemiologic>
 }
 
 #pragma clang diagnostic push
+#pragma GCC diagnostic push
 #pragma clang diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 template <>
 void Generator<stride::ContactType::Id::Workplace>::AddPools(Location<Epidemiologic>& loc, stride::Population* pop,
                                                              const GeoGridConfig& ggConfig, unsigned int limit)
@@ -121,5 +122,6 @@ void Generator<stride::ContactType::Id::Workplace>::AddPools(Location<Epidemiolo
         loc.GetContent()->RegisterPool<stride::ContactType::Id::Workplace>(p);
 }
 #pragma clang diagnostic pop
+#pragma GCC diagnostic pop
 
 } // namespace geopop
