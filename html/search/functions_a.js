@@ -8,7 +8,6 @@ var searchData=
   ['locationsinbox',['LocationsInBox',['../d0/d0b/a00004.html#ab420cdfd98e10a82976c5f9fc83c0d2c',1,'geopop::GeoGrid::LocationsInBox(double long1, double lat1, double long2, double lat2) const '],['../d0/d0b/a00004.html#a6f0db64fb3d805db606c99b9ade885c1',1,'geopop::GeoGrid::LocationsInBox(Location&lt; LocationContent &gt; *loc1, Location&lt; LocationContent &gt; *loc2) const ']]],
   ['locationsinradius',['LocationsInRadius',['../d0/d0b/a00004.html#aea34bfa48f8584a53bd63f82c88047cb',1,'geopop::GeoGrid']]],
   ['locationsreader',['LocationsReader',['../d6/d97/a00045.html#a08a0a0bee6983e75de99b46132e26eaa',1,'geopop::LocationsReader']]],
-  ['logshutdown',['LogShutdown',['../da/d82/a00091.html#aa40b02ef62cb1b4a2db78eb847ffe964',1,'stride::ControlHelper']]],
   ['logstartup',['LogStartup',['../da/d82/a00091.html#adc021af008df0bf673682b81aa8d0010',1,'stride::ControlHelper']]],
   ['longitude',['longitude',['../de/de1/a00065.html#ae530586a242d8081355b3971cdbd72f4',1,'proto::EpiOutput_Day_Location_Coordinate::longitude()'],['../d0/d89/a00071.html#a03d2590a2f44bf79ad4872b5bcfb3b6d',1,'proto::GeoGrid_Location_Coordinate::longitude()']]]
 ];

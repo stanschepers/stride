@@ -1,5 +1,5 @@
 <map id="geopop::EpiOutputWriterFactory::CreateEpiOutputWriter" name="geopop::EpiOutputWriterFactory::CreateEpiOutputWriter">
 <area shape="rect" id="node2" href="$da/d82/a00091.html#af0131365a6c658898bf3dd49eead3ed7" title="Register the viewers of the SimRunner. " alt="" coords="276,5,431,47"/>
-<area shape="rect" id="node3" href="$d4/d3e/a00116.html#acddfa3cafcea42db5c8b18af0410179f" title="Actual run of the simulator. " alt="" coords="479,5,632,47"/>
+<area shape="rect" id="node3" href="$d4/d3e/a00116.html#acddfa3cafcea42db5c8b18af0410179f" title="Control the execution of the simulation. " alt="" coords="479,5,632,47"/>
 <area shape="rect" id="node4" href="$d7/ddb/a00361.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main program of the stride simulator. " alt="" coords="680,13,735,39"/>
 </map>

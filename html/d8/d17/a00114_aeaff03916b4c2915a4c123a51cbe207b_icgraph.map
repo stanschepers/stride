@@ -1,5 +1,5 @@
 <map id="stride::Sim::Create" name="stride::Sim::Create">
-<area shape="rect" id="node2" href="$d4/d3e/a00116.html#acddfa3cafcea42db5c8b18af0410179f" title="Actual run of the simulator. " alt="" coords="199,5,352,47"/>
+<area shape="rect" id="node2" href="$d4/d3e/a00116.html#acddfa3cafcea42db5c8b18af0410179f" title="Control the execution of the simulation. " alt="" coords="199,5,352,47"/>
 <area shape="rect" id="node4" href="$d8/d87/a00118.html#a5cc6905d4a31b469d89177de47007dbe" title="Actual run of the simulator. " alt="" coords="196,71,355,112"/>
 <area shape="rect" id="node5" href="$d8/d17/a00114.html#abcbad19e448f9f2098b1c8bc0d71e18d" title="For use in python environment: create Sim using configuration string i.o. ptree. " alt="" coords="204,137,347,163"/>
 <area shape="rect" id="node6" href="$d8/d17/a00114.html#a669d30fcc9d14fc6cce7deae4e4661f2" title="Constructor for empty Simulator. " alt="" coords="213,187,337,214"/>

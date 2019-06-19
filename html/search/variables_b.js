@@ -119,6 +119,7 @@ var searchData=
   ['m_5fselectedagebracket',['m_selectedAgeBracket',['../d3/df8/a00155.html#a39414dc3c19d8de7f69730258f467d42',1,'visualization::MapController']]],
   ['m_5fselectedhealthstatus',['m_selectedHealthStatus',['../d3/df8/a00155.html#a7ccee696bd5a29a0aa4f58eee8004c87',1,'visualization::MapController']]],
   ['m_5fsim',['m_sim',['../d9/d4b/a00117.html#a4ff961d97649b68ef661d38c098baaf0',1,'stride::SimRunner']]],
+  ['m_5fsimulator',['m_simulator',['../d4/d3e/a00116.html#a78301ba22b7fb25fef413a0ccfb66dad',1,'stride::SimController']]],
   ['m_5fsize',['m_size',['../d5/db6/a00042.html#a36c54606c1015c8dab5af65c8f32c76c',1,'geopop::KdTree::m_size()'],['../d9/da5/a00075.html#af2c8760cd3a5b631432f37c55f5bc629',1,'stride::util::SegmentedVector::m_size()']]],
   ['m_5fslices',['m_slices',['../d0/d5e/a00136.html#ab5d8b55d94fc42b0c4644621957e5c87',1,'stride::util::SliceIndexer']]],
   ['m_5fsmallest_5fvalues',['m_smallest_values',['../d3/df8/a00155.html#a4482bed18c7e92a2146ffb8c1cf7f155',1,'visualization::MapController']]],
